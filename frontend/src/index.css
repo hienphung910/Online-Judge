@@ -1,116 +1,86 @@
-/*
- * Bang mau va typography lay tu ban thiet ke Figma Make ("Competitive Programming Platform").
- * Ban goc dung Tailwind v4 (@theme inline); o day chuyen sang CSS variable thuan
- * de bo bot phu thuoc khi build - cac trang deu dung var(--color-*) nen giao dien giu nguyen.
- */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import 'tailwindcss';
 
-:root {
-  --color-bg-base: #0b0f1a;
-  --color-bg-panel: #111827;
-  --color-bg-raised: #1a2236;
-  --color-bg-hover: #1e2b40;
-  --color-border: #1f2d42;
-  --color-border-subtle: #161e2e;
-  --color-border-active: #2d4a66;
-  --color-accent-cyan: #50e3c2;
-  --color-accent-cyan-dim: #0fa896;
-  --color-accent-green: #4ade80;
-  --color-accent-amber: #fbbf24;
-  --color-accent-red: #f87171;
-  --color-text-primary: #e2e8f0;
-  --color-text-secondary: #94a3b8;
-  --color-text-muted: #4b6280;
-  --color-text-accent: #22d3ee;
-  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-mono: "JetBrains Mono", "Fira Code", Consolas, monospace;
-}
-
-* {
-  box-sizing: border-box;
-  scrollbar-width: thin;
-  scrollbar-color: #2a3344 transparent;
-}
-
-html,
-body,
-#root {
+html, body, #root {
   height: 100%;
-  margin: 0;
 }
 
 body {
-  background: var(--color-bg-base);
-  color: var(--color-text-primary);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
+  margin: 0;
 }
 
-*::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+@theme inline {
+  /* Ground */
+  --color-bg-base:    #FAF7F2;
+  --color-bg-panel:   #FFFFFF;
+  --color-bg-raised:  #F3EFE8;
+  --color-bg-hover:   #EDE8DF;
+
+  /* Borders */
+  --color-border:        #DDD6CB;
+  --color-border-subtle: #EDE8DF;
+  --color-border-active: #7C1D2B;
+
+  /* Maroon palette */
+  --color-maroon:       #7C1D2B;
+  --color-maroon-dark:  #5C1420;
+  --color-maroon-mid:   #9B2335;
+  --color-maroon-pale:  #F5E8EA;
+
+  /* Verdicts / status */
+  --color-green:  #16794C;
+  --color-green-bg: rgba(22,121,76,0.08);
+  --color-green-border: rgba(22,121,76,0.22);
+  --color-red:    #C0392B;
+  --color-red-bg: rgba(192,57,43,0.08);
+  --color-red-border: rgba(192,57,43,0.22);
+  --color-amber:  #B45309;
+  --color-amber-bg: rgba(180,83,9,0.08);
+  --color-amber-border: rgba(180,83,9,0.22);
+  --color-blue:   #1D4ED8;
+  --color-blue-bg: rgba(29,78,216,0.08);
+  --color-blue-border: rgba(29,78,216,0.2);
+  --color-purple: #7C3AED;
+  --color-purple-bg: rgba(124,58,237,0.08);
+  --color-purple-border: rgba(124,58,237,0.2);
+
+  /* Text */
+  --color-text-primary:   #1C1410;
+  --color-text-secondary: #5C4F46;
+  --color-text-muted:     #9C8C80;
+  --color-text-accent:    #7C1D2B;
+
+  /* Code editor accent (CodeMirror caret / selection) */
+  --color-accent-cyan: #0891b2;
+
+  /* Fonts */
+  --font-serif: 'Lora', Georgia, serif;
+  --font-sans:  'Inter', system-ui, sans-serif;
+  --font-mono:  'JetBrains Mono', 'Fira Code', monospace;
 }
 
-*::-webkit-scrollbar-track {
-  background: transparent;
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #DDD6CB transparent;
 }
-
-*::-webkit-scrollbar-thumb {
-  background: #2a3344;
-  border-radius: 3px;
-}
-
-*::-webkit-scrollbar-thumb:hover {
-  background: #3d4f66;
-}
-
-button {
-  font-family: inherit;
-}
-
-/*
- * Trang "Nộp bài": đề bài bên trái, khung code bên phải để vừa đọc đề vừa code.
- * Dùng class thay vì inline style vì inline style không viết được media query.
- */
-.submit-grid {
-  flex: 1;
-  display: grid;
-  grid-template-columns: minmax(280px, 0.85fr) minmax(420px, 1.15fr);
-  gap: 14px;
-  padding: 16px;
-  overflow: auto;
-  align-items: start;
-}
-
-/* Màn hình hẹp (máy chiếu 1024, cửa sổ nhỏ): xếp đề bài lên trên khung code. */
-@media (max-width: 900px) {
-  .submit-grid {
-    grid-template-columns: 1fr;
-  }
-}
+*::-webkit-scrollbar { width: 5px; height: 5px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb { background: #DDD6CB; border-radius: 3px; }
+*::-webkit-scrollbar-thumb:hover { background: #C9BFB4; }
 
 @keyframes livePulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.35;
-  }
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.3; transform: scale(0.8); }
 }
-
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes rowIn {
-  from {
-    background: rgba(80, 227, 194, 0.12);
-  }
-  to {
-    background: transparent;
-  }
-}
+input::placeholder, textarea::placeholder { color: var(--color-text-muted); }

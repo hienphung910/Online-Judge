@@ -1,55 +1,44 @@
 import { useCallback, useEffect, useState } from "react";
+import { AuthProvider, useAuth } from "./auth";
+import { api } from "./api";
+import type { LanguageInfo, Problem } from "./types";
 import Problems from "./pages/Problems";
-import SubmitPage from "./pages/Submit";
 import Submissions from "./pages/Submissions";
+import Contests from "./pages/Contests";
 import Leaderboard from "./pages/Leaderboard";
-import Login from "./pages/Login";
-import AdminProblems from "./pages/AdminProblems";
-import { api, getToken, setToken, setUnauthorizedHandler } from "./api";
-import type { AuthUser, LanguageInfo, Problem } from "./types";
+import AdminPanel from "./pages/admin/AdminPanel";
+import LoginModal from "./components/LoginModal";
 
-type Page = "Bài tập" | "Nộp bài" | "Lịch sử nộp" | "Bảng xếp hạng" | "Thêm bài tập";
+type Page = "Problems" | "Submissions" | "Contests" | "Leaderboard" | "Admin";
 
-const BASE_NAV: Page[] = ["Bài tập", "Nộp bài", "Lịch sử nộp", "Bảng xếp hạng"];
+function Logo({ onClick }: { onClick?: () => void }) {
+  return (
+    <div style={{ display: "flex", alignItems: "center", gap: 10, marginRight: 32, cursor: onClick ? "pointer" : "default" }} onClick={onClick}>
+      <div style={{ width: 30, height: 30, borderRadius: 7, background: "var(--color-maroon)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M3 4h10M3 8h7M3 12h5" stroke="#FAF7F2" strokeWidth="1.8" strokeLinecap="round" />
+        </svg>
+      </div>
+      <span style={{ fontFamily: "var(--font-serif)", fontSize: 17, fontWeight: 700, color: "var(--color-maroon)", letterSpacing: "-0.02em" }}>CodeForge</span>
+    </div>
+  );
+}
 
-export default function App() {
-  const [page, setPage] = useState<Page>("Bài tập");
+function AppShell() {
+  const { user, checking, logout } = useAuth();
+  const [page, setPage] = useState<Page>("Problems");
+  const [showLogin, setShowLogin] = useState(false);
+  const [avatarOpen, setAvatarOpen] = useState(false);
+
   const [problems, setProblems] = useState<Problem[]>([]);
   const [languages, setLanguages] = useState<LanguageInfo[]>([]);
-  const [auth, setAuth] = useState<AuthUser | null>(null);
-  const [checkingSession, setCheckingSession] = useState(true);
   const [online, setOnline] = useState<boolean | null>(null);
-  const [preselected, setPreselected] = useState<string>("");
   const [reloadKey, setReloadKey] = useState(0);
 
-  const isAdmin = auth?.role === "ADMIN";
-  const navItems: Page[] = isAdmin ? [...BASE_NAV, "Thêm bài tập"] : BASE_NAV;
-
-  /** May chu bao 401 (token het han) -> quay ve man hinh dang nhap. */
-  useEffect(() => {
-    setUnauthorizedHandler(() => {
-      setAuth(null);
-      setProblems([]);
-    });
-    return () => setUnauthorizedHandler(null);
-  }, []);
-
-  /** Con token trong sessionStorage thi hoi lai may chu xem con hieu luc khong. */
-  useEffect(() => {
-    let alive = true;
-    if (!getToken()) {
-      setCheckingSession(false);
-      return;
-    }
-    api
-      .me()
-      .then((user) => alive && setAuth(user))
-      .catch(() => alive && setToken(null))
-      .finally(() => alive && setCheckingSession(false));
-    return () => {
-      alive = false;
-    };
-  }, []);
+  const isAdmin = user?.role === "ADMIN";
+  const NAV: Page[] = isAdmin
+    ? ["Problems", "Submissions", "Contests", "Leaderboard", "Admin"]
+    : ["Problems", "Submissions", "Contests", "Leaderboard"];
 
   const loadProblems = useCallback(async () => {
     const [p, l] = await Promise.all([api.problems(), api.languages()]);
@@ -57,217 +46,178 @@ export default function App() {
     setLanguages(l);
   }, []);
 
-  /** Sau khi dang nhap moi tai du lieu (cac endpoint nay deu can token). */
   useEffect(() => {
-    if (!auth) return;
+    if (!user) { setProblems([]); setOnline(null); return; }
     let alive = true;
     loadProblems()
       .then(() => alive && setOnline(true))
       .catch(() => alive && setOnline(false));
-    return () => {
-      alive = false;
-    };
-  }, [auth, loadProblems]);
+    return () => { alive = false; };
+  }, [user, loadProblems]);
 
-  /** Tu trang Bài tập bam "Nộp bài" -> nhay sang form voi bai da chon san. */
-  const goSubmit = useCallback((problemId: string) => {
-    setPreselected(problemId);
-    setPage("Nộp bài");
-  }, []);
-
-  /** Sau khi nop xong: bao cac trang khac tai lai va cap nhat so bai da giai. */
   const onSubmitted = useCallback(() => {
     setReloadKey((k) => k + 1);
-    api.me().then(setAuth).catch(() => undefined);
   }, []);
 
-  /** Admin vua tao bai moi -> nap lai danh sach de bai moi hien ngay. */
   const onProblemCreated = useCallback(() => {
     loadProblems().catch(() => undefined);
     setReloadKey((k) => k + 1);
   }, [loadProblems]);
 
-  const doLogout = useCallback(async () => {
-    try {
-      await api.logout();
-    } catch {
-      // token co the da het han - van dang xuat o phia trinh duyet
-    }
-    setToken(null);
-    setAuth(null);
-    setProblems([]);
-    setPage("Bài tập");
-  }, []);
+  function handleLogout() {
+    logout();
+    setPage("Problems");
+    setAvatarOpen(false);
+  }
 
-  const shell = (children: React.ReactNode) => (
-    <div
-      style={{
-        height: "100%", display: "flex", flexDirection: "column",
-        background: "var(--color-bg-base)", fontFamily: "var(--font-sans)",
-        color: "var(--color-text-primary)", overflow: "hidden",
-      }}
-    >
-      {children}
-    </div>
-  );
-
-  if (checkingSession) {
-    return shell(
-      <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--color-text-muted)" }}>
-          đang kiểm tra phiên đăng nhập...
-        </span>
-      </div>,
+  if (checking) {
+    return (
+      <div style={{ height: "100%", display: "flex", alignItems: "center", justifyContent: "center", background: "var(--color-bg-base)" }}>
+        <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--color-text-muted)" }}>đang kiểm tra phiên đăng nhập...</span>
+      </div>
     );
   }
 
-  if (!auth) {
-    return shell(<Login onLoggedIn={setAuth} />);
+  if (!user) {
+    return (
+      <div style={{ height: "100%", display: "flex", flexDirection: "column", background: "var(--color-bg-base)", fontFamily: "var(--font-sans)" }}>
+        <header style={{ display: "flex", alignItems: "center", height: 52, padding: "0 32px", borderBottom: "1px solid var(--color-border)", background: "var(--color-bg-panel)" }}>
+          <Logo />
+        </header>
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 18, padding: 24, textAlign: "center" }}>
+          <h1 style={{ fontFamily: "var(--font-serif)", fontSize: 28, fontWeight: 700, color: "var(--color-maroon)", margin: 0, letterSpacing: "-0.02em" }}>
+            PTIT Online Judge
+          </h1>
+          <p style={{ fontFamily: "var(--font-sans)", fontSize: 14, color: "var(--color-text-muted)", margin: 0, maxWidth: 420 }}>
+            Đăng nhập để xem đề bài, nộp bài và theo dõi bảng xếp hạng.
+          </p>
+          <button
+            onClick={() => setShowLogin(true)}
+            style={{ display: "flex", alignItems: "center", gap: 8, height: 42, padding: "0 24px", background: "var(--color-maroon)", border: "none", borderRadius: 8, color: "#FAF7F2", fontSize: 14, fontWeight: 700, cursor: "pointer", fontFamily: "var(--font-sans)" }}
+          >
+            Đăng nhập / Đăng ký
+          </button>
+        </div>
+        {showLogin && <LoginModal onClose={() => setShowLogin(false)} />}
+        <style>{`input::placeholder { color: var(--color-text-muted); }`}</style>
+      </div>
+    );
   }
 
-  return shell(
-    <>
-      <nav
-        style={{
-          display: "flex", alignItems: "center", height: 46, padding: "0 20px",
-          borderBottom: "1px solid var(--color-border)", background: "var(--color-bg-panel)",
-          flexShrink: 0, gap: 14,
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <div
-            style={{
-              width: 22, height: 22, borderRadius: 5,
-              background: "linear-gradient(135deg,#50E3C2 0%,#0891b2 100%)",
-              display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: 10, fontWeight: 700, color: "#0b0f1a", fontFamily: "var(--font-mono)",
-            }}
-          >
-            CP
-          </div>
-          <span style={{ fontWeight: 600, fontSize: 13, letterSpacing: "-0.01em" }}>PTIT Online Judge</span>
-        </div>
+  return (
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", background: "var(--color-bg-base)", fontFamily: "var(--font-sans)", color: "var(--color-text-primary)" }}>
+      <header style={{ display: "flex", alignItems: "center", height: 52, padding: "0 32px", borderBottom: "1px solid var(--color-border)", background: "var(--color-bg-panel)", flexShrink: 0, position: "relative", zIndex: 50 }}>
+        <Logo onClick={() => setPage("Problems")} />
 
-        <div style={{ width: 1, height: 18, background: "var(--color-border)" }} />
-
-        {navItems.map((item) => {
-          const active = page === item;
-          const admin = item === "Thêm bài tập";
-          return (
-            <button
-              key={item}
-              onClick={() => setPage(item)}
-              style={{
-                background: active ? "var(--color-bg-raised)" : "none",
-                border: active ? "1px solid var(--color-border)" : "1px solid transparent",
-                color: active
-                  ? "var(--color-text-primary)"
-                  : admin
-                    ? "#50E3C2"
-                    : "var(--color-text-muted)",
-                borderRadius: 5, padding: "5px 11px", fontSize: 12.5, cursor: "pointer",
-              }}
-            >
-              {item}
-            </button>
-          );
-        })}
+        <nav style={{ display: "flex", height: "100%" }}>
+          {NAV.map((item) => {
+            const active = page === item;
+            const isAdminTab = item === "Admin";
+            return (
+              <button
+                key={item}
+                onClick={() => setPage(item)}
+                style={{
+                  position: "relative", height: "100%", padding: "0 18px", background: "none", border: "none",
+                  color: active ? "var(--color-maroon)" : isAdminTab ? "var(--color-maroon)" : "var(--color-text-muted)",
+                  fontSize: 13, fontWeight: active ? 600 : isAdminTab ? 500 : 400,
+                  cursor: "pointer", fontFamily: "var(--font-sans)", transition: "color 0.15s",
+                  display: "flex", alignItems: "center", gap: 6,
+                }}
+              >
+                {isAdminTab && (
+                  <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="3" width="12" height="10" rx="1.5" /><path d="M5 7h6M5 10h4" />
+                  </svg>
+                )}
+                {item}
+                {active && <span style={{ position: "absolute", bottom: 0, left: "50%", transform: "translateX(-50%)", width: "60%", height: 2, background: "var(--color-maroon)", borderRadius: "1px 1px 0 0" }} />}
+              </button>
+            );
+          })}
+        </nav>
 
         <div style={{ flex: 1 }} />
 
-        {/* Trang thai ket noi may chu Java */}
-        <span
-          style={{
-            fontFamily: "var(--font-mono)", fontSize: 11,
-            color: online === false ? "#f87171" : "var(--color-text-muted)",
-          }}
-        >
-          {online === null ? "đang kết nối..." : online ? "● máy chủ Java: sẵn sàng" : "● không kết nối được máy chủ"}
-        </span>
+        <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+          <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: online === false ? "var(--color-red)" : "var(--color-text-muted)" }}>
+            {online === null ? "● đang kết nối..." : online ? "● máy chủ sẵn sàng" : "● không kết nối được máy chủ"}
+          </span>
+          <div style={{ width: 1, height: 20, background: "var(--color-border)" }} />
 
-        {/* Nguoi dang dang nhap + so bai da giai */}
-        <div
-          style={{
-            display: "flex", alignItems: "center", gap: 8, height: 28, padding: "0 10px",
-            background: "var(--color-bg-raised)", border: "1px solid var(--color-border)",
-            borderRadius: 6,
-          }}
-          title={`${auth.roleName} ${auth.fullName}`}
-        >
-          <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--color-text-accent)" }}>
-            @{auth.username}
-          </span>
-          {isAdmin && (
-            <span
-              style={{
-                fontFamily: "var(--font-mono)", fontSize: 9.5, fontWeight: 700, letterSpacing: "0.06em",
-                color: "#fbbf24", background: "rgba(251,191,36,0.10)",
-                border: "1px solid rgba(251,191,36,0.25)", borderRadius: 4, padding: "1px 5px",
-              }}
+          <div style={{ position: "relative" }}>
+            <button
+              onClick={() => setAvatarOpen((v) => !v)}
+              style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", padding: "4px 6px", borderRadius: 7 }}
             >
-              ADMIN
-            </span>
-          )}
-          <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--color-text-muted)" }}>
-            đã giải {auth.solvedCount}
-          </span>
+              <div style={{ width: 30, height: 30, borderRadius: "50%", background: "var(--color-maroon)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 700, color: "#FAF7F2", letterSpacing: "0.03em" }}>
+                {user.username.slice(0, 2).toUpperCase()}
+              </div>
+              <div style={{ textAlign: "left" }}>
+                <div style={{ fontFamily: "var(--font-sans)", fontSize: 12, fontWeight: 600, color: "var(--color-text-primary)", lineHeight: 1.2 }}>{user.username}</div>
+                {isAdmin
+                  ? <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, color: "var(--color-maroon)", fontWeight: 700, letterSpacing: "0.06em" }}>ADMIN</div>
+                  : <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, color: "var(--color-text-muted)" }}>đã giải {user.solvedCount}</div>}
+              </div>
+              <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="var(--color-text-muted)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ transform: avatarOpen ? "rotate(180deg)" : "none", transition: "transform 0.2s" }}><polyline points="2 4 6 8 10 4" /></svg>
+            </button>
+
+            {avatarOpen && (
+              <div
+                style={{ position: "absolute", top: "calc(100% + 6px)", right: 0, background: "var(--color-bg-panel)", border: "1px solid var(--color-border)", borderRadius: 10, boxShadow: "0 8px 28px rgba(28,20,16,0.13)", minWidth: 200, padding: 6, zIndex: 200 }}
+                onMouseLeave={() => setAvatarOpen(false)}
+              >
+                <div style={{ padding: "8px 12px 6px", borderBottom: "1px solid var(--color-border-subtle)", marginBottom: 4 }}>
+                  <div style={{ fontFamily: "var(--font-sans)", fontSize: 13, fontWeight: 600, color: "var(--color-text-primary)" }}>{user.fullName || user.username}</div>
+                  <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, color: "var(--color-text-muted)" }}>{user.roleName} · đã giải {user.solvedCount} bài</div>
+                </div>
+                {isAdmin && (
+                  <button onClick={() => { setPage("Admin"); setAvatarOpen(false); }} style={{ width: "100%", display: "flex", alignItems: "center", gap: 8, padding: "7px 12px", background: "none", border: "none", color: "var(--color-maroon)", fontSize: 13, cursor: "pointer", fontFamily: "var(--font-sans)", borderRadius: 6, textAlign: "left", fontWeight: 500 }}>
+                    <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="12" height="10" rx="1.5" /><path d="M5 7h6M5 10h4" /></svg>
+                    Admin Panel
+                  </button>
+                )}
+                <button onClick={handleLogout} style={{ width: "100%", display: "flex", alignItems: "center", gap: 8, padding: "7px 12px", background: "none", border: "none", color: "var(--color-red)", fontSize: 13, cursor: "pointer", fontFamily: "var(--font-sans)", borderRadius: 6, textAlign: "left" }}>
+                  <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 3H3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h3" /><polyline points="10 10 14 8 10 6" /><line x1="14" y1="8" x2="6" y2="8" /></svg>
+                  Sign out
+                </button>
+              </div>
+            )}
+          </div>
         </div>
+      </header>
 
-        <button
-          onClick={() => void doLogout()}
-          style={{
-            height: 28, padding: "0 11px", background: "none",
-            border: "1px solid var(--color-border)", borderRadius: 6,
-            color: "var(--color-text-muted)", fontSize: 12,
-            fontFamily: "var(--font-mono)", cursor: "pointer",
-          }}
-        >
-          Đăng xuất
-        </button>
-      </nav>
-
-      <div style={{ flex: 1, overflow: "hidden", display: "flex" }}>
+      <main style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }}>
         {online === false ? (
-          <div
-            style={{
-              flex: 1, display: "flex", alignItems: "center", justifyContent: "center",
-              flexDirection: "column", gap: 10,
-            }}
-          >
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: "#f87171" }}>
-              Không kết nối được máy chủ Java
-            </div>
-            <div
-              style={{
-                fontFamily: "var(--font-mono)", fontSize: 12,
-                color: "var(--color-text-muted)", textAlign: "center", lineHeight: 1.7,
-              }}
-            >
-              Hãy chạy ở thư mục gốc của project:
-              <br />
-              <code style={{ color: "var(--color-text-accent)" }}>run.ps1 --serve</code>
-              <br />
-              rồi tải lại trang này.
+          <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 10 }}>
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: "var(--color-red)" }}>Không kết nối được máy chủ Java</div>
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--color-text-muted)", textAlign: "center", lineHeight: 1.7 }}>
+              Hãy chạy ở thư mục gốc của project: <code style={{ color: "var(--color-maroon)" }}>.\run-web.ps1</code>
+              <br />rồi tải lại trang này.
             </div>
           </div>
         ) : (
           <>
-            {page === "Bài tập" && <Problems problems={problems} onSubmitClick={goSubmit} />}
-            {page === "Nộp bài" && (
-              <SubmitPage
-                problems={problems}
-                languages={languages}
-                username={auth.username}
-                preselectedProblem={preselected}
-                onSubmitted={onSubmitted}
-              />
-            )}
-            {page === "Lịch sử nộp" && <Submissions reloadKey={reloadKey} />}
-            {page === "Bảng xếp hạng" && <Leaderboard reloadKey={reloadKey} problems={problems} />}
-            {page === "Thêm bài tập" && isAdmin && <AdminProblems onCreated={onProblemCreated} />}
+            {page === "Problems" && <Problems problems={problems} languages={languages} onSubmitted={onSubmitted} reloadKey={reloadKey} />}
+            {page === "Submissions" && <Submissions reloadKey={reloadKey} />}
+            {page === "Contests" && <Contests problems={problems} />}
+            {page === "Leaderboard" && <Leaderboard reloadKey={reloadKey} problems={problems} />}
+            {page === "Admin" && isAdmin && <AdminPanel onProblemCreated={onProblemCreated} problems={problems} />}
           </>
         )}
-      </div>
-    </>,
+      </main>
+
+      <style>{`
+        input::placeholder, textarea::placeholder { color: var(--color-text-muted); }
+      `}</style>
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <AuthProvider>
+      <AppShell />
+    </AuthProvider>
   );
 }

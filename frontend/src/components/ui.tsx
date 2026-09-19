@@ -3,20 +3,22 @@ import type { CSSProperties, ReactNode } from "react";
 import type { VerdictCode } from "../types";
 
 /**
- * Bo component dung chung, giu nguyen ngon ngu thiet ke cua ban Figma Make:
- * badge verdict, the thong ke, thanh do thoi gian, dropdown, bang du lieu.
+ * Bo component dung chung cho toan bo giao dien (theme "CodeForge" - nen sang,
+ * mau chu dao maroon). Moi trang deu dung lai tu day de giao dien nhat quan.
  */
 
+export const MONO: CSSProperties = { fontFamily: "var(--font-mono)" };
+
 export const VERDICT_META: Record<VerdictCode, { label: string; color: string; bg: string; border: string }> = {
-  AC: { label: "Accepted", color: "#4ade80", bg: "rgba(74,222,128,0.10)", border: "rgba(74,222,128,0.25)" },
-  WA: { label: "Wrong Answer", color: "#f87171", bg: "rgba(248,113,113,0.10)", border: "rgba(248,113,113,0.25)" },
-  TLE: { label: "Time Limit Exceeded", color: "#fb923c", bg: "rgba(251,146,60,0.10)", border: "rgba(251,146,60,0.25)" },
-  MLE: { label: "Memory Limit Exceeded", color: "#c084fc", bg: "rgba(192,132,252,0.10)", border: "rgba(192,132,252,0.25)" },
-  RE: { label: "Runtime Error", color: "#f472b6", bg: "rgba(244,114,182,0.10)", border: "rgba(244,114,182,0.25)" },
-  CE: { label: "Compile Error", color: "#94a3b8", bg: "rgba(148,163,184,0.08)", border: "rgba(148,163,184,0.2)" },
-  IE: { label: "Internal Error", color: "#fbbf24", bg: "rgba(251,191,36,0.10)", border: "rgba(251,191,36,0.25)" },
-  PE: { label: "Presentation Error", color: "#fbbf24", bg: "rgba(251,191,36,0.10)", border: "rgba(251,191,36,0.25)" },
-  PENDING: { label: "Đang chờ chấm", color: "#64748b", bg: "rgba(100,116,139,0.08)", border: "rgba(100,116,139,0.2)" },
+  AC: { label: "Accepted", color: "var(--color-green)", bg: "var(--color-green-bg)", border: "var(--color-green-border)" },
+  WA: { label: "Wrong Answer", color: "var(--color-red)", bg: "var(--color-red-bg)", border: "var(--color-red-border)" },
+  TLE: { label: "Time Limit Exceeded", color: "var(--color-amber)", bg: "var(--color-amber-bg)", border: "var(--color-amber-border)" },
+  MLE: { label: "Memory Limit Exceeded", color: "var(--color-purple)", bg: "var(--color-purple-bg)", border: "var(--color-purple-border)" },
+  RE: { label: "Runtime Error", color: "#be185d", bg: "rgba(190,24,93,0.08)", border: "rgba(190,24,93,0.2)" },
+  CE: { label: "Compile Error", color: "var(--color-text-muted)", bg: "var(--color-bg-raised)", border: "var(--color-border)" },
+  IE: { label: "Internal Error", color: "var(--color-amber)", bg: "var(--color-amber-bg)", border: "var(--color-amber-border)" },
+  PE: { label: "Presentation Error", color: "var(--color-amber)", bg: "var(--color-amber-bg)", border: "var(--color-amber-border)" },
+  PENDING: { label: "Đang chờ chấm", color: "var(--color-text-muted)", bg: "var(--color-bg-raised)", border: "var(--color-border)" },
 };
 
 export function VerdictBadge({ verdict, size = 11 }: { verdict: VerdictCode; size?: number }) {
@@ -32,9 +34,7 @@ export function VerdictBadge({ verdict, size = 11 }: { verdict: VerdictCode; siz
         borderRadius: 5, padding: "2px 8px", letterSpacing: "0.04em", whiteSpace: "nowrap",
       }}
     >
-      {live && (
-        <span style={{ width: 5, height: 5, borderRadius: "50%", background: m.color, animation: "livePulse 1.4s ease-in-out infinite" }} />
-      )}
+      {live && <span style={{ width: 5, height: 5, borderRadius: "50%", background: m.color, animation: "livePulse 1.4s ease-in-out infinite" }} />}
       {verdict === "PENDING" ? "..." : verdict}
     </span>
   );
@@ -42,14 +42,10 @@ export function VerdictBadge({ verdict, size = 11 }: { verdict: VerdictCode; siz
 
 export function StatCard({ label, value, sub, color }: { label: string; value: string | number; sub?: string; color?: string }) {
   return (
-    <div style={{ background: "var(--color-bg-panel)", border: "1px solid var(--color-border)", borderRadius: 8, padding: "12px 16px", minWidth: 108 }}>
-      <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, color: "var(--color-text-muted)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 4 }}>
-        {label}
-      </div>
-      <div style={{ fontFamily: "var(--font-mono)", fontSize: 20, fontWeight: 700, color: color ?? "var(--color-text-primary)", lineHeight: 1.1 }}>
-        {value}
-      </div>
-      {sub && <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, color: "var(--color-text-muted)", marginTop: 2 }}>{sub}</div>}
+    <div style={{ background: "var(--color-bg-panel)", border: "1px solid var(--color-border)", borderRadius: 9, padding: "12px 18px", minWidth: 110 }}>
+      <div style={{ ...MONO, fontSize: 9, color: "var(--color-text-muted)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 5 }}>{label}</div>
+      <div style={{ fontFamily: "var(--font-serif)", fontSize: 22, fontWeight: 700, color: color ?? "var(--color-maroon)", lineHeight: 1.1 }}>{value}</div>
+      {sub && <div style={{ ...MONO, fontSize: 10, color: "var(--color-text-muted)", marginTop: 3 }}>{sub}</div>}
     </div>
   );
 }
@@ -57,16 +53,16 @@ export function StatCard({ label, value, sub, color }: { label: string; value: s
 /** Thanh truc quan hoa thoi gian chay so voi gioi han cua bai. */
 export function ExecBar({ ms, limitMs = 2000 }: { ms: number | null; limitMs?: number }) {
   if (ms === null || ms === undefined) {
-    return <span style={{ color: "var(--color-text-muted)", fontFamily: "var(--font-mono)", fontSize: 12 }}>—</span>;
+    return <span style={{ color: "var(--color-text-muted)", ...MONO, fontSize: 12 }}>—</span>;
   }
   const ratio = Math.min(1, ms / limitMs);
-  const color = ratio < 0.4 ? "#4ade80" : ratio < 0.8 ? "#fbbf24" : "#f87171";
+  const color = ratio < 0.4 ? "var(--color-green)" : ratio < 0.8 ? "var(--color-amber)" : "var(--color-red)";
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-      <div style={{ width: 44, height: 2, background: "var(--color-bg-raised)", borderRadius: 1, flexShrink: 0 }}>
-        <div style={{ height: "100%", width: `${ratio * 100}%`, background: color, borderRadius: 1 }} />
+      <div style={{ width: 44, height: 3, background: "var(--color-bg-raised)", borderRadius: 2, flexShrink: 0 }}>
+        <div style={{ height: "100%", width: `${ratio * 100}%`, background: color, borderRadius: 2 }} />
       </div>
-      <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--color-text-secondary)", minWidth: 38 }}>{ms}</span>
+      <span style={{ ...MONO, fontSize: 12, color: "var(--color-text-secondary)", minWidth: 38 }}>{ms} ms</span>
     </div>
   );
 }
@@ -88,20 +84,25 @@ export function XIco({ size = 10 }: { size?: number }) {
   );
 }
 
+export function SearchIco() {
+  return (
+    <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+      <circle cx="6.5" cy="6.5" r="4.5" /><line x1="10" y1="10" x2="14" y2="14" />
+    </svg>
+  );
+}
+
 export function RefIco({ spinning }: { spinning: boolean }) {
   return (
-    <svg
-      width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor"
-      strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"
-      style={{ animation: spinning ? "spin 0.7s linear infinite" : "none" }}
-    >
+    <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"
+      style={{ animation: spinning ? "spin 0.7s linear infinite" : "none" }}>
       <path d="M14 8a6 6 0 1 1-1.5-4" />
       <polyline points="14 2 14 6 10 6" />
     </svg>
   );
 }
 
-/** Dropdown tu ve, cho phep xoa lua chon (giong ban thiet ke goc). */
+/** Dropdown tu ve, cho phep xoa lua chon. */
 export function Select({
   value, options, onChange, placeholder, disabledOptions = [],
 }: {
@@ -127,19 +128,17 @@ export function Select({
       <button
         onClick={() => setOpen((v) => !v)}
         style={{
-          display: "flex", alignItems: "center", gap: 6, height: 30, padding: "0 10px",
-          background: value ? "rgba(80,227,194,0.06)" : "var(--color-bg-panel)",
-          border: `1px solid ${value ? "rgba(80,227,194,0.25)" : "var(--color-border)"}`,
-          borderRadius: 6, color: value ? "#50E3C2" : "var(--color-text-muted)",
-          fontSize: 12, cursor: "pointer", fontFamily: "var(--font-mono)", whiteSpace: "nowrap",
+          display: "flex", alignItems: "center", gap: 6, height: 34, padding: "0 12px",
+          background: value ? "var(--color-maroon-pale)" : "var(--color-bg-panel)",
+          border: `1px solid ${value ? "var(--color-maroon)" : "var(--color-border)"}`,
+          borderRadius: 7, color: value ? "var(--color-maroon)" : "var(--color-text-muted)",
+          fontSize: 13, cursor: "pointer", fontFamily: "var(--font-sans)", whiteSpace: "nowrap",
+          fontWeight: value ? 600 : 400,
         }}
       >
         {value || placeholder}
         {value ? (
-          <span
-            onClick={(e) => { e.stopPropagation(); onChange(""); }}
-            style={{ display: "flex", color: "var(--color-text-muted)", marginLeft: 2 }}
-          >
+          <span onClick={(e) => { e.stopPropagation(); onChange(""); }} style={{ display: "flex", color: "var(--color-maroon)", marginLeft: 2 }}>
             <XIco size={9} />
           </span>
         ) : (
@@ -147,14 +146,12 @@ export function Select({
         )}
       </button>
       {open && (
-        <div
-          style={{
-            position: "absolute", top: "calc(100% + 4px)", left: 0, zIndex: 200,
-            background: "var(--color-bg-panel)", border: "1px solid var(--color-border)",
-            borderRadius: 8, boxShadow: "0 12px 32px rgba(0,0,0,0.6)",
-            minWidth: 180, maxHeight: 260, overflowY: "auto", padding: 4,
-          }}
-        >
+        <div style={{
+          position: "absolute", top: "calc(100% + 5px)", left: 0, zIndex: 200,
+          background: "var(--color-bg-panel)", border: "1px solid var(--color-border)",
+          borderRadius: 9, boxShadow: "0 8px 28px rgba(28,20,16,0.14)",
+          minWidth: 180, maxHeight: 260, overflowY: "auto", padding: 5,
+        }}>
           {options.map((opt) => {
             const disabled = disabledOptions.includes(opt);
             const selected = opt === value;
@@ -164,15 +161,17 @@ export function Select({
                 disabled={disabled}
                 onClick={() => { onChange(selected ? "" : opt); setOpen(false); }}
                 style={{
-                  width: "100%", display: "block", textAlign: "left", padding: "7px 10px",
-                  background: selected ? "rgba(80,227,194,0.08)" : "none", border: "none",
-                  color: disabled ? "var(--color-text-muted)" : selected ? "#50E3C2" : "var(--color-text-secondary)",
-                  fontSize: 12, cursor: disabled ? "not-allowed" : "pointer",
-                  fontFamily: "var(--font-mono)", borderRadius: 5,
+                  width: "100%", display: "block", textAlign: "left", padding: "8px 12px",
+                  background: selected ? "var(--color-maroon-pale)" : "none", border: "none",
+                  color: disabled ? "var(--color-text-muted)" : selected ? "var(--color-maroon)" : "var(--color-text-secondary)",
+                  fontSize: 13, cursor: disabled ? "not-allowed" : "pointer",
+                  fontFamily: "var(--font-sans)", borderRadius: 6, fontWeight: selected ? 600 : 400,
                   textDecoration: disabled ? "line-through" : "none",
                 }}
+                onMouseEnter={(e) => { if (!disabled && !selected) (e.currentTarget as HTMLElement).style.background = "var(--color-bg-raised)"; }}
+                onMouseLeave={(e) => { if (!disabled && !selected) (e.currentTarget as HTMLElement).style.background = "none"; }}
               >
-                {selected ? `✓ ${opt}` : opt}
+                {selected ? `✓  ${opt}` : opt}
               </button>
             );
           })}
@@ -182,23 +181,19 @@ export function Select({
   );
 }
 
-export function Panel({ title, right, children, style }: { title?: string; right?: ReactNode; children: ReactNode; style?: CSSProperties }) {
+export function Panel({ title, right, children, style }: { title?: ReactNode; right?: ReactNode; children: ReactNode; style?: CSSProperties }) {
   return (
-    <div
-      style={{
-        background: "var(--color-bg-panel)", border: "1px solid var(--color-border)",
-        borderRadius: 8, overflow: "hidden", display: "flex", flexDirection: "column", ...style,
-      }}
-    >
+    <div style={{
+      background: "var(--color-bg-panel)", border: "1px solid var(--color-border)",
+      borderRadius: 10, overflow: "hidden", display: "flex", flexDirection: "column", ...style,
+    }}>
       {(title || right) && (
-        <div
-          style={{
-            display: "flex", alignItems: "center", justifyContent: "space-between",
-            padding: "9px 14px", borderBottom: "1px solid var(--color-border)",
-            background: "var(--color-bg-raised)", flexShrink: 0,
-          }}
-        >
-          <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--color-text-muted)" }}>
+        <div style={{
+          display: "flex", alignItems: "center", justifyContent: "space-between",
+          padding: "10px 16px", borderBottom: "1px solid var(--color-border)",
+          background: "var(--color-bg-raised)", flexShrink: 0, gap: 10, flexWrap: "wrap",
+        }}>
+          <span style={{ ...MONO, fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-text-secondary)", fontWeight: 600 }}>
             {title}
           </span>
           {right}
@@ -210,39 +205,42 @@ export function Panel({ title, right, children, style }: { title?: string; right
 }
 
 export const TH: CSSProperties = {
-  textAlign: "left", padding: "8px 12px", fontFamily: "var(--font-mono)", fontSize: 10,
-  letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--color-text-muted)",
-  borderBottom: "1px solid var(--color-border)", whiteSpace: "nowrap", background: "var(--color-bg-panel)",
+  textAlign: "left", padding: "10px 14px", fontFamily: "var(--font-mono)", fontSize: 10,
+  letterSpacing: "0.09em", textTransform: "uppercase", color: "var(--color-text-muted)",
+  fontWeight: 600, borderBottom: "1px solid var(--color-border)", whiteSpace: "nowrap",
+  background: "var(--color-bg-raised)",
 };
 
 export const TD: CSSProperties = {
-  padding: "8px 12px", fontSize: 12.5, borderBottom: "1px solid var(--color-border-subtle)",
+  padding: "10px 14px", fontSize: 13, borderBottom: "1px solid var(--color-border-subtle)",
   color: "var(--color-text-secondary)", verticalAlign: "middle",
 };
 
-export const MONO: CSSProperties = { fontFamily: "var(--font-mono)" };
-
 export function Button({
-  children, onClick, variant = "ghost", disabled, style,
+  children, onClick, variant = "ghost", disabled, style, type,
 }: {
   children: ReactNode;
   onClick?: () => void;
-  variant?: "primary" | "ghost";
+  variant?: "primary" | "ghost" | "danger";
   disabled?: boolean;
   style?: CSSProperties;
+  type?: "button" | "submit";
 }) {
   const primary = variant === "primary";
+  const danger = variant === "danger";
   return (
     <button
+      type={type ?? "button"}
       onClick={onClick}
       disabled={disabled}
       style={{
-        display: "inline-flex", alignItems: "center", gap: 6, height: 30, padding: "0 14px",
-        borderRadius: 6, fontSize: 12, fontFamily: "var(--font-mono)",
-        cursor: disabled ? "not-allowed" : "pointer", opacity: disabled ? 0.5 : 1,
-        background: primary ? "rgba(80,227,194,0.12)" : "var(--color-bg-panel)",
-        border: `1px solid ${primary ? "rgba(80,227,194,0.35)" : "var(--color-border)"}`,
-        color: primary ? "#50E3C2" : "var(--color-text-secondary)",
+        display: "inline-flex", alignItems: "center", gap: 6, height: 32, padding: "0 14px",
+        borderRadius: 7, fontSize: 12.5, fontFamily: "var(--font-sans)", fontWeight: primary ? 600 : 400,
+        cursor: disabled ? "not-allowed" : "pointer", opacity: disabled ? 0.55 : 1,
+        background: primary ? "var(--color-maroon)" : danger ? "none" : "var(--color-bg-panel)",
+        border: `1px solid ${primary ? "var(--color-maroon)" : danger ? "var(--color-red)" : "var(--color-border)"}`,
+        color: primary ? "#FAF7F2" : danger ? "var(--color-red)" : "var(--color-text-secondary)",
+        transition: "opacity 0.15s",
         ...style,
       }}
     >
@@ -253,13 +251,23 @@ export function Button({
 
 export function ErrorBox({ message }: { message: string }) {
   return (
-    <div
-      style={{
-        margin: 12, padding: "10px 14px", borderRadius: 6, fontSize: 12.5,
-        background: "rgba(248,113,113,0.08)", border: "1px solid rgba(248,113,113,0.25)",
-        color: "#f87171", fontFamily: "var(--font-mono)", whiteSpace: "pre-wrap",
-      }}
-    >
+    <div style={{
+      margin: 12, padding: "10px 14px", borderRadius: 7, fontSize: 12.5,
+      background: "var(--color-red-bg)", border: "1px solid var(--color-red-border)",
+      color: "var(--color-red)", fontFamily: "var(--font-mono)", whiteSpace: "pre-wrap",
+    }}>
+      {message}
+    </div>
+  );
+}
+
+export function Notice({ message }: { message: string }) {
+  return (
+    <div style={{
+      margin: 12, padding: "10px 14px", borderRadius: 7, fontSize: 12.5,
+      background: "var(--color-green-bg)", border: "1px solid var(--color-green-border)",
+      color: "var(--color-green)", fontFamily: "var(--font-mono)",
+    }}>
       {message}
     </div>
   );
@@ -272,14 +280,12 @@ export function SampleBox({ label, text }: { label: string; text: string }) {
       <div style={{ ...MONO, fontSize: 9.5, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--color-text-muted)", marginBottom: 4 }}>
         {label}
       </div>
-      <pre
-        style={{
-          margin: 0, padding: "8px 10px", background: "var(--color-bg-base)",
-          border: "1px solid var(--color-border)", borderRadius: 6,
-          fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--color-text-primary)",
-          whiteSpace: "pre-wrap", overflowX: "auto",
-        }}
-      >
+      <pre style={{
+        margin: 0, padding: "8px 10px", background: "var(--color-bg-base)",
+        border: "1px solid var(--color-border)", borderRadius: 6,
+        fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--color-text-primary)",
+        whiteSpace: "pre-wrap", overflowX: "auto",
+      }}>
         {text.trimEnd()}
       </pre>
     </div>
