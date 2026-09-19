@@ -1,0 +1,4 @@
+Cho n số nguyên. Tính trung bình cộng của chúng.
+
+Input : dòng đầu chứa số n, dòng thứ hai chứa n số nguyên.
+Output: trung bình cộng của dãy. Đáp án được chấp nhận nếu sai số không vượt quá 1e-6.

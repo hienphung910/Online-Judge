@@ -1,0 +1,35 @@
+# Kịch bản demo chấm bài tự động.
+#
+# Cú pháp mỗi dòng:
+#   mãBài | username | đường dẫn file (tương đối với data/submissions) | verdict kỳ vọng
+#
+# Cột verdict kỳ vọng là tuỳ chọn: chế độ --selftest sẽ đối chiếu verdict thực tế
+# với cột này rồi báo ĐÚNG/LỆCH, dùng để kiểm tra hệ thống trước khi demo.
+# Dòng bắt đầu bằng # là ghi chú.
+
+# --- P001: Java, đủ 7 loại verdict ---
+P001 | hiennm  | P001/SumAC.java   | AC
+P001 | hiennm  | P001/SumWA.java   | WA
+P001 | lananh  | P001/SumTLE.java  | TLE
+P001 | lananh  | P001/SumMLE.java  | MLE
+P001 | lananh  | P001/SumRE.java   | RE
+P001 | tuanpv  | P001/SumCE.java   | CE
+
+# --- P002: Java, comparator "exact" phân biệt YES/yes ---
+P002 | hiennm  | P002/PrimeAC.java | AC
+P002 | tuanpv  | P002/PrimeWA.java | WA
+
+# --- P003: Java, comparator "float" cho phép sai số ---
+P003 | hiennm  | P003/AvgAC.java   | AC
+P003 | tuanpv  | P003/AvgWA.java   | WA
+
+# --- Phần mở rộng: chứng minh hệ thống chấm được 6 ngôn ngữ.
+# --- Máy nào chưa cài g++/Python/Go/Node/Rust thì dòng đó tự động BỎ QUA,
+# --- không ảnh hưởng phần demo Java ở trên.
+P001 | tuanpv  | P001/sum_ac.cpp   | AC
+P001 | lananh  | P001/sum_ac.py    | AC
+P003 | lananh  | P003/avg_ac.py    | AC
+P001 | tuanpv  | P001/sum_ac.js    | AC
+P001 | hiennm  | P001/sum_ac.go    | AC
+P001 | hiennm  | P001/sum_ac.rs    | AC
+P002 | lananh  | P002/prime_wa.js  | WA

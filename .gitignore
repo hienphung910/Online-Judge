@@ -1,0 +1,25 @@
+# Ket qua bien dich
+out/
+target/
+*.class
+sources.txt
+
+# Thu vien tai ve (Maven se tai lai, hoac run.ps1 / run.sh tu tai)
+lib/
+
+# Cau hinh moi truong - CHUA MAT KHAU CSDL, khong bao gio dua len git.
+# Ban mau khong co mat khau that la .env.example (co commit).
+.env
+
+# File tam cua Python (khi kiem tra cu phap bai nop .py)
+__pycache__/
+*.pyc
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Frontend
+frontend/node_modules/
+frontend/dist/

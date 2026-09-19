@@ -1,0 +1,10 @@
+// Bai nop dung cho P001 bang Go -> ky vong AC.
+package main
+
+import "fmt"
+
+func main() {
+	var a, b int64
+	fmt.Scan(&a, &b)
+	fmt.Println(a + b)
+}

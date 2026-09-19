@@ -1,0 +1,4 @@
+Cho t truy vấn, mỗi truy vấn là một số nguyên n (1 <= n <= 10^12).
+
+Input : dòng đầu chứa số t, sau đó là t dòng, mỗi dòng một số n.
+Output: với mỗi n, in ra YES nếu n là số nguyên tố, ngược lại in ra NO.

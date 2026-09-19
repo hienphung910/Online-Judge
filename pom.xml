@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Maven chi lam DUY NHAT hai viec cho project nay:
+    1. Quan ly dependency MySQL Connector/J (tai ve va do vao thu muc lib/),
+    2. Bien dich ma nguon Java 11.
+
+  Cau truc thu muc cua bai tap lon duoc GIU NGUYEN:
+    - sourceDirectory tro thang vao src/ (khong phai src/main/java),
+    - outputDirectory la out/ (dung thu muc ma run.ps1 / run.sh van dung),
+  nen chay bang Maven hay chay bang script deu cho ket qua giong nhau.
+
+  Lenh thuong dung:
+    mvn -q clean compile          -> bien dich vao out/ va tai lib/mysql-connector-j-*.jar
+    mvn -q dependency:copy-dependencies   -> chi tai thu vien ve lib/
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.ptit</groupId>
+  <artifactId>online-judge</artifactId>
+  <version>2.0.0</version>
+  <packaging>jar</packaging>
+
+  <name>PTIT Online Judge</name>
+  <description>Trình chấm bài tự động - bài tập lớn môn Lập trình hướng đối tượng</description>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <maven.compiler.release>11</maven.compiler.release>
+    <mysql.connector.version>8.4.0</mysql.connector.version>
+    <main.class>com.ptit.oj.Main</main.class>
+  </properties>
+
+  <dependencies>
+    <!--
+      Dependency ngoai DUY NHAT cua project: trinh dieu khien JDBC cua MySQL.
+      Ban 8.4.0 la ban on dinh, chay tot tren JDK 11 va MySQL 8.x, va khong keo
+      theo thu vien bat buoc nao khac (protobuf chi can cho X DevAPI - pham vi
+      provided - nen classpath khi chay chi co dung mot file jar).
+    -->
+    <dependency>
+      <groupId>com.mysql</groupId>
+      <artifactId>mysql-connector-j</artifactId>
+      <version>${mysql.connector.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <!-- Giu nguyen cau truc thu muc san co thay vi ep theo chuan Maven -->
+    <sourceDirectory>src</sourceDirectory>
+    <outputDirectory>out</outputDirectory>
+    <directory>target</directory>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.13.0</version>
+        <configuration>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+
+      <!-- Do thu vien vao lib/ de run.ps1 / run.bat / run.sh chay duoc khong can Maven -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.6.1</version>
+        <executions>
+          <execution>
+            <id>copy-deps-to-lib</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.basedir}/lib</outputDirectory>
+              <includeScope>runtime</includeScope>
+              <overWriteIfNewer>true</overWriteIfNewer>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.4.1</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>${main.class}</mainClass>
+              <addClasspath>true</addClasspath>
+              <classpathPrefix>lib/</classpathPrefix>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

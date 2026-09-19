@@ -1,0 +1,4 @@
+Cho hai số nguyên a và b (|a|, |b| <= 10^9).
+
+Input : một dòng chứa hai số a và b.
+Output: một số duy nhất là a + b.
