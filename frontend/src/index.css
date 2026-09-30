@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
 @import 'tailwindcss';
 
@@ -9,78 +8,81 @@ html, body, #root {
 
 body {
   margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 @theme inline {
-  /* Ground */
-  --color-bg-base:    #FAF7F2;
-  --color-bg-panel:   #FFFFFF;
-  --color-bg-raised:  #F3EFE8;
-  --color-bg-hover:   #EDE8DF;
+  /* Page background */
+  --color-page-bg: #EEF1F5;
+  --color-card-bg: #FFFFFF;
 
-  /* Borders */
-  --color-border:        #DDD6CB;
-  --color-border-subtle: #EDE8DF;
-  --color-border-active: #7C1D2B;
+  /* Header */
+  --color-header: #C62828;
+  --color-header-dark: #B71C1C;
 
-  /* Maroon palette */
-  --color-maroon:       #7C1D2B;
-  --color-maroon-dark:  #5C1420;
-  --color-maroon-mid:   #9B2335;
-  --color-maroon-pale:  #F5E8EA;
-
-  /* Verdicts / status */
-  --color-green:  #16794C;
-  --color-green-bg: rgba(22,121,76,0.08);
-  --color-green-border: rgba(22,121,76,0.22);
-  --color-red:    #C0392B;
-  --color-red-bg: rgba(192,57,43,0.08);
-  --color-red-border: rgba(192,57,43,0.22);
-  --color-amber:  #B45309;
-  --color-amber-bg: rgba(180,83,9,0.08);
-  --color-amber-border: rgba(180,83,9,0.22);
-  --color-blue:   #1D4ED8;
-  --color-blue-bg: rgba(29,78,216,0.08);
-  --color-blue-border: rgba(29,78,216,0.2);
-  --color-purple: #7C3AED;
-  --color-purple-bg: rgba(124,58,237,0.08);
-  --color-purple-border: rgba(124,58,237,0.2);
+  /* Table */
+  --color-table-header-bg: #FDECEA;
+  --color-table-row-alt: #FFF8F7;
+  --color-table-border: #F0E0DE;
+  --color-table-hover: #FFF0EE;
 
   /* Text */
-  --color-text-primary:   #1C1410;
-  --color-text-secondary: #5C4F46;
-  --color-text-muted:     #9C8C80;
-  --color-text-accent:    #7C1D2B;
+  --color-text-primary: #212121;
+  --color-text-secondary: #616161;
+  --color-text-muted: #9E9E9E;
+  --color-text-red: #C62828;
 
-  /* Code editor accent (CodeMirror caret / selection) */
-  --color-accent-cyan: #0891b2;
+  /* Borders */
+  --color-border: #E0E0E0;
+  --color-border-light: #F0F0F0;
+
+  /* Accent */
+  --color-red: #C62828;
+  --color-red-light: #FDECEA;
+  --color-green: #2E7D32;
+  --color-green-bg: rgba(46,125,50,0.08);
+  --color-green-border: rgba(46,125,50,0.2);
+  --color-orange: #E65100;
+  --color-orange-bg: rgba(230,81,0,0.08);
+  --color-blue: #1565C0;
+  --color-amber: #F57F17;
+  --color-purple: #6A1B9A;
+
+  /* Badge */
+  --color-ac-bg: #E8F5E9;
+  --color-ac-text: #2E7D32;
+  --color-wa-bg: #FFEBEE;
+  --color-wa-text: #C62828;
 
   /* Fonts */
-  --font-serif: 'Lora', Georgia, serif;
-  --font-sans:  'Inter', system-ui, sans-serif;
-  --font-mono:  'JetBrains Mono', 'Fira Code', monospace;
+  --font-sans: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Consolas', monospace;
 }
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #DDD6CB transparent;
+  scrollbar-color: #D0D0D0 transparent;
 }
-*::-webkit-scrollbar { width: 5px; height: 5px; }
+*::-webkit-scrollbar { width: 6px; height: 6px; }
 *::-webkit-scrollbar-track { background: transparent; }
-*::-webkit-scrollbar-thumb { background: #DDD6CB; border-radius: 3px; }
-*::-webkit-scrollbar-thumb:hover { background: #C9BFB4; }
+*::-webkit-scrollbar-thumb { background: #D0D0D0; border-radius: 3px; }
 
 @keyframes livePulse {
   0%, 100% { opacity: 1; transform: scale(1); }
-  50%       { opacity: 0.3; transform: scale(0.8); }
+  50%      { opacity: 0.3; transform: scale(0.8); }
 }
 @keyframes spin {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
 }
 @keyframes slideIn {
-  from { opacity: 0; transform: translateY(-6px); }
+  from { opacity: 0; transform: translateY(-8px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
 
-input::placeholder, textarea::placeholder { color: var(--color-text-muted); }
+input::placeholder, textarea::placeholder { color: #BDBDBD; }

@@ -3,7 +3,6 @@ import { api } from "../api";
 import { useAuth } from "../auth";
 import type { LanguageInfo, Problem, Submission } from "../types";
 import ProblemDetail from "./ProblemDetail";
-import { SearchIco, XIco } from "../components/ui";
 
 type Status = "solved" | "attempted" | "unsolved";
 
@@ -24,7 +23,6 @@ export default function Problems({
   const [selected, setSelected] = useState<Problem | null>(null);
   const [mySubs, setMySubs] = useState<Submission[]>([]);
 
-  // Trang thai "da giai / da thu / chua lam" cua CHINH minh, suy tu lich su nop bai.
   useEffect(() => {
     let alive = true;
     if (!user) return;
@@ -51,125 +49,129 @@ export default function Problems({
   }, [problems, search]);
 
   const solvedCount = problems.filter((p) => statusByProblem.get(p.id) === "solved").length;
-  const pct = problems.length > 0 ? Math.round((solvedCount / problems.length) * 100) : 0;
 
   if (selected) {
-    return (
-      <ProblemDetail
-        problem={selected}
-        languages={languages}
-        onBack={() => setSelected(null)}
-        onSubmitted={onSubmitted}
-      />
-    );
+    return <ProblemDetail problem={selected} languages={languages} onBack={() => setSelected(null)} onSubmitted={onSubmitted} />;
   }
 
   return (
-    <div style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden", padding: "0 32px 24px" }}>
-      <div style={{ paddingTop: 28, paddingBottom: 20, borderBottom: "1px solid var(--color-border)", marginBottom: 24 }}>
-        <h1 style={{ fontFamily: "var(--font-serif)", fontSize: 30, fontWeight: 700, color: "var(--color-maroon)", margin: "0 0 4px", letterSpacing: "-0.02em" }}>Problem Set</h1>
-        <p style={{ fontFamily: "var(--font-sans)", fontSize: 14, color: "var(--color-text-muted)", margin: 0 }}>Luyện tập các bài toán thuật toán và theo dõi tiến độ của bạn.</p>
-      </div>
+    <div style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }}>
 
-      <div style={{ display: "flex", gap: 14, marginBottom: 24, flexWrap: "wrap" }}>
-        <div style={{ background: "var(--color-bg-panel)", border: "1px solid var(--color-border)", borderRadius: 10, padding: "16px 20px", display: "flex", alignItems: "center", gap: 20 }}>
-          <div style={{ position: "relative", width: 58, height: 58, flexShrink: 0 }}>
-            <svg width="58" height="58" viewBox="0 0 58 58">
-              <circle cx="29" cy="29" r="24" fill="none" stroke="var(--color-bg-raised)" strokeWidth="5" />
-              <circle cx="29" cy="29" r="24" fill="none" stroke="var(--color-maroon)" strokeWidth="5" strokeLinecap="round"
-                strokeDasharray={`${2 * Math.PI * 24}`} strokeDashoffset={`${2 * Math.PI * 24 * (1 - pct / 100)}`} transform="rotate(-90 29 29)" />
-            </svg>
-            <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: 13, fontWeight: 700, color: "var(--color-maroon)", lineHeight: 1 }}>{pct}%</span>
-            </div>
-          </div>
-          <div>
-            <div style={{ fontFamily: "var(--font-serif)", fontSize: 22, fontWeight: 700, color: "var(--color-maroon)", lineHeight: 1 }}>
-              {solvedCount}<span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--color-text-muted)", fontWeight: 400 }}> / {problems.length}</span>
-            </div>
-            <div style={{ fontFamily: "var(--font-sans)", fontSize: 12, color: "var(--color-text-muted)", marginTop: 3 }}>bài đã giải</div>
-          </div>
+
+      {/* ═══ CLASS SECTION ═══ */}
+      <div style={{ padding: "12px 24px 8px", display: "flex", alignItems: "center", justifyContent: "space-between", flexShrink: 0 }}>
+        <div style={{ fontSize: 14, fontWeight: 600, color: "#212121" }}>Lớp học của tôi</div>
+        <div style={{ fontSize: 12, color: "#757575", background: "#fff", border: "1px solid #E0E0E0", borderRadius: 6, padding: "6px 14px" }}>
+          CodeForge — Luyện tập lập trình
         </div>
       </div>
 
-      <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12, flexWrap: "wrap" }}>
-        <div style={{ position: "relative", flex: 1, minWidth: 220, maxWidth: 380 }}>
-          <span style={{ position: "absolute", left: 11, top: "50%", transform: "translateY(-50%)", color: "var(--color-text-muted)", pointerEvents: "none", display: "flex" }}><SearchIco /></span>
+      {/* ═══ SEARCH BAR ═══ */}
+      <div style={{ padding: "8px 24px", flexShrink: 0 }}>
+        <div style={{ position: "relative", maxWidth: 280 }}>
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#BDBDBD" strokeWidth="1.5" style={{ position: "absolute", left: 10, top: "50%", transform: "translateY(-50%)" }}>
+            <circle cx="6.5" cy="6.5" r="4.5" /><line x1="10" y1="10" x2="14" y2="14" />
+          </svg>
           <input
-            type="text" placeholder="Tìm theo tên hoặc mã bài…" value={search} onChange={(e) => setSearch(e.target.value)}
-            style={{ width: "100%", height: 34, paddingLeft: 34, paddingRight: search ? 30 : 12, background: "var(--color-bg-panel)", border: "1px solid var(--color-border)", borderRadius: 7, color: "var(--color-text-primary)", fontSize: 13, fontFamily: "var(--font-sans)", outline: "none", boxSizing: "border-box" }}
+            type="text" placeholder="Tìm mã / tên bài" value={search} onChange={(e) => setSearch(e.target.value)}
+            style={{
+              width: "100%", height: 34, paddingLeft: 32, paddingRight: 10,
+              background: "#fff", border: "1px solid #E0E0E0", borderRadius: 6,
+              fontSize: 13, color: "#212121", outline: "none", boxSizing: "border-box",
+            }}
+            onFocus={(e) => { e.target.style.borderColor = "#C62828"; }}
+            onBlur={(e) => { e.target.style.borderColor = "#E0E0E0"; }}
           />
-          {search && <button onClick={() => setSearch("")} style={{ position: "absolute", right: 9, top: "50%", transform: "translateY(-50%)", background: "none", border: "none", color: "var(--color-text-muted)", cursor: "pointer", padding: 2, display: "flex", borderRadius: 3 }}><XIco size={10} /></button>}
         </div>
-        <div style={{ flex: 1 }} />
-        <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--color-text-muted)" }}>{filtered.length} / {problems.length}</span>
       </div>
 
-      <div style={{ flex: 1, overflow: "auto", border: "1px solid var(--color-border)", borderRadius: 10, background: "var(--color-bg-panel)" }}>
+      {/* ═══ PROBLEMS TABLE ═══ */}
+      <div style={{ flex: 1, overflow: "auto", margin: "0 24px 16px", background: "#fff", border: "1px solid #E0E0E0", borderRadius: 8 }}>
         <table style={{ width: "100%", borderCollapse: "collapse" }}>
           <thead>
-            <tr>
-              <th style={{ ...TH_STYLE, width: 72, textAlign: "center" }}>Trạng thái</th>
-              <th style={{ ...TH_STYLE, width: 100 }}>Mã bài</th>
-              <th style={TH_STYLE}>Tên bài</th>
-              <th style={{ ...TH_STYLE, width: 160 }}>Giới hạn</th>
-              <th style={{ ...TH_STYLE, width: 100, textAlign: "right" }}>Điểm</th>
+            <tr style={{ background: "var(--color-table-header-bg)" }}>
+              <th style={TH_S}>TT</th>
+              <th style={{ ...TH_S, textAlign: "left" }}>Mã</th>
+              <th style={{ ...TH_S, textAlign: "left", width: "auto" }}>Tên đề</th>
+              <th style={TH_S}>
+                <span style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                  Chủ đề
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="#9E9E9E" strokeWidth="1.5"><path d="M2 4l3 3 3-3" /></svg>
+                </span>
+              </th>
+              <th style={TH_S}>
+                <span style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                  Chủ đề con
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="#9E9E9E" strokeWidth="1.5"><path d="M2 4l3 3 3-3" /></svg>
+                </span>
+              </th>
             </tr>
           </thead>
           <tbody>
             {filtered.length === 0 ? (
-              <tr><td colSpan={5} style={{ padding: "52px 16px", textAlign: "center", color: "var(--color-text-muted)", fontFamily: "var(--font-mono)", fontSize: 13 }}>
-                {problems.length === 0 ? "Chưa nạp được bài tập nào từ máy chủ." : "Không có bài nào khớp tìm kiếm."}
+              <tr><td colSpan={5} style={{ padding: 40, textAlign: "center", color: "#9E9E9E", fontSize: 13 }}>
+                {problems.length === 0 ? "Chưa có bài tập nào." : "Không tìm thấy bài phù hợp."}
               </td></tr>
-            ) : filtered.map((p) => {
+            ) : filtered.map((p, idx) => {
               const isHov = hov === p.id;
               const status = statusByProblem.get(p.id) ?? "unsolved";
+              const rowBg = isHov ? "var(--color-table-hover)" : idx % 2 === 1 ? "var(--color-table-row-alt)" : "#fff";
               return (
-                <tr key={p.id} onMouseEnter={() => setHov(p.id)} onMouseLeave={() => setHov(null)} onClick={() => setSelected(p)}
-                  style={{ borderBottom: "1px solid var(--color-border-subtle)", background: isHov ? "var(--color-bg-raised)" : "transparent", cursor: "pointer", transition: "background 0.12s" }}>
-                  <td style={{ padding: "12px 16px", textAlign: "center" }}>
-                    {status === "solved" && <CheckCircle />}
-                    {status === "attempted" && <DashCircle />}
+                <tr
+                  key={p.id}
+                  onMouseEnter={() => setHov(p.id)} onMouseLeave={() => setHov(null)}
+                  onClick={() => setSelected(p)}
+                  style={{ background: rowBg, cursor: "pointer", borderBottom: "1px solid #F5F5F5", transition: "background 0.1s" }}
+                >
+                  <td style={{ ...TD_S, textAlign: "center", width: 44, color: "#9E9E9E" }}>{idx + 1}</td>
+                  <td style={{ ...TD_S, width: 100 }}>
+                    <span style={{
+                      fontFamily: "var(--font-mono)", fontSize: 12, fontWeight: 600,
+                      color: status === "solved" ? "var(--color-green)" : "var(--color-red)",
+                    }}>
+                      {p.id}
+                    </span>
                   </td>
-                  <td style={{ padding: "12px 16px" }}><span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--color-text-muted)" }}>{p.id}</span></td>
-                  <td style={{ padding: "12px 16px" }}>
-                    <span style={{ fontFamily: "var(--font-sans)", fontSize: 14, fontWeight: 500, color: isHov ? "var(--color-maroon)" : "var(--color-text-primary)" }}>{p.title}</span>
+                  <td style={TD_S}>
+                    <span style={{
+                      fontSize: 13, fontWeight: 500,
+                      color: status === "solved" ? "var(--color-green)" : isHov ? "var(--color-red)" : "#212121",
+                    }}>
+                      {status === "solved" && <span style={{ marginRight: 4 }}>✓</span>}
+                      {p.title}
+                    </span>
                   </td>
-                  <td style={{ padding: "12px 16px" }}>
-                    <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--color-text-secondary)" }}>{p.timeLimitMs} ms / {p.memoryLimitMb} MB</span>
-                  </td>
-                  <td style={{ padding: "12px 16px", textAlign: "right" }}>
-                    <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--color-text-secondary)" }}>{p.maxPoints.toFixed(0)}</span>
-                  </td>
+                  <td style={{ ...TD_S, color: "#616161", fontSize: 12.5 }}>NGÔN NGỮ JAVA</td>
+                  <td style={{ ...TD_S, color: "#616161", fontSize: 12.5 }}>LẬP TRÌNH JAVA CƠ BẢN</td>
                 </tr>
               );
             })}
           </tbody>
         </table>
       </div>
+
+      {/* ═══ PROGRESS BAR ═══ */}
+      <div style={{ padding: "0 24px 12px", flexShrink: 0 }}>
+        <div style={{ height: 6, background: "#E0E0E0", borderRadius: 3, overflow: "hidden" }}>
+          <div style={{
+            height: "100%", borderRadius: 3,
+            width: problems.length > 0 ? `${(solvedCount / problems.length) * 100}%` : "0%",
+            background: "linear-gradient(90deg, #66BB6A, #43A047)",
+            transition: "width 0.5s ease",
+          }} />
+        </div>
+      </div>
     </div>
   );
 }
 
-const TH_STYLE: React.CSSProperties = {
-  padding: "10px 16px", textAlign: "left", fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600,
-  color: "var(--color-text-muted)", textTransform: "uppercase", letterSpacing: "0.09em",
-  borderBottom: "1px solid var(--color-border)", background: "var(--color-bg-raised)", whiteSpace: "nowrap",
+const TH_S: React.CSSProperties = {
+  padding: "10px 14px", fontSize: 12, fontWeight: 700, color: "#757575",
+  textAlign: "center", whiteSpace: "nowrap", textTransform: "uppercase",
+  borderBottom: "1px solid var(--color-table-border)",
+  position: "sticky", top: 0, zIndex: 2, background: "var(--color-table-header-bg)",
 };
 
-function CheckCircle() {
-  return (
-    <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
-      <circle cx="8" cy="8" r="7" fill="var(--color-green-bg)" stroke="var(--color-green-border)" strokeWidth="1.2" />
-      <polyline points="4.5 8.5 7 11 11.5 5.5" stroke="var(--color-green)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function DashCircle() {
-  return (
-    <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
-      <circle cx="8" cy="8" r="7" fill="var(--color-amber-bg)" stroke="var(--color-amber-border)" strokeWidth="1.2" strokeDasharray="3 2" />
-    </svg>
-  );
-}
+const TD_S: React.CSSProperties = {
+  padding: "10px 14px", fontSize: 13, verticalAlign: "middle",
+};
