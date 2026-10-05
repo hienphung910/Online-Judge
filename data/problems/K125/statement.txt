@@ -1,0 +1,11 @@
+Nhóm thám hiểm tìm thấy một căn hầm bí mật! Cầu thang dẫn xuống hầm có bậc trên cùng dài nhất, càng xuống càng ngắn dần. Mỗi viên đá của bậc thang là một dấu #.
+
+Đầu vào:
+- Một số nguyên n là số bậc thang.
+
+Đầu ra:
+- In ra n dòng. Dòng thứ 1 có n dấu #, dòng thứ 2 có n - 1 dấu #, ..., dòng cuối có 1 dấu #.
+- Nói cách khác, dòng thứ i gồm đúng n - i + 1 dấu # viết liền nhau, bắt đầu sát lề trái.
+
+Giới hạn:
+- 1 ≤ n ≤ 20.

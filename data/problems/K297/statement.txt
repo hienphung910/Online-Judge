@@ -1,0 +1,16 @@
+Khu rừng là một bảng n hàng, m cột ô, mỗi ô có một số cây nấm. Nhím con đi từ ô (1, 1) ở góc trên bên trái đến ô (n, m) ở góc dưới bên phải; mỗi bước nhím chỉ được sang phải một ô hoặc xuống dưới một ô. Nhím nhặt hết nấm ở mọi ô mình đi qua, kể cả ô đầu tiên và ô cuối cùng. Hỏi nhím nhặt được nhiều nhất bao nhiêu cây nấm?
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và m.
+- n dòng tiếp theo, mỗi dòng chứa m số nguyên cách nhau một dấu cách: số nấm ở từng ô.
+- Ô (i, j) là ô ở hàng i (đếm từ trên xuống), cột j (đếm từ trái sang).
+
+Đầu ra:
+- Một số nguyên: số nấm nhiều nhất nhím có thể nhặt.
+
+Giới hạn:
+- 1 ≤ n, m ≤ 50.
+- Mỗi ô có từ 0 đến 100 cây nấm.
+
+Gợi ý:
+- Gọi best[i][j] là số nấm nhiều nhất khi đi tới ô (i, j). Khi đó best[i][j] bằng số nấm ở ô (i, j) cộng với số lớn hơn trong best của ô ngay phía trên và best của ô ngay bên trái (nếu có).

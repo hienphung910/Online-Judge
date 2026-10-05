@@ -1,0 +1,9 @@
+Có những con số rất "kiêu hãnh" vì chúng tự tạo ra chính mình từ các chữ số của mình, gọi là số Armstrong.
+
+Gọi k là số chữ số của n. Số n là số Armstrong nếu tổng các chữ số của n, mỗi chữ số nâng lên lũy thừa k, bằng đúng n. Ở đây a^k nghĩa là a nhân với chính nó k lần. Ví dụ 407 có 3 chữ số và 4^3 + 0^3 + 7^3 = 64 + 0 + 343 = 407, nên 407 là số Armstrong. Mọi số có một chữ số đều là số Armstrong.
+
+Đầu vào:
+- Một số nguyên n (1 ≤ n ≤ 99 999 999).
+
+Đầu ra:
+- In ra YES nếu n là số Armstrong, ngược lại in ra NO.

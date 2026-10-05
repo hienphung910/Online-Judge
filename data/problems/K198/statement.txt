@@ -1,0 +1,13 @@
+Một đoàn tàu hàng có n toa, đánh số từ 1 đến n, toa thứ i chở a[i] tấn hàng. Chú lái tàu muốn tìm hai toa đứng cạnh nhau (toa i và toa i+1) có tổng khối lượng hàng lớn nhất để kiểm tra kỹ hơn.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n — số toa tàu.
+- Dòng thứ hai chứa n số nguyên a[1], a[2], ..., a[n], cách nhau một dấu cách.
+
+Đầu ra:
+- In ra hai số nguyên cách nhau một dấu cách: tổng lớn nhất a[i] + a[i+1] và vị trí i của toa đứng trước trong cặp đó.
+- Nếu có nhiều cặp cùng tổng lớn nhất, chọn cặp có i nhỏ nhất.
+
+Giới hạn:
+- 2 ≤ n ≤ 1000
+- 1 ≤ a[i] ≤ 10^6

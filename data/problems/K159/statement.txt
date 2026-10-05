@@ -1,0 +1,9 @@
+An có n viên kẹo và muốn chia hết cho một nhóm bạn sao cho bạn nào cũng được số kẹo bằng nhau, không thừa viên nào. Hãy liệt kê tất cả các số bạn mà nhóm có thể có.
+
+Số d được gọi là ước của n nếu n chia hết cho d (tức là n % d bằng 0). Các số bạn cần tìm chính là các ước của n, kể cả 1 và chính n.
+
+Đầu vào:
+- Một số nguyên n (1 ≤ n ≤ 1 000 000).
+
+Đầu ra:
+- In ra tất cả các ước của n theo thứ tự tăng dần, trên một dòng, cách nhau một dấu cách.

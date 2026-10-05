@@ -1,0 +1,12 @@
+Cửa hàng kẹo có n hộp kẹo, mỗi hộp có một số viên kẹo. Mỗi bạn nhỏ đến cửa hàng mang theo một số may mắn x và muốn nhận hộp có số viên kẹo gần x nhất.
+
+Đầu vào:
+- Dòng 1: hai số nguyên n và q (q là số bạn nhỏ).
+- Dòng 2: n số nguyên là số viên kẹo trong từng hộp (chưa sắp xếp).
+- Dòng 3: q số nguyên x là số may mắn của từng bạn.
+
+Đầu ra:
+- q dòng, dòng thứ i là số viên kẹo a của hộp gần với số may mắn thứ i nhất, tức là khoảng cách giữa a và x (lấy số lớn trừ số nhỏ) là nhỏ nhất. Nếu có hai giá trị cách x bằng nhau thì chọn giá trị nhỏ hơn. (Các hộp không bị lấy đi, mỗi bạn chọn độc lập.)
+
+Giới hạn:
+- 1 ≤ n, q ≤ 1000; 1 ≤ số viên kẹo, x ≤ 100000.

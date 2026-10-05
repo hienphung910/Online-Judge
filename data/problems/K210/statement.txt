@@ -1,0 +1,15 @@
+Dọc bờ biển có n ngọn hải đăng đứng thành một hàng từ trái sang phải, đánh số từ 1 đến n, ngọn thứ i cao a[i] mét. Biển nằm ở phía bên phải của hàng. Ngọn hải đăng thứ i nhìn thấy biển nếu nó cao hơn hẳn tất cả các ngọn đứng bên phải nó. Ngọn cuối cùng luôn nhìn thấy biển vì không có gì che.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n — số ngọn hải đăng.
+- Dòng thứ hai chứa n số nguyên a[1], a[2], ..., a[n], cách nhau một dấu cách.
+
+Đầu ra:
+- In ra trên một dòng vị trí của các ngọn hải đăng nhìn thấy biển, theo thứ tự tăng dần, cách nhau một dấu cách.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000
+- 1 ≤ a[i] ≤ 10^6
+
+Gợi ý:
+- Duyệt từ phải sang trái và luôn nhớ chiều cao lớn nhất đã gặp.

@@ -1,0 +1,19 @@
+Robot Bi sắp được đi du lịch vòng quanh thế giới nên cần một cuốn hộ chiếu. Em hãy in trang thông tin của hộ chiếu thật đúng mẫu.
+
+Đầu vào:
+- Dòng 1: tên robot (một từ gồm chữ cái tiếng Anh, không có dấu cách).
+- Dòng 2: một số nguyên n là số hiệu của robot.
+- Dòng 3: ba số nguyên d, m, y là ngày, tháng, năm chế tạo.
+- Dòng 4: một số nguyên c là chiều cao của robot (cm).
+
+Đầu ra: in ra đúng 5 dòng
+- Dòng 1: HO CHIEU ROBOT
+- Dòng 2: Ten: <tên>
+- Dòng 3: So hieu: R-<n viết đủ 3 chữ số>
+- Dòng 4: Ngay che tao: <dd/mm/yyyy>
+- Dòng 5: Chieu cao: <c> cm
+
+Giới hạn:
+- Tên dài không quá 20 ký tự.
+- 1 ≤ n ≤ 999; 10 ≤ c ≤ 300.
+- d, m, y luôn tạo thành một ngày có thật; 1900 ≤ y ≤ 2100.

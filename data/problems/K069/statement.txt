@@ -1,0 +1,16 @@
+Vườn thú Rừng Xanh bán vé theo tuổi của khách. Em hãy giúp cô bán vé tính giá vé cho từng người nhé!
+
+Bảng giá vé:
+- Dưới 6 tuổi: miễn phí (0 đồng).
+- Từ 6 đến 15 tuổi: 20000 đồng.
+- Từ 16 đến 59 tuổi: 50000 đồng.
+- Từ 60 tuổi trở lên: 25000 đồng.
+
+Đầu vào:
+- Một số nguyên t là tuổi của khách.
+
+Đầu ra:
+- In ra một số nguyên là giá vé (đồng). Nếu được miễn phí thì in 0.
+
+Giới hạn:
+- 0 ≤ t ≤ 120

@@ -1,0 +1,14 @@
+Mèo Mướp muốn lát một cái sân hình vuông để nằm phơi nắng. Mỗi viên gạch được vẽ bằng một dấu *. Em hãy vẽ giúp Mướp cái sân có n hàng, mỗi hàng n viên gạch nhé!
+
+Đầu vào:
+- Một số nguyên n là độ dài cạnh của sân.
+
+Đầu ra:
+- In ra n dòng, mỗi dòng gồm đúng n dấu * viết liền nhau (không có dấu cách xen giữa).
+
+Giới hạn:
+- 1 ≤ n ≤ 20.
+
+Gợi ý:
+- Dùng hai vòng lặp lồng nhau: vòng ngoài chạy qua từng dòng, vòng trong in các dấu * của dòng đó.
+- Với n = 2, em in 2 dòng, mỗi dòng gồm 2 dấu * viết liền nhau.

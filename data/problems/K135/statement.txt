@@ -1,0 +1,15 @@
+Pharaoh mèo ra lệnh xây một kim tự tháp thật cân đối giữa sa mạc. Tầng trên cùng chỉ có
+1 viên đá, mỗi tầng bên dưới có thêm 2 viên, và mọi tầng đều được đặt chính giữa.
+
+Đầu vào:
+- Một số nguyên n là số tầng của kim tự tháp.
+
+Đầu ra:
+- In ra n dòng. Dòng thứ i gồm đúng n - i dấu cách, rồi đến 2i - 1 dấu * viết liền nhau.
+- Như vậy dòng cuối cùng có 2n - 1 dấu * và không có dấu cách ở đầu.
+
+Giới hạn:
+- 1 ≤ n ≤ 20.
+
+Gợi ý:
+- Với n = 2: dòng 1 gồm 1 dấu cách rồi 1 dấu *, dòng 2 gồm 3 dấu *.

@@ -1,0 +1,13 @@
+Ngày khai giảng, có n bạn mới gặp nhau lần đầu. Mỗi bạn bắt tay với mỗi bạn khác đúng một lần. Hỏi có tất cả bao nhiêu cái bắt tay?
+
+Đầu vào:
+- Một dòng chứa số nguyên n là số bạn.
+
+Đầu ra:
+- Một số nguyên là tổng số cái bắt tay.
+
+Giới hạn:
+- 1 ≤ n ≤ 40000.
+
+Gợi ý:
+- Mỗi bạn bắt tay n - 1 bạn khác, nhưng như vậy mỗi cái bắt tay bị đếm hai lần. Vì thế số cái bắt tay là n × (n - 1) chia cho 2 (dùng phép chia lấy phần nguyên để kết quả là số nguyên).

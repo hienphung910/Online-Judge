@@ -1,0 +1,14 @@
+Robot Bi đang tập đếm. Mỗi lần Bi bước lên một bậc thang, Bi đếm lại từ 1 đến số thứ tự của bậc đó. Em hãy in ra những gì Bi đếm được nhé!
+
+Đầu vào:
+- Một số nguyên n là số bậc thang.
+
+Đầu ra:
+- In ra n dòng. Dòng thứ i gồm các chữ số 1, 2, 3, ..., i viết liền nhau (không có dấu cách xen giữa).
+- Các dòng bắt đầu sát lề trái.
+
+Giới hạn:
+- 1 ≤ n ≤ 9.
+
+Gợi ý:
+- Với n = 2: dòng 1 là 1, dòng 2 là 12.

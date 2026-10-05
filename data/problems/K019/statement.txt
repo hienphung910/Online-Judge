@@ -1,0 +1,11 @@
+Tên lửa giấy của Tú chỉ bay lên sau khi đếm ngược đúng ba nhịp, bắt đầu từ số n.
+
+Đầu vào:
+- Một dòng chứa một số nguyên n.
+
+Đầu ra:
+- In ra trên cùng một dòng: số n, số n - 1, số n - 2, rồi chữ Bay!
+- Các phần cách nhau một dấu cách.
+
+Giới hạn:
+- 3 ≤ n ≤ 1000.

@@ -1,0 +1,11 @@
+Trong trò chơi "Ai đông hơn", các con số rủ nhau xếp hàng: số nào xuất hiện nhiều lần hơn thì cả nhóm số đó được đứng lên trước. Em hãy in hàng số sau khi xếp.
+
+Đầu vào:
+- Dòng 1: số nguyên n.
+- Dòng 2: n số nguyên, cách nhau một dấu cách.
+
+Đầu ra:
+- Một dòng gồm n số sau khi xếp lại: các bản sao của cùng một số đứng liền nhau; nhóm của số xuất hiện nhiều lần hơn đứng trước; nếu hai số xuất hiện số lần bằng nhau thì số nhỏ hơn đứng trước. Các số cách nhau một dấu cách.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000; 1 ≤ mỗi số ≤ 1000.

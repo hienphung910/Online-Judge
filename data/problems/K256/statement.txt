@@ -1,0 +1,15 @@
+An và Bình mỗi bạn có một túi n viên bi, mỗi viên ghi một số. Hai bạn muốn biết hai túi có giống hệt nhau không: mỗi số phải xuất hiện trong hai túi với số lần bằng nhau (thứ tự lấy ra không quan trọng).
+
+Đầu vào:
+- Dòng 1: số nguyên n.
+- Dòng 2: n số nguyên ghi trên các viên bi của An.
+- Dòng 3: n số nguyên ghi trên các viên bi của Bình.
+
+Đầu ra:
+- In YES nếu hai túi giống hệt nhau, ngược lại in NO.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000; 1 ≤ số trên bi ≤ 1000.
+
+Gợi ý:
+- Sắp xếp cả hai dãy rồi so sánh từng vị trí.

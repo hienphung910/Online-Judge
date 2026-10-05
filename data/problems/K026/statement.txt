@@ -1,0 +1,12 @@
+Thư viện trường làm thẻ mượn sách cho học sinh. Mã thẻ gồm chữ TV, tên lớp và số thứ tự của học sinh trong lớp (luôn viết đủ 2 chữ số), nối với nhau bằng dấu gạch ngang.
+
+Đầu vào:
+- Dòng 1: tên lớp (một chữ số từ 1 đến 5 và một chữ cái in hoa, ví dụ 4B).
+- Dòng 2: một số nguyên n là số thứ tự của học sinh.
+
+Đầu ra:
+- In ra một dòng: TV-<lớp>-<n viết đủ 2 chữ số>
+- Không có dấu cách nào trong mã thẻ.
+
+Giới hạn:
+- 1 ≤ n ≤ 99.

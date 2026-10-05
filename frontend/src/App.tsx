@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { AuthProvider, useAuth } from "./auth";
 import { api } from "./api";
-import type { LanguageInfo, Problem } from "./types";
+import type { LanguageInfo, Problem, Topic } from "./types";
 import Problems from "./pages/Problems";
 import Submissions from "./pages/Submissions";
 import Contests from "./pages/Contests";
@@ -39,6 +39,7 @@ function AppShell() {
   const [avatarOpen, setAvatarOpen] = useState(false);
 
   const [problems, setProblems] = useState<Problem[]>([]);
+  const [topics, setTopics] = useState<Topic[]>([]);
   const [languages, setLanguages] = useState<LanguageInfo[]>([]);
   const [online, setOnline] = useState<boolean | null>(null);
   const [reloadKey, setReloadKey] = useState(0);
@@ -59,9 +60,11 @@ function AppShell() {
   const streak = useStreak(user?.username ?? null, reloadKey);
 
   const loadProblems = useCallback(async () => {
-    const [p, l] = await Promise.all([api.problems(), api.languages()]);
+    // Lo trinh la tuy chon: loi khi tai chu de khong duoc lam hong ca trang bai tap.
+    const [p, l, t] = await Promise.all([api.problems(), api.languages(), api.topics().catch(() => [])]);
     setProblems(p);
     setLanguages(l);
+    setTopics(t);
   }, []);
 
   useEffect(() => {
@@ -337,11 +340,11 @@ function AppShell() {
           </div>
         ) : (
           <>
-            {page === "Problems" && <Problems problems={problems} languages={languages} onSubmitted={onSubmitted} reloadKey={reloadKey} />}
+            {page === "Problems" && <Problems problems={problems} topics={topics} languages={languages} onSubmitted={onSubmitted} reloadKey={reloadKey} />}
             {page === "Submissions" && <Submissions reloadKey={reloadKey} />}
             {page === "Contests" && <Contests problems={problems} />}
             {page === "Leaderboard" && <Leaderboard reloadKey={reloadKey} problems={problems} />}
-            {page === "Admin" && isAdmin && <AdminPanel onProblemCreated={onProblemCreated} problems={problems} />}
+            {page === "Admin" && isAdmin && <AdminPanel onProblemCreated={onProblemCreated} problems={problems} topics={topics} />}
           </>
         )}
       </main>

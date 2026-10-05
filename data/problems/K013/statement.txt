@@ -1,0 +1,10 @@
+Đoàn tàu đồ chơi của Nam có 5 toa, mỗi toa ghi một con số. Khi tàu quay đầu, toa cuối cùng trở thành toa đầu tiên!
+
+Đầu vào:
+- Một dòng chứa đúng 5 số nguyên, cách nhau một dấu cách.
+
+Đầu ra:
+- In 5 số đó theo thứ tự ngược lại (số cuối in trước), trên cùng một dòng, cách nhau một dấu cách.
+
+Giới hạn:
+- Mỗi số từ 0 đến 10^6.

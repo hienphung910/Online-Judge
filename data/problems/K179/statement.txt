@@ -1,0 +1,14 @@
+Từ số n, ta thay n bằng tổng bình phương các chữ số của nó (bình phương của a là a × a), rồi cứ lặp lại như thế. Nếu đến một lúc nào đó dãy số (tính cả chính n) gặp số 1 thì n được gọi là số vui vẻ. Như vậy số 1 cũng là số vui vẻ.
+
+Ví dụ: 7 → 49 → 97 → 130 → 10 → 1, nên 7 là số vui vẻ.
+
+Nếu n không phải số vui vẻ thì dãy sẽ quay vòng mãi mãi. Người ta đã chứng minh rằng khi đó dãy chắc chắn sẽ đi qua số 4 (vòng lặp 4 → 16 → 37 → 58 → 89 → 145 → 42 → 20 → 4).
+
+Đầu vào:
+- Một số nguyên n (1 ≤ n ≤ 1 000 000 000).
+
+Đầu ra:
+- In ra YES nếu n là số vui vẻ, ngược lại in ra NO.
+
+Gợi ý:
+- Lặp cho đến khi gặp số 1 (in YES) hoặc gặp số 4 (in NO).

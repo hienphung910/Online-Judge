@@ -1,0 +1,13 @@
+Bố của An muốn làm hàng rào bao quanh mảnh vườn rau hình chữ nhật có chiều dài a mét và chiều rộng b mét. Em hãy giúp bố tính xem hàng rào dài tổng cộng bao nhiêu mét nhé!
+
+Đầu vào:
+- Một dòng chứa hai số nguyên a và b, cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên là chu vi mảnh vườn (số mét hàng rào cần làm).
+
+Giới hạn:
+- 1 ≤ a, b ≤ 10000.
+
+Gợi ý:
+- Chu vi hình chữ nhật = (chiều dài + chiều rộng) × 2.

@@ -1,0 +1,13 @@
+Bé Na vừa đặt tên cho chú rồng bông của mình. Em hãy giúp Na đếm xem tên chú rồng có bao nhiêu chữ cái nhé!
+
+Đầu vào:
+- Một dòng chứa tên chú rồng: một từ gồm các chữ cái tiếng Anh (hoa hoặc thường), không có dấu cách.
+
+Đầu ra:
+- In ra một số nguyên: số chữ cái trong tên.
+
+Giới hạn:
+- Tên dài từ 1 đến 100 chữ cái.
+
+Gợi ý:
+- Độ dài xâu s: Python dùng len(s), C++ và Java dùng s.length().

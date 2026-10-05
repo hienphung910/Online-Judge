@@ -1,0 +1,11 @@
+Các toa tàu chữ cái đang bị tách rời bởi những khoảng trống. Em hãy nối chúng lại thành một đoàn tàu liền mạch bằng cách xóa hết các dấu cách.
+
+Đầu vào:
+- Một dòng (có thể có dấu cách) gồm các chữ cái tiếng Anh (hoa hoặc thường) và dấu cách.
+- Giữa hai từ có thể có một hoặc nhiều dấu cách; không có dấu cách ở đầu và cuối dòng.
+
+Đầu ra:
+- In ra dòng đó sau khi xóa hết mọi dấu cách. Các chữ cái giữ nguyên thứ tự và giữ nguyên chữ hoa/chữ thường.
+
+Giới hạn:
+- Dòng dài không quá 300 ký tự và có ít nhất một chữ cái.

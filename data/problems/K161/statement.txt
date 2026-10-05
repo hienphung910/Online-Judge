@@ -1,0 +1,9 @@
+Ông nội cho rằng những số chỉ gồm các chữ số 6 và 8 là "số lộc phát" mang lại may mắn. Em hãy giúp ông kiểm tra số n có phải số lộc phát không.
+
+Số lộc phát là số mà mọi chữ số của nó đều là 6 hoặc 8. Số chỉ gồm toàn chữ số 6, hoặc toàn chữ số 8, cũng là số lộc phát.
+
+Đầu vào:
+- Một số nguyên n (1 ≤ n ≤ 1 000 000 000).
+
+Đầu ra:
+- In ra YES nếu n là số lộc phát, ngược lại in ra NO.

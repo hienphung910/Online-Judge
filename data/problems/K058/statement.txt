@@ -1,0 +1,14 @@
+Năm nay bố của An F tuổi, còn An C tuổi. Hỏi sau bao nhiêu năm nữa thì tuổi của bố gấp đúng hai lần tuổi của An?
+
+Đầu vào:
+- Một dòng chứa hai số nguyên F và C, cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên là số năm cần chờ (bằng 0 nếu năm nay tuổi bố đã gấp đôi tuổi An).
+
+Giới hạn:
+- 1 ≤ C ≤ 50.
+- 2 × C ≤ F ≤ 100.
+
+Gợi ý:
+- Năm nào bố cũng hơn An đúng F - C tuổi. Khi tuổi bố gấp đôi tuổi An thì tuổi An lúc đó đúng bằng số tuổi chênh lệch ấy.

@@ -1,0 +1,11 @@
+Cô Mai vừa đếm xong số kẹo trong cửa hàng: có tất cả n viên. Bé Na tò mò muốn biết số n được viết bằng bao nhiêu chữ số.
+
+Đầu vào:
+- Một số nguyên n (0 ≤ n ≤ 1 000 000 000).
+
+Đầu ra:
+- In ra số chữ số của n.
+
+Gợi ý:
+- Mỗi lần chia n cho 10 lấy phần nguyên (n / 10 trong C++/Java, n // 10 trong Python) thì n mất đi chữ số cuối cùng. Hãy đếm xem phải chia bao nhiêu lần thì n chỉ còn một chữ số; số chữ số của n bằng số lần chia đó cộng thêm 1.
+- Chú ý: số 0 cũng có 1 chữ số.

@@ -1,0 +1,15 @@
+Cánh đồng là một bảng n hàng, m cột ô: '.' là ô cỏ, '#' là ô có tảng đá. Thỏ con đang ở ô (1, 1) góc trên bên trái, còn hang của thỏ ở ô (n, m) góc dưới bên phải. Mỗi bước thỏ chỉ nhảy sang phải một ô hoặc xuống dưới một ô, và không được nhảy vào ô có đá. Hỏi có bao nhiêu đường đi khác nhau để thỏ về tới hang?
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và m.
+- n dòng tiếp theo, mỗi dòng gồm đúng m ký tự '.' hoặc '#' viết liền nhau.
+- Ô (i, j) là ô ở hàng i (đếm từ trên xuống), cột j (đếm từ trái sang).
+
+Đầu ra:
+- Một số nguyên: số đường đi khác nhau. Nếu ô (1, 1) hoặc ô (n, m) có đá, hoặc không có đường nào, in 0.
+
+Giới hạn:
+- 1 ≤ n, m ≤ 15.
+
+Gợi ý:
+- Số đường tới một ô cỏ = số đường tới ô ngay phía trên + số đường tới ô ngay bên trái. Ô có đá có 0 đường.

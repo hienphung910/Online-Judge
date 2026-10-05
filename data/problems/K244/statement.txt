@@ -1,0 +1,15 @@
+Chú mèo Mướp có một dãy hộp cá xếp thành hàng, mỗi hộp dán một con số. Mướp chỉ thích hộp có số x. Em hãy giúp Mướp tìm hộp đầu tiên (tính từ trái sang phải) có số x nhé.
+
+Đầu vào:
+- Dòng 1: hai số nguyên n và x.
+- Dòng 2: n số nguyên là số dán trên các hộp, từ trái sang phải, cách nhau một dấu cách.
+
+Đầu ra:
+- Vị trí của hộp đầu tiên có số x (các hộp được đánh số từ 1 đến n tính từ trái).
+- Nếu không có hộp nào mang số x thì in -1.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000; 1 ≤ x, số trên hộp ≤ 1000.
+
+Gợi ý:
+- Tìm kiếm tuần tự: đi lần lượt từng hộp, gặp số x là dừng lại ngay.

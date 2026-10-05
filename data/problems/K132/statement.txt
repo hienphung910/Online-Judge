@@ -1,0 +1,12 @@
+Ông nội muốn kẻ một bàn cờ để chơi với cháu. Bàn cờ có n hàng, m cột, các ô đen và ô trắng xen kẽ nhau như bàn cờ vua. Ô đen vẽ bằng dấu #, ô trắng vẽ bằng dấu chấm (.).
+
+Đầu vào:
+- Một dòng gồm hai số nguyên n và m cách nhau một dấu cách: n là số hàng, m là số cột.
+
+Đầu ra:
+- In ra n dòng, mỗi dòng gồm m ký tự viết liền nhau.
+- Đánh số hàng và cột từ 1. Ô ở hàng i, cột j là dấu # nếu i + j là số chẵn, là dấu . nếu i + j là số lẻ.
+- Như vậy ô ở góc trên bên trái luôn là dấu #.
+
+Giới hạn:
+- 1 ≤ n ≤ 20, 1 ≤ m ≤ 20.

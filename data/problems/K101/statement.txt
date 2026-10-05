@@ -1,0 +1,13 @@
+Nhóm bạn có n người muốn đứng thành một hàng ngang để chụp ảnh kỷ niệm. Các bạn tò mò: có bao nhiêu cách xếp hàng khác nhau? Thầy giáo nói số cách đó bằng n giai thừa, viết là n! = 1 × 2 × 3 × ... × n.
+
+Đầu vào:
+- Một dòng chứa số nguyên n.
+
+Đầu ra:
+- Một số nguyên là giá trị của n!.
+
+Giới hạn:
+- 1 ≤ n ≤ 12.
+
+Gợi ý:
+- Bắt đầu với tich = 1 rồi lần lượt nhân tich với 1, 2, ..., n.

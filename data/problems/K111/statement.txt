@@ -1,0 +1,13 @@
+An và Bình chơi n ván bóng bàn. Trong mỗi ván, ai được nhiều điểm hơn thì thắng ván đó; nếu hai bạn bằng điểm thì ván đó hòa, không ai thắng. Cuối cùng, ai thắng nhiều ván hơn sẽ là người thắng chung cuộc.
+
+Đầu vào:
+- Dòng thứ nhất chứa số nguyên n là số ván.
+- n dòng tiếp theo, mỗi dòng chứa hai số nguyên x và y: điểm của An và điểm của Bình trong một ván.
+
+Đầu ra:
+- Dòng thứ nhất: số ván An thắng và số ván Bình thắng, cách nhau một dấu cách.
+- Dòng thứ hai: in AN nếu An thắng chung cuộc, BINH nếu Bình thắng chung cuộc, HOA nếu hai bạn thắng số ván bằng nhau.
+
+Giới hạn:
+- 1 ≤ n ≤ 50.
+- 0 ≤ x, y ≤ 30.

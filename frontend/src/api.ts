@@ -11,6 +11,7 @@ import type {
   Stats,
   Submission,
   SubmitRequest,
+  Topic,
 } from "./types";
 
 /**
@@ -177,6 +178,7 @@ export const api = {
   // --- du lieu ---
   languages: () => request<LanguageInfo[]>("/api/languages"),
   problems: () => request<Problem[]>("/api/problems"),
+  topics: () => request<Topic[]>("/api/topics"),
   submissions: () => request<Submission[]>("/api/submissions"),
   submission: (id: string) => request<Submission>(`/api/submissions/${encodeURIComponent(id)}`),
   scoreboard: () => request<ScoreRow[]>("/api/scoreboard"),

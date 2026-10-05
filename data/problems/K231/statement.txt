@@ -1,0 +1,14 @@
+Đội trinh sát nhí mã hóa mật thư bằng cách dịch mỗi chữ cái đi k bước trong bảng chữ cái. Đi quá chữ z thì quay vòng lại chữ a. Em hãy giúp đội mã hóa một từ.
+
+Đầu vào:
+- Dòng 1: một từ gồm các chữ cái tiếng Anh viết thường, không có dấu cách.
+- Dòng 2: một số nguyên k.
+
+Đầu ra:
+- In ra từ sau khi mã hóa: mỗi chữ cái được thay bằng chữ cái đứng sau nó k bước trong bảng chữ cái a, b, c, ..., z. Sau z lại quay về a; ví dụ với k = 2 thì y thành a và z thành b.
+
+Giới hạn:
+- Từ dài từ 1 đến 100 chữ cái; 0 ≤ k ≤ 25.
+
+Gợi ý:
+- Coi a là vị trí 0, b là 1, ..., z là 25. Vị trí mới = (vị trí cũ + k) % 26.

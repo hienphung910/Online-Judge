@@ -1,0 +1,13 @@
+Ếch Xanh sống bên một con đường thẳng được đánh số giống trục số, nhà của ếch ở vị trí 0. Bây giờ ếch đang đứng ở vị trí x, mỗi bước nhảy dài đúng 1 đơn vị. Hỏi ếch phải nhảy bao nhiêu bước để về đến nhà?
+
+Đầu vào:
+- Một số nguyên x là vị trí hiện tại của ếch (có thể âm).
+
+Đầu ra:
+- In ra một số nguyên là số bước ếch cần nhảy, tức là khoảng cách từ x đến 0.
+
+Giới hạn:
+- -10^9 ≤ x ≤ 10^9
+
+Gợi ý:
+- Nếu x nhỏ hơn 0 thì khoảng cách là -x, ngược lại khoảng cách là x.

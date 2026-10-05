@@ -1,0 +1,14 @@
+Sân trường của em được lát bằng những viên gạch hình vuông, mỗi cạnh dài a xăng-ti-mét. Em hãy tính chu vi và diện tích của một viên gạch.
+
+Đầu vào:
+- Một dòng chứa số nguyên a là độ dài cạnh viên gạch.
+
+Đầu ra:
+- Dòng thứ nhất: chu vi viên gạch.
+- Dòng thứ hai: diện tích viên gạch.
+
+Giới hạn:
+- 1 ≤ a ≤ 10000.
+
+Gợi ý:
+- Chu vi hình vuông = cạnh × 4, diện tích hình vuông = cạnh × cạnh.

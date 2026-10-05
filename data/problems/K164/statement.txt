@@ -1,0 +1,12 @@
+Người Hy Lạp cổ đại rất yêu quý những "số hoàn hảo". Em hãy kiểm tra xem số n có hoàn hảo không nhé.
+
+Ước thật sự của n là các ước của n nhỏ hơn n. Số n được gọi là số hoàn hảo nếu n bằng tổng các ước thật sự của nó. Ví dụ 6 là số hoàn hảo vì 6 = 1 + 2 + 3.
+
+Đầu vào:
+- Một số nguyên n (1 ≤ n ≤ 1 000 000).
+
+Đầu ra:
+- In ra YES nếu n là số hoàn hảo, ngược lại in ra NO.
+
+Chú ý:
+- Số 1 không có ước thật sự nào (tổng bằng 0) nên 1 không phải số hoàn hảo.

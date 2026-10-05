@@ -1,0 +1,12 @@
+Bạn Khoa đạp xe trên một con đường và ghi lại độ cao của n điểm liên tiếp trên đường. Một đoạn leo dốc là một đoạn gồm các điểm liền nhau mà mỗi điểm cao hơn hẳn điểm ngay trước nó. Em hãy tìm xem đoạn leo dốc dài nhất có bao nhiêu điểm.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n — số điểm.
+- Dòng thứ hai chứa n số nguyên a[1], a[2], ..., a[n], cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên — độ dài lớn nhất của một đoạn liên tiếp a[l], a[l+1], ..., a[r] thoả mãn a[l] < a[l+1] < ... < a[r]. Một điểm đứng một mình cũng là đoạn dài 1.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000
+- 0 ≤ a[i] ≤ 10^6

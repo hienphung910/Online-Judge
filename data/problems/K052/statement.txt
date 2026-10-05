@@ -1,0 +1,15 @@
+Robot Bi có thói quen đọc mọi thứ từ phải sang trái. Cho một số n có đúng ba chữ số, em hãy in ra số mà Bi đọc được khi đọc ngược các chữ số của n.
+
+Đầu vào:
+- Một dòng chứa số nguyên n.
+
+Đầu ra:
+- Một số nguyên là số đọc ngược. Nếu số đọc ngược có chữ số 0 ở đầu thì không in các chữ số 0 đó.
+
+Giới hạn:
+- 100 ≤ n ≤ 999.
+
+Gợi ý:
+- Chữ số hàng trăm = phần nguyên của n chia 100.
+- Chữ số hàng chục = phần nguyên của n chia 10, rồi lấy dư khi chia cho 10.
+- Chữ số hàng đơn vị = số dư khi chia n cho 10.

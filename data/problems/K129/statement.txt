@@ -1,0 +1,14 @@
+Đêm nay có sao băng! Ngôi sao bay chéo từ góc trên bên trái xuống góc dưới bên phải, mỗi dòng nó lùi sang phải thêm một bước. Em hãy vẽ vệt sao băng đó.
+
+Đầu vào:
+- Một số nguyên n là số dòng của bức tranh.
+
+Đầu ra:
+- In ra n dòng. Dòng thứ i gồm đúng i - 1 dấu cách, rồi đến một dấu *.
+- Như vậy dòng 1 có dấu * nằm sát lề trái, dòng 2 có 1 dấu cách đứng trước dấu *, dòng 3 có 2 dấu cách...
+
+Giới hạn:
+- 1 ≤ n ≤ 20.
+
+Gợi ý:
+- Các dấu cách ở đầu dòng rất quan trọng, phải in đúng số lượng.

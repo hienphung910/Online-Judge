@@ -1,0 +1,11 @@
+Khu rừng Xanh tổ chức thi bằng lái xe đạp cho các con vật. Bài thi chấm theo thang điểm 100, ai được từ 80 điểm trở lên thì đạt. Bạn Sóc vừa thi xong và rất hồi hộp chờ kết quả.
+
+Đầu vào:
+- Một số nguyên d là điểm thi của Sóc.
+
+Đầu ra:
+- In ra DAT nếu d lớn hơn hoặc bằng 80.
+- Ngược lại in ra CHUA DAT.
+
+Giới hạn:
+- 0 ≤ d ≤ 100

@@ -1,0 +1,12 @@
+An và Bình tranh luận xem ai lớn tuổi hơn. Hai bạn quyết định chỉ so năm sinh: ai sinh vào năm nhỏ hơn thì người đó lớn tuổi hơn, sinh cùng năm thì coi như bằng tuổi.
+
+Đầu vào:
+- Một dòng chứa hai số nguyên a và b, cách nhau một dấu cách: a là năm sinh của An, b là năm sinh của Bình.
+
+Đầu ra:
+- In ra AN nếu An lớn tuổi hơn.
+- In ra BINH nếu Bình lớn tuổi hơn.
+- In ra BANG TUOI nếu hai bạn sinh cùng năm.
+
+Giới hạn:
+- 1900 ≤ a, b ≤ 2025

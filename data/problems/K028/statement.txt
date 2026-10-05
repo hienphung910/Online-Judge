@@ -1,0 +1,18 @@
+Rạp chiếu phim thiếu nhi in vé cho các bạn nhỏ đi xem phim cuối tuần. Mỗi chiếc vé có đúng 5 dòng thông tin.
+
+Đầu vào:
+- Dòng 1: tên phim (một từ gồm chữ cái tiếng Anh, không có dấu cách).
+- Dòng 2: một số nguyên p là số phòng chiếu.
+- Dòng 3: hàng ghế (một chữ cái in hoa) và số ghế s, cách nhau một dấu cách.
+- Dòng 4: hai số nguyên h và m là giờ và phút của suất chiếu.
+
+Đầu ra: in ra đúng 5 dòng
+- Dòng 1: VE XEM PHIM
+- Dòng 2: Phim: <tên phim>
+- Dòng 3: Phong: <p>
+- Dòng 4: Ghe: <hàng ghế><s viết đủ 2 chữ số> (viết liền, ví dụ hàng C ghế 7 là C07)
+- Dòng 5: Gio chieu: <hh:mm> (giờ và phút đều đủ 2 chữ số)
+
+Giới hạn:
+- Tên phim dài không quá 30 ký tự.
+- 1 ≤ p ≤ 20, 1 ≤ s ≤ 30, 0 ≤ h ≤ 23, 0 ≤ m ≤ 59.

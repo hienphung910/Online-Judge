@@ -1,0 +1,12 @@
+Trong heo đất của Lan đang có s đồng. Từ hôm nay, mỗi ngày Lan bỏ thêm vào heo đúng x đồng. Hỏi sau d ngày, trong heo đất của Lan có bao nhiêu tiền?
+
+Đầu vào:
+- Một dòng chứa ba số nguyên s, x và d, cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên là số tiền trong heo đất sau d ngày.
+
+Giới hạn:
+- 0 ≤ s ≤ 1000000.
+- 0 ≤ x ≤ 10000.
+- 0 ≤ d ≤ 10000.

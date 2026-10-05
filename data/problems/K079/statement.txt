@@ -1,0 +1,11 @@
+Chiếc đồng hồ điện tử của Tí thỉnh thoảng bị lỗi và hiện ra những con số kỳ lạ. Một thời điểm hợp lệ phải có giờ từ 0 đến 23, phút từ 0 đến 59 và giây từ 0 đến 59. Em hãy kiểm tra giúp Tí.
+
+Đầu vào:
+- Một dòng chứa ba số nguyên h, m, s (giờ, phút, giây) cách nhau một dấu cách.
+
+Đầu ra:
+- In ra YES nếu thời điểm h giờ m phút s giây hợp lệ.
+- Ngược lại in ra NO.
+
+Giới hạn:
+- 0 ≤ h, m, s ≤ 99

@@ -1,0 +1,13 @@
+Cửa hàng kẹo xếp n chiếc hộp thành một hàng. Hộp thứ nhất có 1 viên kẹo, hộp thứ hai có 2 viên, hộp thứ ba có 3 viên, ..., hộp thứ n có n viên. Hỏi cả hàng có tất cả bao nhiêu viên kẹo?
+
+Đầu vào:
+- Một dòng chứa số nguyên n.
+
+Đầu ra:
+- Một số nguyên là tổng số viên kẹo trong n hộp.
+
+Giới hạn:
+- 1 ≤ n ≤ 10000.
+
+Gợi ý:
+- Tạo biến tong = 0, rồi dùng vòng lặp cộng dồn lần lượt 1, 2, ..., n vào tong.

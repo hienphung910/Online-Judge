@@ -1,0 +1,12 @@
+Lớp em trồng n cây non trong vườn trường. Bạn Dũng đo chiều cao từng cây (đơn vị mi-li-mét). Hỏi cây cao nhất cao hơn cây thấp nhất bao nhiêu mi-li-mét?
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n — số cây.
+- Dòng thứ hai chứa n số nguyên a[1], a[2], ..., a[n], cách nhau một dấu cách; a[i] là chiều cao của cây thứ i.
+
+Đầu ra:
+- Một số nguyên — chiều cao lớn nhất trừ đi chiều cao nhỏ nhất.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000
+- 1 ≤ a[i] ≤ 10^6

@@ -1,0 +1,11 @@
+Chú vẹt Kiki rất thông minh, chú muốn học thuộc bảng nhân của số n (từ n nhân 1 đến n nhân 10). Em hãy in bảng nhân đó ra để Kiki đọc theo.
+
+Đầu vào:
+- Một dòng chứa số nguyên n.
+
+Đầu ra:
+- Gồm 10 dòng. Dòng thứ i (i từ 1 đến 10) có dạng: <n> x <i> = <tích của n và i>
+- Giữa các phần trên mỗi dòng có đúng một dấu cách, dùng chữ x thường làm dấu nhân.
+
+Giới hạn:
+- 1 ≤ n ≤ 100.

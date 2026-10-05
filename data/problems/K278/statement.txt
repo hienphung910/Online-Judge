@@ -1,0 +1,13 @@
+Cô Lan có một bảng số gồm n hàng và m cột. Cô muốn lật bảng: cột thứ nhất trở thành hàng thứ nhất, cột thứ hai trở thành hàng thứ hai, và cứ thế tiếp tục. Em hãy giúp cô viết bảng mới nhé!
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và m.
+- n dòng tiếp theo, mỗi dòng chứa m số nguyên cách nhau một dấu cách.
+
+Đầu ra:
+- In ra bảng mới gồm m dòng, mỗi dòng n số nguyên cách nhau một dấu cách.
+- Dòng thứ j gồm các số ở cột thứ j của bảng cũ, lấy lần lượt từ hàng 1 xuống hàng n.
+
+Giới hạn:
+- 1 ≤ n, m ≤ 50.
+- Mỗi số từ 0 đến 999.

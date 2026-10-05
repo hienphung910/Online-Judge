@@ -1,0 +1,15 @@
+Giờ ra chơi, các bạn xếp hàng mua bánh ở căng tin. Mỗi bạn có một số thẻ học sinh. Lần lượt xảy ra q sự kiện, mỗi sự kiện thuộc một trong hai loại:
+- "+ x": bạn có số thẻ x đến đứng vào cuối hàng;
+- "-": cô bán hàng phục vụ bạn đang đứng đầu hàng, bạn đó mua xong thì rời khỏi hàng. Em hãy cho biết mỗi lần cô phục vụ thì đó là bạn nào.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên q.
+- q dòng tiếp theo, mỗi dòng là một sự kiện: hoặc dấu '+', một dấu cách rồi số nguyên x; hoặc chỉ một dấu '-'.
+
+Đầu ra:
+- Với mỗi sự kiện "-", theo đúng thứ tự, in trên một dòng số thẻ của bạn được phục vụ.
+- Nếu lúc đó hàng không có ai thì in TRONG.
+
+Giới hạn:
+- 1 ≤ q ≤ 1000; 1 ≤ x ≤ 1000.
+- Có ít nhất một sự kiện "-".

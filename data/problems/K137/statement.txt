@@ -1,0 +1,14 @@
+Robot Bi gắn những bóng đèn nhỏ thành hình tam giác. Đèn sáng ghi là 1, đèn tắt ghi là 0, và các đèn được xếp xen kẽ sáng - tắt cho thật đẹp mắt.
+
+Đầu vào:
+- Một số nguyên n là số dòng của tam giác.
+
+Đầu ra:
+- In ra n dòng, các dòng bắt đầu sát lề trái. Dòng thứ i gồm đúng i chữ số viết liền nhau.
+- Đánh số dòng và vị trí từ 1. Chữ số ở dòng i, vị trí j là 1 nếu i + j là số chẵn, là 0 nếu i + j là số lẻ.
+
+Giới hạn:
+- 1 ≤ n ≤ 20.
+
+Gợi ý:
+- Dòng 1 luôn là 1, dòng 2 luôn là 01.

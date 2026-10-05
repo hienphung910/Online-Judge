@@ -1,0 +1,18 @@
+Nhà toán học nhí xếp các số thành tam giác Pascal như sau: hàng 1 chỉ có một số 1; mỗi hàng sau dài hơn hàng trước một số, hai đầu hàng luôn là 1, còn mỗi số ở giữa bằng tổng của hai số đứng ngay phía trên nó ở hàng trước. Bốn hàng đầu tiên là:
+  1
+  1 1
+  1 2 1
+  1 3 3 1
+Em hãy in ra hàng thứ k của tam giác.
+
+Đầu vào:
+- Một dòng chứa số nguyên k.
+
+Đầu ra:
+- In ra trên một dòng k số nguyên của hàng thứ k, cách nhau một dấu cách.
+
+Giới hạn:
+- 1 ≤ k ≤ 31.
+
+Gợi ý:
+- Bắt đầu từ hàng [1], mỗi lần tạo hàng mới từ hàng cũ, lặp lại k - 1 lần.

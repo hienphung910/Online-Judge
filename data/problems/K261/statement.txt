@@ -1,0 +1,14 @@
+An nghĩ một số x trong khoảng từ 1 đến n. Robot Bi đoán theo cách chia đôi rất thông minh. Bi nhớ hai số lo = 1 và hi = n, rồi lặp lại:
+- Bi đoán số g = (lo + hi) / 2 (phép chia lấy phần nguyên).
+- Nếu g = x thì An nói "Đúng rồi!" và trò chơi kết thúc.
+- Nếu g < x thì An nói "Lớn hơn", Bi đặt lo = g + 1.
+- Nếu g > x thì An nói "Nhỏ hơn", Bi đặt hi = g - 1. Hỏi Bi phải đoán tất cả bao nhiêu lần (tính cả lần đoán đúng)?
+
+Đầu vào:
+- Một dòng gồm hai số nguyên n và x.
+
+Đầu ra:
+- Số lần đoán của Bi.
+
+Giới hạn:
+- 1 ≤ x ≤ n ≤ 1000000.

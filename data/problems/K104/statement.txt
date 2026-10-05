@@ -1,0 +1,15 @@
+Tí đập heo đất và nhập lần lượt mệnh giá của từng đồng xu vào máy đếm. Khi hết xu, Tí nhập số 0 để báo cho máy biết. Em hãy giúp máy đếm xem có bao nhiêu đồng xu và tổng giá trị của chúng là bao nhiêu.
+
+Đầu vào:
+- Một dãy số nguyên, các số cách nhau bởi dấu cách hoặc dấu xuống dòng.
+- Dãy luôn kết thúc bằng số 0. Số 0 chỉ là dấu hiệu dừng, không phải đồng xu, nên không được đếm. Sau số 0 không còn số nào nữa.
+
+Đầu ra:
+- In hai số trên một dòng, cách nhau một dấu cách: số đồng xu và tổng mệnh giá.
+
+Giới hạn:
+- Có từ 0 đến 100 đồng xu (nếu số đầu tiên đã là 0 thì không có đồng xu nào).
+- Mỗi mệnh giá là một trong các số 200, 500, 1000, 2000, 5000.
+
+Gợi ý:
+- Dùng vòng lặp while: đọc một số, nếu khác 0 thì đếm và cộng, rồi đọc số tiếp theo.

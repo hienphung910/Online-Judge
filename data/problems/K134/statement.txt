@@ -1,0 +1,15 @@
+Đội bóng lớp em cần một lá cờ đuôi nheo để cổ vũ. Lá cờ có hình tam giác nằm ngang, mũi nhọn chỉ sang phải: càng xuống thì cờ càng dài ra, tới giữa thì dài nhất, rồi ngắn lại dần.
+
+Đầu vào:
+- Một số nguyên n là độ dài của dòng dài nhất.
+
+Đầu ra:
+- In ra 2n - 1 dòng, các dòng đều bắt đầu sát lề trái và gồm các dấu * viết liền nhau.
+- Số dấu * trên các dòng lần lượt là 1, 2, 3, ..., n, rồi n - 1, n - 2, ..., 1.
+
+Giới hạn:
+- 1 ≤ n ≤ 20.
+
+Gợi ý:
+- Với n = 2, lá cờ có 3 dòng với số dấu * lần lượt là 1, 2, 1.
+- Có thể vẽ nửa trên bằng một vòng lặp tăng dần và nửa dưới bằng một vòng lặp giảm dần.

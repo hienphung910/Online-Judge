@@ -1,0 +1,14 @@
+Câu lạc bộ Đố vui vừa chấm xong bài. Thầy chủ nhiệm muốn dán bảng điểm lên tường, điểm cao nhất ở trên cùng để cả lớp cùng chúc mừng.
+
+Đầu vào:
+- Dòng 1: số nguyên n là số bài thi.
+- Dòng 2: n số nguyên là điểm của từng bài, cách nhau một dấu cách.
+
+Đầu ra:
+- Một dòng gồm n điểm xếp theo thứ tự giảm dần (từ lớn đến nhỏ), cách nhau một dấu cách.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000; 0 ≤ điểm ≤ 100.
+
+Gợi ý:
+- Sắp xếp tăng dần rồi in ngược từ cuối về đầu cũng được.

@@ -1,0 +1,16 @@
+Lớp em muốn làm một tấm biển tên thật đẹp treo ở cửa lớp. Cái tên được đặt ở chính giữa, xung quanh là một khung hình chữ nhật làm bằng dấu *, giữa khung và chữ có chừa một khoảng trống.
+
+Đầu vào:
+- Một dòng chứa một từ S gồm chữ cái tiếng Anh hoặc chữ số, không có dấu cách. Gọi L là số ký tự của S.
+
+Đầu ra:
+- In ra đúng 5 dòng:
+- Dòng 1 và dòng 5: L + 4 dấu * viết liền nhau.
+- Dòng 2 và dòng 4: một dấu *, rồi L + 2 dấu cách, rồi một dấu *.
+- Dòng 3: một dấu *, một dấu cách, từ S, một dấu cách, rồi một dấu *.
+
+Giới hạn:
+- 1 ≤ L ≤ 20.
+
+Gợi ý:
+- Với S là Hi (L = 2): dòng 1 có 6 dấu *, dòng 3 là "* Hi *" (không in dấu ngoặc kép).

@@ -1,0 +1,15 @@
+Chú khỉ Bông cần một cái thang dây để trèo lên cây dừa. Thang có hai sợi dây dọc (vẽ bằng dấu |) và n bậc thang nằm ngang (vẽ bằng dấu -), mỗi bậc rộng w ký tự.
+
+Đầu vào:
+- Một dòng gồm hai số nguyên n và w cách nhau một dấu cách: n là số bậc, w là độ rộng của thang.
+
+Đầu ra:
+- In ra 2n + 1 dòng.
+- Các dòng thứ 1, 3, 5, ... (dòng lẻ) là khoảng trống giữa hai bậc: một dấu |, rồi đúng w dấu cách, rồi một dấu |.
+- Các dòng thứ 2, 4, 6, ... (dòng chẵn) là bậc thang: một dấu |, rồi đúng w dấu - viết liền nhau, rồi một dấu |.
+
+Giới hạn:
+- 1 ≤ n ≤ 10, 1 ≤ w ≤ 10.
+
+Gợi ý:
+- Với n = 1 và w = 2, thang có 3 dòng: dòng 1 là "|  |", dòng 2 là "|--|", dòng 3 là "|  |" (không in dấu ngoặc kép).

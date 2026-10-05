@@ -1,0 +1,16 @@
+Lớp em bình chọn món đồ chơi yêu thích cho góc vui chơi. Mỗi bạn viết lên phiếu mã số của một món đồ chơi. Có tất cả n phiếu, phiếu thứ i ghi mã a[i]. Em hãy tìm món đồ chơi được nhiều phiếu nhất.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n — số phiếu bầu.
+- Dòng thứ hai chứa n số nguyên a[1], a[2], ..., a[n], cách nhau một dấu cách.
+
+Đầu ra:
+- In ra hai số nguyên cách nhau một dấu cách: mã số của món được nhiều phiếu nhất và số phiếu của món đó.
+- Nếu có nhiều món cùng có số phiếu nhiều nhất, chọn món có mã số nhỏ nhất.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000
+- 1 ≤ a[i] ≤ 1000
+
+Gợi ý:
+- Dùng mảng đếm dem, trong đó dem[v] là số phiếu ghi mã v (v từ 1 đến 1000).

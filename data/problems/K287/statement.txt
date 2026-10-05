@@ -1,0 +1,11 @@
+Đội đặc nhiệm nhí nhận được bản đồ một bãi đất gồm n hàng và m cột ô: ô có mìn ký hiệu '*', ô an toàn ký hiệu '.'. Em hãy vẽ lại bản đồ để cả đội đi cho an toàn: ô có mìn giữ nguyên '*', còn mỗi ô an toàn được thay bằng một chữ số cho biết có bao nhiêu quả mìn ở các ô xung quanh nó. Mỗi ô có tối đa 8 ô xung quanh: các ô chung cạnh hoặc chung góc với nó.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và m.
+- n dòng tiếp theo, mỗi dòng gồm đúng m ký tự '*' hoặc '.' viết liền nhau.
+
+Đầu ra:
+- In ra n dòng, mỗi dòng gồm đúng m ký tự viết liền nhau (không có dấu cách): bản đồ mới.
+
+Giới hạn:
+- 1 ≤ n, m ≤ 50.

@@ -1,0 +1,16 @@
+Giáng sinh sắp đến, cả nhà cùng vẽ một cây thông Noel gồm m tầng lá xếp chồng lên nhau, tầng dưới to hơn tầng trên, và một thân cây nhỏ ở dưới cùng.
+
+Đầu vào:
+- Một số nguyên m là số tầng lá.
+
+Đầu ra:
+- Các tầng lá được in lần lượt từ tầng 1 (trên cùng) đến tầng m (dưới cùng).
+- Tầng thứ t gồm t + 1 dòng; dòng thứ r của tầng đó (r = 1, 2, ..., t + 1) gồm đúng m + 1 - r dấu cách, rồi đến 2r - 1 dấu * viết liền nhau.
+- Sau tầng cuối cùng là thân cây gồm 2 dòng, mỗi dòng gồm đúng m dấu cách rồi một dấu #.
+- Như vậy mọi dòng đều được căn giữa trên chiều rộng 2m + 1.
+
+Giới hạn:
+- 1 ≤ m ≤ 8.
+
+Gợi ý:
+- Với m = 1, cây có 4 dòng: (1 dấu cách, 1 dấu *), (3 dấu *), rồi 2 dòng (1 dấu cách, 1 dấu #).

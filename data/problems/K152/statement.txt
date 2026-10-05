@@ -1,0 +1,10 @@
+Nhà bạn Tí mang số n. Mỗi lần đi học về, Tí lại chơi trò cộng tất cả các chữ số của số nhà lại với nhau.
+
+Đầu vào:
+- Một số nguyên n (0 ≤ n ≤ 1 000 000 000).
+
+Đầu ra:
+- In ra tổng các chữ số của n.
+
+Gợi ý:
+- n % 10 cho ta chữ số hàng đơn vị, còn phép chia lấy phần nguyên cho 10 bỏ đi chữ số đó. Lặp lại cho đến khi n bằng 0.

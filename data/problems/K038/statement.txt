@@ -1,0 +1,14 @@
+Bộ phim hoạt hình mà Lan thích nhất dài h giờ m phút. Hỏi bộ phim dài tất cả bao nhiêu phút?
+
+Đầu vào:
+- Một dòng chứa hai số nguyên h (số giờ) và m (số phút), cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên là độ dài bộ phim tính bằng phút.
+
+Giới hạn:
+- 0 ≤ h ≤ 24.
+- 0 ≤ m ≤ 59.
+
+Gợi ý:
+- 1 giờ = 60 phút.

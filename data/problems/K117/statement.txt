@@ -1,0 +1,15 @@
+Đoàn leo núi ghi lại độ cao của n điểm mốc liên tiếp trên con đường đã đi qua. Một điểm mốc được gọi là đỉnh nếu nó không phải điểm đầu tiên, không phải điểm cuối cùng, và cao hơn hẳn cả điểm ngay trước lẫn điểm ngay sau nó. Em hãy đếm xem trên đường có bao nhiêu đỉnh.
+
+Đầu vào:
+- Dòng thứ nhất chứa số nguyên n.
+- Dòng thứ hai chứa n số nguyên là độ cao của các điểm mốc theo thứ tự, cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên là số đỉnh.
+
+Giới hạn:
+- 1 ≤ n ≤ 100.
+- Mỗi độ cao từ 0 đến 1000.
+
+Gợi ý:
+- Chỉ cần nhớ hai độ cao vừa đọc ngay trước số hiện tại.

@@ -1,0 +1,11 @@
+Ngày mai lớp em đi dã ngoại. Mẹ dặn Bin viết ra ba món đồ cần mang theo thành một câu cho dễ nhớ.
+
+Đầu vào:
+- Một dòng chứa ba từ (chỉ gồm chữ cái thường tiếng Anh), cách nhau một dấu cách.
+
+Đầu ra:
+- In ra một dòng: Can mang: <từ 1>, <từ 2>, <từ 3>.
+- Sau mỗi dấu phẩy có một dấu cách. Cuối dòng có dấu chấm viết liền ngay sau từ thứ ba.
+
+Giới hạn:
+- Mỗi từ dài từ 1 đến 20 ký tự.

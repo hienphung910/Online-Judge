@@ -1,0 +1,9 @@
+An chơi oẳn tù tì với robot Bi. Mỗi bên ra một trong ba thứ: Búa, Kéo hoặc Bao. Luật chơi: Búa thắng Kéo, Kéo thắng Bao, Bao thắng Búa; hai bên ra giống nhau thì hòa.
+
+Đầu vào:
+- Một dòng chứa hai từ cách nhau một dấu cách: từ thứ nhất là lựa chọn của An, từ thứ hai là lựa chọn của Bi. Mỗi từ là BUA, KEO hoặc BAO.
+
+Đầu ra:
+- In ra AN nếu An thắng.
+- In ra BI nếu Bi thắng.
+- In ra HOA nếu hai bên hòa.

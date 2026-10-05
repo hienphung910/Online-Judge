@@ -86,6 +86,12 @@ public class ProblemWriter {
         sb.append("memoryLimitMb=").append(d.getMemoryLimitMb()).append('\n');
         sb.append("comparator=").append(escapeProperty(d.getComparator())).append('\n');
         sb.append("totalPoints=").append(formatPoints(d.getTotalPoints())).append('\n');
+        if (d.getTopic() != null && !d.getTopic().isEmpty()) {
+            sb.append("topic=").append(escapeProperty(d.getTopic())).append('\n');
+        }
+        if (d.getDifficulty() > 0) {
+            sb.append("difficulty=").append(d.getDifficulty()).append('\n');
+        }
         return sb.toString();
     }
 

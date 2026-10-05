@@ -1,0 +1,15 @@
+Sáng thứ Hai, cô giáo muốn cả lớp xếp hàng chào cờ thật ngay ngắn:
+bạn thấp nhất đứng đầu, bạn cao nhất đứng cuối. Em hãy giúp cô sắp xếp nhé!
+
+Đầu vào:
+- Dòng 1: số nguyên n là số bạn trong lớp.
+- Dòng 2: n số nguyên là chiều cao (cm) của từng bạn, cách nhau một dấu cách.
+
+Đầu ra:
+- Một dòng gồm n chiều cao đã xếp theo thứ tự tăng dần (bằng nhau thì đứng cạnh nhau), cách nhau một dấu cách.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000; 100 ≤ chiều cao ≤ 200.
+
+Gợi ý:
+- Em có thể tự viết sắp xếp nổi bọt, hoặc dùng hàm sắp xếp có sẵn của ngôn ngữ.

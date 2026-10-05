@@ -1,0 +1,15 @@
+Dọc hàng rào trường em treo n quả bóng bay thành một hàng, quả thứ i có mã màu a[i]. Em hãy tìm đoạn dài nhất gồm các quả bóng đứng liền nhau và có cùng một màu.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n — số quả bóng.
+- Dòng thứ hai chứa n số nguyên a[1], a[2], ..., a[n], cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên — số quả bóng trong đoạn dài nhất các quả liền nhau cùng màu. Một quả bóng đứng một mình cũng là một đoạn dài 1.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000
+- 1 ≤ a[i] ≤ 10
+
+Gợi ý:
+- Dùng biến dem để đếm độ dài đoạn hiện tại: nếu a[i] = a[i-1] thì tăng dem thêm 1, ngược lại đặt dem = 1. Luôn nhớ giá trị dem lớn nhất từng gặp.

@@ -1,0 +1,13 @@
+Trong giờ chào cờ, n bạn đứng thành một hàng dọc. Cô giáo đo chiều cao của từng bạn (đơn vị xăng-ti-mét) để chọn bạn cao nhất cầm cờ. Các vị trí trong hàng được đánh số từ 1 đến n, tính từ đầu hàng.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n — số bạn trong hàng.
+- Dòng thứ hai chứa n số nguyên a[1], a[2], ..., a[n], cách nhau một dấu cách; a[i] là chiều cao của bạn đứng ở vị trí i.
+
+Đầu ra:
+- In ra hai số nguyên cách nhau một dấu cách: chiều cao lớn nhất và vị trí của bạn có chiều cao đó.
+- Nếu có nhiều bạn cùng cao nhất, in vị trí nhỏ nhất (bạn đứng gần đầu hàng nhất).
+
+Giới hạn:
+- 1 ≤ n ≤ 1000
+- 100 ≤ a[i] ≤ 200

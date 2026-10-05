@@ -1,0 +1,15 @@
+Cô giáo dạy cả lớp đọc bảng chữ cái tiếng Anh theo kiểu bậc thang: lần đầu đọc A, lần sau đọc A B, lần sau nữa đọc A B C... Em hãy viết lại các bậc thang chữ cái đó.
+
+Đầu vào:
+- Một số nguyên n là số bậc thang.
+
+Đầu ra:
+- In ra n dòng. Dòng thứ i gồm i chữ cái in hoa đầu tiên của bảng chữ cái tiếng Anh (A, B, C, ...) viết liền nhau theo thứ tự, không có dấu cách xen giữa.
+- Các dòng bắt đầu sát lề trái.
+
+Giới hạn:
+- 1 ≤ n ≤ 26.
+
+Gợi ý:
+- Với n = 2: dòng 1 là A, dòng 2 là AB.
+- Chữ cái thứ j (tính từ 1) có thể lấy bằng chr(ord('A') + j - 1) trong Python, hoặc (char)('A' + j - 1) trong C++/Java.

@@ -1,0 +1,11 @@
+Hộp A có a viên kẹo, hộp B có b viên kẹo. Bé Na đổ kẹo của hai hộp đổi cho nhau: kẹo hộp A sang hộp B, kẹo hộp B sang hộp A. Bây giờ mỗi hộp có bao nhiêu viên kẹo?
+
+Đầu vào:
+- Một dòng chứa hai số nguyên a và b, cách nhau một dấu cách.
+
+Đầu ra:
+- Dòng 1: Hop A: <số kẹo trong hộp A sau khi đổi>
+- Dòng 2: Hop B: <số kẹo trong hộp B sau khi đổi>
+
+Giới hạn:
+- 0 ≤ a, b ≤ 1000.

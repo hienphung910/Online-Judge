@@ -1,0 +1,10 @@
+Trang trại của bà có c con gà và d con chó. Mỗi con gà có 2 chân, mỗi con chó có 4 chân. Em hãy đếm giúp bà xem tất cả có bao nhiêu cái chân nhé!
+
+Đầu vào:
+- Một dòng chứa hai số nguyên c và d (số gà và số chó), cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên là tổng số chân của cả gà và chó.
+
+Giới hạn:
+- 0 ≤ c, d ≤ 1000000.

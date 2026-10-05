@@ -1,0 +1,15 @@
+Đội bóng nhí của phường có n cầu thủ. Trong mùa giải, bạn thứ i ghi được a[i] bàn thắng. Huấn luyện viên muốn biết trung bình mỗi bạn ghi được bao nhiêu bàn, nhưng chỉ cần phần nguyên thôi.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n — số cầu thủ.
+- Dòng thứ hai chứa n số nguyên a[1], a[2], ..., a[n], cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên — phần nguyên của phép chia (a[1] + a[2] + ... + a[n]) cho n.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000
+- 0 ≤ a[i] ≤ 10^6
+
+Gợi ý:
+- Tính tổng S trước, rồi lấy S chia lấy phần nguyên cho n (C++/Java: S / n với hai số nguyên; Python: S // n).

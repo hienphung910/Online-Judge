@@ -1,0 +1,12 @@
+Mọi số tự nhiên n ≥ 2 đều viết được thành tích của các số nguyên tố, giống như xếp hình từ những viên gạch nhỏ nhất. Ví dụ 360 = 2 × 2 × 2 × 3 × 3 × 5.
+
+Đầu vào:
+- Một số nguyên n (2 ≤ n ≤ 1 000 000 000).
+
+Đầu ra:
+- In ra các thừa số nguyên tố khác nhau của n theo thứ tự tăng dần, mỗi thừa số viết dạng p^k, trong đó k là số lần p xuất hiện trong tích. Nếu k = 1 thì chỉ viết p.
+- Giữa hai thừa số in một dấu cách, dấu *, rồi một dấu cách. Ví dụ với n = 360 thì in ra: 2^3 * 3^2 * 5
+- Nếu n là số nguyên tố thì chỉ in ra n.
+
+Gợi ý:
+- Thử chia n cho d = 2, 3, 4, ... trong khi d × d ≤ n. Khi n chia hết cho d thì chia mãi cho d và đếm số lần chia. Cuối cùng, nếu n còn lớn hơn 1 thì phần còn lại là một số nguyên tố.

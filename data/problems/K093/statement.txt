@@ -1,0 +1,10 @@
+Cầu thang trước nhà có n bậc, đánh số từ 1 (dưới cùng) đến n (trên cùng). Thỏ con rất thích số chẵn nên chỉ đặt chân lên những bậc có số thứ tự là số chẵn. Em hãy liệt kê các bậc mà thỏ con đã đặt chân lên.
+
+Đầu vào:
+- Một dòng chứa số nguyên n.
+
+Đầu ra:
+- In các số chẵn từ 2 đến n theo thứ tự tăng dần, trên cùng một dòng, các số cách nhau một dấu cách.
+
+Giới hạn:
+- 2 ≤ n ≤ 200.

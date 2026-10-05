@@ -1,0 +1,10 @@
+Trong phòng thí nghiệm, một ống nghiệm lúc đầu có a con vi khuẩn. Cứ sau mỗi giờ, số vi khuẩn lại tăng lên gấp đôi. Hỏi phải sau ít nhất bao nhiêu giờ thì số vi khuẩn nhiều hơn hẳn m con (tức là lớn hơn m, bằng m thì chưa tính)?
+
+Đầu vào:
+- Một dòng chứa hai số nguyên a và m, cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên là số giờ ít nhất cần chờ.
+
+Giới hạn:
+- 1 ≤ a ≤ m ≤ 1000000000.

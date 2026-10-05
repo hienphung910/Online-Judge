@@ -1,0 +1,16 @@
+Chiều nay An và Bình đều đến thư viện đọc truyện. Thời gian được tính bằng số phút kể từ lúc thư viện mở cửa: An ở thư viện từ phút a đến phút b, Bình ở thư viện từ phút c đến phút d. Hỏi có bao nhiêu phút cả hai bạn cùng có mặt trong thư viện?
+
+Đầu vào:
+- Dòng thứ nhất chứa hai số nguyên a và b: lúc An đến và lúc An về.
+- Dòng thứ hai chứa hai số nguyên c và d: lúc Bình đến và lúc Bình về.
+
+Đầu ra:
+- In ra một số nguyên là số phút hai bạn cùng ở thư viện.
+- Khoảng thời gian chung bắt đầu từ lúc bạn đến muộn hơn và kết thúc ở lúc bạn về sớm hơn. Nếu không có khoảng chung, hoặc người này về đúng lúc người kia đến, thì in ra 0.
+
+Giới hạn:
+- 0 ≤ a < b ≤ 1000
+- 0 ≤ c < d ≤ 1000
+
+Gợi ý:
+- Lúc bắt đầu chung là số lớn hơn trong hai số a, c; lúc kết thúc chung là số nhỏ hơn trong hai số b, d.

@@ -1,0 +1,15 @@
+Bây giờ là h giờ m phút. Lan đặt đồng hồ báo thức reo sau đúng k phút nữa. Hỏi lúc đồng hồ reo là mấy giờ mấy phút? Đồng hồ dùng kiểu 24 giờ:
+sau 23 giờ 59 phút là 0 giờ 0 phút của ngày hôm sau.
+
+Đầu vào:
+- Một dòng chứa ba số nguyên h, m và k, cách nhau một dấu cách.
+
+Đầu ra:
+- Một dòng gồm hai số nguyên: giờ (từ 0 đến 23) và phút (từ 0 đến 59) lúc đồng hồ reo, cách nhau một dấu cách.
+
+Giới hạn:
+- 0 ≤ h ≤ 23, 0 ≤ m ≤ 59.
+- 0 ≤ k ≤ 1000000.
+
+Gợi ý:
+- Đổi thời điểm hiện tại ra phút rồi cộng thêm k. Đổi ngược lại ra giờ và phút, số giờ thì lấy dư cho 24.

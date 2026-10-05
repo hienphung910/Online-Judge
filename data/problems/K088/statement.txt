@@ -1,0 +1,15 @@
+Đồng hồ của Tí đang chỉ h giờ m phút s giây. Tí muốn biết sau đúng 1 giây nữa đồng hồ sẽ chỉ mấy giờ. Đồng hồ chạy theo kiểu 24 giờ: sau 23 giờ 59 phút 59 giây là 0 giờ 0 phút 0 giây của ngày hôm sau.
+
+Đầu vào:
+- Một dòng chứa ba số nguyên h, m, s (giờ, phút, giây) cách nhau một dấu cách.
+
+Đầu ra:
+- In ra giờ, phút, giây sau 1 giây nữa trên một dòng, cách nhau một dấu cách (không cần viết thêm số 0 ở đầu).
+
+Giới hạn:
+- 0 ≤ h ≤ 23
+- 0 ≤ m ≤ 59
+- 0 ≤ s ≤ 59
+
+Gợi ý:
+- Khi giây vượt quá 59 thì giây trở về 0 và phút tăng thêm 1; phút và giờ cũng làm tương tự.

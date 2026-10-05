@@ -1,0 +1,15 @@
+Bác Tư vừa thu hoạch dưa hấu và đặt lần lượt từng quả lên cân. Em hãy giúp bác tìm xem quả nặng nhất và quả nhẹ nhất nặng bao nhiêu gam.
+
+Đầu vào:
+- Dòng thứ nhất chứa số nguyên n là số quả dưa.
+- Dòng thứ hai chứa n số nguyên là cân nặng (gam) của từng quả, cách nhau một dấu cách.
+
+Đầu ra:
+- In hai số trên một dòng, cách nhau một dấu cách: cân nặng lớn nhất, rồi đến cân nặng nhỏ nhất.
+
+Giới hạn:
+- 1 ≤ n ≤ 100.
+- Mỗi cân nặng từ 1 đến 10000.
+
+Gợi ý:
+- Lấy quả đầu tiên làm mốc cho cả "nặng nhất" và "nhẹ nhất", rồi so sánh với từng quả tiếp theo.

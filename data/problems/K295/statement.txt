@@ -1,0 +1,17 @@
+Bức tranh có n hàng và m cột ô, mỗi ô được tô một màu, ghi bằng một chữ cái thường (a, b, c, ...). Họa sĩ nhí đổ xô sơn màu ch vào ô ở hàng r, cột c. Sơn loang từ ô đó sang các ô kề cạnh (trên, dưới, trái, phải; không tính chéo) có CÙNG màu với ô ban đầu, rồi lại loang tiếp từ những ô vừa được sơn, cứ thế mãi. Mọi ô sơn loang tới đều đổi thành màu ch. Em hãy vẽ bức tranh sau khi đổ sơn.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và m.
+- n dòng tiếp theo, mỗi dòng gồm đúng m chữ cái thường viết liền nhau.
+- Dòng cuối cùng chứa hai số nguyên r, c và một chữ cái thường ch, cách nhau một dấu cách.
+- Hàng được đánh số từ 1 đến n từ trên xuống dưới, cột từ 1 đến m từ trái sang phải.
+
+Đầu ra:
+- In ra n dòng, mỗi dòng gồm đúng m chữ cái: bức tranh sau khi đổ sơn.
+
+Giới hạn:
+- 1 ≤ n, m ≤ 50; 1 ≤ r ≤ n; 1 ≤ c ≤ m.
+- Nếu ch trùng với màu của ô (r, c) thì bức tranh không thay đổi.
+
+Gợi ý:
+- Dùng một hàng đợi (BFS) chứa các ô vừa được sơn để loang tiếp sang hàng xóm của chúng.

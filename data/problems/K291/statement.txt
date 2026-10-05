@@ -1,0 +1,13 @@
+Cầu thang lên nhà bà có n bậc. Mỗi bước, bé Na leo lên 1 bậc hoặc 2 bậc. Hỏi có bao nhiêu cách khác nhau để Na leo từ chân cầu thang lên đúng bậc thứ n? Hai cách là khác nhau nếu dãy các bước khác nhau. Chẳng hạn với 3 bậc có 3 cách: 1+1+1, 1+2 và 2+1.
+
+Đầu vào:
+- Một dòng chứa số nguyên n.
+
+Đầu ra:
+- Một số nguyên: số cách leo lên bậc thứ n.
+
+Giới hạn:
+- 1 ≤ n ≤ 45.
+
+Gợi ý:
+- Bước cuối cùng Na đứng ở bậc n - 1 (rồi leo 1 bậc) hoặc ở bậc n - 2 (rồi leo 2 bậc). Vậy số cách lên bậc n = số cách lên bậc n - 1 + số cách lên bậc n - 2.

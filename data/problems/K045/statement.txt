@@ -1,0 +1,15 @@
+Làng em vừa làm một con đường dài L mét và trồng cây xanh ở cả hai bên đường. Ở mỗi bên, cứ cách k mét lại trồng một cây, và có trồng cây ở cả hai đầu đường. Hỏi cần tất cả bao nhiêu cây?
+
+Đầu vào:
+- Một dòng chứa hai số nguyên L và k, cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên là tổng số cây ở cả hai bên đường.
+
+Giới hạn:
+- 1 ≤ k ≤ L ≤ 1000000.
+- L chia hết cho k.
+
+Gợi ý:
+- Mỗi bên đường được chia thành (L chia cho k) khoảng. Số cây nhiều hơn số khoảng đúng 1 cây.
+- Dùng phép chia lấy phần nguyên để kết quả là số nguyên.

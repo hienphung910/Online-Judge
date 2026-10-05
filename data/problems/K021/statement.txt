@@ -1,0 +1,15 @@
+Hôm nay là sinh nhật của một bạn nhỏ. Bố mẹ muốn in một tấm thiệp hai dòng:
+một lời chúc và một lời hẹn cho năm sau.
+
+Đầu vào:
+- Dòng 1: tên của bạn nhỏ (chỉ gồm chữ cái tiếng Anh, không có dấu cách).
+- Dòng 2: một số nguyên n là số tuổi của bạn hôm nay.
+
+Đầu ra:
+- Dòng 1: Chuc mung sinh nhat <tên>!
+- Dòng 2: Nam sau <tên> se <n + 1> tuoi.
+- Dòng 2 có dấu chấm viết liền ngay sau chữ "tuoi".
+
+Giới hạn:
+- Tên dài không quá 20 ký tự.
+- 1 ≤ n ≤ 99.

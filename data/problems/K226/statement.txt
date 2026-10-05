@@ -1,0 +1,13 @@
+Chú chim sẻ đưa thư bay qua cơn gió mạnh và làm rơi mất hết các nguyên âm trong bức thư. Em hãy viết lại xem từ trong thư trông như thế nào sau khi mất nguyên âm.
+
+Đầu vào:
+- Một dòng chứa một từ gồm các chữ cái tiếng Anh (hoa hoặc thường), không có dấu cách.
+- Đảm bảo từ có ít nhất một chữ cái không phải nguyên âm.
+
+Đầu ra:
+- In ra từ đó sau khi xóa mọi nguyên âm.
+- Nguyên âm là a, e, i, o, u và cả dạng viết hoa A, E, I, O, U. Chữ y và Y không phải nguyên âm nên được giữ lại.
+- Các chữ còn lại giữ nguyên thứ tự và giữ nguyên chữ hoa/chữ thường.
+
+Giới hạn:
+- Từ dài từ 1 đến 100 chữ cái.

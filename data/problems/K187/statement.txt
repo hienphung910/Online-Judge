@@ -1,0 +1,14 @@
+Ông già Noel xếp n hộp quà thành một hàng, đánh số từ 1 đến n từ trái sang phải. Hộp thứ i có a[i] viên kẹo. Bạn Chi muốn mở hộp đầu tiên (gần bên trái nhất) có đúng x viên kẹo.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n — số hộp quà.
+- Dòng thứ hai chứa n số nguyên a[1], a[2], ..., a[n], cách nhau một dấu cách.
+- Dòng thứ ba chứa số nguyên x.
+
+Đầu ra:
+- Một số nguyên — vị trí i nhỏ nhất mà a[i] = x.
+- Nếu không có hộp nào có đúng x viên kẹo, in ra -1.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000
+- 0 ≤ a[i] ≤ 10^6, 0 ≤ x ≤ 10^6

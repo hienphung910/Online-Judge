@@ -1,0 +1,17 @@
+Bạn Tí gấp một chiếc thuyền giấy và vẽ cánh buồm hình tam giác vuông. Cánh buồm chỉ có viền là dấu *, bên trong để trống cho gió thổi qua.
+
+Đầu vào:
+- Một số nguyên n là chiều cao của cánh buồm.
+
+Đầu ra:
+- In ra n dòng, các dòng bắt đầu sát lề trái.
+- Dòng 1 chỉ có một dấu *.
+- Dòng cuối cùng (dòng n) gồm n dấu * viết liền nhau.
+- Mỗi dòng i ở giữa (1 < i < n) gồm một dấu *, rồi đúng i - 2 dấu cách, rồi một dấu *.
+- Nếu n = 1 thì chỉ in một dấu *.
+
+Giới hạn:
+- 1 ≤ n ≤ 20.
+
+Gợi ý:
+- Dòng 2 (nếu không phải dòng cuối) là ** vì có 0 dấu cách ở giữa.

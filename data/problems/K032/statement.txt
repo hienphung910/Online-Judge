@@ -1,0 +1,13 @@
+Mèo Mướp rất thích nằm ngủ trên tấm thảm hình chữ nhật trong phòng khách. Tấm thảm dài a mét và rộng b mét. Hỏi diện tích tấm thảm là bao nhiêu mét vuông?
+
+Đầu vào:
+- Một dòng chứa hai số nguyên a và b, cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên là diện tích tấm thảm.
+
+Giới hạn:
+- 1 ≤ a, b ≤ 10000.
+
+Gợi ý:
+- Diện tích hình chữ nhật = chiều dài × chiều rộng.

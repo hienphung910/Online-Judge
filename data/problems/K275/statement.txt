@@ -1,0 +1,13 @@
+Bãi biển được chia thành n hàng và m cột ô. An và Bình mỗi bạn ghi lại số vỏ sò mình nhặt được ở từng ô vào một bảng riêng. Em hãy lập bảng tổng: mỗi ô của bảng tổng là số vỏ sò cả hai bạn nhặt được ở ô đó.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và m.
+- n dòng tiếp theo là bảng của An, mỗi dòng m số nguyên cách nhau một dấu cách.
+- n dòng tiếp theo nữa là bảng của Bình, viết theo cùng cách.
+
+Đầu ra:
+- In ra n dòng, mỗi dòng m số nguyên cách nhau một dấu cách: số ở hàng i, cột j bằng số của An cộng số của Bình ở cùng hàng i, cột j.
+
+Giới hạn:
+- 1 ≤ n, m ≤ 30.
+- Mỗi số trong hai bảng từ 0 đến 500.

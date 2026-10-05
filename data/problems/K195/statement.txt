@@ -1,0 +1,12 @@
+Một dãy số được gọi là "dãy soi gương" nếu đọc từ trái sang phải hay từ phải sang trái đều giống hệt nhau. Chẳng hạn dãy 1 2 3 2 1 là dãy soi gương, còn dãy 1 2 3 1 thì không. Em hãy kiểm tra xem dãy số của bạn Lan có phải dãy soi gương hay không.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n — số phần tử của dãy.
+- Dòng thứ hai chứa n số nguyên a[1], a[2], ..., a[n], cách nhau một dấu cách.
+
+Đầu ra:
+- In YES nếu a[i] = a[n+1-i] với mọi i từ 1 đến n, ngược lại in NO.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000
+- 0 ≤ a[i] ≤ 10^6

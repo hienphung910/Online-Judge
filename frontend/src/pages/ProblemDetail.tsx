@@ -3,6 +3,7 @@ import { api } from "../api";
 import { useAuth } from "../auth";
 import CodeEditor from "../components/CodeEditor";
 import TestSummary from "../components/TestSummary";
+import { DIFFICULTY_META } from "../learningPath";
 import type { JudgeFinishedEvent, LanguageInfo, LiveTestEvent, Problem, Submission } from "../types";
 
 const TEMPLATES: Record<string, string> = {
@@ -24,10 +25,16 @@ interface LiveState {
 const EMPTY_LIVE: LiveState = { total: 0, compiled: "waiting", compileMessage: "", tests: [], finished: null };
 
 export default function ProblemDetail({
-  problem, languages, onBack, onSubmitted,
+  problem, languages, onBack, onSubmitted, topicName, nextProblem, onNext,
 }: {
   problem: Problem; languages: LanguageInfo[]; onBack: () => void; onSubmitted: () => void;
+  /** Ten chu de cua bai trong lo trinh hoc. */
+  topicName?: string;
+  /** Bai ke tiep theo lo trinh (null neu day la bai cuoi). */
+  nextProblem?: Problem | null;
+  onNext?: () => void;
 }) {
+  const diff = DIFFICULTY_META[problem.difficulty];
   const { user, refresh } = useAuth();
   const [language, setLanguage] = useState(languages[0]?.name ?? "Java");
   const [code, setCode] = useState("");
@@ -82,13 +89,29 @@ export default function ProblemDetail({
           <span style={{ fontSize: 13, fontWeight: 600, color: "#212121" }}>
             Làm bài lớp: CodeForge · {problem.id}
           </span>
+          {topicName && <span style={{ fontSize: 12, color: "#757575" }}>{topicName}</span>}
+          {diff && (
+            <span style={{ fontSize: 11.5, fontWeight: 700, padding: "2px 10px", borderRadius: 10, color: diff.color, background: diff.bg }}>
+              {diff.label}
+            </span>
+          )}
         </div>
-        <button style={{
-          display: "flex", alignItems: "center", gap: 4, background: "none", border: "1px solid #E0E0E0",
-          borderRadius: 6, height: 30, padding: "0 12px", color: "#757575", fontSize: 12, cursor: "pointer",
-        }}>
-          ✦ Bài làm tốt nhất
-        </button>
+        <div style={{ display: "flex", gap: 8 }}>
+          {nextProblem && (
+            <button onClick={onNext} title={`${nextProblem.id} — ${nextProblem.title}`} style={{
+              display: "flex", alignItems: "center", gap: 4, background: "none", border: "1px solid #E0E0E0",
+              borderRadius: 6, height: 30, padding: "0 12px", color: "#757575", fontSize: 12, cursor: "pointer",
+            }}>
+              Bài tiếp theo →
+            </button>
+          )}
+          <button style={{
+            display: "flex", alignItems: "center", gap: 4, background: "none", border: "1px solid #E0E0E0",
+            borderRadius: 6, height: 30, padding: "0 12px", color: "#757575", fontSize: 12, cursor: "pointer",
+          }}>
+            ✦ Bài làm tốt nhất
+          </button>
+        </div>
       </div>
 
       <div style={{ flex: 1, overflow: "auto", padding: "16px 24px 24px", display: "flex", flexDirection: "column", gap: 16 }}>
@@ -227,6 +250,23 @@ export default function ProblemDetail({
             </div>
 
             <TestSummary tests={shownTests} size={13} />
+
+            {result?.verdict === "AC" && nextProblem && (
+              <div style={{
+                display: "flex", alignItems: "center", gap: 12, padding: "10px 14px",
+                background: "var(--color-ac-bg)", border: "1px solid var(--color-green-border)", borderRadius: 6,
+              }}>
+                <span style={{ flex: 1, fontSize: 13, color: "var(--color-ac-text)", fontWeight: 600 }}>
+                  Chính xác! Sẵn sàng cho bài tiếp theo: {nextProblem.id} — {nextProblem.title}
+                </span>
+                <button onClick={onNext} style={{
+                  height: 32, padding: "0 16px", border: "none", borderRadius: 6, cursor: "pointer",
+                  fontSize: 13, fontWeight: 700, color: "#fff", background: "var(--color-green)",
+                }}>
+                  Làm bài tiếp →
+                </button>
+              </div>
+            )}
 
             {(live.compiled === "failed" || result?.message) && (
               <pre style={{

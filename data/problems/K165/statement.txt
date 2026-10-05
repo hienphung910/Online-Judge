@@ -1,0 +1,10 @@
+Pháp sư nhí có một phép thuật: biến một số thành tổng các chữ số của nó. Pháp sư cứ làm phép mãi cho đến khi số chỉ còn một chữ số. Ví dụ: 59 → 14 → 5, tức là làm phép 2 lần và được chữ số 5.
+
+Đầu vào:
+- Một số nguyên n (0 ≤ n ≤ 1 000 000 000).
+
+Đầu ra:
+- In ra hai số trên một dòng, cách nhau một dấu cách: chữ số cuối cùng nhận được và số lần làm phép.
+
+Chú ý:
+- Nếu n đã có một chữ số thì không cần làm phép: in ra chính n và số lần là 0.

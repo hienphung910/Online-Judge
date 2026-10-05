@@ -1,0 +1,14 @@
+An có n tấm thẻ, mỗi tấm ghi một số (có thể trùng nhau). An muốn chọn ra nhiều thẻ nhất sao cho các số trên thẻ đã chọn là các số nguyên liên tiếp k, k + 1, k + 2, ... và mỗi số chỉ dùng một thẻ. Hỏi An chọn được nhiều nhất bao nhiêu thẻ?
+
+Đầu vào:
+- Dòng 1: số nguyên n.
+- Dòng 2: n số nguyên ghi trên các tấm thẻ, cách nhau một dấu cách.
+
+Đầu ra:
+- Số thẻ nhiều nhất An có thể chọn (độ dài dãy số liên tiếp dài nhất).
+
+Giới hạn:
+- 1 ≤ n ≤ 1000; 1 ≤ số trên thẻ ≤ 100000.
+
+Gợi ý:
+- Sắp xếp các số, bỏ các số trùng, rồi đếm đoạn dài nhất mà số sau hơn số trước đúng 1.

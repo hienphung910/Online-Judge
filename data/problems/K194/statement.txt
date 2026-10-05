@@ -1,0 +1,13 @@
+Robot Bi leo một cầu thang có n bậc, bậc thứ i có độ cao a[i]. Bi sẽ rất vui nếu suốt đường đi không bao giờ phải bước xuống, tức là mỗi bậc cao bằng hoặc cao hơn bậc ngay trước nó.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n — số bậc thang.
+- Dòng thứ hai chứa n số nguyên a[1], a[2], ..., a[n], cách nhau một dấu cách.
+
+Đầu ra:
+- In YES nếu a[1] ≤ a[2] ≤ ... ≤ a[n], ngược lại in NO.
+- Cầu thang chỉ có 1 bậc (n = 1) thì in YES.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000
+- 0 ≤ a[i] ≤ 10^6

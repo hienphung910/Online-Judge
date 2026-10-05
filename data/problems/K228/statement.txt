@@ -1,0 +1,14 @@
+Câu thần chú của phù thủy có lẫn những chữ số. Ai cộng đúng tất cả các chữ số đó sẽ biết trong kho báu có bao nhiêu đồng vàng!
+
+Đầu vào:
+- Một dòng chứa câu thần chú: một xâu gồm các chữ cái tiếng Anh và chữ số, không có dấu cách.
+
+Đầu ra:
+- In ra tổng của các chữ số xuất hiện trong xâu. Mỗi chữ số được cộng riêng lẻ, ví dụ đoạn "35" được tính là 3 + 5 chứ không phải 35.
+- Nếu xâu không có chữ số nào thì in ra 0.
+
+Giới hạn:
+- Xâu dài từ 1 đến 100 ký tự.
+
+Gợi ý:
+- Giá trị của chữ số ch là ch - '0' (C++/Java) hoặc int(ch) (Python).

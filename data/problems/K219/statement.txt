@@ -1,0 +1,13 @@
+Chiếc két sắt của ông nội chỉ nhận mật mã gồm toàn chữ số. Bạn Tôm vừa nghĩ ra một mật mã. Em hãy kiểm tra xem mật mã đó có dùng được cho két sắt không.
+
+Đầu vào:
+- Một dòng chứa mật mã: một xâu gồm các chữ cái tiếng Anh và chữ số, không có dấu cách.
+
+Đầu ra:
+- In ra YES nếu mọi ký tự trong xâu đều là chữ số (từ 0 đến 9), ngược lại in ra NO.
+
+Giới hạn:
+- Xâu dài từ 1 đến 50 ký tự.
+
+Gợi ý:
+- Hãy đọc mật mã như một xâu, không đọc như một số.

@@ -1,0 +1,15 @@
+Chú ốc sên bò thành những vòng vuông lồng vào nhau. Ở chính giữa là vòng số 1, bao quanh nó là vòng số 2, rồi vòng số 3... và vòng ngoài cùng là vòng số n.
+
+Đầu vào:
+- Một số nguyên n là số vòng.
+
+Đầu ra:
+- In ra một hình vuông gồm 2n - 1 dòng, mỗi dòng gồm 2n - 1 chữ số viết liền nhau.
+- Đánh số dòng và cột từ 1. Ô ở dòng i, cột j ghi chữ số 1 + max(|i - n|, |j - n|), trong đó |x| là giá trị tuyệt đối của x và max(a, b) là số lớn hơn trong hai số a, b.
+- Như vậy ô chính giữa là 1 và toàn bộ viền ngoài cùng là chữ số n.
+
+Giới hạn:
+- 1 ≤ n ≤ 9.
+
+Gợi ý:
+- Với n = 2, hình vuông có 3 dòng: 222, 212, 222.

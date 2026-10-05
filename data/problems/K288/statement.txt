@@ -1,0 +1,13 @@
+Trong trò chơi ô chữ, bảng có n hàng và m cột, mỗi ô là một chữ cái in hoa. Một từ được coi là có trong bảng nếu đọc được nó trên các ô liền nhau theo hàng ngang từ trái sang phải, hoặc theo cột dọc từ trên xuống dưới. Đọc ngược (phải sang trái, dưới lên trên) hay đọc chéo đều không tính. Em hãy kiểm tra xem từ bạn đố có trong bảng không.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và m.
+- n dòng tiếp theo, mỗi dòng gồm đúng m chữ cái in hoa viết liền nhau.
+- Dòng cuối cùng chứa từ cần tìm (gồm các chữ cái in hoa).
+
+Đầu ra:
+- In ra YES nếu tìm thấy từ trong bảng, ngược lại in ra NO.
+
+Giới hạn:
+- 1 ≤ n, m ≤ 30.
+- Từ cần tìm dài từ 1 đến 30 chữ cái.

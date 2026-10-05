@@ -1,0 +1,14 @@
+Nhà Sóc có nhiều anh em. Anh cả số 1 đứng một mình ở tầng trên cùng, anh số 2 rủ thêm một bạn số 2 nữa đứng tầng hai, anh số 3 có ba bạn số 3 ở tầng ba... Em hãy vẽ tháp số của nhà Sóc.
+
+Đầu vào:
+- Một số nguyên n là số tầng của tháp.
+
+Đầu ra:
+- In ra n dòng. Dòng thứ i gồm chữ số i được viết lặp lại đúng i lần, liền nhau.
+- Các dòng bắt đầu sát lề trái.
+
+Giới hạn:
+- 1 ≤ n ≤ 9.
+
+Gợi ý:
+- Với n = 2: dòng 1 là 1, dòng 2 là 22.

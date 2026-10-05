@@ -1,0 +1,13 @@
+Trong kỳ thi Toán tuổi thơ, số báo danh luôn được viết đủ 4 chữ số. Số nào ít chữ số hơn thì thêm các chữ số 0 vào phía trước, ví dụ số 8 được viết là 0008.
+
+Đầu vào:
+- Một dòng chứa một số nguyên n là số báo danh.
+
+Đầu ra:
+- In ra một dòng: So bao danh: <n viết đủ 4 chữ số>
+
+Giới hạn:
+- 1 ≤ n ≤ 9999.
+
+Gợi ý:
+- Python: f"{n:04d}"; C++: printf("%04d", n); Java: String.format("%04d", n).

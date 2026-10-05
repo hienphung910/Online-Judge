@@ -1,0 +1,12 @@
+Vườn rau hình chữ nhật có n hàng và m cột ô, mỗi ô ghi một số. Ốc sên bắt đầu ở ô góc trên bên trái và bò sang phải. Mỗi khi gặp mép vườn hoặc ô đã đi qua, ốc rẽ phải (theo thứ tự: sang phải, xuống dưới, sang trái, lên trên, rồi lại sang phải...), cứ thế bò xoắn ốc vào trong cho đến khi đi qua mỗi ô đúng một lần. Em hãy in các số theo đúng thứ tự ốc sên bò qua.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và m.
+- n dòng tiếp theo, mỗi dòng chứa m số nguyên cách nhau một dấu cách.
+
+Đầu ra:
+- In ra trên một dòng n·m số nguyên cách nhau một dấu cách, theo thứ tự ốc sên đi qua.
+
+Giới hạn:
+- 1 ≤ n, m ≤ 20.
+- Mỗi số từ 0 đến 999.

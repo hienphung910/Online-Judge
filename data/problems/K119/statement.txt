@@ -1,0 +1,14 @@
+Cậu bé Jack trồng một cây đậu thần cao h xăng-ti-mét. Mỗi đêm, cây cao thêm p phần trăm chiều cao hiện tại, nhưng chỉ lấy phần nguyên: phần cao thêm bằng h × p / 100, bỏ đi phần dư. Lâu đài trên mây ở độ cao t xăng-ti-mét. Hỏi sau ít nhất bao nhiêu đêm thì cây cao ít nhất t xăng-ti-mét?
+
+Đầu vào:
+- Một dòng chứa ba số nguyên h, p, t, cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên là số đêm ít nhất. Nếu ngay từ đầu cây đã cao ít nhất t thì in 0.
+
+Giới hạn:
+- 100 ≤ h ≤ t ≤ 10000000.
+- 1 ≤ p ≤ 100.
+
+Gợi ý:
+- Chẳng hạn cây đang cao 130 và p = 50 thì đêm đó cây cao thêm 130 × 50 / 100 = 65, thành 195. Đêm sau cao thêm 195 × 50 / 100 = 97 (bỏ phần dư), thành 292.

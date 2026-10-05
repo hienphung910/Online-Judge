@@ -1,0 +1,14 @@
+Cuối tuần, An đạp xe đến nhà bà ngoại. Quãng đường dài a ki-lô-mét và b mét. Em hãy đổi cả quãng đường đó ra mét.
+
+Đầu vào:
+- Một dòng chứa hai số nguyên a (số ki-lô-mét) và b (số mét), cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên là độ dài quãng đường tính bằng mét.
+
+Giới hạn:
+- 0 ≤ a ≤ 1000.
+- 0 ≤ b ≤ 999.
+
+Gợi ý:
+- 1 ki-lô-mét = 1000 mét.

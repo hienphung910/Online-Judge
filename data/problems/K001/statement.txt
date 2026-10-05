@@ -1,0 +1,13 @@
+Con vẹt Lóc Cóc rất thích bắt chước. Ai đọc cho nó nghe số nào, nó nhắc lại đúng số đó. Em hãy viết chương trình làm chú vẹt nhé!
+
+Đầu vào:
+- Một dòng chứa một số nguyên n.
+
+Đầu ra:
+- In ra đúng số n.
+
+Giới hạn:
+- -10^9 ≤ n ≤ 10^9.
+
+Gợi ý:
+- Đọc số vào một biến rồi in biến đó ra màn hình.

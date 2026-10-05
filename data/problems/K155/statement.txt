@@ -1,0 +1,10 @@
+Thầy giáo viết số n lên bảng. Bạn An phải tìm chữ số lớn nhất, còn bạn Bình phải tìm chữ số nhỏ nhất có mặt trong số đó.
+
+Đầu vào:
+- Một số nguyên n (0 ≤ n ≤ 1 000 000 000).
+
+Đầu ra:
+- In ra hai số trên một dòng, cách nhau một dấu cách: chữ số lớn nhất và chữ số nhỏ nhất của n.
+
+Chú ý:
+- Nếu n chỉ có một chữ số thì chữ số lớn nhất và nhỏ nhất đều là chính nó.

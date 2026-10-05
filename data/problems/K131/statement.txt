@@ -1,0 +1,16 @@
+Bạn An xây một lâu đài cát rất to và muốn khoét một ô cửa sổ hình vuông. Cửa sổ chỉ có viền bên ngoài làm bằng dấu *, còn bên trong là khoảng trống để ngắm biển.
+
+Đầu vào:
+- Một số nguyên n là độ dài cạnh của cửa sổ.
+
+Đầu ra:
+- In ra n dòng tạo thành viền của hình vuông n x n.
+- Dòng đầu tiên và dòng cuối cùng gồm n dấu * viết liền nhau.
+- Mỗi dòng ở giữa gồm một dấu *, rồi đúng n - 2 dấu cách, rồi một dấu *.
+- Nếu n = 1 thì chỉ in một dấu *.
+
+Giới hạn:
+- 1 ≤ n ≤ 20.
+
+Gợi ý:
+- Một ô nằm trên viền nếu nó ở dòng đầu, dòng cuối, cột đầu hoặc cột cuối.

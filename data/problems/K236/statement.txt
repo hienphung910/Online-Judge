@@ -1,0 +1,17 @@
+Hai từ được gọi là "đảo chữ" của nhau nếu ta có thể xếp lại thứ tự các chữ cái của từ này để được từ kia, mỗi chữ cái dùng đúng một lần. Chẳng hạn "listen" và
+"silent" là đảo chữ của nhau. Em hãy kiểm tra hai từ bạn Cún đưa ra nhé.
+
+Đầu vào:
+- Dòng 1: từ thứ nhất.
+- Dòng 2: từ thứ hai.
+- Cả hai từ gồm các chữ cái tiếng Anh viết thường, không có dấu cách.
+
+Đầu ra:
+- In ra YES nếu hai từ là đảo chữ của nhau, ngược lại in ra NO.
+- Chú ý: mỗi chữ cái phải xuất hiện cùng số lần ở cả hai từ. Hai từ giống hệt nhau cũng được tính là đảo chữ.
+
+Giới hạn:
+- Mỗi từ dài từ 1 đến 100 chữ cái.
+
+Gợi ý:
+- Đếm số lần xuất hiện của từng chữ cái a..z trong mỗi từ rồi so sánh.

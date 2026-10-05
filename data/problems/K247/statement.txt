@@ -1,0 +1,11 @@
+Hội thi "Bé giỏi toán" sắp trao giải. Ban tổ chức cần biết ba điểm số cao nhất để mời các bạn lên bục vinh quang.
+
+Đầu vào:
+- Dòng 1: số nguyên n là số thí sinh.
+- Dòng 2: n số nguyên là điểm của các thí sinh, cách nhau một dấu cách.
+
+Đầu ra:
+- Một dòng gồm 3 số: ba số đứng đầu của dãy điểm sau khi xếp giảm dần, cách nhau một dấu cách. Nếu có điểm bằng nhau thì vẫn tính là các bạn khác nhau (một điểm có thể được in nhiều lần).
+
+Giới hạn:
+- 3 ≤ n ≤ 1000; 0 ≤ điểm ≤ 100.

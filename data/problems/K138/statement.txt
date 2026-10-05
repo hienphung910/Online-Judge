@@ -1,0 +1,17 @@
+Bạn Minh, nhà toán học nhí của lớp, viết các số tự nhiên 1, 2, 3, ... liên tiếp thành hình tam giác:
+dòng 1 có 1 số, dòng 2 có 2 số, dòng 3 có 3 số... Số tiếp theo luôn nối tiếp số cuối cùng của dòng trước.
+
+Đầu vào:
+- Một số nguyên n là số dòng của tam giác.
+
+Đầu ra:
+- In ra n dòng. Dòng thứ i gồm i số nguyên liên tiếp, các số cách nhau đúng một dấu cách.
+- Dòng 1 bắt đầu bằng số 1; mỗi dòng sau bắt đầu bằng số lớn hơn số cuối cùng của dòng trước 1 đơn vị.
+- Các dòng bắt đầu sát lề trái.
+
+Giới hạn:
+- 1 ≤ n ≤ 15.
+
+Gợi ý:
+- Với n = 2: dòng 1 là 1, dòng 2 là 2 3.
+- Hãy dùng một biến đếm, mỗi lần in một số thì tăng biến đếm lên 1.

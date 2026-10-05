@@ -1,0 +1,11 @@
+Mai muốn ghép hai từ thành một từ ghép. Giữa hai từ, Mai bắc một "cây cầu" là dấu gạch ngang.
+
+Đầu vào:
+- Một dòng chứa hai từ (chỉ gồm chữ cái tiếng Anh), cách nhau một dấu cách.
+
+Đầu ra:
+- In ra một dòng: <từ 1>-<từ 2>
+- Không có dấu cách nào trong kết quả.
+
+Giới hạn:
+- Mỗi từ dài từ 1 đến 20 ký tự.

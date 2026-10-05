@@ -1,0 +1,13 @@
+Đàn thỏ nhà bác Ba tăng lên theo một quy luật đặc biệt: tháng thứ 1 có 1 đôi thỏ, tháng thứ 2 cũng có 1 đôi thỏ, từ tháng thứ 3 trở đi, số đôi thỏ của mỗi tháng bằng tổng số đôi thỏ của hai tháng liền trước nó. Em hãy liệt kê số đôi thỏ của n tháng đầu tiên.
+
+Đầu vào:
+- Một dòng chứa số nguyên n.
+
+Đầu ra:
+- In n số trên cùng một dòng, cách nhau một dấu cách: số đôi thỏ của tháng 1, tháng 2, ..., tháng n.
+
+Giới hạn:
+- 1 ≤ n ≤ 40.
+
+Gợi ý:
+- Chỉ cần nhớ hai số của hai tháng gần nhất là tính được tháng tiếp theo.

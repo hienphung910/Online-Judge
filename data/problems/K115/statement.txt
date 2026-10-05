@@ -1,0 +1,14 @@
+Trong n ngày nghỉ hè, mỗi ngày bạn Hà ghi số 1 nếu trời nắng và số 0 nếu trời mưa. Hà muốn biết chuỗi ngày nắng liên tiếp dài nhất kéo dài bao nhiêu ngày, để lần sau chọn lịch đi biển cho đẹp.
+
+Đầu vào:
+- Dòng thứ nhất chứa số nguyên n.
+- Dòng thứ hai chứa n số, mỗi số là 0 hoặc 1, cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên là số ngày của chuỗi ngày nắng liên tiếp dài nhất. Nếu không có ngày nắng nào thì in 0.
+
+Giới hạn:
+- 1 ≤ n ≤ 100.
+
+Gợi ý:
+- Dùng một biến đếm độ dài chuỗi nắng hiện tại: gặp 1 thì tăng thêm 1, gặp 0 thì đặt lại về 0. Mỗi lần tăng thì so sánh với kỷ lục.

@@ -1,0 +1,14 @@
+Bé Thỏ xếp kẹo dẻo thành hình tam giác: hàng trên cùng có 1 viên, mỗi hàng bên dưới nhiều hơn hàng trên 1 viên. Mỗi viên kẹo là một dấu *.
+
+Đầu vào:
+- Một số nguyên n là số hàng kẹo.
+
+Đầu ra:
+- In ra n dòng. Dòng thứ i (i = 1, 2, ..., n) gồm đúng i dấu * viết liền nhau.
+- Các dòng đều bắt đầu sát lề trái (không có dấu cách ở đầu dòng).
+
+Giới hạn:
+- 1 ≤ n ≤ 20.
+
+Gợi ý:
+- Với n = 2: dòng 1 là *, dòng 2 là **.

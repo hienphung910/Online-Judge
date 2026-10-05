@@ -1,0 +1,13 @@
+Bạn Su tìm thấy sổ ghi chép của bà, trong đó mỗi chuỗi hạt cườm được ghi gọn thành các cặp "chữ cái + số lượng". Em hãy giúp Su xâu lại chuỗi hạt ban đầu.
+
+Đầu vào:
+- Một dòng chứa một xâu không có dấu cách, gồm nhiều cặp viết liền nhau. Mỗi cặp là một chữ cái tiếng Anh viết thường, ngay sau đó là một số nguyên dương (có 1 hoặc 2 chữ số) cho biết chữ cái đó được lặp lại bao nhiêu lần.
+
+Đầu ra:
+- In ra chuỗi hạt ban đầu: lần lượt từ trái sang phải, mỗi cặp được thay bằng chữ cái đó viết lặp lại đúng số lần đã ghi, tất cả viết liền nhau.
+
+Giới hạn:
+- Mỗi số lượng từ 1 đến 99; xâu kết quả dài không quá 1000 chữ cái.
+
+Gợi ý:
+- Số lượng có thể có 2 chữ số, nên hãy đọc hết các chữ số liền nhau rồi mới lặp.

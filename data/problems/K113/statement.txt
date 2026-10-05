@@ -1,0 +1,13 @@
+Một chú ốc sên đang ở đáy một cái giếng sâu h mét. Ban ngày ốc leo lên được a mét, nhưng ban đêm ngủ quên nên bị tụt xuống b mét. Hỏi đến ngày thứ mấy thì ốc lên tới miệng giếng?
+
+Ốc lên tới miệng giếng ngay khi quãng đường đã leo được (tính từ đáy) lớn hơn hoặc bằng h mét trong lúc leo ban ngày. Khi đã lên tới miệng giếng, ốc không bị tụt nữa.
+
+Đầu vào:
+- Một dòng chứa ba số nguyên h, a, b, cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên là số thứ tự của ngày ốc lên tới miệng giếng (ngày đầu tiên là ngày 1).
+
+Giới hạn:
+- 1 ≤ h ≤ 10000.
+- 0 ≤ b < a ≤ 100.

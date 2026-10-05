@@ -1,0 +1,14 @@
+Bình có đúng s nghìn đồng và muốn mua đúng hai món quà khác nhau trong cửa hàng để tiêu vừa hết số tiền. Em hãy đếm xem Bình có bao nhiêu cách chọn.
+
+Đầu vào:
+- Dòng 1: hai số nguyên n (số món quà) và s.
+- Dòng 2: n số nguyên a1, a2, ..., an là giá của từng món (nghìn đồng).
+
+Đầu ra:
+- Số cặp chỉ số (i, j) với i < j sao cho ai + aj = s. Hai món khác nhau nhưng cùng giá vẫn được tính là cách chọn khác nhau.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000; 1 ≤ ai ≤ 1000; 2 ≤ s ≤ 2000.
+
+Gợi ý:
+- Có thể thử mọi cặp, hoặc sắp xếp rồi dùng hai "ngón tay" đi từ hai đầu dãy vào giữa.

@@ -1,0 +1,11 @@
+Mỗi bạn trong lớp được làm một chiếc thẻ học sinh có in chữ viết tắt của họ tên:
+lấy chữ cái đầu tiên của từng từ trong họ tên rồi viết hoa lên.
+
+Đầu vào:
+- Một dòng (có thể có dấu cách) chứa họ tên viết không dấu. Mỗi từ gồm các chữ cái tiếng Anh (hoa hoặc thường); hai từ liền nhau cách nhau đúng một dấu cách; không có dấu cách ở đầu và cuối dòng.
+
+Đầu ra:
+- In ra chữ cái đầu tiên của từng từ, theo đúng thứ tự trong họ tên, tất cả viết hoa và viết liền nhau (không có dấu cách).
+
+Giới hạn:
+- Họ tên có từ 1 đến 10 từ.

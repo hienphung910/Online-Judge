@@ -1,0 +1,12 @@
+Trạm khí tượng ở Sa Pa ghi lại nhiệt độ lúc nửa đêm của n đêm mùa đông liên tiếp. Trời rất lạnh nên có những đêm nhiệt độ xuống dưới 0 độ (là số âm). Em hãy tìm nhiệt độ thấp nhất trong các đêm đó.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n — số đêm.
+- Dòng thứ hai chứa n số nguyên a[1], a[2], ..., a[n], cách nhau một dấu cách; a[i] là nhiệt độ của đêm thứ i.
+
+Đầu ra:
+- Một số nguyên — nhiệt độ thấp nhất.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000
+- -50 ≤ a[i] ≤ 50

@@ -1,0 +1,15 @@
+Cô Lan có một cửa hàng kẹo với n chiếc hũ xếp trên kệ, hũ thứ i đựng a[i] viên kẹo. Cuối ngày cô muốn biết cả cửa hàng có tất cả bao nhiêu viên kẹo. Em hãy tính giúp cô nhé!
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n — số hũ kẹo.
+- Dòng thứ hai chứa n số nguyên a[1], a[2], ..., a[n], cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên duy nhất — tổng số viên kẹo trong tất cả các hũ.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000
+- 0 ≤ a[i] ≤ 10^6
+
+Gợi ý:
+- Dùng một biến tong bắt đầu bằng 0, rồi lần lượt cộng từng a[i] vào tong.

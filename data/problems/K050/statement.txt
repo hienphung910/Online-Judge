@@ -1,0 +1,15 @@
+An đạp xe rời nhà lúc h1 giờ m1 phút và đến trường lúc h2 giờ m2 phút (trong cùng một ngày). Hỏi An đã đạp xe trong bao nhiêu phút?
+
+Đầu vào:
+- Dòng thứ nhất chứa hai số nguyên h1 và m1 (lúc rời nhà), cách nhau một dấu cách.
+- Dòng thứ hai chứa hai số nguyên h2 và m2 (lúc đến trường), cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên là số phút An đã đạp xe.
+
+Giới hạn:
+- 0 ≤ h1, h2 ≤ 23 và 0 ≤ m1, m2 ≤ 59.
+- Lúc đến trường không sớm hơn lúc rời nhà.
+
+Gợi ý:
+- Đổi cả hai thời điểm ra số phút tính từ 0 giờ 0 phút, rồi trừ cho nhau.

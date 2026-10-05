@@ -1,0 +1,15 @@
+Bạn Mi viết một từ lên tờ giấy kẻ ô, mỗi ô vuông một chữ cái. Các ô được đánh số
+1, 2, 3, ... từ trái sang phải. Em hãy cho Mi biết ô thứ k chứa chữ cái nào.
+
+Đầu vào:
+- Dòng 1: một từ s gồm các chữ cái tiếng Anh (hoa hoặc thường), không có dấu cách.
+- Dòng 2: một số nguyên k.
+
+Đầu ra:
+- In ra chữ cái ở vị trí thứ k của từ (đếm từ 1, từ trái sang phải), giữ nguyên chữ hoa/chữ thường.
+
+Giới hạn:
+- Từ dài từ 1 đến 100 chữ cái; 1 ≤ k ≤ độ dài của từ.
+
+Gợi ý:
+- Trong Python, C++ và Java, vị trí trong xâu được đánh số từ 0, nên chữ cái thứ k nằm ở chỉ số k - 1.

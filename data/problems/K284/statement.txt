@@ -1,0 +1,13 @@
+Bức tranh ghép của bạn Minh có n hàng và m cột mảnh ghép, trên mỗi mảnh có ghi một số. Minh xoay cả bức tranh 90 độ theo chiều kim đồng hồ. Em hãy in ra bức tranh sau khi xoay.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và m.
+- n dòng tiếp theo, mỗi dòng chứa m số nguyên cách nhau một dấu cách.
+
+Đầu ra:
+- Sau khi xoay, bức tranh có m hàng và n cột. In ra m dòng, mỗi dòng n số nguyên cách nhau một dấu cách.
+- Hàng thứ j của tranh mới là cột thứ j của tranh cũ, đọc từ dưới lên trên (từ hàng n lên hàng 1).
+
+Giới hạn:
+- 1 ≤ n, m ≤ 30.
+- Mỗi số từ 0 đến 99.

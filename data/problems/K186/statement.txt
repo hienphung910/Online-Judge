@@ -1,0 +1,13 @@
+Mèo Mướp vừa đi chợ về với n con cá, con thứ i nặng a[i] gam. Hôm nay Mướp chỉ muốn ăn những con cá nặng đúng x gam. Em hãy đếm giúp Mướp xem có bao nhiêu con cá như thế.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n — số con cá.
+- Dòng thứ hai chứa n số nguyên a[1], a[2], ..., a[n], cách nhau một dấu cách.
+- Dòng thứ ba chứa số nguyên x.
+
+Đầu ra:
+- Một số nguyên — số con cá nặng đúng x gam (in 0 nếu không có con nào).
+
+Giới hạn:
+- 1 ≤ n ≤ 1000
+- 1 ≤ a[i] ≤ 1000, 1 ≤ x ≤ 1000

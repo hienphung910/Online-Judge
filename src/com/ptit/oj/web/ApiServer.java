@@ -7,6 +7,7 @@ import com.ptit.oj.model.Problem;
 import com.ptit.oj.model.Submission;
 import com.ptit.oj.model.TestCase;
 import com.ptit.oj.model.TestCaseResult;
+import com.ptit.oj.model.Topic;
 import com.ptit.oj.model.User;
 import com.ptit.oj.model.Verdict;
 import com.ptit.oj.repository.ProblemDraft;
@@ -166,6 +167,11 @@ public class ApiServer {
             sendJson(ex, 200, problemsJson());
             return;
         }
+        if ("GET".equals(method) && path.equals("/api/topics")) {
+            requireUser(ex);
+            sendJson(ex, 200, topicsJson());
+            return;
+        }
         if ("GET".equals(method) && path.equals("/api/submissions")) {
             sendJson(ex, 200, submissionsJson(requireUser(ex)));
             return;
@@ -317,7 +323,28 @@ public class ApiServer {
                     .put("memoryLimitMb", p.getMemoryLimitMb())
                     .put("comparator", p.getComparatorSpec())
                     .put("maxPoints", p.getMaxPoints())
+                    .put("topic", p.getTopic())
+                    .put("difficulty", p.getDifficulty())
                     .putRaw("samples", Json.array(samples))
+                    .build());
+        }
+        return Json.array(items);
+    }
+
+    /** Lo trinh hoc theo dung thu tu; dem so bai de giao dien khoi phai tu dem lai. */
+    private String topicsJson() {
+        Map<String, Integer> counts = new LinkedHashMap<>();
+        for (Problem p : service.getProblems()) {
+            counts.merge(p.getTopic(), 1, Integer::sum);
+        }
+        List<String> items = new ArrayList<>();
+        for (Topic t : service.getTopics()) {
+            items.add(Json.obj()
+                    .put("id", t.getId())
+                    .put("name", t.getName())
+                    .put("description", t.getDescription())
+                    .put("order", t.getOrder())
+                    .put("problemCount", counts.getOrDefault(t.getId(), 0))
                     .build());
         }
         return Json.array(items);
@@ -553,6 +580,8 @@ public class ApiServer {
         draft.setMemoryLimitMb((int) body.getLong("memoryLimitMb", 256));
         draft.setComparator(body.getString("comparator", "token"));
         draft.setTotalPoints(body.getDouble("totalPoints", 100));
+        draft.setTopic(body.getString("topic", ""));
+        draft.setDifficulty((int) body.getLong("difficulty", 0));
 
         if (!body.get("tests").isArray()) {
             throw ApiException.badRequest("Thiếu danh sách test (\"tests\" phải là một mảng)");
@@ -576,6 +605,8 @@ public class ApiServer {
                         .put("memoryLimitMb", created.getMemoryLimitMb())
                         .put("comparator", created.getComparatorSpec())
                         .put("maxPoints", created.getMaxPoints())
+                        .put("topic", created.getTopic())
+                        .put("difficulty", created.getDifficulty())
                         .build())
                 .build());
     }

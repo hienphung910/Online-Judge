@@ -1,0 +1,13 @@
+Rùa và thỏ chạy thi trên đường đua dài L mét, cùng xuất phát ở phút 0. Rùa chạy đều, mỗi phút đi được a mét và không bao giờ nghỉ. Thỏ thì mỗi phút chạy được b mét, nhưng cứ chạy được k phút thì thỏ lại lăn ra ngủ s phút (đứng yên), rồi lại chạy k phút, ngủ s phút, cứ thế lặp lại. Mỗi con về đích ở cuối phút đầu tiên mà tổng quãng đường nó đã đi được lớn hơn hoặc bằng L mét.
+
+Đầu vào:
+- Một dòng chứa năm số nguyên L, a, b, k, s, cách nhau một dấu cách.
+
+Đầu ra:
+- Dòng thứ nhất: phút rùa về đích và phút thỏ về đích, cách nhau một dấu cách.
+- Dòng thứ hai: in RUA nếu rùa về đích trước, THO nếu thỏ về đích trước, HOA nếu cả hai về đích trong cùng một phút.
+
+Giới hạn:
+- 1 ≤ L ≤ 1000.
+- 1 ≤ a ≤ 100; 1 ≤ b ≤ 100.
+- 1 ≤ k ≤ 20; 0 ≤ s ≤ 50.

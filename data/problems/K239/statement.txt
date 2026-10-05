@@ -1,0 +1,12 @@
+Nhóm bạn thân của Tít nói chuyện bằng "tiếng P" để người khác không hiểu:
+ngay sau mỗi nguyên âm, chèn thêm chữ p rồi lặp lại nguyên âm đó một lần nữa. Chẳng hạn từ cat sẽ thành capat. Em hãy dịch một câu sang tiếng P nhé.
+
+Đầu vào:
+- Một dòng (có thể có dấu cách) gồm các chữ cái tiếng Anh viết thường và dấu cách. Hai từ liền nhau cách nhau đúng một dấu cách; không có dấu cách ở đầu và cuối dòng.
+
+Đầu ra:
+- In ra câu sau khi dịch sang tiếng P.
+- Nguyên âm là a, e, i, o, u; chữ y không phải nguyên âm. Mỗi nguyên âm v được thay bằng ba chữ v, p, v. Các chữ cái khác và các dấu cách giữ nguyên.
+
+Giới hạn:
+- Dòng dài từ 1 đến 200 ký tự.

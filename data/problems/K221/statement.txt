@@ -1,0 +1,13 @@
+Tối qua bà kể cho bạn Ốc nghe một câu chuyện cổ tích. Ốc chép lại một câu trong truyện và muốn biết câu đó có bao nhiêu từ.
+
+Đầu vào:
+- Một dòng (có thể có dấu cách) chứa câu văn. Mỗi từ gồm các chữ cái tiếng Anh (hoa hoặc thường); hai từ liền nhau cách nhau đúng một dấu cách; không có dấu cách ở đầu và cuối dòng.
+
+Đầu ra:
+- In ra số từ trong câu.
+
+Giới hạn:
+- Dòng dài không quá 300 ký tự và có ít nhất một từ.
+
+Gợi ý:
+- Vì giữa hai từ có đúng một dấu cách, số từ = số dấu cách + 1.

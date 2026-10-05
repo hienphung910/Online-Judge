@@ -1,0 +1,11 @@
+Cô giáo dạy tiếng Anh nói rằng các nguyên âm là a, e, i, o, u. Bạn Bin muốn biết tên chú cún của mình có bao nhiêu nguyên âm.
+
+Đầu vào:
+- Một dòng chứa một từ gồm các chữ cái tiếng Anh viết thường, không có dấu cách.
+
+Đầu ra:
+- In ra số nguyên âm có trong từ.
+- Chỉ 5 chữ a, e, i, o, u là nguyên âm. Chữ y KHÔNG được tính là nguyên âm.
+
+Giới hạn:
+- Từ dài từ 1 đến 100 chữ cái.

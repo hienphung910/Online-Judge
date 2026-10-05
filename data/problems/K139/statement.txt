@@ -1,0 +1,11 @@
+Cô Mai treo lên bảng một bảng nhân nhỏ xíu để cả lớp ôn bảng cửu chương. Bảng có n hàng và m cột, ô ở hàng i, cột j ghi kết quả của phép nhân i x j.
+
+Đầu vào:
+- Một dòng gồm hai số nguyên n và m cách nhau một dấu cách: n là số hàng, m là số cột.
+
+Đầu ra:
+- In ra n dòng. Dòng thứ i gồm m số: i x 1, i x 2, ..., i x m, các số cách nhau đúng một dấu cách.
+- Các dòng bắt đầu sát lề trái (không cần căn thẳng cột).
+
+Giới hạn:
+- 1 ≤ n ≤ 9, 1 ≤ m ≤ 9.

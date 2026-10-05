@@ -1,0 +1,16 @@
+Trò chơi "Vượt chướng ngại vật" ghi lại điểm của n bạn. Thầy giáo hỏi q câu:
+"Có bao nhiêu bạn có điểm từ l đến r?". Em hãy trả lời giúp thầy.
+
+Đầu vào:
+- Dòng 1: hai số nguyên n và q.
+- Dòng 2: n số nguyên là điểm của các bạn (chưa sắp xếp).
+- q dòng tiếp theo, mỗi dòng hai số nguyên l và r (l ≤ r).
+
+Đầu ra:
+- q dòng, dòng thứ i là số bạn có điểm s thỏa mãn l ≤ s ≤ r của câu hỏi thứ i.
+
+Giới hạn:
+- 1 ≤ n, q ≤ 1000; 0 ≤ điểm, l, r ≤ 1000.
+
+Gợi ý:
+- Sắp xếp điểm một lần, rồi dùng tìm kiếm nhị phân để đếm cho mỗi câu hỏi.

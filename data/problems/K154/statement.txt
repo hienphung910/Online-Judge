@@ -1,0 +1,12 @@
+Chú mèo Mướp đặt mật mã cho hộp cá khô là số n. Mướp chỉ thích các chữ số chẵn nên muốn biết trong mật mã có bao nhiêu chữ số chẵn.
+
+Chữ số chẵn là một trong các chữ số 0, 2, 4, 6, 8.
+
+Đầu vào:
+- Một số nguyên n (0 ≤ n ≤ 1 000 000 000).
+
+Đầu ra:
+- In ra số lượng chữ số chẵn trong cách viết của n. Chữ số nào xuất hiện nhiều lần thì đếm đủ tất cả các lần.
+
+Chú ý:
+- Số 0 có một chữ số là 0 (chữ số chẵn), nên với n = 0 thì kết quả là 1.

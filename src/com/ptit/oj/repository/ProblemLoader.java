@@ -21,7 +21,8 @@ import java.util.Properties;
  * Doc de bai va bo test tu o dia. Cau truc mot bai:
  *
  *   data/problems/P001/
- *       problem.properties   (id, title, timeLimitMs, memoryLimitMb, comparator, totalPoints)
+ *       problem.properties   (id, title, timeLimitMs, memoryLimitMb, comparator, totalPoints,
+ *                             topic va difficulty - tuy chon, xem data/topics.txt)
  *       statement.txt        (de bai, tuy chon)
  *       tests/01.in  01.out  02.in  02.out ...
  *
@@ -77,9 +78,13 @@ public class ProblemLoader {
         int memoryLimit = (int) parseLong(config.getProperty("memoryLimitMb"), 256);
         String comparator = config.getProperty("comparator", "token").trim();
         double totalPoints = parseDouble(config.getProperty("totalPoints"), 100);
+        String topic = config.getProperty("topic", "").trim();
+        int difficulty = (int) parseLong(config.getProperty("difficulty"), 0);
+        if (difficulty < 0 || difficulty > 3) difficulty = 0;
         String statement = readTextIfExists(dir.resolve("statement.txt"));
 
-        Problem problem = new Problem(id, title, statement, timeLimit, memoryLimit, comparator);
+        Problem problem = new Problem(id, title, statement, timeLimit, memoryLimit, comparator,
+                topic, difficulty);
 
         List<Path> inputs = listInputs(dir.resolve("tests"));
         if (inputs.isEmpty()) {

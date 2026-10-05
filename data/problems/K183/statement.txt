@@ -1,0 +1,15 @@
+Ở hội chợ có n quả bóng bay, quả thứ i ghi số a[i]. Bạn Bình chỉ thích những quả bóng mang số chẵn (số chia hết cho 2, kể cả số 0). Em hãy đếm xem có bao nhiêu quả bóng như vậy.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n — số quả bóng bay.
+- Dòng thứ hai chứa n số nguyên a[1], a[2], ..., a[n], cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên — số quả bóng mang số chẵn.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000
+- 0 ≤ a[i] ≤ 10^6
+
+Gợi ý:
+- Số x là số chẵn khi x % 2 == 0.

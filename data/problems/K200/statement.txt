@@ -1,0 +1,15 @@
+Lớp 4B có m bạn ứng cử lớp trưởng, đánh số từ 1 đến m. Mỗi lá phiếu ghi số của một bạn ứng cử. Cô giáo nhờ em đếm xem mỗi bạn ứng cử được bao nhiêu phiếu.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên m và n — số bạn ứng cử và số lá phiếu.
+- Dòng thứ hai chứa n số nguyên, mỗi số từ 1 đến m, là số ghi trên từng lá phiếu.
+
+Đầu ra:
+- Một dòng gồm m số nguyên, cách nhau một dấu cách: số thứ i là số phiếu của bạn ứng cử thứ i (bạn không có phiếu nào thì in 0).
+
+Giới hạn:
+- 1 ≤ m ≤ 100
+- 1 ≤ n ≤ 1000
+
+Gợi ý:
+- Dùng mảng dem[1..m] ban đầu toàn số 0; đọc lá phiếu ghi số x thì tăng dem[x] thêm 1.

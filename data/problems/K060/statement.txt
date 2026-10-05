@@ -1,0 +1,14 @@
+Bể bơi của khu vui chơi hình chữ nhật dài a mét, rộng b mét. Người ta lát một lối đi rộng w mét chạy sát quanh mép bể, nên bể và lối đi ghép lại thành một hình chữ nhật lớn hơn. Hỏi lối đi có diện tích bao nhiêu mét vuông?
+
+Đầu vào:
+- Một dòng chứa ba số nguyên a, b và w, cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên là diện tích của lối đi.
+
+Giới hạn:
+- 1 ≤ a, b ≤ 1000.
+- 0 ≤ w ≤ 1000.
+
+Gợi ý:
+- Lấy diện tích hình chữ nhật lớn (cả bể và lối đi) trừ đi diện tích bể bơi. Chú ý: lối đi nằm ở cả hai phía của chiều dài và cả hai phía của chiều rộng.

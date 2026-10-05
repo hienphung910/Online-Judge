@@ -1,0 +1,10 @@
+Cô phù thủy nhỏ có một câu thần chú: biến một số thành tích (phép nhân) của tất cả các chữ số của nó. Em hãy tính trước kết quả của câu thần chú.
+
+Đầu vào:
+- Một số nguyên n (0 ≤ n ≤ 1 000 000 000).
+
+Đầu ra:
+- In ra tích của tất cả các chữ số của n.
+
+Chú ý:
+- Chỉ cần một chữ số 0 là cả tích bằng 0. Số 0 có một chữ số là 0 nên kết quả của n = 0 là 0.

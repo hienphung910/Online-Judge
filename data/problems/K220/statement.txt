@@ -1,0 +1,12 @@
+Bạn Mã Lương có một cây bút thần: chỉ cần vẽ một nét là mọi chữ x trong từ đều biến thành chữ y. Em hãy viết chương trình làm phép thuật của cây bút nhé.
+
+Đầu vào:
+- Dòng 1: một từ s gồm các chữ cái tiếng Anh (hoa hoặc thường), không có dấu cách.
+- Dòng 2: hai chữ cái x và y, cách nhau một dấu cách.
+
+Đầu ra:
+- In ra từ s sau khi thay mọi chữ x bằng chữ y. Các chữ khác giữ nguyên.
+- Phân biệt chữ hoa và chữ thường: nếu x là chữ a thì chỉ thay chữ a, không thay chữ A.
+
+Giới hạn:
+- Từ dài từ 1 đến 100 chữ cái.

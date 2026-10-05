@@ -1,0 +1,13 @@
+Ăn kem xong, Tí giữ lại ba que kem dài a, b và c xăng-ti-mét. Tí muốn ghép ba que thành một hình tam giác. Ba que ghép được thành tam giác khi tổng độ dài của hai que bất kỳ luôn lớn hơn độ dài que còn lại.
+
+Đầu vào:
+- Một dòng chứa ba số nguyên a, b, c, cách nhau một dấu cách.
+
+Đầu ra:
+- In ra YES nếu ba que ghép được thành tam giác, ngược lại in ra NO.
+
+Giới hạn:
+- 1 ≤ a, b, c ≤ 10^6
+
+Gợi ý:
+- Cần kiểm tra cả ba điều kiện: a + b > c, a + c > b và b + c > a.

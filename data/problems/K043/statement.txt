@@ -1,0 +1,14 @@
+Bác bán hoa quả xếp n quả táo vào một cái túi, quả nào cũng nặng đúng w gam. Em hãy cho biết túi táo nặng bao nhiêu ki-lô-gam và bao nhiêu gam.
+
+Đầu vào:
+- Một dòng chứa hai số nguyên n và w, cách nhau một dấu cách.
+
+Đầu ra:
+- Một dòng gồm hai số nguyên: số ki-lô-gam và số gam (số gam nhỏ hơn 1000), cách nhau một dấu cách.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000.
+- 1 ≤ w ≤ 1000.
+
+Gợi ý:
+- 1 ki-lô-gam = 1000 gam. Hãy tính tổng số gam trước.

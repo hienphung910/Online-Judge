@@ -1,0 +1,13 @@
+Bạn Nam dùng que diêm xếp thành một dãy ô vuông nằm liền nhau trên một hàng ngang. Hai ô đứng cạnh nhau dùng chung một que ở giữa. Hỏi để xếp được n ô vuông như vậy, Nam cần bao nhiêu que diêm?
+
+Đầu vào:
+- Một dòng chứa số nguyên n là số ô vuông.
+
+Đầu ra:
+- Một số nguyên là số que diêm cần dùng.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000000.
+
+Gợi ý:
+- Ô đầu tiên cần 4 que. Mỗi ô xếp thêm về sau chỉ cần thêm 3 que.

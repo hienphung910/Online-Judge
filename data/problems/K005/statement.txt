@@ -1,0 +1,10 @@
+Hai chú thỏ mặc áo số a và số b đang đứng cạnh nhau. Khi chụp ảnh, hai chú muốn đổi chỗ cho nhau.
+
+Đầu vào:
+- Một dòng chứa hai số nguyên a và b, cách nhau một dấu cách.
+
+Đầu ra:
+- In ra b rồi đến a trên cùng một dòng, cách nhau một dấu cách.
+
+Giới hạn:
+- 0 ≤ a, b ≤ 10^6.

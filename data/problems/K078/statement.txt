@@ -1,0 +1,17 @@
+Tấm bản đồ kho báu được vẽ trên mặt phẳng tọa độ Oxy. Hai trục Ox và Oy chia bản đồ thành bốn góc phần tư. Em hãy cho đội thám hiểm biết kho báu ở điểm (x, y) nằm ở góc nào.
+
+Bốn góc phần tư:
+- Góc 1: x > 0 và y > 0
+- Góc 2: x < 0 và y > 0
+- Góc 3: x < 0 và y < 0
+- Góc 4: x > 0 và y < 0
+
+Đầu vào:
+- Một dòng chứa hai số nguyên x và y, cách nhau một dấu cách.
+
+Đầu ra:
+- In ra số thứ tự của góc phần tư (1, 2, 3 hoặc 4).
+- Nếu kho báu nằm ngay trên một trục tọa độ (x = 0 hoặc y = 0) thì in ra 0.
+
+Giới hạn:
+- -10^9 ≤ x, y ≤ 10^9

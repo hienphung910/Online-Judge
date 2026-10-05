@@ -1,0 +1,12 @@
+Sàn bếp hình vuông có n hàng và n cột ô, ô ở hàng i, cột j có một số con cá. Mèo Mướp đi từ góc trên bên trái xuống góc dưới bên phải theo đường chéo, tức là đi qua các ô (1, 1), (2, 2), ..., (n, n), và ăn hết cá ở những ô đó. Hỏi Mướp ăn được bao nhiêu con cá?
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- n dòng tiếp theo, mỗi dòng chứa n số nguyên cách nhau một dấu cách. Hàng được đánh số từ 1 đến n từ trên xuống dưới, cột từ 1 đến n từ trái sang phải.
+
+Đầu ra:
+- Một số nguyên: tổng số cá ở các ô (1, 1), (2, 2), ..., (n, n).
+
+Giới hạn:
+- 1 ≤ n ≤ 50.
+- Mỗi ô có từ 0 đến 100 con cá.

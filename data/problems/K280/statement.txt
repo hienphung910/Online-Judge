@@ -1,0 +1,11 @@
+Bà ngoại dệt một tấm thảm hình vuông n hàng, n cột ô; mỗi ô có một màu được ghi bằng một chữ số. Bà bảo tấm thảm là "đối xứng" nếu gấp nó theo đường chéo từ góc trên bên trái xuống góc dưới bên phải thì hai nửa trùng khít nhau. Nói cách khác: với mọi i và j, số ở hàng i, cột j bằng số ở hàng j, cột i.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- n dòng tiếp theo, mỗi dòng chứa n chữ số (từ 0 đến 9) cách nhau một dấu cách.
+
+Đầu ra:
+- In ra YES nếu tấm thảm đối xứng, ngược lại in ra NO.
+
+Giới hạn:
+- 1 ≤ n ≤ 30.

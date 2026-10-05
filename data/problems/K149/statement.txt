@@ -1,0 +1,17 @@
+Một chú rắn bò trên bãi cát để lại vết hình zíc zắc: bò chéo lên, rồi chéo xuống, rồi lại chéo lên... Em hãy vẽ lại vết rắn bò trên một bức tranh có h dòng và w cột.
+
+Đầu vào:
+- Một dòng gồm hai số nguyên h và w cách nhau một dấu cách: h là số dòng, w là số cột.
+
+Đầu ra:
+- In ra h dòng. Đánh số dòng từ 1 (trên cùng) đến h (dưới cùng), số cột từ 1 đến w.
+- Mỗi cột có đúng một dấu *, mọi ô khác là dấu cách.
+- Cột 1: dấu * ở dòng h (dưới cùng). Sang mỗi cột tiếp theo, dấu * nhích lên trên một dòng, cho đến khi chạm dòng 1; sau đó mỗi cột lại nhích xuống một dòng cho đến khi chạm dòng h; rồi lại nhích lên... cứ thế cho đến cột w.
+- Dấu cách ở đầu dòng và ở giữa dòng phải in đúng; dấu cách ở cuối dòng có hay không đều được.
+
+Giới hạn:
+- 2 ≤ h ≤ 6, h ≤ w ≤ 40.
+
+Gợi ý:
+- Với h = 2, dấu * đổi qua lại giữa dòng 2 và dòng 1 ở mỗi cột.
+- Có thể tạo một bảng h x w toàn dấu cách, đặt dấu * vào từng cột, rồi in bảng ra.

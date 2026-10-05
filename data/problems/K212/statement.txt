@@ -1,0 +1,13 @@
+Robot Bi có một chiếc loa phóng thanh thần kỳ: từ nào đi qua loa cũng được VIẾT HOA toàn bộ để cả sân trường nghe thật rõ.
+
+Đầu vào:
+- Một dòng chứa một từ gồm các chữ cái tiếng Anh (có thể lẫn chữ hoa và chữ thường), không có dấu cách.
+
+Đầu ra:
+- In ra từ đó sau khi đổi mọi chữ cái thành chữ hoa.
+
+Giới hạn:
+- Từ dài từ 1 đến 100 chữ cái.
+
+Gợi ý:
+- Python có s.upper(), Java có s.toUpperCase(), C++ có toupper() cho từng ký tự.

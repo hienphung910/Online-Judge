@@ -1,0 +1,13 @@
+Cả lớp hẹn nhau đi sở thú xem hươu cao cổ. Lớp trưởng cần gửi tin nhắn ghi rõ ngày và giờ hẹn để không bạn nào đến nhầm.
+
+Đầu vào:
+- Dòng 1: ba số nguyên d, m, y (ngày, tháng, năm), cách nhau một dấu cách.
+- Dòng 2: hai số nguyên h, p (giờ, phút), cách nhau một dấu cách.
+
+Đầu ra:
+- In ra một dòng: Hen gap ngay <dd/mm/yyyy> luc <hh:mm>
+- Ngày, tháng, giờ, phút đều viết đủ 2 chữ số; năm viết đủ 4 chữ số.
+
+Giới hạn:
+- d, m, y luôn tạo thành một ngày có thật; 1900 ≤ y ≤ 2100.
+- 0 ≤ h ≤ 23, 0 ≤ p ≤ 59.

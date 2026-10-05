@@ -1,0 +1,13 @@
+Bé Na vừa vào lớp 1 và đang tập đếm. Em hãy viết chương trình đếm giúp Na từ 1 cho đến n nhé!
+
+Đầu vào:
+- Một dòng chứa số nguyên n.
+
+Đầu ra:
+- In các số 1, 2, 3, ..., n trên cùng một dòng, các số cách nhau một dấu cách.
+
+Giới hạn:
+- 1 ≤ n ≤ 100.
+
+Gợi ý:
+- Dùng vòng lặp for cho biến i chạy từ 1 đến n và in i ra.

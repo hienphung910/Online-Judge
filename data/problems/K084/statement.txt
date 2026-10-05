@@ -1,0 +1,17 @@
+Bà nội có cuốn lịch treo tường, mỗi ngày bà xé một tờ. Bống muốn biết tháng m của năm y có bao nhiêu tờ lịch, tức là tháng đó có bao nhiêu ngày.
+
+Số ngày của các tháng:
+- Tháng 1, 3, 5, 7, 8, 10, 12 có 31 ngày.
+- Tháng 4, 6, 9, 11 có 30 ngày.
+- Tháng 2 có 29 ngày nếu y là năm nhuận, có 28 ngày nếu không phải.
+- Năm nhuận là năm chia hết cho 400, hoặc chia hết cho 4 nhưng không chia hết cho 100.
+
+Đầu vào:
+- Một dòng chứa hai số nguyên m và y (tháng và năm), cách nhau một dấu cách.
+
+Đầu ra:
+- In ra một số nguyên là số ngày của tháng m năm y.
+
+Giới hạn:
+- 1 ≤ m ≤ 12
+- 1 ≤ y ≤ 100000

@@ -1,0 +1,13 @@
+Chiếc đồng hồ điện tử trên bụng robot Bi luôn hiện giờ và phút, mỗi phần đúng 2 chữ số, ngăn cách bằng dấu hai chấm. Ví dụ 6 giờ 8 phút hiện là 06:08.
+
+Đầu vào:
+- Một dòng chứa hai số nguyên h và m (giờ và phút), cách nhau một dấu cách.
+
+Đầu ra:
+- In ra một dòng: hh:mm (giờ đủ 2 chữ số, dấu hai chấm, phút đủ 2 chữ số, không có dấu cách).
+
+Giới hạn:
+- 0 ≤ h ≤ 23, 0 ≤ m ≤ 59.
+
+Gợi ý:
+- Python: f"{h:02d}:{m:02d}"; C++: printf("%02d:%02d", h, m).

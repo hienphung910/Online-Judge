@@ -1,0 +1,11 @@
+Trên mặt hồ có một hàng viên đá được đánh số 1, 2, 3, ... Chú ếch xanh đang đứng ở viên đá số a. Mỗi lần nhảy, ếch tiến thêm đúng k viên đá. Ếch không bao giờ nhảy tới viên đá có số lớn hơn b, nên nếu lần nhảy tiếp theo vượt quá b thì ếch dừng lại.
+
+Đầu vào:
+- Một dòng chứa ba số nguyên a, b, k, cách nhau một dấu cách.
+
+Đầu ra:
+- In số thứ tự của các viên đá mà ếch đã đứng lên (kể cả viên đá số a lúc đầu), theo thứ tự ếch đi qua, trên cùng một dòng, các số cách nhau một dấu cách.
+
+Giới hạn:
+- 1 ≤ a ≤ b ≤ 500.
+- 1 ≤ k ≤ 100.

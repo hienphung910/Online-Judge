@@ -1,0 +1,14 @@
+Bạn An đánh số các ngày trong tuần như sau: thứ Hai là 2, thứ Ba là 3, ..., thứ Bảy là 7 và Chủ nhật là 8. Hôm nay là ngày w. Hỏi sau d ngày nữa là ngày nào trong tuần?
+
+Đầu vào:
+- Một dòng chứa hai số nguyên w và d, cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên từ 2 đến 8 là ngày trong tuần sau d ngày (theo cách đánh số ở trên).
+
+Giới hạn:
+- 2 ≤ w ≤ 8.
+- 0 ≤ d ≤ 1000000.
+
+Gợi ý:
+- Cứ 7 ngày thì các thứ lặp lại. Hãy trừ w đi 2 để được số từ 0 đến 6, cộng thêm d, lấy dư cho 7, rồi cộng lại 2.

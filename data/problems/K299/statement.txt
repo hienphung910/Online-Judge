@@ -1,0 +1,15 @@
+Tiệm kẹo của cô Ba nhận k loại đồng xu có mệnh giá khác nhau, mỗi loại có rất nhiều đồng (dùng bao nhiêu cũng được). Bạn Tùng muốn trả đúng s đồng. Hỏi có bao nhiêu cách chọn các đồng xu để tổng đúng bằng s? Hai cách chỉ khác nhau về thứ tự đưa tiền thì coi là một cách: ta chỉ quan tâm mỗi loại xu dùng bao nhiêu đồng.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên k và s.
+- Dòng thứ hai chứa k số nguyên khác nhau, cách nhau một dấu cách: mệnh giá các loại xu.
+
+Đầu ra:
+- Một số nguyên: số cách trả đúng s đồng (bằng 0 nếu không thể trả).
+
+Giới hạn:
+- 1 ≤ k ≤ 10; 1 ≤ mệnh giá ≤ 200; 1 ≤ s ≤ 1000.
+- Dữ liệu đảm bảo đáp số không vượt quá 10^9.
+
+Gợi ý:
+- Gọi cach[t] là số cách trả t đồng, ban đầu cach[0] = 1 và các ô khác bằng 0. Lần lượt xét từng loại xu có mệnh giá c: với t đi từ c lên s, cộng thêm cach[t - c] vào cach[t].

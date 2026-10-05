@@ -1,0 +1,11 @@
+Robot Bi vừa được lắp loa và đang tập nói. Mỗi khi gặp một bạn mới, Bi muốn chào thật lễ phép.
+
+Đầu vào:
+- Một dòng chứa tên của bạn mới (chỉ gồm chữ cái tiếng Anh, không có dấu cách).
+
+Đầu ra:
+- In ra một dòng: Xin chao, <tên>!
+- Chú ý: có dấu phẩy ngay sau chữ "chao" và dấu chấm than viết liền ngay sau tên.
+
+Giới hạn:
+- Tên dài từ 1 đến 20 ký tự.

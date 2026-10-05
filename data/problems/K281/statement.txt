@@ -1,0 +1,14 @@
+Trên một bàn cờ có n hàng và m cột, chú ngựa gỗ đang đứng ở ô hàng r, cột c. Hàng được đánh số từ 1 đến n từ trên xuống dưới, cột từ 1 đến m từ trái sang phải. Mỗi lần nhảy, ngựa đi theo hình chữ L: 2 ô theo một hướng (lên, xuống, trái hoặc phải) rồi 1 ô theo hướng vuông góc với hướng đó. Như vậy có tất cả 8 kiểu nhảy. Hỏi từ chỗ đang đứng, ngựa có thể nhảy tới bao nhiêu ô mà không rơi ra ngoài bàn cờ?
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và m.
+- Dòng thứ hai chứa hai số nguyên r và c: vị trí của ngựa.
+
+Đầu ra:
+- Một số nguyên: số ô ngựa có thể nhảy tới bằng một lần nhảy.
+
+Giới hạn:
+- 1 ≤ n, m ≤ 100; 1 ≤ r ≤ n; 1 ≤ c ≤ m.
+
+Gợi ý:
+- Từ ô (r, c), ngựa có thể tới các ô (r + a, c + b) với (a, b) là một trong 8 cặp: (1, 2), (2, 1), (2, -1), (1, -2), (-1, -2), (-2, -1), (-2, 1), (-1, 2).

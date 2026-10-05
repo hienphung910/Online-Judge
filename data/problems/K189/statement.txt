@@ -1,0 +1,12 @@
+Robot Bi chơi một trò chơi điện tử gồm n lượt. Sau mỗi lượt Bi được một số điểm, nhưng có lượt bị trừ điểm (điểm âm). Bi quyết định "xoá buồn": lượt nào có điểm âm thì coi như được 0 điểm. Em hãy in ra dãy điểm mới của Bi.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n — số lượt chơi.
+- Dòng thứ hai chứa n số nguyên a[1], a[2], ..., a[n], cách nhau một dấu cách.
+
+Đầu ra:
+- In ra trên một dòng n số, cách nhau một dấu cách: số thứ i bằng 0 nếu a[i] < 0, ngược lại bằng a[i].
+
+Giới hạn:
+- 1 ≤ n ≤ 1000
+- -1000 ≤ a[i] ≤ 1000

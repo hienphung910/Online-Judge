@@ -1,0 +1,14 @@
+Mẹ dùng một chiếc phễu để rót nước chanh vào chai. Miệng phễu ở trên rộng nhất, càng xuống càng hẹp dần, và đáy phễu chỉ còn một lỗ nhỏ. Em hãy vẽ chiếc phễu bằng dấu * nhé.
+
+Đầu vào:
+- Một số nguyên n là số dòng của chiếc phễu.
+
+Đầu ra:
+- In ra n dòng. Dòng thứ i gồm đúng i - 1 dấu cách, rồi đến 2(n - i) + 1 dấu * viết liền nhau.
+- Như vậy dòng 1 có 2n - 1 dấu * và không có dấu cách ở đầu, dòng cuối có n - 1 dấu cách rồi 1 dấu *.
+
+Giới hạn:
+- 1 ≤ n ≤ 20.
+
+Gợi ý:
+- Với n = 2: dòng 1 gồm 3 dấu *, dòng 2 gồm 1 dấu cách rồi 1 dấu *.

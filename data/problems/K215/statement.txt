@@ -1,0 +1,13 @@
+Trong lâu đài có một chiếc gương thần: từ nào soi vào gương cũng bị đọc ngược, từ chữ cái cuối cùng về chữ cái đầu tiên. Em hãy viết chương trình làm chiếc gương ấy.
+
+Đầu vào:
+- Một dòng chứa một từ gồm các chữ cái tiếng Anh (hoa hoặc thường), không có dấu cách.
+
+Đầu ra:
+- In ra từ đó viết theo thứ tự ngược lại, giữ nguyên chữ hoa/chữ thường.
+
+Giới hạn:
+- Từ dài từ 1 đến 100 chữ cái.
+
+Gợi ý:
+- Dùng vòng lặp đi từ chữ cái cuối cùng về chữ cái đầu tiên.

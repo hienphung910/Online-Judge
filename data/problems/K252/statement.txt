@@ -1,0 +1,11 @@
+Robot Bi chơi trò xếp số: các số chẵn phải đứng trước và xếp từ nhỏ đến lớn, sau đó mới đến các số lẻ, xếp từ lớn đến nhỏ.
+
+Đầu vào:
+- Dòng 1: số nguyên n.
+- Dòng 2: n số nguyên không âm, cách nhau một dấu cách.
+
+Đầu ra:
+- Một dòng gồm n số: trước hết là tất cả các số chẵn theo thứ tự tăng dần, tiếp theo là tất cả các số lẻ theo thứ tự giảm dần, cách nhau một dấu cách. Số xuất hiện nhiều lần thì in đủ bấy nhiêu lần. (Số 0 là số chẵn.)
+
+Giới hạn:
+- 1 ≤ n ≤ 1000; 0 ≤ mỗi số ≤ 10000.

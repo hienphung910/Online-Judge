@@ -1,0 +1,10 @@
+Tí đứng trước cửa hang núi và hét thật to một từ. Tiếng vọng dội lại đúng ba lần!
+
+Đầu vào:
+- Một dòng chứa một từ (chỉ gồm chữ cái tiếng Anh, không có dấu cách).
+
+Đầu ra:
+- In từ đó ba lần trên cùng một dòng, giữa hai từ có một dấu cách.
+
+Giới hạn:
+- Từ dài từ 1 đến 20 ký tự.

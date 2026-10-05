@@ -1,0 +1,12 @@
+Cô giáo có a cái bánh và b cái kẹo. Cô muốn chia hết vào các túi quà sao cho túi nào cũng có số bánh bằng nhau và số kẹo bằng nhau, không thừa cái nào. Hỏi cô chia được nhiều nhất bao nhiêu túi?
+
+Đáp số chính là ước chung lớn nhất (ƯCLN) của a và b: số lớn nhất mà cả a và b đều chia hết cho nó.
+
+Đầu vào:
+- Một dòng gồm hai số nguyên a và b, cách nhau một dấu cách (1 ≤ a, b ≤ 1 000 000 000).
+
+Đầu ra:
+- In ra ƯCLN của a và b.
+
+Gợi ý (thuật toán Euclid):
+- Trong khi b khác 0: tính r = a % b, rồi gán a = b và b = r. Khi b bằng 0 thì a chính là ƯCLN.

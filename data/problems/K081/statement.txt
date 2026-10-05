@@ -1,0 +1,13 @@
+Robot Bi nhặt được một phím rơi ra từ chiếc bàn phím cũ. Bi muốn biết ký tự in trên phím đó là chữ hoa, chữ thường, chữ số hay một ký hiệu khác.
+
+Đầu vào:
+- Một ký tự ASCII nhìn thấy được (không phải dấu cách).
+
+Đầu ra:
+- In ra CHU HOA nếu đó là chữ cái in hoa (từ A đến Z).
+- In ra CHU THUONG nếu đó là chữ cái thường (từ a đến z).
+- In ra CHU SO nếu đó là chữ số (từ 0 đến 9).
+- In ra KHAC trong các trường hợp còn lại.
+
+Gợi ý:
+- Ký tự c là chữ in hoa khi c lớn hơn hoặc bằng 'A' và c nhỏ hơn hoặc bằng 'Z'.

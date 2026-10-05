@@ -1,0 +1,12 @@
+Bác làm vườn thích trồng hoa thành mảnh vườn hình vuông: k hàng, mỗi hàng k bông. Số bông hoa khi đó là k × k, và những số như vậy gọi là số chính phương: 1, 4, 9, 16, 25, ...
+
+Hãy đếm xem từ a đến b có bao nhiêu số chính phương.
+
+Đầu vào:
+- Một dòng gồm hai số nguyên a và b, cách nhau một dấu cách (1 ≤ a ≤ b ≤ 1 000 000 000).
+
+Đầu ra:
+- In ra số lượng số chính phương x thỏa mãn a ≤ x ≤ b.
+
+Gợi ý:
+- Thử k = 1, 2, 3, ... trong khi k × k ≤ b, đếm những k có k × k ≥ a. Số k cần thử không vượt quá 31 623.

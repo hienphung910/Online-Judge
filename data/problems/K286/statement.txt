@@ -1,0 +1,15 @@
+Phù thủy nhỏ Mi có một bảng số hình vuông n hàng, n cột. Mi nói bảng là "thần kỳ" nếu tổng các số trên mỗi hàng, tổng trên mỗi cột và tổng trên cả hai đường chéo đều bằng nhau. Đường chéo chính đi từ góc trên bên trái xuống góc dưới bên phải; đường chéo phụ đi từ góc trên bên phải xuống góc dưới bên trái.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- n dòng tiếp theo, mỗi dòng chứa n số nguyên cách nhau một dấu cách.
+
+Đầu ra:
+- In ra YES nếu bảng là thần kỳ, ngược lại in ra NO.
+
+Giới hạn:
+- 1 ≤ n ≤ 10.
+- Mỗi số từ 1 đến 100.
+
+Gợi ý:
+- Lấy tổng hàng đầu tiên làm "mốc", rồi so sánh mọi tổng khác với mốc đó.

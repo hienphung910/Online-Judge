@@ -1,0 +1,11 @@
+Khu vườn của Thỏ Bông hình chữ nhật, được chia thành n hàng và m cột ô vuông. Ô có bụi cỏ non được ký hiệu '#', ô đất trống được ký hiệu '.'. Thỏ Bông muốn biết trong vườn có bao nhiêu bụi cỏ để ăn dần mỗi ngày.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và m.
+- n dòng tiếp theo, mỗi dòng gồm đúng m ký tự '#' hoặc '.' viết liền nhau (không có dấu cách).
+
+Đầu ra:
+- Một số nguyên: số ô có bụi cỏ (số ký tự '#').
+
+Giới hạn:
+- 1 ≤ n, m ≤ 50.

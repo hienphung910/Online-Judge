@@ -1,0 +1,15 @@
+Chú bán hàng cần trả lại cho khách a nghìn đồng bằng các tờ tiền 50 nghìn,
+20 nghìn và 10 nghìn. Chú làm như sau: lấy nhiều tờ 50 nghìn nhất có thể, phần còn lại lấy nhiều tờ 20 nghìn nhất có thể, cuối cùng phần còn lại trả bằng tờ 10 nghìn. Hỏi chú dùng bao nhiêu tờ mỗi loại?
+
+Đầu vào:
+- Một dòng chứa số nguyên a (số tiền tính bằng nghìn đồng).
+
+Đầu ra:
+- Một dòng gồm ba số nguyên: số tờ 50 nghìn, số tờ 20 nghìn và số tờ 10 nghìn, cách nhau một dấu cách.
+
+Giới hạn:
+- 0 ≤ a ≤ 1000000.
+- a chia hết cho 10.
+
+Gợi ý:
+- Phép chia lấy phần nguyên cho biết số tờ, phép chia lấy dư cho biết số tiền còn lại.

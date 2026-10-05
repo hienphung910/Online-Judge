@@ -1,0 +1,13 @@
+Trong cuộc thi chạy của trường, đồng hồ bấm giờ chỉ hiện tổng số giây s mà bạn Minh đã chạy. Em hãy đổi s giây ra giờ, phút và giây.
+
+Đầu vào:
+- Một dòng chứa số nguyên s.
+
+Đầu ra:
+- Một dòng gồm ba số nguyên: số giờ, số phút và số giây (số phút và số giây đều nhỏ hơn 60), cách nhau một dấu cách.
+
+Giới hạn:
+- 0 ≤ s ≤ 1000000.
+
+Gợi ý:
+- 1 giờ = 3600 giây, 1 phút = 60 giây.

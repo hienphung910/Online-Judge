@@ -1,0 +1,10 @@
+Robot Bi đứng ở vạch số 0 trên một đường thẳng và lần lượt đi n bước. Ở bước thứ i, Bi đi đúng i vạch: nếu i là số lẻ thì Bi tiến về phía trước (vị trí tăng thêm i), nếu i là số chẵn thì Bi lùi lại (vị trí giảm đi i). Hỏi sau n bước Bi đứng ở vạch số mấy? Nói cách khác, hãy tính 1 - 2 + 3 - 4 + ... (đến n).
+
+Đầu vào:
+- Một dòng chứa số nguyên n.
+
+Đầu ra:
+- Một số nguyên là vị trí cuối cùng của Bi (có thể là số âm nếu Bi lùi về sau vạch 0).
+
+Giới hạn:
+- 1 ≤ n ≤ 10000.

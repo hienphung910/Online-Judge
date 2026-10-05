@@ -1,0 +1,12 @@
+Trong trò chơi nối từ, bạn Tí cần biết chữ cái đầu tiên và chữ cái cuối cùng của mỗi từ. Em hãy giúp Tí nhé!
+
+Đầu vào:
+- Một dòng chứa một từ gồm các chữ cái tiếng Anh (hoa hoặc thường), không có dấu cách.
+
+Đầu ra:
+- In ra chữ cái đầu tiên và chữ cái cuối cùng của từ, cách nhau một dấu cách.
+- Giữ nguyên chữ hoa/chữ thường như trong từ.
+- Nếu từ chỉ có 1 chữ cái thì chữ đó vừa là đầu vừa là cuối, nên in chữ đó hai lần.
+
+Giới hạn:
+- Từ dài từ 1 đến 100 chữ cái.

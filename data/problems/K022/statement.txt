@@ -1,0 +1,14 @@
+Robot Bi đã biết nhắc lại cả một câu dài chứ không chỉ một từ. Mỗi lần nói, Bi bắt đầu bằng "Bi noi:" rồi đặt cả câu vào trong dấu ngoặc kép.
+
+Đầu vào:
+- Một dòng là một câu gồm một hoặc nhiều từ, các từ cách nhau đúng một dấu cách.
+
+Đầu ra:
+- In ra một dòng: Bi noi: "<câu>"
+- Dấu ngoặc kép viết liền với chữ đầu và chữ cuối của câu.
+
+Giới hạn:
+- Câu dài từ 1 đến 100 ký tự, chỉ gồm chữ cái tiếng Anh, chữ số và dấu cách.
+
+Gợi ý:
+- Câu có dấu cách nên em phải đọc cả dòng một lần, không đọc từng từ (ví dụ: getline trong C++, nextLine trong Java, input() trong Python).

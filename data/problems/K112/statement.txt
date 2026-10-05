@@ -1,0 +1,15 @@
+Bạn Minh ghi lại nhiệt độ buổi trưa trong n ngày liên tiếp. Minh muốn biết có bao nhiêu ngày nóng hơn hẳn ngày ngay trước nó (nhiệt độ lớn hơn, bằng thì không tính). Ngày đầu tiên không có ngày trước nên không được tính.
+
+Đầu vào:
+- Dòng thứ nhất chứa số nguyên n.
+- Dòng thứ hai chứa n số nguyên là nhiệt độ của từng ngày theo thứ tự, các số cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên là số ngày nóng hơn ngày liền trước.
+
+Giới hạn:
+- 1 ≤ n ≤ 100.
+- Mỗi nhiệt độ là số nguyên từ -20 đến 45.
+
+Gợi ý:
+- Dùng một biến để nhớ nhiệt độ của ngày vừa đọc trước đó.

@@ -1,0 +1,10 @@
+Ba quả bóng bay ghi ba con số đang nằm thành một hàng ngang. Gió thổi, chúng bay lên và xếp thành một cột dọc!
+
+Đầu vào:
+- Một dòng chứa ba số nguyên a, b, c, cách nhau một dấu cách.
+
+Đầu ra:
+- In ra a, b, c theo đúng thứ tự đó, mỗi số trên một dòng.
+
+Giới hạn:
+- -10^6 ≤ a, b, c ≤ 10^6.

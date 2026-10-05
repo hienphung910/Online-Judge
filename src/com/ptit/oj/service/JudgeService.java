@@ -10,6 +10,7 @@ import com.ptit.oj.language.LanguageRegistry;
 import com.ptit.oj.model.JudgeResult;
 import com.ptit.oj.model.Problem;
 import com.ptit.oj.model.Submission;
+import com.ptit.oj.model.Topic;
 import com.ptit.oj.model.User;
 import com.ptit.oj.model.Verdict;
 import com.ptit.oj.repository.InMemoryRepository;
@@ -21,6 +22,7 @@ import com.ptit.oj.repository.Repository;
 import com.ptit.oj.repository.MySqlSubmissionRepository;
 import com.ptit.oj.repository.MySqlUserRepository;
 import com.ptit.oj.repository.SubmissionRepository;
+import com.ptit.oj.repository.TopicLoader;
 import com.ptit.oj.repository.UserRepository;
 import com.ptit.oj.util.TextUtils;
 
@@ -29,9 +31,11 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Tang nghiep vu trung tam: giu du lieu (bai tap, bai nop, nguoi dung) va dieu phoi Judge.
@@ -63,6 +67,8 @@ public class JudgeService {
     private final SessionService sessionService = new SessionService();
     private final AuthService auth;
     private final ProblemAdminService problemAdmin;
+    /** Lo trinh hoc, nap mot lan trong loadData(); CopyOnWrite vi may chu web doc tu nhieu luong. */
+    private final List<Topic> topics = new CopyOnWriteArrayList<>();
 
     public JudgeService(Path dataDir,
                         Repository<Problem> problems,
@@ -77,7 +83,8 @@ public class JudgeService {
         this.scoreboard = new ScoreboardService(submissions, problems);
         this.statistics = new StatisticsService(submissions);
         this.auth = new AuthService(users, passwords, sessionService);
-        this.problemAdmin = new ProblemAdminService(problems, dataDir.resolve("problems"));
+        this.problemAdmin = new ProblemAdminService(problems, dataDir.resolve("problems"),
+                id -> findTopic(id).isPresent());
         judge.addListener(stats);
     }
 
@@ -139,10 +146,16 @@ public class JudgeService {
         judge.removeListener(listener);
     }
 
-    /** Nap de bai tu o dia. Tai khoan KHONG con hard-code o day nua - xem AuthService. */
+    /** Nap lo trinh hoc va de bai tu o dia. Tai khoan KHONG con hard-code o day nua - xem AuthService. */
     public void loadData() {
+        topics.clear();
+        topics.addAll(new TopicLoader(dataDir.resolve("topics.txt")).loadAll());
         for (Problem p : new ProblemLoader(dataDir.resolve("problems")).loadAll()) {
             problems.save(p);
+            if (!p.getTopic().isEmpty() && !findTopic(p.getTopic()).isPresent()) {
+                System.out.println("Cảnh báo: bài " + p.getId() + " gắn chủ đề \"" + p.getTopic()
+                        + "\" không có trong data/topics.txt - sẽ hiện ở nhóm \"Bài khác\".");
+            }
         }
     }
 
@@ -151,6 +164,16 @@ public class JudgeService {
     public Path getDataDir() { return dataDir; }
 
     public List<Problem> getProblems() { return problems.findAll(); }
+
+    /** Cac chu de theo dung thu tu hoc. */
+    public List<Topic> getTopics() { return Collections.unmodifiableList(topics); }
+
+    public Optional<Topic> findTopic(String id) {
+        for (Topic t : topics) {
+            if (t.getId().equals(id)) return Optional.of(t);
+        }
+        return Optional.empty();
+    }
 
     public Optional<Problem> findProblem(String id) {
         return id == null ? Optional.empty() : problems.findById(id.trim().toUpperCase());

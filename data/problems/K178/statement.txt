@@ -1,0 +1,12 @@
+Đồng hồ đo quãng đường trên xe của bố đang chỉ n km. Bé Su muốn biết khi xe chạy thêm, lần đầu tiên đồng hồ hiện một số đối xứng (lớn hơn n) là lúc chỉ bao nhiêu km.
+
+Số đối xứng là số đọc từ trái sang phải hay từ phải sang trái đều giống nhau, ví dụ 7, 44, 121. Mọi số có một chữ số đều là số đối xứng.
+
+Đầu vào:
+- Một số nguyên n (0 ≤ n ≤ 1 000 000 000).
+
+Đầu ra:
+- In ra số đối xứng nhỏ nhất lớn hơn n (chú ý: phải lớn hơn hẳn n, kể cả khi n đã là số đối xứng).
+
+Gợi ý:
+- Thử lần lượt n + 1, n + 2, ... cho đến khi gặp số đối xứng. Hai số đối xứng liên tiếp không cách nhau quá xa nên cách này đủ nhanh.

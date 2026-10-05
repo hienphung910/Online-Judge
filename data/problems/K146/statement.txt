@@ -1,0 +1,18 @@
+Ba chú heo con cùng nhau xây một ngôi nhà gạch thật chắc chắn. Ngôi nhà có mái nhọn hình kim tự tháp làm bằng dấu *, bên dưới là thân nhà hình chữ nhật có tường gạch làm bằng dấu #.
+
+Đầu vào:
+- Một số nguyên n là kích thước của ngôi nhà.
+
+Đầu ra:
+- In ra 2n dòng. Gọi W = 2n - 1 là chiều rộng của ngôi nhà.
+- Phần mái gồm n dòng: dòng thứ i (i = 1, 2, ..., n) gồm n - i dấu cách, rồi 2i - 1 dấu * viết liền nhau.
+- Phần thân gồm n dòng tiếp theo, không có dấu cách ở đầu:
+- Dòng đầu tiên và dòng cuối cùng của phần thân gồm W dấu # viết liền nhau.
+- Mỗi dòng ở giữa của phần thân gồm một dấu #, rồi W - 2 dấu cách, rồi một dấu #.
+- Nếu n = 1 thì phần thân chỉ có một dòng là một dấu #.
+
+Giới hạn:
+- 1 ≤ n ≤ 12.
+
+Gợi ý:
+- Phần mái giống hệt bài kim tự tháp, phần thân giống bài hình vuông rỗng nhưng là hình chữ nhật n dòng, W cột.

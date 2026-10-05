@@ -1,0 +1,14 @@
+Phòng học hình chữ nhật dài a mét, rộng b mét. Chú thợ lát nền bằng những viên gạch hoa hình vuông có cạnh s xăng-ti-mét, xếp kín cả sàn mà không phải cắt viên nào. Hỏi chú cần bao nhiêu viên gạch?
+
+Đầu vào:
+- Một dòng chứa ba số nguyên a, b và s, cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên là số viên gạch cần dùng.
+
+Giới hạn:
+- 1 ≤ a, b ≤ 100.
+- s là một trong các số 10, 20, 25, 50, 100.
+
+Gợi ý:
+- 1 mét = 100 xăng-ti-mét. Hãy tính mỗi hàng có bao nhiêu viên và sàn có bao nhiêu hàng.

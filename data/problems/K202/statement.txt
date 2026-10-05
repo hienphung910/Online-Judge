@@ -1,0 +1,14 @@
+Lớp 3A xếp hai hàng trước cửa lớp: hàng thứ nhất có n bạn, hàng thứ hai có m bạn, mỗi bạn đeo một thẻ số. Cô giáo cho các bạn vào lớp xen kẽ: bạn đầu hàng thứ nhất, rồi bạn đầu hàng thứ hai, rồi bạn tiếp theo của hàng thứ nhất, rồi bạn tiếp theo của hàng thứ hai, ... Khi một hàng đã vào hết, các bạn còn lại của hàng kia lần lượt vào theo thứ tự.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- Dòng thứ hai chứa n số nguyên a[1], a[2], ..., a[n] — thẻ số của hàng thứ nhất, từ đầu hàng đến cuối hàng.
+- Dòng thứ ba chứa số nguyên m.
+- Dòng thứ tư chứa m số nguyên b[1], b[2], ..., b[m] — thẻ số của hàng thứ hai.
+
+Đầu ra:
+- In ra trên một dòng n + m thẻ số theo thứ tự các bạn vào lớp, cách nhau một dấu cách.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000, 1 ≤ m ≤ 1000
+- 1 ≤ a[i] ≤ 1000, 1 ≤ b[j] ≤ 1000

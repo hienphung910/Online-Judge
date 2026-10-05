@@ -1,0 +1,11 @@
+An có n viên bi, mỗi viên ghi một con số. An xếp các viên bi từ số nhỏ đến số lớn rồi đố em: viên bi đứng thứ k trong hàng ghi số mấy?
+
+Đầu vào:
+- Dòng 1: hai số nguyên n và k.
+- Dòng 2: n số nguyên là số ghi trên các viên bi (chưa sắp xếp), cách nhau một dấu cách.
+
+Đầu ra:
+- Số ghi trên viên bi đứng ở vị trí thứ k (đếm từ 1) sau khi xếp tăng dần. Các viên bi có số giống nhau vẫn được đếm riêng từng viên.
+
+Giới hạn:
+- 1 ≤ k ≤ n ≤ 1000; 1 ≤ số trên bi ≤ 10000.

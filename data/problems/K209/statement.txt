@@ -1,0 +1,16 @@
+Trong n ngày nghỉ hè, ngày thứ i bạn Mai đọc được a[i] trang truyện. Mẹ hỏi Mai q câu, mỗi câu có dạng: "Từ ngày l đến ngày r (tính cả hai ngày đó), con đọc được tổng cộng bao nhiêu trang?". Em hãy giúp Mai trả lời thật nhanh nhé.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và q, cách nhau một dấu cách.
+- Dòng thứ hai chứa n số nguyên a[1], a[2], ..., a[n], cách nhau một dấu cách.
+- q dòng tiếp theo, mỗi dòng chứa hai số nguyên l và r (1 ≤ l ≤ r ≤ n).
+
+Đầu ra:
+- In ra q dòng, dòng thứ j là câu trả lời cho câu hỏi thứ j: a[l] + a[l+1] + ... + a[r].
+
+Giới hạn:
+- 1 ≤ n ≤ 1000, 1 ≤ q ≤ 1000
+- 0 ≤ a[i] ≤ 10^6
+
+Gợi ý:
+- Tạo mảng tổng dồn p với p[0] = 0 và p[i] = p[i-1] + a[i]. Khi đó tổng từ ngày l đến ngày r bằng p[r] - p[l-1].

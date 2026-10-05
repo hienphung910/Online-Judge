@@ -1,0 +1,10 @@
+Cô giáo viết hai số a và b lên bảng và để trống một ô ở giữa. Em hãy giúp cô điền dấu đúng vào ô trống: lớn hơn, bé hơn hay bằng nhau.
+
+Đầu vào:
+- Một dòng chứa hai số nguyên a và b, cách nhau một dấu cách.
+
+Đầu ra:
+- In ra đúng một ký tự: > nếu a lớn hơn b, < nếu a bé hơn b, = nếu a bằng b.
+
+Giới hạn:
+- -10^9 ≤ a, b ≤ 10^9

@@ -1,0 +1,13 @@
+Ba bạn nhỏ xếp thành một hàng từ thấp đến cao. Cô giáo muốn biết chiều cao của bạn đứng ở giữa hàng.
+
+Đầu vào:
+- Một dòng chứa ba số nguyên a, b, c là chiều cao (cm) của ba bạn theo thứ tự trong hàng, cách nhau một dấu cách.
+
+Đầu ra:
+- In ra chiều cao của bạn đứng giữa.
+
+Giới hạn:
+- 80 ≤ a ≤ b ≤ c ≤ 200.
+
+Gợi ý:
+- Em vẫn phải đọc đủ cả ba số, nhưng chỉ in ra một số.

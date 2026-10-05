@@ -1,0 +1,15 @@
+Bạn Vy cân chú cún Bơ vào mỗi buổi sáng trong n ngày liên tiếp, ngày thứ i Bơ nặng a[i] gam. Em hãy cho biết từ mỗi ngày sang ngày hôm sau, cân nặng của Bơ thay đổi bao nhiêu gam.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n — số ngày.
+- Dòng thứ hai chứa n số nguyên a[1], a[2], ..., a[n], cách nhau một dấu cách.
+
+Đầu ra:
+- Một dòng gồm n - 1 số nguyên, cách nhau một dấu cách: số thứ i là a[i+1] - a[i] (số âm nghĩa là hôm sau Bơ nhẹ đi).
+
+Giới hạn:
+- 2 ≤ n ≤ 1000
+- 500 ≤ a[i] ≤ 20000
+
+Gợi ý:
+- Đọc cả dãy vào mảng trước, rồi mới tính hiệu của từng cặp ngày liền nhau.

@@ -1,0 +1,12 @@
+Bà xâu một chuỗi hạt cườm, mỗi hạt mang một chữ cái. Để ghi chép cho gọn, bà viết mỗi nhóm hạt giống nhau đứng liền nhau thành chữ cái đó kèm theo số hạt trong nhóm.
+
+Đầu vào:
+- Một dòng chứa một xâu gồm các chữ cái tiếng Anh viết thường, không có dấu cách.
+
+Đầu ra:
+- In ra xâu đã nén: đi từ trái sang phải, mỗi nhóm chữ cái giống nhau đứng liền nhau được viết thành chữ cái đó rồi đến số chữ trong nhóm, viết liền, không có dấu cách.
+- Nhóm chỉ có 1 chữ vẫn phải viết số 1. Số lượng có thể từ 10 trở lên (viết đủ các chữ số).
+- Một chữ cái có thể xuất hiện ở nhiều nhóm tách rời nhau; mỗi nhóm được viết riêng. Ví dụ xâu abbba được nén thành a1b3a1.
+
+Giới hạn:
+- Xâu dài từ 1 đến 1000 chữ cái.

@@ -1,0 +1,13 @@
+Cuối tuần, robot Bi chơi game tổng cộng m phút. Em hãy đổi khoảng thời gian đó ra giờ và phút giúp Bi.
+
+Đầu vào:
+- Một dòng chứa số nguyên m.
+
+Đầu ra:
+- Một dòng gồm hai số nguyên: số giờ và số phút (số phút nhỏ hơn 60), cách nhau một dấu cách.
+
+Giới hạn:
+- 0 ≤ m ≤ 1000000.
+
+Gợi ý:
+- 1 giờ = 60 phút.

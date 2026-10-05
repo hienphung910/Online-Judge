@@ -1,0 +1,10 @@
+An cầm quân X, Bình cầm quân O, hai bạn chơi cờ ca-rô trên bàn cờ 3 hàng, 3 cột. Một bạn thắng nếu có 3 quân của mình nằm thẳng hàng: cùng một hàng, cùng một cột, hoặc trên một trong hai đường chéo của bàn cờ. Nhìn bàn cờ, em hãy cho biết ai thắng.
+
+Đầu vào:
+- Gồm 3 dòng, mỗi dòng có đúng 3 ký tự viết liền nhau: 'X' (quân của An), 'O' (chữ O in hoa, quân của Bình) hoặc '.' (ô trống).
+
+Đầu ra:
+- In ra X nếu An thắng, O nếu Bình thắng, DRAW nếu chưa bạn nào có 3 quân thẳng hàng.
+
+Giới hạn:
+- Dữ liệu đảm bảo không có chuyện cả hai bạn cùng có 3 quân thẳng hàng.

@@ -1,0 +1,12 @@
+Sáng nay trên mặt ao chỉ có đúng 1 cây bèo hoa dâu. Cứ qua mỗi ngày, mỗi cây bèo lại biến thành a cây, tức là số bèo trên ao được nhân lên a lần. Hỏi sau b ngày, trên ao có bao nhiêu cây bèo?
+
+Đầu vào:
+- Một dòng chứa hai số nguyên a và b, cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên là số cây bèo sau b ngày (chính là a mũ b).
+
+Giới hạn:
+- 1 ≤ a ≤ 10; 0 ≤ b ≤ 30.
+- Đảm bảo kết quả không vượt quá 1000000000.
+- Nếu b = 0 thì chưa qua ngày nào, ao vẫn có 1 cây bèo.

@@ -1,0 +1,11 @@
+Thuyền trưởng Râu Đỏ ghi vị trí kho báu bằng hai số x và y. Trên tấm bản đồ, vị trí phải được viết theo kiểu toán học, gọi là tọa độ.
+
+Đầu vào:
+- Một dòng chứa hai số nguyên x và y, cách nhau một dấu cách.
+
+Đầu ra:
+- In ra một dòng: (x, y)
+- Nghĩa là: dấu mở ngoặc tròn, số x, dấu phẩy, một dấu cách, số y, dấu đóng ngoặc tròn. Dấu ngoặc viết liền với số.
+
+Giới hạn:
+- -1000 ≤ x, y ≤ 1000.

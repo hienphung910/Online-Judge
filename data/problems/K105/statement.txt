@@ -1,0 +1,10 @@
+Con đường làng có n cột đèn, đánh số từ 1 đến n. Đội sơn quyết định: cột nào có số thứ tự chia hết cho 3 hoặc chia hết cho 5 thì sơn màu đỏ. Em hãy liệt kê các cột được sơn đỏ.
+
+Đầu vào:
+- Một dòng chứa số nguyên n.
+
+Đầu ra:
+- In số thứ tự của các cột được sơn đỏ theo thứ tự tăng dần, trên cùng một dòng, các số cách nhau một dấu cách.
+
+Giới hạn:
+- 3 ≤ n ≤ 200.

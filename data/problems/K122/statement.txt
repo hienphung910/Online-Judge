@@ -1,0 +1,13 @@
+Bé Na được mẹ mua cho một thanh sô-cô-la hình chữ nhật gồm nhiều miếng nhỏ. Mỗi miếng sô-cô-la được vẽ bằng một dấu #. Em hãy vẽ thanh sô-cô-la có a hàng và b cột.
+
+Đầu vào:
+- Một dòng gồm hai số nguyên a và b cách nhau một dấu cách: a là số hàng, b là số cột.
+
+Đầu ra:
+- In ra a dòng, mỗi dòng gồm đúng b dấu # viết liền nhau.
+
+Giới hạn:
+- 1 ≤ a ≤ 20, 1 ≤ b ≤ 20.
+
+Gợi ý:
+- Chú ý đừng nhầm: số dòng là a, số dấu # trên mỗi dòng là b.

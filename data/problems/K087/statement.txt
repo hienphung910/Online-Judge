@@ -1,0 +1,19 @@
+Cuối tháng, mẹ nhờ Bống tính tiền điện. Nhà Bống dùng hết n số điện, và giá điện được tính theo bậc thang: dùng càng nhiều thì những số điện sau càng đắt.
+
+Bảng giá:
+- 50 số đầu tiên (từ số thứ 1 đến số thứ 50): 1700 đồng mỗi số.
+- Từ số thứ 51 đến số thứ 100: 1800 đồng mỗi số.
+- Từ số thứ 101 đến số thứ 200: 2100 đồng mỗi số.
+- Từ số thứ 201 trở đi: 2600 đồng mỗi số.
+
+Đầu vào:
+- Một số nguyên n là số điện nhà Bống đã dùng.
+
+Đầu ra:
+- In ra một số nguyên là tổng số tiền điện (đồng).
+
+Giới hạn:
+- 0 ≤ n ≤ 100000
+
+Gợi ý:
+- Nếu dùng 70 số thì tiền điện là 50 × 1700 + 20 × 1800.

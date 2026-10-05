@@ -1,0 +1,12 @@
+Ông nội trồng táo thành n hàng, mỗi hàng có m cây. Ông đã đếm số quả trên từng cây và muốn biết mỗi hàng cây cho tất cả bao nhiêu quả. Em giúp ông tính nhé!
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và m: số hàng cây và số cây trên mỗi hàng.
+- n dòng tiếp theo, dòng thứ i chứa m số nguyên cách nhau một dấu cách: số quả trên từng cây của hàng thứ i.
+
+Đầu ra:
+- In ra n dòng, dòng thứ i là tổng số quả của hàng cây thứ i.
+
+Giới hạn:
+- 1 ≤ n, m ≤ 50.
+- Mỗi cây có từ 0 đến 100 quả.

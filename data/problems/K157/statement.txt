@@ -1,0 +1,10 @@
+Bạn Hoa rất thích chữ số d. Mỗi khi nhìn thấy một số n, Hoa lại đếm xem chữ số d xuất hiện bao nhiêu lần trong số đó.
+
+Đầu vào:
+- Một dòng gồm hai số nguyên n và d, cách nhau một dấu cách (0 ≤ n ≤ 1 000 000 000, 0 ≤ d ≤ 9).
+
+Đầu ra:
+- In ra số lần chữ số d xuất hiện trong cách viết của n.
+
+Chú ý:
+- Số 0 được viết bằng đúng một chữ số 0.

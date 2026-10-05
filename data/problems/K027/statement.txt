@@ -1,0 +1,15 @@
+Cuối học kỳ, cô giáo gửi về nhà phiếu báo điểm ghi điểm ba môn Toán, Văn, Anh và tổng điểm của cả ba môn.
+
+Đầu vào:
+- Dòng 1: tên học sinh (chỉ gồm chữ cái tiếng Anh, không có dấu cách).
+- Dòng 2: ba số nguyên t, v, a là điểm Toán, Văn, Anh, cách nhau một dấu cách.
+
+Đầu ra: in ra đúng 5 dòng
+- Dòng 1: Hoc sinh: <tên>
+- Dòng 2: Toan: <t>
+- Dòng 3: Van: <v>
+- Dòng 4: Anh: <a>
+- Dòng 5: Tong diem: <t + v + a>
+
+Giới hạn:
+- 0 ≤ t, v, a ≤ 10.

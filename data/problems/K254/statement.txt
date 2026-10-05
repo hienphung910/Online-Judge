@@ -1,0 +1,15 @@
+Thư viện trường có n cuốn sách, mã của chúng đã được ghi theo thứ tự tăng dần. Các bạn học sinh đến hỏi q lần: "Thư viện có sách mã x không?". Robot thủ thư Bi cần trả lời thật nhanh.
+
+Đầu vào:
+- Dòng 1: hai số nguyên n và q.
+- Dòng 2: n số nguyên là mã sách, đã xếp không giảm.
+- Dòng 3: q số nguyên x là các mã được hỏi.
+
+Đầu ra:
+- q dòng, dòng thứ i in YES nếu mã thứ i có trong danh sách, ngược lại in NO.
+
+Giới hạn:
+- 1 ≤ n, q ≤ 1000; 1 ≤ mã sách, x ≤ 100000.
+
+Gợi ý:
+- Tìm kiếm nhị phân: so x với mã ở giữa đoạn đang xét, rồi bỏ đi nửa không thể chứa x.

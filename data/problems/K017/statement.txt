@@ -1,0 +1,13 @@
+Giờ ra chơi, hai đội bóng của trường thi đấu với nhau. Bác bảo vệ cần ghi tỉ số lên bảng thật đúng kiểu.
+
+Đầu vào:
+- Dòng 1: tên đội nhà và tên đội khách (mỗi tên là một từ gồm chữ cái tiếng Anh), cách nhau một dấu cách.
+- Dòng 2: hai số nguyên x và y là số bàn thắng của đội nhà và đội khách.
+
+Đầu ra:
+- In ra một dòng: <đội nhà> <x> - <y> <đội khách>
+- Các phần cách nhau đúng một dấu cách.
+
+Giới hạn:
+- Tên đội dài không quá 20 ký tự.
+- 0 ≤ x, y ≤ 20.

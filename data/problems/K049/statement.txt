@@ -1,0 +1,13 @@
+Mèo Mướp xếp kẹo thành một cái tháp bậc thang: bậc trên cùng có 1 viên, bậc thứ hai có 2 viên, bậc thứ ba có 3 viên, ... và bậc dưới cùng có n viên. Hỏi cả cái tháp có bao nhiêu viên kẹo?
+
+Đầu vào:
+- Một dòng chứa số nguyên n là số viên kẹo ở bậc dưới cùng.
+
+Đầu ra:
+- Một số nguyên là tổng số viên kẹo của cái tháp.
+
+Giới hạn:
+- 1 ≤ n ≤ 40000.
+
+Gợi ý:
+- Không cần cộng từng số! Có công thức: 1 + 2 + ... + n = n × (n + 1) chia cho 2 (dùng phép chia lấy phần nguyên để kết quả là số nguyên).

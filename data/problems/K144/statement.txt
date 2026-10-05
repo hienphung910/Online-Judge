@@ -1,0 +1,16 @@
+Cô phù thủy nhỏ dùng một chiếc đồng hồ cát để canh giờ nấu thuốc. Đồng hồ rộng ở trên và dưới, thắt lại ở giữa chỉ còn đúng một hạt cát.
+
+Đầu vào:
+- Một số nguyên n là số dòng của nửa trên (tính cả dòng thắt ở giữa).
+
+Đầu ra:
+- In ra 2n - 1 dòng, mỗi dòng gồm một số dấu cách rồi đến các dấu * viết liền nhau.
+- Nửa trên: với i = 1, 2, ..., n, in một dòng gồm i - 1 dấu cách và 2(n - i) + 1 dấu *.
+- Nửa dưới: với i = n - 1, n - 2, ..., 1, in một dòng gồm i - 1 dấu cách và 2(n - i) + 1 dấu *.
+- Như vậy dòng đầu và dòng cuối đều có 2n - 1 dấu *, dòng chính giữa có n - 1 dấu cách và 1 dấu *.
+
+Giới hạn:
+- 1 ≤ n ≤ 15.
+
+Gợi ý:
+- Với n = 2, đồng hồ có 3 dòng: (3 dấu *), (1 dấu cách, 1 dấu *), (3 dấu *).

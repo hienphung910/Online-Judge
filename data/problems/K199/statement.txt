@@ -1,0 +1,14 @@
+Trên bàn có n quả táo xếp thành một hàng, đánh số từ 1 đến n, quả thứ i nặng a[i] gam. Bạn Tí muốn đổi chỗ quả nặng nhất và quả nhẹ nhất cho nhau.
+- Nếu có nhiều quả cùng nặng nhất, chọn quả có vị trí nhỏ nhất. Quả nhẹ nhất cũng chọn giống như vậy.
+- Nếu quả nặng nhất và quả nhẹ nhất là cùng một quả (khi mọi quả nặng bằng nhau) thì hàng táo giữ nguyên.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n — số quả táo.
+- Dòng thứ hai chứa n số nguyên a[1], a[2], ..., a[n], cách nhau một dấu cách.
+
+Đầu ra:
+- In ra trên một dòng n số — khối lượng các quả táo theo thứ tự trong hàng sau khi đổi chỗ, cách nhau một dấu cách.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000
+- 1 ≤ a[i] ≤ 1000

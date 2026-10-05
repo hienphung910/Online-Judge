@@ -1,0 +1,19 @@
+Giờ ra chơi, cả lớp chơi trò đếm số "Bíp Bốp". Đến lượt ai thì người đó nhận một số n và phải hô thật nhanh theo luật của trò chơi.
+
+Luật chơi:
+- Nếu n chia hết cho cả 3 và 5: hô BipBop
+- Nếu n chỉ chia hết cho 3: hô Bip
+- Nếu n chỉ chia hết cho 5: hô Bop
+- Nếu n không chia hết cho 3 và cũng không chia hết cho 5: đọc chính số n
+
+Đầu vào:
+- Một số nguyên n.
+
+Đầu ra:
+- In ra BipBop, Bip, Bop (đúng chữ hoa chữ thường) hoặc in ra số n.
+
+Giới hạn:
+- 1 ≤ n ≤ 10^9
+
+Gợi ý:
+- Hãy kiểm tra trường hợp chia hết cho cả 3 và 5 trước tiên.

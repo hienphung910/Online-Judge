@@ -1,0 +1,11 @@
+Lớp của An có một số lẻ học sinh. Sau khi xếp hàng từ thấp đến cao, bạn đứng chính giữa hàng sẽ được cầm cờ. Em hãy cho biết bạn ấy cao bao nhiêu.
+
+Đầu vào:
+- Dòng 1: số nguyên lẻ n là số học sinh.
+- Dòng 2: n số nguyên là chiều cao (cm) của các bạn, cách nhau một dấu cách (chưa được sắp xếp).
+
+Đầu ra:
+- Một số nguyên: chiều cao của bạn đứng ở vị trí thứ (n + 1) / 2 sau khi xếp hàng tăng dần theo chiều cao.
+
+Giới hạn:
+- 1 ≤ n ≤ 999, n là số lẻ; 100 ≤ chiều cao ≤ 200.

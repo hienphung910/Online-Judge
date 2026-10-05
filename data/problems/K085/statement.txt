@@ -1,0 +1,13 @@
+Trong giờ thể dục, thầy giáo gọi ba bạn lên đứng thành một hàng từ thấp đến cao. Em hãy giúp thầy sắp xếp chiều cao của ba bạn mà không cần dùng vòng lặp nhé.
+
+Đầu vào:
+- Một dòng chứa ba số nguyên a, b, c là chiều cao của ba bạn (xăng-ti-mét), cách nhau một dấu cách.
+
+Đầu ra:
+- In ra ba chiều cao theo thứ tự từ nhỏ đến lớn trên một dòng, cách nhau một dấu cách. Các chiều cao bằng nhau đứng cạnh nhau.
+
+Giới hạn:
+- 1 ≤ a, b, c ≤ 1000
+
+Gợi ý:
+- Nếu a > b thì đổi chỗ a và b. Sau đó nếu b > c thì đổi chỗ b và c. Cuối cùng kiểm tra lại a và b một lần nữa.

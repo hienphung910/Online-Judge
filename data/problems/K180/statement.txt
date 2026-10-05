@@ -1,0 +1,11 @@
+Nhà toán học Ấn Độ Kaprekar phát hiện một trò chơi kỳ diệu với số có 4 chữ số. Mỗi lượt chơi gồm:
+- Xếp 4 chữ số theo thứ tự giảm dần được số lớn, xếp theo thứ tự tăng dần được số bé.
+- Lấy số lớn trừ số bé, được số mới để chơi lượt tiếp theo. Kỳ lạ thay, nếu 4 chữ số không giống hệt nhau thì sau vài lượt ta luôn gặp số 6174!
+
+Luôn coi số có đủ 4 chữ số, thiếu thì thêm chữ số 0 ở đầu. Ví dụ hiệu bằng 999 thì coi là 0999: số lớn là 9990, số bé là 0999 = 999. Tương tự, với 1000 thì số bé là 0001 = 1.
+
+Đầu vào:
+- Một số nguyên n (1000 ≤ n ≤ 9999), bốn chữ số của n không giống hệt nhau (không phải 1111, 2222, ..., 9999).
+
+Đầu ra:
+- In ra số lượt chơi cần thực hiện để lần đầu tiên gặp số 6174. Nếu n = 6174 thì in ra 0.

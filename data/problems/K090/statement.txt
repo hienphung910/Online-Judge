@@ -1,0 +1,19 @@
+Bống đếm từng ngày chờ đến kỳ nghỉ hè. Hôm nay là ngày d tháng m năm y, em hãy giúp Bống tìm xem ngày mai là ngày nào.
+
+Nhắc lại số ngày của các tháng:
+- Tháng 1, 3, 5, 7, 8, 10, 12 có 31 ngày.
+- Tháng 4, 6, 9, 11 có 30 ngày.
+- Tháng 2 có 29 ngày nếu là năm nhuận, có 28 ngày nếu không phải.
+- Năm nhuận là năm chia hết cho 400, hoặc chia hết cho 4 nhưng không chia hết cho 100.
+
+Đầu vào:
+- Một dòng chứa ba số nguyên d, m, y (ngày, tháng, năm) cách nhau một dấu cách. Đây luôn là một ngày có thật.
+
+Đầu ra:
+- In ra ngày, tháng, năm của ngày mai trên một dòng, cách nhau một dấu cách (không cần viết thêm số 0 ở đầu).
+
+Giới hạn:
+- 1 ≤ y ≤ 9999
+
+Gợi ý:
+- Tìm số ngày của tháng m trước. Nếu d chưa phải ngày cuối tháng thì chỉ cần tăng d; nếu là ngày cuối tháng thì sang ngày 1 của tháng sau (nhớ trường hợp tháng 12).

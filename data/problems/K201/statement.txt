@@ -1,0 +1,16 @@
+Bảng đèn điện tử ở cổng trường hiển thị n con số thành một hàng. Mỗi giây, bảng xoay trái một lần: số đứng đầu tiên chạy xuống cuối hàng, các số còn lại dịch lên trước một chỗ. Chẳng hạn hàng 1 2 3 sau một lần xoay trái trở thành 2 3 1. Hỏi sau k giây bảng đèn hiển thị gì?
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và k, cách nhau một dấu cách.
+- Dòng thứ hai chứa n số nguyên a[1], a[2], ..., a[n] — các số trên bảng lúc đầu, từ trái sang phải.
+
+Đầu ra:
+- In ra trên một dòng n số trên bảng sau k lần xoay, từ trái sang phải, cách nhau một dấu cách.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000
+- 0 ≤ k ≤ 10^9
+- 0 ≤ a[i] ≤ 10^6
+
+Gợi ý:
+- Cứ xoay đủ n lần thì hàng số lại trở về như cũ, nên chỉ cần xoay k % n lần. Khi đó số đứng đầu hàng là số ở vị trí (k % n) + 1.

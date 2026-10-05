@@ -1,0 +1,13 @@
+Trường cấp cho mỗi học sinh một địa chỉ email. Địa chỉ được ghép từ tên, năm sinh và phần đuôi @school.vn.
+
+Đầu vào:
+- Dòng 1: tên của học sinh (chỉ gồm chữ cái thường tiếng Anh, không có dấu cách).
+- Dòng 2: một số nguyên là năm sinh.
+
+Đầu ra:
+- In ra một dòng: <tên><năm sinh>@school.vn
+- Các phần viết liền nhau, không có dấu cách.
+
+Giới hạn:
+- Tên dài không quá 15 ký tự.
+- 2005 ≤ năm sinh ≤ 2020.

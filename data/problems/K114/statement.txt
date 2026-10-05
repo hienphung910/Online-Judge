@@ -1,0 +1,12 @@
+Robot Bi chơi một trò chơi với số nguyên dương n. Ở mỗi bước, nếu số đang có là số chẵn thì Bi chia đôi nó, còn nếu là số lẻ thì Bi nhân nó với 3 rồi cộng thêm 1. Bi lặp lại cho đến khi được số 1 thì dừng. Em hãy cho biết Bi cần bao nhiêu bước, và số lớn nhất Bi từng gặp là bao nhiêu.
+
+Đầu vào:
+- Một dòng chứa số nguyên n.
+
+Đầu ra:
+- In hai số trên một dòng, cách nhau một dấu cách: số bước để đi từ n về 1, và số lớn nhất xuất hiện trong cả hành trình (tính cả số n ban đầu).
+- Nếu n = 1 thì không cần bước nào: in 0 1.
+
+Giới hạn:
+- 1 ≤ n ≤ 10000.
+- Đảm bảo mọi số trong hành trình đều không vượt quá 100000000.

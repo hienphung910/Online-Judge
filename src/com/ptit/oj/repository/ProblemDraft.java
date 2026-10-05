@@ -19,6 +19,8 @@ public class ProblemDraft {
     private int memoryLimitMb = 256;
     private String comparator = "token";
     private double totalPoints = 100;
+    private String topic = "";
+    private int difficulty = 0;
     private final List<TestDraft> tests = new ArrayList<>();
 
     /** Mot bo test trong ban thao. */
@@ -61,6 +63,12 @@ public class ProblemDraft {
 
     public double getTotalPoints() { return totalPoints; }
     public void setTotalPoints(double totalPoints) { this.totalPoints = totalPoints; }
+
+    public String getTopic() { return topic; }
+    public void setTopic(String topic) { this.topic = topic; }
+
+    public int getDifficulty() { return difficulty; }
+    public void setDifficulty(int difficulty) { this.difficulty = difficulty; }
 
     public void addTest(TestDraft test) { tests.add(test); }
 

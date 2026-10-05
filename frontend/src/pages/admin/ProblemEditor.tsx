@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { api } from "../../api";
 import { Select } from "../../components/ui";
-import type { NewTestInput } from "../../types";
+import { DIFFICULTY_META } from "../../learningPath";
+import type { NewTestInput, Topic } from "../../types";
 
-const COMPARATORS = ["token", "exact", "float", "float:1e-6", "float:1e-9"];
+const COMPARATORS = ["token", "lines", "exact", "float", "float:1e-6", "float:1e-9"];
 
 let nextKey = 1;
 interface TestRow extends NewTestInput {
@@ -28,7 +29,7 @@ const AREA: React.CSSProperties = { ...INPUT, height: "auto", padding: "8px 10px
  * Modal "Them bai tap moi". Backend chi ho tro TAO bai (POST /api/admin/problems),
  * khong co API sua/xoa - nen day la form tao moi, khong phai form sua.
  */
-export default function ProblemEditor({ onClose, onCreated }: { onClose: () => void; onCreated: () => void }) {
+export default function ProblemEditor({ topics, onClose, onCreated }: { topics: Topic[]; onClose: () => void; onCreated: () => void }) {
   const [id, setId] = useState("");
   const [title, setTitle] = useState("");
   const [statement, setStatement] = useState("");
@@ -36,6 +37,8 @@ export default function ProblemEditor({ onClose, onCreated }: { onClose: () => v
   const [memoryLimitMb, setMemoryLimitMb] = useState("64");
   const [comparator, setComparator] = useState("token");
   const [totalPoints, setTotalPoints] = useState("100");
+  const [topic, setTopic] = useState("");
+  const [difficulty, setDifficulty] = useState(0);
   const [tests, setTests] = useState<TestRow[]>([newTestRow(true, "sample01"), newTestRow(false, "01")]);
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
@@ -87,6 +90,8 @@ export default function ProblemEditor({ onClose, onCreated }: { onClose: () => v
         memoryLimitMb: Number(memoryLimitMb),
         comparator,
         totalPoints: Number(totalPoints),
+        topic,
+        difficulty,
         tests: tests.map((t) => ({ name: t.name.trim(), input: t.input, output: t.output, sample: t.sample })),
       });
       setSaved(true);
@@ -125,6 +130,23 @@ export default function ProblemEditor({ onClose, onCreated }: { onClose: () => v
             <div>
               <label style={LABEL}>Tên bài</label>
               <input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Tổng hai số nguyên" style={{ ...INPUT, fontFamily: "var(--font-sans)" }} />
+            </div>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 160px", gap: 10 }}>
+            <div>
+              <label style={LABEL}>Chủ đề trong lộ trình</label>
+              <select value={topic} onChange={(e) => setTopic(e.target.value)} style={{ ...INPUT, fontFamily: "var(--font-sans)" }}>
+                <option value="">(Chưa phân loại — hiện ở "Bài khác")</option>
+                {topics.map((t) => <option key={t.id} value={t.id}>{t.order}. {t.name}</option>)}
+              </select>
+            </div>
+            <div>
+              <label style={LABEL}>Độ khó</label>
+              <select value={difficulty} onChange={(e) => setDifficulty(Number(e.target.value))} style={{ ...INPUT, fontFamily: "var(--font-sans)" }}>
+                <option value={0}>Chưa đánh giá</option>
+                {[1, 2, 3].map((d) => <option key={d} value={d}>{DIFFICULTY_META[d].label}</option>)}
+              </select>
             </div>
           </div>
 

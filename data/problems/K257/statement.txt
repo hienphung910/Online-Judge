@@ -1,0 +1,11 @@
+Cô giáo tiếng Anh phát cho lớp một danh sách từ mới. Để dễ học, An muốn xếp các từ ngắn lên trước, từ dài ra sau; các từ dài bằng nhau thì xếp theo thứ tự từ điển.
+
+Đầu vào:
+- Dòng 1: số nguyên n là số từ.
+- n dòng tiếp theo, mỗi dòng một từ gồm chữ cái tiếng Anh viết thường (a-z).
+
+Đầu ra:
+- n dòng, mỗi dòng một từ, xếp theo số chữ cái tăng dần; nếu hai từ có cùng số chữ cái thì từ nào đứng trước trong từ điển (so từng chữ cái theo bảng chữ cái a, b, ..., z) sẽ đứng trước. Từ trùng nhau thì in đủ số lần.
+
+Giới hạn:
+- 1 ≤ n ≤ 200; mỗi từ dài từ 1 đến 10 chữ cái.

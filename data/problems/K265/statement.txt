@@ -1,0 +1,11 @@
+Cuộc thi "Lập trình nhí" đã kết thúc. Ban tổ chức cần in bảng xếp hạng: bạn nào điểm cao hơn thì đứng trên; hai bạn bằng điểm thì bạn có tên đứng trước trong từ điển sẽ đứng trên.
+
+Đầu vào:
+- Dòng 1: số nguyên n là số thí sinh.
+- n dòng tiếp theo, mỗi dòng gồm tên và điểm của một thí sinh, cách nhau một dấu cách. Tên gồm chữ cái tiếng Anh viết thường (a-z), các tên đôi một khác nhau.
+
+Đầu ra:
+- n dòng, mỗi dòng gồm tên và điểm (cách nhau một dấu cách), xếp theo điểm giảm dần; nếu bằng điểm thì xếp theo tên tăng dần theo thứ tự từ điển (so từng chữ cái a, b, ..., z; tên là phần đầu của tên khác thì đứng trước).
+
+Giới hạn:
+- 1 ≤ n ≤ 200; tên dài 1 đến 10 chữ cái; 0 ≤ điểm ≤ 100.

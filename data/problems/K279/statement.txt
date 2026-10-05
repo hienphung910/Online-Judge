@@ -1,0 +1,15 @@
+Robot Bi đứng ở điểm (0, 0) trên một mặt phẳng rất rộng, không có tường hay mép nào cả. Bi nhận được một chuỗi lệnh và làm lần lượt từng lệnh. Mỗi lệnh là một chữ cái:
+- U: đi lên một bước, y tăng 1;
+- D: đi xuống một bước, y giảm 1;
+- R: sang phải một bước, x tăng 1;
+- L: sang trái một bước, x giảm 1.
+Hỏi sau khi làm hết các lệnh, Bi đang đứng ở điểm nào?
+
+Đầu vào:
+- Một dòng chứa chuỗi lệnh, chỉ gồm các chữ cái U, D, L, R viết liền nhau.
+
+Đầu ra:
+- In ra hai số nguyên x và y cách nhau một dấu cách: tọa độ cuối cùng của Bi (x, y có thể là số âm).
+
+Giới hạn:
+- Chuỗi lệnh dài từ 1 đến 100 ký tự.

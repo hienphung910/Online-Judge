@@ -1,0 +1,12 @@
+Robot Bi được giao kiểm kê một chuỗi ký tự. Bi phải chia các ký tự thành ba nhóm:
+chữ hoa, chữ thường và chữ số, rồi đếm xem mỗi nhóm có bao nhiêu ký tự.
+
+Đầu vào:
+- Một dòng chứa một xâu gồm các chữ cái tiếng Anh (hoa hoặc thường) và chữ số, không có dấu cách.
+
+Đầu ra:
+- In ra ba số nguyên trên một dòng, cách nhau một dấu cách, theo đúng thứ tự:
+  số chữ hoa (A-Z), số chữ thường (a-z), số chữ số (0-9).
+
+Giới hạn:
+- Xâu dài từ 1 đến 100 ký tự.

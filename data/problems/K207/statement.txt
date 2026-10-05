@@ -1,0 +1,13 @@
+Bạn Bình sưu tầm thẻ hình, mỗi tấm thẻ có một mã số. Bình xếp n tấm thẻ thành một hàng, tấm thứ i có mã a[i]. Bình chỉ muốn giữ mỗi mã một tấm: đi từ trái sang phải, tấm thẻ nào có mã đã xuất hiện ở bên trái nó thì bỏ đi.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n — số tấm thẻ.
+- Dòng thứ hai chứa n số nguyên a[1], a[2], ..., a[n], cách nhau một dấu cách.
+
+Đầu ra:
+- Dòng đầu tiên in số k — số tấm thẻ còn lại.
+- Dòng thứ hai in k mã số của các tấm thẻ còn lại theo đúng thứ tự trong hàng, cách nhau một dấu cách.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000
+- 1 ≤ a[i] ≤ 10^6

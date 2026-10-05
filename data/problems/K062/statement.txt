@@ -1,0 +1,12 @@
+Gấu trắng Pô sống ở Bắc Cực. Sáng nào Pô cũng xem nhiệt kế để biết hôm nay trời trên 0 độ, dưới 0 độ hay đúng bằng 0 độ.
+
+Đầu vào:
+- Một số nguyên t là nhiệt độ hôm nay (độ C).
+
+Đầu ra:
+- In ra DUONG nếu t lớn hơn 0.
+- In ra AM nếu t nhỏ hơn 0.
+- In ra KHONG nếu t bằng 0.
+
+Giới hạn:
+- -100 ≤ t ≤ 100

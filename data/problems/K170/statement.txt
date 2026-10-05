@@ -1,0 +1,10 @@
+Robot gửi cho em một con số viết trong hệ nhị phân (chỉ gồm chữ số 0 và 1). Trong hệ nhị phân, các chữ số tính từ phải sang trái có giá trị 1, 2, 4, 8, 16, ... Ví dụ 110 trong hệ nhị phân là 4 + 2 = 6. Hãy đổi số robot gửi về số thường (hệ thập phân).
+
+Đầu vào:
+- Một số nhị phân gồm không quá 18 chữ số, chỉ có chữ số 0 và 1, không có chữ số 0 thừa ở đầu (trừ chính số 0).
+
+Đầu ra:
+- In ra giá trị của số đó trong hệ thập phân.
+
+Gợi ý:
+- Có thể đọc vào như một số nguyên 64-bit (long long trong C++, long trong Java) rồi tách từng chữ số bằng % 10 và / 10. Chữ số cuối nhân 1, chữ số tiếp theo nhân 2, rồi nhân 4, 8, ...

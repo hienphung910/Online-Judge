@@ -1,0 +1,13 @@
+Bạn Kiến giấu một từ bí mật t vào bên trong một xâu dài s. Em hãy kiểm tra xem t có thật sự nằm trong s hay không: các chữ cái của t phải xuất hiện liền một mạch, đúng thứ tự, không bị chữ khác chen vào giữa.
+
+Đầu vào:
+- Dòng 1: xâu s.
+- Dòng 2: xâu t.
+- Cả hai xâu gồm các chữ cái tiếng Anh (hoa hoặc thường), không có dấu cách.
+
+Đầu ra:
+- In ra YES nếu t là một đoạn liên tiếp của s, ngược lại in ra NO.
+- Phân biệt chữ hoa và chữ thường.
+
+Giới hạn:
+- Mỗi xâu dài từ 1 đến 100 chữ cái.

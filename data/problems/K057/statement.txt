@@ -1,0 +1,14 @@
+Các ghế trong rạp chiếu phim được đánh số 1, 2, 3, ... lần lượt từ trái sang phải, hết hàng này đến hàng sau. Mỗi hàng có đúng c ghế: hàng 1 gồm các ghế từ 1 đến c, hàng 2 gồm các ghế từ c + 1 đến 2 × c, ... Vé của An ghi số ghế s. Hỏi ghế của An ở hàng thứ mấy, và là ghế thứ mấy trong hàng đó (đếm từ trái sang)?
+
+Đầu vào:
+- Một dòng chứa hai số nguyên c và s, cách nhau một dấu cách.
+
+Đầu ra:
+- Một dòng gồm hai số nguyên: số thứ tự của hàng và vị trí của ghế trong hàng, cách nhau một dấu cách.
+
+Giới hạn:
+- 1 ≤ c ≤ 1000.
+- 1 ≤ s ≤ 1000000.
+
+Gợi ý:
+- Hãy thử trừ s đi 1 trước khi chia cho c, rồi nhớ cộng lại 1 vào kết quả.

@@ -1,0 +1,14 @@
+Bạn Minh sưu tầm tem, mỗi con tem có một mã số. Có những con tem bị trùng mã. Minh muốn biết mình có tất cả bao nhiêu mẫu tem khác nhau.
+
+Đầu vào:
+- Dòng 1: số nguyên n là số con tem.
+- Dòng 2: n số nguyên là mã của từng con tem, cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên: số mã tem khác nhau.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000; 1 ≤ mã tem ≤ 100000.
+
+Gợi ý:
+- Sau khi sắp xếp, các tem trùng mã sẽ đứng cạnh nhau. Em chỉ cần đếm những chỗ mà số đứng sau khác số đứng trước.

@@ -1,0 +1,10 @@
+Bà thưởng cá cho mèo Mướp theo một luật rất lạ: vào ngày thứ i, nếu i là số chẵn thì Mướp được i con cá, còn nếu i là số lẻ thì hôm đó Mướp không được con nào. Hỏi trong n ngày (từ ngày 1 đến ngày n), Mướp được tất cả bao nhiêu con cá?
+
+Đầu vào:
+- Một dòng chứa số nguyên n.
+
+Đầu ra:
+- Một số nguyên là tổng số cá Mướp nhận được.
+
+Giới hạn:
+- 1 ≤ n ≤ 10000.

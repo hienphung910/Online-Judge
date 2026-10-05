@@ -1,0 +1,13 @@
+Robot Bi gói quà sinh nhật trong một chiếc hộp hình lập phương có cạnh dài a xăng-ti-mét. Hỏi thể tích chiếc hộp là bao nhiêu xăng-ti-mét khối?
+
+Đầu vào:
+- Một dòng chứa số nguyên a là độ dài cạnh của hộp.
+
+Đầu ra:
+- Một số nguyên là thể tích của hộp.
+
+Giới hạn:
+- 1 ≤ a ≤ 1000.
+
+Gợi ý:
+- Thể tích hình lập phương = cạnh × cạnh × cạnh.

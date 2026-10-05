@@ -1,0 +1,16 @@
+Lớp 3A và lớp 3B đều đã xếp hàng từ thấp đến cao. Bây giờ hai lớp nhập lại thành một hàng chung, vẫn phải từ thấp đến cao. Em hãy in ra hàng mới.
+
+Đầu vào:
+- Dòng 1: số nguyên n là số bạn lớp 3A.
+- Dòng 2: n chiều cao của lớp 3A, đã xếp không giảm.
+- Dòng 3: số nguyên m là số bạn lớp 3B.
+- Dòng 4: m chiều cao của lớp 3B, đã xếp không giảm.
+
+Đầu ra:
+- Một dòng gồm n + m chiều cao của hàng chung, xếp không giảm, cách nhau một dấu cách.
+
+Giới hạn:
+- 1 ≤ n, m ≤ 1000; 100 ≤ chiều cao ≤ 200.
+
+Gợi ý:
+- Dùng hai "ngón tay" chỉ vào đầu hai hàng; mỗi lần lấy bạn thấp hơn ra trước.

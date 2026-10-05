@@ -1,0 +1,15 @@
+Bạn Lan nuôi một chú heo đất. Ngày thứ i, Lan bỏ vào heo a[i] nghìn đồng (có ngày quên không bỏ thì a[i] = 0). Lúc đầu heo đất rỗng. Lan muốn biết sau mỗi ngày, trong heo có tổng cộng bao nhiêu tiền.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n — số ngày.
+- Dòng thứ hai chứa n số nguyên a[1], a[2], ..., a[n], cách nhau một dấu cách.
+
+Đầu ra:
+- In ra trên một dòng n số, cách nhau một dấu cách: số thứ i là a[1] + a[2] + ... + a[i].
+
+Giới hạn:
+- 1 ≤ n ≤ 1000
+- 0 ≤ a[i] ≤ 10^6
+
+Gợi ý:
+- Dùng một biến cộng dồn: sau khi cộng thêm a[i] thì ghi lại giá trị của biến đó.

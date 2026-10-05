@@ -1,0 +1,16 @@
+Bạn Khoa bị lạc trong một mê cung hình chữ nhật gồm n hàng và m cột ô:
+'#' là tường, '.' là lối đi, 'S' là chỗ Khoa đang đứng, 'E' là cửa ra. Mỗi bước Khoa đi sang một ô kề cạnh (trên, dưới, trái, phải) không phải tường và không ra ngoài mê cung. Hỏi Khoa cần ít nhất bao nhiêu bước để tới cửa ra?
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và m.
+- n dòng tiếp theo, mỗi dòng gồm đúng m ký tự '#', '.', 'S' hoặc 'E' viết liền nhau.
+- Mê cung có đúng một chữ 'S' và đúng một chữ 'E'.
+
+Đầu ra:
+- Một số nguyên: số bước ít nhất để đi từ S tới E. Nếu không thể tới được, in -1.
+
+Giới hạn:
+- 1 ≤ n, m ≤ 50.
+
+Gợi ý:
+- Dùng BFS: loang từ S theo từng lớp, trước hết là các ô cách S 1 bước, rồi các ô cách S 2 bước, ... Lần đầu tiên chạm tới E chính là số bước ít nhất.

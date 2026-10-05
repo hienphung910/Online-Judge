@@ -1,0 +1,14 @@
+Trong sân nhà bà có cả gà và chó. An đếm được tất cả H cái đầu và L cái chân. Mỗi con gà có 2 chân, mỗi con chó có 4 chân. Hỏi trong sân có bao nhiêu con gà và bao nhiêu con chó?
+
+Đầu vào:
+- Một dòng chứa hai số nguyên H và L, cách nhau một dấu cách.
+
+Đầu ra:
+- Một dòng gồm hai số nguyên: số con gà và số con chó, cách nhau một dấu cách.
+
+Giới hạn:
+- 1 ≤ H ≤ 1000000.
+- L là số chẵn và 2 × H ≤ L ≤ 4 × H (luôn có đúng một đáp án).
+
+Gợi ý:
+- Giả sử con nào cũng là gà thì sẽ có 2 × H chân. Mỗi con chó có nhiều hơn con gà 2 chân. Số chân bị thiếu cho biết có bao nhiêu con chó.

@@ -1,0 +1,15 @@
+Nàng tiên cá tìm được một viên kim cương lấp lánh dưới đáy biển. Viên kim cương có nửa trên là một kim tự tháp, nửa dưới là kim tự tháp lộn ngược, ghép lại ở dòng rộng nhất.
+
+Đầu vào:
+- Một số nguyên n là số dòng của nửa trên (tính cả dòng rộng nhất).
+
+Đầu ra:
+- In ra 2n - 1 dòng, mỗi dòng gồm một số dấu cách rồi đến các dấu * viết liền nhau.
+- Nửa trên: với i = 1, 2, ..., n, in một dòng gồm n - i dấu cách và 2i - 1 dấu *.
+- Nửa dưới: với i = n - 1, n - 2, ..., 1, in một dòng gồm n - i dấu cách và 2i - 1 dấu *.
+
+Giới hạn:
+- 1 ≤ n ≤ 15.
+
+Gợi ý:
+- Với n = 2, viên kim cương có 3 dòng: (1 dấu cách, 1 dấu *), (3 dấu *), (1 dấu cách, 1 dấu *).

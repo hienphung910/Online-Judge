@@ -1,0 +1,13 @@
+Khi đặt một số trước gương thần, gương hiện ra số đó viết theo chiều ngược lại. Một số được gọi là số đối xứng nếu đọc từ trái sang phải hay từ phải sang trái đều giống nhau, ví dụ 121 hay 4554. Khi đó số trong gương giống hệt số ban đầu.
+
+Đầu vào:
+- Một số nguyên n (0 ≤ n ≤ 1 000 000 000).
+
+Đầu ra:
+- In ra YES nếu n là số đối xứng, ngược lại in ra NO.
+
+Chú ý:
+- Mọi số có một chữ số (kể cả 0) đều là số đối xứng.
+
+Gợi ý:
+- Tạo số đảo ngược của n rồi so sánh với n.

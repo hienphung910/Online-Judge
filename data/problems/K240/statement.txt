@@ -1,0 +1,15 @@
+Trang web của lớp có một người gác cổng chỉ nhận mật khẩu MẠNH. Mật khẩu mạnh phải thỏa mãn cả 4 điều kiện:
+(1) dài ít nhất 8 ký tự;
+(2) có ít nhất một chữ hoa (A-Z);
+(3) có ít nhất một chữ thường (a-z);
+(4) có ít nhất một chữ số (0-9).
+
+Đầu vào:
+- Một dòng chứa mật khẩu: một xâu gồm các chữ cái tiếng Anh và chữ số, không có dấu cách.
+
+Đầu ra:
+- Nếu mật khẩu thỏa mãn cả 4 điều kiện, in ra MANH.
+- Ngược lại, dòng thứ nhất in ra YEU; dòng thứ hai in ra số thứ tự của các điều kiện chưa thỏa mãn, theo thứ tự tăng dần, cách nhau một dấu cách.
+
+Giới hạn:
+- Mật khẩu dài từ 1 đến 50 ký tự.

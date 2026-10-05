@@ -1,0 +1,14 @@
+Na vẽ một bức tranh hình chữ nhật có hai cạnh dài a và b. Na muốn lồng tranh vào một chiếc khung hình chữ nhật có hai cạnh dài c và d. Na được phép xoay tranh (đổi chiều ngang thành chiều dọc), nhưng không được đặt tranh nằm nghiêng, và tranh vừa khít với khung cũng được tính là vừa.
+
+Đầu vào:
+- Dòng thứ nhất chứa hai số nguyên a và b: kích thước bức tranh.
+- Dòng thứ hai chứa hai số nguyên c và d: kích thước chiếc khung.
+
+Đầu ra:
+- In ra YES nếu Na lồng được tranh vào khung, ngược lại in ra NO.
+
+Giới hạn:
+- 1 ≤ a, b, c, d ≤ 10^9
+
+Gợi ý:
+- Thử cả hai cách đặt tranh: (a ≤ c và b ≤ d) hoặc (a ≤ d và b ≤ c).

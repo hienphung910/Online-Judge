@@ -1,0 +1,10 @@
+Lớp học có n bạn xếp hàng tập thể dục giữa giờ. Cô giáo muốn xếp thành một số hàng sao cho hàng nào cũng có số bạn bằng nhau (có thể chỉ xếp 1 hàng, hoặc mỗi hàng chỉ có 1 bạn). Hỏi cô có bao nhiêu cách chọn số hàng?
+
+Đầu vào:
+- Một số nguyên n (1 ≤ n ≤ 1 000 000).
+
+Đầu ra:
+- In ra số cách chọn số hàng.
+
+Gợi ý:
+- Số hàng k chọn được khi và chỉ khi n chia hết cho k, tức là k là một ước của n. Vậy em cần đếm số ước của n.

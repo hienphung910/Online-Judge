@@ -1,0 +1,10 @@
+Giai thừa của n, viết là n!, là tích 1 × 2 × 3 × ... × n. Riêng 0! = 1. Ví dụ 7! = 5040 có một chữ số 0 ở cuối. Số n! lớn rất nhanh, nhưng bạn Tùng chỉ muốn biết n! có bao nhiêu chữ số 0 liên tiếp ở cuối.
+
+Đầu vào:
+- Một số nguyên n (0 ≤ n ≤ 1 000 000 000).
+
+Đầu ra:
+- In ra số chữ số 0 liên tiếp ở cuối của n!.
+
+Gợi ý:
+- Không thể tính trực tiếp n! vì nó quá lớn. Mỗi chữ số 0 ở cuối sinh ra từ một cặp 2 × 5, mà thừa số 2 luôn nhiều hơn thừa số 5. Vậy chỉ cần đếm thừa số 5: kết quả là n/5 + n/25 + n/125 + ... (chia lấy phần nguyên, dừng khi bằng 0).

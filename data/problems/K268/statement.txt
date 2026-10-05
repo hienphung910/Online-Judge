@@ -1,0 +1,11 @@
+Lớp trưởng muốn làm tấm lịch ghi ngày sinh của các bạn, xếp từ ngày sớm nhất đến ngày muộn nhất để không quên chúc mừng ai.
+
+Đầu vào:
+- Dòng 1: số nguyên n là số bạn.
+- n dòng tiếp theo, mỗi dòng ba số nguyên d m y là ngày, tháng, năm sinh (viết không có số 0 ở đầu, ngày luôn hợp lệ).
+
+Đầu ra:
+- n dòng, mỗi dòng ba số d m y (viết giống đầu vào), xếp theo thời gian từ sớm đến muộn: năm nhỏ hơn thì sớm hơn; cùng năm thì tháng nhỏ hơn sớm hơn; cùng năm và tháng thì ngày nhỏ hơn sớm hơn. Ngày trùng nhau thì in đủ số lần.
+
+Giới hạn:
+- 1 ≤ n ≤ 200; 2008 ≤ y ≤ 2018.

@@ -1,0 +1,14 @@
+Bạn Na rải kẹo lên một bàn cờ có n hàng và m cột, mỗi ô có một số viên kẹo. Na muốn biết ô nào có nhiều kẹo nhất và ô đó nằm ở đâu.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và m.
+- n dòng tiếp theo, mỗi dòng chứa m số nguyên cách nhau một dấu cách.
+- Hàng được đánh số từ 1 đến n từ trên xuống dưới, cột được đánh số từ 1 đến m từ trái sang phải.
+
+Đầu ra:
+- In ra ba số nguyên trên một dòng, cách nhau một dấu cách: số kẹo nhiều nhất, số thứ tự hàng và số thứ tự cột của ô đó.
+- Nếu có nhiều ô cùng nhiều kẹo nhất, chọn ô có số hàng nhỏ nhất; nếu vẫn còn nhiều ô thì chọn ô có số cột nhỏ nhất.
+
+Giới hạn:
+- 1 ≤ n, m ≤ 50.
+- Mỗi ô có từ 0 đến 1000 viên kẹo.

@@ -1,0 +1,12 @@
+Năm học mới sắp đến, mẹ đưa An đi nhà sách. Mẹ mua n cây bút chì, mỗi cây giá a đồng, và m cục tẩy, mỗi cục giá b đồng. Hỏi mẹ phải trả tất cả bao nhiêu tiền?
+
+Đầu vào:
+- Dòng thứ nhất chứa hai số nguyên n và a, cách nhau một dấu cách.
+- Dòng thứ hai chứa hai số nguyên m và b, cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên là tổng số tiền mẹ phải trả (đồng).
+
+Giới hạn:
+- 0 ≤ n, m ≤ 1000.
+- 1 ≤ a, b ≤ 100000.

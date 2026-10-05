@@ -1,0 +1,17 @@
+Bản đồ đồi núi là một bảng n hàng, m cột, mỗi ô ghi độ cao của mặt đất ở đó. Nhà thám hiểm nhí gọi một ô là "điểm yên ngựa" nếu thỏa mãn cả hai điều sau:
+- trong cùng hàng với nó không có ô nào thấp hơn nó (nó là thấp nhất trong hàng, có thể bằng ô khác);
+- trong cùng cột với nó không có ô nào cao hơn nó (nó là cao nhất trong cột, có thể bằng ô khác). Em hãy đếm xem bản đồ có bao nhiêu điểm yên ngựa.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và m.
+- n dòng tiếp theo, mỗi dòng chứa m số nguyên cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên: số điểm yên ngựa (có thể bằng 0).
+
+Giới hạn:
+- 1 ≤ n, m ≤ 50.
+- Mỗi độ cao từ 0 đến 100.
+
+Gợi ý:
+- Tính trước số nhỏ nhất của từng hàng và số lớn nhất của từng cột.

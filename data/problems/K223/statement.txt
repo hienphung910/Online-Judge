@@ -1,0 +1,10 @@
+Ở xứ sở đảo ngược, mọi thứ đều bị lật lại: chữ hoa biến thành chữ thường, còn chữ thường lại biến thành chữ hoa. Em hãy viết lại một câu theo kiểu của xứ sở này.
+
+Đầu vào:
+- Một dòng (có thể có dấu cách) gồm các chữ cái tiếng Anh (hoa hoặc thường) và dấu cách. Hai từ liền nhau cách nhau đúng một dấu cách; không có dấu cách ở đầu và cuối dòng.
+
+Đầu ra:
+- In ra câu đó sau khi đổi mỗi chữ hoa thành chữ thường và mỗi chữ thường thành chữ hoa. Các dấu cách giữ nguyên.
+
+Giới hạn:
+- Dòng dài từ 1 đến 300 ký tự.

@@ -1,0 +1,18 @@
+Bạn Hoa trồng n cây hướng dương, cây thứ i cao a[i] xăng-ti-mét. Hoa muốn đếm xem có bao nhiêu cây cao hơn chiều cao trung bình của cả vườn. Cây cao đúng bằng mức trung bình thì không được tính.
+
+Chiều cao trung bình bằng S chia cho n, với S = a[1] + a[2] + ... + a[n] (kết quả phép chia này có thể không phải số nguyên).
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n — số cây.
+- Dòng thứ hai chứa n số nguyên a[1], a[2], ..., a[n], cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên — số cây có chiều cao lớn hơn hẳn chiều cao trung bình.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000
+- 1 ≤ a[i] ≤ 10^6
+
+Gợi ý:
+- Để không phải dùng số thập phân, hãy so sánh a[i] × n với S:
+  cây thứ i cao hơn trung bình khi và chỉ khi a[i] × n > S.

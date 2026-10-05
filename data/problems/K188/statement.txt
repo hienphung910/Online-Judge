@@ -1,0 +1,16 @@
+Ếch con đứng trước một dãy n chiếc lá súng, đánh số từ 1 đến n. Trên lá thứ i có a[i] ngôi sao lấp lánh. Ếch chỉ đáp xuống các lá ở vị trí lẻ: lá 1, lá 3, lá 5, ... và nhặt hết sao trên những lá đó. Hỏi ếch nhặt được tất cả bao nhiêu ngôi sao?
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n — số lá súng.
+- Dòng thứ hai chứa n số nguyên a[1], a[2], ..., a[n], cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên — tổng a[1] + a[3] + a[5] + ... (lấy mọi vị trí lẻ không vượt quá n).
+
+Giới hạn:
+- 1 ≤ n ≤ 1000
+- 0 ≤ a[i] ≤ 10^6
+
+Gợi ý:
+- Cho biến vị trí chạy 1, 3, 5, ... bằng cách mỗi lần tăng thêm 2.
+- Nếu mảng của em đánh chỉ số từ 0 thì lá ở vị trí 1 nằm ở chỉ số 0.

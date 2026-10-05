@@ -7,6 +7,7 @@ import com.ptit.oj.model.Problem;
 import com.ptit.oj.model.Submission;
 import com.ptit.oj.model.TestCase;
 import com.ptit.oj.model.TestCaseResult;
+import com.ptit.oj.model.Topic;
 import com.ptit.oj.model.User;
 import com.ptit.oj.service.AuthService;
 import com.ptit.oj.service.JudgeService;
@@ -186,9 +187,28 @@ public class ConsoleApp {
 
     // ------------------------------------------------------------- chuc nang
 
+    /** In theo lo trinh hoc: tung chu de theo thu tu, bai chua phan loai xep cuoi. */
     private void listProblems() {
-        System.out.println("DANH SÁCH BÀI TẬP");
-        for (Problem p : service.getProblems()) {
+        System.out.println("DANH SÁCH BÀI TẬP (theo lộ trình học)");
+        List<Problem> rest = new ArrayList<>(service.getProblems());
+        for (Topic t : service.getTopics()) {
+            List<Problem> inTopic = new ArrayList<>();
+            for (Problem p : rest) {
+                if (p.getTopic().equals(t.getId())) inTopic.add(p);
+            }
+            if (inTopic.isEmpty()) continue;
+            rest.removeAll(inTopic);
+            printProblemGroup(t.getOrder() + ". " + t.getName(), inTopic);
+        }
+        if (!rest.isEmpty()) {
+            printProblemGroup(service.getTopics().isEmpty() ? "Tất cả" : "Bài khác", rest);
+        }
+    }
+
+    private void printProblemGroup(String heading, List<Problem> problems) {
+        System.out.println();
+        System.out.println(heading + " (" + problems.size() + " bài)");
+        for (Problem p : problems) {
             System.out.println("  " + p.describe() + "  [so sánh: " + p.getComparatorSpec() + "]");
         }
     }

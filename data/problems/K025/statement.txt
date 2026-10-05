@@ -1,0 +1,15 @@
+Bé Thảo muốn ghi ngày sinh nhật của các bạn lên tờ lịch theo kiểu dd/mm/yyyy:
+ngày đủ 2 chữ số, tháng đủ 2 chữ số, năm đủ 4 chữ số, ngăn cách bằng dấu gạch chéo "/".
+
+Đầu vào:
+- Một dòng chứa ba số nguyên d, m, y (ngày, tháng, năm), cách nhau một dấu cách.
+
+Đầu ra:
+- In ra một dòng: dd/mm/yyyy (không có dấu cách).
+
+Giới hạn:
+- d, m, y luôn tạo thành một ngày có thật.
+- 1 ≤ d ≤ 31, 1 ≤ m ≤ 12, 1900 ≤ y ≤ 2100.
+
+Gợi ý:
+- Thêm chữ số 0 vào trước ngày hoặc tháng chỉ có 1 chữ số.

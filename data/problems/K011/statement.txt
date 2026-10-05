@@ -1,0 +1,15 @@
+Phòng khám thú y của bác sĩ Gấu làm cho mỗi con vật một tấm thẻ gồm ba dòng. Em hãy giúp bác sĩ in thẻ thật đúng mẫu.
+
+Đầu vào:
+- Dòng 1: tên con vật.
+- Dòng 2: loài của con vật (ví dụ: meo, cho, tho).
+- Dòng 3: một số nguyên là tuổi của con vật.
+
+Đầu ra:
+- Dòng 1: Ten: <tên>
+- Dòng 2: Loai: <loài>
+- Dòng 3: Tuoi: <tuổi>
+
+Giới hạn:
+- Tên và loài là một từ gồm chữ cái tiếng Anh, dài không quá 20 ký tự.
+- 0 ≤ tuổi ≤ 30.

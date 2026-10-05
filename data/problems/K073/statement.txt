@@ -1,0 +1,16 @@
+Cô giáo lớp 4A chấm bài kiểm tra theo thang điểm 100 rồi xếp loại cho từng bạn. Em hãy viết chương trình xếp loại giúp cô.
+
+Cách xếp loại:
+- Từ 80 điểm trở lên: Gioi
+- Từ 65 đến 79 điểm: Kha
+- Từ 50 đến 64 điểm: Trung binh
+- Dưới 50 điểm: Yeu
+
+Đầu vào:
+- Một số nguyên d là điểm của học sinh.
+
+Đầu ra:
+- In ra loại học lực, viết không dấu và đúng chữ hoa chữ thường như trên: Gioi, Kha, Trung binh hoặc Yeu.
+
+Giới hạn:
+- 0 ≤ d ≤ 100

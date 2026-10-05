@@ -1,0 +1,15 @@
+Cô giáo có n viên kẹo và muốn chia đều cho k bạn trong nhóm: bạn nào cũng được số kẹo như nhau và nhiều nhất có thể. Số kẹo còn thừa cô cất lại vào hộp.
+
+Đầu vào:
+- Một dòng chứa hai số nguyên n và k, cách nhau một dấu cách.
+
+Đầu ra:
+- Dòng thứ nhất: số kẹo mỗi bạn nhận được.
+- Dòng thứ hai: số kẹo còn thừa.
+
+Giới hạn:
+- 0 ≤ n ≤ 1000000000.
+- 1 ≤ k ≤ 1000000.
+
+Gợi ý:
+- Dùng phép chia lấy phần nguyên và phép chia lấy dư.

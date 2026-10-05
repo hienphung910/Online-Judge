@@ -1,0 +1,14 @@
+Thỏ Ngọc rất thích các con số. Thỏ gọi một số là "thần kỳ" nếu nó chia hết cho cả 3 và 5. Em hãy giúp Thỏ kiểm tra số n.
+
+Đầu vào:
+- Một số nguyên n.
+
+Đầu ra:
+- In ra YES nếu n chia hết cho cả 3 và 5.
+- Ngược lại in ra NO.
+
+Giới hạn:
+- 1 ≤ n ≤ 10^9
+
+Gợi ý:
+- Dùng phép "và" để ghép hai điều kiện: n chia 3 dư 0 và n chia 5 dư 0.

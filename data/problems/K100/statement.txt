@@ -1,0 +1,12 @@
+Trạm thời tiết trên đỉnh núi ghi lại nhiệt độ lúc sáng sớm trong n ngày. Em hãy đếm xem có bao nhiêu ngày nhiệt độ dương (lớn hơn 0), bao nhiêu ngày nhiệt độ âm (nhỏ hơn 0) và bao nhiêu ngày nhiệt độ đúng bằng 0.
+
+Đầu vào:
+- Dòng thứ nhất chứa số nguyên n.
+- Dòng thứ hai chứa n số nguyên là nhiệt độ của từng ngày, các số cách nhau một dấu cách.
+
+Đầu ra:
+- In ba số trên một dòng, cách nhau một dấu cách: số ngày nhiệt độ dương, số ngày nhiệt độ âm, số ngày nhiệt độ bằng 0.
+
+Giới hạn:
+- 1 ≤ n ≤ 100.
+- Mỗi nhiệt độ là số nguyên từ -30 đến 30.

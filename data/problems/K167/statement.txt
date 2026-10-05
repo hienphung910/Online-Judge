@@ -1,0 +1,12 @@
+Ở bến xe, xe buýt màu xanh cứ a phút lại xuất bến một chuyến, xe buýt màu đỏ cứ b phút một chuyến. Lúc 7 giờ đúng cả hai xe cùng xuất bến. Hỏi sau ít nhất bao nhiêu phút nữa thì hai xe lại cùng xuất bến?
+
+Đáp số là bội chung nhỏ nhất (BCNN) của a và b: số dương nhỏ nhất chia hết cho cả a và b.
+
+Đầu vào:
+- Một dòng gồm hai số nguyên a và b, cách nhau một dấu cách (1 ≤ a, b ≤ 40 000).
+
+Đầu ra:
+- In ra BCNN của a và b.
+
+Gợi ý:
+- BCNN(a, b) = a × b / ƯCLN(a, b). ƯCLN tính bằng thuật toán Euclid.

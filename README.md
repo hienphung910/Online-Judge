@@ -393,11 +393,11 @@ Thêm ngôn ngữ = **một lớp con `Language` + một dòng `register()`** tr
 
 ```
 com.ptit.oj
-├── model/        Entity, User→Student/Teacher/Admin, Problem, TestCase,
+├── model/        Entity, User→Student/Teacher/Admin, Problem, Topic, TestCase,
 │                 Submission, TestCaseResult, JudgeResult, Verdict (enum), Credentials
 ├── language/     Language (abstract) → Java / C++ / Python / Go / JavaScript / Rust
 │                 LanguageRegistry (factory/registry)
-├── compare/      OutputComparator (interface) → Exact / Token / Float
+├── compare/      OutputComparator (interface) → Exact / Token / Float / Line
 │                 ComparatorFactory
 ├── runner/       ProcessRunner  — chạy tiến trình con, bơm stdin, timeout, kill
 ├── core/         Judge          — bộ chấm; JudgeListener → Console / Statistics
@@ -409,6 +409,7 @@ com.ptit.oj
 │                 ├── UserRepository        → InMemoryUserRepository | MySqlUserRepository
 │                 └── SubmissionRepository  → InMemory...  | MySqlSubmissionRepository
 │                 ProblemLoader / ProblemWriter / ProblemDraft  (đọc-ghi đề bài trên ổ đĩa)
+│                 TopicLoader   (đọc lộ trình học từ data/topics.txt)
 ├── service/      JudgeService        — tầng nghiệp vụ dùng chung cho cả 2 giao diện
 │                 AuthService         — đăng ký / đăng nhập / bootstrap admin
 │                 PasswordService     — PBKDF2 + SecureRandom + MessageDigest.isEqual
@@ -463,7 +464,8 @@ Trừ 4 endpoint đầu, **mọi endpoint đều cần** header `Authorization: 
 | POST | `/api/auth/login` | công khai | `{username, password}` → `{token, user}` |
 | POST | `/api/auth/logout` | đã đăng nhập | huỷ token hiện tại |
 | GET | `/api/auth/me` | đã đăng nhập | `{id, username, fullName, role, roleName, canCreateProblem, solvedCount}` |
-| GET | `/api/problems` | đã đăng nhập | danh sách bài + đề + **chỉ test ví dụ** |
+| GET | `/api/problems` | đã đăng nhập | danh sách bài + đề + chủ đề + độ khó + **chỉ test ví dụ** |
+| GET | `/api/topics` | đã đăng nhập | lộ trình học theo đúng thứ tự: `{id, name, description, order, problemCount}` |
 | GET | `/api/submissions` | đã đăng nhập | STUDENT: chỉ của mình · TEACHER/ADMIN: tất cả |
 | GET | `/api/submissions/{id}` | chủ sở hữu / TEACHER / ADMIN | chi tiết: verdict từng test + mã nguồn |
 | GET | `/api/scoreboard` | đã đăng nhập | bảng xếp hạng |
@@ -543,7 +545,9 @@ curl -X POST http://localhost:8080/api/admin/problems -H "Content-Type: applicat
 | `timeLimitMs` | 100 – 60 000 |
 | `memoryLimitMb` | 8 – 2048 |
 | `totalPoints` | > 0 và ≤ 100 000 |
-| `comparator` | phải được `ComparatorFactory` chấp nhận (`exact` / `token` / `float` / `float:1e-9`) |
+| `comparator` | phải được `ComparatorFactory` chấp nhận (`exact` / `token` / `lines` / `float` / `float:1e-9`) |
+| `topic` | tùy chọn; nếu có thì phải là mã chủ đề trong `data/topics.txt` |
+| `difficulty` | tùy chọn; 0 (chưa đánh giá), 1 Dễ, 2 Vừa, 3 Khó |
 | `tests` | ít nhất 1, tối đa 200 |
 | `tests[].name` | khớp `[A-Za-z0-9_-]{1,64}`, không trùng nhau (không phân biệt hoa thường vì Windows như vậy) |
 | `tests[].input` / `output` | đều bắt buộc, không rỗng |
@@ -565,7 +569,7 @@ Trang **Thêm bài tập** trên web chỉ hiện với tài khoản ADMIN, cho 
 | **Inheritance** | `Entity` → `Problem`/`Submission`/`User`/`TestCase`; `User` → `Student`/`Teacher`/**`Admin`**; `FloatComparator extends TokenComparator`; `MySqlUserRepository implements UserRepository extends Repository<User>` |
 | **Polymorphism** | `Judge` gọi `language.compile()` và `comparator.matches()` mà không biết lớp cụ thể; **`canCreateProblem()` chỉ `Admin` ghi đè thành `true`** nên chỗ kiểm tra quyền không cần `if (role == ...)`; `Language.defaultFileName()` chỉ Java ghi đè |
 | **Abstraction** | `Language`, `User`, `Entity` là abstract class; `OutputComparator`, `Repository<T>`, `UserRepository`, `SubmissionRepository`, `JudgeListener` là interface |
-| **Strategy** | `OutputComparator`: đổi cách so sánh (exact / token / float ε) mà không sửa `Judge` |
+| **Strategy** | `OutputComparator`: đổi cách so sánh (exact / token / lines / float ε) mà không sửa `Judge` — `LineComparator` cho bài vẽ hình được thêm vào mà `Judge` không đổi một dòng |
 | **Factory** | `ComparatorFactory.create("float:1e-6")`, `LanguageRegistry.detect(file)`, `JudgeService.persistent()` / `JudgeService.inMemory()` |
 | **Observer** | `JudgeListener` có **ba** bản cài đặt: `ConsoleJudgeListener` in tiến trình ra terminal, `StatisticsListener` đếm verdict, `SseJudgeListener` đẩy từng test về trình duyệt. Cả ba được thêm vào mà **không sửa một dòng nào trong `Judge`** — đây là ví dụ Open/Closed rõ nhất của project |
 | **Generic** | `Repository<T extends Entity>` dùng chung cho mọi entity; hai bản cài đặt RAM và MySQL thay nhau được |
@@ -584,6 +588,7 @@ Một bài tập = một thư mục trong `data/problems/`:
 ```
 P001/
 ├── problem.properties    id, title, timeLimitMs, memoryLimitMb, comparator, totalPoints
+│                         + topic, difficulty (tùy chọn — xem "Lộ trình học" bên dưới)
 ├── statement.txt         đề bài (tùy chọn)
 └── tests/
     ├── sample01.in / sample01.out    (tên bắt đầu bằng "sample" = test ví dụ, chạy trước)
@@ -591,7 +596,23 @@ P001/
     └── 03.in / 03.out
 ```
 
-`comparator` nhận: `exact` (đúng từng ký tự), `token` (bỏ qua khoảng trắng thừa — mặc định), `float` hoặc `float:1e-9` (sai số cho phép). Điểm chia đều cho các test nên bài sai một phần vẫn có điểm từng phần.
+`comparator` nhận: `exact` (đúng từng ký tự), `token` (bỏ qua khoảng trắng thừa — mặc định), `lines` (so từng dòng, giữ khoảng trắng **đầu** dòng nhưng bỏ qua khoảng trắng cuối dòng và dòng trống cuối — dành cho bài vẽ hình), `float` hoặc `float:1e-9` (sai số cho phép). Điểm chia đều cho các test nên bài sai một phần vẫn có điểm từng phần.
+
+### Lộ trình học
+
+`data/topics.txt` liệt kê các chủ đề, **thứ tự dòng = thứ tự học**:
+
+```
+# ma-chu-de | Tên hiển thị | Mô tả ngắn
+nhap-xuat | Làm quen: Nhập và xuất | Đọc dữ liệu từ bàn phím và in kết quả ra màn hình.
+vong-lap  | Vòng lặp               | Lặp lại một việc nhiều lần với for và while.
+```
+
+Bài tập gắn vào chủ đề bằng hai dòng tùy chọn trong `problem.properties`: `topic=vong-lap` và `difficulty=1` (1 Dễ · 2 Vừa · 3 Khó). Trang *Lớp học* hiện lộ trình ở cột trái (tiến độ từng chặng, nút **Học tiếp** mở bài đầu tiên chưa giải), lọc theo độ khó, và sau khi AC có nút **Bài tiếp theo**. Bài không gắn chủ đề (như `P001`–`P003`) nằm ở nhóm **Bài khác**. Admin chọn chủ đề và độ khó ngay trong form tạo bài; backend từ chối mã chủ đề không có trong `topics.txt`.
+
+### Bộ 300 bài thiếu nhi
+
+`K001`–`K300` là bộ bài luyện tập cho trẻ em, 10 chủ đề × 30 bài, xếp từ dễ đến khó. Bộ đề được **sinh tự động** bởi `tools/kids-problems/` — đáp án mọi test được tính từ lời giải mẫu chứ không gõ tay. Muốn sửa một bài thì sửa file chủ đề trong `tools/kids-problems/topics/` rồi chạy `py tools/kids-problems/build.py write`; hướng dẫn soạn bài nằm ở `tools/kids-problems/README.md`.
 
 **Số lượng test không được công bố:** danh sách bài (`GET /api/problems`, cột trên trang *Bài tập*, và `Problem.describe()` trên console) **không hiển thị số test** nữa. Test vẫn nằm nguyên trong model và `ProblemLoader`, bộ chấm vẫn chạy đủ mọi test, test ví dụ vẫn hiện, và sau khi chấm vẫn báo `passed/total` trong kết quả lẫn lịch sử.
 

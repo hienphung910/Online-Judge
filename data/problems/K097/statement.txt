@@ -1,0 +1,15 @@
+Ông của Tâm nuôi một đàn gà ở trang trại. Suốt n ngày, mỗi ngày ông đều ghi lại số quả trứng nhặt được. Em hãy giúp ông tính tổng số trứng của cả n ngày.
+
+Đầu vào:
+- Dòng thứ nhất chứa số nguyên n.
+- Dòng thứ hai chứa n số nguyên, là số trứng nhặt được trong từng ngày, các số cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên là tổng số trứng.
+
+Giới hạn:
+- 1 ≤ n ≤ 100.
+- Số trứng mỗi ngày từ 0 đến 1000.
+
+Gợi ý:
+- Không cần nhớ cả dãy số: đọc được số nào thì cộng ngay số đó vào tổng.

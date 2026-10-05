@@ -1,0 +1,14 @@
+Thuyền trưởng Râu Đỏ có tấm bản đồ kho báu gồm n hàng và m cột ô: '#' là đất, '.' là nước. Hai ô đất thuộc cùng một hòn đảo nếu có thể đi từ ô này sang ô kia, mỗi bước bước sang một ô đất kề cạnh (trên, dưới, trái, phải). Đi chéo không được tính. Em hãy đếm xem trên bản đồ có bao nhiêu hòn đảo.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và m.
+- n dòng tiếp theo, mỗi dòng gồm đúng m ký tự '#' hoặc '.' viết liền nhau.
+
+Đầu ra:
+- Một số nguyên: số hòn đảo (bằng 0 nếu không có ô đất nào).
+
+Giới hạn:
+- 1 ≤ n, m ≤ 50.
+
+Gợi ý:
+- Duyệt từng ô; gặp một ô đất chưa đánh dấu thì tăng số đảo lên 1 và loang (BFS) để đánh dấu cả hòn đảo đó.

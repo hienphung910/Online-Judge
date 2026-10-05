@@ -1,0 +1,12 @@
+Cô giáo vừa chấm xong bài kiểm tra của n bạn trong lớp. Bạn nào được từ 5 điểm trở lên thì qua bài. Em hãy đếm xem có bao nhiêu bạn qua bài kiểm tra.
+
+Đầu vào:
+- Dòng thứ nhất chứa số nguyên n.
+- Dòng thứ hai chứa n số nguyên là điểm của từng bạn, các số cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên là số bạn được từ 5 điểm trở lên.
+
+Giới hạn:
+- 1 ≤ n ≤ 100.
+- Mỗi điểm là số nguyên từ 0 đến 10.

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { contestStatus, useLocalContests, type Contest } from "../../localContests";
-import type { Problem } from "../../types";
+import type { Problem, Topic } from "../../types";
 import ProblemEditor from "./ProblemEditor";
 import ContestEditor from "./ContestEditor";
 
@@ -28,7 +28,7 @@ function ConfirmDelete({ label, onConfirm, onCancel }: { label: string; onConfir
   );
 }
 
-export default function AdminPanel({ problems, onProblemCreated }: { problems: Problem[]; onProblemCreated: () => void }) {
+export default function AdminPanel({ problems, topics, onProblemCreated }: { problems: Problem[]; topics: Topic[]; onProblemCreated: () => void }) {
   const { contests, deleteContest } = useLocalContests();
   const [tab, setTab] = useState<AdminTab>("problems");
   const [showProblemEditor, setShowProblemEditor] = useState(false);
@@ -150,7 +150,7 @@ export default function AdminPanel({ problems, onProblemCreated }: { problems: P
       )}
 
       {showProblemEditor && (
-        <ProblemEditor onClose={() => setShowProblemEditor(false)} onCreated={onProblemCreated} />
+        <ProblemEditor topics={topics} onClose={() => setShowProblemEditor(false)} onCreated={onProblemCreated} />
       )}
       {editContest !== null && (
         <ContestEditor problems={problems} contest={editContest === "new" ? undefined : editContest} onClose={() => setEditContest(null)} />

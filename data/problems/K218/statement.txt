@@ -1,0 +1,10 @@
+Cô tiên chỉ thích những từ đối xứng: đọc xuôi từ trái sang phải hay đọc ngược từ phải sang trái đều giống hệt nhau, ví dụ như từ "noon". Em hãy giúp cô tiên kiểm tra một từ nhé.
+
+Đầu vào:
+- Một dòng chứa một từ gồm các chữ cái tiếng Anh viết thường, không có dấu cách.
+
+Đầu ra:
+- In ra YES nếu từ đó đối xứng, ngược lại in ra NO.
+
+Giới hạn:
+- Từ dài từ 1 đến 100 chữ cái.

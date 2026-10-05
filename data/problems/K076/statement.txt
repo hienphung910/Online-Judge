@@ -1,0 +1,19 @@
+Cột đèn ở ngã tư nhà Na đổi màu theo một vòng lặp dài 60 giây. Lúc bắt đầu đếm (giây thứ 0) đèn vừa chuyển sang màu xanh. Na muốn biết ở giây thứ t thì đèn đang có màu gì.
+
+Trong mỗi vòng 60 giây:
+- Từ giây thứ 0 đến giây thứ 29: đèn xanh.
+- Từ giây thứ 30 đến giây thứ 32: đèn vàng.
+- Từ giây thứ 33 đến giây thứ 59: đèn đỏ.
+- Giây thứ 60 đèn lại xanh giống như giây thứ 0, giây thứ 61 giống giây thứ 1, và cứ thế lặp lại.
+
+Đầu vào:
+- Một số nguyên t là số giây tính từ lúc bắt đầu đếm.
+
+Đầu ra:
+- In ra XANH, VANG hoặc DO là màu của đèn ở giây thứ t.
+
+Giới hạn:
+- 0 ≤ t ≤ 10^9
+
+Gợi ý:
+- Lấy số dư r khi chia t cho 60, rồi xem r rơi vào khoảng nào.

@@ -1,0 +1,15 @@
+Bạn An có một đoàn tàu đồ chơi gồm n toa, trên toa thứ i có ghi số a[i]. Khi tàu chạy lùi, toa cuối cùng lại đi đầu tiên! Em hãy giúp An đọc các con số theo thứ tự từ toa cuối về toa đầu nhé.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n — số toa tàu.
+- Dòng thứ hai chứa n số nguyên a[1], a[2], ..., a[n], cách nhau một dấu cách.
+
+Đầu ra:
+- In ra trên một dòng các số a[n], a[n-1], ..., a[1], cách nhau một dấu cách.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000
+- 0 ≤ a[i] ≤ 10^6
+
+Gợi ý:
+- Lưu cả dãy vào một mảng, rồi dùng vòng lặp đi từ vị trí n lùi về vị trí 1.

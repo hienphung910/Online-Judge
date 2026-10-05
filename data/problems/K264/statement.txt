@@ -1,0 +1,13 @@
+Robot Bi sắp xếp một dãy số tăng dần bằng cách "nổi bọt", và Bi muốn biết mình đã đổi chỗ bao nhiêu lần. Cách làm của Bi như sau:
+- Bi đi từ đầu dãy đến cuối dãy, xét lần lượt từng cặp hai số đứng cạnh nhau (vị trí 1 và 2, rồi 2 và 3, ..., rồi n-1 và n). Nếu số bên trái lớn hơn số bên phải thì Bi đổi chỗ hai số đó và đếm thêm 1 lần đổi chỗ.
+- Bi lặp lại lượt đi như trên cho đến khi có một lượt đi không đổi chỗ lần nào.
+
+Đầu vào:
+- Dòng 1: số nguyên n.
+- Dòng 2: n số nguyên, cách nhau một dấu cách.
+
+Đầu ra:
+- Tổng số lần Bi đã đổi chỗ.
+
+Giới hạn:
+- 1 ≤ n ≤ 100; 1 ≤ mỗi số ≤ 1000.

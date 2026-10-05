@@ -1,0 +1,13 @@
+Ông nội vừa hái được ba quả dưa hấu nặng a, b và c lạng. Bạn Tí muốn chọn quả nặng nhất để mang đi dự hội thi "Dưa hấu khổng lồ" của xóm.
+
+Đầu vào:
+- Một dòng chứa ba số nguyên a, b, c, cách nhau một dấu cách.
+
+Đầu ra:
+- In ra một số nguyên là khối lượng của quả dưa nặng nhất.
+
+Giới hạn:
+- 1 ≤ a, b, c ≤ 10^9
+
+Gợi ý:
+- Gán m = a. Nếu b lớn hơn m thì gán m = b, rồi làm tương tự với c.

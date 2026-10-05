@@ -1,0 +1,11 @@
+Trong giờ học tiếng Anh, cô giáo dạy Ong Vàng: trong bảng chữ cái tiếng Anh có 5 nguyên âm là a, e, i, o, u; 21 chữ cái còn lại đều là phụ âm. Em hãy giúp Ong Vàng phân loại một chữ cái.
+
+Đầu vào:
+- Một chữ cái thường tiếng Anh (từ a đến z).
+
+Đầu ra:
+- In ra NGUYEN AM nếu chữ cái là một trong a, e, i, o, u.
+- Ngược lại in ra PHU AM.
+
+Gợi ý:
+- Dùng phép "hoặc" để ghép 5 điều kiện so sánh.

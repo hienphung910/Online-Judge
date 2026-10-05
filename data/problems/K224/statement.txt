@@ -1,0 +1,10 @@
+Bạn Gấu muốn in tên cuốn truyện tranh lên bìa thật đẹp: chữ cái đầu tiên của mỗi từ phải được viết hoa.
+
+Đầu vào:
+- Một dòng (có thể có dấu cách) chứa tên truyện, gồm các từ viết bằng chữ cái tiếng Anh viết thường. Hai từ liền nhau cách nhau đúng một dấu cách; không có dấu cách ở đầu và cuối dòng.
+
+Đầu ra:
+- In ra tên truyện sau khi viết hoa chữ cái đầu tiên của mỗi từ. Các chữ cái còn lại vẫn viết thường, các dấu cách giữ nguyên.
+
+Giới hạn:
+- Dòng dài từ 1 đến 300 ký tự.

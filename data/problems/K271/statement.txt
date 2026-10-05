@@ -1,0 +1,15 @@
+Mẹ có một khay đựng kẹo chia thành n hàng và m cột ô nhỏ, mỗi ô có một số viên kẹo. Em hãy đếm giúp mẹ xem cả khay có tất cả bao nhiêu viên kẹo nhé!
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và m: số hàng và số cột của khay.
+- n dòng tiếp theo, mỗi dòng chứa m số nguyên cách nhau một dấu cách: số viên kẹo trong từng ô của hàng đó.
+
+Đầu ra:
+- Một số nguyên duy nhất: tổng số viên kẹo trong cả khay.
+
+Giới hạn:
+- 1 ≤ n, m ≤ 50.
+- Mỗi ô có từ 0 đến 1000 viên kẹo.
+
+Gợi ý:
+- Dùng hai vòng lặp lồng nhau: vòng ngoài đi qua từng hàng, vòng trong đi qua từng ô của hàng đó.

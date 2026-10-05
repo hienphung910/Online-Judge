@@ -1,0 +1,11 @@
+Mỗi chiếc bánh pizza được cắt thành b miếng bằng nhau, và Minh có a miếng, tức là a/b chiếc bánh. Hãy viết phân số a/b dưới dạng tối giản: tử số và mẫu số không còn ước chung nào lớn hơn 1.
+
+Đầu vào:
+- Một dòng gồm hai số nguyên a và b, cách nhau một dấu cách (1 ≤ a, b ≤ 1 000 000 000).
+
+Đầu ra:
+- In ra phân số tối giản dạng p/q: tử số, dấu /, mẫu số viết liền nhau, không có dấu cách.
+- Luôn in cả mẫu số, kể cả khi mẫu số bằng 1 (ví dụ 4/1).
+
+Gợi ý:
+- Chia cả a và b cho ƯCLN(a, b).

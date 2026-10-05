@@ -58,8 +58,21 @@ export interface Problem {
   memoryLimitMb: number;
   comparator: string;
   maxPoints: number;
+  /** Ma chu de trong lo trinh hoc (data/topics.txt), "" neu chua phan loai. */
+  topic: string;
+  /** 1 = De, 2 = Vua, 3 = Kho, 0 = chua danh gia. */
+  difficulty: number;
   /** Chi gom test vi du - test an khong bao gio duoc gui xuong trinh duyet. */
   samples: Sample[];
+}
+
+/** Mot chang trong lo trinh hoc, theo dung thu tu dong cua data/topics.txt. */
+export interface Topic {
+  id: string;
+  name: string;
+  description: string;
+  order: number;
+  problemCount: number;
 }
 
 export interface TestResult {
@@ -184,6 +197,8 @@ export interface NewProblemRequest {
   memoryLimitMb: number;
   comparator: string;
   totalPoints: number;
+  topic: string;
+  difficulty: number;
   tests: NewTestInput[];
 }
 

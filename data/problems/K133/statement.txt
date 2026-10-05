@@ -1,0 +1,14 @@
+Tiệm bánh của cô Mèo Mập vừa nướng một chiếc bánh xốp, nhưng chiếc bánh bị nghiêng sang phải trông như hình bình hành. Mỗi lớp bánh dài m ký tự #, và lớp càng ở trên càng lệch sang phải.
+
+Đầu vào:
+- Một dòng gồm hai số nguyên n và m cách nhau một dấu cách: n là số lớp bánh, m là độ dài mỗi lớp.
+
+Đầu ra:
+- In ra n dòng. Dòng thứ i (tính từ trên xuống) gồm đúng n - i dấu cách, rồi đến m dấu # viết liền nhau.
+- Như vậy dòng cuối cùng không có dấu cách ở đầu, dòng trên cùng có n - 1 dấu cách ở đầu.
+
+Giới hạn:
+- 1 ≤ n ≤ 20, 1 ≤ m ≤ 20.
+
+Gợi ý:
+- Với n = 2 và m = 3: dòng 1 gồm 1 dấu cách rồi ###, dòng 2 là ###.

@@ -1,0 +1,12 @@
+Mướp xếp các con cá khô theo cân nặng từ nhẹ đến nặng. Những con nặng bằng nhau thì nằm liền nhau. Mướp muốn biết các con cá nặng đúng x gam nằm từ vị trí nào đến vị trí nào.
+
+Đầu vào:
+- Dòng 1: hai số nguyên n và x.
+- Dòng 2: n số nguyên là cân nặng của các con cá, đã xếp không giảm.
+
+Đầu ra:
+- Hai số nguyên: vị trí đầu tiên và vị trí cuối cùng (đánh số từ 1) của con cá nặng đúng x gam, cách nhau một dấu cách.
+- Nếu không có con cá nào nặng x gam thì in: -1 -1
+
+Giới hạn:
+- 1 ≤ n ≤ 1000; 1 ≤ x, cân nặng ≤ 1000.

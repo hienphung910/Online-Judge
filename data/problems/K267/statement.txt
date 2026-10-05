@@ -1,0 +1,14 @@
+Cô giáo xếp hạng cả lớp sau bài kiểm tra theo luật vui vẻ: điểm cao nhất được hạng 1; các bạn bằng điểm nhau thì cùng hạng; mức điểm thấp hơn kế tiếp được hạng tiếp theo (không bỏ qua hạng nào). Ví dụ hai bạn cùng hạng 1 thì mức điểm kế tiếp vẫn được hạng 2.
+
+Đầu vào:
+- Dòng 1: số nguyên n là số học sinh.
+- Dòng 2: n số nguyên là điểm của học sinh thứ 1, 2, ..., n.
+
+Đầu ra:
+- Một dòng gồm n số: hạng của học sinh thứ 1, 2, ..., n (giữ đúng thứ tự đầu vào), cách nhau một dấu cách.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000; 0 ≤ điểm ≤ 100.
+
+Gợi ý:
+- Hạng của một bạn = 1 + số mức điểm khác nhau lớn hơn điểm của bạn đó.

@@ -1,0 +1,14 @@
+Cô thủ thư muốn biết trong một câu văn, mỗi chữ cái xuất hiện bao nhiêu lần để làm bảng thống kê dán lên tường thư viện.
+
+Đầu vào:
+- Một dòng (có thể có dấu cách) gồm các chữ cái tiếng Anh viết thường và dấu cách. Hai từ liền nhau cách nhau đúng một dấu cách; không có dấu cách ở đầu và cuối dòng.
+
+Đầu ra:
+- Với mỗi chữ cái CÓ xuất hiện trong câu, in một dòng gồm: chữ cái đó, một dấu cách, rồi số lần nó xuất hiện.
+- Các dòng xếp theo thứ tự bảng chữ cái từ a đến z. Không in chữ cái không xuất hiện. Không đếm dấu cách.
+
+Giới hạn:
+- Dòng dài từ 1 đến 300 ký tự.
+
+Gợi ý:
+- Dùng một mảng 26 phần tử để đếm, rồi đi từ a đến z để in.

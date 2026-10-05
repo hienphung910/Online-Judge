@@ -13,6 +13,7 @@ import java.nio.file.Path;
 import java.util.LinkedHashSet;
 import java.util.Locale;
 import java.util.Set;
+import java.util.function.Predicate;
 import java.util.regex.Pattern;
 
 /**
@@ -41,11 +42,14 @@ public class ProblemAdminService {
     private final Repository<Problem> problems;
     private final ProblemWriter writer;
     private final ProblemLoader loader;
+    /** Hoi JudgeService xem ma chu de co trong lo trinh khong (lo trinh nap sau constructor). */
+    private final Predicate<String> topicExists;
 
-    public ProblemAdminService(Repository<Problem> problems, Path problemsDir) {
+    public ProblemAdminService(Repository<Problem> problems, Path problemsDir, Predicate<String> topicExists) {
         this.problems = problems;
         this.writer = new ProblemWriter(problemsDir);
         this.loader = new ProblemLoader(problemsDir);
+        this.topicExists = topicExists;
     }
 
     /** Loi nghiep vu kem ma HTTP goi y (400 sai du lieu, 403 thieu quyen, 409 trung ma bai). */
@@ -116,6 +120,15 @@ public class ProblemAdminService {
             throw new ProblemAdminException(400, e.getMessage());
         }
         d.setComparator(comparator);
+
+        String topic = d.getTopic() == null ? "" : d.getTopic().trim();
+        if (!topic.isEmpty() && !topicExists.test(topic)) {
+            throw new ProblemAdminException(400, "Chủ đề \"" + topic + "\" không có trong lộ trình (data/topics.txt)");
+        }
+        d.setTopic(topic);
+        if (d.getDifficulty() < 0 || d.getDifficulty() > 3) {
+            throw new ProblemAdminException(400, "Độ khó phải là 1 (Dễ), 2 (Vừa), 3 (Khó) hoặc 0 (chưa đánh giá)");
+        }
 
         if (d.getTests().isEmpty()) {
             throw new ProblemAdminException(400, "Bài tập phải có ít nhất một test");

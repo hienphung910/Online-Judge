@@ -1,0 +1,15 @@
+Trên bãi cát có một hàng dấu chân, mỗi dấu chân là một chữ cái. Bạn Sóc muốn đếm xem mẫu dấu chân t xuất hiện bao nhiêu lần trong hàng s, nhưng hai lần đếm không được dùng chung bất kỳ dấu chân nào.
+
+Đầu vào:
+- Dòng 1: xâu s.
+- Dòng 2: xâu t.
+- Cả hai xâu gồm các chữ cái tiếng Anh viết thường, không có dấu cách.
+
+Đầu ra:
+- In ra số lần t xuất hiện trong s mà không chồng lên nhau, đếm theo cách sau:
+  dò s từ trái sang phải; mỗi khi gặp một đoạn giống hệt t thì đếm thêm 1,
+  rồi nhảy qua hết đoạn đó và dò tiếp từ chữ cái ngay sau đoạn vừa tìm được.
+- Ví dụ với s = aaaa và t = aa thì kết quả là 2.
+
+Giới hạn:
+- s dài từ 1 đến 1000 chữ cái; t dài từ 1 đến 100 chữ cái.

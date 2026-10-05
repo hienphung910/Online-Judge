@@ -1,0 +1,17 @@
+Tiệm kem của chú Tư ghi lại số que kem bán được trong n ngày, ngày thứ i bán được a[i] que. Chú muốn tìm k ngày liên tiếp bán được nhiều kem nhất. Các ngày được đánh số từ 1 đến n.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và k, cách nhau một dấu cách.
+- Dòng thứ hai chứa n số nguyên a[1], a[2], ..., a[n], cách nhau một dấu cách.
+
+Đầu ra:
+- In ra hai số nguyên cách nhau một dấu cách: tổng số que kem lớn nhất của k ngày liên tiếp, và ngày bắt đầu của đoạn k ngày đó.
+- Nếu có nhiều đoạn cùng tổng lớn nhất, chọn đoạn bắt đầu sớm nhất.
+
+Giới hạn:
+- 1 ≤ k ≤ n ≤ 1000
+- 0 ≤ a[i] ≤ 10^6
+
+Gợi ý:
+- Đoạn bắt đầu ở ngày i gồm các ngày i, i+1, ..., i+k-1, nên i chạy từ 1 đến n-k+1.
+- Khi dời đoạn sang phải một ngày, chỉ cần cộng thêm ngày mới và trừ đi ngày cũ nhất.

@@ -1,0 +1,13 @@
+Chiếc xe buýt nhỏ chỉ chở được nhiều nhất c hành khách. Xe xuất phát khi chưa có ai và lần lượt đi qua n trạm. Ở mỗi trạm, đầu tiên có x người xuống xe, sau đó có y người muốn lên xe. Nếu xe không đủ chỗ cho tất cả thì chỉ lên được đúng bằng số chỗ còn trống, những người còn lại phải ở lại trạm chờ chuyến sau.
+
+Đầu vào:
+- Dòng thứ nhất chứa hai số nguyên c và n, cách nhau một dấu cách.
+- n dòng tiếp theo, mỗi dòng chứa hai số nguyên x và y của một trạm, theo thứ tự xe đi qua.
+- Đảm bảo x không vượt quá số người đang ở trên xe khi xe tới trạm đó.
+
+Đầu ra:
+- In hai số trên một dòng, cách nhau một dấu cách: số hành khách trên xe sau trạm cuối cùng, và tổng số người phải ở lại chờ chuyến sau ở tất cả các trạm.
+
+Giới hạn:
+- 1 ≤ c ≤ 100; 1 ≤ n ≤ 50.
+- 0 ≤ y ≤ 100.

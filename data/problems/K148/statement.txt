@@ -1,0 +1,17 @@
+Bạn Tí làm một chiếc diều hình thoi bằng những thanh tre mảnh. Chiếc diều chỉ có khung viền bên ngoài làm bằng dấu *, bên trong là giấy trắng nên để trống.
+
+Đầu vào:
+- Một số nguyên n là số dòng của nửa trên chiếc diều (tính cả dòng rộng nhất).
+
+Đầu ra:
+- In ra 2n - 1 dòng. Với mỗi giá trị i, dòng tương ứng được vẽ như sau:
+- Nếu i = 1: gồm n - 1 dấu cách rồi một dấu *.
+- Nếu i > 1: gồm n - i dấu cách, một dấu *, rồi 2i - 3 dấu cách, rồi một dấu *.
+- Các dòng lần lượt ứng với i = 1, 2, ..., n, rồi i = n - 1, n - 2, ..., 1.
+
+Giới hạn:
+- 1 ≤ n ≤ 15.
+
+Gợi ý:
+- Đây chính là bài viên kim cương, nhưng mỗi dòng chỉ giữ lại dấu * đầu tiên và dấu * cuối cùng.
+- Với n = 2, chiếc diều có 3 dòng: (1 dấu cách, 1 dấu *), (dấu *, 1 dấu cách, dấu *), (1 dấu cách, 1 dấu *).

@@ -1,0 +1,17 @@
+Hội thao của trường có n bạn thi nhảy xa, mỗi bạn được một số điểm. Huy chương vàng dành cho điểm cao nhất, còn huy chương bạc dành cho điểm cao thứ nhì:
+đó là điểm lớn nhất trong số những điểm nhỏ hơn hẳn điểm cao nhất. (Nếu nhiều bạn cùng đạt điểm cao nhất thì họ đều nhận vàng, không ai trong số đó nhận bạc.) Em hãy tìm điểm được nhận huy chương bạc.
+
+Đầu vào:
+- Dòng thứ nhất chứa số nguyên n.
+- Dòng thứ hai chứa n số nguyên là điểm của từng bạn, cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên là điểm nhận huy chương bạc.
+
+Giới hạn:
+- 2 ≤ n ≤ 100.
+- Mỗi điểm từ 0 đến 1000.
+- Đảm bảo có ít nhất hai điểm khác nhau.
+
+Gợi ý:
+- Không cần nhớ cả dãy: dùng hai biến "nhất" và "nhì", cập nhật sau mỗi số đọc vào.

@@ -1,0 +1,13 @@
+# Lo trinh hoc: moi dong la mot chu de, THU TU DONG = THU TU HOC.
+# Cu phap:  ma-chu-de | Ten hien thi | Mo ta ngan
+# Bai tap gan vao chu de bang dong "topic=ma-chu-de" trong problem.properties.
+nhap-xuat | Làm quen: Nhập và xuất | Đọc dữ liệu từ bàn phím và in kết quả ra màn hình.
+phep-tinh | Phép tính và công thức | Cộng, trừ, nhân, chia, chia lấy dư và các bài toán đời thường.
+re-nhanh | Rẽ nhánh if / else | Dạy chương trình biết lựa chọn: nếu... thì..., ngược lại...
+vong-lap | Vòng lặp | Lặp lại một việc nhiều lần với for và while.
+ve-hinh | Vẽ hình bằng ký tự | Dùng vòng lặp lồng nhau để vẽ tam giác, hình vuông, bậc thang.
+chu-so | Chữ số và số học vui | Tách chữ số, ước số, số nguyên tố, ước chung và bội chung.
+mang | Mảng (danh sách) | Lưu nhiều giá trị và xử lý cả một dãy số.
+xau | Xâu ký tự | Làm việc với chữ cái, từ và câu.
+sap-xep | Sắp xếp và tìm kiếm | Xếp thứ tự, tìm phần tử, đếm và thống kê.
+thu-thach | Thử thách tổng hợp | Bảng hai chiều, mô phỏng và các câu đố lập trình.

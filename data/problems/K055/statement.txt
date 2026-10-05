@@ -1,0 +1,15 @@
+Khối lớp 4 có n học sinh đi dã ngoại. Mỗi xe buýt có c ghế, mỗi bạn ngồi một ghế. Nhà trường thuê ít xe nhất có thể mà vẫn chở hết mọi bạn. Hỏi cần thuê bao nhiêu xe, và trên các xe còn tất cả bao nhiêu ghế trống?
+
+Đầu vào:
+- Một dòng chứa hai số nguyên n và c, cách nhau một dấu cách.
+
+Đầu ra:
+- Dòng thứ nhất: số xe buýt cần thuê.
+- Dòng thứ hai: tổng số ghế còn trống.
+
+Giới hạn:
+- 1 ≤ n ≤ 100000.
+- 1 ≤ c ≤ 100.
+
+Gợi ý:
+- Số ghế trống = tổng số ghế của tất cả các xe - số học sinh.

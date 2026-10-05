@@ -1,0 +1,15 @@
+Mẹ nướng n chiếc bánh quy và xếp vào các hộp, mỗi hộp đựng được nhiều nhất k chiếc. Hỏi mẹ cần ít nhất bao nhiêu hộp để đựng hết số bánh?
+
+Đầu vào:
+- Một dòng chứa hai số nguyên n và k, cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên là số hộp ít nhất cần dùng.
+
+Giới hạn:
+- 0 ≤ n ≤ 1000000.
+- 1 ≤ k ≤ 1000.
+
+Gợi ý:
+- Nếu chia n cho k còn dư thì cần thêm một hộp nữa cho số bánh lẻ.
+- Mẹo: số hộp bằng phần nguyên của phép chia (n + k - 1) cho k.

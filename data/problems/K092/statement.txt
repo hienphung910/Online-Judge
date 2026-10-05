@@ -1,0 +1,11 @@
+Cả lớp vừa gấp xong một chiếc tên lửa giấy thật to! Trước khi phóng, mọi người cùng đếm ngược từ n về 1, rồi đồng thanh hô "Phong!".
+
+Đầu vào:
+- Một dòng chứa số nguyên n.
+
+Đầu ra:
+- n dòng đầu tiên lần lượt là các số n, n - 1, ..., 2, 1 (mỗi số trên một dòng).
+- Dòng cuối cùng in chữ: Phong!
+
+Giới hạn:
+- 1 ≤ n ≤ 100.

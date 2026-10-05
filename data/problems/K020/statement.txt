@@ -1,0 +1,14 @@
+Cuối năm học, nhà trường in giấy khen cho các bạn học sinh giỏi. Em hãy giúp cô văn thư in giấy khen thật đúng mẫu.
+
+Đầu vào:
+- Dòng 1: tên học sinh (chỉ gồm chữ cái tiếng Anh, không có dấu cách).
+- Dòng 2: lớp của học sinh (một chữ số từ 1 đến 5 và một chữ cái in hoa, ví dụ 4B).
+
+Đầu ra: in ra đúng 4 dòng
+- Dòng 1: GIAY KHEN
+- Dòng 2: Tang ban: <tên>
+- Dòng 3: Lop: <lớp>
+- Dòng 4: Chuc mung <tên>!
+
+Giới hạn:
+- Tên dài không quá 20 ký tự.

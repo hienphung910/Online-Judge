@@ -1,0 +1,14 @@
+Thầy thể dục muốn chọn hai bạn có chiều cao chênh lệch ít nhất để đứng cặp với nhau trong tiết múa. Em hãy tính độ chênh lệch nhỏ nhất đó.
+
+Đầu vào:
+- Dòng 1: số nguyên n là số học sinh.
+- Dòng 2: n số nguyên là chiều cao của từng bạn, cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên: giá trị nhỏ nhất của (chiều cao lớn hơn - chiều cao nhỏ hơn) trong mọi cặp hai bạn khác nhau. Hai bạn cao bằng nhau thì chênh lệch là 0.
+
+Giới hạn:
+- 2 ≤ n ≤ 1000; 1 ≤ chiều cao ≤ 1000000.
+
+Gợi ý:
+- Sau khi sắp xếp, cặp gần nhau nhất luôn là hai bạn đứng cạnh nhau.

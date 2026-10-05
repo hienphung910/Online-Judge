@@ -1,0 +1,14 @@
+Các chú chim cánh cụt muốn có một con dốc tuyết để trượt chơi. Con dốc là một tam giác dựa vào bên phải: đỉnh nhọn ở trên, đáy rộng ở dưới, cạnh thẳng đứng nằm bên phải.
+
+Đầu vào:
+- Một số nguyên n là chiều cao của con dốc.
+
+Đầu ra:
+- In ra n dòng. Dòng thứ i gồm đúng n - i dấu cách, rồi đến i dấu * viết liền nhau.
+- Như vậy mọi dòng đều kết thúc ở cùng một cột, dòng cuối cùng có n dấu * và không có dấu cách ở đầu.
+
+Giới hạn:
+- 1 ≤ n ≤ 20.
+
+Gợi ý:
+- Với n = 2: dòng 1 gồm 1 dấu cách rồi 1 dấu *, dòng 2 gồm 2 dấu *.

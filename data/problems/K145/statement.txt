@@ -1,0 +1,16 @@
+Robot Bi đứng trước gương và đếm: 1, 2, 3 rồi đếm ngược lại 2, 1. Bi xếp các lần đếm như thế thành một kim tự tháp số cân đối, nhìn từ trái sang hay từ phải sang đều giống nhau.
+
+Đầu vào:
+- Một số nguyên n là số tầng của tháp.
+
+Đầu ra:
+- In ra n dòng. Dòng thứ i gồm đúng n - i dấu cách, rồi đến các chữ số
+  1, 2, ..., i - 1, i, i - 1, ..., 2, 1 viết liền nhau (không có dấu cách xen giữa).
+- Như vậy dòng thứ i có 2i - 1 chữ số và dòng cuối cùng không có dấu cách ở đầu.
+
+Giới hạn:
+- 1 ≤ n ≤ 9.
+
+Gợi ý:
+- Với n = 2: dòng 1 gồm 1 dấu cách rồi chữ số 1, dòng 2 là 121.
+- Mỗi dòng có thể in bằng hai vòng lặp: một vòng đếm lên từ 1 đến i, một vòng đếm xuống từ i - 1 về 1.

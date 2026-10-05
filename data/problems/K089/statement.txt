@@ -1,0 +1,18 @@
+Thầy Hình Học đưa cho cả lớp ba độ dài a, b, c. Thầy hỏi: ba đoạn thẳng này có tạo thành một tam giác không, và nếu có thì đó là tam giác gì?
+
+Đầu vào:
+- Một dòng chứa ba số nguyên a, b, c, cách nhau một dấu cách.
+
+Đầu ra:
+- Kiểm tra lần lượt theo thứ tự sau và in ra kết quả của điều kiện đầu tiên đúng:
+- KHONG nếu ba đoạn không tạo thành tam giác (có một đoạn lớn hơn hoặc bằng tổng hai đoạn còn lại).
+- DEU nếu cả ba cạnh bằng nhau.
+- VUONG nếu có hai cạnh mà tổng bình phương của chúng bằng bình phương cạnh còn lại.
+- CAN nếu có hai cạnh bằng nhau.
+- THUONG trong các trường hợp còn lại.
+
+Giới hạn:
+- 1 ≤ a, b, c ≤ 10000
+
+Gợi ý:
+- Không biết cạnh nào dài nhất thì hãy thử cả ba trường hợp: a*a + b*b == c*c, a*a + c*c == b*b, b*b + c*c == a*a.

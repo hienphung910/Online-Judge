@@ -1,0 +1,11 @@
+Chú vẹt Kiki rất thích nhại lại các con số, nhưng lần nào Kiki cũng đọc từ phải sang trái. Em hãy cho biết Kiki đọc số n thành số nào.
+
+Đầu vào:
+- Một số nguyên n (0 ≤ n ≤ 1 000 000 000).
+
+Đầu ra:
+- In ra số nhận được khi viết các chữ số của n theo thứ tự ngược lại.
+- Các chữ số 0 đứng đầu số mới thì bỏ đi, ví dụ 3500 đọc ngược thành 53. Số 0 đọc ngược vẫn là 0.
+
+Gợi ý:
+- Bắt đầu với kq = 0. Mỗi bước lấy chữ số cuối d = n % 10, cập nhật kq = kq * 10 + d rồi bỏ chữ số cuối của n.

@@ -1,0 +1,10 @@
+Các chữ cái đang tập nhảy: chữ thứ nhất nhảy lên cao (viết hoa), chữ thứ hai ngồi xuống (viết thường), chữ thứ ba lại nhảy lên, chữ thứ tư lại ngồi xuống... cứ thế đến hết từ.
+
+Đầu vào:
+- Một dòng chứa một từ gồm các chữ cái tiếng Anh (hoa hoặc thường), không có dấu cách.
+
+Đầu ra:
+- In ra từ đó sau khi đổi các chữ ở vị trí lẻ (thứ 1, 3, 5, ...) thành chữ hoa và các chữ ở vị trí chẵn (thứ 2, 4, 6, ...) thành chữ thường. Vị trí đếm từ 1, từ trái sang phải.
+
+Giới hạn:
+- Từ dài từ 1 đến 100 chữ cái.

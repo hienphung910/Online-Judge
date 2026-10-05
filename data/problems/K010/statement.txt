@@ -1,0 +1,12 @@
+Phiếu đăng ký ghi tên trước, họ sau. Nhưng trên thẻ học sinh thì phải ghi họ trước rồi mới đến tên.
+
+Đầu vào:
+- Dòng 1: tên của học sinh.
+- Dòng 2: họ của học sinh.
+- Họ và tên đều chỉ gồm chữ cái tiếng Anh, không có dấu cách.
+
+Đầu ra:
+- In ra một dòng: <họ> <tên> (họ trước, tên sau, cách nhau một dấu cách).
+
+Giới hạn:
+- Họ và tên mỗi phần dài không quá 20 ký tự.

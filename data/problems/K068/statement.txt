@@ -1,0 +1,10 @@
+Gấu Con hỏi bà: "Tháng này là mùa gì hả bà?". Bà dạy Gấu Con: tháng 1, 2, 3 là mùa xuân; tháng 4, 5, 6 là mùa hạ; tháng 7, 8, 9 là mùa thu; tháng 10, 11, 12 là mùa đông.
+
+Đầu vào:
+- Một số nguyên m là số thứ tự của tháng.
+
+Đầu ra:
+- In ra tên mùa, viết hoa không dấu: XUAN, HA, THU hoặc DONG.
+
+Giới hạn:
+- 1 ≤ m ≤ 12

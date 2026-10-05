@@ -1,0 +1,13 @@
+An vừa làm xong ba bài kiểm tra và được a, b, c điểm. An muốn biết điểm trung bình của mình, nhưng chỉ lấy phần nguyên (bỏ phần lẻ phía sau).
+
+Đầu vào:
+- Một dòng chứa ba số nguyên a, b, c, cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên là phần nguyên của điểm trung bình.
+
+Giới hạn:
+- 0 ≤ a, b, c ≤ 10.
+
+Gợi ý:
+- Cộng ba điểm lại rồi chia lấy phần nguyên cho 3.

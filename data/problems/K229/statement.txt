@@ -1,0 +1,11 @@
+Thỏ Trắng vừa sáng tác một câu thơ. Thỏ muốn tô màu từ dài nhất trong câu, nhưng đếm mãi vẫn chưa xong. Em hãy giúp Thỏ tìm từ đó nhé.
+
+Đầu vào:
+- Một dòng (có thể có dấu cách) chứa câu thơ. Mỗi từ gồm các chữ cái tiếng Anh (hoa hoặc thường); hai từ liền nhau cách nhau đúng một dấu cách; không có dấu cách ở đầu và cuối dòng.
+
+Đầu ra:
+- In ra từ có nhiều chữ cái nhất, viết đúng như trong câu.
+- Nếu có nhiều từ cùng dài nhất thì in ra từ xuất hiện đầu tiên (bên trái nhất).
+
+Giới hạn:
+- Dòng dài không quá 300 ký tự và có ít nhất một từ.

@@ -1,0 +1,13 @@
+Bạn Nhím sinh ngày 29 tháng 2, nên chỉ được tổ chức sinh nhật đúng ngày vào những năm nhuận. Năm nhuận là năm chia hết cho 400, hoặc chia hết cho 4 nhưng không chia hết cho 100. Em hãy cho Nhím biết năm y có phải năm nhuận không.
+
+Đầu vào:
+- Một số nguyên y là số năm.
+
+Đầu ra:
+- In ra YES nếu y là năm nhuận, ngược lại in ra NO.
+
+Giới hạn:
+- 1 ≤ y ≤ 100000
+
+Gợi ý:
+- Năm 2000 là năm nhuận (chia hết cho 400), còn năm 1900 không phải năm nhuận (chia hết cho 100 nhưng không chia hết cho 400).

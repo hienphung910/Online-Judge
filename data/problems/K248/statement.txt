@@ -1,0 +1,11 @@
+Cô giáo muốn viết lại sổ điểm danh sao cho tên các bạn được xếp theo thứ tự bảng chữ cái, giống như trong từ điển. Em hãy giúp cô nhé!
+
+Đầu vào:
+- Dòng 1: số nguyên n là số bạn.
+- n dòng tiếp theo, mỗi dòng một tên gồm chữ cái tiếng Anh viết thường (a-z), không có dấu cách. Có thể có hai bạn trùng tên.
+
+Đầu ra:
+- n dòng, mỗi dòng một tên, theo thứ tự từ điển tăng dần: so sánh từng chữ cái từ trái sang phải theo bảng chữ cái a, b, c, ..., z; nếu một tên là phần đầu của tên kia (như an và anh) thì tên ngắn hơn đứng trước.
+
+Giới hạn:
+- 1 ≤ n ≤ 200; mỗi tên dài từ 1 đến 10 chữ cái.

@@ -1,0 +1,14 @@
+Cô giáo có n tấm thẻ đánh số từ 1 đến n, mỗi số đúng một thẻ. Gió thổi bay mất một tấm, các tấm còn lại bị xáo trộn. Em hãy tìm xem tấm thẻ nào bị mất.
+
+Đầu vào:
+- Dòng 1: số nguyên n.
+- Dòng 2: n - 1 số nguyên khác nhau là số trên các tấm thẻ còn lại (theo thứ tự bất kỳ).
+
+Đầu ra:
+- Số ghi trên tấm thẻ bị mất.
+
+Giới hạn:
+- 2 ≤ n ≤ 1000.
+
+Gợi ý:
+- Xếp các thẻ còn lại tăng dần, rồi tìm vị trí đầu tiên mà số trên thẻ khác số thứ tự.

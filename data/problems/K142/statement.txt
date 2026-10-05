@@ -1,0 +1,15 @@
+Trên tấm bản đồ của cướp biển Râu Đỏ, chỗ giấu kho báu được đánh dấu bằng một chữ X thật to. Chữ X được vẽ bằng hai đường chéo của một hình vuông n x n.
+
+Đầu vào:
+- Một số nguyên n là kích thước của hình vuông.
+
+Đầu ra:
+- In ra n dòng. Đánh số dòng và cột từ 1.
+- Ô ở dòng i, cột j là dấu * nếu j = i hoặc j = n + 1 - i (nằm trên một trong hai đường chéo); các ô còn lại là dấu cách.
+- Dấu cách ở đầu dòng và ở giữa dòng phải in đúng; dấu cách ở cuối dòng có hay không đều được.
+
+Giới hạn:
+- 1 ≤ n ≤ 20.
+
+Gợi ý:
+- Khi n lẻ, hai đường chéo gặp nhau ở ô chính giữa nên dòng giữa chỉ có một dấu *.

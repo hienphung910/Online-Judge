@@ -1,0 +1,15 @@
+Rạp múa rối nước có m ghế, đánh số từ 1 đến m. Hôm nay cô bán vé đã bán được n vé, mỗi vé ghi một số ghế và không có hai vé nào trùng ghế. Em hãy liệt kê các ghế còn trống để cô mời những vị khách đến sau.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên m và n, cách nhau một dấu cách.
+- Dòng thứ hai chứa n số nguyên khác nhau là số ghế đã bán, mỗi số từ 1 đến m.
+
+Đầu ra:
+- Dòng đầu tiên in số k — số ghế còn trống.
+- Nếu k > 0, dòng thứ hai in k số ghế trống theo thứ tự tăng dần, cách nhau một dấu cách.
+
+Giới hạn:
+- 1 ≤ n ≤ m ≤ 1000
+
+Gợi ý:
+- Dùng một mảng đánh dấu da_ban[1..m], ban đầu toàn là "chưa bán". Đọc từng vé thì đánh dấu ghế đó, cuối cùng đi qua mảng từ 1 đến m để in các ghế chưa được đánh dấu.

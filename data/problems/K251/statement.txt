@@ -1,0 +1,12 @@
+An xếp các tấm thẻ số thành một hàng từ nhỏ đến lớn. Có nhiều thẻ trùng số, An muốn giữ lại mỗi số đúng một thẻ và cất các thẻ trùng đi.
+
+Đầu vào:
+- Dòng 1: số nguyên n.
+- Dòng 2: n số nguyên đã được xếp không giảm (số sau lớn hơn hoặc bằng số trước).
+
+Đầu ra:
+- Dòng 1: số m là số giá trị khác nhau.
+- Dòng 2: m giá trị khác nhau đó theo thứ tự tăng dần, cách nhau một dấu cách.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000; 1 ≤ mỗi số ≤ 1000.

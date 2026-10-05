@@ -1,0 +1,14 @@
+Robot Bi làm lớp trưởng. Bi đi dọc hàng và kiểm tra xem các bạn đã đứng đúng thứ tự từ thấp đến cao chưa (hai bạn cao bằng nhau đứng cạnh nhau vẫn được).
+
+Đầu vào:
+- Dòng 1: số nguyên n là số bạn trong hàng.
+- Dòng 2: n số nguyên a1, a2, ..., an là chiều cao của các bạn từ đầu đến cuối hàng.
+
+Đầu ra:
+- In YES nếu a1 ≤ a2 ≤ ... ≤ an, ngược lại in NO.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000; 1 ≤ ai ≤ 100000.
+
+Gợi ý:
+- Chỉ cần so sánh từng cặp hai bạn đứng cạnh nhau.

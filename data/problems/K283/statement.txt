@@ -1,0 +1,11 @@
+Bạn Tí muốn điền các số 1, 2, 3, ..., n·m vào một bảng có n hàng và m cột theo kiểu con rắn bò:
+hàng 1 điền từ trái sang phải, hàng 2 điền từ phải sang trái, hàng 3 lại từ trái sang phải, và cứ thế đổi chiều. Số tiếp theo luôn được điền ngay sau số trước, hết hàng này thì rắn bò xuống hàng dưới.
+
+Đầu vào:
+- Một dòng chứa hai số nguyên n và m.
+
+Đầu ra:
+- In ra n dòng, mỗi dòng m số nguyên cách nhau một dấu cách: bảng số sau khi điền.
+
+Giới hạn:
+- 1 ≤ n, m ≤ 20.

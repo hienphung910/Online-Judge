@@ -1,0 +1,17 @@
+Chú chim sáo nhà Na đang tập nói tên các ngày trong tuần. Na giơ một tấm thẻ ghi số từ 2 đến 8: số 2 là thứ Hai, số 3 là thứ Ba, ..., số 7 là thứ Bảy, còn số 8 là Chủ Nhật. Em hãy giúp sáo đọc đúng tên ngày.
+
+Đầu vào:
+- Một số nguyên n ghi trên tấm thẻ.
+
+Đầu ra:
+- In ra tên ngày, viết không dấu và viết hoa chữ cái đầu mỗi từ đúng như bảng sau:
+- 2: Thu Hai
+- 3: Thu Ba
+- 4: Thu Tu
+- 5: Thu Nam
+- 6: Thu Sau
+- 7: Thu Bay
+- 8: Chu Nhat
+
+Giới hạn:
+- 2 ≤ n ≤ 8

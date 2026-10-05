@@ -1,0 +1,16 @@
+Thành phố vi khuẩn là một bảng n hàng, m cột; mỗi ô hoặc có một con vi khuẩn ('#'), hoặc trống ('.'). Mỗi ô có tối đa 8 ô hàng xóm (chung cạnh hoặc chung góc); phần ngoài bảng coi như trống. Sau một ngày, MỌI ô cùng thay đổi một lúc theo luật:
+- Ô có vi khuẩn: nếu có đúng 2 hoặc 3 hàng xóm có vi khuẩn thì vi khuẩn sống tiếp, ngược lại nó chết (ô thành trống).
+- Ô trống: nếu có đúng 3 hàng xóm có vi khuẩn thì sinh ra một vi khuẩn mới, ngược lại vẫn trống. Em hãy vẽ thành phố sau đúng một ngày.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và m.
+- n dòng tiếp theo, mỗi dòng gồm đúng m ký tự '#' hoặc '.' viết liền nhau.
+
+Đầu ra:
+- In ra n dòng, mỗi dòng gồm đúng m ký tự '#' hoặc '.': thành phố sau một ngày.
+
+Giới hạn:
+- 1 ≤ n, m ≤ 50.
+
+Gợi ý:
+- Luôn đếm hàng xóm trên bảng CŨ và ghi kết quả vào một bảng MỚI, đừng sửa trực tiếp bảng cũ.

@@ -11,17 +11,29 @@ public class Problem extends Entity {
     private final String statement;
     private final long timeLimitMs;
     private final int memoryLimitMb;
-    private final String comparatorSpec;   // "exact" | "token" | "float:1e-6"
+    private final String comparatorSpec;   // "exact" | "token" | "lines" | "float:1e-6"
+    /** Ma chu de trong lo trinh hoc (data/topics.txt), "" neu bai chua phan loai. */
+    private final String topic;
+    /** 1 = De, 2 = Vua, 3 = Kho; 0 = chua danh gia. */
+    private final int difficulty;
     private final List<TestCase> testCases = new ArrayList<>();
 
     public Problem(String id, String title, String statement,
                    long timeLimitMs, int memoryLimitMb, String comparatorSpec) {
+        this(id, title, statement, timeLimitMs, memoryLimitMb, comparatorSpec, "", 0);
+    }
+
+    public Problem(String id, String title, String statement,
+                   long timeLimitMs, int memoryLimitMb, String comparatorSpec,
+                   String topic, int difficulty) {
         super(id);
         this.title = title;
         this.statement = statement == null ? "" : statement;
         this.timeLimitMs = timeLimitMs;
         this.memoryLimitMb = memoryLimitMb;
         this.comparatorSpec = comparatorSpec == null ? "token" : comparatorSpec;
+        this.topic = topic == null ? "" : topic;
+        this.difficulty = difficulty;
     }
 
     public void addTestCase(TestCase tc) {
@@ -38,6 +50,8 @@ public class Problem extends Entity {
     public long getTimeLimitMs() { return timeLimitMs; }
     public int getMemoryLimitMb() { return memoryLimitMb; }
     public String getComparatorSpec() { return comparatorSpec; }
+    public String getTopic() { return topic; }
+    public int getDifficulty() { return difficulty; }
 
     public double getMaxPoints() {
         double sum = 0;

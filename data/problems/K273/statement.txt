@@ -1,0 +1,13 @@
+Lớp của cô Mai có n bạn. Trong m ngày, cô ghi lại số bông hoa điểm tốt mỗi bạn nhận được vào một bảng:
+hàng thứ i là của bạn thứ i, cột thứ j là của ngày thứ j. Em hãy tính xem cả lớp nhận được bao nhiêu bông hoa trong từng ngày.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và m: số bạn trong lớp và số ngày.
+- n dòng tiếp theo, mỗi dòng chứa m số nguyên cách nhau một dấu cách.
+
+Đầu ra:
+- In ra trên một dòng m số nguyên cách nhau một dấu cách: số thứ j là tổng các số ở cột thứ j (tổng số hoa của cả lớp trong ngày thứ j).
+
+Giới hạn:
+- 1 ≤ n, m ≤ 50.
+- Mỗi số trong bảng từ 0 đến 10.

@@ -1,0 +1,12 @@
+Mèo Mướp rất mê một chữ cái. Mỗi khi nhìn thấy một từ, Mướp lại đếm xem chữ cái yêu thích của mình xuất hiện trong từ đó bao nhiêu lần.
+
+Đầu vào:
+- Dòng 1: một từ s gồm các chữ cái tiếng Anh (hoa hoặc thường), không có dấu cách.
+- Dòng 2: một chữ cái c (chữ cái yêu thích của Mướp).
+
+Đầu ra:
+- In ra số lần chữ c xuất hiện trong từ s (có thể là 0).
+- Phân biệt chữ hoa và chữ thường: chữ a và chữ A là hai chữ khác nhau.
+
+Giới hạn:
+- Từ dài từ 1 đến 100 chữ cái.

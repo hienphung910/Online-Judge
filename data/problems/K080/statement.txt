@@ -1,0 +1,18 @@
+Sáng nay An và Bình đều đến lớp rất sớm. Cô giáo ghi lại giờ và phút lúc mỗi bạn bước vào lớp. Em hãy cho biết bạn nào đến sớm hơn.
+
+Đầu vào:
+- Dòng thứ nhất chứa hai số nguyên h1 và m1: An đến lớp lúc h1 giờ m1 phút.
+- Dòng thứ hai chứa hai số nguyên h2 và m2: Bình đến lớp lúc h2 giờ m2 phút.
+- Cả hai thời điểm đều trong cùng một ngày.
+
+Đầu ra:
+- In ra AN nếu An đến sớm hơn.
+- In ra BINH nếu Bình đến sớm hơn.
+- In ra CUNG LUC nếu hai bạn đến cùng một lúc.
+
+Giới hạn:
+- 5 ≤ h1, h2 ≤ 11
+- 0 ≤ m1, m2 ≤ 59
+
+Gợi ý:
+- Đổi mỗi thời điểm ra số phút tính từ 0 giờ: h * 60 + m, rồi so sánh hai số đó.

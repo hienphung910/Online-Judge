@@ -1,0 +1,14 @@
+Lớp đang xếp hàng từ thấp đến cao thì có một bạn mới chuyển đến. Bạn mới sẽ đứng ngay sau tất cả các bạn thấp hơn hoặc cao bằng mình, và đứng trước bạn đầu tiên cao hơn mình. Hỏi bạn mới đứng ở vị trí thứ mấy?
+
+Đầu vào:
+- Dòng 1: hai số nguyên n và x (n là số bạn đang xếp hàng, x là chiều cao của bạn mới).
+- Dòng 2: n số nguyên là chiều cao của các bạn trong hàng, đã xếp không giảm.
+
+Đầu ra:
+- Vị trí của bạn mới trong hàng mới (gồm n + 1 bạn, đánh số từ 1 ở đầu hàng).
+
+Giới hạn:
+- 1 ≤ n ≤ 1000; 100 ≤ chiều cao ≤ 200.
+
+Gợi ý:
+- Đáp án bằng số bạn có chiều cao nhỏ hơn hoặc bằng x, cộng thêm 1.

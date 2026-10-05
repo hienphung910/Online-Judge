@@ -1,0 +1,11 @@
+Cô giáo đọc to hai số. Bạn trực nhật phải viết cả phép cộng lên bảng để cả lớp cùng xem.
+
+Đầu vào:
+- Một dòng chứa hai số nguyên a và b, cách nhau một dấu cách.
+
+Đầu ra:
+- In ra một dòng dạng: a + b = <tổng của a và b>
+- Giữa mỗi số và dấu "+", dấu "=" có đúng một dấu cách.
+
+Giới hạn:
+- 0 ≤ a, b ≤ 10^6.

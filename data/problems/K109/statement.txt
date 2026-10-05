@@ -1,0 +1,14 @@
+Tí muốn mua một chiếc xe đạp giá m đồng. Ngày đầu tiên Tí bỏ vào heo đất a đồng, và mỗi ngày sau đó Tí bỏ vào nhiều hơn ngày liền trước đúng k đồng. Hỏi sau ít nhất bao nhiêu ngày thì số tiền trong heo đất đủ để mua xe (tức là lớn hơn hoặc bằng m)?
+
+Đầu vào:
+- Một dòng chứa ba số nguyên m, a, k, cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên là số ngày ít nhất cần bỏ heo.
+
+Giới hạn:
+- 1 ≤ m ≤ 100000.
+- 1 ≤ a ≤ 1000; 0 ≤ k ≤ 100.
+
+Gợi ý:
+- Dùng vòng lặp while: còn chưa đủ tiền thì sang ngày mới và bỏ thêm tiền.

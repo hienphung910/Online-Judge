@@ -1,0 +1,10 @@
+Cô bán hoa quả xếp cam thành một cái tháp n tầng. Tầng trên cùng có 1 quả, tầng thứ hai có 2 × 2 = 4 quả, tầng thứ ba có 3 × 3 = 9 quả, ..., tầng thứ n (dưới cùng) có n × n quả. Hỏi cả tháp có bao nhiêu quả cam?
+
+Đầu vào:
+- Một dòng chứa số nguyên n là số tầng của tháp.
+
+Đầu ra:
+- Một số nguyên là tổng số quả cam.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000.

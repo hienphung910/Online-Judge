@@ -1,0 +1,16 @@
+Bạn An có n tấm thẻ bài xếp thành hàng, đánh số từ 1 đến n, tấm thứ i ghi số a[i]. An muốn chọn ra hai tấm thẻ khác nhau sao cho tổng hai số trên đó bằng đúng s. Hỏi An có bao nhiêu cách chọn? Hai cách chọn là khác nhau nếu cặp vị trí (i, j) của chúng khác nhau (luôn lấy i < j).
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và s, cách nhau một dấu cách.
+- Dòng thứ hai chứa n số nguyên a[1], a[2], ..., a[n], cách nhau một dấu cách.
+
+Đầu ra:
+- Một số nguyên — số cặp vị trí (i, j) với 1 ≤ i < j ≤ n và a[i] + a[j] = s (in 0 nếu không có cặp nào).
+
+Giới hạn:
+- 1 ≤ n ≤ 100
+- 1 ≤ a[i] ≤ 1000
+- 2 ≤ s ≤ 2000
+
+Gợi ý:
+- Dùng hai vòng lặp lồng nhau: i chạy từ 1 đến n, j chạy từ i + 1 đến n.

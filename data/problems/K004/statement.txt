@@ -1,0 +1,12 @@
+Ngày đầu năm học, cô giáo giới thiệu từng bạn trong lớp bằng một câu thật ngắn. Em hãy giúp cô viết câu giới thiệu.
+
+Đầu vào:
+- Dòng 1: tên của bạn (chỉ gồm chữ cái tiếng Anh, không có dấu cách).
+- Dòng 2: một số nguyên là tuổi của bạn.
+
+Đầu ra:
+- In ra một dòng: Ban <tên> nam nay <tuổi> tuoi
+
+Giới hạn:
+- Tên dài không quá 20 ký tự.
+- 1 ≤ tuổi ≤ 100.

@@ -1,0 +1,18 @@
+Robot lau sàn làm việc trong một căn phòng có n hàng và m cột ô vuông. Hàng được đánh số từ 1 đến n từ trên xuống dưới, cột từ 1 đến m từ trái sang phải. Lúc đầu robot ở ô hàng r, cột c. Robot làm lần lượt từng lệnh:
+- U: lên trên một ô (số hàng giảm 1);
+- D: xuống dưới một ô (số hàng tăng 1);
+- L: sang trái một ô (số cột giảm 1);
+- R: sang phải một ô (số cột tăng 1).
+Nếu một lệnh làm robot đi ra ngoài phòng thì robot đứng yên, bỏ qua lệnh đó rồi làm tiếp các lệnh sau.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và m.
+- Dòng thứ hai chứa hai số nguyên r và c: vị trí ban đầu của robot.
+- Dòng thứ ba chứa chuỗi lệnh chỉ gồm các chữ U, D, L, R viết liền nhau.
+
+Đầu ra:
+- In ra hai số nguyên cách nhau một dấu cách: số hàng và số cột của ô robot đứng sau khi làm hết lệnh.
+
+Giới hạn:
+- 1 ≤ n, m ≤ 50; 1 ≤ r ≤ n; 1 ≤ c ≤ m.
+- Chuỗi lệnh dài từ 1 đến 200 ký tự.

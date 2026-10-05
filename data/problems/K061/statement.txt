@@ -1,0 +1,13 @@
+Chú mèo Mướp vừa câu được n con cá. Mướp muốn chia đều số cá cho mình và em gái, nên cần biết n là số chẵn hay số lẻ.
+
+Đầu vào:
+- Một số nguyên n là số con cá Mướp câu được.
+
+Đầu ra:
+- In ra CHAN nếu n là số chẵn, in ra LE nếu n là số lẻ (viết hoa, không dấu).
+
+Giới hạn:
+- 0 ≤ n ≤ 10^9
+
+Gợi ý:
+- n là số chẵn khi n chia cho 2 có số dư bằng 0. Số 0 cũng là số chẵn.

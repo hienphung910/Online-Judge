@@ -1,0 +1,10 @@
+Máy tính chỉ dùng hai chữ số 0 và 1 để viết mọi số, gọi là hệ nhị phân. Trong hệ nhị phân, các chữ số tính từ phải sang trái có giá trị 1, 2, 4, 8, 16, ... Ví dụ số 6 viết thành 110 vì 6 = 4 + 2. Em hãy giúp robot đổi số n sang hệ nhị phân.
+
+Đầu vào:
+- Một số nguyên n (0 ≤ n ≤ 1 000 000 000).
+
+Đầu ra:
+- In ra cách viết của n trong hệ nhị phân: các chữ số 0, 1 viết liền nhau, không có chữ số 0 thừa ở đầu. Số 0 viết là 0.
+
+Gợi ý:
+- Chia n cho 2 liên tục và ghi lại các số dư cho đến khi n bằng 0. Đọc các số dư theo thứ tự ngược lại (từ lần chia cuối về lần chia đầu) chính là kết quả.

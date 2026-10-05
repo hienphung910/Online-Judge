@@ -1,0 +1,13 @@
+Trên con đường số, mỗi số đều có hai nhà hàng xóm: số liền trước (nhỏ hơn nó 1 đơn vị) và số liền sau (lớn hơn nó 1 đơn vị).
+
+Đầu vào:
+- Một dòng chứa một số nguyên n.
+
+Đầu ra:
+- In ra số liền trước rồi đến số liền sau của n, trên cùng một dòng, cách nhau một dấu cách.
+
+Giới hạn:
+- -10^9 ≤ n ≤ 10^9.
+
+Gợi ý:
+- Số liền trước của n là n - 1, số liền sau là n + 1.

@@ -1,0 +1,14 @@
+Robot Bi muốn cho các bạn xem tận mắt cách "sắp xếp chọn" làm việc. Với dãy a1, a2, ..., an, Bi làm n - 1 lượt; ở lượt thứ i (i = 1, 2, ..., n - 1):
+- Bi tìm số nhỏ nhất trong các vị trí từ i đến n. Nếu có nhiều số nhỏ nhất bằng nhau, Bi chọn số ở vị trí bên trái nhất.
+- Bi đổi chỗ số vừa tìm được với số ở vị trí i (nếu đó chính là vị trí i thì dãy giữ nguyên).
+- Bi in toàn bộ dãy sau lượt đó.
+
+Đầu vào:
+- Dòng 1: số nguyên n.
+- Dòng 2: n số nguyên, cách nhau một dấu cách.
+
+Đầu ra:
+- n - 1 dòng, dòng thứ i là dãy số sau lượt thứ i, các số cách nhau một dấu cách.
+
+Giới hạn:
+- 2 ≤ n ≤ 10; 1 ≤ mỗi số ≤ 100.

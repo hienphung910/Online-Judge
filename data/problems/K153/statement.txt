@@ -1,0 +1,10 @@
+Robot Bi bị cận thị nên chỉ nhìn rõ chữ số đầu tiên (chữ số ngoài cùng bên trái) của mỗi số. Em hãy viết chương trình giúp Bi đọc chữ số đó.
+
+Đầu vào:
+- Một số nguyên n (0 ≤ n ≤ 1 000 000 000).
+
+Đầu ra:
+- In ra chữ số ngoài cùng bên trái của n. Với n = 0 thì in ra 0.
+
+Gợi ý:
+- Chia n cho 10 (lấy phần nguyên) liên tục cho đến khi n nhỏ hơn 10.
