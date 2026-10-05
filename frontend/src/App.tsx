@@ -7,6 +7,8 @@ import Submissions from "./pages/Submissions";
 import Contests from "./pages/Contests";
 import Leaderboard from "./pages/Leaderboard";
 import AdminPanel from "./pages/admin/AdminPanel";
+import StreakBadge, { StreakToast } from "./components/StreakBadge";
+import { useStreak } from "./streak";
 
 
 type Page = "Problems" | "Submissions" | "Contests" | "Leaderboard" | "Admin";
@@ -54,6 +56,7 @@ function AppShell() {
   const [showPass, setShowPass] = useState(false);
 
   const isAdmin = user?.role === "ADMIN";
+  const streak = useStreak(user?.username ?? null, reloadKey);
 
   const loadProblems = useCallback(async () => {
     const [p, l] = await Promise.all([api.problems(), api.languages()]);
@@ -117,7 +120,7 @@ function AppShell() {
           <div style={{ width: 60, height: 60, borderRadius: 12, background: "var(--color-red)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 28 }}>
             <svg width="28" height="28" viewBox="0 0 16 16" fill="none"><path d="M3 4h10M3 8h7M3 12h5" stroke="#fff" strokeWidth="2" strokeLinecap="round" /></svg>
           </div>
-          <h1 style={{ fontSize: 32, fontWeight: 800, color: "#212121", margin: "0 0 12px", lineHeight: 1.25 }}>Học viện Công nghệ Bưu chính Viễn thông</h1>
+          <h1 style={{ fontSize: 32, fontWeight: 800, color: "#212121", margin: "0 0 12px", lineHeight: 1.25 }}>CodeForge</h1>
           <p style={{ fontSize: 15, color: "#757575", margin: 0, lineHeight: 1.6 }}>
             Luyện tập và thi lập trình trực tuyến — chấm bài tự động, nhanh và chính xác.
           </p>
@@ -256,6 +259,9 @@ function AppShell() {
             }} />
           </span>
 
+          {/* Chuoi ngay luyen tap */}
+          <StreakBadge info={streak.info} />
+
           {/* Notification bell */}
           <button style={{ background: "none", border: "none", color: "rgba(255,255,255,0.8)", cursor: "pointer", padding: 4, display: "flex" }}>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.4"><path d="M4 6a4 4 0 0 1 8 0c0 4 2 5 2 5H2s2-1 2-5" /><path d="M6.5 13a1.5 1.5 0 0 0 3 0" /></svg>
@@ -317,6 +323,8 @@ function AppShell() {
           </div>
         </div>
       </header>
+
+      <StreakToast value={streak.increasedTo} onClose={streak.dismissIncrease} />
 
       {/* ═══ CONTENT ═══ */}
       <main style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }}>
