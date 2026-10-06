@@ -62,6 +62,8 @@ export interface Problem {
   topic: string;
   /** 1 = De, 2 = Vua, 3 = Kho, 0 = chua danh gia. */
   difficulty: number;
+  /** Thu tu hoc trong chu de (tu 1); 0 = chua xep, dung sau cac bai da xep theo ma bai. */
+  order: number;
   /** Chi gom test vi du - test an khong bao gio duoc gui xuong trinh duyet. */
   samples: Sample[];
 }
@@ -202,6 +204,17 @@ export interface NewProblemRequest {
   tests: NewTestInput[];
 }
 
+/**
+ * PUT /api/admin/problems/{id}: doi cho cua bai trong lo trinh.
+ * position tinh tu 1 trong chu de dich (khong tinh chinh bai nay);
+ * 0 = giu cho cu, hoac xep cuoi neu doi sang chu de khac.
+ */
+export interface UpdateProblemRequest {
+  topic: string;
+  difficulty: number;
+  position: number;
+}
+
 export interface NewProblemResponse {
   message: string;
   problem: {
@@ -211,5 +224,8 @@ export interface NewProblemResponse {
     memoryLimitMb: number;
     comparator: string;
     maxPoints: number;
+    topic: string;
+    difficulty: number;
+    order: number;
   };
 }

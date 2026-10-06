@@ -473,6 +473,7 @@ Trừ 4 endpoint đầu, **mọi endpoint đều cần** header `Authorization: 
 | POST | `/api/submit` | đã đăng nhập | `{problemId, language, code}` → chấm ngay, trả kết quả đầy đủ |
 | POST | `/api/submit/stream` | đã đăng nhập | như trên nhưng trả **Server-Sent Events**: mỗi test xong là gửi ngay một sự kiện |
 | POST | `/api/admin/problems` | **chỉ ADMIN** | tạo bài tập mới, ghi ra `data/problems/<id>/` |
+| PUT | `/api/admin/problems/{id}` | **chỉ ADMIN** | `{topic, difficulty, position}` → đổi chủ đề, độ khó, vị trí trong lộ trình của bài đã có (xem "Lộ trình học") |
 
 `POST /api/submit` **không còn nhận trường `username`**: người nộp luôn lấy từ token, nên không thể mạo danh người khác. Trường `role` gửi kèm khi đăng ký cũng bị bỏ qua — `register()` luôn tạo STUDENT.
 
@@ -588,7 +589,7 @@ Một bài tập = một thư mục trong `data/problems/`:
 ```
 P001/
 ├── problem.properties    id, title, timeLimitMs, memoryLimitMb, comparator, totalPoints
-│                         + topic, difficulty (tùy chọn — xem "Lộ trình học" bên dưới)
+│                         + topic, difficulty, order (tùy chọn — xem "Lộ trình học" bên dưới)
 ├── statement.txt         đề bài (tùy chọn)
 └── tests/
     ├── sample01.in / sample01.out    (tên bắt đầu bằng "sample" = test ví dụ, chạy trước)
@@ -610,9 +611,23 @@ vong-lap  | Vòng lặp               | Lặp lại một việc nhiều lần v
 
 Bài tập gắn vào chủ đề bằng hai dòng tùy chọn trong `problem.properties`: `topic=vong-lap` và `difficulty=1` (1 Dễ · 2 Vừa · 3 Khó). Trang *Lớp học* hiện lộ trình ở cột trái (tiến độ từng chặng, nút **Học tiếp** mở bài đầu tiên chưa giải), lọc theo độ khó, và sau khi AC có nút **Bài tiếp theo**. Bài không gắn chủ đề (như `P001`–`P003`) nằm ở nhóm **Bài khác**. Admin chọn chủ đề và độ khó ngay trong form tạo bài; backend từ chối mã chủ đề không có trong `topics.txt`.
 
+**Thứ tự bài trong một chủ đề:** dòng tùy chọn `order=3` trong `problem.properties`. Bài có `order` xếp trước theo số, bài không có xếp sau theo mã bài (bộ K001–K300 ban đầu không có `order` nên đi theo mã). Web (`learningPath.ts`) và console (`Problem.ORDER_IN_TOPIC`) dùng chung luật này.
+
+**Sửa bài đã có** (trang *Quản trị* → bảng bài tập, lọc được theo chủ đề): nút **↑ ↓** đổi chỗ với bài kề bên, nút **Sửa** để đổi chủ đề, độ khó và chọn vị trí. Cả hai gọi `PUT /api/admin/problems/{id}`:
+
+| Trường | Ý nghĩa |
+|---|---|
+| `topic` | mã chủ đề trong `topics.txt`, hoặc `""` = Bài khác; vắng mặt = giữ nguyên |
+| `difficulty` | 0–3; vắng mặt = giữ nguyên |
+| `position` | vị trí trong chủ đề đích, tính từ 1 và không tính chính bài này (lớn hơn số bài = xếp cuối); `0`/vắng mặt = giữ chỗ cũ, hoặc xếp cuối nếu đổi chủ đề |
+
+Khi xếp vị trí, `ProblemAdminService` **đánh số lại cả chủ đề đích thành 1..n**. Nếu chỉ ghi `order` cho riêng một bài thì "vị trí 3" sẽ nhảy lên đầu, vì bài đã xếp luôn đứng trước bài chưa xếp. Chỉ những bài có số thứ tự thay đổi mới bị ghi lại. `ProblemWriter.updateProperties()` sửa `problem.properties` **theo từng dòng**, giữ nguyên các dòng khác (kể cả dòng đánh dấu ở đầu file mà `build.py` dùng để nhận ra bài do nó sinh), rồi ghi ra file tạm và đổi tên đè lên file cũ. Đổi chủ đề hoặc độ khó mà không đổi chỗ thì chỉ ghi đúng một file.
+
 ### Bộ 300 bài thiếu nhi
 
 `K001`–`K300` là bộ bài luyện tập cho trẻ em, 10 chủ đề × 30 bài, xếp từ dễ đến khó. Bộ đề được **sinh tự động** bởi `tools/kids-problems/` — đáp án mọi test được tính từ lời giải mẫu chứ không gõ tay. Muốn sửa một bài thì sửa file chủ đề trong `tools/kids-problems/topics/` rồi chạy `py tools/kids-problems/build.py write`; hướng dẫn soạn bài nằm ở `tools/kids-problems/README.md`.
+
+> **Lưu ý:** `build.py write` xoá rồi sinh lại toàn bộ `K001`–`K300`, nên chủ đề, độ khó và thứ tự admin đã sửa trên web cho các bài này **sẽ bị mất**. Muốn giữ lâu dài thì sửa thẳng trong file chủ đề của `tools/kids-problems/`.
 
 **Số lượng test không được công bố:** danh sách bài (`GET /api/problems`, cột trên trang *Bài tập*, và `Problem.describe()` trên console) **không hiển thị số test** nữa. Test vẫn nằm nguyên trong model và `ProblemLoader`, bộ chấm vẫn chạy đủ mọi test, test ví dụ vẫn hiện, và sau khi chấm vẫn báo `passed/total` trong kết quả lẫn lịch sử.
 
@@ -653,6 +668,7 @@ Script chạy 4 bước: biên dịch backend → `--selftest` → `--apitest` �
 | Mật khẩu | đọc thẳng bảng `users` bằng JDBC, khẳng định **không có chuỗi plaintext** |
 | Phân quyền | học sinh gọi `/api/admin/problems` → 403 · học sinh A xem bài nộp của B → 403 · danh sách của A không chứa bài của B · admin xem được tất cả |
 | Quản trị đề | admin tạo bài → 201 · file ghi đúng cấu trúc trên ổ đĩa · bài mới hiện ngay không cần restart · trùng mã → 409 · các mã `../evil`, `..`, `P9/../../x`, `P9\..\x`, `p9 01` → 400 · tên test dạng đường dẫn → 400 · payload độc hại không tạo thư mục nào |
+| Sửa lộ trình | học sinh `PUT /api/admin/problems/{id}` → 403 · admin xếp P002 lên đầu nhóm và đổi độ khó → P001 tự lùi xuống thứ 2 · `order`/`difficulty` ghi vào `problem.properties`, các dòng khác giữ nguyên · chủ đề lạ / độ khó 9 → 400 · bài không tồn tại → 404 · vị trí và độ khó vẫn còn sau khi khởi động lại |
 | Ẩn test | `GET /api/problems` không còn `testCount`, không lộ input/output của test ẩn, vẫn hiện test ví dụ |
 | Không lộ đáp án qua kết quả chấm | thông báo WA gửi về client (`message`) chỉ nói **lệch ở vị trí nào và thí sinh in ra gì**, không bao giờ kèm "kỳ vọng" — nếu không, nộp bừa vài lần đọc đáp án từng test rồi hardcode là qua hết. Giao diện web còn không liệt kê từng test nữa — chỉ báo "WA on test mấy"; bản kèm đáp án (`explainDetailed`) chỉ in ra terminal người chấm, không lưu, không gửi |
 | Kết nối & lược đồ | `SELECT 1` thành công · chạy `MySqlSchemaInitializer` **hai lần liên tiếp** vẫn an toàn và đủ 4 đối tượng (3 bảng + VIEW) |
@@ -693,7 +709,7 @@ Câu hỏi thường gặp và chỗ trả lời: *"Chống lặp vô hạn?"* �
 2. **Không có sandbox thật.** Code thí sinh chạy bằng quyền người dùng hiện tại. Vì vậy máy chủ web **chỉ lắng nghe trên 127.0.0.1**, không mở ra LAN, và không bật CORS (frontend dev đi qua proxy của Vite). Chỉ chấm bài nộp mà bạn tin cậy. Đăng nhập giải quyết chuyện *ai nộp bài*, **không** biến hệ thống thành an toàn để mở ra Internet.
 3. **Phiên đăng nhập nằm trong RAM.** Tắt máy chủ là mọi người phải đăng nhập lại (tài khoản và lịch sử thì vẫn còn). Không có "ghi nhớ đăng nhập", không có refresh token, không giới hạn số lần thử sai mật khẩu.
 4. **Không có HTTPS.** Token đi qua HTTP thuần — chấp nhận được vì chỉ chạy trên `localhost`.
-5. **Chưa có chức năng sửa/xoá đề bài và đổi mật khẩu** qua giao diện; hiện chỉ có tạo mới. Quên mật khẩu admin thì phải sửa trực tiếp CSDL.
+5. **Chưa sửa được đề, bộ test, chưa xoá bài và chưa đổi được mật khẩu** qua giao diện. Với bài đã có, chỉ đổi được chủ đề, độ khó và vị trí trong lộ trình. Lộ trình (`data/topics.txt`) vẫn sửa tay và cần khởi động lại máy chủ. Quên mật khẩu admin thì phải sửa trực tiếp CSDL.
 6. **Mỗi test bắt buộc có cả input lẫn output khác rỗng** khi tạo bài qua API, nên không tạo được bài "không có input" bằng giao diện quản trị (vẫn tạo tay trong `data/problems/` được).
 7. **Điểm chia đều cho các test.** API tạo bài chưa cho đặt điểm riêng từng test.
 8. **`findAll()` của kho MySQL đọc toàn bộ lịch sử vào bộ nhớ** mỗi lần dựng bảng xếp hạng, và mỗi thao tác mở một kết nối mới (chưa có connection pool). Quy mô một lớp học thì không sao; hệ thống thật cần pool + phân trang + tính điểm bằng SQL.

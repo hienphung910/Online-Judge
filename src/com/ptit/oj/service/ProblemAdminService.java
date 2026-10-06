@@ -10,8 +10,13 @@ import com.ptit.oj.repository.Repository;
 
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Set;
 import java.util.function.Predicate;
 import java.util.regex.Pattern;
@@ -88,6 +93,76 @@ public class ProblemAdminService {
         return problem;
     }
 
+    /**
+     * Doi chu de, do kho va vi tri trong lo trinh cua mot bai DA CO.
+     *
+     * position tinh tu 1 trong chu de dich, khong tinh chinh bai nay (lon hon so bai
+     * thi xep cuoi). position = 0: giu cho cu neu van o chu de cu, xep cuoi neu doi chu de.
+     *
+     * Khi xep vi tri, ca chu de dich duoc danh so lai 1..n: neu chi ghi order cho
+     * mot bai thi "vi tri 3" se nhay len dau, vi bai da xep luon dung truoc bai
+     * chua xep (xem Problem.ORDER_IN_TOPIC). Chi ghi lai bai nao co so thu tu doi.
+     */
+    public synchronized Problem updateProblemMeta(User actor, String rawId, String rawTopic,
+                                                  int difficulty, int position) {
+        if (actor == null || !actor.canCreateProblem()) {
+            throw new ProblemAdminException(403, "Chỉ tài khoản quản trị mới được sửa bài tập");
+        }
+        String id = normalizeId(rawId);
+        Problem target = problems.findById(id)
+                .orElseThrow(() -> new ProblemAdminException(404, "Không có bài " + id));
+        String topic = validateTopic(rawTopic);
+        validateDifficulty(difficulty);
+        if (position < 0 || position > ProblemLoader.MAX_ORDER) {
+            throw new ProblemAdminException(400,
+                    "Vị trí phải từ 1 đến " + ProblemLoader.MAX_ORDER + " (0 = giữ nguyên)");
+        }
+
+        try {
+            if (position == 0 && topic.equals(target.getTopic())) {
+                // Khong doi cho: chi sua do kho (chu de giu nguyen), khong dung toi bai khac.
+                return rewrite(id, metaChanges(topic, difficulty, target.getOrder()));
+            }
+
+            // Cac bai khac trong chu de dich, theo dung thu tu hoc hien tai.
+            List<Problem> ordered = new ArrayList<>();
+            for (Problem p : problems.findAll()) {
+                if (!p.getId().equals(id) && p.getTopic().equals(topic)) ordered.add(p);
+            }
+            ordered.sort(Problem.ORDER_IN_TOPIC);
+            int index = position == 0 ? ordered.size() : Math.min(position, ordered.size() + 1) - 1;
+            ordered.add(index, target);
+
+            // Ghi cac bai khac truoc, bai dang sua sau cung. Neu hong giua chung thi bai
+            // dang sua van nhu cu, va thu tu van hop le vi luat "order roi ma bai" luon xep duoc.
+            for (int i = 0; i < ordered.size(); i++) {
+                Problem p = ordered.get(i);
+                if (p != target && p.getOrder() != i + 1) {
+                    rewrite(p.getId(), Collections.singletonMap("order", String.valueOf(i + 1)));
+                }
+            }
+            return rewrite(id, metaChanges(topic, difficulty, index + 1));
+        } catch (IOException e) {
+            throw new ProblemAdminException(500, "Không ghi được bài tập ra ổ đĩa: " + e.getMessage());
+        }
+    }
+
+    /** Ba khoa lo trinh cua problem.properties; null = xoa dong, giong khi tao bai. */
+    private Map<String, String> metaChanges(String topic, int difficulty, int order) {
+        Map<String, String> changes = new LinkedHashMap<>();
+        changes.put("topic", topic.isEmpty() ? null : topic);
+        changes.put("difficulty", difficulty > 0 ? String.valueOf(difficulty) : null);
+        changes.put("order", order > 0 ? String.valueOf(order) : null);
+        return changes;
+    }
+
+    /** Ghi ra o dia roi nap lai tu chinh file vua ghi, nhu createProblem(). */
+    private Problem rewrite(String id, Map<String, String> changes) throws IOException {
+        Problem problem = loader.load(writer.updateProperties(id, changes));
+        problems.save(problem);
+        return problem;
+    }
+
     // ------------------------------------------------------------ kiem tra
 
     private void validate(ProblemDraft d) {
@@ -121,14 +196,8 @@ public class ProblemAdminService {
         }
         d.setComparator(comparator);
 
-        String topic = d.getTopic() == null ? "" : d.getTopic().trim();
-        if (!topic.isEmpty() && !topicExists.test(topic)) {
-            throw new ProblemAdminException(400, "Chủ đề \"" + topic + "\" không có trong lộ trình (data/topics.txt)");
-        }
-        d.setTopic(topic);
-        if (d.getDifficulty() < 0 || d.getDifficulty() > 3) {
-            throw new ProblemAdminException(400, "Độ khó phải là 1 (Dễ), 2 (Vừa), 3 (Khó) hoặc 0 (chưa đánh giá)");
-        }
+        d.setTopic(validateTopic(d.getTopic()));
+        validateDifficulty(d.getDifficulty());
 
         if (d.getTests().isEmpty()) {
             throw new ProblemAdminException(400, "Bài tập phải có ít nhất một test");
@@ -140,6 +209,21 @@ public class ProblemAdminService {
         Set<String> seen = new LinkedHashSet<>();
         for (ProblemDraft.TestDraft t : d.getTests()) {
             validateTest(t, seen);
+        }
+    }
+
+    /** Tra ve ma chu de da cat khoang trang; "" = chua phan loai (nhom "Bai khac"). */
+    private String validateTopic(String rawTopic) {
+        String topic = rawTopic == null ? "" : rawTopic.trim();
+        if (!topic.isEmpty() && !topicExists.test(topic)) {
+            throw new ProblemAdminException(400, "Chủ đề \"" + topic + "\" không có trong lộ trình (data/topics.txt)");
+        }
+        return topic;
+    }
+
+    private void validateDifficulty(int difficulty) {
+        if (difficulty < 0 || difficulty > 3) {
+            throw new ProblemAdminException(400, "Độ khó phải là 1 (Dễ), 2 (Vừa), 3 (Khó) hoặc 0 (chưa đánh giá)");
         }
     }
 

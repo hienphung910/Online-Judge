@@ -12,6 +12,7 @@ import type {
   Submission,
   SubmitRequest,
   Topic,
+  UpdateProblemRequest,
 } from "./types";
 
 /**
@@ -85,6 +86,10 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
 
 function postJson<T>(path: string, body: unknown): Promise<T> {
   return request<T>(path, { method: "POST", body: JSON.stringify(body) });
+}
+
+function putJson<T>(path: string, body: unknown): Promise<T> {
+  return request<T>(path, { method: "PUT", body: JSON.stringify(body) });
 }
 
 /**
@@ -190,4 +195,7 @@ export const api = {
   // --- quan tri (backend van kiem tra lai vai tro) ---
   createProblem: (body: NewProblemRequest) =>
     postJson<NewProblemResponse>("/api/admin/problems", body),
+  /** Doi chu de, do kho, vi tri trong lo trinh cua bai da co. */
+  updateProblem: (id: string, body: UpdateProblemRequest) =>
+    putJson<NewProblemResponse>(`/api/admin/problems/${encodeURIComponent(id)}`, body),
 };

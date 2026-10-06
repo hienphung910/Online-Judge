@@ -60,6 +60,25 @@ body {
   --font-mono: 'JetBrains Mono', 'Consolas', monospace;
 }
 
+/*
+ * Cac trang quan tri (pages/admin) viet theo bang mau cu. Khong co cac bien nay thi
+ * nut "Add Problem", nut luu va nen hop thoai bi trong suot -> tro sang bang mau hien tai.
+ */
+:root {
+  --color-maroon: #C62828;
+  --color-maroon-pale: #FDECEA;
+  --color-bg-base: #FFFFFF;
+  --color-bg-panel: #FFFFFF;
+  --color-bg-raised: #FAFAFA;
+  --color-border-subtle: #F0F0F0;
+  --color-border-active: #C62828;
+  --color-red-bg: #FDECEA;
+  --color-red-border: #F5C6C2;
+  --color-amber-bg: rgba(245,127,23,0.08);
+  --color-amber-border: rgba(245,127,23,0.25);
+  --color-accent-cyan: #00838F;
+}
+
 * {
   scrollbar-width: thin;
   scrollbar-color: #D0D0D0 transparent;

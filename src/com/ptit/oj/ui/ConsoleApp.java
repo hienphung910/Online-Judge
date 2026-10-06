@@ -206,6 +206,7 @@ public class ConsoleApp {
     }
 
     private void printProblemGroup(String heading, List<Problem> problems) {
+        problems.sort(Problem.ORDER_IN_TOPIC);      // cung thu tu voi trang Lop hoc tren web
         System.out.println();
         System.out.println(heading + " (" + problems.size() + " bài)");
         for (Problem p : problems) {

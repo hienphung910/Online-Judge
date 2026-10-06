@@ -4,6 +4,7 @@ import com.ptit.oj.database.DatabaseConfig;
 import com.ptit.oj.database.MySqlDatabaseManager;
 import com.ptit.oj.database.MySqlSchemaInitializer;
 import com.ptit.oj.model.Admin;
+import com.ptit.oj.model.Problem;
 import com.ptit.oj.service.JudgeService;
 import com.ptit.oj.web.ApiServer;
 
@@ -228,6 +229,31 @@ public final class IntegrationTests {
                     !r.body.contains(HIDDEN_IN) && !r.body.contains(HIDDEN_OUT),
                     "Nội dung test ẩn bị lộ trong danh sách bài");
 
+            // 8h-8k. Sua cho cua bai trong lo trinh. Ban sao de bai o day khong co topics.txt
+            // nen chi thu tren nhom "Bai khac": P001, P002, P003 va P900 vua tao.
+            r = send("PUT", base + "/api/admin/problems/P002", tokenA, json("position", "1"));
+            check("8h. Student sửa bài trong lộ trình nhận 403", r.status == 403,
+                    "HTTP " + r.status + " - " + r.body);
+
+            r = send("PUT", base + "/api/admin/problems/P002", tokenAdmin, json("difficulty", "2", "position", "1"));
+            Problem p1 = service.findProblem("P001").orElse(null);
+            Problem p2 = service.findProblem("P002").orElse(null);
+            check("8i. Admin xếp P002 lên đầu nhóm và đổi độ khó, P001 lùi xuống thứ 2",
+                    r.status == 200 && p2 != null && p2.getOrder() == 1 && p2.getDifficulty() == 2
+                            && p1 != null && p1.getOrder() == 2,
+                    "HTTP " + r.status + " - " + r.body);
+            String props = readText(dataDir.resolve("problems/P002/problem.properties"));
+            check("8j. Thứ tự và độ khó được ghi vào problem.properties, các dòng khác giữ nguyên",
+                    props.contains("order=1") && props.contains("difficulty=2") && props.contains("timeLimitMs="),
+                    props);
+
+            Response badTopic = send("PUT", base + "/api/admin/problems/P002", tokenAdmin, json("topic", "khong-co"));
+            Response badLevel = send("PUT", base + "/api/admin/problems/P002", tokenAdmin, json("difficulty", "9"));
+            Response missing = send("PUT", base + "/api/admin/problems/P999", tokenAdmin, json("difficulty", "1"));
+            check("8k. Chủ đề lạ, độ khó sai bị từ chối (400); bài không tồn tại (404)",
+                    badTopic.status == 400 && badLevel.status == 400 && missing.status == 404,
+                    "HTTP " + badTopic.status + " / " + badLevel.status + " / " + missing.status);
+
             // 9. Student A khong xem duoc submission cua Student B
             Response subB = post(base + "/api/submit", tokenB,
                     json("problemId", "P001", "language", "Java", "code", sumSolution()));
@@ -320,6 +346,11 @@ public final class IntegrationTests {
 
             r = get(base2 + "/api/problems", freshTokenA);
             check("14d. Bài do admin tạo vẫn còn sau khi khởi động lại", r.body.contains("\"P900\""), r.body);
+
+            Problem kept = restarted.findProblem("P002").orElse(null);
+            check("14e. Vị trí và độ khó admin sửa vẫn còn sau khi khởi động lại",
+                    kept != null && kept.getOrder() == 1 && kept.getDifficulty() == 2,
+                    kept == null ? "Không thấy P002" : "order=" + kept.getOrder() + ", difficulty=" + kept.getDifficulty());
 
             // 16. Ma bai nop khong trung
             check("16. Mã bài nộp không bị trùng qua các lần khởi động", noDuplicateIds(database),
@@ -576,6 +607,10 @@ public final class IntegrationTests {
         String text = in == null ? "" : readAll(in);
         conn.disconnect();
         return new Response(status, text);
+    }
+
+    private static String readText(Path file) throws IOException {
+        return new String(Files.readAllBytes(file), StandardCharsets.UTF_8);
     }
 
     private static String readAll(InputStream in) throws IOException {

@@ -77,7 +77,8 @@ function AppShell() {
   }, [user, loadProblems]);
 
   const onSubmitted = useCallback(() => { setReloadKey((k) => k + 1); }, []);
-  const onProblemCreated = useCallback(() => { loadProblems().catch(() => undefined); setReloadKey((k) => k + 1); }, [loadProblems]);
+  // Tra ve Promise de trang quan tri doi tai lai xong moi cho bam tiep (vi tri trong lo trinh phai la so moi).
+  const onProblemsChanged = useCallback(async () => { await loadProblems().catch(() => undefined); setReloadKey((k) => k + 1); }, [loadProblems]);
 
   function handleLogout() { logout(); setPage("Problems"); setAvatarOpen(false); }
 
@@ -344,7 +345,7 @@ function AppShell() {
             {page === "Submissions" && <Submissions reloadKey={reloadKey} />}
             {page === "Contests" && <Contests problems={problems} />}
             {page === "Leaderboard" && <Leaderboard reloadKey={reloadKey} problems={problems} />}
-            {page === "Admin" && isAdmin && <AdminPanel onProblemCreated={onProblemCreated} problems={problems} topics={topics} />}
+            {page === "Admin" && isAdmin && <AdminPanel onProblemsChanged={onProblemsChanged} problems={problems} topics={topics} />}
           </>
         )}
       </main>

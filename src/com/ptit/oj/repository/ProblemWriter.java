@@ -1,12 +1,19 @@
 package com.ptit.oj.repository;
 
+import com.ptit.oj.util.TextUtils;
+
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.AtomicMoveNotSupportedException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Stream;
 
@@ -74,6 +81,95 @@ public class ProblemWriter {
     }
 
     /**
+     * Sua vai khoa trong problem.properties cua mot bai DA CO, vi du topic / difficulty / order.
+     * Gia tri null nghia la xoa dong do (giong write() bo qua topic rong hay difficulty = 0).
+     *
+     * Sua theo tung dong chu khong dung Properties.store(): moi dong khac giu nguyen,
+     * ke ca dong ghi chu dau file ma tools/kids-problems/build.py dung de nhan ra bai
+     * do no sinh - mat dong do thi lan chay build.py sau se dung lai vi tuong bai viet tay.
+     *
+     * Ghi ra file tam canh ben roi doi ten de len file cu, nen problem.properties
+     * hoac con nguyen ban cu hoac da la ban moi, khong bao gio bi ghi do dang.
+     */
+    public Path updateProperties(String problemId, Map<String, String> changes) throws IOException {
+        Path dir = problemsDir.resolve(problemId);
+        Path file = dir.resolve("problem.properties");
+        if (!Files.isRegularFile(file)) {
+            throw new IOException("Không thấy " + file);
+        }
+        String text = TextUtils.stripBom(new String(Files.readAllBytes(file), StandardCharsets.UTF_8));
+        String newline = text.contains("\r\n") ? "\r\n" : "\n";
+        String[] lines = text.split("\r?\n", -1);
+
+        List<String> out = new ArrayList<>();
+        Set<String> done = new HashSet<>();
+        for (int i = 0; i < lines.length; i++) {
+            String key = propertyKey(lines[i]);
+            if (key != null && changes.containsKey(key)) {
+                // Bo dong cu cung cac dong noi tiep cua no (dong ket thuc bang dau \ le).
+                while (continuesOnNextLine(lines[i]) && i + 1 < lines.length) i++;
+                String value = changes.get(key);
+                if (done.add(key) && value != null) out.add(key + "=" + escapeProperty(value));
+                continue;
+            }
+            out.add(lines[i]);
+            // Dong noi tiep cua mot khoa khac: chep nguyen, khong doc nham thanh khoa moi.
+            while (key != null && continuesOnNextLine(lines[i]) && i + 1 < lines.length) {
+                out.add(lines[++i]);
+            }
+        }
+
+        // Khoa chua co trong file thi them vao cuoi, truoc dong trong ket thuc file.
+        int insertAt = !out.isEmpty() && out.get(out.size() - 1).isEmpty() ? out.size() - 1 : out.size();
+        for (Map.Entry<String, String> e : changes.entrySet()) {
+            if (e.getValue() != null && !done.contains(e.getKey())) {
+                out.add(insertAt++, e.getKey() + "=" + escapeProperty(e.getValue()));
+            }
+        }
+        if (out.isEmpty() || !out.get(out.size() - 1).isEmpty()) out.add("");
+
+        Path temp = dir.resolve(TEMP_PREFIX + UUID.randomUUID().toString().substring(0, 8) + ".properties");
+        try {
+            writeText(temp, String.join(newline, out));
+            replaceFile(temp, file);
+        } catch (IOException | RuntimeException e) {
+            Files.deleteIfExists(temp);
+            throw e;
+        }
+        return dir;
+    }
+
+    /** Ten khoa cua mot dong .properties, hoac null neu la dong trong / ghi chu. */
+    private static String propertyKey(String line) {
+        int i = 0;
+        while (i < line.length() && isPropertySpace(line.charAt(i))) i++;
+        if (i == line.length() || line.charAt(i) == '#' || line.charAt(i) == '!') return null;
+        StringBuilder key = new StringBuilder();
+        for (; i < line.length(); i++) {
+            char c = line.charAt(i);
+            if (c == '\\' && i + 1 < line.length()) {
+                key.append(line.charAt(++i));
+            } else if (c == '=' || c == ':' || isPropertySpace(c)) {
+                break;
+            } else {
+                key.append(c);
+            }
+        }
+        return key.toString();
+    }
+
+    private static boolean isPropertySpace(char c) {
+        return c == ' ' || c == '\t' || c == '\f';
+    }
+
+    /** Dong ket thuc bang so le dau \ thi gia tri con tiep o dong sau. */
+    private static boolean continuesOnNextLine(String line) {
+        int slashes = 0;
+        for (int i = line.length() - 1; i >= 0 && line.charAt(i) == '\\'; i--) slashes++;
+        return slashes % 2 == 1;
+    }
+
+    /**
      * Noi dung problem.properties. Escape ky tu dac biet cua dinh dang .properties
      * de tieu de co dau ':' hay '=' khong lam hong file.
      */
@@ -129,6 +225,14 @@ public class ProblemWriter {
             Files.move(from, to, StandardCopyOption.ATOMIC_MOVE);
         } catch (AtomicMoveNotSupportedException e) {
             Files.move(from, to);       // vai he thong file khong ho tro doi ten nguyen tu
+        }
+    }
+
+    private void replaceFile(Path from, Path to) throws IOException {
+        try {
+            Files.move(from, to, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.ATOMIC_MOVE);
+        } catch (AtomicMoveNotSupportedException e) {
+            Files.move(from, to, StandardCopyOption.REPLACE_EXISTING);
         }
     }
 

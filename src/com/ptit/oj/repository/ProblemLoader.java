@@ -22,13 +22,16 @@ import java.util.Properties;
  *
  *   data/problems/P001/
  *       problem.properties   (id, title, timeLimitMs, memoryLimitMb, comparator, totalPoints,
- *                             topic va difficulty - tuy chon, xem data/topics.txt)
+ *                             topic, difficulty va order - tuy chon, xem data/topics.txt)
  *       statement.txt        (de bai, tuy chon)
  *       tests/01.in  01.out  02.in  02.out ...
  *
  * Test co ten bat dau bang "sample" duoc coi la test vi du (hien thi cho thi sinh).
  */
 public class ProblemLoader {
+
+    /** Thu tu lon nhat trong mot chu de; so ngoai khoang coi nhu chua xep. */
+    public static final int MAX_ORDER = 9999;
 
     private final Path problemsDir;
 
@@ -81,10 +84,12 @@ public class ProblemLoader {
         String topic = config.getProperty("topic", "").trim();
         int difficulty = (int) parseLong(config.getProperty("difficulty"), 0);
         if (difficulty < 0 || difficulty > 3) difficulty = 0;
+        long order = parseLong(config.getProperty("order"), 0);
+        if (order < 0 || order > MAX_ORDER) order = 0;
         String statement = readTextIfExists(dir.resolve("statement.txt"));
 
         Problem problem = new Problem(id, title, statement, timeLimit, memoryLimit, comparator,
-                topic, difficulty);
+                topic, difficulty, (int) order);
 
         List<Path> inputs = listInputs(dir.resolve("tests"));
         if (inputs.isEmpty()) {

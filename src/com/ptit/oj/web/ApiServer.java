@@ -204,6 +204,10 @@ public class ApiServer {
             handleCreateProblem(ex, requireAdmin(ex));
             return;
         }
+        if ("PUT".equals(method) && path.startsWith("/api/admin/problems/")) {
+            handleUpdateProblem(ex, requireAdmin(ex), path.substring("/api/admin/problems/".length()));
+            return;
+        }
 
         if ("GET".equals(method) || "POST".equals(method)) {
             throw ApiException.notFound("Không có endpoint " + path);
@@ -325,6 +329,7 @@ public class ApiServer {
                     .put("maxPoints", p.getMaxPoints())
                     .put("topic", p.getTopic())
                     .put("difficulty", p.getDifficulty())
+                    .put("order", p.getOrder())
                     .putRaw("samples", Json.array(samples))
                     .build());
         }
@@ -598,17 +603,52 @@ public class ApiServer {
         Problem created = service.createProblem(admin, draft);
         sendJson(ex, 201, Json.obj()
                 .put("message", "Đã tạo bài " + created.getId())
-                .putRaw("problem", Json.obj()
-                        .put("id", created.getId())
-                        .put("title", created.getTitle())
-                        .put("timeLimitMs", created.getTimeLimitMs())
-                        .put("memoryLimitMb", created.getMemoryLimitMb())
-                        .put("comparator", created.getComparatorSpec())
-                        .put("maxPoints", created.getMaxPoints())
-                        .put("topic", created.getTopic())
-                        .put("difficulty", created.getDifficulty())
-                        .build())
+                .putRaw("problem", problemSummaryJson(created))
                 .build());
+    }
+
+    /**
+     * PUT /api/admin/problems/{id} - doi chu de, do kho, vi tri trong lo trinh. Chi ADMIN.
+     * Body: {"topic": "vong-lap", "difficulty": 2, "position": 3}. Truong nao vang mat thi
+     * giu nhu cu; position 0 / vang mat = giu cho (hoac xep cuoi neu doi chu de).
+     */
+    private void handleUpdateProblem(HttpExchange ex, User admin, String id) throws IOException {
+        Json.Value body = Json.parseObject(readBody(ex, MAX_BODY_BYTES));
+        Problem current = service.findProblem(id)
+                .orElseThrow(() -> ApiException.notFound("Không có bài " + id));
+
+        Problem updated = service.updateProblemMeta(admin, id,
+                body.has("topic") ? body.getString("topic", "") : current.getTopic(),
+                intField(body, "difficulty", current.getDifficulty()),
+                intField(body, "position", 0));
+        sendJson(ex, 200, Json.obj()
+                .put("message", "Đã cập nhật bài " + updated.getId())
+                .putRaw("problem", problemSummaryJson(updated))
+                .build());
+    }
+
+    /** So nguyen trong body; so qua lon bi tu choi thay vi ep kieu thanh mot so khac. */
+    private int intField(Json.Value body, String key, int fallback) {
+        long value = body.getLong(key, fallback);
+        if (value < Integer.MIN_VALUE || value > Integer.MAX_VALUE) {
+            throw ApiException.badRequest("Thuộc tính \"" + key + "\" quá lớn");
+        }
+        return (int) value;
+    }
+
+    /** Thong tin chung cua bai tra ve sau khi tao / sua (khong kem de bai va test). */
+    private String problemSummaryJson(Problem p) {
+        return Json.obj()
+                .put("id", p.getId())
+                .put("title", p.getTitle())
+                .put("timeLimitMs", p.getTimeLimitMs())
+                .put("memoryLimitMb", p.getMemoryLimitMb())
+                .put("comparator", p.getComparatorSpec())
+                .put("maxPoints", p.getMaxPoints())
+                .put("topic", p.getTopic())
+                .put("difficulty", p.getDifficulty())
+                .put("order", p.getOrder())
+                .build();
     }
 
     private String readBody(HttpExchange ex, int maxBytes) throws IOException {

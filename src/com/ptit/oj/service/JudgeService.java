@@ -265,6 +265,11 @@ public class JudgeService {
         return problemAdmin.createProblem(actor, draft);
     }
 
+    /** Doi chu de, do kho, vi tri trong lo trinh cua bai da co - chi ADMIN (xem ProblemAdminService). */
+    public Problem updateProblemMeta(User actor, String problemId, String topic, int difficulty, int position) {
+        return problemAdmin.updateProblemMeta(actor, problemId, topic, difficulty, position);
+    }
+
     private String readSourceQuietly(Path source) {
         try {
             return TextUtils.stripBom(new String(Files.readAllBytes(source), StandardCharsets.UTF_8));
