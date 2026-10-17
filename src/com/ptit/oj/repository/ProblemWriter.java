@@ -85,8 +85,7 @@ public class ProblemWriter {
      * Gia tri null nghia la xoa dong do (giong write() bo qua topic rong hay difficulty = 0).
      *
      * Sua theo tung dong chu khong dung Properties.store(): moi dong khac giu nguyen,
-     * ke ca dong ghi chu dau file ma tools/kids-problems/build.py dung de nhan ra bai
-     * do no sinh - mat dong do thi lan chay build.py sau se dung lai vi tuong bai viet tay.
+     * ke ca cac dong ghi chu, va thu tu cac khoa khong bi xao tron.
      *
      * Ghi ra file tam canh ben roi doi ten de len file cu, nen problem.properties
      * hoac con nguyen ban cu hoac da la ban moi, khong bao gio bi ghi do dang.

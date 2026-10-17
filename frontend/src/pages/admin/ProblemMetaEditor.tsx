@@ -138,8 +138,7 @@ export default function ProblemMetaEditor({ problem, problems, topics, onClose, 
           </div>
 
           <div style={{ fontFamily: "var(--font-mono)", fontSize: 10.5, color: "var(--color-text-muted)", lineHeight: 1.7, borderTop: "1px solid var(--color-border-subtle)", paddingTop: 10 }}>
-            Lưu vào problem.properties của bài (topic, difficulty, order). Bài K001–K300 sinh từ tools/kids-problems:
-            chạy lại <b>build.py write</b> sẽ ghi đè các thay đổi này.
+            Lưu vào problem.properties của bài (topic, difficulty, order).
           </div>
         </div>
 

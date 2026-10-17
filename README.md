@@ -24,7 +24,7 @@ Backend được viết trên API chuẩn của JDK. Máy chủ HTTP, bộ đọ
 
 **Học tập**
 - Lộ trình 10 chủ đề, từ nhập/xuất đến mảng, xâu và thuật toán. Có theo dõi tiến độ từng chặng, nút *Học tiếp* và *Bài tiếp theo*.
-- 300 bài tập (`K001`–`K300`) sinh tự động bằng bộ công cụ Python. Đáp án của mọi test được tính từ lời giải mẫu, không gõ tay.
+- 300 bài tập (`K001`–`K300`) chia theo 10 chủ đề, mỗi bài có test ví dụ và test ẩn.
 - Lọc bài theo độ khó, đếm chuỗi ngày luyện tập, bảng xếp hạng và thống kê verdict.
 - Trình soạn code CodeMirror 6 tô màu cú pháp cho cả 6 ngôn ngữ; bộ phân tích của từng ngôn ngữ chỉ được tải khi cần.
 
@@ -46,7 +46,7 @@ Backend được viết trên API chuẩn của JDK. Máy chủ HTTP, bộ đọ
 | Backend | Java 11, `com.sun.net.httpserver`, JDBC |
 | Cơ sở dữ liệu | MySQL 8 (InnoDB, `utf8mb4`), hoặc lưu trong bộ nhớ khi chạy không có CSDL |
 | Frontend | React 19, TypeScript 5, Vite 7, Tailwind CSS 4, CodeMirror 6 |
-| Công cụ | Maven (tùy chọn), Python 3 (sinh bộ đề), script PowerShell / Bash |
+| Công cụ | Maven (tùy chọn), script PowerShell / Bash |
 
 ## Kiến trúc
 
@@ -188,7 +188,6 @@ P001/
 - `comparator`: `exact`, `token` (mặc định), `lines`, `float` hoặc `float:1e-9`.
 - `difficulty`: 1 Dễ, 2 Vừa, 3 Khó. `order`: thứ tự trong chủ đề; bài không có `order` xếp sau theo mã bài.
 - Lộ trình khai báo trong `data/topics.txt`, mỗi dòng có dạng `ma-chu-de | Tên | Mô tả`; thứ tự dòng là thứ tự học.
-- Bộ đề `K001`–`K300` sinh từ `tools/kids-problems/`, xem [tools/kids-problems/README.md](tools/kids-problems/README.md).
 
 Lược đồ CSDL gồm ba bảng `users`, `submissions`, `test_case_results` (khoá ngoại `ON DELETE CASCADE`) và view `user_stats`. Mỗi bài nộp cùng kết quả các test được ghi trong một transaction. Xem [database/mysql/02_schema.sql](database/mysql/02_schema.sql).
 
