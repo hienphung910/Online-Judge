@@ -9,31 +9,31 @@ Hệ thống chấm bài lập trình tự động: backend Java thuần, giao d
 
 ## Giới thiệu
 
-PTIT Online Judge là nền tảng luyện lập trình theo kiểu Codeforces. Người dùng nộp mã nguồn; hệ thống biên dịch, chạy trên bộ test với giới hạn thời gian và bộ nhớ, so sánh output với đáp án rồi trả verdict **AC / WA / TLE / MLE / RE / CE** cho từng test ngay khi chấm xong. Đi kèm là lộ trình học 10 chủ đề với 300 bài tập cho người mới bắt đầu.
+PTIT Online Judge là nền tảng luyện lập trình theo kiểu Codeforces. Người dùng nộp mã nguồn; hệ thống biên dịch, chạy trên bộ test với giới hạn thời gian và bộ nhớ, so sánh output với đáp án rồi trả verdict AC / WA / TLE / MLE / RE / CE cho từng test ngay khi chấm xong. Hệ thống có sẵn lộ trình học 10 chủ đề với 300 bài tập cho người mới bắt đầu.
 
-Backend được viết trên API chuẩn của JDK. Máy chủ HTTP, bộ đọc/ghi JSON, băm mật khẩu và quản lý phiên đều tự cài đặt. Thư viện ngoài duy nhất là **MySQL Connector/J**, truy cập dữ liệu bằng JDBC thuần, không dùng framework hay ORM.
+Backend chỉ dùng API chuẩn của JDK. Máy chủ HTTP, bộ đọc/ghi JSON, băm mật khẩu và quản lý phiên đều do nhóm tự viết. Thư viện ngoài duy nhất là MySQL Connector/J; dữ liệu được truy cập bằng JDBC, không qua framework hay ORM.
 
 ## Tính năng
 
-**Chấm bài**
+### Chấm bài
 - Hỗ trợ 6 ngôn ngữ: Java, C++, Python, Go, JavaScript, Rust. Thêm ngôn ngữ mới chỉ cần viết một lớp con `Language`.
 - Đủ 6 verdict, chấm điểm từng phần theo test.
-- Kết quả trả về theo thời gian thực qua **Server-Sent Events**: test nào chấm xong là hiện ngay.
+- Kết quả được đẩy về trình duyệt qua Server-Sent Events, test nào chấm xong là hiện ngay.
 - 4 kiểu so sánh output: chính xác, theo token, theo dòng (cho bài vẽ hình), số thực có sai số.
 - Test ẩn không bao giờ được gửi xuống trình duyệt, và thông báo WA không làm lộ đáp án.
 
-**Học tập**
+### Học tập
 - Lộ trình 10 chủ đề, từ nhập/xuất đến mảng, xâu và thuật toán. Có theo dõi tiến độ từng chặng, nút *Học tiếp* và *Bài tiếp theo*.
-- 300 bài tập (`K001`–`K300`) chia theo 10 chủ đề, mỗi bài có test ví dụ và test ẩn.
+- 300 bài tập, mã từ `K001` đến `K300`, mỗi bài có test ví dụ và test ẩn.
 - Lọc bài theo độ khó, đếm chuỗi ngày luyện tập, bảng xếp hạng và thống kê verdict.
 - Trình soạn code CodeMirror 6 tô màu cú pháp cho cả 6 ngôn ngữ; bộ phân tích của từng ngôn ngữ chỉ được tải khi cần.
 
-**Quản trị**
-- Tạo bài tập trên web: đề, giới hạn, kiểu so sánh, test ví dụ và test ẩn. Bài được ghi ra ổ đĩa theo kiểu nguyên tử và dùng được ngay, không cần khởi động lại máy chủ.
+### Quản trị
+- Tạo bài tập trên web: đề, giới hạn, kiểu so sánh, test ví dụ và test ẩn. Bài được ghi vào thư mục tạm rồi mới đổi tên thành thư mục thật, nên không có bài nào bị ghi dở. Bài mới dùng được ngay, không cần khởi động lại máy chủ.
 - Sắp xếp lộ trình: đổi chủ đề, độ khó và vị trí của từng bài.
-- Ba vai trò Học sinh / Giảng viên / Quản trị; quyền được kiểm tra ở backend chứ không chỉ ẩn nút trên giao diện.
+- Ba vai trò Học sinh / Giảng viên / Quản trị. Backend kiểm tra quyền ở từng request, kể cả khi giao diện đã ẩn nút.
 
-**Bảo mật**
+### Bảo mật
 - Mật khẩu băm bằng PBKDF2-HMAC-SHA256 (120 000 vòng, salt riêng cho từng tài khoản) và so sánh trong thời gian hằng số.
 - Token phiên 32 byte sinh bằng `SecureRandom`, hết hạn sau 8 giờ.
 - Mọi truy vấn dùng `PreparedStatement`; mã bài và tên test được kiểm tra để chặn path traversal.
@@ -64,9 +64,9 @@ flowchart LR
     Svc --> Disk[("data/problems<br/>đề bài + test")]
 ```
 
-- **Một tầng nghiệp vụ cho hai giao diện.** Console và web cùng gọi `JudgeService`. Kho dữ liệu được tiêm qua constructor (`JudgeService.mysql()` / `JudgeService.inMemory()`), nên chuyển giữa MySQL và bộ nhớ không phải sửa tầng nghiệp vụ hay giao diện.
-- **Phân tầng rõ ràng.** Câu SQL chỉ nằm trong package `repository` và `database`.
-- **Chạy code thí sinh an toàn về tài nguyên.** `ProcessRunner` chạy chương trình trong tiến trình con: một luồng ghi stdin, hai luồng đọc stdout/stderr để tránh deadlock; có timeout, dừng cưỡng bức và giới hạn output 1 MB.
+Console và web cùng gọi một tầng nghiệp vụ là `JudgeService`. Kho dữ liệu được truyền vào qua constructor (`JudgeService.mysql()` hoặc `JudgeService.inMemory()`), nên đổi giữa MySQL và bộ nhớ không phải sửa tầng nghiệp vụ hay giao diện. Câu SQL chỉ nằm trong hai package `repository` và `database`.
+
+`ProcessRunner` chạy code thí sinh trong tiến trình con. Một luồng ghi stdin, hai luồng đọc stdout và stderr để tiến trình không bị treo khi bộ đệm đầy. Chương trình chạy quá giờ bị dừng cưỡng bức, và output bị cắt ở 1 MB.
 
 ```
 src/com/ptit/oj
@@ -86,7 +86,7 @@ src/com/ptit/oj
 
 ## Bắt đầu nhanh
 
-**Yêu cầu:** JDK 11+, Node.js 20.19+. MySQL 8 chỉ cần khi muốn lưu dữ liệu lâu dài. Muốn chấm các ngôn ngữ khác Java thì cài thêm toolchain tương ứng (g++, Python 3, Go, Node.js, Rust); ngôn ngữ nào thiếu toolchain sẽ tự được đánh dấu là không khả dụng.
+Cần có JDK 11+ và Node.js 20.19+. MySQL 8 chỉ cần khi muốn lưu dữ liệu lâu dài. Muốn chấm các ngôn ngữ khác Java thì cài thêm toolchain tương ứng (g++, Python 3, Go, Node.js, Rust); ngôn ngữ nào thiếu toolchain sẽ tự được đánh dấu là không khả dụng.
 
 ### Chạy thử không cần MySQL
 
@@ -199,8 +199,8 @@ powershell -ExecutionPolicy Bypass -File run-tests.ps1
 
 Script lần lượt biên dịch backend, chạy `--selftest`, `--apitest` và build frontend; có bước nào lỗi thì trả exit code khác 0.
 
-- **`--selftest`** chấm 17 bài nộp mẫu, đủ 6 verdict và nhiều ngôn ngữ, rồi đối chiếu với verdict kỳ vọng trong `data/submissions/demo-plan.txt`. Không cần MySQL.
-- **`--apitest`** chạy kiểm thử tích hợp trên MySQL thật qua HTTP: đăng ký, đăng nhập, phân quyền, mật khẩu không lưu dạng plaintext, chặn path traversal, không lộ test ẩn, transaction và khoá ngoại, dữ liệu còn nguyên sau khi khởi động lại. Bộ kiểm thử chỉ chạy trên CSDL có tên kết thúc bằng `_test`, và làm việc trên bản sao đề bài nên không ảnh hưởng dữ liệu thật. Nếu chưa cấu hình `OJ_TEST_DB_*`, bước này được bỏ qua.
+- `--selftest` chấm 17 bài nộp mẫu, đủ 6 verdict và nhiều ngôn ngữ, rồi đối chiếu với verdict kỳ vọng trong `data/submissions/demo-plan.txt`. Không cần MySQL.
+- `--apitest` chạy kiểm thử tích hợp trên MySQL thật qua HTTP: đăng ký, đăng nhập, phân quyền, mật khẩu không lưu dạng plaintext, chặn path traversal, không lộ test ẩn, transaction và khoá ngoại, dữ liệu còn nguyên sau khi khởi động lại. Bộ kiểm thử chỉ chạy trên CSDL có tên kết thúc bằng `_test`, và làm việc trên bản sao đề bài nên không ảnh hưởng dữ liệu thật. Nếu chưa cấu hình `OJ_TEST_DB_*`, bước này được bỏ qua.
 
 ## Thiết kế hướng đối tượng
 
@@ -229,4 +229,4 @@ Script lần lượt biên dịch backend, chạy `--selftest`, `--apitest` và 
 
 Bài tập lớn môn Lập trình hướng đối tượng, Học viện Công nghệ Bưu chính Viễn thông (PTIT).
 
-Thành viên: **hienphung910** , **longnd** , **tm079** , **tienkhoi235**
+Thành viên: **hienphung910**, **longnd**, **tm079**, **tienkhoi235**
