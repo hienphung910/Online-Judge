@@ -1,0 +1,21 @@
+Một robot giao hàng đang đứng tại điểm A và quay mặt nhìn thẳng về phía điểm B. Trước khi lăn bánh, nó cần biết cột mốc C nằm ở phía bên trái, phía bên phải, hay nằm ngay trên đường thẳng AB (đường thẳng kéo dài vô hạn về hai phía).
+
+Có q câu hỏi như vậy, mỗi câu hỏi cho ba điểm A, B, C có toạ độ nguyên. Hãy trả lời từng câu hỏi.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên q.
+- q dòng tiếp theo, mỗi dòng chứa 6 số nguyên xA yA xB yB xC yC.
+
+Đầu ra:
+- In ra q dòng, dòng thứ i là TRAI nếu C nằm bên trái, PHAI nếu C nằm bên phải, THANG nếu C nằm trên đường thẳng AB (kể cả khi C trùng A hoặc B).
+
+Giới hạn:
+- 1 ≤ q ≤ 300.
+- |x|, |y| ≤ 10^9 với mọi toạ độ; A khác B.
+- Tích có hướng có thể lên tới khoảng 8·10^18: hãy tính trên các vectơ hiệu (B - A), (C - A) bằng số nguyên 64 bit, tuyệt đối không dùng số thực.
+
+Gợi ý:
+- Câu 1: đứng ở (0, 0) nhìn về (2, 0) (hướng đông), điểm (1, 5) ở phía bắc nên nằm bên trái.
+- Câu 2: điểm (7, -1) ở phía nam nên nằm bên phải.
+- Câu 3: điểm (-3, 0) nằm trên đường thẳng kéo dài phía sau lưng robot nên vẫn là THANG.
+- Câu 4: đứng ở (1, 1) nhìn về (3, 5) thì điểm (2, 3) nằm đúng trên đường đi: THANG.

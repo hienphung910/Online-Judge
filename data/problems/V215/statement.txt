@@ -1,0 +1,21 @@
+Trên mặt hồ có n hòn đá xếp thẳng hàng, đánh số từ 1 đến n. Trên hòn đá thứ i có a_i hạt sỏi vàng. Ếch con chơi q lượt, mỗi lượt được mô tả bởi hai số s và d: ếch đặt chân lên hòn đá s, rồi cứ mỗi bước nhảy về phía trước đúng d hòn đá, tức là lần lượt đứng trên các hòn s, s + d, s + 2d, ... cho tới khi bước tiếp theo vượt quá hòn đá thứ n thì dừng. Ở mỗi hòn đá đã đứng, ếch đếm số sỏi vàng (không nhặt đi, nên các lượt không ảnh hưởng nhau).
+
+Với mỗi lượt, hãy cho biết tổng số sỏi vàng ếch đếm được.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và q.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n.
+- q dòng tiếp theo, mỗi dòng chứa hai số nguyên s và d mô tả một lượt chơi.
+
+Đầu ra:
+- In ra q dòng, dòng thứ k là tổng a_s + a_(s+d) + a_(s+2d) + ... (chỉ lấy các chỉ số không vượt quá n) của lượt thứ k.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000, 1 ≤ q ≤ 1200.
+- 0 ≤ a_i ≤ 10^9.
+- 1 ≤ s ≤ n, 1 ≤ d ≤ n.
+
+Gợi ý:
+- Với dãy 5 1 4 2 8 3 7: lượt (1, 2) đứng trên các hòn 1, 3, 5, 7 được 5 + 4 + 8 + 7 = 24; lượt (2, 3) đứng trên các hòn 2, 5 được 1 + 8 = 9; lượt (6, 1) được 3 + 7 = 10; lượt (4, 7) chỉ đứng trên hòn 4 được 2.
+- Kết quả có thể vượt quá 2^31, hãy dùng số nguyên 64 bit.
+- Chia căn theo tham số của truy vấn: với bước nhảy d lớn hơn căn n, ếch đứng trên ít hơn căn n hòn đá nên có thể cộng trực tiếp. Với d nhỏ (không quá căn n), chuẩn bị trước bảng tổng hậu tố f[d][i] = a_i + f[d][i + d]. Mỗi lượt khi đó tốn không quá O(căn n).

@@ -1,0 +1,20 @@
+Bác Tư có n cây cải trồng thành một hàng, đánh số từ 1 đến n; cây thứ i đang cao a_i mi-li-mét. Trong một tháng, bác bón phân m lần. Lần bón thứ j được mô tả bởi ba số l, r, v: mọi cây có số thứ tự từ l đến r đều cao thêm đúng v mi-li-mét.
+
+Hãy cho biết chiều cao của từng cây sau cả m lần bón.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và m.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n.
+- m dòng tiếp theo, mỗi dòng chứa ba số nguyên l, r, v.
+
+Đầu ra:
+- In ra trên một dòng n số nguyên là chiều cao cuối cùng của cây 1, 2, ..., n.
+
+Giới hạn:
+- 1 ≤ n ≤ 1500, 1 ≤ m ≤ 1000.
+- 0 ≤ a_i ≤ 1000.
+- 1 ≤ l ≤ r ≤ n, 1 ≤ v ≤ 1000.
+
+Gợi ý:
+- Dùng mảng hiệu d: mỗi lần bón chỉ cần d[l] += v và d[r+1] -= v. Cuối cùng cộng dồn d từ trái sang phải sẽ được tổng lượng cây thứ i đã cao thêm.
+- Ví dụ: sau lần bón 1 hàng cây là 3 4 5 4 5, sau lần 2 là 3 5 6 5 6, sau lần 3 là 3 5 6 15 6.

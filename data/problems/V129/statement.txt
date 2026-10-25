@@ -1,0 +1,20 @@
+Bãi giữ xe của trường có n chỗ đỗ đánh số 1, 2, ..., n xếp thành một vòng quanh sân, sau chỗ n là quay lại chỗ 1. Ban đầu mọi chỗ đều trống. Có q sự kiện xảy ra lần lượt, mỗi sự kiện thuộc một trong hai loại:
+- "+ p": một xe đến và muốn đỗ ở chỗ p. Nếu chỗ p trống, xe đỗ ở đó. Nếu không, xe đi tiếp theo chiều số tăng dần p + 1, p + 2, ..., n, rồi vòng lại 1, 2, ... và đỗ vào chỗ trống đầu tiên gặp được. Nếu bãi đã kín hết, xe quay về và không đỗ.
+- "- s": xe đang đỗ ở chỗ s rời đi, chỗ s trở thành trống. Đảm bảo lúc đó chỗ s đang có xe.
+
+Với mỗi sự kiện loại "+", hãy cho biết xe đỗ ở chỗ nào.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và q.
+- q dòng tiếp theo, mỗi dòng mô tả một sự kiện dạng "+ p" hoặc "- s".
+
+Đầu ra:
+- Với mỗi sự kiện "+" theo thứ tự, in ra một dòng là số thứ tự chỗ mà xe đỗ, hoặc -1 nếu bãi đã kín.
+
+Giới hạn:
+- 1 ≤ n ≤ 10^5.
+- 1 ≤ q ≤ 1500.
+- 1 ≤ p, s ≤ n.
+
+Gợi ý:
+- Ở ví dụ 1, bãi có 4 chỗ. Xe 1 đỗ chỗ 3. Xe 2 muốn chỗ 3 nhưng đã có xe nên đỗ chỗ 4. Xe 3 muốn chỗ 4, chỗ 4 có xe, chỗ sau chỗ 4 là chỗ 1 nên đỗ chỗ 1. Xe ở chỗ 3 rời đi. Xe 4 muốn chỗ 1, đi tiếp đến chỗ 2 và đỗ ở đó. Xe 5 muốn chỗ 2, đi qua 2 rồi đỗ ở chỗ 3 vừa trống. Xe 6 đến khi bãi kín nên in -1.

@@ -1,0 +1,16 @@
+Đội bóng của trường có n cầu thủ, cầu thủ thứ i mặc áo số a_i (các số áo đôi một khác nhau). Thầy chủ nhiệm muốn xếp cả đội đứng thành một hàng ngang để chụp ảnh, sao cho hai cầu thủ đứng cạnh nhau bất kỳ có tổng hai số áo là một số nguyên tố. Hỏi có bao nhiêu cách xếp hàng?
+
+Đầu vào:
+- Dòng đầu chứa số nguyên n.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n.
+
+Đầu ra:
+- In ra số cách xếp hàng thỏa mãn. Hai cách khác nhau nếu có một vị trí trong hàng mà hai cách đặt hai cầu thủ khác nhau (cách xếp đảo ngược thứ tự vẫn tính là cách khác).
+
+Giới hạn:
+- 1 ≤ n ≤ 12.
+- 1 ≤ a_i ≤ 100, các a_i đôi một khác nhau.
+
+Gợi ý:
+- Đặt lần lượt từng vị trí từ trái sang phải; ở mỗi vị trí chỉ thử những cầu thủ chưa đứng vào hàng và có tổng số áo với người đứng ngay trước là số nguyên tố. Nhánh nào không đi tiếp được thì quay lui ngay, nhờ đó số trạng thái phải xét ít hơn rất nhiều so với n! hoán vị.
+- Ví dụ số áo là 1, 2, 3, 4: các cặp được đứng cạnh nhau là (1, 2), (2, 3), (3, 4), (4, 1). Có 8 cách, chẳng hạn 1 2 3 4, 2 1 4 3, 3 2 1 4, 4 3 2 1, ...

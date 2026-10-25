@@ -1,0 +1,22 @@
+Trung tâm giới thiệu việc làm của phường có n người thợ. Có tất cả 16 kỹ năng, đánh số từ 0 đến 15 (xây, trát, lát gạch, đi điện...). Kỹ năng của người thợ thứ i được ghi bằng một số nguyên a_i: bit thứ j của a_i bằng 1 khi và chỉ khi người đó biết kỹ năng j. Người thợ thứ i nhận tiền công c_i nghìn đồng một ngày.
+
+Có q công trình gửi yêu cầu. Công trình thứ k cần các kỹ năng ứng với những bit 1 của số x_k. Một người thợ phù hợp với công trình nếu người đó biết mọi kỹ năng mà công trình cần, tức là (a_i AND x_k) = x_k; người thợ biết thêm kỹ năng khác cũng không sao. Với mỗi công trình, trung tâm muốn biết có bao nhiêu người thợ phù hợp và tiền công thấp nhất trong số họ là bao nhiêu.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và q.
+- n dòng tiếp theo, dòng thứ i gồm hai số nguyên a_i và c_i.
+- Dòng cuối gồm q số nguyên x_1, x_2, ..., x_q.
+
+Đầu ra:
+- In ra q dòng, dòng thứ k gồm hai số: số người thợ phù hợp với công trình k và tiền công nhỏ nhất của những người đó. Nếu không có ai phù hợp thì in ra "0 -1".
+
+Giới hạn:
+- 1 ≤ n ≤ 1000, 1 ≤ q ≤ 1000.
+- 0 ≤ a_i, x_k < 2^16 = 65536.
+- 1 ≤ c_i ≤ 10^6.
+- AND là phép AND theo bit.
+
+Gợi ý:
+- Công trình x = 1 (nhị phân 001) cần kỹ năng 0. Thợ 1 (a = 3 = 011), thợ 2 (a = 5 = 101) và thợ 3 (a = 7 = 111) đều biết kỹ năng này, rẻ nhất là thợ 2 với 30, nên in "3 30".
+- Công trình x = 6 (nhị phân 110) chỉ có thợ 3 phù hợp. Công trình x = 8 cần kỹ năng 3 mà không ai biết nên in "0 -1". Công trình x = 0 không cần gì nên cả 4 người đều phù hợp.
+- Thay vì duyệt từng người cho từng công trình, hãy tính sẵn cho mọi mặt nạ x số người có a_i là tập cha của x và tiền công nhỏ nhất của họ (quy hoạch động trên các tập cha).

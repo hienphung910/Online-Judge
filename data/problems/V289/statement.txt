@@ -1,0 +1,19 @@
+Cô giáo dạy văn có một dòng chữ dài viết liền thành xâu S độ dài n. Cô muốn lập một cuốn sổ ghi lại tất cả các đoạn đối xứng có trong S, tức là các xâu con gồm ký tự liên tiếp, đọc xuôi hay đọc ngược đều giống nhau (ví dụ "a", "aba", "abba").
+
+Trong cuốn sổ, mỗi nội dung chỉ được ghi một lần: hai đoạn có cùng dãy chữ cái thì chỉ tính là một, dù chúng nằm ở những vị trí khác nhau trong S.
+
+Hỏi cuốn sổ sẽ có bao nhiêu dòng, tức là S có bao nhiêu xâu con đối xứng khác rỗng, phân biệt về nội dung?
+
+Đầu vào:
+- Một dòng duy nhất chứa xâu S gồm các chữ cái tiếng Anh in thường 'a' đến 'z'.
+
+Đầu ra:
+- Một số nguyên là số xâu con đối xứng phân biệt của S.
+
+Giới hạn:
+- 1 ≤ n ≤ 10^4.
+
+Gợi ý:
+- Ở ví dụ 1, S = "abacaba" có 7 xâu con đối xứng phân biệt: "a", "b", "c", "aba", "aca", "bacab", "abacaba". Chữ "a" xuất hiện 4 lần và "aba" xuất hiện 2 lần nhưng mỗi xâu chỉ tính một lần.
+- Ở ví dụ 2, S = "aaaa" có 4 xâu con đối xứng phân biệt: "a", "aa", "aaa", "aaaa".
+- Khi thêm một ký tự vào cuối xâu, số xâu đối xứng phân biệt tăng thêm nhiều nhất 1 (chỉ có thể là hậu tố đối xứng dài nhất mới). Cây palindrome (eertree) lưu mỗi xâu đối xứng phân biệt thành một đỉnh.

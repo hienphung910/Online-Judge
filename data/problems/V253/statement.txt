@@ -1,0 +1,19 @@
+Sân khấu có n ngọn đèn đánh số từ 1 đến n, mỗi đèn khi biểu diễn sẽ ở một trong hai trạng thái: bật (1) hoặc tắt (0). Khán giả gửi tới đạo diễn m lời đề nghị theo thứ tự thời gian. Lời đề nghị thứ i có dạng "đèn u ở trạng thái a, hoặc đèn v ở trạng thái b", và được coi là đáp ứng nếu ít nhất một trong hai điều đó đúng.
+
+Đạo diễn nhận lần lượt các lời đề nghị từ đầu danh sách và muốn nhận được càng nhiều càng tốt. Hãy tìm số k lớn nhất sao cho tồn tại một cách đặt trạng thái cho n đèn đáp ứng đồng thời k lời đề nghị đầu tiên.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và m.
+- m dòng tiếp theo, dòng thứ i gồm bốn số nguyên u, a, v, b mô tả lời đề nghị thứ i.
+
+Đầu ra:
+- Một số nguyên duy nhất là k lớn nhất tìm được.
+
+Giới hạn:
+- 1 ≤ n ≤ 2000.
+- 1 ≤ m ≤ 2000.
+- 1 ≤ u, v ≤ n (u có thể bằng v); a, b ∈ {0, 1}.
+
+Gợi ý:
+- Ba lời đề nghị đầu (đèn 1 bật hoặc đèn 2 bật), (đèn 1 tắt hoặc đèn 3 bật), (đèn 2 tắt hoặc đèn 3 bật) được đáp ứng khi bật cả ba đèn.
+- Lời đề nghị thứ tư buộc đèn 3 tắt; khi đó lời thứ hai buộc đèn 1 tắt, lời thứ ba buộc đèn 2 tắt, và lời thứ nhất bị vi phạm. Vậy k = 3 (lời thứ năm luôn được đáp ứng nhưng đến sau nên không tính).

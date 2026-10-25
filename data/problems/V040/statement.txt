@@ -1,0 +1,29 @@
+Bé Na chơi trò ghép ô số trên một bảng vuông N hàng, N cột. Mỗi ô hoặc trống (ghi 0), hoặc chứa một viên gạch ghi một lũy thừa của 2. Ở mỗi lượt, Na chọn một hướng: L (trái), R (phải), U (lên), D (xuống). Khi đó, xét riêng từng hàng (với L, R) hoặc từng cột (với U, D):
+- Tất cả các viên gạch trượt hết về phía hướng đã chọn, không còn ô trống xen giữa.
+- Xét các viên gạch theo thứ tự bắt đầu từ viên sát mép phía hướng đã chọn: nếu hai viên liền nhau có cùng giá trị thì chúng nhập thành một viên có giá trị gấp đôi, và Na được cộng điểm bằng giá trị viên mới. Viên mới tạo ra không được nhập tiếp trong cùng lượt đó. Sau khi nhập, các viên lại dồn sát về phía hướng đã chọn.
+- Ví dụ, với hướng L, hàng 2 2 2 2 trở thành 4 4 0 0 (được 8 điểm), hàng 4 0 4 8 trở thành 8 8 0 0 (được 8 điểm), hàng 2 2 4 0 trở thành 4 4 0 0 (được 4 điểm).
+
+Nếu sau lượt đó bảng không thay đổi gì thì lượt đi bị coi là vô hiệu. Ngược lại, sau lượt đi một viên gạch mới ghi số 2 xuất hiện ở ô trống đầu tiên khi duyệt bảng từ trên xuống dưới, trong mỗi hàng từ trái sang phải.
+
+Cho bảng ban đầu và xâu các lượt đi của Na, hãy in bảng cuối cùng, tổng điểm và số lượt vô hiệu.
+
+Đầu vào:
+- Dòng đầu chứa số nguyên N.
+- N dòng tiếp theo, mỗi dòng chứa N số nguyên mô tả một hàng của bảng.
+- Dòng cuối chứa xâu các lượt đi.
+
+Đầu ra:
+- N dòng đầu mô tả bảng cuối cùng, mỗi dòng N số nguyên cách nhau một dấu cách.
+- Dòng cuối cùng chứa hai số nguyên: tổng điểm và số lượt vô hiệu.
+
+Giới hạn:
+- 2 ≤ N ≤ 10.
+- Mỗi ô ban đầu là 0 hoặc 2^k với 1 ≤ k ≤ 30.
+- 1 ≤ độ dài xâu lượt đi ≤ 10^4; xâu chỉ gồm các ký tự L, R, U, D.
+- Giá trị các ô và tổng điểm có thể vượt quá 2^31, hãy dùng số nguyên 64 bit.
+
+Gợi ý:
+- Lượt L: hàng 1 thành 4 0 0, hàng 2 thành 2 0 0, hàng 3 thành 4 0 0; được 4 + 4 = 8 điểm. Viên 2 mới xuất hiện ở hàng 1 cột 2.
+- Lượt L tiếp theo: hàng 1 là 4 2 0 không đổi, các hàng khác cũng không đổi nên lượt này vô hiệu.
+- Lượt U: cột 1 gồm 4, 2, 4 không nhập được; cột 2 chỉ có viên 2 ở hàng 1. Bảng không đổi nên lại vô hiệu.
+- Lượt D: cột 1 vẫn là 4, 2, 4; cột 2 viên 2 trượt xuống hàng 3. Viên 2 mới xuất hiện ở hàng 1 cột 2. Tổng điểm 8, có 2 lượt vô hiệu.

@@ -1,0 +1,19 @@
+Bản đồ phố cổ được vẽ trên lưới ô vuông: mỗi con phố là một đoạn thẳng nằm ngang hoặc thẳng đứng. Một "điểm giao" là một cặp gồm một phố ngang và một phố dọc có ít nhất một điểm chung (cắt nhau hình chữ thập, chạm nhau hình chữ T hay gặp nhau ở góc hình chữ L đều tính). Hai phố cùng hướng thì không bao giờ tạo thành điểm giao, kể cả khi chúng nằm chồng lên nhau.
+
+Hãy đếm số điểm giao trên bản đồ.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n là số con phố.
+- n dòng tiếp theo, mỗi dòng chứa 4 số nguyên x1 y1 x2 y2 mô tả một con phố nối (x1, y1) với (x2, y2).
+
+Đầu ra:
+- In ra một số nguyên là số cặp (phố ngang, phố dọc) có điểm chung.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000.
+- 0 ≤ toạ độ ≤ 10^5; mỗi đoạn hoặc nằm ngang (y1 = y2, x1 < x2) hoặc thẳng đứng (x1 = x2, y1 < y2).
+
+Gợi ý:
+- Phố ngang y = 2 (x từ 0 đến 6) cắt phố dọc x = 3 (y từ 0 đến 5) và chạm phố dọc x = 6 (y từ 2 đến 4) ở đầu mút: 2 điểm giao.
+- Phố ngang y = 4 (x từ 4 đến 8) cắt phố dọc x = 6 và không gặp phố dọc x = 3: 1 điểm giao. Phố ngang y = 2 thứ hai (x từ 1 đến 2) nằm chồng lên phố ngang đầu tiên nhưng không gặp phố dọc nào. Tổng cộng 3.
+- Cách làm gợi ý: quét một đường thẳng đứng từ trái sang phải; phố ngang được "bật" khi đường quét chạm đầu trái và "tắt" sau khi qua đầu phải; mỗi phố dọc đếm số phố ngang đang bật có tung độ trong [y1, y2] bằng cây Fenwick.

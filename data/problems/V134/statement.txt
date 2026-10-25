@@ -1,0 +1,21 @@
+Làng Hạ có n ngôi nhà đánh số từ 1 đến n và m con đường đất, mỗi con đường nối thẳng hai ngôi nhà khác nhau và đi được theo cả hai chiều. Trưởng làng muốn số hóa tấm bản đồ cũ nên nhờ bạn làm hai việc:
+- Với mỗi ngôi nhà, cho biết có bao nhiêu con đường xuất phát từ nhà đó.
+- Trả lời q câu hỏi, mỗi câu hỏi hai nhà u và v có con đường nào nối trực tiếp với nhau hay không.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và m.
+- m dòng tiếp theo, mỗi dòng gồm hai số nguyên u, v (u ≠ v) cho biết có một con đường nối nhà u với nhà v. Không có hai con đường nào nối cùng một cặp nhà.
+- Dòng tiếp theo chứa số nguyên q.
+- q dòng cuối, mỗi dòng gồm hai số nguyên u, v là một câu hỏi (u có thể bằng v).
+
+Đầu ra:
+- Dòng đầu gồm n số nguyên, số thứ i là số con đường xuất phát từ nhà i.
+- Tiếp theo là q dòng, mỗi dòng in CO nếu hai nhà trong câu hỏi tương ứng có đường nối trực tiếp, ngược lại in KHONG.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000; 0 ≤ m ≤ 1500; 1 ≤ q ≤ 1000.
+- 1 ≤ u, v ≤ n.
+
+Gợi ý:
+- Ở ví dụ, nhà 1 nối với nhà 2, 3 và 5 nên có 3 con đường; nhà 4 chỉ nối với nhà 3.
+- Câu hỏi (2, 3): không có đường nối thẳng (phải đi vòng qua nhà 1) nên in KHONG. Câu hỏi (4, 4) cũng in KHONG vì không có đường nào nối một nhà với chính nó.

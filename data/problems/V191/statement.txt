@@ -1,0 +1,19 @@
+Hệ thống của công ty sinh mật khẩu là các xâu độ dài N, mỗi ký tự được chọn trong A chữ cái tiếng Anh in thường đầu tiên ('a', 'b', ..., chữ cái thứ A). Để tránh bị đoán, mật khẩu không được chứa từ cấm P như một xâu con gồm các ký tự liên tiếp.
+
+Hãy đếm số mật khẩu hợp lệ. Vì kết quả có thể rất lớn, hãy in ra phần dư khi chia cho 10^9 + 7.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên N và A.
+- Dòng thứ hai là từ cấm P, chỉ gồm các chữ cái nằm trong A chữ cái đầu tiên.
+
+Đầu ra:
+- Một số nguyên là số mật khẩu hợp lệ, lấy phần dư khi chia cho 10^9 + 7.
+
+Giới hạn:
+- 1 ≤ N ≤ 10^4, 1 ≤ A ≤ 26.
+- 1 ≤ |P| ≤ 100.
+
+Gợi ý:
+- Ở ví dụ 1, N = 3, A = 2, P = "ab". Mật khẩu hợp lệ không được có chữ 'a' đứng ngay trước chữ 'b', nên chỉ có 4 mật khẩu: "aaa", "baa", "bba", "bbb".
+- Ở ví dụ 2, mật khẩu không được chứa chữ 'z', mỗi vị trí có 25 cách chọn nên đáp án là 25^5 = 9765625.
+- Gợi ý thuật toán: khi sinh mật khẩu từ trái sang phải, chỉ cần nhớ độ dài tiền tố dài nhất của P đang khớp ở cuối phần đã sinh. Hàm tiền tố (KMP) cho biết trạng thái này thay đổi thế nào khi thêm một ký tự.

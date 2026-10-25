@@ -1,0 +1,18 @@
+Sáng chủ nhật, chị Mai đeo chiếc gùi xuống chợ phiên vùng cao để mua hàng về bán lại ở thị trấn. Chợ có n loại hàng. Mỗi món thuộc loại thứ i nặng w_i lạng và khi bán lại chị lãi được v_i nghìn đồng, nhưng sạp hàng chỉ còn đúng c_i món loại này. Chiếc gùi chỉ đeo được tổng khối lượng không quá W lạng.
+
+Chị Mai có thể mua mỗi loại một số món tùy ý từ 0 đến c_i. Hãy tính tổng tiền lãi lớn nhất chị có thể thu được.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và W.
+- n dòng tiếp theo, dòng thứ i gồm ba số nguyên w_i, v_i, c_i.
+
+Đầu ra:
+- In ra một số nguyên là tổng tiền lãi lớn nhất.
+
+Giới hạn:
+- 1 ≤ n ≤ 100, 1 ≤ W ≤ 10^5.
+- 1 ≤ w_i ≤ 10^5, 1 ≤ v_i ≤ 10^4, 1 ≤ c_i ≤ 10^4.
+
+Gợi ý:
+- Ví dụ có W = 10. Chị Mai mua 1 món loại 3 (4 lạng, lãi 7) và 2 món loại 1 (6 lạng, lãi 10): đủ 10 lạng, lãi 17. Không có cách nào lãi hơn, chẳng hạn 2 món loại 1 và 2 món loại 2 chỉ lãi 16.
+- Duyệt số món k từ 0 đến c_i cho từng loại sẽ quá chậm khi c_i lớn. Hãy tách c_i món thành các gói 1, 2, 4, 8, ... món và một gói phần dư: mọi số từ 0 đến c_i đều ghép được từ các gói này, mỗi gói dùng tối đa một lần, nên bài toán trở thành cái túi 0/1.

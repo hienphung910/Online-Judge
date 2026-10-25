@@ -1,0 +1,18 @@
+Một hãng hàng không có n sân bay đánh số từ 1 đến n và m chuyến bay một chiều. Chuyến bay thứ i đi từ sân bay u_i tới sân bay v_i và có giá w_i đồng. Đang có chương trình khuyến mãi nên một số chuyến bay có giá âm: đi chuyến đó hành khách còn được hoàn lại tiền.
+
+An muốn bay từ sân bay s tới sân bay t nhưng chỉ chịu được tối đa K chặng bay (K chuyến bay). An được phép đi qua một sân bay nhiều lần, kể cả đi lại một chuyến bay nhiều lần, miễn là tổng số chặng không quá K. Tổng chi phí là tổng giá các chuyến đã đi (có thể âm). Hãy tìm tổng chi phí nhỏ nhất.
+
+Đầu vào:
+- Dòng đầu tiên gồm năm số nguyên n, m, s, t, K.
+- m dòng tiếp theo, mỗi dòng gồm ba số nguyên u, v, w: có chuyến bay từ u tới v với giá w. Có thể có nhiều chuyến bay giữa cùng một cặp sân bay và có thể có chuyến bay quay về chính sân bay xuất phát.
+
+Đầu ra:
+- In ra tổng chi phí nhỏ nhất để đi từ s tới t với không quá K chặng bay, hoặc KHONG nếu không có cách nào. Nếu s = t thì An có thể không bay chặng nào (chi phí 0).
+
+Giới hạn:
+- 1 ≤ n ≤ 200, 0 ≤ m ≤ 1000, 1 ≤ K ≤ 200.
+- 1 ≤ s, t, u, v ≤ n, -10^4 ≤ w ≤ 10^4.
+
+Gợi ý:
+- Ở ví dụ K = 2. Các cách bay hợp lệ là 1 → 4 (giá 10), 1 → 2 → 4 (5 - 3 = 2) và 1 → 3 → 4 (1 + 6 = 7), nên đáp án là 2. Cách 1 → 3 → 2 → 4 chỉ tốn 1 - 4 - 3 = -6 nhưng dùng 3 chặng, vượt quá K.
+- Gọi d_j[v] là chi phí nhỏ nhất đi từ s tới v với không quá j chặng. Tính d_j từ d_(j-1) bằng cách duyệt mọi chuyến bay một lần (một vòng của thuật toán Bellman - Ford). Chú ý phải dùng giá trị của vòng trước, nếu cập nhật trực tiếp trên cùng một mảng thì một vòng có thể đi nhiều hơn một chặng.

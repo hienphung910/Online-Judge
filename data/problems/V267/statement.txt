@@ -1,0 +1,28 @@
+Phòng kế toán của xã lập bảng dự toán gồm n khoản chi, đánh số từ 1 đến n; khoản thứ i dự kiến chi a_i nghìn đồng (số âm nghĩa là khoản thu). Bảng ban đầu được gọi là phương án 0.
+
+Trong các buổi họp, mỗi khi có người đề xuất sửa một khoản, kế toán không sửa đè lên bảng cũ mà chép một phương án đã có ra bản mới rồi sửa trên bản mới; phương án cũ vẫn giữ nguyên để còn so sánh. Các phương án mới lần lượt được đánh số 1, 2, 3, ... theo thứ tự tạo ra.
+
+Có q thao tác xảy ra lần lượt, thuộc hai loại:
+- "1 v i x": chép phương án v thành một phương án mới, rồi trong phương án mới đặt khoản i bằng x.
+- "2 v l r": hỏi tổng các khoản từ l đến r trong phương án v.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và q.
+- Dòng thứ hai gồm n số nguyên a_1, a_2, ..., a_n.
+- q dòng tiếp theo, mỗi dòng là một thao tác ở một trong hai dạng trên.
+
+Đầu ra:
+- Với mỗi thao tác dạng 2, in ra tổng tương ứng trên một dòng, theo đúng thứ tự xuất hiện.
+
+Giới hạn:
+- 1 ≤ n ≤ 600, 1 ≤ q ≤ 600.
+- |a_i| ≤ 10^9, |x| ≤ 10^9.
+- 1 ≤ i ≤ n, 1 ≤ l ≤ r ≤ n.
+- Trong mọi thao tác, v là số của một phương án đã được tạo ra trước thao tác đó (v = 0 luôn hợp lệ).
+- Có ít nhất một thao tác dạng 2.
+- Chú ý: tổng có thể vượt quá phạm vi số nguyên 32 bit.
+
+Gợi ý:
+- Ở ví dụ, phương án 0 là [1, 2, 3, 4, 5] nên tổng cả bảng là 15.
+- Phương án 1 chép từ phương án 0 và đặt khoản 3 bằng 10: [1, 2, 10, 4, 5]. Phương án 2 chép từ phương án 1 và đặt khoản 1 bằng -4: [-4, 2, 10, 4, 5]. Phương án 3 chép từ phương án 0 và đặt khoản 5 bằng 0: [1, 2, 3, 4, 0].
+- Tổng cả bảng ở phương án 1 là 22; tổng khoản 1..3 ở phương án 2 là 8; tổng khoản 3..5 ở phương án 3 là 7; khoản 3 ở phương án 0 vẫn là 3.

@@ -1,0 +1,26 @@
+Nhà kho của cô Thảo được chia thành lưới R hàng, C cột. Hàng được đánh số từ 1 đến R từ trên xuống, cột đánh số từ 1 đến C từ trái sang. Ô '.' là ô trống, ô '#' là chỗ đặt kệ hàng, ô 'S' là nơi rô-bốt hút bụi đang đứng (ô này cũng là ô trống). Lúc đầu rô-bốt quay mặt về hướng Bắc (hướng lên trên).
+
+Rô-bốt thực hiện lần lượt từng ký tự trong một xâu lệnh:
+- L: quay trái 90 độ tại chỗ.
+- R: quay phải 90 độ tại chỗ.
+- F: tiến một ô theo hướng đang quay mặt. Nếu ô phía trước nằm ngoài nhà kho hoặc là kệ hàng thì rô-bốt bị va chạm: nó đứng yên tại chỗ (vẫn giữ hướng) và bỏ qua lệnh này.
+
+Sau khi chạy hết xâu lệnh, cô Thảo muốn biết vị trí và hướng cuối cùng của rô-bốt, số lần va chạm, và số ô khác nhau mà rô-bốt đã từng đứng (tính cả ô xuất phát).
+
+Đầu vào:
+- Dòng đầu chứa hai số nguyên R và C.
+- R dòng tiếp theo, mỗi dòng là một xâu độ dài C mô tả một hàng của nhà kho.
+- Dòng cuối cùng là xâu lệnh.
+
+Đầu ra:
+- In trên một dòng năm giá trị: hàng, cột của vị trí cuối cùng; hướng cuối cùng (một trong BAC, DONG, NAM, TAY); số lần va chạm; số ô khác nhau đã đứng.
+
+Giới hạn:
+- 1 ≤ R, C ≤ 50.
+- 1 ≤ độ dài xâu lệnh ≤ 5·10^3; xâu chỉ gồm các ký tự L, R, F.
+- Bản đồ chỉ gồm các ký tự '.', '#', 'S' và có đúng một ký tự 'S'.
+
+Gợi ý:
+- Rô-bốt bắt đầu ở hàng 3, cột 1, quay về Bắc. Lệnh F đưa nó lên hàng 2 cột 1, lệnh F tiếp theo bị kệ hàng ở hàng 1 cột 1 chặn (va chạm lần 1).
+- R quay sang Đông, F F đi tới hàng 2 cột 3. F tiếp theo đi ra ngoài nhà kho nên va chạm lần 2.
+- Cuối cùng rô-bốt ở hàng 2, cột 3, quay về Đông; đã đứng ở 4 ô khác nhau.

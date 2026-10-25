@@ -1,0 +1,29 @@
+Ông Tư sửa đồng hồ cổ. Trên mặt nhiều chiếc đồng hồ, con số được viết bằng chữ số La Mã, nên ông muốn có một chương trình đổi qua lại giữa số thường và số La Mã.
+
+Bảng ký hiệu: I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000. Cách viết chuẩn một số n từ 1 đến 3999: viết lần lượt phần nghìn, trăm, chục, đơn vị; mỗi phần được viết theo bảng sau (chữ số 0 thì không viết gì):
+- Nghìn 1..3: M, MM, MMM.
+- Trăm 1..9: C, CC, CCC, CD, D, DC, DCC, DCCC, CM.
+- Chục 1..9: X, XX, XXX, XL, L, LX, LXX, LXXX, XC.
+- Đơn vị 1..9: I, II, III, IV, V, VI, VII, VIII, IX.
+Ví dụ 1994 = M + CM + XC + IV = MCMXCIV.
+
+Mỗi yêu cầu là một trong hai dạng:
+- Một số nguyên n: in cách viết La Mã chuẩn của n.
+- Một xâu chữ cái La Mã: nếu xâu đúng là cách viết chuẩn của một số n nào đó từ 1 đến 3999 thì in n; ngược lại in KHONG HOP LE (ví dụ IIII, VX, IC, MMMM đều không phải cách viết chuẩn).
+
+Đầu vào:
+- Dòng đầu chứa số nguyên T.
+- T dòng tiếp theo, mỗi dòng là một yêu cầu.
+
+Đầu ra:
+- Với mỗi yêu cầu in kết quả trên một dòng.
+
+Giới hạn:
+- 1 ≤ T ≤ 10^3.
+- Nếu yêu cầu là số thì 1 ≤ n ≤ 3999, viết không có số 0 ở đầu.
+- Nếu yêu cầu là xâu thì xâu dài từ 1 đến 15 ký tự, chỉ gồm các chữ I, V, X, L, C, D, M.
+
+Gợi ý:
+- 1994 viết là MCMXCIV; 4 viết là IV.
+- XLII = XL + II = 42.
+- IC không phải cách viết chuẩn (99 phải viết là XCIX) nên KHONG HOP LE.

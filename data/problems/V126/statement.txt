@@ -1,0 +1,23 @@
+Chiếc máy đánh chữ cũ của ông nội có màn hình nhỏ hiện một dòng chữ và một con trỏ. Ban đầu dòng chữ trống, con trỏ ở đầu dòng. Bé Na gõ một chuỗi phím, mỗi phím là một trong các loại sau:
+- Một chữ cái in thường: chữ đó được chèn vào ngay vị trí con trỏ, con trỏ nằm ngay sau chữ vừa chèn.
+- Phím "<": con trỏ lùi sang trái một kí tự (không làm gì nếu đang ở đầu dòng).
+- Phím ">": con trỏ tiến sang phải một kí tự (không làm gì nếu đang ở cuối dòng).
+- Phím "-": xoá kí tự ngay bên trái con trỏ (không làm gì nếu đang ở đầu dòng).
+- Phím "[": đưa con trỏ về đầu dòng.
+- Phím "]": đưa con trỏ về cuối dòng.
+
+Hãy in ra dòng chữ cuối cùng trên màn hình.
+
+Đầu vào:
+- Một dòng duy nhất là chuỗi phím Na đã gõ.
+
+Đầu ra:
+- In ra dòng chữ cuối cùng. Nếu dòng chữ rỗng, in ra RONG.
+
+Giới hạn:
+- Độ dài chuỗi phím từ 1 đến 12000.
+- Chuỗi chỉ gồm chữ cái tiếng Anh in thường và các kí tự < > - [ ].
+
+Gợi ý:
+- Ở ví dụ 1, sau "abc" ta có "abc|" (dấu | là con trỏ). Gõ "<<" được "a|bc", gõ "x" được "ax|bc". Gõ "[" được "|axbc", gõ "y" được "y|axbc". Gõ "]" được "yaxbc|", gõ "-" được "yaxb|", gõ ">" không đổi, gõ "z" được "yaxbz|".
+- Ở ví dụ 2, mọi chữ đều bị xoá nên in RONG.

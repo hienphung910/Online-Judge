@@ -1,0 +1,25 @@
+Bưu điện huyện có K quầy giao dịch đánh số từ 1 đến K. Sáng nay có N khách đến gửi hàng; khách thứ i đến vào thời điểm t_i (các t_i không giảm) và cần d_i phút để được phục vụ xong. Khách xếp một hàng chung và được phục vụ đúng theo thứ tự đến (khách đến cùng thời điểm thì người có số thứ tự nhỏ hơn đứng trước).
+
+Khi tới lượt, khách chọn quầy như sau:
+- Nếu vào thời điểm khách đến có quầy đang trống, khách đến quầy trống có số nhỏ nhất và được phục vụ ngay.
+- Nếu tất cả các quầy đều bận, khách chờ và đến quầy được giải phóng sớm nhất; nếu nhiều quầy cùng được giải phóng sớm nhất thì chọn quầy có số nhỏ nhất. Khách bắt đầu được phục vụ đúng lúc quầy đó giải phóng.
+- Một quầy phục vụ xong khách vào thời điểm x thì được coi là trống ngay từ thời điểm x.
+
+Hãy cho biết mỗi khách được phục vụ ở quầy nào và xong vào thời điểm nào.
+
+Đầu vào:
+- Dòng đầu chứa hai số nguyên N và K.
+- N dòng tiếp theo, dòng thứ i chứa hai số nguyên t_i và d_i.
+
+Đầu ra:
+- In N dòng, dòng thứ i gồm hai số nguyên: số hiệu quầy phục vụ khách i và thời điểm khách i được phục vụ xong.
+
+Giới hạn:
+- 1 ≤ N ≤ 500; 1 ≤ K ≤ 100.
+- 0 ≤ t_1 ≤ t_2 ≤ ... ≤ t_N ≤ 10^9; 1 ≤ d_i ≤ 10^9.
+- Thời điểm xong có thể vượt quá 2^31, hãy dùng số nguyên 64 bit.
+
+Gợi ý:
+- Khách 1 đến lúc 0, cả hai quầy trống, vào quầy 1, xong lúc 5. Khách 2 đến lúc 1, vào quầy 2, xong lúc 4.
+- Khách 3 đến lúc 2, hai quầy đều bận; quầy 2 giải phóng sớm nhất (lúc 4) nên khách 3 vào quầy 2, xong lúc 4 + 3 = 7.
+- Khách 4 đến lúc 6: quầy 1 đã trống từ lúc 5, quầy 2 bận đến 7, nên vào quầy 1, xong lúc 8.

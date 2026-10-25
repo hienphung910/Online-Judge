@@ -1,0 +1,20 @@
+Một máy xổ số khổng lồ chứa n quả cầu đánh số khác nhau, mỗi lượt quay chọn ra k quả (không quan tâm thứ tự), nên có C(n, k) kết quả có thể. Màn hình của máy quá nhỏ nên chỉ hiển thị C(n, k) mod m, với m là số do kỹ sư cài đặt.
+
+Kỹ sư cho biết m là tích của các số nguyên tố đôi một khác nhau (m không chia hết cho bình phương của số nguyên tố nào), và mỗi ước nguyên tố của m không vượt quá 10^5. Lưu ý m thường không phải số nguyên tố. Hãy tính giá trị trên màn hình cho q cặp (n, k). Quy ước C(n, k) = 0 khi k > n.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên m và q.
+- q dòng tiếp theo, mỗi dòng chứa hai số nguyên n và k.
+
+Đầu ra:
+- In ra q dòng, dòng thứ i là C(n, k) mod m của cặp thứ i.
+
+Giới hạn:
+- 1 ≤ q ≤ 150.
+- 1 ≤ m ≤ 10^9; m không chia hết cho bình phương của số nguyên tố nào; mọi ước nguyên tố của m không vượt quá 10^5.
+- 0 ≤ n, k ≤ 10^18.
+
+Gợi ý:
+- Với m = 6: C(5, 2) = 10, dư 4; C(10, 3) = 120, dư 0; C(4, 5) = 0; C(10^18, 1) = 10^18, chia 6 dư 4.
+- Với m = 1001 = 7 · 11 · 13: C(20, 10) = 184756, chia 1001 dư 572.
+- Không thể dùng nghịch đảo modulo m vì m không nguyên tố. Hãy phân tích m = p_1 · p_2 · ... · p_r. Với từng p_j, tính C(n, k) mod p_j bằng định lý Lucas: viết n và k trong hệ cơ số p_j, rồi nhân các C(chữ số của n, chữ số của k) mod p_j (cần bảng giai thừa đến p_j - 1). Cuối cùng ghép r số dư lại bằng định lý thặng dư Trung Hoa.

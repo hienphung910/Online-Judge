@@ -1,0 +1,19 @@
+Máy chủ của trường ghi lại n sự kiện theo đúng thứ tự xảy ra, sự kiện thứ i được đóng dấu thời gian a_i (tính bằng giây). Do đồng hồ bị lỗi, các dấu thời gian không còn tăng dần như mong muốn. Anh Quân phụ trách hệ thống cần sửa lại để dãy dấu thời gian tăng chặt: b_1 < b_2 < ... < b_n.
+
+Anh có thể đổi dấu thời gian a_i thành một số nguyên b_i bất kỳ (được phép âm), chi phí sửa sự kiện thứ i là |a_i - b_i|. Hãy tính tổng chi phí nhỏ nhất để dãy b tăng chặt.
+
+Đầu vào:
+- Dòng đầu gồm số nguyên n.
+- Dòng thứ hai gồm n số nguyên a_1, a_2, ..., a_n.
+
+Đầu ra:
+- In ra một số nguyên là tổng chi phí nhỏ nhất.
+
+Giới hạn:
+- 1 ≤ n ≤ 3000.
+- 0 ≤ a_i ≤ 10^6.
+
+Gợi ý:
+- Với a = [5, 3, 4, 4, 9], có thể sửa thành b = [2, 3, 4, 5, 9] với chi phí 3 + 0 + 0 + 1 + 0 = 4, và không có cách nào rẻ hơn. Giữ nguyên số 5 ở đầu thì ba số tiếp theo phải lên ít nhất 6, 7, 8, tốn 3 + 3 + 4 = 10.
+- Đặt c_i = a_i - i và d_i = b_i - i: dãy b tăng chặt khi và chỉ khi dãy d không giảm, còn chi phí vẫn là tổng |c_i - d_i|.
+- Gọi F_i(x) là chi phí nhỏ nhất cho i phần tử đầu khi d_i ≤ x. F_i là hàm lồi, gãy khúc, nên chỉ cần lưu các điểm gãy của nó trong một hàng đợi ưu tiên (kỹ thuật slope trick).

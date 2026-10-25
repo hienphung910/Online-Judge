@@ -1,0 +1,19 @@
+Trong phòng lưu trữ của nhà máy dệt có n tấm thẻ đục lỗ dùng để điều khiển khung cửi. Trên mỗi thẻ có 20 vị trí, đánh số từ 0 đến 19, mỗi vị trí có thể đã bị đục lỗ hoặc chưa. Thẻ thứ i được mô tả bằng số nguyên a_i: bit thứ j của a_i bằng 1 khi và chỉ khi thẻ có lỗ ở vị trí j.
+
+Người thợ cả muốn chồng hai tấm thẻ lên nhau để tạo mẫu hoa văn mới. Hai thẻ khác nhau i và j ghép được với nhau nếu không có vị trí nào cả hai thẻ cùng có lỗ, tức là (a_i AND a_j) = 0. Với mỗi tấm thẻ, hãy đếm xem có bao nhiêu tấm thẻ khác ghép được với nó.
+
+Đầu vào:
+- Dòng đầu gồm số nguyên n.
+- Dòng thứ hai gồm n số nguyên a_1, a_2, ..., a_n.
+
+Đầu ra:
+- In ra n dòng, dòng thứ i là số chỉ số j ≠ i thỏa mãn (a_i AND a_j) = 0.
+
+Giới hạn:
+- 2 ≤ n ≤ 2500.
+- 0 ≤ a_i < 2^20 = 1048576.
+- AND là phép AND theo bit. Các thẻ có cùng giá trị vẫn là những thẻ khác nhau.
+
+Gợi ý:
+- Ví dụ có a = [5, 10, 6, 1, 5], viết nhị phân là 0101, 1010, 0110, 0001, 0101. Thẻ 2 (1010) ghép được với thẻ 1, thẻ 4 và thẻ 5 nên đáp án là 3. Thẻ 1 (0101) chỉ ghép được với thẻ 2; nó không ghép được với thẻ 5 vì hai thẻ trùng hoàn toàn các lỗ.
+- (a_i AND a_j) = 0 nghĩa là a_j là tập con của phần bù của a_i. Hãy đếm sẵn cho mọi mặt nạ m số thẻ có a_j là tập con của m, rồi tra tại m = phần bù của a_i. Nhớ trừ chính thẻ i khi a_i = 0.

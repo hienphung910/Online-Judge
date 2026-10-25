@@ -1,0 +1,19 @@
+Sân đình làng được chia thành lưới R hàng, C cột ô vuông bằng nhau. Một số ô đã có gốc cây, chân cột hoặc bia đá nên không thể lát; các ô còn lại đang trống.
+
+Làng có rất nhiều viên gạch hình chữ nhật, mỗi viên phủ vừa khít hai ô trống kề cạnh nhau (đặt ngang hoặc đặt dọc). Hai viên gạch không được chồng lên nhau, không viên nào được đè lên ô đã có vật cản, và không bắt buộc phải lát kín sân. Hãy tính số viên gạch nhiều nhất có thể lát.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên R và C.
+- R dòng tiếp theo, mỗi dòng là một xâu gồm C kí tự: kí tự '.' là ô trống, kí tự '#' là ô có vật cản.
+
+Đầu ra:
+- In ra một số nguyên duy nhất là số viên gạch nhiều nhất.
+
+Giới hạn:
+- 1 ≤ R ≤ 120.
+- 1 ≤ C ≤ 120.
+
+Gợi ý:
+- Trong ví dụ có thể lát 4 viên: (1, 1) - (2, 1) đặt dọc, (1, 3) - (1, 4) đặt ngang, (2, 2) - (3, 2) đặt dọc, (2, 4) - (3, 4) đặt dọc. Hai ô (3, 1) và (3, 3) bỏ trống.
+- Tô lưới như bàn cờ: ô (r, c) màu trắng nếu r + c chẵn, màu đen nếu r + c lẻ. Mỗi viên gạch luôn phủ đúng một ô trắng và một ô đen. Sân trong ví dụ chỉ có 4 ô trống màu đen là (1, 4), (2, 1), (3, 2), (3, 4), nên không thể lát quá 4 viên.
+- Tổng quát, số viên nhiều nhất bằng kích thước cặp ghép cực đại giữa ô trắng và ô đen kề nhau. Lưới có tới 14400 ô, vì vậy nên dùng thuật toán Hopcroft - Karp.

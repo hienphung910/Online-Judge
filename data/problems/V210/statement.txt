@@ -1,0 +1,19 @@
+Bến cảng có n kiện hàng xếp thành một hàng dài theo thứ tự cố định, kiện thứ i nặng a_i tấn. Một chiếc xà lan sẽ chở toàn bộ số hàng này qua sông thành nhiều chuyến. Mỗi chuyến, xà lan nhận một đoạn các kiện liên tiếp tính từ đầu hàng còn lại (không được đảo thứ tự hay bỏ sót kiện nào).
+
+Nếu một chuyến chở tổng cộng W tấn thì tốn W·W đơn vị nhiên liệu (chở càng nặng thì máy càng hao), cộng thêm C đơn vị phí cập bến cố định cho mỗi chuyến. Hãy chia các kiện hàng thành các chuyến sao cho tổng chi phí là nhỏ nhất.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và C.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n.
+
+Đầu ra:
+- In ra tổng chi phí nhỏ nhất.
+
+Giới hạn:
+- 1 ≤ n ≤ 5000.
+- 1 ≤ a_i ≤ 100.
+- 0 ≤ C ≤ 10^9.
+
+Gợi ý:
+- Với ví dụ, chia thành ba chuyến (3 1), (4 1), (5) có tổng chi phí (16 + 10) + (25 + 10) + (25 + 10) = 96, đây là cách rẻ nhất.
+- Gọi S_i là tổng a_1 + ... + a_i và dp[i] là chi phí nhỏ nhất để chở i kiện đầu. Khi đó dp[i] = min(dp[j] + (S_i - S_j)^2 + C) với 0 ≤ j < i. Khai triển bình phương, mỗi j ứng với một đường thẳng có hệ số góc -2·S_j giảm dần, còn giá trị cần truy vấn S_i tăng dần, nên có thể dùng bao lồi các đường thẳng với hàng đợi hai đầu để đạt O(n).

@@ -1,0 +1,22 @@
+Đức và Mai chơi trò tỉa cành trong một khu vườn. Khu vườn có n mắt cây, đánh số từ 1 đến n. Mỗi mắt cây i được nối với đúng một vị trí bên dưới nó bằng một đoạn cành: nếu p_i = 0 thì đoạn cành nối mắt i xuống mặt đất, ngược lại đoạn cành nối mắt i với mắt p_i. Như vậy khu vườn gồm n đoạn cành tạo thành một số cây mọc từ mặt đất.
+
+Hai bạn lần lượt đi, Đức đi trước. Đến lượt mình, người chơi cắt đứt một đoạn cành bất kỳ còn trong vườn; ngay sau đó, mọi đoạn cành không còn nối được xuống mặt đất đều rơi xuống và bị dọn đi. Ai đến lượt mà vườn không còn đoạn cành nào thì thua.
+
+Biết cả hai đều chơi tối ưu, hãy cho biết ai thắng. Ngoài ra hãy đếm số đoạn cành mà Đức có thể cắt ở lượt đầu tiên để chắc chắn thắng.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- Dòng thứ hai chứa n số nguyên p_1, p_2, ..., p_n.
+
+Đầu ra:
+- Dòng thứ nhất in DUC nếu Đức thắng, hoặc MAI nếu Mai thắng.
+- Dòng thứ hai in số đoạn cành Đức có thể cắt ở lượt đầu để chắc chắn thắng (in 0 nếu Đức thua).
+
+Giới hạn:
+- 1 ≤ n ≤ 4000.
+- 0 ≤ p_i < i.
+
+Gợi ý:
+- Ví dụ 1: vườn có hai cây là hai thân thẳng: 0-1-2-3 (ba đoạn cành) và 0-4-5 (hai đoạn cành). Đức cắt đoạn cành nối mắt 3 với mắt 2, còn lại hai thân thẳng cùng dài hai đoạn; sau đó Mai cắt thế nào ở thân này thì Đức cắt y hệt ở thân kia, nên Đức thắng. Đây là nước thắng duy nhất.
+- Ví dụ 2: mắt 1 mọc từ mặt đất và có hai nhánh là mắt 2 và mắt 3, mắt 4 mọc riêng từ mặt đất. Mai thắng.
+- Theo nguyên lý "cột cờ": nếu tại mắt u có các nhánh con c, giá trị Grundy của phần cây phía trên u là XOR của các (G(c) + 1). Coi mặt đất là mắt 0; người đi trước thắng khi và chỉ khi G(0) khác 0.

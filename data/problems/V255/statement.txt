@@ -1,0 +1,18 @@
+Một mạng lưới gồm n trạm phát sóng đánh số từ 1 đến n và n - 1 đoạn cáp, mỗi đoạn nối hai trạm, sao cho từ một trạm có thể truyền tín hiệu tới mọi trạm khác. Khoảng cách giữa hai trạm là số đoạn cáp ít nhất tín hiệu phải đi qua. Kỹ sư phát hiện rằng hai trạm sẽ bị cộng hưởng nếu khoảng cách giữa chúng đúng bằng k.
+
+Hãy đếm số cặp trạm (không tính thứ tự) bị cộng hưởng.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và k.
+- n - 1 dòng tiếp theo, mỗi dòng gồm hai số nguyên u, v cho biết có đoạn cáp nối trạm u và trạm v.
+
+Đầu ra:
+- Một số nguyên duy nhất là số cặp trạm bị cộng hưởng.
+
+Giới hạn:
+- 1 ≤ n ≤ 2000.
+- 1 ≤ k ≤ 2000.
+- 1 ≤ u, v ≤ n, u ≠ v; các đoạn cáp tạo thành một cây.
+
+Gợi ý:
+- Các cặp cách nhau đúng 2 đoạn cáp là (1, 3), (1, 4), (3, 4) (cùng nối với trạm 2) và (2, 5), (2, 6), (5, 6) (đi qua trạm 4). Có 6 cặp.

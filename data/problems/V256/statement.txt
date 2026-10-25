@@ -1,0 +1,25 @@
+Một trạm cứu hộ có n nhân viên đánh số từ 1 đến n. Tuần tới mỗi người phải trực đúng một ca: ca sáng (kí hiệu 0) hoặc ca tối (kí hiệu 1). Quản lý nhận được m yêu cầu, mỗi yêu cầu có dạng t u v với một trong bốn loại:
+- 1 u v: u và v trực cùng một ca.
+- 2 u v: u và v trực khác ca.
+- 3 u v: u và v không được cùng trực ca tối.
+- 4 u v: ít nhất một trong hai người u, v trực ca tối.
+Trong một yêu cầu, u có thể bằng v (chẳng hạn 4 u u nghĩa là u bắt buộc trực ca tối).
+
+Mọi người đều thích ca sáng, nhưng nhân viên lâu năm (số hiệu nhỏ) được ưu tiên hơn. Vì vậy quản lý chọn cách xếp như sau: trong mọi cách xếp thỏa mãn tất cả yêu cầu, chọn cách mà người 1 trực ca sáng nếu được; trong số đó chọn cách mà người 2 trực ca sáng nếu được; cứ thế tới người n. Nói cách khác, viết ca của n người thành một xâu nhị phân độ dài n, cần tìm xâu nhỏ nhất theo thứ tự từ điển.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và m.
+- m dòng tiếp theo, mỗi dòng gồm ba số nguyên t, u, v mô tả một yêu cầu.
+
+Đầu ra:
+- Nếu không có cách xếp nào thỏa mãn mọi yêu cầu, in ra KHONG.
+- Ngược lại in ra xâu gồm n chữ số 0/1, chữ số thứ i là ca của người i theo cách xếp được chọn.
+
+Giới hạn:
+- 1 ≤ n ≤ 2000.
+- 1 ≤ m ≤ 2000.
+- 1 ≤ t ≤ 4; 1 ≤ u, v ≤ n.
+
+Gợi ý:
+- Ví dụ 1: cho người 1 trực sáng thì người 4 cũng trực sáng (yêu cầu 1 4 1), người 2 phải trực tối (yêu cầu 4 1 2), người 3 phải trực sáng (yêu cầu 2 2 3); yêu cầu 3 3 4 vẫn được thỏa. Kết quả 0100.
+- Ví dụ 2: ba người đôi một khác ca là điều không thể vì chỉ có hai ca, in KHONG.

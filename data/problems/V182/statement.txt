@@ -1,0 +1,19 @@
+Người thợ dệt có một dải lụa in hoa văn, được mô tả bằng xâu S độ dài n. Bà muốn biết hoa văn này "lặp lại" chặt chẽ đến mức nào.
+
+- Số nguyên p (1 ≤ p ≤ n) gọi là một chu kỳ của S nếu S[i] = S[i + p] với mọi i thỏa mãn 1 ≤ i ≤ n - p. Hiển nhiên p = n luôn là một chu kỳ.
+- Một xâu B khác rỗng gọi là một viền của S nếu B vừa là tiền tố vừa là hậu tố của S và B ngắn hơn S.
+
+Hãy cho biết chu kỳ nhỏ nhất của S và S có tất cả bao nhiêu viền.
+
+Đầu vào:
+- Một dòng duy nhất chứa xâu S gồm các chữ cái tiếng Anh in thường 'a' đến 'z'.
+
+Đầu ra:
+- Hai số nguyên cách nhau bởi dấu cách: chu kỳ nhỏ nhất của S và số viền của S.
+
+Giới hạn:
+- 1 ≤ n ≤ 2·10^4.
+
+Gợi ý:
+- Ở ví dụ 1, S = "abaababaab" có chu kỳ nhỏ nhất là 5 (S = "abaab" + "abaab"). Các viền của S là "ab" và "abaab", nên có 2 viền.
+- Ở ví dụ 2, S = "aaaa" có chu kỳ nhỏ nhất là 1 và 3 viền: "a", "aa", "aaa".

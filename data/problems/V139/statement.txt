@@ -1,0 +1,18 @@
+Thành phố có n ngã tư đánh số từ 1 đến n và m con phố một chiều; con phố thứ i cho phép đi từ ngã tư u_i sang ngã tư v_i. Anh Khoa là shipper, cửa hàng đặt ở ngã tư 1. Vì hàng gấp, anh được phép đi ngược chiều trên một con phố, nhưng mỗi lần đi ngược chiều qua một con phố anh phải trả một vé phạt. Đi đúng chiều thì không mất gì.
+
+Với mỗi ngã tư, hãy tính số vé phạt ít nhất anh Khoa phải trả để đi từ cửa hàng tới đó.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và m.
+- m dòng tiếp theo, mỗi dòng gồm hai số nguyên u_i, v_i mô tả một con phố một chiều đi từ u_i sang v_i. Có thể có nhiều con phố nối cùng một cặp ngã tư, và có thể có phố vòng với u_i = v_i.
+
+Đầu ra:
+- Một dòng gồm n số nguyên, số thứ j là số vé phạt ít nhất để đi từ ngã tư 1 tới ngã tư j, hoặc -1 nếu không thể tới được dù đi ngược chiều bao nhiêu lần.
+
+Giới hạn:
+- 1 ≤ n ≤ 2000; 0 ≤ m ≤ 2500.
+- 1 ≤ u_i, v_i ≤ n.
+
+Gợi ý:
+- Ở ví dụ, đi 1 → 2 → 3 đúng chiều nên ngã tư 2 và 3 có số vé là 0.
+- Phố duy nhất nối với ngã tư 4 là 4 → 3, nên phải đi ngược chiều từ 3 sang 4: 1 vé. Cả hai phố nối với ngã tư 5 đều có chiều đi ra từ 5 (5 → 1 và 5 → 3), nên muốn tới 5 phải đi ngược một trong hai phố đó: cũng 1 vé. Ngã tư 6 không có phố nào nên in -1.

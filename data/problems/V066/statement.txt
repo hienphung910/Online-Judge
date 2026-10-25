@@ -1,0 +1,18 @@
+Đài thiên văn đánh số các ngôi sao bằng số nguyên dương. Theo truyền thuyết, những ngôi sao mang số nguyên tố là sao may mắn. Kính thiên văn mới chỉ quét được một dải liên tiếp các ngôi sao từ số L đến số R, nhưng dải này nằm rất xa, số hiệu có thể tới 10^12.
+
+Hãy đếm xem trong dải [L, R] có bao nhiêu sao may mắn.
+
+Đầu vào:
+- Một dòng chứa hai số nguyên L và R.
+
+Đầu ra:
+- Một số nguyên là số lượng số nguyên tố trong đoạn [L, R].
+
+Giới hạn:
+- 1 ≤ L ≤ R ≤ 10^12.
+- R - L ≤ 10^6.
+
+Gợi ý:
+- Ví dụ 1: đoạn [1, 30] có 10 số nguyên tố là 2, 3, 5, 7, 11, 13, 17, 19, 23, 29.
+- Ví dụ 2: đoạn [10^12 - 100, 10^12] có 4 số nguyên tố.
+- Không thể sàng cả đoạn [1, 10^12]. Nhận xét: mỗi hợp số x ≤ 10^12 có một ước nguyên tố không quá √x ≤ 10^6. Hãy sàng các số nguyên tố p ≤ 10^6 trước, rồi dùng một mảng đánh dấu dài R - L + 1 cho đoạn [L, R]: với mỗi p, gạch các bội của p trong đoạn bắt đầu từ max(p · p, bội nhỏ nhất của p không nhỏ hơn L). Nhớ rằng 1 không phải số nguyên tố.

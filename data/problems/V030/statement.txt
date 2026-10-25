@@ -1,0 +1,24 @@
+Tòa nhà nơi chú Long làm bảo vệ có F tầng, đánh số từ 1 đến F, và một chiếc thang máy cũ chỉ chở được một người mỗi lượt. Lúc bắt đầu (thời điểm 0) thang máy đang đứng ở tầng 1.
+
+Có N người lần lượt gọi thang. Người thứ i đang đứng ở tầng a_i và muốn đến tầng b_i. Thang máy phục vụ từng người theo đúng thứ tự gọi: đi đến tầng a_i, mở cửa cho người đó vào, đi đến tầng b_i, mở cửa cho người đó ra, rồi mới chuyển sang người kế tiếp.
+- Mỗi lần thang máy di chuyển qua một tầng (lên hoặc xuống) mất 2 giây.
+- Mỗi lần mở cửa mất 5 giây, kể cả khi thang máy đã đứng sẵn ở tầng a_i và không cần di chuyển.
+
+Hãy tính tổng số tầng thang máy đã di chuyển và tổng thời gian (tính bằng giây) để phục vụ xong cả N người.
+
+Đầu vào:
+- Dòng đầu chứa hai số nguyên N và F.
+- N dòng tiếp theo, dòng thứ i chứa hai số nguyên a_i và b_i.
+
+Đầu ra:
+- In ra hai số nguyên trên một dòng: tổng số tầng đã di chuyển và tổng thời gian.
+
+Giới hạn:
+- 1 ≤ N ≤ 10^3; 2 ≤ F ≤ 10^9.
+- 1 ≤ a_i, b_i ≤ F; a_i ≠ b_i.
+- Kết quả có thể vượt quá 2^31, hãy dùng số nguyên 64 bit.
+
+Gợi ý:
+- Người 1: từ tầng 1 lên tầng 3 (2 tầng), mở cửa, lên tầng 5 (2 tầng), mở cửa.
+- Người 2: thang đang ở tầng 5 nên không di chuyển, mở cửa, xuống tầng 1 (4 tầng), mở cửa.
+- Tổng cộng 8 tầng và 4 lần mở cửa: 8 · 2 + 4 · 5 = 36 giây.

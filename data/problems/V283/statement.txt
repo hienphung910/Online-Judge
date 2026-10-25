@@ -1,0 +1,21 @@
+Phòng thí nghiệm âm thanh có hai máy phát sóng. Máy thứ nhất phát ra n hệ số a_0, a_1, ..., a_(n-1) theo quy tắc: a_0 = s_1 và a_i = (a_(i-1) · u_1 + w_1) mod 998244353 với i ≥ 1. Máy thứ hai phát ra m hệ số b_0, b_1, ..., b_(m-1) theo quy tắc tương tự với các tham số s_2, u_2, w_2.
+
+Khi hai sóng giao thoa, ta được bản giao hưởng gồm n + m - 1 hệ số c_0, c_1, ..., c_(n+m-2), trong đó c_k là tổng của a_i · b_j trên mọi cặp (i, j) với i + j = k, lấy phần dư khi chia cho 998244353. Nói cách khác, c là dãy hệ số của đa thức tích A(x) · B(x) với A(x) = a_0 + a_1 x + ... + a_(n-1) x^(n-1) và B(x) = b_0 + b_1 x + ... + b_(m-1) x^(m-1), mọi hệ số lấy theo modulo 998244353.
+
+Để gọn, bạn chỉ cần in ra giá trị c_0 XOR c_1 XOR ... XOR c_(n+m-2), trong đó mỗi c_k là số nguyên trong đoạn [0, 998244352].
+
+Đầu vào:
+- Dòng thứ nhất chứa bốn số nguyên n, s_1, u_1, w_1.
+- Dòng thứ hai chứa bốn số nguyên m, s_2, u_2, w_2.
+
+Đầu ra:
+- Một số nguyên duy nhất là XOR của tất cả các hệ số c_k.
+
+Giới hạn:
+- 1 ≤ n, m ≤ 3·10^5.
+- 0 ≤ s_1, u_1, w_1, s_2, u_2, w_2 < 998244353.
+
+Gợi ý:
+- Ví dụ 1: a = (1, 3, 7) và b = (2, 5), nên c = (2, 11, 29, 35) và 2 XOR 11 XOR 29 XOR 35 = 55.
+- Ví dụ 2: a = (998244352, 0) và b = (2), nên c = (998244351, 0) và đáp án là 998244351.
+- Nhân trực tiếp mất O(n · m) phép tính, quá chậm. Vì 998244353 = 119 · 2^23 + 1 và 3 là căn nguyên thủy của nó, có thể dùng biến đổi số học (NTT) để nhân hai đa thức trong O((n + m) log(n + m)).

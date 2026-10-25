@@ -1,0 +1,19 @@
+Ông đồ viết một dòng chữ dài thành xâu S độ dài n. Ông rất thích những đoạn đọc xuôi hay đọc ngược đều giống nhau, gọi là đoạn đối xứng (ví dụ "aba", "abba", "c").
+
+Một đoạn của S là một xâu con gồm các ký tự liên tiếp S[l..r] với 1 ≤ l ≤ r ≤ n. Hai đoạn được coi là khác nhau nếu chúng có cặp (l, r) khác nhau, kể cả khi nội dung giống nhau.
+
+Hãy cho biết độ dài của đoạn đối xứng dài nhất và tổng số đoạn đối xứng của S.
+
+Đầu vào:
+- Một dòng duy nhất chứa xâu S gồm các chữ cái tiếng Anh in thường 'a' đến 'z'.
+
+Đầu ra:
+- Hai số nguyên cách nhau bởi dấu cách: độ dài đoạn đối xứng dài nhất và số đoạn đối xứng.
+
+Giới hạn:
+- 1 ≤ n ≤ 2·10^4.
+- Số đoạn đối xứng có thể vượt quá 2·10^8, nên dùng số nguyên 64-bit (long long / long).
+
+Gợi ý:
+- Ở ví dụ 1, S = "abacaba". Có 7 đoạn đối xứng độ dài 1, ba đoạn độ dài 3 ("aba", "aca", "aba"), một đoạn độ dài 5 ("bacab") và một đoạn độ dài 7 (cả xâu). Vậy đáp án là 7 và 12.
+- Ở ví dụ 2, S = "abba" có các đoạn đối xứng "a", "b", "b", "a", "bb", "abba", nên đáp án là 4 và 6.

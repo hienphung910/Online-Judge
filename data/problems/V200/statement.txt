@@ -1,0 +1,19 @@
+Trời sắp mưa, cả xóm vội mang bạt ra che sân phơi lúa. Mỗi tấm bạt là một hình chữ nhật có các cạnh song song với trục toạ độ, tấm thứ i phủ kín vùng từ góc dưới trái (x1, y1) đến góc trên phải (x2, y2). Các tấm bạt có thể chồng lên nhau, nằm lọt hẳn trong nhau, hoặc chỉ chạm nhau ở mép.
+
+Hãy tính tổng diện tích phần sân được ít nhất một tấm bạt che (phần bị nhiều tấm chồng lên chỉ tính một lần).
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n là số tấm bạt.
+- n dòng tiếp theo, mỗi dòng chứa 4 số nguyên x1 y1 x2 y2.
+
+Đầu ra:
+- In ra một số nguyên là diện tích phần được che.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000.
+- 0 ≤ x1 < x2 ≤ 10^5, 0 ≤ y1 < y2 ≤ 10^5.
+- Kết quả có thể lên tới 10^10, hãy dùng số nguyên 64 bit.
+
+Gợi ý:
+- Tấm (0, 0)-(4, 3) có diện tích 12, tấm (2, 1)-(6, 5) có diện tích 16, hai tấm chồng nhau ở vùng (2, 1)-(4, 3) diện tích 4. Tấm (6, 0)-(7, 1) chỉ chạm mép tấm thứ hai tại điểm (6, 1) nên không có phần chung. Tấm (3, 3)-(4, 4) nằm lọt trong tấm thứ hai. Tổng: 12 + 16 - 4 + 1 = 25.
+- Cách làm gợi ý: quét một đường thẳng đứng từ trái sang phải; giữa hai hoành độ sự kiện liên tiếp, phần bị che trên đường quét là hợp của các đoạn [y1, y2] đang hoạt động, độ dài của nó có thể duy trì bằng cây phân đoạn trên toạ độ y đã nén.

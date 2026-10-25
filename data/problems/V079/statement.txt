@@ -1,0 +1,18 @@
+Một quỹ đầu tư ghi lại chỉ số lợi nhuận của n ngày liên tiếp, ngày thứ i có chỉ số a_i (có thể âm). Chuyên viên phân tích gọi một cặp ngày (i, j) với i < j là "cặp chênh lệch gấp đôi" nếu chỉ số ngày trước lớn hơn hẳn hai lần chỉ số ngày sau, tức là a_i > 2·a_j.
+
+Hãy đếm số cặp chênh lệch gấp đôi.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n là số ngày.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n.
+
+Đầu ra:
+- In ra một số nguyên là số cặp (i, j) thỏa mãn i < j và a_i > 2·a_j.
+
+Giới hạn:
+- 1 ≤ n ≤ 4000.
+- -10^4 ≤ a_i ≤ 10^4 (có thể có số âm và các số bằng nhau).
+
+Gợi ý:
+- Với dãy 6 2 5 1 -1 có 7 cặp: (6, 2), (6, 1), (6, -1), (2, -1), (5, 1), (5, -1), (1, -1). Cặp (2, 1) không được tính vì 2 không lớn hơn hẳn 2·1 = 2.
+- Có thể cải tiến sắp xếp trộn (merge sort) để đạt O(n log n): sau khi hai nửa đã được sắp xếp, với mỗi phần tử của nửa trái, các phần tử của nửa phải thỏa điều kiện tạo thành một đoạn đầu, nên dùng hai con trỏ để đếm trước khi trộn.

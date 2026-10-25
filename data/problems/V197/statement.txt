@@ -1,0 +1,19 @@
+Hợp tác xã trồng cam theo kiểu bàn cờ: tại MỌI điểm có toạ độ nguyên trên cánh đồng đều có đúng một cây cam. Năm nay hợp tác xã giao cho bác Năm một mảnh vườn hình đa giác đơn có n đỉnh nguyên (x_1, y_1), ..., (x_n, y_n), cho theo thứ tự trên biên (theo hoặc ngược chiều kim đồng hồ). Bác cần biết:
+- B: số cây nằm ngay trên hàng rào (trên các cạnh, kể cả các đỉnh).
+- I: số cây nằm hẳn bên trong vườn.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- n dòng tiếp theo, mỗi dòng chứa hai số nguyên x_i, y_i. Các đỉnh đôi một khác nhau, đa giác không tự cắt và không tự chạm, có thể có ba đỉnh liên tiếp thẳng hàng.
+
+Đầu ra:
+- In ra hai số nguyên B và I, cách nhau một dấu cách.
+
+Giới hạn:
+- 3 ≤ n ≤ 1000.
+- |x_i|, |y_i| ≤ 10^6.
+- Kết quả có thể lên tới khoảng 4·10^12: hãy dùng số nguyên 64 bit.
+
+Gợi ý:
+- Ví dụ 1: vườn hình chữ nhật 4 x 3. Trên biên có 14 cây; bên trong có 3 x 2 = 6 cây.
+- Ví dụ 2: tam giác (0, 0), (6, 2), (2, 5). Cạnh từ (0, 0) đến (6, 2) chứa gcd(6, 2) + 1 = 3 cây kể cả hai đầu; nếu mỗi cạnh chỉ tính đầu mút đầu tiên thì nó góp gcd(6, 2) = 2 cây. Hai cạnh còn lại góp gcd(4, 3) = 1 và gcd(2, 5) = 1, nên B = 4. Hai lần diện tích bằng 26, theo định lý Pick: I = (26 - B + 2) / 2 = 12.

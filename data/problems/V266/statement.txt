@@ -1,0 +1,21 @@
+Dọc một tuyến đường liên tỉnh có n giếng quan trắc nước ngầm, đánh số từ 1 đến n. Mực nước ở giếng thứ i đo được là a_i xăng-ti-mét so với mặt nước biển (số âm nghĩa là thấp hơn mặt nước biển). Số liệu đã chốt nên không thay đổi nữa.
+
+Các nhà thủy văn gửi đến q câu hỏi. Mỗi câu hỏi gồm bốn số l, r, x, y: trong các giếng từ giếng l đến giếng r, có bao nhiêu giếng có mực nước nằm trong khoảng từ x đến y (tính cả hai đầu)?
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và q.
+- Dòng thứ hai gồm n số nguyên a_1, a_2, ..., a_n.
+- q dòng tiếp theo, mỗi dòng gồm bốn số nguyên l, r, x, y.
+
+Đầu ra:
+- Với mỗi câu hỏi, in ra trên một dòng số chỉ số i thỏa mãn l ≤ i ≤ r và x ≤ a_i ≤ y.
+
+Giới hạn:
+- 1 ≤ n ≤ 600, 1 ≤ q ≤ 600.
+- |a_i| ≤ 10^9.
+- 1 ≤ l ≤ r ≤ n, |x| ≤ 10^9, |y| ≤ 10^9, x ≤ y.
+
+Gợi ý:
+- Ở ví dụ, a = [5, -2, 7, 5, 1, 3, 10]. Câu hỏi "1 7 3 7" xét cả tuyến, các giếng có mực nước từ 3 đến 7 là 5, 7, 5, 3 nên đáp án là 4.
+- Câu hỏi "2 5 0 5" xét các giếng mực nước -2, 7, 5, 1; chỉ có 5 và 1 nằm trong khoảng [0, 5] nên đáp án là 2.
+- Câu hỏi "3 3 8 100" chỉ xét giếng 3 có mực nước 7, không thuộc [8, 100] nên đáp án là 0. Câu hỏi "1 4 5 5" có hai giếng mực nước đúng bằng 5.

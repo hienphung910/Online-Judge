@@ -1,0 +1,20 @@
+Xưởng quà tặng đóng gói bằng ba loại hộp: hộp tròn, hộp vuông và hộp nhọn. Nhân viên ghi lại thao tác đóng gói thành một xâu ký tự: "(" là mở một hộp tròn, ")" là đóng hộp tròn; tương tự "[" và "]" cho hộp vuông, "{" và "}" cho hộp nhọn.
+
+Một xâu được coi là hợp lệ nếu mỗi lần đóng hộp thì hộp đó đúng là hộp được mở gần nhất mà chưa đóng (và cùng loại), đồng thời đến cuối xâu thì mọi hộp đã mở đều đã được đóng. Ví dụ "([]{})" hợp lệ, còn "([)]" thì không, vì hộp tròn bị đóng trong khi hộp vuông bên trong vẫn đang mở.
+
+Cho T xâu, hãy kiểm tra từng xâu có hợp lệ hay không.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên T.
+- T dòng tiếp theo, mỗi dòng chứa một xâu.
+
+Đầu ra:
+- In ra T dòng, dòng thứ i là YES nếu xâu thứ i hợp lệ, ngược lại là NO.
+
+Giới hạn:
+- 1 ≤ T ≤ 100.
+- Mỗi xâu có độ dài từ 1 đến 200, chỉ gồm 6 ký tự ( ) [ ] { }.
+
+Gợi ý:
+- Duyệt xâu từ trái sang phải với một ngăn xếp: gặp ký tự mở thì đẩy vào; gặp ký tự đóng thì đỉnh ngăn xếp phải là ký tự mở cùng loại (lấy nó ra), nếu ngăn xếp rỗng hoặc khác loại thì xâu không hợp lệ. Cuối cùng ngăn xếp phải rỗng.
+- Trong ví dụ: xâu thứ ba "((" còn hai hộp chưa đóng; xâu thứ tư "}{" đóng hộp khi chưa mở hộp nào.

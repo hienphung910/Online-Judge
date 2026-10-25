@@ -1,0 +1,16 @@
+Dọc một quốc lộ thẳng có n vị trí đã được khảo sát để dựng trạm phát sóng, vị trí thứ i nằm ở cột cây số x_i. Công ty viễn thông cần dựng đúng c trạm tại c vị trí khác nhau trong số đó. Để sóng không bị nhiễu, họ muốn khoảng cách giữa hai trạm gần nhau nhất là lớn nhất có thể. Hãy tính khoảng cách đó.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và c.
+- Dòng thứ hai chứa n số nguyên x_1, x_2, ..., x_n (không nhất thiết đã sắp xếp).
+
+Đầu ra:
+- In ra giá trị lớn nhất có thể của khoảng cách nhỏ nhất giữa hai trạm bất kỳ.
+
+Giới hạn:
+- 2 ≤ c ≤ n ≤ 2000.
+- 0 ≤ x_i ≤ 10^9, các x_i đôi một khác nhau.
+
+Gợi ý:
+- Nếu đặt được c trạm với khoảng cách tối thiểu d thì cũng đặt được với mọi khoảng cách nhỏ hơn d. Vì vậy có thể tìm kiếm nhị phân trên đáp án d. Để kiểm tra một giá trị d, sắp xếp các vị trí rồi tham lam: đặt trạm ở vị trí nhỏ nhất, sau đó lần lượt đặt trạm ở vị trí đầu tiên cách trạm vừa đặt ít nhất d.
+- Với các vị trí 1 2 8 4 9 và c = 3, chọn 1, 4, 8 (hoặc 1, 4, 9) cho khoảng cách nhỏ nhất là 3; không cách chọn nào đạt được 4.

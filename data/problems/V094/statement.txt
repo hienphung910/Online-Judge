@@ -1,0 +1,17 @@
+Sau buổi giặt đồ của cả ký túc xá, bác bảo vệ gom được n chiếc tất, mỗi chiếc có in một mã số. Các chiếc tất cùng mã số được ghép thành từng đôi. Bác biết rằng chỉ có đúng một mã số bị thừa ra (xuất hiện lẻ lần), còn mọi mã số khác đều ghép đôi vừa khít. Hãy giúp bác tìm mã số đó.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n là mã số của các chiếc tất.
+
+Đầu ra:
+- In ra mã số xuất hiện lẻ lần.
+
+Giới hạn:
+- 1 ≤ n ≤ 2001.
+- 1 ≤ a_i ≤ 10^9.
+- Đảm bảo có đúng một giá trị xuất hiện lẻ lần, mọi giá trị khác xuất hiện chẵn lần.
+
+Gợi ý:
+- Phép XOR (toán tử ^ trong C++/Java) có tính chất x ^ x = 0 và x ^ 0 = x, lại giao hoán và kết hợp. Vì vậy XOR tất cả các mã số lại, các cặp giống nhau triệt tiêu nhau và chỉ còn đúng mã số bị lẻ.
+- Với 7 chiếc tất 4 9 4 2 9 2 9: mã 4 và mã 2 xuất hiện 2 lần, mã 9 xuất hiện 3 lần, nên đáp án là 9.

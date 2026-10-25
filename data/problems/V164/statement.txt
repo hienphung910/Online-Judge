@@ -1,0 +1,20 @@
+Vùng quê có n thị trấn đánh số từ 1 đến n, nối với nhau bởi n - 1 con đường hai chiều sao cho giữa hai thị trấn bất kỳ có đúng một cách đi không lặp lại đường (mạng đường tạo thành một cây). Con đường thứ i nối hai thị trấn u_i, v_i và dài w_i.
+
+Một người bán hàng rong ghi sẵn lịch trình gồm k điểm dừng c_1, c_2, ..., c_k. Ông xuất phát tại c_1, rồi lần lượt đi đến c_2, c_3, ..., c_k, mỗi chặng luôn đi theo đường ngắn nhất (đường duy nhất trên cây). Hãy tính tổng quãng đường ông phải đi.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và k.
+- n - 1 dòng tiếp theo, mỗi dòng gồm ba số nguyên u, v, w mô tả một con đường.
+- Dòng cuối gồm k số nguyên c_1, c_2, ..., c_k.
+
+Đầu ra:
+- Một số nguyên là tổng quãng đường.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000, 1 ≤ k ≤ 2000.
+- 1 ≤ u, v, c_j ≤ n, 1 ≤ w ≤ 10^5. Hai điểm dừng liên tiếp có thể trùng nhau (chặng đó dài 0).
+- Đáp án có thể vượt quá 2^31, hãy dùng số nguyên 64-bit.
+
+Gợi ý:
+- Ở ví dụ, chặng 2 → 4 đi qua 2-1-3-4 dài 3 + 5 + 2 = 10, chặng 4 → 5 đi qua 4-3-5 dài 2 + 4 = 6, chặng 5 → 2 đi qua 5-3-1-2 dài 4 + 5 + 3 = 12. Tổng 10 + 6 + 12 = 28.
+- Khoảng cách giữa u và v bằng d(u) + d(v) - 2·d(LCA(u, v)), với d(x) là độ dài đường từ gốc đến x. Có thể tìm LCA trong O(1) bằng Euler tour kết hợp bảng thưa (sparse table).

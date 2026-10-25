@@ -1,0 +1,18 @@
+Chú Sáu buôn gạo ở chợ huyện. Chú đã biết trước giá một bao gạo trong n phiên chợ sắp tới, phiên thứ i giá là p_i. Ở mỗi phiên, chú chỉ được làm đúng một trong ba việc: mua một bao gạo với giá p_i, bán một bao gạo đang có với giá p_i, hoặc không làm gì. Kho của chú đủ rộng để chứa bao nhiêu bao cũng được.
+
+Ban đầu chú không có bao gạo nào. Lợi nhuận là tổng tiền bán trừ tổng tiền mua. Hãy tính lợi nhuận lớn nhất chú có thể đạt được sau n phiên chợ (gạo còn lại trong kho không được tính tiền).
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- Dòng thứ hai chứa n số nguyên p_1, p_2, ..., p_n.
+
+Đầu ra:
+- In ra một số nguyên là lợi nhuận lớn nhất.
+
+Giới hạn:
+- 1 ≤ n ≤ 3000.
+- 1 ≤ p_i ≤ 10^6.
+
+Gợi ý:
+- Duyệt các phiên và giữ các giá "có thể mua" trong hàng đợi ưu tiên (đỉnh là giá nhỏ nhất). Khi gặp giá p lớn hơn đỉnh x, ăn lời p - x và đưa p vào hàng đợi hai lần: một lần để "hối hận", coi như phiên này không bán mà để dành bán sau; một lần như một giá mua mới.
+- Trong ví dụ, chú mua ở các phiên 1, 2, 4, 7 (giá 3, 1, 1, 2) và bán ở các phiên 3, 5, 6, 8 (giá 4, 5, 9, 6). Lợi nhuận là 24 - 7 = 17.

@@ -1,0 +1,21 @@
+Đại gia đình họ Nguyễn sống rải rác ở n ngôi nhà, đánh số từ 1 đến n, nối với nhau bằng n - 1 con đường hai chiều sao cho giữa hai nhà bất kỳ có đúng một cách đi. Con đường thứ j dài w_j km. Nhà thứ i có c_i người.
+
+Tết năm nay cả họ muốn tụ về một ngôi nhà để đón giao thừa. Nếu chọn nhà v, mỗi người ở nhà i phải đi quãng đường bằng khoảng cách từ i đến v. Hãy chọn ngôi nhà sao cho tổng quãng đường mọi người phải đi là nhỏ nhất. Nếu có nhiều nhà cùng đạt giá trị nhỏ nhất, chọn nhà có số thứ tự nhỏ nhất.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- Dòng thứ hai chứa n số nguyên c_1, c_2, ..., c_n.
+- n - 1 dòng tiếp theo, mỗi dòng chứa ba số nguyên u, v, w cho biết có con đường dài w km nối nhà u và nhà v.
+
+Đầu ra:
+- In ra hai số nguyên: tổng quãng đường nhỏ nhất và số thứ tự của ngôi nhà được chọn.
+
+Giới hạn:
+- 1 ≤ n ≤ 1500.
+- 0 ≤ c_i ≤ 100.
+- 1 ≤ w ≤ 10^4.
+- Các con đường tạo thành một cây.
+
+Gợi ý:
+- Với ví dụ, tổng quãng đường khi chọn lần lượt nhà 1, 2, 3, 4, 5 là 60, 42, 46, 42, 46. Nhà 2 và nhà 4 cùng đạt 42, chọn nhà 2 vì số thứ tự nhỏ hơn.
+- Treo cây ở nhà 1 và tính tổng quãng đường S(1) cùng số người sub[u] trong mỗi cây con. Khi dời điểm hẹn từ nhà cha p sang nhà con u qua con đường dài w, sub[u] người được đi gần thêm w còn những người khác phải đi xa thêm w, nên S(u) = S(p) + w·(tổng số người - 2·sub[u]).

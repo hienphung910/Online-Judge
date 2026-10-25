@@ -1,0 +1,15 @@
+Ông Tư là người sưu tầm lịch cũ. Ông chỉ thích những năm mà khi viết ra, các chữ số đôi một khác nhau, ví dụ năm 1987 hay năm 2013, còn năm 1990 thì không vì có hai chữ số 9. Cho một số nguyên dương n, hãy giúp ông tìm số nguyên nhỏ nhất x ≥ n mà các chữ số của x (viết trong hệ thập phân, không có chữ số 0 ở đầu) đôi một khác nhau.
+
+Đầu vào:
+- Một dòng chứa số nguyên n.
+
+Đầu ra:
+- In ra số x tìm được.
+
+Giới hạn:
+- 1 ≤ n ≤ 10^9.
+
+Gợi ý:
+- Cứ thử lần lượt n, n + 1, n + 2, ... và kiểm tra từng số. Hãy ước lượng xem trong trường hợp xấu nhất phải thử bao nhiêu số, bạn sẽ thấy cách này vẫn đủ nhanh.
+- Ví dụ 1: n = 1990. Các số từ 1990 đến 2012 đều có chữ số lặp lại (1990, 2000, 2012, ...), số 2013 thì không, nên đáp số là 2013.
+- Ví dụ 2: n = 123 đã thỏa mãn nên đáp số là chính nó.

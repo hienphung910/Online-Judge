@@ -1,0 +1,23 @@
+Hợp tác xã có n kho gạo xếp thành một dãy, đánh số từ 1 đến n. Kho thứ i đang ghi số dư a_i (đơn vị kilôgam, số âm nghĩa là kho đang nợ gạo của xã viên). Trong vụ mùa có q sự kiện xảy ra lần lượt: hoặc cả một dãy kho liên tiếp cùng được nhập thêm (hoặc cùng xuất đi) một lượng như nhau, hoặc ban quản lý hỏi tổng số dư của một dãy kho liên tiếp. Hãy trả lời các câu hỏi của ban quản lý.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và q.
+- Dòng thứ hai gồm n số nguyên a_1, a_2, ..., a_n.
+- q dòng tiếp theo, mỗi dòng là một sự kiện ở một trong hai dạng sau.
+- Dạng "1 l r x": mỗi kho từ l đến r được cộng thêm x vào số dư (x âm nghĩa là xuất gạo).
+- Dạng "2 l r": hỏi tổng a_l + a_(l+1) + ... + a_r.
+
+Đầu ra:
+- Với mỗi sự kiện dạng 2, in ra tổng tương ứng trên một dòng, theo đúng thứ tự xuất hiện.
+
+Giới hạn:
+- 1 ≤ n, q ≤ 10^3.
+- 1 ≤ l ≤ r ≤ n.
+- |a_i| ≤ 10^9, |x| ≤ 10^9.
+- Có ít nhất một sự kiện dạng 2.
+- Kết quả có thể vượt quá phạm vi kiểu int, hãy dùng số nguyên 64-bit (long long / long).
+
+Gợi ý:
+- Ở ví dụ, ban đầu a = [2, 4, 6, 8]. Tổng cả dãy là 20.
+- Cộng 3 vào các kho [2, 3] được [2, 7, 9, 8]; tổng đoạn [3, 4] là 17.
+- Cộng -10 vào các kho [1, 4] được [-8, -3, -1, -2]; tổng đoạn [1, 2] là -11 và tổng cả dãy là -14.

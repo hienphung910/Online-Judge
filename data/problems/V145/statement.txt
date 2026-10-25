@@ -1,0 +1,23 @@
+Một mạng xã hội nhỏ có n người dùng đánh số từ 1 đến n và m quan hệ theo dõi. Quan hệ (u, v) nghĩa là mỗi khi u biết một tin tức, u sẽ chia sẻ và v sẽ biết tin đó (chiều ngược lại thì không nhất thiết). Tin tức cứ thế lan truyền tiếp.
+
+Hai người thuộc cùng một nhóm thân nếu tin do người này biết sẽ lan tới người kia và ngược lại (mỗi người luôn cùng nhóm với chính mình). Như vậy mỗi người thuộc đúng một nhóm thân.
+
+Hãy cho biết:
+- Có bao nhiêu nhóm thân.
+- Nhóm thân đông nhất có bao nhiêu người.
+- Cần báo tin trực tiếp cho ít nhất bao nhiêu người để cuối cùng cả n người đều biết tin.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và m.
+- m dòng tiếp theo, mỗi dòng gồm hai số nguyên u, v (u ≠ v) là một quan hệ theo dõi. Một quan hệ có thể xuất hiện nhiều lần.
+
+Đầu ra:
+- Ba số nguyên: số nhóm thân, số người của nhóm thân đông nhất, số người ít nhất cần báo tin trực tiếp.
+
+Giới hạn:
+- 1 ≤ n ≤ 2000; 0 ≤ m ≤ 2500.
+- 1 ≤ u, v ≤ n.
+
+Gợi ý:
+- Ở ví dụ có 4 nhóm thân: {1, 2, 3} (tin đi vòng 1 → 2 → 3 → 1), {4, 5}, {6} và {7}. Nhóm đông nhất có 3 người.
+- Không ai chia sẻ tin cho nhóm {1, 2, 3} và cho người 7, nên phải báo cho một người trong {1, 2, 3} và cho người 7. Từ nhóm {1, 2, 3} tin sẽ tới 4, 5 rồi tới 6. Vậy cần báo cho 2 người.

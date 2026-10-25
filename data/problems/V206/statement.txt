@@ -1,0 +1,20 @@
+Một huyện ven sông có n ngôi làng, đánh số từ 1 đến n, được nối với nhau bằng n - 1 con đường đất sao cho từ làng nào cũng đi được tới mọi làng khác. Năm nay huyện muốn tổ chức hội xuân ở một số làng. Nếu làng i mở hội, huyện thu hút được w_i lượt khách. Tuy nhiên, hai làng có đường đi trực tiếp với nhau thì không được cùng mở hội, vì khách sẽ bị chia đôi và hai làng tranh nhau mời gánh hát.
+
+Hãy chọn tập các làng mở hội để tổng lượt khách là lớn nhất.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- Dòng thứ hai chứa n số nguyên w_1, w_2, ..., w_n.
+- n - 1 dòng tiếp theo, mỗi dòng chứa hai số nguyên u, v cho biết có đường đi trực tiếp giữa làng u và làng v.
+
+Đầu ra:
+- In ra tổng lượt khách lớn nhất.
+
+Giới hạn:
+- 1 ≤ n ≤ 1500.
+- 1 ≤ w_i ≤ 10^6.
+- Các con đường tạo thành một cây (liên thông, không có chu trình).
+
+Gợi ý:
+- Với ví dụ, chọn các làng 1, 4, 5, 6: không có hai làng nào nối trực tiếp với nhau và tổng là 3 + 10 + 1 + 5 = 19.
+- Treo cây ở làng 1. Với mỗi làng u, tính hai giá trị: tổng lớn nhất trong cây con gốc u khi u mở hội (khi đó các làng con của u không được mở) và khi u không mở hội. Hãy xử lý con trước cha bằng thứ tự duyệt BFS đảo ngược để tránh đệ quy quá sâu khi cây là một đường thẳng.

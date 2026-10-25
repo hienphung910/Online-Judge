@@ -1,0 +1,20 @@
+An và Bình có n hộp kẹo xếp thành hàng, hộp thứ i có a_i viên. Hai bạn lần lượt đi, An đi trước. Đến lượt mình, người chơi chọn một hộp còn kẹo và lấy ra khỏi hộp đó một số viên tùy ý (ít nhất 1 viên, có thể lấy hết). Ai đến lượt mà mọi hộp đều đã rỗng thì thua.
+
+Biết cả hai đều chơi tối ưu, hãy cho biết ai thắng. Ngoài ra, An muốn biết mình có bao nhiêu cách đi ở lượt đầu tiên để chắc chắn thắng. Một cách đi được xác định bởi hộp được chọn và số viên lấy ra; hai cách đi khác nhau nếu khác hộp hoặc khác số viên.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n.
+
+Đầu ra:
+- Dòng thứ nhất in AN nếu An thắng, hoặc BINH nếu Bình thắng.
+- Dòng thứ hai in số cách đi ở lượt đầu tiên giúp An chắc chắn thắng (in 0 nếu An thua).
+
+Giới hạn:
+- 1 ≤ n ≤ 2000.
+- 0 ≤ a_i ≤ 10^9.
+
+Gợi ý:
+- Ví dụ 1: ba hộp có 1, 2, 4 viên. An lấy 1 viên ở hộp thứ ba, còn lại 1, 2, 3 viên. Từ đây Bình đi thế nào thì An cũng đáp trả được để giữ thế cân bằng, nên An thắng. Đây là cách đi thắng duy nhất.
+- Ví dụ 2: hai hộp cùng có 3 viên. An lấy ở hộp nào bao nhiêu viên thì Bình lấy đúng như vậy ở hộp còn lại, nên Bình thắng.
+- Gọi X là XOR của tất cả a_i. Người đi trước thắng khi và chỉ khi X khác 0 (định lý Bouton). Nước đi thắng là nước đưa XOR về 0.

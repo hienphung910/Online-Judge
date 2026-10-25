@@ -1,0 +1,18 @@
+Minh có một cuộn băng giấy in liền một dãy chữ cái, được mô tả bằng xâu S độ dài n. Mỗi lần, Minh chọn hai vị trí l ≤ r rồi cắt đoạn S[l..r] (gồm các ký tự liên tiếp từ vị trí l đến vị trí r) làm một nhãn dán. Minh chỉ sưu tầm những nhãn có nội dung khác nhau: hai nhãn có cùng dãy chữ cái thì chỉ tính là một, dù chúng được cắt ở những vị trí khác nhau.
+
+Hỏi Minh có thể sưu tầm được nhiều nhất bao nhiêu nhãn dán có nội dung đôi một khác nhau? Nói cách khác, hãy đếm số xâu con khác rỗng, phân biệt về nội dung, của S.
+
+Đầu vào:
+- Một dòng duy nhất chứa xâu S gồm các chữ cái tiếng Anh in thường 'a' đến 'z'.
+
+Đầu ra:
+- Một số nguyên là số xâu con khác rỗng, phân biệt của S.
+
+Giới hạn:
+- 1 ≤ n ≤ 10^4.
+- Đáp án có thể lên tới khoảng 5·10^7, vừa với kiểu int; tính n(n + 1)/2 nên dùng số nguyên 64-bit cho an toàn.
+
+Gợi ý:
+- Ở ví dụ 1, S = "abab" có các xâu con khác nhau là "a", "b", "ab", "ba", "aba", "bab", "abab", tổng cộng 7.
+- Ở ví dụ 2, S = "aaa" chỉ có 3 xâu con khác nhau: "a", "aa", "aaa".
+- Sắp xếp các hậu tố của S theo thứ tự từ điển (mảng hậu tố). Mỗi hậu tố độ dài d đóng góp d xâu con là các tiền tố của nó, trừ đi những tiền tố trùng với hậu tố đứng ngay trước trong thứ tự đã sắp (đúng bằng độ dài tiền tố chung dài nhất LCP của hai hậu tố liền kề).

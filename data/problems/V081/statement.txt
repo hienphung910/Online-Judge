@@ -1,0 +1,18 @@
+Cô Lan bán hàng tạp hóa và luôn muốn trả tiền thừa cho khách bằng ít tờ tiền nhất. Trong ngăn kéo của cô có đủ nhiều tờ tiền thuộc các mệnh giá (tính theo nghìn đồng): 1, 2, 5, 10, 20, 50, 100, 200, 500.
+
+Có T lần cô cần trả một khoản tiền. Với mỗi khoản N nghìn đồng, hãy cho biết số tờ tiền ít nhất cô cần dùng để trả đúng N nghìn đồng.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên T.
+- T dòng tiếp theo, mỗi dòng chứa một số nguyên N.
+
+Đầu ra:
+- In ra T dòng, dòng thứ i là số tờ tiền ít nhất để trả khoản tiền thứ i.
+
+Giới hạn:
+- 1 ≤ T ≤ 1000.
+- 1 ≤ N ≤ 10^9.
+
+Gợi ý:
+- Với hệ mệnh giá này, cách "luôn lấy tờ lớn nhất không vượt quá số tiền còn lại" cho kết quả tốt nhất.
+- Khoản 9 nghìn: 5 + 2 + 2 là 3 tờ. Khoản 38 nghìn: 20 + 10 + 5 + 2 + 1 là 5 tờ. Khoản 1234 nghìn: 2 tờ 500, 1 tờ 200, 1 tờ 20, 1 tờ 10, 2 tờ 2, tổng cộng 7 tờ.

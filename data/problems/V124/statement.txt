@@ -1,0 +1,18 @@
+Kỳ thi chọn đội tuyển có n thí sinh, thí sinh thứ i được a_i điểm (điểm có thể âm vì bài thi trừ điểm khi làm sai). Ban tổ chức xếp hạng theo kiểu "hạng liền": người có điểm cao nhất được hạng 1, những người bằng điểm nhau thì cùng hạng, và mức điểm cao kế tiếp nhận hạng ngay sau đó, không bỏ trống hạng nào.
+
+Nói cách khác, hạng của thí sinh i bằng 1 cộng với số mức điểm khác nhau lớn hơn hẳn a_i.
+
+Đầu vào:
+- Dòng đầu gồm số nguyên n.
+- Dòng thứ hai gồm n số nguyên a_1, a_2, ..., a_n.
+
+Đầu ra:
+- Dòng thứ nhất in số mức điểm khác nhau.
+- Dòng thứ hai in n số nguyên, số thứ i là hạng của thí sinh i.
+
+Giới hạn:
+- 1 ≤ n ≤ 1500.
+- |a_i| ≤ 10^9.
+
+Gợi ý:
+- Ở ví dụ 1, các mức điểm khác nhau xếp giảm dần là 1000000000, 7, 5, -3, nên có 4 mức. Hai thí sinh 7 điểm cùng hạng 2, thí sinh 5 điểm hạng 3, thí sinh -3 điểm hạng 4.

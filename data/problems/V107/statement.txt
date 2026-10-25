@@ -1,0 +1,19 @@
+Quán ăn có n món chính với giá a_1, a_2, ..., a_n và m loại đồ uống với giá b_1, b_2, ..., b_m. Một combo gồm đúng một món chính và một đồ uống, giá combo là tổng giá hai thứ. Như vậy có tất cả n · m combo (các combo trùng giá vẫn được tính riêng). Chủ quán xếp giá các combo theo thứ tự không giảm và muốn biết giá của combo đứng thứ k.
+
+Đầu vào:
+- Dòng đầu tiên chứa ba số nguyên n, m và k.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n.
+- Dòng thứ ba chứa m số nguyên b_1, b_2, ..., b_m.
+
+Đầu ra:
+- In ra giá trị đứng thứ k (đánh số từ 1) khi sắp xếp không giảm n · m tổng a_i + b_j.
+
+Giới hạn:
+- 1 ≤ n, m ≤ 1000.
+- 1 ≤ k ≤ n · m.
+- 1 ≤ a_i, b_j ≤ 10^9.
+- Giá một combo có thể vượt quá 2^31 - 1, hãy dùng số nguyên 64 bit.
+
+Gợi ý:
+- Không cần liệt kê hết n · m tổng. Hãy tìm kiếm nhị phân trên giá trị v: đếm số cặp có a_i + b_j ≤ v (sau khi sắp xếp hai mảng, đếm bằng hai con trỏ trong O(n + m)); đáp án là giá trị v nhỏ nhất mà số cặp đó ≥ k.
+- Ở ví dụ, các tổng sắp xếp là 3 5 5 7 7 7 9 9 11 nên tổng thứ 5 là 7.

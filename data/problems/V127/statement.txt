@@ -1,0 +1,19 @@
+Trên bản đồ, trạm phát sóng của xã đặt tại gốc toạ độ O(0, 0). Xung quanh có n ngôi nhà, ngôi nhà thứ i ở điểm (x_i, y_i), không có nhà nào trùng với trạm (nhưng hai nhà có thể ở cùng một điểm). Kĩ sư muốn lắp các dây cáp thẳng đi qua trạm, và cần biết hai điều:
+- Có bao nhiêu cặp nhà (i, j) với i < j mà trạm O và hai nhà cùng nằm trên một đường thẳng?
+- Một đường thẳng đi qua O đi qua được nhiều nhất bao nhiêu ngôi nhà?
+
+Lưu ý hai nhà có thể nằm ở hai phía khác nhau của trạm mà vẫn thẳng hàng với trạm.
+
+Đầu vào:
+- Dòng đầu gồm số nguyên n.
+- n dòng tiếp theo, dòng thứ i gồm hai số nguyên x_i, y_i.
+
+Đầu ra:
+- In ra hai số nguyên trên cùng một dòng: số cặp nhà thẳng hàng với trạm, và số nhà nhiều nhất trên một đường thẳng qua trạm.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000.
+- |x_i|, |y_i| ≤ 10^9 và (x_i, y_i) ≠ (0, 0).
+
+Gợi ý:
+- Ở ví dụ 1, đường thẳng y = 2x đi qua ba nhà (1, 2), (-2, -4), (3, 6) tạo 3 cặp. Đường thẳng y = 0 đi qua hai nhà (5, 0), (-7, 0) tạo 1 cặp. Nhà (2, 3) không thẳng hàng với nhà nào khác qua trạm. Tổng cộng 4 cặp, đường nhiều nhà nhất có 3 nhà.

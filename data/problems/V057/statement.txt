@@ -1,0 +1,18 @@
+Một xưởng gốm nhận đơn lát sàn cho nhiều căn phòng hình chữ nhật. Căn phòng kích thước a × b (đơn vị dm) phải được phủ kín bằng các viên gạch hình vuông giống hệt nhau, cạnh là số nguyên dm, đặt song song với tường, không chồng lên nhau và không viên nào bị cắt.
+
+Để đỡ công lát, xưởng luôn chọn viên gạch có cạnh lớn nhất có thể. Với mỗi căn phòng, hãy cho biết cạnh viên gạch được chọn và số viên gạch cần dùng.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên q là số căn phòng.
+- q dòng tiếp theo, mỗi dòng chứa hai số nguyên a và b.
+
+Đầu ra:
+- Với mỗi căn phòng, in ra một dòng gồm hai số: cạnh viên gạch lớn nhất và số viên gạch cần dùng.
+
+Giới hạn:
+- 1 ≤ q ≤ 500.
+- 1 ≤ a, b ≤ 10^9.
+
+Gợi ý:
+- Phòng 6 × 4 dùng gạch cạnh 2, cần 3 · 2 = 6 viên. Phòng 7 × 5 chỉ lát được bằng gạch cạnh 1, cần 35 viên. Phòng 12 × 12 dùng đúng một viên cạnh 12.
+- Cạnh viên gạch phải chia hết cả a lẫn b, nên cạnh lớn nhất là ước chung lớn nhất của a và b (tính bằng thuật toán Euclid). Số viên gạch có thể tới 10^18, cần dùng kiểu số nguyên 64 bit.

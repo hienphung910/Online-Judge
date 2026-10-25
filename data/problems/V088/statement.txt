@@ -1,0 +1,18 @@
+Ở bến cá, ông Tư có n đoạn dây thừng, đoạn thứ i dài a_i mét. Ông muốn nối tất cả lại thành một sợi dây duy nhất. Mỗi lần ông chọn hai sợi bất kỳ đang có và nối chúng lại với nhau; nếu hai sợi dài x và y thì lần nối đó tốn x + y công, và sau khi nối ông có một sợi dài x + y.
+
+Hãy tính tổng số công nhỏ nhất để nối n đoạn thành một sợi.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n.
+
+Đầu ra:
+- In ra một số nguyên là tổng số công nhỏ nhất. Nếu n = 1 thì không cần nối, in ra 0.
+
+Giới hạn:
+- 1 ≤ n ≤ 3000.
+- 1 ≤ a_i ≤ 10^6.
+
+Gợi ý:
+- Mỗi lần luôn nối hai sợi ngắn nhất hiện có; dùng hàng đợi ưu tiên để lấy nhanh hai sợi đó.
+- Trong ví dụ, nối 2 + 3 = 5 (5 công), nối 4 + 5 = 9 (9 công), nối 6 + 9 = 15 (15 công), tổng 29 công.

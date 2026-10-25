@@ -1,0 +1,16 @@
+Trạm thuỷ văn ghi mực nước sông mỗi giờ một lần, trong n giờ liên tiếp đo được a_1, a_2, ..., a_n (đơn vị xăng-ti-mét). Để cảnh báo lũ, trạm cần lập bảng "mực nước cao nhất trong k giờ": với mỗi vị trí i từ 1 đến n - k + 1, tính giá trị lớn nhất của a_i, a_(i+1), ..., a_(i+k-1).
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và k.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n.
+
+Đầu ra:
+- In ra trên một dòng n - k + 1 số nguyên, số thứ i là mực nước cao nhất trong k giờ bắt đầu từ giờ thứ i.
+
+Giới hạn:
+- 1 ≤ k ≤ n ≤ 2500.
+- 0 ≤ a_i ≤ 10^4.
+
+Gợi ý:
+- Ví dụ: ba giờ đầu có mực nước 1, 3, 2 nên số đầu tiên là 3; ba giờ từ giờ thứ 2 là 3, 2, 5 nên số thứ hai là 5.
+- Dùng hàng đợi hai đầu (deque) lưu chỉ số các giờ, mực nước giảm dần từ đầu đến cuối. Thêm giờ i: bỏ ở cuối mọi giờ có mực nước không lớn hơn a_i rồi đẩy i vào cuối; bỏ ở đầu giờ đã rời khỏi cửa sổ. Phần tử đầu deque luôn là giờ có mực nước cao nhất của cửa sổ.

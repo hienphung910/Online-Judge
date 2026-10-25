@@ -1,0 +1,23 @@
+Cuốn gia phả của dòng họ Nguyễn ghi lại n người đánh số từ 1 đến n. Người 1 là cụ tổ; mỗi người i khác (2 ≤ i ≤ n) là con của đúng một người p_i, và lần ngược theo cha mẹ từ bất kỳ ai cũng sẽ về tới cụ tổ.
+
+Ta gọi v là con cháu đời thứ k của u nếu từ v lần ngược lên đúng k lần thì gặp u. Riêng với k = 0 thì người duy nhất là chính u. Chẳng hạn con của u là đời thứ 1, cháu (con của con) là đời thứ 2.
+
+Ban liên lạc dòng họ có q câu hỏi, mỗi câu hỏi dạng (u, k): người u có bao nhiêu con cháu đời thứ k?
+
+Đầu vào:
+- Dòng đầu chứa số nguyên n.
+- Dòng thứ hai gồm n - 1 số nguyên p_2, p_3, ..., p_n (dòng này rỗng nếu n = 1).
+- Dòng tiếp theo chứa số nguyên q.
+- q dòng cuối, mỗi dòng gồm hai số nguyên u, k.
+
+Đầu ra:
+- Với mỗi câu hỏi, in trên một dòng số con cháu đời thứ k của u.
+
+Giới hạn:
+- 1 ≤ n ≤ 2000; 1 ≤ q ≤ 2000.
+- 1 ≤ p_i ≤ n, p_i ≠ i; quan hệ cha con không tạo thành vòng.
+- 1 ≤ u ≤ n; 0 ≤ k ≤ n.
+
+Gợi ý:
+- Ở ví dụ, cụ tổ 1 có hai con là 2 và 5; người 2 có các con 3, 4, 7; người 5 có con 6; người 7 có con 8.
+- Câu (1, 2): các cháu đời thứ 2 của cụ tổ là 3, 4, 7, 6, tổng cộng 4 người. Câu (2, 2): chỉ có người 8. Câu (5, 2): người 6 không có con nên đáp án là 0. Câu (7, 0): chính người 7.

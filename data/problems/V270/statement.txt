@@ -1,0 +1,22 @@
+Sau trận lũ, vùng núi có n điểm dân cư đánh số từ 1 đến n, nối với nhau bằng m con đường đất hai chiều. Kho hàng cứu trợ đặt ở điểm 1, còn nơi bị cô lập nặng nhất là điểm n.
+
+Đường đất vừa qua mưa rất yếu: mỗi con đường chỉ chịu được đúng một đoàn xe đi qua (theo một trong hai chiều), sau đó sẽ lún sâu và không đi được nữa. Các đoàn xe thì được phép đi qua cùng một điểm dân cư. Mỗi đoàn xe xuất phát từ điểm 1 và phải tới được điểm n.
+
+Hỏi có thể gửi nhiều nhất bao nhiêu đoàn xe?
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và m.
+- m dòng tiếp theo, mỗi dòng gồm hai số nguyên u, v (u ≠ v): có một con đường nối điểm u và điểm v. Giữa hai điểm có thể có nhiều con đường.
+
+Đầu ra:
+- In ra một số nguyên duy nhất là số đoàn xe nhiều nhất. In 0 nếu không thể đi từ điểm 1 tới điểm n.
+
+Giới hạn:
+- 2 ≤ n ≤ 500.
+- 0 ≤ m ≤ 2000.
+- 1 ≤ u, v ≤ n.
+
+Gợi ý:
+- Trong ví dụ, có thể gửi hai đoàn xe theo các lộ trình 1 → 2 → 5 và 1 → 3 → 5 (hoặc 1 → 4 → 3 → 5 cho đoàn thứ hai).
+- Không thể gửi đoàn thứ ba vì điểm 5 chỉ có hai con đường đi vào. Đáp án là 2.
+- Theo định lý Menger, số đường đi không chung cạnh nhiều nhất bằng luồng cực đại khi mỗi con đường có sức chứa 1 (cho cả hai chiều).

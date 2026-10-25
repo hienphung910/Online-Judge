@@ -1,0 +1,18 @@
+Tiệm trà sữa của K người bạn ghi sổ n ngày liền, ngày thứ i lãi a_i nghìn đồng (a_i âm nghĩa là hôm đó lỗ). Nhóm muốn chọn một đoạn ngày liên tiếp càng dài càng tốt sao cho tổng tiền lãi của đoạn đó chia đều được cho K người, tức là tổng chia hết cho K (tổng bằng 0 hoặc âm vẫn được tính nếu chia hết).
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và K.
+- Dòng thứ hai gồm n số nguyên a_1, a_2, ..., a_n.
+
+Đầu ra:
+- In ra hai số nguyên: độ dài lớn nhất của một đoạn ngày liên tiếp có tổng chia hết cho K, và ngày bắt đầu của đoạn đó. Nếu có nhiều đoạn dài nhất, chọn đoạn bắt đầu sớm nhất.
+- Nếu không có đoạn nào thoả mãn, in ra 0 0.
+
+Giới hạn:
+- 1 ≤ n ≤ 1500.
+- 1 ≤ K ≤ 10^9, |a_i| ≤ 10^9.
+- Tổng tiền lãi có thể vượt quá kiểu int 32-bit.
+
+Gợi ý:
+- Ở ví dụ 1, K = 5. Đoạn từ ngày 2 đến ngày 5 có tổng (-4) + 2 + 6 + (-9) = -5, chia hết cho 5, dài 4 ngày. Các đoạn dài hơn là ngày 1 đến 5 (tổng -2), ngày 2 đến 6 (tổng 3), ngày 1 đến 6 (tổng 6) đều không chia hết cho 5. Đoạn dài 4 ngày bắt đầu sớm hơn là ngày 1 đến 4 có tổng 7, cũng không chia hết. Vậy đáp án là 4 2.
+- Ở ví dụ 2, không ngày nào và không đoạn nào có tổng chia hết cho 10.

@@ -1,0 +1,20 @@
+Trong trò chơi "Ghép thẻ", mỗi người chơi nhận n tấm thẻ, trên mỗi thẻ ghi một số nguyên dương. Người chơi phải xếp tất cả các thẻ thành một hàng rồi đọc liền các chữ số từ trái sang phải để được một số thật lớn. Ai ghép được số lớn nhất sẽ thắng.
+
+Hãy cho biết số lớn nhất có thể ghép được.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n là số tấm thẻ.
+- Dòng thứ hai chứa n số nguyên dương a_1, a_2, ..., a_n ghi trên các thẻ.
+
+Đầu ra:
+- In ra số lớn nhất ghép được (in liền các chữ số, không có dấu cách).
+
+Giới hạn:
+- 1 ≤ n ≤ 1000.
+- 1 ≤ a_i ≤ 10^9.
+- Kết quả có thể dài tới 10^4 chữ số nên hãy xử lý dưới dạng xâu ký tự.
+
+Gợi ý:
+- Xếp theo thứ tự từ điển giảm dần chưa đủ: thẻ 7 phải đứng trước thẻ 70 vì 770 > 707, còn thẻ 12 phải đứng trước thẻ 121 vì 12121 > 12112.
+- Thứ tự đúng của ví dụ là 7, 70, 5, 12, 121 và số lớn nhất là 770512121.
+- Quy tắc so sánh: thẻ x đứng trước thẻ y nếu xâu x + y lớn hơn xâu y + x (hai xâu này cùng độ dài).

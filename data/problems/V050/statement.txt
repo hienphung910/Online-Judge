@@ -1,0 +1,18 @@
+Cô Lan có n viên kẹo giống hệt nhau và muốn chia hết vào các túi, mỗi túi có ít nhất một viên và không quá m viên. Các túi giống nhau nên hai cách chia chỉ khác nhau khi số kẹo trong các túi khác nhau; vì vậy mỗi cách chia được viết thành một dãy số kẹo của các túi theo thứ tự không tăng, ví dụ 3 2 2 1.
+
+Hãy liệt kê tất cả các cách chia.
+
+Đầu vào:
+- Một dòng chứa hai số nguyên n và m.
+
+Đầu ra:
+- Dòng đầu in số cách chia k.
+- k dòng tiếp theo, mỗi dòng là một cách chia: các số nguyên dương theo thứ tự không tăng, mỗi số không vượt quá m, tổng bằng n, cách nhau một dấu cách.
+- Các cách chia được in theo thứ tự từ điển giảm dần: so sánh hai dãy từ phần tử đầu tiên, dãy nào có số lớn hơn ở vị trí khác nhau đầu tiên thì đứng trước.
+
+Giới hạn:
+- 1 ≤ m ≤ n ≤ 24.
+
+Gợi ý:
+- Chọn lần lượt số kẹo của túi thứ nhất, thứ hai, ...: số kẹo của túi tiếp theo không vượt quá túi ngay trước, không vượt quá m và không vượt quá số kẹo còn lại. Thử các giá trị từ lớn xuống nhỏ, khi hết kẹo thì in ra cách chia và quay lui.
+- Ví dụ n = 5, m = 3 có 5 cách: 3 2, 3 1 1, 2 2 1, 2 1 1 1, 1 1 1 1 1.

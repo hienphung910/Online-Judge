@@ -1,0 +1,20 @@
+Nhóm thám hiểm tìm thấy một rương có n viên ngọc, viên thứ i có giá trị a_i. Theo giao kèo với chủ đất, nhóm phải nộp lại một số viên ngọc có tổng giá trị đúng bằng S. Trưởng nhóm muốn biết có bao nhiêu cách chọn ra các viên ngọc để nộp.
+
+Hai cách chọn được coi là khác nhau nếu tập chỉ số các viên ngọc được chọn khác nhau (kể cả khi các giá trị giống nhau).
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và S.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n.
+
+Đầu ra:
+- In ra số tập con các viên ngọc có tổng giá trị đúng bằng S.
+
+Giới hạn:
+- 1 ≤ n ≤ 40.
+- 1 ≤ a_i ≤ 10^9.
+- 1 ≤ S ≤ 4·10^10.
+- Đáp án không vượt quá 2^40 nhưng có thể vượt quá 2^31 - 1, hãy dùng số nguyên 64 bit.
+
+Gợi ý:
+- Duyệt cả 2^n tập con là quá chậm với n = 40. Hãy chia đôi (meet in the middle): liệt kê 2^(n/2) tổng của nửa đầu và 2^(n - n/2) tổng của nửa sau. Sắp xếp danh sách tổng của nửa sau; với mỗi tổng x của nửa đầu, đếm số tổng bằng S - x ở nửa sau bằng tìm kiếm nhị phân (equal_range).
+- Ở ví dụ, S = 10 và có 3 cách: 2 + 8, 3 + 7 và 2 + 3 + 5.

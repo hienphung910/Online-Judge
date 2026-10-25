@@ -1,0 +1,21 @@
+Mẹ phơi n chiếc tất trên một sợi dây dài, đánh số từ 1 đến n từ trái sang phải; chiếc thứ i có mã màu c_i. Bé Na được mẹ giao q lần thử thách: mỗi lần mẹ chỉ một đoạn dây từ chiếc thứ l đến chiếc thứ r và hỏi "Trong đoạn này có bao nhiêu cách chọn ra hai chiếc tất cùng màu?". Hai cách chọn được coi là khác nhau nếu có ít nhất một chiếc tất khác nhau.
+
+Nói cách khác, với mỗi câu hỏi hãy đếm số cặp chỉ số (i, j) thỏa mãn l ≤ i < j ≤ r và c_i = c_j.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và q.
+- Dòng thứ hai chứa n số nguyên c_1, c_2, ..., c_n.
+- q dòng tiếp theo, mỗi dòng chứa hai số nguyên l và r.
+
+Đầu ra:
+- In ra q dòng, dòng thứ k là số cặp tất cùng màu của câu hỏi thứ k.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000, 1 ≤ q ≤ 1500.
+- 1 ≤ c_i ≤ 10^9.
+- 1 ≤ l ≤ r ≤ n.
+
+Gợi ý:
+- Với dãy màu 7 3 7 7 3 9 3: đoạn [1, 4] là 7 3 7 7, màu 7 xuất hiện 3 lần cho 3 cặp; đoạn [2, 7] là 3 7 7 3 9 3, màu 3 xuất hiện 3 lần cho 3 cặp, màu 7 xuất hiện 2 lần cho 1 cặp, tổng 4; đoạn [6, 6] có 0 cặp; cả dãy có 3 + 3 = 6 cặp.
+- Nếu màu x xuất hiện k lần thì nó góp k·(k - 1)/2 cặp. Khi thêm một chiếc tất màu x vào đoạn đang xét, số cặp tăng đúng bằng số chiếc màu x đã có; khi bỏ ra thì giảm tương ứng.
+- Thuật toán Mo: sắp xếp câu hỏi theo khối căn n của l rồi theo r, di chuyển hai đầu đoạn từng bước để tổng số bước chỉ khoảng O((n + q)·căn n).

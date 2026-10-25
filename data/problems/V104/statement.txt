@@ -1,0 +1,18 @@
+Một xe tải chở được tổng khối lượng không quá W. Kho hàng có n loại kiện hàng, mỗi kiện loại i nặng w_i và đem lại tiền công v_i. Số kiện của mỗi loại trong kho là không giới hạn, nên có thể chất bao nhiêu kiện cùng loại cũng được. Hỏi tổng tiền công lớn nhất của một chuyến xe là bao nhiêu?
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và W.
+- n dòng tiếp theo, dòng thứ i chứa hai số nguyên w_i và v_i.
+
+Đầu ra:
+- In ra tổng tiền công lớn nhất với tổng khối lượng không quá W (có thể bằng 0 nếu không chất được kiện nào).
+
+Giới hạn:
+- 1 ≤ n ≤ 100.
+- 1 ≤ W ≤ 10^5.
+- 1 ≤ w_i ≤ 10^5, 1 ≤ v_i ≤ 10^6.
+- Tổng tiền công có thể vượt quá 2^31 - 1, hãy dùng số nguyên 64 bit.
+
+Gợi ý:
+- Đây là bài toán cái túi không giới hạn số lượng. Gọi dp[c] là tiền công lớn nhất với tổng khối lượng không quá c; dp[c] = max(dp[c - 1], dp[c - w_i] + v_i) với mọi loại i có w_i ≤ c. Khác với ba lô 0/1, ở đây c được duyệt TĂNG dần nên một loại có thể được chọn nhiều lần.
+- Ở ví dụ, W = 10: chất một kiện nặng 4 và một kiện nặng 6 được 10 + 15 = 25; phương án 3 + 3 + 4 chỉ được 7 + 7 + 10 = 24.

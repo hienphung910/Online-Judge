@@ -1,0 +1,19 @@
+Ông Tư có một khu vườn hình đa giác, hàng rào đi qua n cái cọc lần lượt có toạ độ nguyên (x_1, y_1), (x_2, y_2), ..., (x_n, y_n), rồi từ cọc thứ n nối thẳng về cọc thứ nhất. Hàng rào không tự cắt và không tự chạm vào chính nó (đa giác đơn), nhưng khu vườn có thể lồi lõm tuỳ ý. Thứ tự các cọc có thể theo chiều kim đồng hồ hoặc ngược chiều kim đồng hồ.
+
+Hãy tính chính xác diện tích khu vườn.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- n dòng tiếp theo, dòng thứ i chứa hai số nguyên x_i và y_i. Các cọc đôi một khác nhau, có thể có ba cọc liên tiếp thẳng hàng.
+
+Đầu ra:
+- In ra diện tích khu vườn. Vì các toạ độ đều nguyên nên diện tích luôn là một số nguyên hoặc một số nguyên cộng 0.5: nếu là số nguyên thì in số nguyên đó (ví dụ 12), ngược lại in dạng có đúng một chữ số thập phân 5 (ví dụ 12.5).
+
+Giới hạn:
+- 3 ≤ n ≤ 1000.
+- |x_i|, |y_i| ≤ 10^6.
+- Diện tích có thể lên tới khoảng 4·10^12: hãy dùng số nguyên 64 bit.
+
+Gợi ý:
+- Ví dụ 1: khu vườn hình chữ L gồm 6 cọc. Công thức shoelace cho tổng x_i·y_(i+1) - x_(i+1)·y_i bằng 28, lấy giá trị tuyệt đối rồi chia 2 được diện tích 14 (đúng bằng hình chữ nhật 5 x 2 cộng hình vuông 2 x 2).
+- Ví dụ 2: tam giác (0, 0), (0, 3), (5, 0) đi theo chiều kim đồng hồ, tổng shoelace bằng -15 nên diện tích là 7.5.

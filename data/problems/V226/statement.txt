@@ -1,0 +1,23 @@
+Mỗi gói bim bim có tặng kèm một tấm thẻ cầu thủ. Có tất cả n loại thẻ, và thẻ trong mỗi gói là một trong n loại với xác suất như nhau, độc lập với các gói khác. Tí mua k gói bim bim. Hỏi kỳ vọng (giá trị trung bình) của số loại thẻ khác nhau mà Tí có được là bao nhiêu?
+
+Có thể chứng minh kỳ vọng này là một phân số P / Q tối giản với Q không chia hết cho 10^9 + 7. Hãy in ra P · Q^(-1) mod (10^9 + 7), trong đó Q^(-1) là số nguyên trong đoạn [0, 10^9 + 6] thỏa mãn Q · Q^(-1) mod (10^9 + 7) = 1.
+
+Có q câu hỏi với các cặp (n, k) khác nhau.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên q.
+- q dòng tiếp theo, mỗi dòng chứa hai số nguyên n và k.
+
+Đầu ra:
+- In ra q dòng, dòng thứ i là đáp án của câu hỏi thứ i theo cách in đã nêu.
+
+Giới hạn:
+- 1 ≤ q ≤ 100.
+- 1 ≤ n ≤ 10^9; 1 ≤ k ≤ 10^18.
+
+Gợi ý:
+- Câu 1 (n = 2, k = 2): bốn khả năng như nhau là (A, A), (A, B), (B, A), (B, B), số loại khác nhau lần lượt là 1, 2, 2, 1, kỳ vọng là 3/2. Vì 2 · 500000004 mod (10^9 + 7) = 1 nên đáp án là 3 · 500000004 mod (10^9 + 7) = 500000005.
+- Câu 2 (n = 1): chỉ có một loại thẻ nên kỳ vọng bằng 1.
+- Câu 3 (n = 3, k = 2): kỳ vọng là 5/3, đáp án 666666673.
+- Câu 4 (n = 6, k = 3): kỳ vọng là 91/36, đáp án 527777784.
+- Không thể liệt kê n^k khả năng. Dùng tính chất tuyến tính của kỳ vọng: số loại thẻ có được bằng tổng theo từng loại của biến "loại này có xuất hiện không" (bằng 1 hoặc 0). Một loại không xuất hiện trong cả k gói với xác suất ((n - 1)/n)^k. Phép chia cho n theo modulo nguyên tố thực hiện bằng cách nhân với n^(10^9 + 5) (định lý Fermat nhỏ), còn lũy thừa bậc k tính bằng lũy thừa nhanh.

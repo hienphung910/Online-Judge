@@ -1,0 +1,21 @@
+Trong tiệc sinh nhật, Nhi và Tú chơi trò thổi nến. Trên bàn có r hàng nến, mỗi hàng được mô tả bởi một xâu gồm các ký tự 1 (nến đang cháy) và 0 (nến đã tắt). Hai bạn lần lượt đi, Nhi đi trước. Đến lượt mình, người chơi thổi tắt đúng một ngọn nến đang cháy, hoặc đúng hai ngọn nến đang cháy đứng sát nhau trong cùng một hàng (hai vị trí liên tiếp trong xâu). Ai đến lượt mà không còn ngọn nến nào cháy thì thua.
+
+Biết cả hai đều chơi tối ưu, hãy cho biết ai thắng trong từng ván.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên T là số ván chơi.
+- Mỗi ván bắt đầu bằng một dòng chứa số nguyên r, tiếp theo là r dòng, mỗi dòng là một xâu chỉ gồm ký tự 0 và 1 mô tả một hàng nến.
+
+Đầu ra:
+- In ra T dòng, dòng thứ t là NHI nếu Nhi thắng ván thứ t, hoặc TU nếu Tú thắng.
+
+Giới hạn:
+- 1 ≤ T ≤ 50.
+- 1 ≤ r; độ dài mỗi xâu từ 1 đến 3000.
+- Tổng độ dài các xâu trong toàn bộ dữ liệu không vượt quá 2·10^4.
+
+Gợi ý:
+- Ván 1: một hàng 111. Nhi thổi ngọn ở giữa, còn lại hai ngọn đứng tách nhau; Tú thổi một ngọn thì Nhi thổi ngọn cuối, Nhi thắng.
+- Ván 2: hàng 110011 gồm hai cụm, mỗi cụm hai ngọn. Nhi làm gì ở cụm này thì Tú làm y hệt ở cụm kia, nên Tú thắng.
+- Ván 3: Nhi thắng.
+- Mỗi cụm ngọn nến cháy liên tiếp là một trò chơi độc lập; thổi nến có thể tách một cụm thành hai cụm nhỏ. Với g(L) là số Grundy của cụm dài L thì g(L) = mex của các giá trị g(a) XOR g(b) với a + b = L - 1 hoặc a + b = L - 2 (a, b ≥ 0). Nhi thắng khi và chỉ khi XOR số Grundy của tất cả các cụm khác 0.

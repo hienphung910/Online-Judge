@@ -1,0 +1,21 @@
+Phong và Quỳnh chơi với n viên đá đặt trên bàn, viên thứ i có giá trị v_i (có thể âm, đó là những viên đá xui). Có m cặp viên đá kỵ nhau. Hai bạn lần lượt đi, Phong đi trước. Đến lượt mình, người chơi bắt buộc phải lấy một viên đá còn trên bàn về cho mình; ngay sau đó, mọi viên đá còn trên bàn mà kỵ với viên vừa lấy đều bị vỡ và bị bỏ đi, không ai được tính. Trò chơi kết thúc khi trên bàn hết đá.
+
+Điểm của mỗi người là tổng giá trị các viên đá mình đã lấy. Phong muốn hiệu (điểm của Phong - điểm của Quỳnh) lớn nhất, còn Quỳnh muốn hiệu đó nhỏ nhất. Biết cả hai đều chơi tối ưu, hãy tính hiệu này.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên T là số ván chơi.
+- Mỗi ván bắt đầu bằng dòng chứa hai số nguyên n và m, dòng tiếp theo chứa n số nguyên v_1, v_2, ..., v_n, sau đó là m dòng, mỗi dòng chứa hai số nguyên a và b cho biết viên a và viên b kỵ nhau.
+
+Đầu ra:
+- In ra T dòng, dòng thứ t là hiệu điểm khi cả hai chơi tối ưu ở ván thứ t.
+
+Giới hạn:
+- 1 ≤ T ≤ 10.
+- 1 ≤ n ≤ 16, 0 ≤ m ≤ n·(n - 1)/2.
+- |v_i| ≤ 10^6.
+- 1 ≤ a, b ≤ n, a ≠ b, mỗi cặp xuất hiện không quá một lần.
+
+Gợi ý:
+- Ván 1: bốn viên đá giá trị 5, 6, 8, 9; viên 4 kỵ với viên 1 và viên 2. Nếu Phong lấy viên 4 (giá trị 9) thì viên 1 và 2 vỡ, Quỳnh lấy viên 3, hiệu chỉ là 9 - 8 = 1. Nếu Phong lấy viên 1 thì viên 4 vỡ, Quỳnh lấy viên 3, Phong lấy viên 2, hiệu là 5 + 6 - 8 = 3. Không có cách nào tốt hơn nên đáp số là 3.
+- Ván 2: hai viên đá xui -3 và -5. Phong buộc phải lấy một viên; lấy viên -3 thì Quỳnh phải lấy viên -5, hiệu là 2.
+- Gọi f(S) là hiệu (người sắp đi - người còn lại) tối ưu khi tập đá còn lại là S. Khi đó f(S) = max của v_i - f(S') với i thuộc S và S' là S bỏ đi viên i cùng các viên kỵ với i. Lưu f theo bitmask của S.

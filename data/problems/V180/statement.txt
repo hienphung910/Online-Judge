@@ -1,0 +1,30 @@
+Chợ đầu mối có n sạp hàng xếp thành một dãy, đánh số từ 1 đến n. Sạp thứ i đang niêm yết giá a_i đồng (giá có thể âm khi sạp đang trợ giá). Ban quản lý chợ lần lượt thực hiện q thao tác thuộc ba loại:
+- Điều chỉnh: mọi sạp từ l đến r cùng tăng giá thêm x đồng (x âm nghĩa là giảm giá).
+- Đồng giá: mọi sạp từ l đến r cùng niêm yết giá x đồng, bỏ hẳn giá cũ.
+- Thống kê: hỏi tổng giá và giá cao nhất của các sạp từ l đến r.
+
+Hãy trả lời các thao tác thống kê.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và q.
+- Dòng thứ hai gồm n số nguyên a_1, a_2, ..., a_n.
+- q dòng tiếp theo, mỗi dòng là một thao tác ở một trong ba dạng sau.
+- Dạng "1 l r x": cộng x vào a_j với mọi l ≤ j ≤ r.
+- Dạng "2 l r x": gán a_j = x với mọi l ≤ j ≤ r.
+- Dạng "3 l r": hỏi tổng a_l + a_(l+1) + ... + a_r và giá trị lớn nhất trong a_l, a_(l+1), ..., a_r.
+
+Đầu ra:
+- Với mỗi thao tác dạng 3, in ra trên một dòng hai số nguyên: tổng rồi đến giá trị lớn nhất, cách nhau một dấu cách.
+
+Giới hạn:
+- 1 ≤ n, q ≤ 10^3.
+- 1 ≤ l ≤ r ≤ n.
+- |a_i| ≤ 10^9, |x| ≤ 10^9.
+- Có ít nhất một thao tác dạng 3.
+- Các giá trị có thể vượt quá phạm vi kiểu int, hãy dùng số nguyên 64-bit (long long / long).
+
+Gợi ý:
+- Ở ví dụ, ban đầu a = [1, 2, 3, 4, 5].
+- Cộng 10 vào [2, 4] được [1, 12, 13, 14, 5]; đoạn [1, 5] có tổng 45 và lớn nhất 14.
+- Đồng giá 0 cho [3, 5] được [1, 12, 0, 0, 0]; rồi cộng -2 vào [2, 3] được [1, 10, -2, 0, 0].
+- Đoạn [3, 5] có tổng -2 và lớn nhất 0; đoạn [1, 3] có tổng 9 và lớn nhất 10.

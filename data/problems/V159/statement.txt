@@ -1,0 +1,19 @@
+Trên tuyến biên giới có n trạm gác đánh số từ 1 đến n. Ban đầu chưa có dây liên lạc nào. Đội kỹ thuật lần lượt thực hiện q thao tác, mỗi thao tác thuộc một trong hai loại:
+- "1 u v": kéo một sợi dây nối trực tiếp trạm u với trạm v (dây dùng được cả hai chiều).
+- "2 u v": chỉ huy hỏi trạm u có gọi được cho trạm v hay không, tức là có thể đi từ u đến v qua các sợi dây đã kéo (có thể đi qua các trạm trung gian). Một trạm luôn gọi được cho chính nó.
+
+Hãy trả lời các câu hỏi theo đúng thứ tự.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và q.
+- q dòng tiếp theo, mỗi dòng có dạng "1 u v" hoặc "2 u v" như mô tả.
+
+Đầu ra:
+- Với mỗi thao tác loại 2, in trên một dòng "CO" nếu u gọi được cho v, ngược lại in "KHONG".
+
+Giới hạn:
+- 1 ≤ n ≤ 1000, 1 ≤ q ≤ 1500.
+- 1 ≤ u, v ≤ n (u có thể bằng v). Có ít nhất một thao tác loại 2.
+
+Gợi ý:
+- Ở ví dụ, câu hỏi đầu tiên (1, 2) được hỏi khi chưa có dây nào nên là KHONG. Sau khi kéo dây 1-2 và 3-4, trạm 1 gọi được trạm 2 nhưng trạm 2 chưa gọi được trạm 3. Sau khi kéo thêm dây 2-4, trạm 1 gọi được trạm 3 theo đường 1-2-4-3. Câu hỏi cuối hỏi trạm 5 với chính nó nên là CO.

@@ -1,0 +1,25 @@
+Một khu vui chơi có n bệ đỡ, đánh số từ 1 đến n, nối với nhau bởi m máng trượt một chiều. Máng thứ j dẫn từ bệ u_j xuống bệ v_j. Các máng luôn dẫn xuống thấp hơn nên không thể đi theo các máng mà quay lại bệ cũ.
+
+Khoa và Vy chơi một trò chơi: đặt k viên bi lên các bệ (một bệ có thể chứa nhiều viên). Hai bạn lần lượt đi, Khoa đi trước. Đến lượt mình, người chơi chọn một viên bi và cho nó lăn theo một máng trượt xuất phát từ bệ nó đang đứng sang bệ ở đầu kia của máng. Ai đến lượt mà không viên bi nào lăn được nữa thì thua.
+
+Với cùng một khu vui chơi, hai bạn chơi q ván với cách đặt bi khác nhau. Biết cả hai đều chơi tối ưu, hãy cho biết ai thắng trong từng ván.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và m.
+- m dòng tiếp theo, mỗi dòng chứa hai số nguyên u_j và v_j mô tả một máng trượt từ u_j xuống v_j.
+- Dòng tiếp theo chứa số nguyên q.
+- q dòng tiếp theo, mỗi dòng mô tả một ván: số nguyên k, sau đó là k số nguyên c_1, c_2, ..., c_k là vị trí ban đầu của các viên bi.
+
+Đầu ra:
+- In ra q dòng, dòng thứ t là KHOA nếu Khoa thắng ván thứ t, hoặc VY nếu Vy thắng.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000, 0 ≤ m ≤ 1500.
+- 1 ≤ u_j, v_j ≤ n, u_j ≠ v_j, không có hai máng trùng nhau, đồ thị không có chu trình.
+- 1 ≤ q ≤ 500.
+- 1 ≤ k, tổng k của tất cả các ván không vượt quá 1500.
+- 1 ≤ c_i ≤ n.
+
+Gợi ý:
+- Trong ví dụ, các máng là 1→2, 2→3, 1→3, 3→4. Ván 1: Khoa lăn bi từ 1 sang 3, Vy buộc phải lăn từ 3 sang 4 và Khoa thắng. Ván 2: bi ở bệ 2 chỉ đi được 2→3→4, tổng cộng hai lượt nên Vy thắng. Ván 3: hai viên bi cùng ở bệ 3, Khoa làm gì với viên này thì Vy làm y hệt với viên kia, nên Vy thắng. Ván 4: Khoa thắng.
+- Số Grundy của bệ u là g(u) = mex { g(v) : có máng u→v }, tính theo thứ tự topo ngược. Ở ví dụ g(4) = 0, g(3) = 1, g(2) = 0, g(1) = 2. Người đi trước thắng khi và chỉ khi XOR các g(c_i) khác 0.

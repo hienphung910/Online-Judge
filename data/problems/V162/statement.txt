@@ -1,0 +1,19 @@
+Sau buổi đá bóng, n cầu thủ đánh số từ 1 đến n đã được chia thành đúng hai đội, nhưng không ai ghi lại cách chia. Huấn luyện viên lần lượt nghe k lời khai, lời khai thứ i có dạng "u v d":
+- d = 0 nghĩa là cầu thủ u và cầu thủ v ở cùng một đội;
+- d = 1 nghĩa là cầu thủ u và cầu thủ v ở khác đội.
+
+Huấn luyện viên xét các lời khai theo thứ tự. Một lời khai được coi là DUNG nếu tồn tại ít nhất một cách chia n cầu thủ thành hai đội (một đội được phép không có ai) thỏa mãn đồng thời lời khai đó và tất cả các lời khai DUNG trước nó. Ngược lại lời khai là SAI và bị bỏ qua, không ảnh hưởng tới các lời khai sau.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và k.
+- k dòng tiếp theo, mỗi dòng gồm ba số nguyên u, v, d.
+
+Đầu ra:
+- Gồm k dòng, dòng thứ i là "DUNG" hoặc "SAI" ứng với lời khai thứ i.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000, 1 ≤ k ≤ 1500.
+- 1 ≤ u, v ≤ n (u có thể bằng v), d ∈ {0, 1}.
+
+Gợi ý:
+- Ở ví dụ, hai lời khai đầu cho biết 1 khác đội 2 và 2 khác đội 3, suy ra 1 cùng đội 3, nên lời khai thứ ba (1 khác đội 3) là SAI. Lời khai thứ tư xếp 4 cùng đội với 3. Lời khai thứ năm nói cầu thủ 4 khác đội với chính mình nên SAI. Lời khai cuối (2 khác đội 4) khớp với các lời khai đúng trước đó.

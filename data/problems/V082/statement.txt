@@ -1,0 +1,19 @@
+Sắp đến sinh nhật lớp, bé Na được giao M đồng để mua quà. Cửa hàng có n món quà khác nhau, món thứ i có giá p_i đồng và mỗi món chỉ có đúng một chiếc. Na muốn mua được càng nhiều món càng tốt, miễn là tổng số tiền không vượt quá M.
+
+Hãy cho biết Na mua được nhiều nhất bao nhiêu món quà.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và M.
+- Dòng thứ hai chứa n số nguyên p_1, p_2, ..., p_n.
+
+Đầu ra:
+- In ra một số nguyên là số món quà nhiều nhất Na mua được.
+
+Giới hạn:
+- 1 ≤ n ≤ 2000.
+- 1 ≤ M ≤ 2·10^12.
+- 1 ≤ p_i ≤ 10^9.
+
+Gợi ý:
+- Nếu đã mua k món thì thay một món bằng món rẻ hơn chưa mua không bao giờ làm tổng tiền tăng, nên hãy mua các món rẻ nhất trước.
+- Trong ví dụ, Na mua 3 món giá 2, 3, 4 với tổng 9 ≤ 10. Mua 4 món thì ít nhất tốn 2 + 3 + 4 + 5 = 14 đồng, quá số tiền có.

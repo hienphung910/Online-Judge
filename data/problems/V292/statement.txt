@@ -1,0 +1,19 @@
+Trong hội thi đọc vè, ban tổ chức ghi lại toàn bộ bài vè thành xâu S độ dài n. Mỗi xâu con đối xứng X của S (gồm các ký tự liên tiếp, đọc xuôi hay đọc ngược đều giống nhau) được chấm điểm "sức nặng" bằng |X| · c(X), trong đó |X| là độ dài của X và c(X) là số lần X xuất hiện trong S.
+
+X xuất hiện c lần trong S nếu có đúng c vị trí i (1 ≤ i ≤ n - |X| + 1) sao cho đoạn S[i..i+|X|-1] trùng với X. Các lần xuất hiện được phép chồng lên nhau.
+
+Hãy tìm sức nặng lớn nhất của một xâu con đối xứng của S.
+
+Đầu vào:
+- Một dòng duy nhất chứa xâu S gồm các chữ cái tiếng Anh in thường 'a' đến 'z'.
+
+Đầu ra:
+- Một số nguyên là sức nặng lớn nhất.
+
+Giới hạn:
+- 1 ≤ n ≤ 10^4.
+
+Gợi ý:
+- Ở ví dụ 1, S = "abacaba": "a" có sức nặng 1 · 4 = 4, "aba" có 3 · 2 = 6, "aca" có 3, "bacab" có 5, còn cả xâu "abacaba" có 7 · 1 = 7. Đáp án là 7.
+- Ở ví dụ 2, S = "aaaa": "aa" có 2 · 3 = 6 và "aaa" có 3 · 2 = 6 là lớn nhất.
+- Trong cây palindrome (eertree), mỗi lần xuất hiện của một xâu đối xứng cũng là một lần xuất hiện của hậu tố đối xứng dài nhất của nó (đỉnh theo liên kết hậu tố). Chỉ cần ghi nhận số lần mỗi đỉnh là hậu tố đối xứng dài nhất tại một vị trí, rồi cộng dồn theo liên kết từ đỉnh tạo sau về đỉnh tạo trước.

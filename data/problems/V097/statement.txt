@@ -1,0 +1,19 @@
+Cầu thang lên tháp chuông có n bậc, đánh số từ 1 đến n tính từ dưới lên; mặt đất được coi là bậc 0. Mỗi bước, chú mèo Mướp nhảy lên 1, 2 hoặc 3 bậc. Tiếc là có m bậc đã bị gãy, Mướp không được đặt chân lên các bậc này. Hỏi Mướp có bao nhiêu cách đi từ mặt đất lên đúng bậc n?
+
+Hai cách đi được coi là khác nhau nếu tập các bậc Mướp đặt chân lên khác nhau. Vì đáp án có thể rất lớn, hãy in phần dư khi chia cho 10^9 + 7.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và m.
+- Dòng thứ hai chứa m số nguyên b_1, b_2, ..., b_m là các bậc bị gãy (nếu m = 0 thì dòng này để trống).
+
+Đầu ra:
+- In ra số cách đi, lấy phần dư khi chia cho 10^9 + 7. Nếu bậc n bị gãy thì đáp án là 0.
+
+Giới hạn:
+- 1 ≤ n ≤ 10^5.
+- 0 ≤ m ≤ min(n, 1000).
+- 1 ≤ b_1 < b_2 < ... < b_m ≤ n.
+
+Gợi ý:
+- Gọi f[i] là số cách đứng được ở bậc i. Ta có f[0] = 1; nếu bậc i gãy thì f[i] = 0, ngược lại f[i] = f[i - 1] + f[i - 2] + f[i - 3] (bỏ qua các chỉ số âm).
+- Với n = 5 và bậc 3 bị gãy: f = 1, 1, 2, 0, 3, 5 nên có 5 cách, ví dụ 0 → 2 → 5 hoặc 0 → 1 → 4 → 5.

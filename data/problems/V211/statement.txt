@@ -1,0 +1,18 @@
+Dọc một tỉnh lộ thẳng có n xóm, xóm thứ i nằm ở cột cây số x_i (có thể có nhiều xóm chung một cột cây số). Tỉnh có kinh phí xây đúng k trạm y tế, mỗi trạm đặt tại một cột cây số nguyên tùy ý trên tỉnh lộ. Người dân mỗi xóm sẽ đến trạm gần xóm mình nhất.
+
+Hãy chọn vị trí các trạm sao cho tổng khoảng cách từ mỗi xóm đến trạm gần nhất là nhỏ nhất, và in ra tổng đó.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và k.
+- Dòng thứ hai chứa n số nguyên x_1, x_2, ..., x_n (không nhất thiết đã sắp xếp).
+
+Đầu ra:
+- In ra tổng khoảng cách nhỏ nhất.
+
+Giới hạn:
+- 1 ≤ k ≤ n ≤ 3000.
+- 0 ≤ x_i ≤ 10^6.
+
+Gợi ý:
+- Với ví dụ, đặt hai trạm tại cột 3 và cột 30: các xóm ở 1, 2, 3, 10, 11 đi đến trạm 3 với tổng 2 + 1 + 0 + 7 + 8 = 18, xóm ở 30 có trạm ngay tại chỗ. Tổng là 18.
+- Sau khi sắp xếp, mỗi trạm phục vụ một đoạn xóm liên tiếp, và với một đoạn thì đặt trạm ở xóm đứng giữa (trung vị) là tốt nhất. Gọi dp[g][i] là chi phí nhỏ nhất cho i xóm đầu với g trạm; vị trí cắt tối ưu của dp[g][i] không giảm khi i tăng, nên mỗi tầng g có thể tính bằng chia để trị trong O(n log n).

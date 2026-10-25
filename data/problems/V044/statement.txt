@@ -1,0 +1,19 @@
+Cửa hàng nhà Mai có ba kệ hàng đánh số 1, 2, 3. Trên kệ s đang có một chồng n chiếc khay bánh chưng to nhỏ khác nhau, khay nhỏ nhất đánh số 1, khay lớn nhất đánh số n, khay nhỏ luôn nằm trên khay lớn. Mai cần dời cả chồng sang kệ t. Mỗi lần chỉ được nhấc một khay đang nằm trên cùng của một kệ và đặt lên trên cùng của kệ khác, và không bao giờ được đặt khay lớn lên trên khay nhỏ hơn.
+
+Hãy in ra cách dời với số lần nhấc ít nhất.
+
+Đầu vào:
+- Một dòng chứa ba số nguyên n, s, t.
+
+Đầu ra:
+- Dòng đầu in số lần nhấc ít nhất k.
+- k dòng tiếp theo, mỗi dòng gồm ba số d, x, y cho biết lần nhấc đó chuyển khay số d từ kệ x sang kệ y, theo đúng thứ tự thực hiện.
+- Có thể chứng minh cách dời với số lần nhấc ít nhất là duy nhất.
+
+Giới hạn:
+- 1 ≤ n ≤ 10.
+- 1 ≤ s, t ≤ 3 và s ≠ t.
+
+Gợi ý:
+- Muốn dời n khay từ kệ s sang kệ t, hãy dời n - 1 khay trên cùng sang kệ còn lại, nhấc khay n sang kệ t, rồi dời n - 1 khay kia từ kệ còn lại sang kệ t. Mỗi bước "dời n - 1 khay" chính là bài toán nhỏ hơn, giải bằng đệ quy.
+- Ví dụ n = 2, s = 1, t = 3: chuyển khay 1 từ kệ 1 sang kệ 2, khay 2 từ kệ 1 sang kệ 3, rồi khay 1 từ kệ 2 sang kệ 3, tổng cộng 3 lần.

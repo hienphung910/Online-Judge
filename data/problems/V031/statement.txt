@@ -1,0 +1,25 @@
+Lớp trưởng Ngọc giữ sổ quỹ ghi số tiền mỗi bạn trong lớp đã đóng. Lớp có N bạn đánh số từ 1 đến N, bạn thứ i đã đóng a_i đồng. Cô giáo chủ nhiệm và các bạn liên tục hỏi Ngọc về sổ quỹ, đôi khi một bạn đóng lại khoản khác nên Ngọc phải sửa sổ.
+
+Có Q thao tác, mỗi thao tác thuộc một trong bốn loại:
+- "1 i x": sửa số tiền của bạn thứ i thành x.
+- "2 l r": hỏi tổng số tiền của các bạn từ l đến r.
+- "3 l r": hỏi số tiền lớn nhất trong các bạn từ l đến r.
+- "4 x": hỏi có bao nhiêu bạn đã đóng ít nhất x đồng (xét cả lớp).
+
+Đầu vào:
+- Dòng đầu chứa hai số nguyên N và Q.
+- Dòng thứ hai chứa N số nguyên a_1, a_2, ..., a_N.
+- Q dòng tiếp theo, mỗi dòng là một thao tác theo mô tả trên.
+
+Đầu ra:
+- Với mỗi thao tác loại 2, 3, 4, in kết quả trên một dòng (thao tác loại 1 không in gì).
+
+Giới hạn:
+- 1 ≤ N ≤ 500; 1 ≤ Q ≤ 500.
+- 0 ≤ a_i, x ≤ 10^9; 1 ≤ i ≤ N; 1 ≤ l ≤ r ≤ N.
+- Tổng có thể vượt quá 2^31, hãy dùng số nguyên 64 bit.
+
+Gợi ý:
+- Ban đầu sổ ghi 5 2 8 1. Tổng từ bạn 2 đến bạn 4 là 2 + 8 + 1 = 11.
+- Có 2 bạn đóng ít nhất 5 đồng (bạn 1 và bạn 3).
+- Sau khi sửa bạn 4 thành 10, số lớn nhất từ bạn 1 đến bạn 4 là 10, và có 3 bạn đóng ít nhất 5 đồng.

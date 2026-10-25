@@ -1,0 +1,19 @@
+Hội đồng khoa học đánh giá một nhà nghiên cứu bằng "chỉ số ảnh hưởng": đó là số nguyên h lớn nhất sao cho nhà nghiên cứu có ít nhất h bài báo, mỗi bài được trích dẫn ít nhất h lần. Nếu không có bài nào được trích dẫn thì chỉ số là 0.
+
+Cho số lần trích dẫn của từng bài báo, hãy tính chỉ số ảnh hưởng.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n là số bài báo.
+- Dòng thứ hai chứa n số nguyên c_1, c_2, ..., c_n là số lần trích dẫn của từng bài.
+
+Đầu ra:
+- In ra một số nguyên là chỉ số ảnh hưởng.
+
+Giới hạn:
+- 1 ≤ n ≤ 2000.
+- 0 ≤ c_i ≤ 10^9.
+
+Gợi ý:
+- Ví dụ 1: có 3 bài được trích dẫn ít nhất 3 lần (3, 6, 5) nhưng chỉ có 2 bài được trích dẫn ít nhất 4 lần, nên chỉ số là 3.
+- Ví dụ 2: chỉ số không thể vượt quá số bài báo, nên dù mỗi bài có 100 trích dẫn thì chỉ số vẫn là 3.
+- Chỉ số luôn không vượt quá n, nên mọi giá trị c_i lớn hơn n có thể coi như bằng n. Khi đó các giá trị chỉ nằm trong đoạn từ 0 đến n và có thể đếm số bài theo từng giá trị.

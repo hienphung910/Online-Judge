@@ -1,0 +1,17 @@
+Trong kho có n bao gạo xếp thành một hàng, bao thứ i nặng a_i kg. Để dọn kho, chú thủ kho lặp lại thao tác sau cho đến khi chỉ còn một bao: chọn hai bao đang đứng cạnh nhau có tổng khối lượng nhỏ nhất, đổ chung vào một bao mới đặt đúng vào chỗ của hai bao đó (thứ tự các bao khác không đổi). Nếu có nhiều cặp cạnh nhau cùng có tổng nhỏ nhất, chú chọn cặp nằm bên trái nhất.
+
+Hãy cho biết khối lượng của bao mới tạo ra sau mỗi lần dồn.
+
+Đầu vào:
+- Dòng đầu gồm số nguyên n.
+- Dòng thứ hai gồm n số nguyên a_1, a_2, ..., a_n.
+
+Đầu ra:
+- In ra n - 1 số nguyên trên một dòng, số thứ k là khối lượng bao mới tạo ra ở lần dồn thứ k.
+
+Giới hạn:
+- 2 ≤ n ≤ 1500.
+- 1 ≤ a_i ≤ 10^6.
+
+Gợi ý:
+- Ở ví dụ 1, hàng ban đầu là 5 2 3 4 1. Các tổng cạnh nhau là 7, 5, 7, 5; có hai cặp tổng 5, chọn cặp bên trái (2, 3), hàng thành 5 5 4 1. Các tổng giờ là 10, 9, 5, dồn (4, 1) thành 5 5 5. Hai cặp đều có tổng 10, chọn cặp bên trái, hàng thành 10 5. Cuối cùng dồn thành 15.

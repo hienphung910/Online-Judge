@@ -1,0 +1,20 @@
+Sau trận lũ, huyện có n xã đánh số từ 1 đến n, nối với nhau bởi n - 1 con đường hai chiều tạo thành một cây; con đường thứ i nối hai xã u_i, v_i và dài w_i. Tất cả các con đường đều đang ngập bùn.
+
+Ban chỉ huy đưa ra q phương án. Phương án thứ j chọn k xã làm điểm cứu trợ; cần dọn sạch một số con đường sao cho từ mỗi điểm cứu trợ có thể đi đến mọi điểm cứu trợ khác chỉ bằng đường đã dọn. Với mỗi phương án, hãy cho biết tổng chiều dài nhỏ nhất của các con đường cần dọn. Các phương án được xét độc lập với nhau.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và q.
+- n - 1 dòng tiếp theo, mỗi dòng gồm ba số nguyên u, v, w mô tả một con đường.
+- q dòng tiếp theo, mỗi dòng bắt đầu bằng số nguyên k, theo sau là k số nguyên đôi một khác nhau x_1, x_2, ..., x_k là các xã được chọn.
+
+Đầu ra:
+- Gồm q dòng, mỗi dòng là tổng chiều dài nhỏ nhất của một phương án.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000, 1 ≤ q ≤ 1000.
+- 1 ≤ u, v ≤ n, 1 ≤ w ≤ 10^4.
+- 1 ≤ k ≤ n, 1 ≤ x_i ≤ n, tổng các giá trị k trong mọi phương án không vượt quá 2500.
+
+Gợi ý:
+- Ở ví dụ, phương án 1 chọn các xã 4, 5, 6: cần dọn các đường 4-2, 2-5, 2-1, 1-3, 3-6 với tổng 1 + 3 + 2 + 4 + 5 = 15. Phương án 2 chỉ cần đường 4-2 và 2-5, tổng 4. Phương án 3 chỉ có một xã nên không cần dọn đường nào. Phương án 4 cần các đường 1-3, 3-6, 3-7, tổng 11.
+- Sắp xếp các xã được chọn theo thứ tự thăm trong một lần duyệt DFS: x'_1, x'_2, ..., x'_k. Khi đó đáp án bằng một nửa tổng dist(x'_1, x'_2) + dist(x'_2, x'_3) + ... + dist(x'_k, x'_1). Khoảng cách tính qua LCA, có thể tìm bằng Euler tour và bảng thưa.

@@ -1,0 +1,19 @@
+Bác thợ mộc có một cây thước dài đúng 1 mét. Với mỗi số b = 2, 3, ..., n, bác chia cây thước thành b đoạn bằng nhau và khắc một vạch tại mỗi điểm chia, tức là tại các vị trí 1/b, 2/b, ..., (b - 1)/b mét tính từ đầu thước. Nếu vị trí cần khắc đã có vạch rồi thì bác không khắc thêm. Hai đầu thước không khắc.
+
+Hỏi sau khi làm xong, trên thước có bao nhiêu vạch? Có q câu hỏi với các giá trị n khác nhau.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên q.
+- q dòng tiếp theo, mỗi dòng chứa một số nguyên n.
+
+Đầu ra:
+- Với mỗi câu hỏi, in ra một dòng là số vạch trên thước.
+
+Giới hạn:
+- 1 ≤ q ≤ 1000.
+- 1 ≤ n ≤ 10^6.
+
+Gợi ý:
+- Với n = 4: các vị trí 1/2; 1/3, 2/3; 1/4, 2/4, 3/4. Vị trí 2/4 trùng với 1/2 nên chỉ có 5 vạch. Với n = 1 không có vạch nào; n = 3 có 3 vạch; n = 5 có 9 vạch.
+- Mỗi vạch ứng với đúng một phân số tối giản a/b (0 < a < b ≤ n). Với mỗi mẫu b, số tử a tối giản là phi(b) = số lượng số trong [1, b] nguyên tố cùng nhau với b (hàm phi Euler). Đáp án là phi(2) + phi(3) + ... + phi(n).
+- Sàng phi cho mọi b ≤ 10^6: khởi tạo phi[i] = i; với mỗi số nguyên tố p, mọi bội m của p được cập nhật phi[m] -= phi[m] / p. Đáp án có thể vượt quá 2^31.

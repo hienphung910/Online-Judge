@@ -1,0 +1,20 @@
+Trên một con kênh thẳng, xem như một trục số, có một bến thuyền đặt ở toạ độ 0. Có n chiếc thuyền đang chạy trên kênh: tại phút thứ 0, thuyền thứ i ở toạ độ a_i, và mỗi phút nó dịch chuyển thêm b_i đơn vị (b_i âm nghĩa là chạy về phía toạ độ giảm, b_i = 0 nghĩa là thuyền đứng yên). Các thuyền không dừng lại khi qua bến mà cứ giữ nguyên vận tốc, và có thể chạy xuyên qua nhau.
+
+Như vậy tại phút t, thuyền thứ i ở toạ độ a_i + b_i·t và cách bến |a_i + b_i·t| đơn vị. Ông trưởng bến muốn chọn một phút nguyên t trong đoạn [0, T] để kéo còi điểm danh, sao cho tổng khoảng cách từ các thuyền tới bến lúc đó là nhỏ nhất. Hãy cho biết tổng khoảng cách nhỏ nhất ấy.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và T.
+- n dòng tiếp theo, dòng thứ i chứa hai số nguyên a_i và b_i.
+
+Đầu ra:
+- In ra một số nguyên là giá trị nhỏ nhất của |a_1 + b_1·t| + |a_2 + b_2·t| + ... + |a_n + b_n·t| khi t chạy qua mọi số nguyên từ 0 đến T.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000, 0 ≤ T ≤ 10^6.
+- |a_i| ≤ 10^9, |b_i| ≤ 1000.
+- Đáp án có thể vượt quá 2^31, hãy dùng kiểu số nguyên 64 bit.
+
+Gợi ý:
+- Ví dụ 1: tổng khoảng cách ở các phút 0, 1, 2, 3, 4, 5, 6 lần lượt là 24, 18, 12, 6, 2, 6, 12 và từ đó trở đi chỉ tăng. Nhỏ nhất là 2 tại phút 4 (ba thuyền ở toạ độ 1, 1 và 0).
+- Ví dụ 2: cả hai thuyền đều đang chạy ra xa bến nên kéo còi ngay ở phút 0 là tốt nhất.
+- Mỗi số hạng |a_i + b_i·t| là hàm lồi theo t nên tổng f(t) cũng lồi: đi từ trái sang phải f giảm dần rồi tăng dần (có thể đi ngang một đoạn). Vì thế có thể chặt tam phân trên số nguyên, hoặc chặt nhị phân tìm t nhỏ nhất thoả f(t + 1) ≥ f(t). Thử hết mọi t tốn tới n·(T + 1) ≈ 10^9 phép tính, quá chậm.

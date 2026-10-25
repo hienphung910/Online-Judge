@@ -1,0 +1,17 @@
+Bé Na nhặt được n que tre, que thứ i dài a_i xăng-ti-mét. Cô giáo giao bài: chọn ra đúng ba que để ghép thành một tam giác thật sự (không bị bẹp thành một đoạn thẳng). Na muốn biết mình có tất cả bao nhiêu cách chọn như vậy.
+
+Đầu vào:
+- Dòng đầu chứa số nguyên n.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n.
+
+Đầu ra:
+- In ra số bộ ba chỉ số i < j < k sao cho ba que i, j, k ghép được một tam giác, tức là tổng độ dài hai que bất kỳ trong ba que luôn lớn hơn hẳn độ dài que còn lại.
+- Hai que có cùng độ dài nhưng khác chỉ số vẫn được coi là hai que khác nhau.
+
+Giới hạn:
+- 1 ≤ n ≤ 300.
+- 1 ≤ a_i ≤ 10^9.
+
+Gợi ý:
+- Với n nhỏ như thế này, chỉ cần thử hết mọi bộ ba (khoảng n^3 / 6 bộ) là đủ nhanh. Cẩn thận: tổng hai độ dài có thể vượt quá phạm vi kiểu int.
+- Ví dụ có 5 que dài 2, 3, 4, 5, 10. Các bộ ghép được là (2, 3, 4), (2, 4, 5), (3, 4, 5). Bộ (2, 3, 5) bị bẹp vì 2 + 3 = 5, còn que dài 10 thì không ghép được với hai que nào. Đáp số là 3.

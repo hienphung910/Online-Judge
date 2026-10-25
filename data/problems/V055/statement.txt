@@ -1,0 +1,17 @@
+Lớp 12A có n học sinh đánh số từ 1 đến n. Cô giáo muốn chọn ra một nhóm đông người nhất để làm tiết mục văn nghệ, sao cho hai bạn bất kỳ trong nhóm đều đã quen nhau từ trước.
+
+Đầu vào:
+- Dòng đầu chứa số nguyên n.
+- n dòng tiếp theo, dòng thứ i là một xâu gồm n kí tự 0 hoặc 1; kí tự thứ j bằng 1 nếu bạn i và bạn j quen nhau, bằng 0 nếu không.
+
+Đầu ra:
+- In ra số người nhiều nhất của một nhóm mà hai người bất kỳ trong nhóm đều quen nhau.
+
+Giới hạn:
+- 1 ≤ n ≤ 60.
+- Ma trận đối xứng, các kí tự trên đường chéo chính đều là 0.
+
+Gợi ý:
+- Quay lui theo từng bạn: hoặc chọn bạn v (khi đó các bạn còn được xét chỉ là những người quen v), hoặc bỏ v. Lưu tập ứng viên bằng một số nguyên 64 bit để thao tác nhanh.
+- Để cắt nhánh, cần một cận trên cho số người còn có thể thêm từ tập ứng viên. Đếm số ứng viên là cận quá lỏng; tốt hơn là tô màu tham lam các ứng viên sao cho hai bạn cùng màu không quen nhau: mỗi màu đóng góp tối đa một người, nên số màu là cận trên. Nếu số người đã chọn cộng cận trên không vượt quá kết quả tốt nhất thì quay lui.
+- Ví dụ: 5 bạn, các cặp quen nhau là (1, 2), (1, 3), (2, 3), (3, 4), (4, 5). Nhóm {1, 2, 3} có 3 người quen nhau từng đôi; không có nhóm 4 người nào như vậy nên đáp số là 3.

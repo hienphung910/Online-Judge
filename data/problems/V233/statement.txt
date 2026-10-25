@@ -1,0 +1,39 @@
+Anh Tuấn vừa soạn xong bài "Truy vấn đoạn" và nhờ nhiều bạn cùng sinh test. Trước khi đưa test lên hệ thống, anh cần một trình kiểm tra dữ liệu vào (validator) để chắc chắn mỗi tệp test đúng định dạng và thỏa mọi ràng buộc của đề gốc.
+
+Tệp đầu vào của bài "Truy vấn đoạn" gồm lần lượt: số n; n số a_1, a_2, ..., a_n; số q; rồi q cặp số l, r. Ràng buộc của đề gốc:
+- 1 ≤ n ≤ 1000.
+- 1 ≤ a_i ≤ 10^6 và các a_i đôi một khác nhau.
+- 1 ≤ q ≤ 1000.
+- Mỗi cặp thỏa 1 ≤ l ≤ r ≤ n.
+
+Bỏ qua dấu cách và xuống dòng, mỗi tệp test được xem như một dãy số nguyên b_1, b_2, ..., b_c. Validator đọc lần lượt các số từ b_1 theo đúng thứ tự trên và kiểm tra ngay khi đọc:
+1. Đọc n: hợp lệ khi 1 ≤ n ≤ 1000.
+2. Đọc lần lượt a_1, ..., a_n: a_i hợp lệ khi 1 ≤ a_i ≤ 10^6 và a_i khác mọi a_j đã đọc trước nó.
+3. Đọc q: hợp lệ khi 1 ≤ q ≤ 1000.
+4. Với mỗi truy vấn, đọc l rồi đọc r: l hợp lệ khi 1 ≤ l ≤ n; r hợp lệ khi l ≤ r ≤ n.
+Validator dừng ngay ở sự cố đầu tiên gặp phải:
+- Nếu số vừa đọc không hợp lệ, in LOI k, với k là vị trí của số đó trong dãy b (đánh số từ 1).
+- Nếu cần đọc thêm một số mà dãy đã hết, in THIEU.
+Nếu đọc xong toàn bộ mà không gặp sự cố: in THUA nếu dãy vẫn còn số chưa đọc, ngược lại in HOP_LE.
+
+Hãy viết validator đó.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên T là số tệp test cần kiểm tra.
+- Mỗi tệp test được cho trên hai dòng: dòng thứ nhất chứa số nguyên c; dòng thứ hai chứa c số nguyên b_1, b_2, ..., b_c.
+
+Đầu ra:
+- In ra T dòng, dòng thứ k là kết quả kiểm tra tệp thứ k: HOP_LE, THUA, THIEU, hoặc chữ LOI và vị trí k (cách nhau một dấu cách).
+
+Giới hạn:
+- 1 ≤ T ≤ 50.
+- c ≥ 1, tổng c của tất cả các bộ không vượt quá 4000.
+- |b_i| ≤ 10^18.
+
+Gợi ý:
+- Tệp 1: n = 3, a = (5, 1, 9), q = 2, hai truy vấn (1, 3) và (2, 2), không thừa không thiếu nên HOP_LE.
+- Tệp 2: a_3 = 5 trùng với a_1, số này nằm ở vị trí 4 trong dãy nên in LOI 4.
+- Tệp 3: truy vấn thứ hai có l = 2, r = 1 < l; số r này ở vị trí 8 nên in LOI 8.
+- Tệp 4: đã đọc l của truy vấn duy nhất nhưng dãy hết trước khi đọc được r nên in THIEU.
+- Tệp 5: tệp hợp lệ nhưng còn thừa số 5 ở cuối nên in THUA.
+- Tệp 6: n = 0 sai ngay ở vị trí 1.

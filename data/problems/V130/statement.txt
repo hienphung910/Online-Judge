@@ -1,0 +1,18 @@
+Tiệm bánh có một kệ đựng khuôn, mỗi khuôn có một số đo nguyên (đơn vị là micromet, số đo có thể âm vì được tính lệch so với cỡ chuẩn). Ban đầu kệ trống. Có q thao tác lần lượt:
+- "+ x": đặt thêm một khuôn số đo x lên kệ (kệ có thể có nhiều khuôn cùng số đo).
+- "- x": lấy một khuôn số đo x ra khỏi kệ. Đảm bảo lúc đó kệ có ít nhất một khuôn số đo x.
+- "? x": thợ làm bánh cần khuôn gần với số đo x nhất. Hãy cho biết số đo y của khuôn trên kệ sao cho |x - y| nhỏ nhất (khuôn vẫn để trên kệ). Nếu có hai số đo cùng gần nhất, chọn số đo nhỏ hơn. Nếu kệ trống, trả lời KHONG.
+
+Đầu vào:
+- Dòng đầu gồm số nguyên q.
+- q dòng tiếp theo, mỗi dòng là một thao tác dạng "+ x", "- x" hoặc "? x". Đảm bảo có ít nhất một thao tác "?".
+
+Đầu ra:
+- Với mỗi thao tác "?" theo thứ tự, in ra một dòng là số đo y tìm được, hoặc KHONG nếu kệ trống.
+
+Giới hạn:
+- 1 ≤ q ≤ 1500.
+- |x| ≤ 10^9.
+
+Gợi ý:
+- Ở ví dụ 1, lúc đầu kệ trống nên câu hỏi đầu tiên trả lời KHONG. Sau khi đặt các khuôn 10, 4, 10, câu hỏi "? 7" có hai số đo cùng cách 7 ba đơn vị là 4 và 10, chọn 4. Lấy khuôn 4 ra, câu hỏi "? 7" trả lời 10. Lấy một khuôn 10 ra, trên kệ vẫn còn một khuôn 10 nên "? -100" trả lời 10.

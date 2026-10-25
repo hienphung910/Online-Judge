@@ -1,0 +1,18 @@
+Thầy giáo đọc chính tả một câu mẫu P, còn cả lớp chép nối tiếp nhau vào một cuộn giấy dài được ghi lại thành xâu T. Thầy muốn biết trong cuộn giấy có bao nhiêu chỗ "gần như" chép đúng câu mẫu, tức là sai nhiều nhất một chữ cái.
+
+Gọi m = |P| là độ dài của P. Với mỗi vị trí i (1 ≤ i ≤ |T| - m + 1), xét đoạn gồm m ký tự của T bắt đầu tại i. Số lỗi tại vị trí i là số chỉ số j (1 ≤ j ≤ m) mà ký tự thứ j của đoạn này khác ký tự thứ j của P. Hãy đếm số vị trí i có số lỗi không vượt quá 1.
+
+Đầu vào:
+- Dòng thứ nhất là xâu T.
+- Dòng thứ hai là xâu P.
+- Cả hai xâu chỉ gồm chữ cái tiếng Anh in thường 'a' đến 'z'.
+
+Đầu ra:
+- Một số nguyên là số vị trí cần đếm. Nếu P dài hơn T thì đáp án là 0.
+
+Giới hạn:
+- 1 ≤ |T| ≤ 10^4, 1 ≤ |P| ≤ 10^4.
+
+Gợi ý:
+- Ở ví dụ 1, T = "abcabdabc", P = "abc". Các đoạn bắt đầu tại i = 1, 4, 7 là "abc", "abd", "abc" với số lỗi lần lượt 0, 1, 0. Các vị trí còn lại đều có 3 lỗi. Đáp án là 3.
+- Ở ví dụ 2, cả ba đoạn "aa" của T = "aaaa" đều sai đúng một chữ so với P = "ab", nên đáp án là 3.

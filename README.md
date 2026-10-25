@@ -9,7 +9,7 @@ Hệ thống chấm bài lập trình tự động: backend Java thuần, giao d
 
 ## Giới thiệu
 
-CodeHub là nền tảng luyện lập trình theo kiểu Codeforces. Người dùng nộp mã nguồn; hệ thống biên dịch, chạy trên bộ test với giới hạn thời gian và bộ nhớ, so sánh output với đáp án rồi trả verdict AC / WA / TLE / MLE / RE / CE cho từng test ngay khi chấm xong. Hệ thống có sẵn hai lớp học: lớp Nhập môn (10 chủ đề, 300 bài cho người mới bắt đầu) và lớp Lộ trình VNOI (26 chặng lập trình thi đấu theo [lộ trình tổng quát của VNOI Wiki](https://wiki.vnoi.info/roadmap/general-roadmap), mỗi chặng có một bài mẫu).
+CodeHub là nền tảng luyện lập trình theo kiểu Codeforces. Người dùng nộp mã nguồn; hệ thống biên dịch, chạy trên bộ test với giới hạn thời gian và bộ nhớ, so sánh output với đáp án rồi trả verdict AC / WA / TLE / MLE / RE / CE cho từng test ngay khi chấm xong. Hệ thống có sẵn hai lớp học: lớp Nhập môn (10 chủ đề, 300 bài cho người mới bắt đầu) và lớp Lộ trình VNOI (26 chặng lập trình thi đấu theo [lộ trình tổng quát của VNOI Wiki](https://wiki.vnoi.info/roadmap/general-roadmap), tổng cộng 300 bài).
 
 Backend chỉ dùng API chuẩn của JDK. Máy chủ HTTP, bộ đọc/ghi JSON, băm mật khẩu và quản lý phiên đều do nhóm tự viết. Thư viện ngoài duy nhất là MySQL Connector/J; dữ liệu được truy cập bằng JDBC, không qua framework hay ORM.
 
@@ -24,7 +24,7 @@ Backend chỉ dùng API chuẩn của JDK. Máy chủ HTTP, bộ đọc/ghi JSON
 
 ### Học tập
 - Hai lớp học, mỗi lớp có lộ trình riêng: lớp Nhập môn gồm 10 chủ đề từ nhập/xuất đến mảng, xâu và sắp xếp; lớp Lộ trình VNOI gồm 26 chặng từ đệ quy, đồ thị đến luồng và quy hoạch động nâng cao. Có theo dõi tiến độ từng chặng, nút *Học tiếp* và *Bài tiếp theo*.
-- Lớp Nhập môn có 300 bài mã `K001` đến `K300`; lớp VNOI có 26 bài mã `V001` đến `V026`. Mỗi bài có test ví dụ và test ẩn.
+- Lớp Nhập môn có 300 bài mã `K001` đến `K300`; lớp VNOI có 300 bài mã `V001` đến `V300`, mỗi chặng từ 6 đến 16 bài, xếp từ dễ đến khó. Mỗi bài có test ví dụ, test ẩn và lời giải mẫu C++ trong `data/submissions/`.
 - Lọc bài theo độ khó, đếm chuỗi ngày luyện tập, bảng xếp hạng và thống kê verdict.
 - Trình soạn code CodeMirror 6 tô màu cú pháp cho cả 6 ngôn ngữ; bộ phân tích của từng ngôn ngữ chỉ được tải khi cần.
 
@@ -199,7 +199,7 @@ powershell -ExecutionPolicy Bypass -File run-tests.ps1
 
 Script lần lượt biên dịch backend, chạy `--selftest`, `--apitest` và build frontend; có bước nào lỗi thì trả exit code khác 0.
 
-- `--selftest` chấm 43 bài nộp mẫu (17 bài thử đủ 6 verdict và nhiều ngôn ngữ, cùng lời giải mẫu C++ của 26 bài lớp VNOI), rồi đối chiếu với verdict kỳ vọng trong `data/submissions/demo-plan.txt`. Không cần MySQL.
+- `--selftest` chấm 43 bài nộp mẫu (17 bài thử đủ 6 verdict và nhiều ngôn ngữ, cùng lời giải mẫu C++ của 26 bài đầu tiên lớp VNOI, mỗi chặng một bài), rồi đối chiếu với verdict kỳ vọng trong `data/submissions/demo-plan.txt`. Không cần MySQL.
 - `--apitest` chạy kiểm thử tích hợp trên MySQL thật qua HTTP: đăng ký, đăng nhập, phân quyền, mật khẩu không lưu dạng plaintext, chặn path traversal, không lộ test ẩn, transaction và khoá ngoại, dữ liệu còn nguyên sau khi khởi động lại. Bộ kiểm thử chỉ chạy trên CSDL có tên kết thúc bằng `_test`, và làm việc trên bản sao đề bài nên không ảnh hưởng dữ liệu thật. Nếu chưa cấu hình `OJ_TEST_DB_*`, bước này được bỏ qua.
 
 ## Thiết kế hướng đối tượng
@@ -224,7 +224,7 @@ Script lần lượt biên dịch backend, chạy `--selftest`, `--apitest` và 
 - Trang Kỳ thi là bản demo, dữ liệu lưu trong `localStorage` của trình duyệt và chưa có API backend.
 - Chưa sửa được nội dung đề, bộ test, chưa xoá bài và chưa đổi mật khẩu qua giao diện; lộ trình (`topics.txt`) vẫn sửa tay.
 - Phiên đăng nhập lưu trong RAM; chưa có connection pool và phân trang cho lịch sử nộp bài.
-- Bộ test lớp VNOI được giữ khoảng 1 MB mỗi bài cho repo gọn, nên ở vài bài (V010, V012, V016, V022, V026) cách làm trâu viết bằng C++ vẫn kịp giới hạn thời gian; Java và Python thì không.
+- Bộ test lớp VNOI được giữ nhỏ cho repo gọn (khoảng 1 MB mỗi bài với V001–V026, dưới 100 KB mỗi bài với V027–V300), nên ở nhiều bài cách làm trâu viết bằng C++ vẫn kịp giới hạn thời gian; Java và Python thì thường không.
 
 ## Nhóm phát triển
 

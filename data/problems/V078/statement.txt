@@ -1,0 +1,21 @@
+Kho tổng của một công ty vận chuyển có n kiện hàng, kiện thứ i nặng x_i gam. Danh sách cân nặng được sinh theo công thức:
+- x_1 cho trước;
+- x_i = (A·x_{i-1} + B) mod M với mọi i từ 2 đến n, trong đó "mod" là phép lấy phần dư.
+
+Gọi b_1 ≤ b_2 ≤ ... ≤ b_n là các cân nặng sau khi xếp theo thứ tự không giảm. Để kiểm tra nhanh rằng việc sắp xếp là đúng, quản lý kho yêu cầu tính mã kiểm tra
+S = (1·b_1 + 2·b_2 + ... + n·b_n) mod (10^9 + 7).
+
+Đầu vào:
+- Một dòng gồm năm số nguyên n, x_1, A, B, M.
+
+Đầu ra:
+- In ra một số nguyên là S.
+
+Giới hạn:
+- 1 ≤ n ≤ 10^7.
+- 1 ≤ M ≤ 10^6; 0 ≤ x_1, A, B < M.
+
+Gợi ý:
+- Với n = 5, x_1 = 4, A = 3, B = 1, M = 10, dãy sinh ra là 4 3 0 1 4. Sau khi sắp xếp được 0 1 3 4 4, nên S = 1·0 + 2·1 + 3·3 + 4·4 + 5·4 = 47.
+- Mọi cân nặng đều nhỏ hơn M ≤ 10^6, trong khi n lên tới 10^7. Hãy đếm số kiện có mỗi cân nặng (sắp xếp đếm) rồi duyệt các cân nặng từ nhỏ đến lớn, độ phức tạp O(n + M), không cần lưu cả dãy.
+- Tổng 1·b_1 + ... + n·b_n có thể vượt quá 64 bit, hãy lấy phần dư sau mỗi phép cộng.

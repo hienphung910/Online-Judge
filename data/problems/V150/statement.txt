@@ -1,0 +1,20 @@
+Thị trấn có n ngã tư đánh số từ 1 đến n và m con đường hai chiều; đi hết con đường thứ i nối ngã tư u_i và ngã tư v_i mất w_i giây. Có k ngã tư được đặt trạm cứu hỏa. Khi có sự cố ở một ngã tư, xe cứu hỏa sẽ được điều từ trạm nào tới đó nhanh nhất.
+
+Với mỗi ngã tư, hãy tính thời gian ít nhất để một xe cứu hỏa (xuất phát từ bất kỳ trạm nào) tới được ngã tư đó.
+
+Đầu vào:
+- Dòng đầu tiên gồm ba số nguyên n, m, k.
+- Dòng thứ hai gồm k số nguyên đôi một khác nhau là các ngã tư có trạm cứu hỏa.
+- m dòng tiếp theo, mỗi dòng gồm ba số nguyên u, v, w: có đường hai chiều nối ngã tư u và ngã tư v, đi mất w giây. Có thể có nhiều con đường nối cùng một cặp ngã tư.
+
+Đầu ra:
+- Một dòng gồm n số nguyên; số thứ i là thời gian ít nhất để xe cứu hỏa tới ngã tư i, hoặc -1 nếu không trạm nào tới được ngã tư i. Ngã tư có trạm thì đáp án là 0.
+
+Giới hạn:
+- 1 ≤ n ≤ 800, 0 ≤ m ≤ 1000, 1 ≤ k ≤ n.
+- 1 ≤ u, v ≤ n, u ≠ v, 1 ≤ w ≤ 10^4.
+
+Gợi ý:
+- Ở ví dụ có trạm ở ngã tư 1 và 5. Tới ngã tư 3, xe từ trạm 5 đi 5 → 4 → 3 mất 1 + 2 = 3 giây, nhanh hơn xe từ trạm 1 đi 1 → 2 → 3 (4 + 3 = 7 giây).
+- Ngã tư 7 không có đường nào nên in -1.
+- Không cần chạy Dijkstra riêng từ từng trạm: hãy đặt khoảng cách của mọi trạm bằng 0, đưa tất cả vào hàng đợi ưu tiên ngay từ đầu rồi chạy Dijkstra một lần.

@@ -1,0 +1,20 @@
+Trên bãi biển có n hòn đá, hòn thứ i nằm ở điểm nguyên (x_i, y_i); nhiều hòn có thể nằm chồng lên nhau ở cùng một điểm. Ban quản lý muốn căng một sợi dây thật ngắn bao quanh tất cả các hòn đá (đó là bao lồi của tập điểm) và chỉ cắm cọc ở những chỗ sợi dây bị gấp khúc, tức là các đỉnh thật sự của bao lồi. Những hòn đá nằm trên một cạnh thẳng của sợi dây thì không cần cắm cọc.
+
+Hãy liệt kê vị trí các cọc.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- n dòng tiếp theo, dòng thứ i chứa hai số nguyên x_i, y_i.
+
+Đầu ra:
+- Dòng đầu tiên in số nguyên k là số cọc.
+- k dòng tiếp theo, mỗi dòng in toạ độ một cọc. Cọc đầu tiên là điểm có x nhỏ nhất (nếu có nhiều điểm như vậy thì chọn điểm có y nhỏ nhất), các cọc tiếp theo được liệt kê lần lượt NGƯỢC chiều kim đồng hồ dọc theo sợi dây.
+- Trường hợp đặc biệt: nếu mọi hòn đá ở cùng một điểm thì k = 1; nếu các hòn đá nằm trên cùng một đường thẳng (và có ít nhất hai điểm khác nhau) thì k = 2, in điểm đầu như quy tắc trên, sau đó là đầu mút còn lại.
+
+Giới hạn:
+- 1 ≤ n ≤ 2000.
+- |x_i|, |y_i| ≤ 10^4.
+
+Gợi ý:
+- Ví dụ 1: điểm (1, 1) nằm bên trong, các điểm (2, 0) và (4, 2) nằm trên cạnh của hình vuông, điểm (0, 0) xuất hiện hai lần. Bao lồi là hình vuông với 4 đỉnh, liệt kê ngược chiều kim đồng hồ bắt đầu từ (0, 0).
+- Ví dụ 2: ba điểm thẳng hàng, sợi dây suy biến thành đoạn thẳng nối (-1, -1) với (3, 1).

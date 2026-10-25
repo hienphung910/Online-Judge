@@ -1,0 +1,22 @@
+Một mật thư được viết thành xâu S độ dài n, các ký tự đánh số từ 1 đến n. Ký hiệu S[l..r] là đoạn gồm các ký tự từ vị trí l đến vị trí r. Người giải mật thư liên tục cần so sánh hai đoạn của S theo thứ tự từ điển.
+
+Thứ tự từ điển được hiểu như sau: so sánh lần lượt từng ký tự từ trái sang phải, ở vị trí đầu tiên hai xâu khác nhau thì xâu có ký tự nhỏ hơn (theo bảng chữ cái) là xâu nhỏ hơn. Nếu một xâu là tiền tố của xâu kia thì xâu ngắn hơn là xâu nhỏ hơn. Hai xâu bằng nhau khi có cùng độ dài và cùng từng ký tự.
+
+Cho q truy vấn, mỗi truy vấn gồm bốn số l1, r1, l2, r2. Hãy so sánh A = S[l1..r1] với B = S[l2..r2].
+
+Đầu vào:
+- Dòng đầu là xâu S gồm các chữ cái tiếng Anh in thường 'a' đến 'z'.
+- Dòng thứ hai là số nguyên q.
+- q dòng tiếp theo, mỗi dòng gồm bốn số nguyên l1, r1, l2, r2.
+
+Đầu ra:
+- Gồm q dòng, dòng thứ j là một ký tự: '<' nếu A nhỏ hơn B, '=' nếu A bằng B, '>' nếu A lớn hơn B.
+
+Giới hạn:
+- 1 ≤ n ≤ 5·10^3, 1 ≤ q ≤ 800.
+- 1 ≤ l1 ≤ r1 ≤ n, 1 ≤ l2 ≤ r2 ≤ n.
+
+Gợi ý:
+- Ở ví dụ, S = "banana". Truy vấn 1 so sánh "ban" với "ana": ký tự đầu 'b' > 'a' nên in '>'.
+- Truy vấn 2 so sánh "ana" với "ana" nên in '='. Truy vấn 3 so sánh "an" với "ana": "an" là tiền tố của "ana" nên in '<'. Truy vấn 4 so sánh "b" với "a" nên in '>'.
+- Nếu dùng băm xâu, nên băm theo hai modulo khác nhau: chỉ dùng tràn số 64-bit tự nhiên làm modulo có thể bị phá bằng các xâu đặc biệt.

@@ -1,0 +1,23 @@
+Phố cổ treo n chiếc đèn lồng thành một hàng, đánh số từ 1 đến n. Đèn thứ i ban đầu có độ sáng a_i (độ sáng có thể âm do cách đo của ban tổ chức). Trong đêm hội có q sự kiện xảy ra lần lượt: hoặc ban tổ chức chỉnh độ sáng của cả một đoạn đèn liên tiếp, hoặc một du khách hỏi độ sáng hiện tại của một chiếc đèn. Hãy trả lời các câu hỏi của du khách.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và q.
+- Dòng thứ hai gồm n số nguyên a_1, a_2, ..., a_n.
+- q dòng tiếp theo, mỗi dòng là một sự kiện ở một trong hai dạng sau.
+- Dạng "1 l r x": cộng thêm x vào độ sáng của mọi đèn từ l đến r.
+- Dạng "2 i": hỏi độ sáng hiện tại của đèn i.
+
+Đầu ra:
+- Với mỗi sự kiện dạng 2, in ra độ sáng tương ứng trên một dòng, theo đúng thứ tự xuất hiện.
+
+Giới hạn:
+- 1 ≤ n, q ≤ 10^3.
+- 1 ≤ l ≤ r ≤ n, 1 ≤ i ≤ n.
+- |a_i| ≤ 10^9, |x| ≤ 10^9.
+- Có ít nhất một sự kiện dạng 2.
+- Độ sáng có thể vượt quá phạm vi kiểu int, hãy dùng số nguyên 64-bit (long long / long).
+
+Gợi ý:
+- Ở ví dụ, ban đầu a = [3, 1, 4, 1, 5]. Câu hỏi đầu tiên: đèn 3 có độ sáng 4.
+- Cộng 2 vào đoạn [2, 4] được [3, 3, 6, 3, 5]; rồi cộng -5 vào đoạn [3, 5] được [3, 3, 1, -2, 0].
+- Lúc này đèn 3 có độ sáng 1, đèn 4 có độ sáng -2 và đèn 1 vẫn là 3.

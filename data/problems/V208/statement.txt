@@ -1,0 +1,19 @@
+Thành phố du lịch có n bến xe buýt, đánh số từ 1 đến n. Có m tuyến xe một chiều, mỗi tuyến chạy thẳng từ bến u đến bến v (có thể có tuyến vòng quanh rồi quay lại chính bến u). Khách sạn của Minh ở bến 1, còn sân bay ở bến n.
+
+Một lịch trình là một dãy các chuyến xe nối tiếp nhau: chuyến sau xuất phát từ bến mà chuyến trước vừa dừng; một bến hay một tuyến có thể được đi lại nhiều lần. Minh muốn biết có bao nhiêu lịch trình khác nhau đi từ bến 1 đến bến n mà dùng ít nhất 1 và nhiều nhất K chuyến xe. Lịch trình kết thúc ngay khi đi hết số chuyến của nó, nên nó có thể đi ngang qua bến n ở giữa đường. Vì đáp án rất lớn, hãy in ra phần dư khi chia cho 10^9 + 7.
+
+Đầu vào:
+- Dòng đầu tiên chứa ba số nguyên n, m, K.
+- m dòng tiếp theo, mỗi dòng chứa hai số nguyên u, v mô tả một tuyến xe từ bến u đến bến v.
+
+Đầu ra:
+- In ra số lịch trình từ bến 1 đến bến n dùng từ 1 đến K chuyến xe, lấy phần dư khi chia cho 10^9 + 7.
+
+Giới hạn:
+- 2 ≤ n ≤ 30.
+- 0 ≤ m ≤ n·n, các cặp (u, v) đôi một khác nhau, cho phép u = v.
+- 1 ≤ K ≤ 10^18.
+
+Gợi ý:
+- Với ví dụ, các lịch trình là 1 → 3 (1 chuyến), 1 → 2 → 3 (2 chuyến), 1 → 3 → 1 → 3 (3 chuyến), 1 → 2 → 3 → 1 → 3 và 1 → 3 → 1 → 2 → 3 (4 chuyến), tổng cộng 5.
+- Nếu A là ma trận kề thì số lịch trình dài đúng L chuyến từ i đến j bằng phần tử (i, j) của A^L. Để cộng dồn mọi độ dài từ 1 đến K, có thể thêm một bến ảo n + 1 cùng tuyến n → n + 1 và tuyến n + 1 → n + 1.

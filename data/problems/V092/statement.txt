@@ -1,0 +1,18 @@
+Tiệm bánh của cô Mai nhận n mẻ bánh. Mỗi mẻ phải qua hai công đoạn theo đúng thứ tự: nhào bột rồi mới nướng. Mẻ thứ i cần a_i phút nhào trên máy nhào và b_i phút nướng trong lò. Tiệm chỉ có một máy nhào và một lò nướng; mỗi thiết bị chỉ xử lý một mẻ tại mỗi thời điểm và đã bắt đầu mẻ nào thì làm liên tục cho xong.
+
+Cả hai thiết bị bắt đầu từ thời điểm 0. Một mẻ chỉ được cho vào lò sau khi đã nhào xong. Hãy sắp xếp công việc sao cho thời điểm mẻ bánh cuối cùng nướng xong là sớm nhất, và in ra thời điểm đó.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- n dòng tiếp theo, dòng thứ i chứa hai số nguyên a_i và b_i.
+
+Đầu ra:
+- In ra một số nguyên là thời điểm sớm nhất nướng xong mọi mẻ bánh.
+
+Giới hạn:
+- 1 ≤ n ≤ 2000.
+- 1 ≤ a_i, b_i ≤ 10^5.
+
+Gợi ý:
+- Luôn tồn tại một cách tối ưu mà hai thiết bị làm các mẻ theo cùng một thứ tự. Quy tắc Johnson: các mẻ có a_i ≤ b_i làm trước, xếp theo a_i tăng dần; các mẻ còn lại làm sau, xếp theo b_i giảm dần.
+- Trong ví dụ, làm theo thứ tự (1, 4), (5, 5), (3, 2), (2, 1): máy nhào xong các mẻ ở thời điểm 1, 6, 9, 11; lò nướng xong ở thời điểm 5, 11, 13, 14. Đáp án là 14.

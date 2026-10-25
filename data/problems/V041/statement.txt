@@ -1,0 +1,20 @@
+Một số nguyên dương n có k chữ số (không có số 0 ở đầu) được gọi là số tự mãn nếu tổng lũy thừa bậc k của các chữ số của nó bằng chính nó. Ví dụ 153 có 3 chữ số và 1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153, nên 153 là số tự mãn. Mọi số có một chữ số từ 1 đến 9 đều là số tự mãn vì 9^1 = 9.
+
+Thầy Quang ra cho cả lớp T câu hỏi, mỗi câu hỏi cho hai số l và r: trong đoạn từ l đến r có bao nhiêu số tự mãn?
+
+Đầu vào:
+- Dòng đầu chứa số nguyên T.
+- T dòng tiếp theo, mỗi dòng chứa hai số nguyên l và r.
+
+Đầu ra:
+- Với mỗi câu hỏi in ra một số nguyên là số lượng số tự mãn trong đoạn [l, r].
+
+Giới hạn:
+- 1 ≤ T ≤ 300.
+- 1 ≤ l ≤ r ≤ 10^18.
+
+Gợi ý:
+- Đoạn [1, 10] có 9 số tự mãn là 1, 2, ..., 9 (số 10 không phải vì 1^2 + 0^2 = 1).
+- Đoạn [100, 500] có 4 số tự mãn: 153, 370, 371, 407.
+- Đoạn [1000, 10000] có 3 số tự mãn: 1634, 8208, 9474.
+- Không có số có hai chữ số nào là số tự mãn.

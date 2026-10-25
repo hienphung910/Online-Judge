@@ -1,0 +1,19 @@
+Mỗi con tàu trong hạm đội vũ trụ mang một số hiệu là số nguyên n ≥ 2. Theo quy ước của hạm đội, cấp bậc của con tàu được suy ra từ hai đại lượng: ước nguyên tố lớn nhất của n và số ước dương của n. Trung tâm chỉ huy có q số hiệu cần tra cứu, nhưng các số hiệu có thể tới 10^18.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên q.
+- q dòng tiếp theo, mỗi dòng chứa một số nguyên n_i.
+
+Đầu ra:
+- In ra q dòng, dòng thứ i gồm hai số nguyên: ước nguyên tố lớn nhất của n_i và số ước dương của n_i.
+
+Giới hạn:
+- 1 ≤ q ≤ 150.
+- 2 ≤ n_i ≤ 10^18.
+
+Gợi ý:
+- 12 = 2^2 · 3 có ước nguyên tố lớn nhất là 3 và 6 ước (1, 2, 3, 4, 6, 12).
+- 97 là số nguyên tố: đáp án 97 2.
+- 999999866000004473 = 999999929 · 999999937, có 4 ước.
+- 10^18 = 2^18 · 5^18 có (18 + 1) · (18 + 1) = 361 ước.
+- Chia thử đến √n ≈ 10^9 là quá chậm khi n là tích hai số nguyên tố cỡ 10^9. Dùng Miller-Rabin để nhận ra số nguyên tố, và thuật toán Pollard rho để tìm một ước thực sự của hợp số trong khoảng n^(1/4) bước: lặp x → x^2 + c (mod n) và tính gcd(|x - y|, n) với hai con trỏ chạy nhanh, chậm. Phân tích đệ quy hai nửa. Số ước bằng tích (e_j + 1) theo các số mũ e_j.

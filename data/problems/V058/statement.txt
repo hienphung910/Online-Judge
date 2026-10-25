@@ -1,0 +1,19 @@
+Trên bờ biển có n ngọn đèn hiệu. Ngọn đèn thứ i cứ đúng t_i giây lại chớp sáng một lần. Tại thời điểm 0 tất cả các đèn cùng chớp, nên ngọn thứ i sẽ chớp ở các thời điểm 0, t_i, 2t_i, 3t_i, ...
+
+Người gác hải đăng muốn biết thời điểm T > 0 sớm nhất mà tất cả n ngọn đèn lại cùng chớp sáng. Nếu T lớn hơn 10^18 thì ông coi như không bao giờ chờ được.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- Dòng thứ hai chứa n số nguyên t_1, t_2, ..., t_n.
+
+Đầu ra:
+- In ra T nếu T ≤ 10^18, ngược lại in ra -1.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000.
+- 1 ≤ t_i ≤ 10^9.
+
+Gợi ý:
+- Ví dụ 1: ba đèn có chu kỳ 4, 6, 10. T là bội chung nhỏ nhất của chúng, bằng 60.
+- Ví dụ 2: BCNN của 10^9, 999999999 và 999999998 xấp xỉ 5 · 10^26, vượt quá 10^18 nên in -1.
+- BCNN(a, b) = a / UCLN(a, b) · b. Hãy chia trước rồi mới nhân, và kiểm tra vượt 10^18 trước khi nhân (hoặc dùng __int128) để tránh tràn số.

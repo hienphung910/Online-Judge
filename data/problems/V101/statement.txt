@@ -1,0 +1,17 @@
+Trong trò chơi ghép thẻ, mỗi tấm thẻ ghi một số nguyên không âm. Khi ghép hai tấm thẻ ghi x và y, người chơi được số điểm bằng x XOR y (phép XOR từng bit, toán tử ^ trong C++/Java). Có n tấm thẻ a_1, a_2, ..., a_n. Hãy tính tổng số điểm nếu ghép thử mọi cặp hai tấm thẻ khác nhau, mỗi cặp đúng một lần.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n.
+
+Đầu ra:
+- In ra tổng của (a_i XOR a_j) trên mọi cặp chỉ số i < j.
+
+Giới hạn:
+- 1 ≤ n ≤ 2000.
+- 0 ≤ a_i < 2^30.
+- Đáp án có thể vượt quá 2^31 - 1, hãy dùng số nguyên 64 bit.
+
+Gợi ý:
+- Xét riêng từng bit b. Nếu có cnt số có bit b bằng 1 thì có cnt · (n - cnt) cặp mà XOR của chúng có bit b bằng 1, mỗi cặp như vậy đóng góp 2^b vào tổng. Cộng đóng góp của mọi bit lại.
+- Với ba thẻ 1 2 3: 1 XOR 2 = 3, 1 XOR 3 = 2, 2 XOR 3 = 1, tổng là 6.

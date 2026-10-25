@@ -1,0 +1,17 @@
+Bé Na có một chuỗi hạt cườm, mỗi hạt có hình móc mở "(" hoặc móc đóng ")". Một đoạn hạt liên tiếp được gọi là cân đối nếu dãy ký tự của nó là một dãy ngoặc đúng, tức là có thể ghép mỗi móc mở với một móc đóng nằm sau nó sao cho các cặp lồng nhau hoặc nối tiếp nhau mà không cắt chéo. Ví dụ "(())()" là cân đối, còn "())(" thì không.
+
+Na muốn cắt ra một đoạn cân đối dài nhất để làm vòng tay. Hãy cho biết độ dài lớn nhất L của một đoạn liên tiếp cân đối, và có bao nhiêu đoạn liên tiếp cân đối có độ dài đúng bằng L (hai đoạn khác nhau nếu vị trí bắt đầu khác nhau).
+
+Đầu vào:
+- Một dòng duy nhất chứa xâu mô tả chuỗi hạt.
+
+Đầu ra:
+- In ra hai số nguyên L và số đoạn cân đối có độ dài L. Nếu không có đoạn cân đối nào (không tính đoạn rỗng) thì in ra 0 0.
+
+Giới hạn:
+- 1 ≤ độ dài xâu ≤ 25000.
+- Xâu chỉ gồm các ký tự ( và ).
+
+Gợi ý:
+- Duyệt từ trái sang phải với một ngăn xếp chứa vị trí, ban đầu đặt sẵn vị trí "mốc" là 0 (các ký tự đánh số từ 1). Gặp "(" thì đẩy vị trí vào. Gặp ")" thì lấy đỉnh ra; nếu ngăn xếp rỗng thì đẩy vị trí hiện tại vào làm mốc mới, ngược lại i - đỉnh chính là độ dài đoạn cân đối dài nhất kết thúc tại i.
+- Ví dụ 1: đoạn "((()))" và đoạn "(()())" đều dài 6 và không có đoạn cân đối nào dài hơn, nên in 6 2. Ví dụ 2 không có đoạn cân đối nào.

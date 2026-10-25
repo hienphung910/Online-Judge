@@ -1,0 +1,20 @@
+Phù thủy có một chiếc gương kỳ lạ gắn với một số nguyên tố p: đặt trước gương một số nguyên x với 0 ≤ x < p, gương sẽ hiện ra số x^2 mod p. Một hôm học trò mang đến một số a mà gương vừa hiện ra, và hỏi lúc nãy số nào đã được đặt trước gương.
+
+Nói cách khác, cần tìm số nguyên x với 0 ≤ x < p thỏa mãn x^2 ≡ a (mod p). Với p lẻ và a khác 0, nếu có nghiệm x thì p - x cũng là nghiệm, nên để đáp án duy nhất bạn hãy in ra nghiệm nhỏ hơn. Nếu không có nghiệm nào, in ra -1. Có q câu hỏi độc lập.
+
+Đầu vào:
+- Dòng đầu chứa số nguyên q.
+- q dòng tiếp theo, mỗi dòng chứa hai số nguyên p và a.
+
+Đầu ra:
+- In ra q dòng, mỗi dòng là nghiệm x nhỏ nhất trong đoạn [0, p - 1] của phương trình x^2 ≡ a (mod p), hoặc -1 nếu phương trình vô nghiệm.
+
+Giới hạn:
+- 1 ≤ q ≤ 500.
+- 2 ≤ p < 2^31 và p là số nguyên tố.
+- 0 ≤ a < p.
+
+Gợi ý:
+- Với p = 7, các số 1, 2, 3, 4, 5, 6 khi bình phương cho phần dư lần lượt 1, 4, 2, 2, 4, 1. Vậy a = 2 có hai nghiệm 3 và 4, in 3; còn a = 3 vô nghiệm.
+- 6^2 = 36 ≡ 10 (mod 13) và 7^2 = 49 ≡ 10 (mod 13), in 6. Tương tự 6^2 = 36 ≡ 2 (mod 17).
+- Theo tiêu chuẩn Euler, với p lẻ và a khác 0, phương trình có nghiệm khi và chỉ khi a^((p-1)/2) ≡ 1 (mod p). Khi p - 1 chia hết cho một lũy thừa lớn của 2 (ví dụ p = 998244353 = 119 · 2^23 + 1), hãy dùng thuật toán Tonelli–Shanks. Mọi số đều nhỏ hơn 2^31 nên tích hai số vừa với số nguyên 64 bit.

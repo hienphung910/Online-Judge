@@ -1,0 +1,21 @@
+Một đường đua thẳng có n ô, đánh số từ 1 đến n. Ở ô thứ i gắn một chiếc lò xo có lực bật a_i: viên bi rơi vào ô i sẽ ngay lập tức bị bật tới ô i + a_i. Nếu i + a_i > n thì viên bi văng ra khỏi đường đua. Người quản lý lần lượt thực hiện q thao tác:
+- "0 i v": thay lò xo ở ô i bằng lò xo có lực bật v.
+- "1 i": thả một viên bi vào ô i và theo dõi nó cho tới khi văng ra ngoài. Hãy cho biết ô cuối cùng viên bi chạm vào trước khi văng ra, và tổng số ô viên bi đã chạm vào (tính cả ô i).
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và q.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n.
+- q dòng tiếp theo, mỗi dòng mô tả một thao tác theo một trong hai dạng trên.
+
+Đầu ra:
+- Với mỗi thao tác loại 1, in ra trên một dòng hai số nguyên: chỉ số ô cuối cùng viên bi chạm vào và số ô viên bi đã chạm vào.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000, 1 ≤ q ≤ 1500.
+- 1 ≤ a_i, v ≤ n.
+- 1 ≤ i ≤ n.
+- Có ít nhất một thao tác loại 1.
+
+Gợi ý:
+- Với n = 8 và lực bật 1 3 2 4 1 2 5 1: thả bi vào ô 1, bi đi qua các ô 1, 2, 5, 6, 8 rồi văng ra nên in "8 5". Thả vào ô 3, bi đi qua 3, 5, 6, 8, in "8 4". Sau khi ô 5 đổi thành lực bật 4, thả vào ô 1 bi đi qua 1, 2, 5 rồi văng ra (5 + 4 > 8), in "5 3".
+- Chia đường đua thành các khối độ dài khoảng căn n. Với mỗi ô, lưu sẵn: viên bi cần bao nhiêu lần chạm để rời khỏi khối của ô đó, ô đầu tiên nó tới ở ngoài khối, và ô cuối cùng nó chạm trong khối. Thông tin này tính được từ phải sang trái trong từng khối. Thay một lò xo chỉ phải tính lại một khối; mỗi lần thả bi chỉ nhảy qua không quá khoảng căn n khối.

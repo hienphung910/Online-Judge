@@ -1,0 +1,26 @@
+Làng có n ngôi nhà đánh số từ 1 đến n, nối với nhau bởi n - 1 con đường sao cho giữa hai nhà bất kỳ có đúng một lối đi. Nhà số 1 là nhà trưởng làng; với mỗi i ≥ 2, nhà i có đường nối trực tiếp tới nhà p_i, trong đó p_i < i. Dịp lễ hội, nhà thứ i treo a_i chiếc đèn lồng.
+
+Có q sự kiện xảy ra theo thứ tự:
+- 1 u x: nhà u thay đổi, từ giờ treo đúng x chiếc đèn lồng.
+- 2 u v: một đoàn rước đi từ nhà u tới nhà v theo lối đi duy nhất; hãy cho biết tổng số đèn lồng của mọi ngôi nhà trên lối đi đó, tính cả nhà u và nhà v.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và q.
+- Dòng thứ hai gồm n số nguyên a_1, a_2, ..., a_n.
+- Dòng thứ ba gồm n - 1 số nguyên p_2, p_3, ..., p_n.
+- q dòng tiếp theo, mỗi dòng mô tả một sự kiện theo định dạng trên.
+
+Đầu ra:
+- Với mỗi sự kiện loại 2, in ra trên một dòng tổng số đèn lồng tìm được.
+
+Giới hạn:
+- 2 ≤ n ≤ 1000.
+- 1 ≤ q ≤ 1000.
+- 0 ≤ a_i, x ≤ 10^7.
+- 1 ≤ p_i < i; 1 ≤ u, v ≤ n (u có thể bằng v).
+- Tổng có thể vượt quá phạm vi số nguyên 32 bit.
+
+Gợi ý:
+- Lối đi từ nhà 4 tới nhà 3 là 4 → 2 → 1 → 3, tổng 1 + 1 + 3 + 4 = 9.
+- Sau khi nhà 2 treo 10 chiếc, lối đi 4 → 2 → 5 có 1 + 10 + 5 = 16 chiếc.
+- Lối đi từ nhà 3 tới chính nó chỉ gồm nhà 3, có 4 chiếc.

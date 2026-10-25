@@ -1,0 +1,26 @@
+Làng Đông giữ một cuốn gia phả chung. Lúc đầu gia phả chỉ ghi đúng một người là cụ tổ, mang số 1. Mỗi khi trong làng có thêm một người được ghi vào gia phả, người đó nhận số tiếp theo chưa dùng (lần lượt 2, 3, 4, ...) và được ghi là con của một người p đã có trong gia phả.
+
+Xen giữa các lần ghi tên, các cụ trong hội đồng gia tộc đặt câu hỏi. Có hai loại câu hỏi:
+- Tổ tiên đời thứ k của người v là ai? Đời thứ 0 là chính v, đời thứ 1 là cha của v, đời thứ 2 là ông của v (cha của cha), và cứ thế tiếp tục. Nếu không có người như vậy (đi ngược lên quá cụ tổ) thì trả lời -1.
+- Tổ tiên chung gần nhất của hai người u và v là ai? Đó là người có đời xa cụ tổ nhất mà vừa là tổ tiên (đời thứ mấy cũng được, kể cả đời thứ 0) của u, vừa là tổ tiên của v.
+
+Đầu vào:
+- Dòng đầu gồm số nguyên q là số thao tác.
+- q dòng tiếp theo, mỗi dòng là một thao tác ở một trong ba dạng sau.
+- Dạng "+ p": ghi thêm một người mới là con của người p.
+- Dạng "A v k": hỏi tổ tiên đời thứ k của người v.
+- Dạng "L u v": hỏi tổ tiên chung gần nhất của người u và người v.
+
+Đầu ra:
+- Với mỗi câu hỏi "A" hoặc "L", theo thứ tự xuất hiện, in ra câu trả lời trên một dòng.
+
+Giới hạn:
+- 1 ≤ q ≤ 2000.
+- Mọi số người p, u, v trong một thao tác đều đã có trong gia phả tại thời điểm đó.
+- 0 ≤ k ≤ 2000.
+- Có ít nhất một câu hỏi.
+
+Gợi ý:
+- Ở ví dụ, người 2 và 3 là con của cụ tổ 1, người 4 là con của 2, người 5 là con của 4.
+- Tổ tiên đời thứ 2 của người 5 là 2 (5 → 4 → 2), đời thứ 3 là 1. Người 3 chỉ cách cụ tổ một đời nên không có tổ tiên đời thứ 2, trả lời -1. Tổ tiên chung gần nhất của 5 và 3 là cụ tổ 1.
+- Ghi thêm người 6 là con của 4. Tổ tiên chung gần nhất của 5 và 6 là 4, của 2 và 6 là chính người 2. Tổ tiên đời thứ 0 của 6 là chính 6.

@@ -1,0 +1,26 @@
+Ở câu lạc bộ cờ của phường, các bạn nhỏ chơi cờ ca-rô trên bàn cờ 3 hàng, 3 cột. Hai người lần lượt đánh: người cầm X luôn đi trước, sau đó đến O, rồi X, rồi O... Mỗi lượt đánh vào một ô trống. Ván cờ kết thúc ngay khi có người tạo được 3 quân của mình thẳng hàng (cùng hàng, cùng cột hoặc cùng một trong hai đường chéo) — người đó thắng — hoặc khi bàn cờ kín ô mà không ai thắng — khi đó hòa. Sau khi ván kết thúc thì không ai đánh thêm.
+
+Bác trọng tài nhận được ảnh chụp T bàn cờ và cần ghi nhận xét cho từng bàn:
+- KHONG HOP LE nếu không thể có bàn cờ này khi hai bên chơi đúng luật như trên.
+- X THANG nếu ván đã kết thúc và X thắng.
+- O THANG nếu ván đã kết thúc và O thắng.
+- HOA nếu ván đã kết thúc với kết quả hòa.
+- LUOT X hoặc LUOT O nếu ván chưa kết thúc, kèm theo người sẽ đánh nước tiếp theo.
+
+Đầu vào:
+- Dòng đầu chứa số nguyên T.
+- Tiếp theo là T bàn cờ, mỗi bàn gồm 3 dòng, mỗi dòng 3 ký tự: X là quân X, O (chữ O in hoa) là quân O, dấu chấm là ô trống.
+
+Đầu ra:
+- Với mỗi bàn cờ in nhận xét trên một dòng, đúng như các nhãn ở trên.
+
+Giới hạn:
+- 1 ≤ T ≤ 10^3.
+- Mỗi bàn cờ gồm đúng 3 dòng, mỗi dòng đúng 3 ký tự thuộc X, O, dấu chấm.
+
+Gợi ý:
+- Bàn 1: X có 3 quân, O có 2 quân, X đã có hàng trên cùng nên X THANG.
+- Bàn 2: hai bên đều có 3 quân thẳng hàng; không thể xảy ra vì ván phải dừng ngay khi người đầu tiên thắng, nên KHONG HOP LE.
+- Bàn 3: X có 1 quân, O có 1 quân, chưa ai thắng nên đến LUOT X.
+- Bàn 4: O có nhiều quân hơn X, trái luật vì X đi trước, nên KHONG HOP LE.
+- Bàn 5: kín bàn, không ai có 3 quân thẳng hàng nên HOA.

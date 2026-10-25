@@ -1,0 +1,22 @@
+Cuối học kỳ, thầy chủ nhiệm cần dán bảng vàng xếp hạng cả lớp lên bảng tin. Mỗi học sinh có điểm ba môn Toán, Văn, Anh. Thầy xếp hạng theo các quy tắc sau, xét lần lượt:
+1. Tổng điểm ba môn cao hơn thì đứng trước.
+2. Nếu tổng điểm bằng nhau, ai có điểm Toán cao hơn thì đứng trước.
+3. Nếu vẫn bằng nhau, ai có tên nhỏ hơn theo thứ tự từ điển thì đứng trước.
+
+Hãy in ra bảng vàng theo đúng thứ tự trên.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n là số học sinh.
+- n dòng tiếp theo, mỗi dòng gồm tên học sinh và ba số nguyên lần lượt là điểm Toán, Văn, Anh, cách nhau bởi dấu cách.
+
+Đầu ra:
+- In ra n dòng, mỗi dòng là tên một học sinh theo thứ tự trên bảng vàng.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000.
+- Mỗi tên gồm từ 1 đến 10 chữ cái tiếng Anh in thường, các tên đôi một khác nhau.
+- 0 ≤ điểm mỗi môn ≤ 10.
+
+Gợi ý:
+- Bạn dung có tổng 30 nên đứng đầu. Ba bạn an, binh, chi cùng có tổng 24; binh và chi cùng 9 điểm Toán nên xếp theo tên (binh trước chi), còn an chỉ có 8 điểm Toán nên đứng cuối.
+- Thứ tự từ điển so sánh từng ký tự từ trái sang phải; nếu một tên là phần đầu của tên kia thì tên ngắn hơn đứng trước (ví dụ "an" đứng trước "anh").

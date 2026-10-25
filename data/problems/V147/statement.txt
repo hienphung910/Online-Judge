@@ -1,0 +1,19 @@
+Một hãng hàng không mới mở m đường bay một chiều giữa n thành phố đánh số từ 1 đến n; đường bay thứ i đi từ thành phố u_i tới thành phố v_i. Trước khi khai trương, hãng muốn dùng một chiếc máy bay bay thử: máy bay cất cánh từ một thành phố nào đó, bay lần lượt qua các đường bay, và mỗi đường bay phải được bay đúng một lần (thành phố thì được ghé lại nhiều lần). Máy bay có thể kết thúc ở bất kỳ thành phố nào.
+
+Hành trình được ghi lại bằng dãy m + 1 thành phố theo thứ tự máy bay đi qua. Trong tất cả các hành trình hợp lệ, hãy in ra hành trình nhỏ nhất theo thứ tự từ điển (so sánh thành phố đầu tiên, nếu bằng nhau thì so sánh thành phố thứ hai, và cứ thế).
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và m.
+- m dòng tiếp theo, dòng thứ i gồm hai số nguyên u_i, v_i mô tả một đường bay từ u_i tới v_i. Có thể có nhiều đường bay giống nhau (mỗi đường đều phải bay đúng một lần), và có thể có đường bay với u_i = v_i (bay một vòng rồi hạ cánh lại chỗ cũ).
+
+Đầu ra:
+- Nếu có hành trình hợp lệ, in m + 1 số nguyên là hành trình nhỏ nhất theo thứ tự từ điển.
+- Ngược lại in -1.
+
+Giới hạn:
+- 1 ≤ n ≤ 500; 1 ≤ m ≤ 2000.
+- 1 ≤ u_i, v_i ≤ n.
+
+Gợi ý:
+- Ở ví dụ 1, thành phố 3 có số đường bay đi ra nhiều hơn số đường bay đi vào nên hành trình phải bắt đầu ở 3. Hành trình 3 1 2 3 2 dùng đủ 4 đường bay; hành trình 3 2 3 1 2 cũng hợp lệ nhưng lớn hơn.
+- Ở ví dụ 2, hai đường bay 1 → 2 và 3 → 4 không nối được với nhau nên đáp án là -1.

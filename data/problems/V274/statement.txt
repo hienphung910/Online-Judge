@@ -1,0 +1,24 @@
+Một tên trộm vừa lấy cắp bảo vật ở thành 1 và đang tìm cách chạy ra bến cảng ở thành n. Vương quốc có n thành, đánh số từ 1 đến n, nối với nhau bằng m con đường hai chiều.
+
+Quan binh muốn lập chốt ở một số thành để chắc chắn bắt được tên trộm: mọi lộ trình từ thành 1 đến thành n đều phải đi qua ít nhất một thành có chốt. Không được lập chốt ở thành 1 (tên trộm đã ở đó) và thành n (bến cảng quá đông người). Chi phí lập chốt ở thành i là w_i. Hãy tính tổng chi phí nhỏ nhất.
+
+Nếu có con đường nối thẳng thành 1 với thành n thì không cách nào chặn được, khi đó in -1.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và m.
+- Dòng thứ hai gồm n số nguyên w_1, w_2, ..., w_n, trong đó luôn có w_1 = w_n = 0.
+- m dòng tiếp theo, mỗi dòng gồm hai số nguyên u, v (u ≠ v): có một con đường nối thành u và thành v. Giữa hai thành có thể có nhiều con đường.
+
+Đầu ra:
+- In ra một số nguyên duy nhất là tổng chi phí nhỏ nhất, hoặc -1 nếu không thể chặn. Nếu ngay từ đầu tên trộm đã không có đường tới thành n thì in 0.
+
+Giới hạn:
+- 2 ≤ n ≤ 200.
+- 0 ≤ m ≤ 2000.
+- 1 ≤ w_i ≤ 10^6 với 2 ≤ i ≤ n - 1.
+- 1 ≤ u, v ≤ n.
+
+Gợi ý:
+- Trong ví dụ, lập chốt ở thành 3 và thành 4 tốn 4 + 2 = 6. Khi đó từ thành 1 tên trộm chỉ tới được thành 2, mà mọi con đường rời thành 2 đều dẫn vào thành 1, 3 hoặc 4.
+- Các cách khác như chặn hai thành 2, 3 (tốn 7) hay hai thành 4, 5 (tốn 7) đều đắt hơn. Đáp án là 6.
+- Tách mỗi thành i thành hai đỉnh "vào" và "ra" nối bằng một cạnh sức chứa w_i, mỗi con đường thành các cạnh sức chứa vô cùng. Theo định lý luồng cực đại - lát cắt hẹp nhất, đáp án bằng luồng cực đại trên mạng mới.

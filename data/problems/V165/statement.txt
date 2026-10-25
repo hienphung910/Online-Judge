@@ -1,0 +1,19 @@
+Hệ thống bưu cục của tỉnh gồm n bưu cục đánh số từ 1 đến n, nối với nhau bởi n - 1 tuyến đường hai chiều tạo thành một cây (giữa hai bưu cục bất kỳ có đúng một đường đi đơn).
+
+Người đưa thư nhận q nhiệm vụ. Nhiệm vụ thứ i có dạng "u v k": anh đi từ bưu cục u đến bưu cục v theo đường đi đơn duy nhất, liệt kê lần lượt các bưu cục đi qua (kể cả u và v), và cần biết bưu cục thứ k trong danh sách đó là bưu cục nào (u là bưu cục thứ 1). Nếu danh sách có ít hơn k bưu cục thì in -1.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và q.
+- n - 1 dòng tiếp theo, mỗi dòng gồm hai số nguyên a, b: có tuyến đường nối bưu cục a và b.
+- q dòng tiếp theo, mỗi dòng gồm ba số nguyên u, v, k.
+
+Đầu ra:
+- Với mỗi nhiệm vụ, in trên một dòng số hiệu bưu cục thứ k trên đường đi, hoặc -1.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000, 1 ≤ q ≤ 1000.
+- 1 ≤ a, b, u, v ≤ n, 1 ≤ k ≤ n. Có thể u = v (khi đó danh sách chỉ gồm một bưu cục).
+
+Gợi ý:
+- Ở ví dụ, đường đi từ 4 đến 7 là 4-2-1-3-6-7 gồm 6 bưu cục: bưu cục thứ 1 là 4, thứ 3 là 1, thứ 6 là 7, còn thứ 7 không tồn tại nên in -1. Đường đi từ 5 đến 5 chỉ có bưu cục 5. Đường đi từ 7 đến 1 là 7-6-3-1 nên bưu cục thứ 2 là 6.
+- Gọi w là LCA của u và v. Nếu k - 1 không vượt quá số cạnh từ u lên w thì đáp án là tổ tiên thứ k - 1 của u; ngược lại đáp án là một tổ tiên của v. Tổ tiên thứ t của một đỉnh tìm được trong O(log n) bằng kỹ thuật nhảy nhị phân (binary lifting).

@@ -1,0 +1,24 @@
+Cuối năm, lớp của cô Thảo tổ chức trò chơi đổi quà: lớp có n bạn, bạn thứ i mang tới món quà được dán số i. Cô muốn chia lại quà sao cho mỗi bạn nhận đúng một món, mỗi món đến tay đúng một bạn, và không bạn nào nhận lại chính món mình mang tới. Mỗi nhóm học sinh nộp cho cô một phương án chia; bài này có rất nhiều phương án đúng nên cô không thể so với một đáp án cố định. Hãy viết chương trình chấm giúp cô: với mỗi phương án, cho biết nó đúng hay sai.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên T là số bộ dữ liệu.
+- Mỗi bộ dữ liệu gồm hai dòng. Dòng thứ nhất chứa số nguyên n. Dòng thứ hai là phương án của học sinh, có một trong hai dạng:
+  + chỉ gồm số 0: học sinh khẳng định không có cách chia nào thỏa mãn;
+  + số 1, tiếp theo là n số nguyên p_1, p_2, ..., p_n: bạn thứ i nhận món quà số p_i. Các số p_i có thể sai: nằm ngoài đoạn [1, n], trùng nhau, hoặc p_i = i.
+
+Đầu ra:
+- In ra T dòng, dòng thứ k là DUNG nếu phương án của bộ thứ k đúng, ngược lại là SAI.
+- Phương án dạng 0 đúng khi và chỉ khi thật sự không tồn tại cách chia nào thỏa mãn.
+- Phương án dạng 1 đúng khi và chỉ khi p_1, p_2, ..., p_n là một hoán vị của 1, 2, ..., n (mỗi số từ 1 đến n xuất hiện đúng một lần) và p_i ≠ i với mọi i.
+
+Giới hạn:
+- 1 ≤ T ≤ 100.
+- 1 ≤ n ≤ 3000, tổng n của tất cả các bộ không vượt quá 3000.
+- Ở dạng thứ hai, |p_i| ≤ 10^9.
+
+Gợi ý:
+- Bộ 1: bạn 1 nhận quà 2, bạn 2 nhận quà 3, bạn 3 nhận quà 1, không ai nhận lại quà của mình nên DUNG.
+- Bộ 2: món quà số 1 bị chia cho hai bạn (bạn 2 và bạn 3) nên SAI.
+- Bộ 3: bạn 3 nhận lại món quà số 3 của chính mình nên SAI.
+- Bộ 4: lớp chỉ có một bạn thì bạn ấy buộc phải nhận lại quà của mình, không có cách chia nào, nên khẳng định 0 là DUNG.
+- Bộ 5: với n = 2 có cách chia (bạn 1 nhận quà 2, bạn 2 nhận quà 1) nên khẳng định 0 là SAI.

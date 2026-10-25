@@ -1,0 +1,19 @@
+Tiệm sửa xe của anh Bình nhận n chiếc xe cùng lúc ở thời điểm 0. Xe thứ i cần sửa liên tục trong t_i giờ. Anh Bình chỉ sửa một xe tại mỗi thời điểm, sửa xong xe này mới sang xe khác và không nghỉ giữa chừng.
+
+Chủ xe thứ i cần xe gấp nên mỗi giờ phải chờ (tính từ thời điểm 0 đến lúc xe sửa xong), anh Bình phải đền w_i nghìn đồng. Nếu xe i sửa xong ở thời điểm c_i thì tiền đền cho xe đó là w_i · c_i. Hãy tìm thứ tự sửa xe để tổng tiền đền là nhỏ nhất và in ra tổng đó.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- n dòng tiếp theo, dòng thứ i chứa hai số nguyên t_i và w_i.
+
+Đầu ra:
+- In ra một số nguyên là tổng tiền đền nhỏ nhất (nghìn đồng).
+
+Giới hạn:
+- 1 ≤ n ≤ 2000.
+- 1 ≤ t_i ≤ 10^4.
+- 1 ≤ w_i ≤ 10^4.
+
+Gợi ý:
+- Xét hai xe i, j sửa liền nhau. Sửa i trước thì tốt hơn (hoặc bằng) khi t_i · w_j ≤ t_j · w_i. Nên so sánh bằng phép nhân số nguyên thay vì chia số thực.
+- Trong ví dụ, sửa xe 2, xe 3, rồi xe 1: các xe xong ở thời điểm 1, 3, 6, tổng tiền đền 2·1 + 3·3 + 1·6 = 17.

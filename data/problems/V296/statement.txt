@@ -1,0 +1,18 @@
+Bé Na đập hũ tiết kiệm và phân loại các đồng xu thành n loại. Mỗi đồng xu loại thứ i có mệnh giá w_i đồng, và Na có đúng c_i đồng xu loại này. Có thể có hai loại khác nhau nhưng cùng mệnh giá (chẳng hạn xu cũ và xu mới); chúng vẫn được coi là hai loại riêng.
+
+Na muốn mua một món quà giá đúng S đồng và trả bằng các đồng xu của mình, không cần thối lại. Một cách trả tiền được xác định bởi số đồng xu x_i lấy ra ở mỗi loại (0 ≤ x_i ≤ c_i) sao cho x_1·w_1 + x_2·w_2 + ... + x_n·w_n = S. Hai cách được coi là khác nhau nếu có ít nhất một loại có số đồng xu lấy ra khác nhau. Hãy đếm số cách trả tiền, lấy phần dư khi chia cho 10^9 + 7.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và S.
+- n dòng tiếp theo, dòng thứ i gồm hai số nguyên w_i và c_i.
+
+Đầu ra:
+- In ra một số nguyên là số cách trả đúng S đồng, lấy phần dư khi chia cho 10^9 + 7.
+
+Giới hạn:
+- 1 ≤ n ≤ 100, 1 ≤ S ≤ 10^5.
+- 1 ≤ w_i ≤ 10^5, 1 ≤ c_i ≤ 10^5.
+
+Gợi ý:
+- Ví dụ có S = 10 với ba đồng xu 1 đồng, hai đồng xu 2 đồng và một đồng xu 5 đồng. Có đúng 2 cách: 5 + 2 + 1 + 1 + 1 và 5 + 2 + 2 + 1. Nếu không dùng đồng 5 đồng thì tối đa chỉ gom được 3 + 4 = 7 đồng.
+- Gọi f[s] là số cách trả s đồng bằng các loại đã xét. Khi thêm loại (w, c): g[s] = f[s] + f[s - w] + ... + f[s - c·w]. Các chỉ số này cùng số dư khi chia cho w và tạo thành một cửa sổ trượt dài c + 1, nên g[s] = f[s] + g[s - w] - f[s - (c + 1)·w]: mỗi loại chỉ tốn O(S).

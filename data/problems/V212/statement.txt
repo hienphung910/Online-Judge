@@ -1,0 +1,19 @@
+Sân đình làng được chia thành lưới n hàng, m cột ô vuông bằng nhau. Một số ô có gốc cây hoặc cột đá, kí hiệu '#', không được lát. Các ô còn lại, kí hiệu '.', phải được lát kín bằng những viên gạch hình chữ nhật; mỗi viên gạch phủ đúng hai ô trống kề cạnh nhau (theo chiều ngang hoặc chiều dọc), và không có hai viên gạch nào chồng lên nhau.
+
+Hai cách lát được coi là khác nhau nếu có một cặp ô được phủ bởi cùng một viên gạch trong cách này nhưng không như vậy trong cách kia. Hãy đếm số cách lát, lấy phần dư khi chia cho 10^9 + 7.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và m.
+- n dòng tiếp theo, mỗi dòng là một xâu gồm m kí tự '.' hoặc '#'.
+
+Đầu ra:
+- In ra số cách lát mod (10^9 + 7). Nếu không có ô trống nào thì có đúng 1 cách (không cần viên gạch nào); nếu không thể lát kín thì in ra 0.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000.
+- 1 ≤ m ≤ 10.
+
+Gợi ý:
+- Ở ví dụ 1, các ô trống tạo thành một vòng khép kín gồm 10 ô quanh hai cột đá, nên chỉ có 2 cách lát: ghép các ô theo cặp lệch nhau một nấc quanh vòng.
+- Ở ví dụ 2, sân 4 hàng 4 cột không có vật cản có 36 cách lát.
+- Duyệt từng ô theo thứ tự hàng rồi cột, giữ một dãy m bit cho biết mỗi ô ở đường biên giữa phần đã xét và phần chưa xét đã bị phủ sẵn (bởi viên gạch dọc từ hàng trên) hay chưa.

@@ -1,0 +1,16 @@
+Câu lạc bộ Toán phát cho mỗi thành viên một con số may mắn. Để chấm điểm, thầy chủ nhiệm cần biết với mỗi con số x: x có bao nhiêu ước dương, và tổng các ước dương của x bằng bao nhiêu.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n.
+
+Đầu ra:
+- In ra n dòng, dòng thứ i gồm hai số: số lượng ước dương của a_i và tổng các ước dương của a_i.
+
+Giới hạn:
+- 1 ≤ n ≤ 1500.
+- 1 ≤ a_i ≤ 10^6.
+
+Gợi ý:
+- 12 có 6 ước là 1, 2, 3, 4, 6, 12, tổng bằng 28. Số 1 có 1 ước, tổng bằng 1. 7 là số nguyên tố nên có 2 ước, tổng 8. 1000000 = 2^6 · 5^6 có 49 ước, tổng 2480437.
+- Có thể dùng sàng để lưu ước nguyên tố nhỏ nhất spf[x] của mọi x ≤ 10^6, rồi phân tích x = p_1^e_1 · p_2^e_2 · ... bằng cách chia liên tục cho spf. Khi đó số ước bằng (e_1 + 1)(e_2 + 1)... và tổng ước bằng tích các (1 + p + p^2 + ... + p^e) của từng thừa số nguyên tố p^e.

@@ -1,0 +1,22 @@
+Phù thủy có một chiếc bình thần. Mỗi lần đọc thần chú, số đồng xu trong bình được nhân lên a lần. Ban đầu bình có đúng 1 đồng xu, phù thủy đọc thần chú b lần liên tiếp nên bình có a^b đồng xu. Kho của phù thủy xếp đồng xu thành từng chồng đúng m đồng, ông muốn biết sau khi xếp hết các chồng đủ m đồng thì còn lẻ ra bao nhiêu đồng, tức là a^b mod m.
+
+Có q câu hỏi như vậy.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên q.
+- q dòng tiếp theo, mỗi dòng chứa ba số nguyên a, b, m.
+
+Đầu ra:
+- Với mỗi câu hỏi, in ra một dòng là a^b mod m (một số trong đoạn [0, m - 1]).
+- Quy ước a^0 = 1 với mọi a, kể cả a = 0.
+
+Giới hạn:
+- 1 ≤ q ≤ 300.
+- 0 ≤ a ≤ 10^18.
+- 0 ≤ b ≤ 10^18.
+- 1 ≤ m ≤ 10^18.
+
+Gợi ý:
+- 2^10 = 1024, chia 1000 dư 24. 3^0 = 1. Mọi số chia cho 1 đều dư 0. 0^5 = 0. 10^18 chia cho 7 dư 1 nên (10^18)^b chia 7 cũng dư 1.
+- Không thể nhân b lần vì b tới 10^18. Hãy dùng lũy thừa nhanh: a^b = (a^(b/2))^2 nếu b chẵn, và nhân thêm một thừa số a nếu b lẻ; chỉ cần khoảng 120 phép nhân.
+- Vì m có thể tới 10^18, tích của hai số nhỏ hơn m vượt quá 64 bit. Trong C++ có thể nhân bằng kiểu __int128 rồi mới lấy dư.

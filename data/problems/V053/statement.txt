@@ -1,0 +1,17 @@
+Ngày giáp Tết, anh Tâm nhận giao hàng cho n - 1 khách. Cửa hàng là địa điểm 1, các khách ở địa điểm 2, 3, ..., n. Đi thẳng từ địa điểm i đến địa điểm j mất c[i][j] phút; vì đường một chiều nên c[i][j] có thể khác c[j][i]. Anh Tâm xuất phát từ cửa hàng, ghé mỗi khách đúng một lần theo thứ tự tùy chọn rồi quay về cửa hàng. Hãy tìm tổng thời gian đi đường ít nhất.
+
+Đầu vào:
+- Dòng đầu chứa số nguyên n.
+- n dòng tiếp theo, dòng thứ i chứa n số nguyên c[i][1], c[i][2], ..., c[i][n].
+
+Đầu ra:
+- In ra tổng thời gian ít nhất. Nếu n = 1 thì anh không phải đi đâu và đáp số là 0.
+
+Giới hạn:
+- 1 ≤ n ≤ 12.
+- 1 ≤ c[i][j] ≤ 10^9 với i ≠ j, c[i][i] = 0.
+
+Gợi ý:
+- Thử mọi thứ tự ghé khách bằng quay lui, nhưng cắt bỏ những nhánh chắc chắn không tốt hơn kết quả đã tìm được (nhánh cận). Một cận dưới đơn giản: từ địa điểm hiện tại và từ mỗi khách chưa ghé, anh Tâm còn phải rời đi đúng một lần, nên quãng đường còn lại ít nhất bằng tổng cạnh ra ngắn nhất của các địa điểm đó. Nếu thời gian đã đi cộng cận dưới không nhỏ hơn kết quả tốt nhất hiện có thì quay lui ngay.
+- Tổng thời gian có thể vượt quá phạm vi kiểu int.
+- Ví dụ có 4 địa điểm, ma trận thời gian như trong dữ liệu mẫu. Hành trình 1 → 2 → 4 → 3 → 1 mất 2 + 3 + 1 + 5 = 11 phút; thử cả 6 thứ tự ghé khách sẽ thấy đây là ít nhất.

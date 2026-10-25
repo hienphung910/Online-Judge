@@ -1,0 +1,27 @@
+Hợp tác xã nông nghiệp của xã mở dịch vụ sổ tiết kiệm cho bà con. Chị kế toán ghi lại Q thao tác theo thứ tự thời gian, mỗi thao tác thuộc một trong các loại sau (name, a, b là tên tài khoản, x là số tiền):
+- "MO name": mở tài khoản mới tên name với số dư 0. Thất bại nếu tên này đã có.
+- "NAP name x": nộp thêm x đồng vào tài khoản name. Thất bại nếu tài khoản chưa mở.
+- "RUT name x": rút x đồng. Thất bại nếu tài khoản chưa mở hoặc số dư nhỏ hơn x.
+- "CHUYEN a b x": chuyển x đồng từ tài khoản a sang tài khoản b. Thất bại nếu một trong hai tài khoản chưa mở, hoặc a trùng b, hoặc số dư của a nhỏ hơn x.
+- "XEM name": hỏi số dư của tài khoản name. Thất bại nếu tài khoản chưa mở.
+- "GIAU": hỏi tên tài khoản có số dư lớn nhất; nếu nhiều tài khoản cùng lớn nhất thì chọn tên nhỏ nhất theo thứ tự từ điển. Thất bại nếu chưa có tài khoản nào.
+Thao tác thất bại thì không làm thay đổi gì.
+
+Đầu vào:
+- Dòng đầu chứa số nguyên Q.
+- Q dòng tiếp theo, mỗi dòng là một thao tác.
+
+Đầu ra:
+- Với mỗi thao tác in một dòng: LOI nếu thao tác thất bại. Ngược lại, với XEM in số dư, với GIAU in tên tài khoản, với các loại còn lại in OK.
+
+Giới hạn:
+- 1 ≤ Q ≤ 500.
+- Tên tài khoản gồm 1 đến 8 chữ cái thường a–z.
+- 1 ≤ x ≤ 10^9.
+- Số dư có thể vượt quá 2^31, hãy dùng số nguyên 64 bit.
+
+Gợi ý:
+- Mở tài khoản lan và tai, nộp cho lan 100 đồng.
+- tai rút 5 đồng thất bại vì số dư bằng 0.
+- lan chuyển cho tai 50 đồng: hai người cùng có 50, GIAU in lan vì "lan" đứng trước "tai" theo thứ tự từ điển.
+- Mở lại tài khoản lan thất bại vì đã có; XEM tai in 50.

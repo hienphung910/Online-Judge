@@ -1,0 +1,20 @@
+Thư viện trường vừa nhận n cuốn sách giống hệt nhau và muốn đặt hết lên k chiếc kệ nhỏ xếp thành hàng, đánh số từ 1 đến k. Mỗi kệ chứa được tối đa c cuốn, và kệ có thể để trống. Hai cách xếp được coi là khác nhau nếu có một kệ mà số sách trên kệ đó ở hai cách khác nhau.
+
+Hỏi có bao nhiêu cách xếp? In ra số cách chia lấy dư cho 10^9 + 7. Có q câu hỏi với các bộ (n, k, c) khác nhau.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên q.
+- q dòng tiếp theo, mỗi dòng chứa ba số nguyên n, k, c.
+
+Đầu ra:
+- In ra q dòng, dòng thứ i là số cách xếp của câu hỏi thứ i, chia lấy dư cho 10^9 + 7.
+
+Giới hạn:
+- 1 ≤ q ≤ 300.
+- 0 ≤ n ≤ 10^5; 1 ≤ k ≤ 10^5; 0 ≤ c ≤ 10^5.
+
+Gợi ý:
+- Câu 1 (n = 4, k = 3, c = 2): các cách xếp (số sách trên kệ 1, 2, 3) là (2, 2, 0), (2, 0, 2), (0, 2, 2), (2, 1, 1), (1, 2, 1), (1, 1, 2), tổng cộng 6 cách.
+- Câu 2 (n = 7, k = 3, c = 2): 3 kệ chứa tối đa 6 cuốn nên đáp án là 0.
+- Câu 3 (n = 5, k = 2, c = 10): không bị chặn, có 6 cách (0, 5), (1, 4), ..., (5, 0).
+- Nếu không giới hạn sức chứa, số cách là C(n + k - 1, k - 1) (bài toán chia kẹo Euler). Gọi A_i là tập các cách mà kệ i chứa ít nhất c + 1 cuốn. Nếu bắt buộc j kệ cố định đều "quá tải", ta đặt trước c + 1 cuốn lên mỗi kệ đó rồi chia tự do phần còn lại. Theo bao hàm - loại trừ, đáp án là tổng với j ≥ 0, j · (c + 1) ≤ n của (-1)^j · C(k, j) · C(n - j · (c + 1) + k - 1, k - 1).

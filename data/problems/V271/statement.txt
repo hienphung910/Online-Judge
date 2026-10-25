@@ -1,0 +1,19 @@
+Cánh đồng của hợp tác xã được chia thành lưới R hàng, C cột ô ruộng. Một số ô đang bị sâu phá hoại, các ô còn lại vẫn khỏe mạnh.
+
+Hợp tác xã thuê một chiếc máy bay không người lái để phun thuốc. Mỗi lượt bay, máy bay bay thẳng dọc theo trọn một hàng hoặc trọn một cột và phun thuốc cho mọi ô trên đường bay. Một ô được phun nhiều lần cũng không sao. Hãy tính số lượt bay ít nhất để mọi ô bị sâu đều được phun thuốc.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên R và C.
+- R dòng tiếp theo, mỗi dòng là một xâu gồm C kí tự: kí tự '#' là ô bị sâu, kí tự '.' là ô khỏe mạnh.
+
+Đầu ra:
+- In ra một số nguyên duy nhất là số lượt bay ít nhất. In 0 nếu không có ô nào bị sâu.
+
+Giới hạn:
+- 1 ≤ R ≤ 100.
+- 1 ≤ C ≤ 100.
+
+Gợi ý:
+- Trong ví dụ, bay một lượt dọc cột 2 để phun hai ô (2, 2) và (3, 2), rồi bay một lượt dọc hàng 1 để phun hai ô (1, 1) và (1, 4). Cần 2 lượt.
+- Không thể chỉ bay 1 lượt vì không có hàng hay cột nào chứa cả 4 ô bị sâu.
+- Xem mỗi hàng và mỗi cột là một đỉnh, mỗi ô bị sâu là một cạnh nối hàng với cột của nó. Cần chọn ít đỉnh nhất phủ mọi cạnh. Theo định lý König, trên đồ thị hai phía con số này bằng kích thước cặp ghép cực đại.

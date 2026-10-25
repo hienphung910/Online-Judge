@@ -1,0 +1,17 @@
+Một nhà thám hiểm hô vào hang đá câu khẩu hiệu S. Tiếng vọng dội lại nhiều lần: lần vọng thứ i bắt đầu từ ký tự thứ i của S và đọc tiếp tới hết câu, tức là xâu con S[i..n] (n là độ dài của S). Độ "ăn khớp" của lần vọng thứ i là số ký tự đầu tiên của S[i..n] trùng khớp liên tiếp với các ký tự đầu tiên của S, nói cách khác là độ dài tiền tố chung dài nhất của S và S[i..n].
+
+Hãy tính tổng độ ăn khớp của tất cả n lần vọng (i = 1, 2, ..., n).
+
+Đầu vào:
+- Một dòng duy nhất chứa xâu S gồm các chữ cái tiếng Anh in thường 'a' đến 'z'.
+
+Đầu ra:
+- Một số nguyên là tổng cần tìm.
+
+Giới hạn:
+- 1 ≤ n ≤ 2·10^4.
+- Đáp án có thể vượt quá 10^8, nên dùng số nguyên 64-bit (long long / long) cho an toàn.
+
+Gợi ý:
+- Ở ví dụ 1, S = "aabaa". Độ ăn khớp của các lần vọng i = 1..5 lần lượt là 5 ("aabaa"), 1 ("abaa"), 0 ("baa"), 2 ("aa"), 1 ("a"). Tổng là 9.
+- Ở ví dụ 2, S = "zzzz", các độ ăn khớp là 4, 3, 2, 1 nên tổng là 10.

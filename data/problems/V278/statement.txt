@@ -1,0 +1,23 @@
+Một người thợ kim hoàn có n viên ngọc phép. Viên thứ i mang một mã năng lượng c_i (số nguyên không âm) và có giá bán v_i. Khi nhiều viên ngọc được đặt cạnh nhau, năng lượng của chúng hòa vào nhau theo phép XOR: một nhóm ngọc có năng lượng bằng XOR các mã của những viên trong nhóm.
+
+Một bộ sưu tập (tập con các viên ngọc) bị gọi là tự triệt tiêu nếu tồn tại một nhóm con khác rỗng của nó có năng lượng bằng 0. Chẳng hạn bộ gồm các mã 3, 5, 6 tự triệt tiêu vì 3 XOR 5 XOR 6 = 0; một viên ngọc có mã 0 đứng một mình cũng tự triệt tiêu.
+
+Người thợ muốn trưng bày một bộ sưu tập không tự triệt tiêu có tổng giá lớn nhất. Hãy cho biết tổng giá đó (bộ rỗng được coi là không tự triệt tiêu, có tổng giá 0).
+
+Đầu vào:
+- Dòng đầu chứa số nguyên n.
+- n dòng tiếp theo, dòng thứ i chứa hai số nguyên c_i và v_i.
+
+Đầu ra:
+- Một số nguyên duy nhất là tổng giá lớn nhất tìm được.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000.
+- 0 ≤ c_i < 2^30.
+- 1 ≤ v_i ≤ 10^9.
+- Đáp án có thể vượt quá 2^31, hãy dùng số nguyên 64 bit.
+
+Gợi ý:
+- Ví dụ 1: viên mã 0 không bao giờ được chọn. Chọn ba viên mã 3, 5, 4 với tổng giá 7 + 6 + 2 = 15. Không thể lấy thêm viên mã 6 vì 3 XOR 5 XOR 6 = 0.
+- Ví dụ 2: ba viên cùng mã 7 nên chỉ được giữ một viên, chọn viên đắt nhất.
+- Các tập không tự triệt tiêu chính là các tập vector độc lập tuyến tính trên trường hai phần tử; chúng tạo thành một matroid, nên chiến lược tham lam "xét các viên theo giá giảm dần, lấy viên đang xét nếu nó vẫn độc lập với các viên đã lấy" luôn cho kết quả tối ưu. Kiểm tra độc lập bằng cơ sở XOR (khử Gauss theo bit).

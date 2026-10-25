@@ -1,0 +1,24 @@
+Chủ tiệm bánh ghi sổ lãi lỗ của n ngày liên tiếp, ngày thứ i lãi a_i đồng (số âm nghĩa là lỗ). Có q sự kiện xảy ra lần lượt: hoặc kế toán phát hiện ghi nhầm và sửa lại số liệu của một ngày, hoặc chủ tiệm hỏi: trong khoảng từ ngày l đến ngày r, chuỗi gồm một hoặc nhiều ngày liên tiếp có tổng lãi lớn nhất là bao nhiêu? Hãy trả lời các câu hỏi của chủ tiệm.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và q.
+- Dòng thứ hai gồm n số nguyên a_1, a_2, ..., a_n.
+- q dòng tiếp theo, mỗi dòng là một sự kiện ở một trong hai dạng sau.
+- Dạng "1 i x": gán a_i = x.
+- Dạng "2 l r": hỏi giá trị lớn nhất của a_u + a_(u+1) + ... + a_v với l ≤ u ≤ v ≤ r.
+
+Đầu ra:
+- Với mỗi sự kiện dạng 2, in ra giá trị lớn nhất tương ứng trên một dòng, theo đúng thứ tự xuất hiện.
+
+Giới hạn:
+- 1 ≤ n, q ≤ 10^3.
+- 1 ≤ i ≤ n, 1 ≤ l ≤ r ≤ n.
+- |a_i| ≤ 10^9, |x| ≤ 10^9.
+- Có ít nhất một sự kiện dạng 2.
+- Chuỗi được chọn phải có ít nhất một ngày, nên đáp án có thể âm.
+- Kết quả có thể vượt quá phạm vi kiểu int, hãy dùng số nguyên 64-bit (long long / long).
+
+Gợi ý:
+- Ở ví dụ, ban đầu a = [2, -5, 3, 4, -1, 2]. Trên cả sổ, chuỗi ngày 3 đến 6 có tổng 3 + 4 - 1 + 2 = 8 là lớn nhất.
+- Trong khoảng [1, 2] chỉ có 2 và -5, chuỗi tốt nhất là riêng ngày 1 với tổng 2.
+- Sau khi gán a_2 = 6, chuỗi cả 6 ngày có tổng 16. Khoảng [5, 5] chỉ có một ngày lỗ 1 nên đáp án là -1.

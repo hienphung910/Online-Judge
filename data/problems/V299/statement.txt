@@ -1,0 +1,19 @@
+Siêu thị mini đầu ngõ lên kế hoạch khuyến mãi cho n ngày tới. Nhờ số liệu năm trước, chủ siêu thị dự báo được nếu ngày thứ i có khuyến mãi thì lợi nhuận tăng thêm a_i nghìn đồng; a_i có thể âm khi ngày đó vắng khách mà vẫn phải giảm giá.
+
+Theo hợp đồng với nhà cung cấp, siêu thị phải tổ chức đúng k đợt khuyến mãi. Mỗi đợt kéo dài một đoạn gồm ít nhất một ngày liên tiếp; hai đợt khác nhau không được có ngày chung, nhưng được phép nằm sát nhau (đợt sau bắt đầu ngay ngày sau khi đợt trước kết thúc). Lợi nhuận tăng thêm là tổng a_i của mọi ngày thuộc một đợt nào đó. Hãy tính lợi nhuận tăng thêm lớn nhất có thể (kết quả có thể âm).
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và k.
+- Dòng thứ hai gồm n số nguyên a_1, a_2, ..., a_n.
+
+Đầu ra:
+- In ra một số nguyên là tổng lợi nhuận tăng thêm lớn nhất khi tổ chức đúng k đợt.
+
+Giới hạn:
+- 1 ≤ k ≤ n ≤ 3500.
+- -10^4 ≤ a_i ≤ 10^4.
+
+Gợi ý:
+- Ở ví dụ 1, a = [3, -2, 4, -5, 2, 1] và k = 2: chọn hai đợt [3, -2, 4] và [2, 1], được 5 + 3 = 8. Chọn [3] và [4] chỉ được 7.
+- Ở ví dụ 2, cùng dãy đó nhưng k = 5: năm đợt cần ít nhất năm ngày, tốt nhất là bỏ ngày có a = -5 và mỗi ngày còn lại là một đợt, được 8.
+- Gọi f(k) là đáp án với đúng k đợt; f là hàm lõm theo k. Nếu mỗi đợt bị "phạt" thêm λ, bài toán không còn giới hạn số đợt và giải được bằng quy hoạch động O(n). Tìm kiếm nhị phân λ để số đợt tối ưu bằng k (kỹ thuật Aliens / WQS).

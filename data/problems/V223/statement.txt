@@ -1,0 +1,19 @@
+Trong xưởng đồng hồ có một bánh răng gồm n răng, đánh số 0, 1, ..., n - 1 theo vòng tròn (sau răng n - 1 là răng 0). Một chiếc kim đánh dấu ban đầu chỉ vào răng 0. Người thợ chọn trước một số nguyên k với 1 ≤ k ≤ n; mỗi lần bấm nút, bánh răng quay để kim chuyển từ răng x sang răng (x + k) mod n, và răng mà kim chỉ tới được tô màu (răng 0 được tô ngay từ đầu).
+
+Người thợ muốn sau đủ nhiều lần bấm thì tất cả n răng đều được tô màu. Hỏi có bao nhiêu giá trị k thỏa mãn? Có q bánh răng với các số răng khác nhau.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên q.
+- q dòng tiếp theo, mỗi dòng chứa một số nguyên n_i.
+
+Đầu ra:
+- In ra q dòng, dòng thứ i là số giá trị k tốt với bánh răng có n_i răng.
+
+Giới hạn:
+- 1 ≤ q ≤ 100.
+- 1 ≤ n_i ≤ 10^12.
+
+Gợi ý:
+- Với n = 6: k = 1 và k = 5 tô được cả 6 răng; k = 2 chỉ tô được các răng 0, 2, 4; k = 3 chỉ tô được 0, 3; k = 4 tô được 0, 4, 2; k = 6 chỉ tô được răng 0. Đáp án là 2.
+- Với n = 1, k = 1 là tốt (bánh răng chỉ có răng 0). Với n = 12, các k tốt là 1, 5, 7, 11.
+- Kim chỉ đi qua các răng là bội của gcd(k, n), nên k tốt khi và chỉ khi gcd(k, n) = 1. Số lượng như vậy là hàm phi Euler: φ(n) = n · (1 - 1/p_1) · (1 - 1/p_2) · ... với p_j là các ước nguyên tố khác nhau của n. Phân tích n bằng cách chia thử đến √n, và nên chia trước rồi nhân sau để giữ số nguyên.

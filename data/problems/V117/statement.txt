@@ -1,0 +1,20 @@
+Một cung đường leo núi có n cột mốc đánh số từ 1 đến n theo thứ tự trên đường đi, cột mốc thứ i ở độ cao h_i mét. Độ cao các cột mốc không bao giờ thay đổi.
+
+Ban quản lý nhận được q câu hỏi từ khách du lịch. Câu hỏi thứ j gồm hai số l, r: nếu chỉ đi đoạn đường từ cột mốc l đến cột mốc r thì chênh lệch giữa điểm cao nhất và điểm thấp nhất (trong số các cột mốc l, l+1, ..., r) là bao nhiêu mét?
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và q.
+- Dòng thứ hai chứa n số nguyên h_1, h_2, ..., h_n.
+- q dòng tiếp theo, mỗi dòng chứa hai số nguyên l và r.
+
+Đầu ra:
+- In ra q dòng, dòng thứ j là max(h_l, ..., h_r) - min(h_l, ..., h_r) của câu hỏi thứ j.
+
+Giới hạn:
+- 1 ≤ n ≤ 2000, 1 ≤ q ≤ 1200.
+- 0 ≤ h_i ≤ 10^5.
+- 1 ≤ l ≤ r ≤ n.
+
+Gợi ý:
+- Dựng bảng thưa (sparse table): mx[k][i] là giá trị lớn nhất của đoạn dài 2^k bắt đầu tại i, mx[k][i] = max(mx[k-1][i], mx[k-1][i + 2^(k-1)]); làm tương tự cho min. Với đoạn [l, r], chọn k lớn nhất có 2^k ≤ r - l + 1 rồi lấy max của hai đoạn dài 2^k bắt đầu tại l và kết thúc tại r (hai đoạn có thể chồng lên nhau). Mỗi câu hỏi trả lời trong O(1).
+- Ví dụ: đoạn từ cột mốc 1 đến 3 có độ cao 120, 340, 90 nên chênh lệch là 340 - 90 = 250.

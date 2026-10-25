@@ -1,0 +1,18 @@
+Lớp của thầy Tùng có n học sinh đánh số từ 1 đến n chuẩn bị thi kéo co. Thầy cần chia cả lớp thành hai đội: đội Xanh và đội Đỏ (mỗi học sinh vào đúng một đội, một đội được phép không có ai). Thầy biết m cặp học sinh hay cãi nhau, và hai học sinh trong cùng một cặp như vậy bắt buộc phải ở hai đội khác nhau.
+
+Hai cách chia được coi là khác nhau nếu có ít nhất một học sinh ở đội khác nhau trong hai cách. Hãy đếm số cách chia thỏa mãn, lấy phần dư khi chia cho 10^9 + 7.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và m.
+- m dòng tiếp theo, mỗi dòng gồm hai số nguyên u, v (u ≠ v) là một cặp hay cãi nhau. Mỗi cặp xuất hiện không quá một lần.
+
+Đầu ra:
+- Một số nguyên là số cách chia đội thỏa mãn, chia lấy dư cho 10^9 + 7 (in 0 nếu không có cách nào).
+
+Giới hạn:
+- 1 ≤ n ≤ 3000; 0 ≤ m ≤ 3000.
+- 1 ≤ u, v ≤ n.
+
+Gợi ý:
+- Ở ví dụ 1, các cặp (1, 2), (2, 3) buộc học sinh 1 và 3 cùng đội, học sinh 2 ở đội còn lại: có 2 cách. Học sinh 4 và 5 phải khác đội: 2 cách. Vậy có 2 · 2 = 4 cách.
+- Ở ví dụ 2, ba học sinh 1, 2, 3 đôi một cãi nhau nên không thể chia vào hai đội.

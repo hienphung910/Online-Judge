@@ -1,0 +1,18 @@
+Thành phố có các con phố chạy song song với hai trục tọa độ. Nhà mạng dựng n cột ăng-ten, cột thứ i đặt tại điểm có tọa độ nguyên (x_i, y_i). Cáp quang phải đi dọc theo phố, nên chi phí kéo cáp nối trực tiếp cột i với cột j bằng |x_i - x_j| + |y_i - y_j| (khoảng cách Manhattan).
+
+Nhà mạng được phép nối trực tiếp bất kỳ cặp cột nào. Hãy chọn các đoạn cáp sao cho mọi cột đều liên lạc được với nhau (trực tiếp hoặc qua cột khác) và tổng chi phí nhỏ nhất.
+
+Đầu vào:
+- Dòng đầu gồm số nguyên n.
+- n dòng tiếp theo, dòng thứ i gồm hai số nguyên x_i và y_i.
+
+Đầu ra:
+- Một số nguyên là tổng chi phí nhỏ nhất.
+
+Giới hạn:
+- 1 ≤ n ≤ 1500.
+- 0 ≤ x_i, y_i ≤ 10^6. Có thể có nhiều cột đặt cùng một điểm (nối chúng tốn chi phí 0).
+
+Gợi ý:
+- Ở ví dụ, các chi phí nối: 1-2 là 4, 1-3 là 3, 1-4 là 3, 2-3 là 3, 2-4 là 3, 3-4 là 6. Chọn ba đoạn 1-3, 1-4, 2-3 với tổng chi phí 3 + 3 + 3 = 9.
+- Đồ thị đầy đủ có khoảng n^2/2 cạnh; thuật toán Prim O(n^2) không cần liệt kê các cạnh ra trước.

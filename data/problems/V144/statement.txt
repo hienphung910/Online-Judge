@@ -1,0 +1,21 @@
+Một huyện miền sông nước có n xã đánh số từ 1 đến n và m cây cầu đánh số từ 1 đến m; cây cầu thứ i nối hai xã khác nhau u_i và v_i, đi được cả hai chiều. Giữa hai xã có thể có nhiều cây cầu.
+
+Mùa lũ sắp tới, huyện muốn gia cố những cây cầu huyết mạch. Một cây cầu là huyết mạch nếu khi chỉ riêng cây cầu đó bị sập, sẽ có hai xã vốn đi lại được với nhau trở thành không đi lại được nữa.
+
+Hãy liệt kê các cây cầu huyết mạch.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và m.
+- m dòng tiếp theo, dòng thứ i gồm hai số nguyên u_i, v_i (u_i ≠ v_i) mô tả cây cầu thứ i.
+
+Đầu ra:
+- Dòng đầu là số lượng cây cầu huyết mạch k.
+- Nếu k > 0, dòng thứ hai gồm k số thứ tự của các cây cầu huyết mạch theo thứ tự tăng dần.
+
+Giới hạn:
+- 1 ≤ n ≤ 2000; 0 ≤ m ≤ 2500.
+- 1 ≤ u_i, v_i ≤ n.
+
+Gợi ý:
+- Ở ví dụ, cầu 3 nối xã 3 với xã 4 là con đường duy nhất giữa hai phía nên là huyết mạch; cầu 6 là đường duy nhất tới xã 6.
+- Cầu 4 và cầu 5 cùng nối xã 4 với xã 5: sập một cây thì vẫn còn cây kia, nên cả hai đều không phải huyết mạch. Các cầu 1, 2, 7 nằm trên vòng 1 - 2 - 3 - 1.

@@ -1,0 +1,18 @@
+Trước chuyến leo núi, anh Hùng bày ra n món đồ, món thứ i nặng w_i và có độ hữu ích v_i. Chiếc ba lô chỉ chịu được tổng khối lượng không quá W. Mỗi món đồ chỉ có một chiếc: hoặc mang theo, hoặc để lại. Hãy giúp anh chọn các món đồ để tổng độ hữu ích là lớn nhất.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và W.
+- n dòng tiếp theo, dòng thứ i chứa hai số nguyên w_i và v_i.
+
+Đầu ra:
+- In ra tổng độ hữu ích lớn nhất của một tập món đồ có tổng khối lượng không quá W (có thể không mang món nào, khi đó tổng là 0).
+
+Giới hạn:
+- 1 ≤ n ≤ 100.
+- 1 ≤ W ≤ 10^5.
+- 1 ≤ w_i ≤ 10^5, 1 ≤ v_i ≤ 10^9.
+- Tổng giá trị có thể vượt quá 2^31 - 1, hãy dùng số nguyên 64 bit.
+
+Gợi ý:
+- Gọi dp[c] là tổng độ hữu ích lớn nhất khi tổng khối lượng không quá c. Xét lần lượt từng món, cập nhật dp[c] = max(dp[c], dp[c - w_i] + v_i) với c chạy GIẢM dần từ W về w_i, để mỗi món chỉ được dùng một lần.
+- Ở ví dụ, W = 7: chọn món nặng 2 (hữu ích 30) và món nặng 5 (hữu ích 65) được 95, tốt hơn cặp nặng 3 và 4 (chỉ được 90).

@@ -1,0 +1,24 @@
+Thành phố có n khu phố đánh số từ 1 đến n và n - 1 con đường hai chiều, mỗi con đường nối hai khu phố, sao cho từ một khu phố có thể đi tới mọi khu phố khác. Khoảng cách giữa hai khu phố là số con đường ít nhất phải đi qua. Ban đầu thành phố chưa có trạm cứu hỏa nào.
+
+Có q sự kiện xảy ra theo thứ tự:
+- 1 v: một trạm cứu hỏa được mở tại khu phố v (nếu ở đó đã có trạm thì không có gì thay đổi).
+- 2 v: có báo cháy ở khu phố v; hãy cho biết khoảng cách từ v tới trạm cứu hỏa gần nhất, hoặc -1 nếu chưa có trạm nào.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và q.
+- n - 1 dòng tiếp theo, mỗi dòng gồm hai số nguyên u, v cho biết có đường nối khu phố u và khu phố v.
+- q dòng tiếp theo, mỗi dòng mô tả một sự kiện theo định dạng trên.
+
+Đầu ra:
+- Với mỗi sự kiện loại 2, in ra trên một dòng câu trả lời.
+
+Giới hạn:
+- 1 ≤ n ≤ 1500.
+- 1 ≤ q ≤ 1500.
+- 1 ≤ u, v ≤ n; các con đường tạo thành một cây.
+
+Gợi ý:
+- Lúc đầu chưa có trạm nào: in -1.
+- Sau khi mở trạm ở khu 6, đường từ khu 4 là 4 → 3 → 2 → 5 → 6: in 4.
+- Mở thêm trạm ở khu 3: khu 4 chỉ cách 1; khu 1 cách trạm 3 là 2 và cách trạm 6 là 3, in 2.
+- Mở trạm ngay tại khu 4: in 0.

@@ -1,0 +1,18 @@
+Gần Tết, nhà Bống có n anh chị em và n việc cần làm: lau cửa kính, gói bánh chưng, sơn lại hàng rào... Mỗi người nhận đúng một việc và mỗi việc giao cho đúng một người. Người thứ i làm việc thứ j sẽ mất c[i][j] phút; nếu c[i][j] = -1 nghĩa là người i không biết làm việc j nên không thể nhận việc đó.
+
+Mẹ muốn phân công sao cho tổng số phút của cả nhà là nhỏ nhất. Hãy giúp mẹ tính con số đó.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- n dòng tiếp theo, dòng thứ i chứa n số nguyên c[i][1], c[i][2], ..., c[i][n].
+
+Đầu ra:
+- In ra tổng số phút nhỏ nhất. Nếu không có cách phân công hợp lệ nào, in ra -1.
+
+Giới hạn:
+- 1 ≤ n ≤ 20.
+- c[i][j] = -1 hoặc 0 ≤ c[i][j] ≤ 10^6.
+
+Gợi ý:
+- Với ví dụ, giao việc 3 cho người 1, việc 1 cho người 2 và việc 2 cho người 3, tổng là 2 + 3 + 1 = 6. Cách hợp lệ duy nhất còn lại là giao việc 1, 2, 3 lần lượt cho người 1, 2, 3 với tổng 4 + 5 + 6 = 15.
+- Xét lần lượt từng người; trạng thái là tập các việc đã được giao (một dãy bit). Số người đã nhận việc chính là số bit 1 của tập đó.

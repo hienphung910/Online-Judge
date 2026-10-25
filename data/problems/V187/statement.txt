@@ -1,0 +1,18 @@
+Trên bức tường có n công tắc xếp thành hàng, công tắc thứ i mang một mã số nguyên không âm a_i. Khi bật một đoạn công tắc liên tiếp từ l đến r, cửa bí mật nhận được mật mã a_l XOR a_(l+1) XOR ... XOR a_r, trong đó XOR là phép "hoặc loại trừ" theo từng bit (toán tử ^ trong C++/Java).
+
+Cửa mở càng rộng nếu mật mã càng lớn. Hãy tìm giá trị lớn nhất của mật mã có thể nhận được khi chọn một đoạn công tắc liên tiếp khác rỗng.
+
+Đầu vào:
+- Dòng đầu là số nguyên n.
+- Dòng thứ hai gồm n số nguyên a_1, a_2, ..., a_n.
+
+Đầu ra:
+- Một số nguyên là giá trị XOR lớn nhất của một đoạn liên tiếp.
+
+Giới hạn:
+- 1 ≤ n ≤ 2·10^3.
+- 0 ≤ a_i < 2^30.
+
+Gợi ý:
+- Ở ví dụ 1, chọn đoạn từ công tắc 2 đến công tắc 4: 1 XOR 2 XOR 12 = 15, đây là giá trị lớn nhất.
+- Ở ví dụ 2, đoạn chỉ gồm công tắc 1 (mã 5) hoặc đoạn gồm công tắc 2 và 3 (1 XOR 4 = 5) đều cho giá trị lớn nhất là 5.

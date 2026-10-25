@@ -1,0 +1,21 @@
+Chương trình đào tạo có n môn học đánh số từ 1 đến n. Có m điều kiện tiên quyết, mỗi điều kiện dạng (u, v) nghĩa là phải học xong môn u rồi mới được học môn v. Bạn Minh mỗi kỳ chỉ học đúng một môn và muốn học hết cả n môn.
+
+Trong các thứ tự học hợp lệ, Minh chọn thứ tự nhỏ nhất theo thứ tự từ điển: môn học đầu tiên có số hiệu nhỏ nhất có thể; nếu vẫn còn nhiều cách thì môn thứ hai có số hiệu nhỏ nhất có thể, và cứ thế.
+
+Hãy in ra thứ tự đó, hoặc cho biết không thể học hết các môn.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và m.
+- m dòng tiếp theo, mỗi dòng gồm hai số nguyên u, v là một điều kiện tiên quyết. Một điều kiện có thể lặp lại nhiều lần; nếu u = v thì môn đó không bao giờ học được.
+
+Đầu ra:
+- Nếu có thể học hết, in n số nguyên là thứ tự học nhỏ nhất theo thứ tự từ điển.
+- Ngược lại in -1.
+
+Giới hạn:
+- 1 ≤ n ≤ 2000; 0 ≤ m ≤ 2500.
+- 1 ≤ u, v ≤ n.
+
+Gợi ý:
+- Ở ví dụ 1, lúc đầu chỉ có môn 3 và môn 5 học được ngay; chọn môn 3. Sau đó môn 1 đã học được nên chọn môn 1, rồi môn 4 (cần 1 và 3), rồi môn 2 (cần 4), cuối cùng môn 5. Lưu ý thứ tự 3 5 1 4 2 cũng hợp lệ nhưng lớn hơn theo thứ tự từ điển.
+- Ở ví dụ 2, môn 1 cần môn 3, môn 3 cần môn 2, môn 2 lại cần môn 1, nên ba môn này không bao giờ học được; dù môn 4 học được ngay thì cũng không học hết được.

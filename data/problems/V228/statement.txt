@@ -1,0 +1,16 @@
+Hệ thống két sắt của một ngân hàng chỉ chấp nhận khóa là số nguyên tố. Nhân viên kỹ thuật nhận được q khóa n_1, n_2, ..., n_q và cần kiểm tra nhanh từng khóa có hợp lệ hay không. Các khóa rất lớn, có thể tới hàng tỉ tỉ.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên q.
+- q dòng tiếp theo, mỗi dòng chứa một số nguyên n_i.
+
+Đầu ra:
+- In ra q dòng, dòng thứ i là CO nếu n_i là số nguyên tố, ngược lại in KHONG.
+
+Giới hạn:
+- 1 ≤ q ≤ 300.
+- 1 ≤ n_i ≤ 4·10^18.
+
+Gợi ý:
+- 1 không phải số nguyên tố; 2 và 1000000007 là số nguyên tố; 561 = 3 · 11 · 17 là hợp số (dù 561 "lừa" được phép thử Fermat với mọi cơ số nguyên tố cùng nhau với nó); 999999999999999989 là số nguyên tố.
+- Chia thử đến √n có thể cần tới 2·10^9 phép chia cho một số, quá chậm. Hãy dùng thuật toán Miller-Rabin: viết n - 1 = d · 2^s với d lẻ; với cơ số a, tính x = a^d mod n rồi bình phương liên tiếp. Nếu x ban đầu khác 1 và trong dãy x, x^2, ..., x^(2^(s-1)) không có giá trị n - 1 thì n chắc chắn là hợp số. Với mọi n < 3·10^23 (đủ cho mọi số 64 bit), chỉ cần thử 12 cơ số 2, 3, 5, ..., 37 là kết luận đúng chắc chắn. Tích hai số gần 4·10^18 vượt kiểu 64 bit, hãy nhân bằng __int128.

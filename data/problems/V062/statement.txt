@@ -1,0 +1,18 @@
+Trường chuẩn bị tiết mục đồng diễn. Nếu có x học sinh tham gia, các em phải đứng thành một hình chữ nhật kín gồm r hàng, mỗi hàng c em, với r · c = x. Hai cách xếp được coi là khác nhau nếu số hàng r khác nhau (ví dụ 2 hàng × 3 em khác 3 hàng × 2 em). Như vậy số cách xếp x em đúng bằng số ước dương của x.
+
+Thầy tổng phụ trách được phép chọn số học sinh x bất kỳ từ 1 đến n và muốn số kiểu đội hình là nhiều nhất. Nếu có nhiều giá trị x cùng cho số kiểu lớn nhất, thầy chọn x nhỏ nhất. Có q câu hỏi với các giá trị n khác nhau.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên q.
+- q dòng tiếp theo, mỗi dòng chứa một số nguyên n.
+
+Đầu ra:
+- Với mỗi câu hỏi, in ra một dòng gồm hai số: giá trị x được chọn và số kiểu đội hình của x.
+
+Giới hạn:
+- 1 ≤ q ≤ 1000.
+- 1 ≤ n ≤ 10^6.
+
+Gợi ý:
+- Với n = 10: các số 6, 8, 10 đều có 4 ước, nhiều nhất trong đoạn [1, 10]; chọn x = 6. Với n = 1 chỉ có x = 1 với 1 kiểu. Với n = 100 đáp án là 60 với 12 kiểu (72, 84, 90, 96 cũng có 12 ước nhưng lớn hơn). Với n = 1000 đáp án là 840 với 32 kiểu.
+- Tính số ước d[x] cho mọi x ≤ 10^6 bằng cách duyệt mỗi i rồi cộng 1 vào d[i], d[2i], d[3i], ... (tổng số bước khoảng 10^6 · ln(10^6)). Sau đó lập mảng best[n] lưu x tốt nhất trong đoạn [1, n].

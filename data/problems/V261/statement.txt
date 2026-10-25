@@ -1,0 +1,26 @@
+Trang trại của cô Lan là một cánh đồng hình chữ nhật được chia thành n hàng và m cột ô ruộng; ô ở hàng x, cột y gọi là ô (x, y). Đầu vụ, sổ sách ghi sản lượng của mọi ô đều bằng 0. Trong vụ có q sự kiện xảy ra lần lượt:
+- Một tổ thu hoạch báo cáo vừa hái thêm được ở một ô một lượng nông sản. Nếu tổ báo nhầm trước đó thì lượng báo cáo có thể âm để trừ bớt.
+- Hoặc cô Lan hỏi tổng sản lượng đã ghi của mọi ô trong một vùng hình chữ nhật.
+
+Hãy trả lời các câu hỏi của cô Lan.
+
+Đầu vào:
+- Dòng đầu gồm ba số nguyên n, m và q.
+- q dòng tiếp theo, mỗi dòng là một sự kiện ở một trong hai dạng sau.
+- Dạng "1 x y v": cộng thêm v kilôgam vào sản lượng của ô (x, y).
+- Dạng "2 x1 y1 x2 y2": hỏi tổng sản lượng của mọi ô (x, y) có x1 ≤ x ≤ x2 và y1 ≤ y ≤ y2.
+
+Đầu ra:
+- Với mỗi sự kiện dạng 2, in ra tổng sản lượng tương ứng trên một dòng, theo đúng thứ tự xuất hiện.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000, 1 ≤ m ≤ 1000, 1 ≤ q ≤ 1000.
+- 1 ≤ x ≤ n, 1 ≤ y ≤ m, |v| ≤ 10^9.
+- 1 ≤ x1 ≤ x2 ≤ n, 1 ≤ y1 ≤ y2 ≤ m.
+- Có ít nhất một sự kiện dạng 2.
+- Chú ý: tổng có thể vượt quá phạm vi số nguyên 32 bit.
+
+Gợi ý:
+- Ở ví dụ, sau ba sự kiện đầu, ô (1, 1) có 5, ô (2, 3) có 7 và ô (3, 4) có -2.
+- Vùng từ (1, 1) đến (2, 3) chứa hai ô (1, 1) và (2, 3) nên tổng là 12. Vùng từ (2, 2) đến (3, 4) chứa ô (2, 3) và ô (3, 4) nên tổng là 5.
+- Ô (2, 3) được cộng thêm 4 thành 11, nên cả cánh đồng có tổng 5 + 11 - 2 = 14. Vùng từ (3, 1) đến (3, 3) không có ô nào khác 0 nên tổng là 0.

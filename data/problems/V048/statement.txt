@@ -1,0 +1,19 @@
+Bác Khải có một chiếc máy cưa kì lạ. Khi đưa vào một khúc gỗ dài L (L ≥ 1), máy cắt ra đúng hai khúc mới dài ⌊L / p⌋ và ⌊L / q⌋, phần còn lại thành mùn cưa (⌊x⌋ là phần nguyên của x). Mỗi khúc mới lại được đưa vào máy, cứ thế cho đến khi chỉ còn các khúc dài 0. Mỗi khúc dài 0 được đem đi làm một chiếc tăm. Hỏi từ một khúc gỗ dài n, bác thu được bao nhiêu chiếc tăm?
+
+Nếu gọi f(L) là số tăm thu được từ khúc dài L thì f(0) = 1 và f(L) = f(⌊L / p⌋) + f(⌊L / q⌋) với L ≥ 1.
+
+Đầu vào:
+- Dòng đầu chứa số nguyên T là số câu hỏi.
+- T dòng tiếp theo, mỗi dòng chứa ba số nguyên n, p, q.
+
+Đầu ra:
+- Với mỗi câu hỏi, in ra f(n) trên một dòng. Có thể chứng minh đáp số không vượt quá 2^60, vừa với kiểu số nguyên 64 bit.
+
+Giới hạn:
+- 1 ≤ T ≤ 10.
+- 0 ≤ n ≤ 10^18.
+- 2 ≤ p, q ≤ 10^9.
+
+Gợi ý:
+- Gọi đệ quy thẳng theo công thức sẽ lặp lại cùng một độ dài rất nhiều lần và chạy không kịp. Các độ dài xuất hiện đều có dạng ⌊n / (p^a · q^b)⌋ nên chỉ có vài nghìn giá trị khác nhau: hãy lưu kết quả đã tính vào một map để dùng lại.
+- Ví dụ n = 5, p = 2, q = 3: f(1) = f(0) + f(0) = 2, f(2) = f(1) + f(0) = 3, f(5) = f(2) + f(1) = 5.

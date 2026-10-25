@@ -1,0 +1,33 @@
+Ngân hàng yêu cầu số tiền trên tờ séc phải được ghi cả bằng chữ. Anh Khoa muốn viết chương trình đọc một số nguyên n thành chữ tiếng Việt. Để tránh lỗi phông chữ, kết quả được in không dấu, các từ viết thường và cách nhau một dấu cách, theo đúng các quy tắc dưới đây.
+
+Chữ số: 0 khong, 1 mot, 2 hai, 3 ba, 4 bon, 5 nam, 6 sau, 7 bay, 8 tam, 9 chin.
+
+Phần chục – đơn vị của một nhóm có chữ số hàng chục b và hàng đơn vị c được đọc như sau:
+- b = 0, c = 0: không đọc gì.
+- b = 0, c ≠ 0: đọc "linh" rồi đến chữ số c (quy tắc này chỉ dùng khi đứng trước có hàng trăm).
+- b = 1: đọc "muoi"; sau đó nếu c = 5 đọc "lam", nếu c khác 0 và khác 5 thì đọc chữ số c.
+- b ≥ 2: đọc chữ số b rồi "muoi"; sau đó nếu c = 0 không đọc gì, c = 4 đọc "tu", c = 5 đọc "lam", các trường hợp khác đọc chữ số c.
+
+Cách đọc cả số:
+- Nếu n = 0 thì in "khong".
+- Chia n thành các nhóm 3 chữ số tính từ phải sang. Từ phải sang trái là nhóm đơn vị, nhóm nghìn, nhóm triệu, nhóm tỷ; tên nhóm lần lượt là (không có), "nghin", "trieu", "ty".
+- Đọc các nhóm từ trái sang phải, bắt đầu từ nhóm khác 0 đầu tiên (gọi là nhóm đầu). Mỗi nhóm được đọc rồi nối thêm tên nhóm (nếu có).
+- Nhóm đầu đọc theo giá trị thật của nó (từ 1 đến 999), không đọc các chữ số 0 ở đầu: nếu nhóm đầu có hàng trăm thì đọc như một nhóm đầy đủ; nếu nhóm đầu có 2 chữ số thì chỉ đọc phần chục – đơn vị; nếu chỉ có 1 chữ số thì đọc chữ số đó.
+- Mỗi nhóm đứng sau nhóm đầu: nếu bằng 000 thì bỏ qua hoàn toàn (cả tên nhóm); ngược lại đọc đầy đủ: chữ số hàng trăm (kể cả 0) rồi "tram", rồi đến phần chục – đơn vị.
+
+Đầu vào:
+- Dòng đầu chứa số nguyên T.
+- T dòng tiếp theo, mỗi dòng chứa một số nguyên n.
+
+Đầu ra:
+- Với mỗi n in cách đọc trên một dòng.
+
+Giới hạn:
+- 1 ≤ T ≤ 100.
+- 0 ≤ n < 10^12, n được viết không có số 0 thừa ở đầu.
+
+Gợi ý:
+- 215: "hai tram muoi lam". 24: "hai muoi tu".
+- 3014: nhóm đầu là 3, nhóm sau là 014 đọc đầy đủ: "ba nghin khong tram muoi bon".
+- 1000005: các nhóm 1, 000, 005; nhóm 000 bị bỏ qua: "mot trieu khong tram linh nam".
+- 105000: "mot tram linh nam nghin".

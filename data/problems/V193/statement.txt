@@ -1,0 +1,23 @@
+Phòng địa chính xã vừa đo đạc q mảnh đất hình tam giác, mỗi mảnh cho bởi ba mốc góc có toạ độ nguyên. Để ghi vào sổ, cán bộ cần phân loại từng mảnh theo góc lớn nhất của nó:
+- NHON: cả ba góc đều nhỏ hơn 90 độ.
+- VUONG: có một góc đúng bằng 90 độ.
+- TU: có một góc lớn hơn 90 độ.
+- SUYBIEN: ba mốc thẳng hàng (kể cả khi có hai mốc trùng nhau), tức là mảnh đất có diện tích bằng 0.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên q.
+- q dòng tiếp theo, mỗi dòng chứa 6 số nguyên xA yA xB yB xC yC là toạ độ ba mốc.
+
+Đầu ra:
+- In ra q dòng, mỗi dòng là một trong bốn từ NHON, VUONG, TU, SUYBIEN.
+
+Giới hạn:
+- 1 ≤ q ≤ 300.
+- |x|, |y| ≤ 10^6 với mọi toạ độ (ba điểm có thể trùng nhau hoặc thẳng hàng).
+- Mọi phép tính đều làm được bằng số nguyên 64 bit; đừng dùng số thực để so sánh góc.
+
+Gợi ý:
+- Tam giác (0, 0), (4, 0), (0, 3): góc tại (0, 0) là góc vuông vì hai vectơ (4, 0) và (0, 3) có tích vô hướng bằng 0.
+- Tam giác (0, 0), (4, 0), (2, 3): tích vô hướng tại cả ba đỉnh đều dương nên là tam giác nhọn.
+- Tam giác (0, 0), (10, 0), (1, 1): tại đỉnh (1, 1), hai vectơ (-1, -1) và (9, -1) có tích vô hướng -8 < 0 nên góc đó tù.
+- Tam giác (1, 1), (2, 2), (5, 5) có ba đỉnh thẳng hàng nên là SUYBIEN.

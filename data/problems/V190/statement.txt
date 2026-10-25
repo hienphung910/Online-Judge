@@ -1,0 +1,17 @@
+Một nghệ nhân khắc dòng chữ S độ dài n lên tấm gỗ. Ông muốn cắt ra hai đoạn chữ đối xứng (đọc xuôi hay ngược đều như nhau) để làm hai tấm biển treo hai bên cửa, và hai đoạn này không được dùng chung ký tự nào.
+
+Đoạn S[l..r] (1 ≤ l ≤ r ≤ n) gồm các ký tự từ vị trí l đến vị trí r. Hãy đếm số bộ bốn (a, b, c, d) thỏa mãn 1 ≤ a ≤ b < c ≤ d ≤ n sao cho cả S[a..b] và S[c..d] đều là đoạn đối xứng.
+
+Đầu vào:
+- Một dòng duy nhất chứa xâu S gồm các chữ cái tiếng Anh in thường 'a' đến 'z'.
+
+Đầu ra:
+- Một số nguyên là số bộ bốn cần đếm.
+
+Giới hạn:
+- 1 ≤ n ≤ 2·10^4.
+- Đáp án có thể lên tới khoảng 7·10^15, hãy dùng số nguyên 64-bit (long long / long).
+
+Gợi ý:
+- Ở ví dụ 1, S = "aba" có 4 đoạn đối xứng: [1, 1], [2, 2], [3, 3], [1, 3]. Các cặp tách rời là ([1, 1], [2, 2]), ([1, 1], [3, 3]), ([2, 2], [3, 3]), nên đáp án là 3.
+- Ở ví dụ 2, S = "aaa" có 6 đoạn đối xứng. Các cặp tách rời là ([1, 1], [2, 2]), ([1, 1], [3, 3]), ([1, 1], [2, 3]), ([2, 2], [3, 3]), ([1, 2], [3, 3]), nên đáp án là 5.

@@ -1,0 +1,19 @@
+Hai bạn Minh và Lan trao đổi thư bằng mật mã nhân: mỗi con số y được mã hóa thành (a · y) mod m. Để giải mã, Lan cần một số x trong đoạn [0, m - 1] sao cho (a · x) mod m = 1; khi đó nhân bản mã với x rồi lấy dư cho m sẽ được lại y. Số x như vậy gọi là nghịch đảo của a theo modulo m, và nếu tồn tại thì nó là duy nhất trong đoạn [0, m - 1].
+
+Với mỗi cặp khóa (a, m), hãy tìm x hoặc cho biết không tồn tại.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên q.
+- q dòng tiếp theo, mỗi dòng chứa hai số nguyên a và m.
+
+Đầu ra:
+- Với mỗi cặp, in ra một dòng chứa x, hoặc -1 nếu không tồn tại x.
+
+Giới hạn:
+- 1 ≤ q ≤ 500.
+- 0 ≤ a ≤ 10^18.
+- 2 ≤ m ≤ 10^18.
+
+Gợi ý:
+- 3 · 5 = 15 chia 7 dư 1 nên nghịch đảo của 3 theo modulo 7 là 5. Với a = 4, m = 6 mọi tích 4x đều chẵn nên không thể chia 6 dư 1. Với a = 10, m = 17 đáp án là 12 vì 120 = 7 · 17 + 1. Số 0 không có nghịch đảo.
+- Nghịch đảo tồn tại khi và chỉ khi UCLN(a, m) = 1. Thuật toán Euclid mở rộng tìm được hai số nguyên x, y với a · x + m · y = UCLN(a, m); khi UCLN bằng 1, x (đưa về đoạn [0, m - 1]) chính là đáp án. Vì m không nhất thiết là số nguyên tố, không dùng được định lý Fermat nhỏ.

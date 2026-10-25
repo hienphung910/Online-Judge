@@ -1,0 +1,20 @@
+Một nhà máy in mã số lên các sản phẩm, mỗi mã số là một xâu khác rỗng chỉ gồm A chữ cái tiếng Anh in thường đầu tiên ('a', 'b', ..., chữ cái thứ A). Toàn bộ lịch sử in được lưu thành xâu S độ dài n, cũng chỉ gồm A chữ cái đó. Một mã số W bị coi là "đã dùng" nếu W xuất hiện trong S như một xâu con gồm các ký tự liên tiếp.
+
+Giám đốc muốn cấp một mã số mới chưa từng được dùng. Mã càng ngắn càng tốt; nếu có nhiều mã ngắn nhất thì chọn mã nhỏ nhất theo thứ tự từ điển. Hãy tìm mã số đó.
+
+Đầu vào:
+- Dòng thứ nhất là số nguyên A.
+- Dòng thứ hai là xâu S, chỉ gồm A chữ cái tiếng Anh in thường đầu tiên.
+
+Đầu ra:
+- Một dòng là xâu ngắn nhất (chỉ gồm A chữ cái đầu tiên) không phải xâu con của S; nếu có nhiều xâu như vậy, in xâu nhỏ nhất theo thứ tự từ điển.
+
+Giới hạn:
+- 1 ≤ A ≤ 26.
+- 1 ≤ n ≤ 10^4.
+
+Gợi ý:
+- Ở ví dụ 1, A = 2, S = "aabbab" chứa đủ cả 4 xâu độ dài 2 ("aa", "ab", "bb", "ba") nhưng không chứa "aaa", nên đáp án là "aaa".
+- Ở ví dụ 2, A = 3, S = "abcab" chứa đủ "a", "b", "c" nhưng không chứa "aa".
+- Ở ví dụ 3, S = "bb" không chứa chữ "a".
+- Trong automat hậu tố của S, mỗi xâu con ứng với một đường đi từ gốc. Gọi dp(v) là độ dài ngắn nhất của một xâu mà đọc từ trạng thái v sẽ bị "rơi" khỏi automat; vì các cạnh luôn đi tới trạng thái có len lớn hơn nên dp tính được theo len giảm dần, rồi dựng lại đáp án bằng cách luôn chọn chữ cái nhỏ nhất còn giữ được độ dài tối ưu.

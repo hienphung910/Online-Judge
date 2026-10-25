@@ -1,0 +1,22 @@
+Robot thám hiểm được thả vào phòng số 1 của một mê cung gồm n phòng đánh số từ 1 đến n và m hành lang một chiều. Đi qua hành lang thứ i từ phòng u_i sang phòng v_i, robot tiêu tốn w_i đơn vị năng lượng. Một số hành lang có trạm sạc nên w_i có thể âm: đi qua đó robot được nạp thêm |w_i| đơn vị.
+
+Robot được đi qua mỗi phòng, mỗi hành lang bao nhiêu lần tùy ý. Với mỗi phòng, hãy cho biết lượng năng lượng tiêu tốn ít nhất để robot đi từ phòng 1 tới phòng đó (tổng các w trên đường đi, có thể âm).
+
+Đầu vào:
+- Dòng đầu tiên gồm hai số nguyên n và m.
+- m dòng tiếp theo, mỗi dòng gồm ba số nguyên u, v, w: hành lang một chiều từ phòng u sang phòng v tiêu tốn w đơn vị năng lượng. Có thể có nhiều hành lang nối cùng một cặp phòng và có hành lang đi từ một phòng quay về chính nó.
+
+Đầu ra:
+- In ra n dòng, dòng thứ i ứng với phòng i.
+- In KHONG nếu robot không thể tới phòng i.
+- In -INF nếu robot tới được phòng i với mức tiêu tốn nhỏ tùy ý (nhỏ hơn mọi số cho trước).
+- Ngược lại in lượng năng lượng tiêu tốn ít nhất. Riêng dòng đầu tiên luôn là 0 hoặc -INF.
+
+Giới hạn:
+- 1 ≤ n ≤ 400, 0 ≤ m ≤ 1200.
+- 1 ≤ u, v ≤ n, -10^4 ≤ w ≤ 10^4.
+
+Gợi ý:
+- Ở ví dụ, vòng 2 → 3 → 2 có tổng -2 + 1 = -1, đi vòng này càng nhiều lần thì càng tiết kiệm, nên phòng 2, 3 và phòng 6 (đi được từ phòng 3) đều là -INF.
+- Phòng 4 tốn 3, phòng 5 tốn 3 - 5 = -2. Phòng 7 có hành lang đi ra nhưng không có hành lang nào đi vào nên in KHONG.
+- Chạy Bellman - Ford n - 1 vòng từ phòng 1. Nếu ở vòng thứ n một cạnh u → v (với u tới được) vẫn làm giảm được khoảng cách của v thì v đi được từ một chu trình âm; mọi phòng đi được từ những phòng như vậy đều là -INF (tìm bằng BFS hoặc DFS).

@@ -1,0 +1,23 @@
+Diễn đàn của trường muốn tự động che đi những từ không phù hợp trong bình luận. Bình luận được viết liền thành xâu T độ dài n, và quản trị viên có danh sách k từ cấm.
+
+Mỗi lần một từ cấm P xuất hiện trong T, tức là đoạn T[i..i+|P|-1] trùng với P (|P| là độ dài của P), thì toàn bộ |P| ký tự của đoạn đó phải bị che. Các lần xuất hiện có thể chồng lên nhau hoặc nằm lồng trong nhau. Một ký tự bị che nếu nó thuộc ít nhất một lần xuất hiện của ít nhất một từ cấm.
+
+Hãy in ra bình luận sau khi thay mỗi ký tự bị che bằng ký tự '#', các ký tự còn lại giữ nguyên.
+
+Đầu vào:
+- Dòng thứ nhất là xâu T.
+- Dòng thứ hai là số nguyên k.
+- k dòng tiếp theo, mỗi dòng là một từ cấm. Các từ cấm có thể trùng nhau và có thể dài hơn T.
+- T và các từ cấm đều khác rỗng, chỉ gồm chữ cái tiếng Anh in thường 'a' đến 'z'.
+
+Đầu ra:
+- Một dòng là xâu T sau khi đã che.
+
+Giới hạn:
+- 1 ≤ n ≤ 10^4.
+- 1 ≤ k ≤ 1000, tổng độ dài các từ cấm không vượt quá 5000.
+
+Gợi ý:
+- Ở ví dụ 1, T = "xabacabay". Từ "aba" xuất hiện ở vị trí 2 và 6, từ "cab" xuất hiện ở vị trí 5, còn "zz" không xuất hiện. Các ký tự từ vị trí 2 đến 8 bị che nên kết quả là "x#######y".
+- Ở ví dụ 2, T = "hello": từ "ell" che vị trí 2 đến 4, từ "l" che vị trí 3 và 4, từ "helloworld" dài hơn T nên không xuất hiện.
+- Với automat Aho–Corasick, tại mỗi vị trí i chỉ cần biết từ cấm dài nhất kết thúc tại i: các từ cấm ngắn hơn kết thúc tại i đều nằm gọn trong đoạn của nó. Giá trị này tính được bằng cách lấy max dọc theo liên kết thất bại.

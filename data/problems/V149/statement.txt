@@ -1,0 +1,20 @@
+Trên một ngọn núi có n trạm dừng chân đánh số từ 1 đến n và m lối mòn một chiều. Lối mòn thứ i đi từ trạm u_i xuống trạm v_i và có độ dài ngắm cảnh là w_i. Mọi lối mòn đều đi xuống dốc nên không bao giờ có cách đi theo các lối mòn mà quay lại được một trạm đã qua.
+
+Câu lạc bộ đi bộ xuất phát từ trạm số 1 và muốn chọn lộ trình đi được thật nhiều cảnh đẹp. Với mỗi trạm, hãy cho biết tổng độ dài ngắm cảnh lớn nhất của một lộ trình đi từ trạm 1 tới trạm đó.
+
+Đầu vào:
+- Dòng đầu tiên gồm hai số nguyên n và m.
+- m dòng tiếp theo, mỗi dòng gồm ba số nguyên u, v, w: có lối mòn một chiều từ trạm u tới trạm v với độ dài ngắm cảnh w. Có thể có nhiều lối mòn nối cùng một cặp trạm.
+- Dữ liệu đảm bảo không có chu trình. Chú ý: số hiệu các trạm không nhất thiết tăng dần theo chiều xuống dốc.
+
+Đầu ra:
+- Một dòng gồm n số nguyên; số thứ i là tổng độ dài ngắm cảnh lớn nhất của một lộ trình từ trạm 1 tới trạm i, hoặc -1 nếu không thể đi tới trạm i. Số đầu tiên luôn là 0.
+
+Giới hạn:
+- 1 ≤ n ≤ 800, 0 ≤ m ≤ 1200.
+- 1 ≤ u, v ≤ n, u ≠ v, 1 ≤ w ≤ 1000.
+
+Gợi ý:
+- Ở ví dụ, tới trạm 2 có hai cách: đi thẳng 1 → 2 (độ dài 4) hoặc 1 → 3 → 2 (độ dài 2 + 5 = 7), nên chọn 7. Tới trạm 5 dài nhất là 1 → 3 → 2 → 5 với độ dài 8.
+- Trạm 4 chỉ có lối mòn đi ra (sang trạm 1) chứ không có lối nào đi vào nên in -1.
+- Hãy sắp xếp topo các trạm (ví dụ bằng thuật toán Kahn), rồi xét các trạm theo thứ tự đó: khi đã biết đáp án của u thì cập nhật cho mọi v có lối mòn u → v.

@@ -1,0 +1,20 @@
+Một trạm quan trắc có n cảm biến, cảm biến thứ i đo được giá trị x_i. Số cảm biến quá lớn nên dữ liệu không được gửi trực tiếp mà được sinh ra theo công thức:
+- x_1 cho trước;
+- x_i = (A·x_{i-1} + B) mod M với mọi i từ 2 đến n, trong đó "mod" là phép lấy phần dư.
+
+Kỹ sư cần biết giá trị đứng ở vị trí thứ k khi xếp n giá trị theo thứ tự không giảm (các giá trị bằng nhau vẫn được tính riêng, vị trí đánh số từ 1).
+
+Đầu vào:
+- Một dòng gồm sáu số nguyên n, k, x_1, A, B, M.
+
+Đầu ra:
+- In ra một số nguyên là giá trị nhỏ thứ k.
+
+Giới hạn:
+- 1 ≤ k ≤ n ≤ 5·10^6.
+- 1 ≤ M ≤ 10^9; 0 ≤ x_1, A, B < M.
+- Tích A·x_{i-1} có thể lên tới khoảng 10^18, hãy tính bằng số nguyên 64 bit.
+
+Gợi ý:
+- Với n = 6, x_1 = 5, A = 3, B = 4, M = 11, dãy sinh ra là 5 8 6 0 4 5. Xếp lại được 0 4 5 5 6 8, phần tử thứ 3 là 5.
+- Không cần sắp xếp cả dãy: thuật toán chọn nhanh (quickselect) chỉ chia dãy theo một chốt rồi đi tiếp vào phần chứa vị trí k, trung bình O(n). Trong C++ có sẵn hàm nth_element.

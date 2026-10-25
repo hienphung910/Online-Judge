@@ -1,0 +1,20 @@
+Minh và Hà chơi một trò chơi trên cây có n đỉnh, đánh số từ 1 đến n, gốc là đỉnh 1. Mỗi lá (đỉnh không có con) ghi một số nguyên. Ban đầu một quân cờ đặt ở gốc. Mỗi lượt, người đến lượt di chuyển quân cờ từ đỉnh hiện tại xuống một đỉnh con tùy chọn. Khi quân cờ đặt ở đỉnh có độ sâu chẵn (gốc có độ sâu 0) thì Minh là người chọn, ở đỉnh có độ sâu lẻ thì Hà là người chọn. Khi quân cờ tới một lá ghi số v, trò chơi kết thúc và Hà phải đưa cho Minh v viên bi (nếu v âm thì Minh đưa cho Hà |v| viên).
+
+Minh muốn số v cuối cùng lớn nhất có thể, còn Hà muốn nó nhỏ nhất có thể. Biết cả hai đều chơi tối ưu, hãy tính v.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- Dòng thứ hai chứa n - 1 số nguyên p_2, p_3, ..., p_n, trong đó p_i là cha của đỉnh i.
+- Dòng thứ ba chứa các số ghi trên lá, liệt kê theo chỉ số lá tăng dần.
+
+Đầu ra:
+- In ra một số nguyên là giá trị v khi cả hai chơi tối ưu.
+
+Giới hạn:
+- 2 ≤ n ≤ 2000.
+- 1 ≤ p_i < i.
+- Số ghi trên mỗi lá có giá trị tuyệt đối không vượt quá 10^6.
+
+Gợi ý:
+- Trong ví dụ, các lá là 4, 5, 6, 7 với các số 3, -2, 5, 1. Nếu Minh đi xuống đỉnh 2, Hà sẽ chọn lá 5 và Minh nhận -2. Nếu Minh đi xuống đỉnh 3, Hà sẽ chọn lá 7 và Minh nhận 1. Vậy Minh chọn đỉnh 3, kết quả là 1.
+- Đây là thuật toán minimax: giá trị một đỉnh là max (lượt Minh) hoặc min (lượt Hà) của giá trị các đỉnh con. Kỹ thuật cắt tỉa alpha-beta giúp bỏ bớt nhánh khi duyệt nhưng không làm thay đổi kết quả.

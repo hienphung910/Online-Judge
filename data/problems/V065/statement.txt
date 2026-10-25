@@ -1,0 +1,19 @@
+Cô giáo vẽ tam giác Pascal lên bảng đen: dòng 0 chỉ có số 1, mỗi số ở dòng sau bằng tổng hai số đứng ngay phía trên nó (bên trái và bên phải; chỗ trống coi như 0). Số thứ k (đánh số từ 0) ở dòng n chính là C(n, k), số cách chọn k phần tử từ n phần tử.
+
+Bảng đen không đủ chỗ ghi những số khổng lồ, nên cô chỉ ghi phần dư khi chia cho m. Lưu ý m do cô chọn và có thể không phải số nguyên tố. Có q câu hỏi, mỗi câu hỏi giá trị ghi ở dòng n, vị trí k.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên m và q.
+- q dòng tiếp theo, mỗi dòng chứa hai số nguyên n và k.
+
+Đầu ra:
+- Với mỗi câu hỏi, in ra một dòng chứa C(n, k) mod m. Quy ước C(n, k) = 0 khi k > n.
+
+Giới hạn:
+- 1 ≤ m ≤ 10^9.
+- 1 ≤ q ≤ 1000.
+- 0 ≤ n, k ≤ 2000.
+
+Gợi ý:
+- Với m = 12: C(6, 3) = 20 chia 12 dư 8; C(10, 4) = 210 dư 6; C(7, 0) = 1; C(3, 5) = 0; C(9, 3) = 84 chia hết cho 12.
+- Khi m là hợp số, không phải số nào cũng có nghịch đảo modulo m nên công thức n! / (k! (n - k)!) không dùng được. Hãy dựng bảng C[n][k] = (C[n - 1][k - 1] + C[n - 1][k]) mod m cho mọi n ≤ 2000, chỉ cần phép cộng.

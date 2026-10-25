@@ -1,0 +1,24 @@
+Quần đảo có n hòn đảo đánh số từ 1 đến n, ban đầu chưa có cây cầu nào. Đội cứu hộ lần lượt bắc các cầu phao nối hai đảo với nhau, nhưng cứ mỗi đợt gió lớn thì cây cầu được bắc gần đây nhất trong số những cây cầu còn đứng sẽ bị cuốn trôi. Xen giữa đó, người dân liên tục hỏi: từ đảo này có thể đi qua các cầu phao để tới đảo kia hay không?
+
+Có q sự kiện, mỗi sự kiện thuộc một trong ba loại:
+- 1 u v: bắc một cầu phao mới nối đảo u và đảo v (u ≠ v). Giữa hai đảo có thể có nhiều cầu, cầu mới có thể không giúp nối thêm được gì.
+- 2: một đợt gió lớn cuốn trôi cây cầu được bắc muộn nhất trong số các cầu còn đứng. Dữ liệu bảo đảm lúc đó còn ít nhất một cầu.
+- 3 u v: hỏi hiện tại có đi được từ đảo u tới đảo v hay không (u có thể bằng v).
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và q.
+- q dòng tiếp theo, mỗi dòng mô tả một sự kiện theo định dạng trên.
+
+Đầu ra:
+- Với mỗi sự kiện loại 3, in ra trên một dòng CO nếu đi được, ngược lại in KHONG.
+
+Giới hạn:
+- 1 ≤ n ≤ 10^4.
+- 1 ≤ q ≤ 2000.
+- 1 ≤ u, v ≤ n.
+
+Gợi ý:
+- Sau hai cầu 1–2 và 2–3, đảo 1 tới được đảo 3: in CO.
+- Cầu 3–1 được bắc thêm (thừa) rồi bị gió cuốn đi ngay; đảo 1 vẫn tới được đảo 3 qua đảo 2: in CO.
+- Đợt gió tiếp theo cuốn trôi cầu 2–3, lúc này đảo 3 bị cô lập: in KHONG.
+- Đảo 4 luôn tới được chính nó: in CO.

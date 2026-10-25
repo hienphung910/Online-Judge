@@ -1,0 +1,24 @@
+Chiếc đồng hồ điện tử treo ở phòng khách nhà Minh hiển thị giờ theo dạng HH:MM gồm bốn chữ số (giờ từ 00 đến 23, phút từ 00 đến 59, luôn có số 0 ở đầu nếu cần). Mỗi chữ số được ghép từ các đoạn LED. Số đoạn sáng của từng chữ số như sau:
+- 0 sáng 6 đoạn, 1 sáng 2 đoạn, 2 sáng 5 đoạn, 3 sáng 5 đoạn, 4 sáng 4 đoạn,
+- 5 sáng 5 đoạn, 6 sáng 6 đoạn, 7 sáng 3 đoạn, 8 sáng 7 đoạn, 9 sáng 6 đoạn.
+Dấu hai chấm ở giữa không được tính.
+
+Trong mỗi phút, đồng hồ giữ nguyên một con số trên màn hình. Minh gọi "điểm sáng" của một phút là tổng số đoạn đang sáng trong phút đó. Ví dụ phút 12:34 có điểm sáng 2 + 5 + 5 + 4 = 16.
+
+Minh có T câu hỏi. Mỗi câu hỏi cho hai thời điểm trong cùng một ngày, hãy tính tổng điểm sáng của tất cả các phút từ thời điểm đầu đến thời điểm cuối (tính cả hai đầu).
+
+Đầu vào:
+- Dòng đầu chứa số nguyên T.
+- T dòng tiếp theo, mỗi dòng chứa hai thời điểm dạng HH:MM cách nhau một dấu cách.
+
+Đầu ra:
+- Với mỗi câu hỏi in ra một số nguyên là tổng điểm sáng.
+
+Giới hạn:
+- 1 ≤ T ≤ 10^3.
+- Mọi thời điểm đều hợp lệ, có dạng HH:MM với 00 ≤ HH ≤ 23, 00 ≤ MM ≤ 59, và thời điểm đầu không muộn hơn thời điểm cuối.
+
+Gợi ý:
+- Câu 1: chỉ có phút 00:00, điểm sáng 6 + 6 + 6 + 6 = 24.
+- Câu 2: phút 12:34 có điểm sáng 16, phút 12:35 có điểm sáng 17, tổng 33.
+- Câu 3: phút 23:59 có điểm sáng 5 + 5 + 5 + 6 = 21.

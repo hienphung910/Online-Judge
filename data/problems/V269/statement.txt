@@ -1,0 +1,21 @@
+Thư viện trường cần người trực cho m ca trong tuần, đánh số từ 1 đến m. Có n bạn sinh viên tình nguyện, đánh số từ 1 đến n. Mỗi bạn đã khai báo những ca mình rảnh. Mỗi ca chỉ cần đúng một người trực, và để không ảnh hưởng việc học, mỗi bạn nhận nhiều nhất một ca. Tất nhiên, một bạn chỉ được xếp vào ca mà bạn đó rảnh.
+
+Hãy xếp lịch sao cho số ca có người trực là nhiều nhất và in ra số ca đó.
+
+Đầu vào:
+- Dòng đầu gồm ba số nguyên n, m, k: số bạn tình nguyện, số ca trực và số cặp (bạn, ca) đã khai báo.
+- k dòng tiếp theo, mỗi dòng gồm hai số nguyên a, b cho biết bạn a rảnh vào ca b. Các cặp (a, b) đôi một khác nhau.
+
+Đầu ra:
+- In ra một số nguyên duy nhất là số ca nhiều nhất có người trực.
+
+Giới hạn:
+- 1 ≤ n ≤ 500.
+- 1 ≤ m ≤ 500.
+- 0 ≤ k ≤ 2000.
+- 1 ≤ a ≤ n, 1 ≤ b ≤ m.
+
+Gợi ý:
+- Trong ví dụ, nếu vội xếp bạn 1 vào ca 1 thì bạn 2 (chỉ rảnh ca 1) sẽ không còn ca nào. Cách tốt hơn: bạn 2 trực ca 1, bạn 1 trực ca 2, bạn 3 trực ca 3. Bạn 4 chỉ rảnh ca 3 nên đành nghỉ.
+- Ca 4 không có ai rảnh, nên không thể có quá 3 ca có người trực. Đáp án là 3.
+- Bài toán chính là tìm cặp ghép cực đại trên đồ thị hai phía (bạn - ca). Thuật toán Kuhn lần lượt thử tìm đường tăng cho từng bạn.

@@ -1,0 +1,19 @@
+Một công ty xây dựng vừa trúng thầu n công trình và đang có đúng n đội thi công. Mỗi đội sẽ nhận đúng một công trình và mỗi công trình do đúng một đội đảm nhận.
+
+Vì các đội có thế mạnh khác nhau và đóng quân ở những nơi khác nhau, chi phí để đội i làm công trình j là c[i][j]. Hãy phân công sao cho tổng chi phí là nhỏ nhất và in ra tổng chi phí đó.
+
+Đầu vào:
+- Dòng đầu chứa số nguyên n.
+- n dòng tiếp theo, dòng thứ i gồm n số nguyên c[i][1], c[i][2], ..., c[i][n].
+
+Đầu ra:
+- In ra một số nguyên duy nhất là tổng chi phí nhỏ nhất.
+
+Giới hạn:
+- 1 ≤ n ≤ 50.
+- 0 ≤ c[i][j] ≤ 1000.
+
+Gợi ý:
+- Trong ví dụ, nếu tham lam chọn ô rẻ nhất trước (đội 2 làm công trình 2 với chi phí 0) thì dù xếp tiếp thế nào tổng chi phí cũng ít nhất là 6.
+- Cách tốt nhất: đội 1 làm công trình 2, đội 2 làm công trình 1, đội 3 làm công trình 3, tổng chi phí 1 + 2 + 2 = 5.
+- Dựng mạng: nguồn → mỗi đội (sức chứa 1, chi phí 0), đội i → công trình j (sức chứa 1, chi phí c[i][j]), mỗi công trình → đích (sức chứa 1, chi phí 0). Luồng cực đại chi phí cực tiểu trên mạng này chính là cách phân công tốt nhất.

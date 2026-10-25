@@ -1,0 +1,29 @@
+Trạm hải đăng trên đảo vẫn liên lạc với đất liền bằng mã Morse. Mỗi chữ cái hoặc chữ số được mã hóa thành một nhóm dấu chấm (.) và dấu gạch (-) theo bảng sau:
+- A .-    B -...  C -.-.  D -..   E .     F ..-.  G --.   H ....  I ..
+- J .---  K -.-   L .-..  M --    N -.    O ---   P .--.  Q --.-  R .-.
+- S ...   T -     U ..-   V ...-  W .--   X -..-  Y -.--  Z --..
+- 0 -----  1 .----  2 ..---  3 ...--  4 ....-  5 .....  6 -....  7 --...  8 ---..  9 ----.
+
+Một bức điện được viết như sau: các nhóm mã của những ký tự trong cùng một từ cách nhau một dấu cách, và giữa hai từ liên tiếp có thêm một dấu / (cũng cách hai bên một dấu cách). Chẳng hạn "SOS 2" được viết thành "... --- ... / ..---".
+
+Anh trực trạm nhận được T yêu cầu, mỗi yêu cầu là một trong hai loại:
+- "MA <văn bản>": mã hóa văn bản thành bức điện. Các từ trong văn bản cách nhau đúng một dấu cách.
+- "GIAI <bức điện>": giải mã bức điện thành văn bản, các từ cách nhau một dấu cách. Đường truyền có nhiễu nên có thể xuất hiện nhóm mã không có trong bảng; khi đó in dấu ? thay cho ký tự ấy.
+
+Đầu vào:
+- Dòng đầu chứa số nguyên T.
+- T dòng tiếp theo, mỗi dòng là một yêu cầu. Không có dấu cách thừa ở đầu, cuối dòng hay giữa các phần.
+
+Đầu ra:
+- Với mỗi yêu cầu in kết quả trên một dòng, theo đúng định dạng mô tả ở trên.
+
+Giới hạn:
+- 1 ≤ T ≤ 50.
+- Mỗi dòng yêu cầu (tính cả từ MA hoặc GIAI và các dấu cách) dài không quá 80 ký tự.
+- Trong yêu cầu MA, văn bản gồm ít nhất một từ; mỗi từ gồm các chữ cái in hoa A–Z và chữ số 0–9.
+- Trong yêu cầu GIAI, mỗi nhóm gồm 1 đến 6 ký tự '.' hoặc '-', có ít nhất một nhóm, dấu / chỉ nằm giữa hai nhóm.
+
+Gợi ý:
+- "MA SOS 2" cho ra "... --- ... / ..---".
+- Trong "GIAI .... .. / ..-- -", nhóm "..--" không có trong bảng nên kết quả là "HI ?T".
+- "GIAI -.-. --- -.. . / ----- --..." cho ra "CODE 07".

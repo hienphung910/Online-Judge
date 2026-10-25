@@ -1,0 +1,20 @@
+Một vùng biển có n hòn đảo đánh số từ 1 đến n và m cây cầu, mỗi cây cầu nối hai đảo khác nhau. Hai đảo thuộc cùng một cụm nếu có thể đi từ đảo này sang đảo kia chỉ bằng các cây cầu (có thể qua nhiều đảo trung gian). Một đảo không có cây cầu nào thì tự nó là một cụm.
+
+Đội du lịch thích những cụm có "vòng cầu": tức là trong cụm có thể xuất phát từ một đảo, đi qua ít nhất ba cây cầu khác nhau, mỗi cây cầu không quá một lần, rồi quay về đúng đảo ban đầu.
+
+Hãy đếm số cụm đảo và số cụm có vòng cầu.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và m.
+- m dòng tiếp theo, mỗi dòng gồm hai số nguyên u, v (u ≠ v) cho biết có cây cầu nối đảo u và đảo v. Không có hai cây cầu nào nối cùng một cặp đảo.
+
+Đầu ra:
+- Hai số nguyên: số cụm đảo và số cụm có vòng cầu.
+
+Giới hạn:
+- 1 ≤ n ≤ 3000; 0 ≤ m ≤ 3000.
+- 1 ≤ u, v ≤ n.
+
+Gợi ý:
+- Ở ví dụ có 4 cụm: {1, 2, 3, 4}, {5, 6, 7}, {8} và {9, 10}.
+- Cụm {1, 2, 3, 4} có vòng cầu 2 → 3 → 4 → 2. Cụm {5, 6, 7} chỉ là một dãy cầu 5 - 6 - 7, không quay lại được. Vậy chỉ có 1 cụm có vòng cầu.

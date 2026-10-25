@@ -1,0 +1,19 @@
+Giờ chào cờ, n học sinh mang số áo 1, 2, ..., n đứng thành một hàng dọc theo đúng thứ tự số áo. Cô tổng phụ trách lần lượt đọc m lệnh đổi chỗ, mỗi lệnh có một trong hai dạng:
+- "A x y": học sinh số x rời khỏi hàng rồi đứng vào ngay sau lưng học sinh số y.
+- "B x y": học sinh số x rời khỏi hàng rồi đứng vào ngay trước mặt học sinh số y.
+
+Các học sinh khác giữ nguyên thứ tự. Hãy cho biết hàng sau khi thực hiện hết các lệnh, tính từ người đứng đầu hàng.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và m.
+- m dòng tiếp theo, mỗi dòng là một lệnh dạng "A x y" hoặc "B x y" với x ≠ y.
+
+Đầu ra:
+- In ra n số áo theo thứ tự từ đầu hàng đến cuối hàng.
+
+Giới hạn:
+- 2 ≤ n ≤ 1500, 1 ≤ m ≤ 1500.
+- 1 ≤ x, y ≤ n và x ≠ y.
+
+Gợi ý:
+- Ở ví dụ 1, hàng ban đầu là 1 2 3 4 5. Lệnh "A 1 3" cho hàng 2 3 1 4 5. Lệnh "B 5 2" cho hàng 5 2 3 1 4. Lệnh "A 2 4" cho hàng 5 3 1 4 2. Lệnh "B 3 5" cho hàng 3 5 1 4 2.

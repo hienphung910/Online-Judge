@@ -1,0 +1,23 @@
+Một bạn sinh viên ghi âm buổi tập của ban nhạc và chuyển thành xâu S độ dài n, mỗi chữ cái là một nốt nhạc. Bạn ấy muốn tìm "điệp khúc": một đoạn nhạc được chơi đi chơi lại ít nhất K lần.
+
+Một xâu X khác rỗng được gọi là xuất hiện c lần trong S nếu có đúng c vị trí i (1 ≤ i ≤ n - |X| + 1) sao cho đoạn S[i..i+|X|-1] trùng với X, trong đó |X| là độ dài của X. Các lần xuất hiện được phép chồng lên nhau.
+
+Hãy tìm độ dài lớn nhất L của một xâu xuất hiện ít nhất K lần trong S. Nếu có nhiều xâu độ dài L như vậy, hãy chọn xâu nhỏ nhất theo thứ tự từ điển.
+
+Đầu vào:
+- Dòng thứ nhất là xâu S gồm các chữ cái tiếng Anh in thường 'a' đến 'z'.
+- Dòng thứ hai là số nguyên K.
+
+Đầu ra:
+- Dòng thứ nhất in L.
+- Nếu L > 0, dòng thứ hai in xâu độ dài L xuất hiện ít nhất K lần, nhỏ nhất theo thứ tự từ điển.
+- Nếu không có xâu khác rỗng nào xuất hiện ít nhất K lần thì chỉ in một dòng là 0.
+
+Giới hạn:
+- 1 ≤ K ≤ n ≤ 10^4.
+
+Gợi ý:
+- Ở ví dụ 1, S = "banana", K = 2: xâu "ana" xuất hiện tại vị trí 2 và 4 (chồng lên nhau), không có xâu độ dài 4 nào xuất hiện hai lần, nên đáp án là 3 và "ana".
+- Ở ví dụ 2, S = "cdxabycdab", K = 2: cả "ab" và "cd" đều xuất hiện hai lần, không có xâu dài 3 nào lặp lại; chọn "ab" vì nhỏ hơn theo thứ tự từ điển.
+- Ở ví dụ 3, không có chữ cái nào xuất hiện tới 3 lần nên đáp án là 0.
+- Trong mảng hậu tố, các hậu tố bắt đầu bằng cùng một xâu X nằm liền nhau. Vì vậy K hậu tố liền kề có chung tiền tố dài bằng giá trị nhỏ nhất của K - 1 giá trị LCP giữa chúng; cửa sổ đầu tiên đạt giá trị lớn nhất cho xâu nhỏ nhất theo thứ tự từ điển.

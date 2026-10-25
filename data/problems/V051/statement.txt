@@ -1,0 +1,21 @@
+Lớp trưởng cần chọn người đi hội trại từ n bạn đăng ký. Bạn thứ i cần chi phí w_i đồng và mang lại v_i điểm thi đua cho lớp. Quỹ lớp chỉ có B đồng nên tổng chi phí của những người được chọn không được vượt quá B. Ngoài ra có m cặp bạn hay cãi nhau, không thể cùng đi trong một đội.
+
+Hãy chọn đội (có thể không chọn ai) để tổng điểm thi đua lớn nhất.
+
+Đầu vào:
+- Dòng đầu chứa ba số nguyên n, m, B.
+- n dòng tiếp theo, dòng thứ i chứa hai số nguyên w_i và v_i.
+- m dòng tiếp theo, mỗi dòng chứa hai số nguyên x, y cho biết bạn x và bạn y không được cùng đi.
+
+Đầu ra:
+- In ra tổng điểm thi đua lớn nhất có thể đạt được.
+
+Giới hạn:
+- 1 ≤ n ≤ 20, 0 ≤ m ≤ n · (n - 1) / 2.
+- 1 ≤ B ≤ 10^10.
+- 1 ≤ w_i ≤ 10^9, 1 ≤ v_i ≤ 10^9.
+- 1 ≤ x, y ≤ n, x ≠ y, không có cặp nào được cho hai lần.
+
+Gợi ý:
+- Chỉ có 2^n ≤ 2^20 (khoảng một triệu) cách chọn, nên có thể thử hết: biểu diễn mỗi cách chọn bằng một số nguyên mà bit thứ i bật khi bạn i được chọn, rồi kiểm tra chi phí và các cặp cãi nhau. Tổng chi phí và tổng điểm có thể vượt quá phạm vi kiểu int.
+- Ví dụ: n = 4, B = 10, chi phí và điểm lần lượt là (5, 6), (4, 5), (3, 4), (6, 7), các cặp cãi nhau là (2, 4) và (1, 3). Đội {2, 4} được 12 điểm nhưng hai bạn này cãi nhau. Đội {1, 2} hoặc {3, 4} được 11 điểm, đó là đáp số.

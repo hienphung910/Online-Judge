@@ -1,0 +1,23 @@
+Xưởng cơ khí nhận được lời mời làm P dự án, đánh số từ 1 đến P. Hoàn thành dự án i, xưởng thu về p_i đồng. Tuy nhiên để làm dự án i, xưởng cần thuê đủ một số loại máy móc. Có Q loại máy, đánh số từ 1 đến Q; thuê máy loại j tốn q_j đồng. Mỗi loại máy chỉ cần thuê một lần là dùng được cho mọi dự án cần đến nó.
+
+Xưởng được tự do chọn làm một số dự án (có thể không làm dự án nào). Lợi nhuận bằng tổng tiền thu từ các dự án được chọn trừ đi tổng tiền thuê các loại máy mà những dự án đó cần. Hãy tính lợi nhuận lớn nhất.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên P và Q.
+- Dòng thứ hai gồm P số nguyên p_1, p_2, ..., p_P.
+- Dòng thứ ba gồm Q số nguyên q_1, q_2, ..., q_Q.
+- P dòng tiếp theo, dòng thứ i bắt đầu bằng số nguyên k_i, sau đó là k_i số nguyên đôi một khác nhau: chỉ số các loại máy mà dự án i cần.
+
+Đầu ra:
+- In ra một số nguyên duy nhất là lợi nhuận lớn nhất.
+
+Giới hạn:
+- 1 ≤ P ≤ 200.
+- 1 ≤ Q ≤ 200.
+- 1 ≤ p_i, q_j ≤ 10^6.
+- 0 ≤ k_i ≤ Q và tổng các k_i không vượt quá 3000.
+
+Gợi ý:
+- Trong ví dụ, nếu làm riêng từng dự án thì chỉ dự án 1 có lãi: 10 - (4 + 5) = 1. Dự án 2 lỗ 6 - (5 + 3) = -2, dự án 3 lỗ 8 - (3 + 7) = -2.
+- Nhưng làm cả ba dự án thì các máy được dùng chung: thu 10 + 6 + 8 = 24, thuê cả 4 loại máy hết 4 + 5 + 3 + 7 = 19, lãi 5. Đây là phương án tốt nhất.
+- Dựng mạng: nguồn → dự án i (sức chứa p_i), dự án i → mỗi máy nó cần (sức chứa vô cùng), máy j → đích (sức chứa q_j). Đáp án bằng tổng các p_i trừ đi giá trị lát cắt hẹp nhất.

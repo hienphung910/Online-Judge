@@ -1,0 +1,18 @@
+Dọn gác xép, Minh tìm thấy cuốn sổ của ông nội, trong đó có một phép cộng mà mỗi chữ số đã được thay bằng một chữ cái: X + Y = Z. Theo lời ông kể, quy tắc mã hóa như sau: cùng một chữ cái luôn thay cho cùng một chữ số, hai chữ cái khác nhau thay cho hai chữ số khác nhau, và chữ cái đầu tiên của mỗi từ không phải là chữ số 0 (kể cả khi từ chỉ có một chữ cái).
+
+Minh muốn biết có bao nhiêu cách gán chữ số cho các chữ cái để phép cộng đúng.
+
+Đầu vào:
+- Một dòng chứa ba từ X, Y, Z cách nhau bởi dấu cách.
+
+Đầu ra:
+- In ra số cách gán chữ số cho các chữ cái xuất hiện trong ba từ sao cho tuân theo quy tắc trên và phép cộng X + Y = Z (đọc theo hệ thập phân) là đúng. Hai cách khác nhau nếu có ít nhất một chữ cái được gán chữ số khác nhau.
+
+Giới hạn:
+- Mỗi từ gồm từ 1 đến 10 chữ cái in hoa A..Z.
+- Tổng số chữ cái khác nhau trong cả ba từ không vượt quá 10.
+
+Gợi ý:
+- Gán lần lượt chữ số cho từng chữ cái, mỗi chữ số dùng tối đa một lần, và quay lui khi đã thử hết. Có không quá 10! (khoảng 3,6 triệu) cách gán nên vẫn kịp nếu mỗi lần kiểm tra thật nhanh: hãy tính trước mỗi chữ cái đóng góp bao nhiêu (chẳng hạn chữ cái đứng ở hàng chục của X đóng góp 10 lần chữ số của nó, còn ở Z thì tính với dấu trừ), phép cộng đúng khi tổng đóng góp bằng 0.
+- Ví dụ 1: AB + B = BA chỉ có một cách là A = 8, B = 9, vì 89 + 9 = 98.
+- Ví dụ 2: A + B = C có 32 cách, ứng với các cặp chữ số dương a ≠ b có a + b ≤ 9 (khi đó c = a + b tự động khác a và b).

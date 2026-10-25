@@ -1,0 +1,20 @@
+Các nhà khảo cổ tìm thấy một cuộn băng cổ ghi một dòng chữ T gồm n ký tự. Thời gian làm nhiều ký tự bị mờ, không còn đọc được; những ký tự đó được ghi lại bằng dấu '?'. Một nhà nghiên cứu nghi ngờ rằng một câu chú P gồm m ký tự xuất hiện trong cuộn băng, nhưng bản chép câu chú của ông cũng bị mờ ở vài chỗ.
+
+Ta nói P có thể nằm ở vị trí i (1 ≤ i ≤ n - m + 1) nếu với mọi j từ 1 đến m, ký tự thứ i + j - 1 của T và ký tự thứ j của P bằng nhau, hoặc ít nhất một trong hai ký tự đó là '?'. Hãy đếm số vị trí mà P có thể nằm, và cho biết vị trí nhỏ nhất trong số đó.
+
+Đầu vào:
+- Dòng thứ nhất chứa xâu T.
+- Dòng thứ hai chứa xâu P.
+- Hai xâu chỉ gồm chữ cái thường 'a' đến 'z' và dấu '?'.
+
+Đầu ra:
+- Dòng thứ nhất in số vị trí mà P có thể nằm.
+- Dòng thứ hai in vị trí nhỏ nhất như vậy, hoặc -1 nếu không có vị trí nào.
+
+Giới hạn:
+- 1 ≤ m ≤ n ≤ 15000.
+
+Gợi ý:
+- Ví dụ 1: P = "a?c" có thể nằm ở các vị trí 2 ("ab?"), 6 ("ab?") và 8 ("?ac"). Ở vị trí 4 ("?ca") thì ký tự thứ ba 'a' khác 'c' nên không khớp.
+- Ví dụ 2: không có vị trí nào khớp.
+- Gán '?' giá trị 0 và mỗi chữ cái một giá trị dương khác nhau. Khi đó vị trí i khớp khi và chỉ khi tổng của p_j · t_(i+j-1) · (p_j - t_(i+j-1))^2 theo j bằng 0, vì mỗi số hạng đều không âm. Khai triển bình phương, tổng này là tổ hợp của ba tích chập, tính được bằng FFT hoặc NTT trong O((n + m) log(n + m)).

@@ -1,0 +1,26 @@
+Một cảng sông có n bến xếp dọc bờ, đánh số từ 1 đến n theo chiều dòng chảy. Bến thứ i có độ sâu a_i xăng-ti-mét. Có q sự kiện xảy ra lần lượt:
+- Hoặc sau một đợt nạo vét (hay bồi lắng), độ sâu của một bến thay đổi.
+- Hoặc một tàu hàng có mớn nước x đang ở ngang bến l và xuôi dòng tìm chỗ đỗ. Tàu đỗ được ở bến j khi a_j ≥ x, và tàu sẽ dừng ở bến đầu tiên đỗ được, tức là bến j nhỏ nhất thỏa mãn j ≥ l và a_j ≥ x. Tàu chỉ hỏi chỗ đỗ, không làm thay đổi độ sâu của bến.
+
+Với mỗi tàu, hãy cho biết tàu dừng ở bến nào, hoặc báo rằng tàu không tìm được bến.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và q.
+- Dòng thứ hai gồm n số nguyên a_1, a_2, ..., a_n.
+- q dòng tiếp theo, mỗi dòng là một sự kiện ở một trong hai dạng sau.
+- Dạng "1 i x": gán a_i = x.
+- Dạng "2 l x": một tàu có mớn nước x xuất phát từ bến l.
+
+Đầu ra:
+- Với mỗi sự kiện dạng 2, in ra trên một dòng chỉ số j nhỏ nhất thỏa mãn j ≥ l và a_j ≥ x; nếu không có bến nào như vậy thì in -1.
+
+Giới hạn:
+- 1 ≤ n, q ≤ 10^3.
+- 1 ≤ i ≤ n, 1 ≤ l ≤ n.
+- 1 ≤ a_i ≤ 10^9, 1 ≤ x ≤ 10^9.
+- Có ít nhất một sự kiện dạng 2.
+
+Gợi ý:
+- Ở ví dụ, ban đầu a = [3, 8, 2, 6, 9]. Tàu mớn 5 từ bến 1 dừng ở bến 2 (a_2 = 8). Tàu mớn 7 từ bến 3 bỏ qua bến 3, 4 và dừng ở bến 5.
+- Tàu mớn 10 từ bến 1 không tìm được bến nào nên in -1.
+- Sau khi gán a_5 = 4, tàu mớn 7 từ bến 3 không còn chỗ đỗ (in -1), còn tàu mớn 2 từ bến 3 dừng ngay ở bến 3.

@@ -1,0 +1,20 @@
+Sân hội chợ được kẻ thành lưới R hàng, C cột ô vuông. Ban tổ chức lần lượt trải K tấm thảm, tấm thứ k phủ kín hình chữ nhật có góc trên trái là ô (x1, y1) và góc dưới phải là ô (x2, y2). Các tấm thảm có thể chồng lên nhau.
+
+Một ô được xem là "êm chân" nếu nó được phủ bởi ít nhất T tấm thảm. Hãy đếm số ô êm chân trên sân.
+
+Đầu vào:
+- Dòng đầu tiên chứa bốn số nguyên R, C, K, T.
+- K dòng tiếp theo, mỗi dòng chứa bốn số nguyên x1, y1, x2, y2 mô tả một tấm thảm.
+
+Đầu ra:
+- In ra một số nguyên là số ô được phủ bởi ít nhất T tấm thảm.
+
+Giới hạn:
+- 1 ≤ R ≤ 1000, 1 ≤ C ≤ 1000.
+- 1 ≤ T ≤ K ≤ 1000.
+- 1 ≤ x1 ≤ x2 ≤ R, 1 ≤ y1 ≤ y2 ≤ C.
+- Đáp án không vượt quá R·C ≤ 10^6.
+
+Gợi ý:
+- Mảng hiệu hai chiều: với mỗi tấm thảm, cộng 1 vào d(x1, y1) và d(x2+1, y2+1), trừ 1 ở d(x1, y2+1) và d(x2+1, y1). Sau đó cộng dồn d theo hai chiều (như mảng cộng dồn 2D) sẽ được số tấm thảm phủ lên từng ô. Tổng độ phức tạp O(K + R·C).
+- Ví dụ: số tấm phủ lên các ô của hàng 1 là 1 1 2 0 0, hàng 2 là 1 2 3 1 0, hàng 3 là 0 1 2 1 0, hàng 4 là 0 0 1 0 0. Có 4 ô được phủ ít nhất 2 lần.

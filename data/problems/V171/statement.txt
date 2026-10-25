@@ -1,0 +1,19 @@
+Trước giờ chào cờ, n học sinh đứng thành một hàng dọc, bạn thứ i (tính từ đầu hàng) cao h_i milimét. Cô tổng phụ trách muốn hàng được xếp theo chiều cao không giảm từ đầu đến cuối hàng. Mỗi lần, cô chỉ được đổi chỗ hai bạn đứng cạnh nhau. Hai bạn cao bằng nhau đứng theo thứ tự nào cũng được.
+
+Hỏi cô cần ít nhất bao nhiêu lần đổi chỗ?
+
+Đầu vào:
+- Dòng đầu gồm số nguyên n.
+- Dòng thứ hai gồm n số nguyên h_1, h_2, ..., h_n.
+
+Đầu ra:
+- In ra một số nguyên là số lần đổi chỗ ít nhất.
+
+Giới hạn:
+- 1 ≤ n ≤ 2500.
+- 1 ≤ h_i ≤ 10^9.
+
+Gợi ý:
+- Mỗi lần đổi chỗ hai bạn cạnh nhau chỉ sửa được nhiều nhất một cặp vị trí (i, j) có i < j và h_i > h_j.
+- Hàng [5, 3, 5, 1] có 4 cặp như vậy: (1, 2), (1, 4), (2, 4) và (3, 4).
+- Một cách làm đủ 4 lần: [5, 3, 5, 1] → [3, 5, 5, 1] → [3, 5, 1, 5] → [3, 1, 5, 5] → [1, 3, 5, 5].

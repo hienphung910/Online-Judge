@@ -1,0 +1,20 @@
+Một công ty giao hàng có n điểm đánh số từ 1 đến n và m tuyến đường một chiều; tuyến thứ i đi từ điểm u_i tới điểm v_i với chi phí w_i. Kho ở điểm 1, khách hàng ở điểm n. Để có phương án dự phòng khi tắc đường, công ty muốn biết chi phí của k lộ trình rẻ nhất.
+
+Một lộ trình là một dãy tuyến đường nối tiếp nhau, xuất phát từ điểm 1 và kết thúc tại điểm n; lộ trình được phép đi qua một điểm hay một tuyến nhiều lần (kể cả đi qua điểm n rồi quay lại). Hai lộ trình là khác nhau nếu dãy tuyến đường của chúng khác nhau; hai tuyến khác nhau dù nối cùng một cặp điểm vẫn được coi là khác nhau. Nếu n = 1 thì lộ trình không đi tuyến nào cũng được tính, với chi phí 0.
+
+Hãy liệt kê chi phí của k lộ trình rẻ nhất theo thứ tự không giảm.
+
+Đầu vào:
+- Dòng đầu tiên gồm ba số nguyên n, m, k.
+- m dòng tiếp theo, mỗi dòng gồm ba số nguyên u, v, w: có tuyến đường một chiều từ u tới v với chi phí w.
+
+Đầu ra:
+- Một dòng gồm k số nguyên là chi phí của k lộ trình rẻ nhất theo thứ tự không giảm. Nếu chỉ có t < k lộ trình thì sau t chi phí đó in thêm k - t số -1.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000, 0 ≤ m ≤ 1500, 1 ≤ k ≤ 10.
+- 1 ≤ u, v ≤ n, u ≠ v, 1 ≤ w ≤ 10^4.
+
+Gợi ý:
+- Ở ví dụ có các lộ trình 1 → 2 → 4 (chi phí 3), 1 → 3 → 4 (chi phí 4), 1 → 2 → 3 → 4 (chi phí 5), rồi 1 → 2 → 4 → 2 → 4 (chi phí 3 + 1 + 2 = 6) và 1 → 3 → 4 → 2 → 4 (chi phí 4 + 3 = 7)... Năm chi phí nhỏ nhất là 3 4 5 6 7.
+- Chạy Dijkstra nhưng cho phép mỗi điểm được lấy ra khỏi hàng đợi ưu tiên tối đa k lần (thay vì 1 lần). Lần thứ j điểm v được lấy ra chính là chi phí lộ trình rẻ thứ j tới v; những lần lấy ra của điểm n cho ta đáp án.

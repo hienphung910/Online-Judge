@@ -1,0 +1,20 @@
+Quần đảo có n hòn đảo đánh số từ 1 đến n, lúc đầu chưa có cây cầu nào. Tỉnh lần lượt xây m cây cầu theo thứ tự đã định: cây cầu thứ t nối hai đảo x_t và y_t, đi được cả hai chiều. Ta gọi "thời điểm t" là lúc vừa xây xong t cây cầu đầu tiên (thời điểm 0 là lúc chưa có cầu nào). Một vùng là một nhóm đảo đi lại được với nhau qua các cây cầu đã xây.
+
+Công ty du lịch có q câu hỏi, mỗi câu hỏi gồm ba số u, v, s: thời điểm sớm nhất mà đảo u và đảo v nằm cùng một vùng, đồng thời vùng đó có ít nhất s hòn đảo, là thời điểm nào? Hãy trả lời tất cả các câu hỏi.
+
+Đầu vào:
+- Dòng đầu tiên chứa ba số nguyên n, m, q.
+- m dòng tiếp theo, dòng thứ t chứa hai số nguyên x_t và y_t.
+- q dòng tiếp theo, mỗi dòng chứa ba số nguyên u, v, s.
+
+Đầu ra:
+- In ra q dòng, dòng thứ i là thời điểm t nhỏ nhất (0 ≤ t ≤ m) thoả mãn câu hỏi thứ i, hoặc -1 nếu kể cả khi đã xây xong cả m cây cầu điều kiện vẫn chưa thoả.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000, 1 ≤ m ≤ 1500, 1 ≤ q ≤ 1000.
+- 1 ≤ x_t, y_t ≤ n; có thể có cầu nối một đảo với chính nó hoặc nhiều cầu nối cùng một cặp đảo.
+- 1 ≤ u, v ≤ n (u có thể bằng v), 1 ≤ s ≤ n.
+
+Gợi ý:
+- Ví dụ 1: ở thời điểm 1 đảo 1 và 2 đã chung vùng gồm 2 đảo. Đảo 1 và 3 chung vùng từ thời điểm 3 (vùng {1, 2, 3, 4}). Đảo 5 với chính nó, vùng chỉ cần 1 đảo, thoả ngay ở thời điểm 0. Đảo 6 không có cây cầu nào nên không bao giờ chung vùng với đảo 1, câu hỏi thứ tư in -1. Đảo 3 và 4 chung vùng từ thời điểm 2 nhưng vùng đủ 5 đảo chỉ từ thời điểm 4.
+- Khi đã thoả ở thời điểm t thì mọi thời điểm sau cũng thoả (cầu chỉ thêm, không mất), nên có thể chặt nhị phân cho từng câu hỏi. Chặt nhị phân song song: mỗi vòng, xếp các câu hỏi theo mid của chúng, dựng lại hệ các tập rời nhau (DSU) từ đầu và xây lần lượt từng cầu; ngay sau cầu thứ t kiểm tra các câu hỏi có mid = t. Sau khoảng log m vòng là xong, mỗi vòng tốn O((m + q) · α(n)).

@@ -1,0 +1,21 @@
+Chị Mai bán hàng online và ghi lại sổ sách trong n ngày liên tiếp: ngày thứ i chị lãi a_i đồng (a_i âm nghĩa là hôm đó lỗ). Chị gọi một quãng ngày liên tiếp từ ngày l đến ngày r (1 ≤ l ≤ r ≤ n) là "vừa ý" nếu tổng tiền lãi a_l + a_(l+1) + ... + a_r nằm trong đoạn [L, R] - không quá ít để phải lo, cũng không nhiều tới mức đáng ngờ là ghi nhầm.
+
+Hãy đếm số quãng ngày vừa ý.
+
+Đầu vào:
+- Dòng đầu tiên chứa ba số nguyên n, L, R.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n.
+
+Đầu ra:
+- In ra một số nguyên là số cặp (l, r) với 1 ≤ l ≤ r ≤ n và L ≤ a_l + ... + a_r ≤ R.
+
+Giới hạn:
+- 1 ≤ n ≤ 2000.
+- |a_i| ≤ 10^9.
+- -2·10^12 ≤ L ≤ R ≤ 2·10^12.
+- Đáp án và các tổng có thể vượt quá 2^31, hãy dùng kiểu số nguyên 64 bit.
+
+Gợi ý:
+- Ví dụ 1: các quãng vừa ý là [1, 1] (tổng 2), [1, 2] (tổng 1), [1, 4] (tổng 2), [2, 3] (tổng 2), [3, 3] (tổng 3) và [3, 4] (tổng 1), tất cả 6 quãng.
+- Đặt P_0 = 0, P_i = a_1 + ... + a_i. Quãng [l, r] vừa ý khi và chỉ khi L ≤ P_r - P_(l-1) ≤ R, tức là cần đếm số cặp chỉ số i < j với P_j - R ≤ P_i ≤ P_j - L.
+- Chia để trị giống sắp xếp trộn trên dãy P_0..P_n: đếm đệ quy ở nửa trái và nửa phải, rồi đếm các cặp có i ở nửa trái, j ở nửa phải. Khi hai nửa đã được sắp xếp, phần đếm chéo làm được bằng hai con trỏ trong thời gian tuyến tính, tổng cộng O(n log n).

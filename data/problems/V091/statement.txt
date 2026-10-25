@@ -1,0 +1,19 @@
+Cuối kỳ, Tuấn có n bài tập lớn cần làm. Bài thứ i cần đúng t_i giờ làm việc và phải nộp chậm nhất vào thời điểm d_i (tính bằng giờ kể từ bây giờ, thời điểm 0). Tuấn chỉ làm một bài tại mỗi thời điểm, đã bắt đầu bài nào thì làm liên tục cho xong bài đó. Bài nào không kịp hạn thì Tuấn bỏ hẳn, không làm.
+
+Một bài được tính là hoàn thành nếu Tuấn làm xong nó ở thời điểm không muộn hơn d_i. Hãy tính số bài nhiều nhất Tuấn có thể hoàn thành.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- n dòng tiếp theo, dòng thứ i chứa hai số nguyên t_i và d_i.
+
+Đầu ra:
+- In ra một số nguyên là số bài nhiều nhất có thể hoàn thành.
+
+Giới hạn:
+- 1 ≤ n ≤ 1200.
+- 1 ≤ t_i ≤ 10^6.
+- 1 ≤ d_i ≤ 10^9.
+
+Gợi ý:
+- Duyệt các bài theo hạn nộp tăng dần, lần lượt thêm vào danh sách sẽ làm và cộng dồn tổng thời gian. Khi tổng thời gian vượt quá hạn của bài vừa thêm, bỏ khỏi danh sách bài tốn nhiều giờ nhất (dùng hàng đợi ưu tiên).
+- Trong ví dụ, Tuấn làm các bài cần 2, 1, 3 giờ theo thứ tự đó, xong ở thời điểm 2, 3, 6, đều kịp hạn 3, 6, 7. Không thể làm kịp cả 4 bài vì bài cần 2 giờ và bài cần 4 giờ có hạn không quá 5 nhưng cần tổng 6 giờ.

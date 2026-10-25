@@ -1,0 +1,25 @@
+Câu lạc bộ cờ vây phát thẻ hội viên mang các số nguyên dương. Chủ nhiệm câu lạc bộ cho rằng một số là "nhịp nhàng" theo hệ số M nếu đồng thời:
+- số đó chia hết cho M;
+- trong cách viết thập phân của nó (không có chữ số 0 ở đầu), không có hai chữ số đứng cạnh nhau nào bằng nhau.
+
+Ví dụ với M = 3, số 2019 là nhịp nhàng, còn 2109 cũng nhịp nhàng, nhưng 1335 thì không (có hai chữ số 3 liền nhau) và 2020 cũng không (không chia hết cho 3).
+
+Cho T câu hỏi, mỗi câu hỏi gồm L, R, M: hãy đếm số lượng số nhịp nhàng theo hệ số M nằm trong đoạn [L, R].
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên T.
+- T dòng tiếp theo, mỗi dòng chứa ba số nguyên L, R, M.
+
+Đầu ra:
+- Với mỗi câu hỏi, in ra đáp án trên một dòng.
+
+Giới hạn:
+- 1 ≤ T ≤ 200.
+- 1 ≤ L ≤ R ≤ 10^18.
+- 1 ≤ M ≤ 200.
+
+Gợi ý:
+- Câu hỏi 1: các số chia hết cho 3 trong [1, 30] là 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, không số nào có hai chữ số liền nhau bằng nhau, đáp án 10.
+- Câu hỏi 2: trong [100, 130] có 105, 112, 119, 126 chia hết cho 7, nhưng 112 và 119 chứa "11", đáp án 2.
+- Câu hỏi 3: 1000 chia hết cho 8 nhưng có các chữ số 0 liền nhau, đáp án 0.
+- Trạng thái quy hoạch động gồm: số chữ số còn lại, số dư của phần đã viết khi chia cho M, chữ số vừa viết, và cờ cho biết phần đã viết có đang bằng đúng tiền tố của giới hạn hay không.

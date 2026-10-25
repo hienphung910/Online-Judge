@@ -1,0 +1,19 @@
+Có n ô vuông xếp thành hàng, đánh số từ 1 đến n, và n bạn nhỏ đánh số từ 1 đến n. Bạn thứ d đi dọc hàng ô và dừng ở các ô d, 2d, 3d, ... (mọi bội của d không vượt quá n); ở mỗi ô dừng lại, bạn đặt vào đó d viên sỏi.
+
+Sau khi cả n bạn đi xong, trên hàng ô có tất cả bao nhiêu viên sỏi? Để ý rằng ô số i nhận được đúng tổng các ước dương của i viên sỏi. Vì kết quả rất lớn, chỉ cần in phần dư khi chia cho 10^9 + 7. Có q câu hỏi với các giá trị n khác nhau.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên q.
+- q dòng tiếp theo, mỗi dòng chứa một số nguyên n.
+
+Đầu ra:
+- Với mỗi câu hỏi, in ra một dòng là tổng số sỏi chia lấy dư cho 10^9 + 7.
+
+Giới hạn:
+- 1 ≤ q ≤ 10.
+- 1 ≤ n ≤ 10^12.
+
+Gợi ý:
+- Với n = 4, các ô lần lượt nhận 1, 3, 4, 7 viên, tổng 15. Với n = 10 tổng là 87. Với n = 1 tổng là 1.
+- Bạn thứ d đặt sỏi ở ⌊n/d⌋ ô nên đáp án là tổng d · ⌊n/d⌋ với d từ 1 đến n. Giá trị ⌊n/d⌋ chỉ nhận khoảng 2√n giá trị khác nhau; các d có cùng giá trị v = ⌊n/d⌋ tạo thành một đoạn liên tiếp [l, r] với r = ⌊n/v⌋, và tổng l + (l + 1) + ... + r = (l + r)(r - l + 1)/2.
+- Phép chia cho 2 khi làm việc theo modulo 10^9 + 7 được thay bằng phép nhân với nghịch đảo của 2, là 500000004.

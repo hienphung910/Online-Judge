@@ -1,0 +1,20 @@
+Một ứng dụng mua sắm có n loại điểm thưởng đánh số từ 1 đến n và m quy tắc quy đổi. Quy tắc thứ i cho phép đổi từ loại điểm u_i sang loại điểm v_i với chi phí w_i xu; chi phí có thể âm, nghĩa là người dùng được tặng thêm xu khi thực hiện quy đổi đó.
+
+Bộ phận kiểm soát lo ngại có người lợi dụng: xuất phát từ một loại điểm nào đó, thực hiện một dãy quy đổi rồi quay về đúng loại điểm ban đầu mà tổng chi phí âm, tức là được lời xu, và cứ lặp lại mãi. Hãy kiểm tra xem hệ thống quy tắc có tồn tại một vòng quy đổi như vậy hay không.
+
+Đầu vào:
+- Dòng đầu tiên là số nguyên T: số bộ dữ liệu.
+- Mỗi bộ dữ liệu bắt đầu bằng một dòng gồm hai số nguyên n và m, tiếp theo là m dòng, mỗi dòng gồm ba số nguyên u, v, w mô tả một quy tắc đổi từ u sang v với chi phí w. Có thể có nhiều quy tắc giữa cùng một cặp loại điểm, và có thể có quy tắc đổi từ một loại điểm sang chính nó (đó cũng là một vòng quy đổi).
+
+Đầu ra:
+- Với mỗi bộ dữ liệu, in ra một dòng YES nếu tồn tại vòng quy đổi có tổng chi phí âm, ngược lại in NO.
+
+Giới hạn:
+- 1 ≤ T ≤ 10.
+- 1 ≤ n ≤ 100, 0 ≤ m ≤ 500; tổng m của mọi bộ dữ liệu không vượt quá 1500.
+- 1 ≤ u, v ≤ n, -10^4 ≤ w ≤ 10^4.
+
+Gợi ý:
+- Bộ thứ nhất chỉ có một vòng 1 → 2 → 3 → 1 với tổng chi phí 4 - 2 - 1 = 1 ≥ 0 nên in NO.
+- Bộ thứ hai có vòng 2 → 3 → 4 → 2 với tổng chi phí -3 + 2 + 0 = -1 < 0 nên in YES.
+- Vòng có thể nằm ở bất kỳ đâu, không nhất thiết đi qua loại điểm 1. Có thể chạy Bellman - Ford với khoảng cách ban đầu của mọi đỉnh bằng 0 (như có một đỉnh nguồn ảo nối tới tất cả): nếu sau n - 1 vòng vẫn còn cạnh làm giảm được khoảng cách thì có chu trình âm.

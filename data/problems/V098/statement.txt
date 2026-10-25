@@ -1,0 +1,20 @@
+Khu rừng được chia thành bảng n dòng, m cột. Ô ở dòng i, cột j là ô (i, j). Mỗi ô có thể là đất trống ('.'), có một cây nấm ('o') hoặc có một gốc cây to chắn đường ('#'). Bé Na xuất phát ở ô (1, 1) và muốn đến ô (n, m); mỗi bước Na chỉ được sang phải một ô hoặc đi xuống dưới một ô, và không được đi vào ô có gốc cây. Đi qua ô nào có nấm thì Na nhặt cây nấm ở ô đó.
+
+Hỏi Na nhặt được nhiều nhất bao nhiêu cây nấm? Nếu không có đường nào đến được ô (n, m) thì in ra -1.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và m.
+- n dòng tiếp theo, mỗi dòng là một xâu gồm m ký tự mô tả một dòng của khu rừng.
+
+Đầu ra:
+- In ra số nấm lớn nhất nhặt được, hoặc -1 nếu không đến được đích.
+
+Giới hạn:
+- 1 ≤ n ≤ 100, 1 ≤ m ≤ 100.
+- Mỗi ô là một trong ba ký tự '.', 'o', '#'.
+- Ô (1, 1) và ô (n, m) không phải là '#'.
+
+Gợi ý:
+- Gọi dp[i][j] là số nấm nhiều nhất khi đứng ở ô (i, j). Ô này chỉ đến được từ ô bên trái hoặc ô bên trên, nên dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]) + (1 nếu ô (i, j) có nấm). Ô gốc cây hoặc ô không đến được thì đánh dấu là "không tới được".
+- Ở ví dụ 1, Na đi (1,1) → (1,2) → (2,2) → (2,3) → (3,3) → (3,4) và nhặt được 4 cây nấm.
+- Ở ví dụ 2, hai ô (1,2) và (2,1) đều là gốc cây nên không có đường đi.

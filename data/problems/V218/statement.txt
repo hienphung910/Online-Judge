@@ -1,0 +1,21 @@
+Phố cổ treo n chiếc đèn lồng thành một dãy, đánh số từ 1 đến n; trên đèn thứ i có khắc số a_i. Ban tổ chức lễ hội chọn một mật mã k. Một đoạn đèn liên tiếp từ đèn i đến đèn j (i ≤ j) được gọi là "đoạn may mắn" nếu a_i XOR a_(i+1) XOR ... XOR a_j = k, trong đó XOR là phép toán "hoặc loại trừ" theo từng bit (toán tử ^ trong C++, Java, Python).
+
+Có q du khách, du khách thứ t đi dọc phố từ đèn l đến đèn r và muốn biết có bao nhiêu đoạn may mắn nằm trọn trong phần phố mình đi qua, tức là số cặp (i, j) thỏa mãn l ≤ i ≤ j ≤ r và XOR của a_i, ..., a_j bằng k.
+
+Đầu vào:
+- Dòng đầu tiên chứa ba số nguyên n, q và k.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n.
+- q dòng tiếp theo, mỗi dòng chứa hai số nguyên l và r.
+
+Đầu ra:
+- In ra q dòng, dòng thứ t là số đoạn may mắn của du khách thứ t.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000, 1 ≤ q ≤ 1500.
+- 0 ≤ a_i, k ≤ 10^6.
+- 1 ≤ l ≤ r ≤ n.
+
+Gợi ý:
+- Với k = 3 và dãy 1 2 3 0 3: phần phố [1, 3] có 2 đoạn may mắn là [1, 2] (1 XOR 2 = 3) và [3, 3]. Phần phố [3, 5] có 4 đoạn là [3, 3], [3, 4], [4, 5] và [5, 5]. Cả dãy [1, 5] có 6 đoạn: [1, 2], [3, 3], [3, 4], [4, 5], [5, 5] và [1, 5].
+- Đặt p_0 = 0, p_j = a_1 XOR ... XOR a_j. Đoạn [i, j] may mắn khi và chỉ khi p_(i-1) XOR p_j = k, nên câu hỏi (l, r) là đếm số cặp chỉ số x < y trong [l - 1, r] có p_x XOR p_y = k. Khi thêm một chỉ số y vào tập đang xét, số cặp tăng thêm số lần giá trị p_y XOR k đã xuất hiện, vì vậy có thể dùng thuật toán Mo.
+- Kết quả có thể khá lớn (tới khoảng n^2/2), hãy dùng số nguyên 64 bit cho an toàn.

@@ -1,0 +1,16 @@
+Một con đường thẳng rất dài được gắn trục số. Thành phố lắp n ngọn đèn, ngọn đèn thứ i chiếu sáng đoạn đường từ điểm l_i đến điểm r_i. Một điểm trên đường được coi là đủ sáng nếu nó được chiếu bởi ít nhất K ngọn đèn. Hãy tính tổng chiều dài các phần đường đủ sáng.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và K.
+- n dòng tiếp theo, dòng thứ i gồm hai số nguyên l_i và r_i (l_i < r_i).
+
+Đầu ra:
+- In ra một số nguyên là tổng chiều dài các phần đường được ít nhất K ngọn đèn chiếu sáng.
+
+Giới hạn:
+- 1 ≤ K ≤ n ≤ 1000.
+- -10^9 ≤ l_i < r_i ≤ 10^9.
+
+Gợi ý:
+- Ở ví dụ 1, K = 2. Ba đèn chiếu [1, 6], [4, 10], [5, 8]. Đoạn [4, 6] được đèn 1 và đèn 2 chiếu, đoạn [5, 8] được đèn 2 và đèn 3 chiếu. Hợp lại là đoạn [4, 8], dài 4. Các phần [1, 4] và [8, 10] chỉ có một đèn chiếu.
+- Ở ví dụ 2, K = 2. Hai đèn chiếu [-10^9, 0] và [0, 10^9] chỉ chung nhau đúng một điểm 0, phần chung có chiều dài 0 nên đáp án là 0.

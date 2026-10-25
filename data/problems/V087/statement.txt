@@ -1,0 +1,19 @@
+Con đường làng được xem như đoạn thẳng [0, L]. Xã có n chiếc đèn có thể bật, đèn thứ i khi bật sẽ chiếu sáng đoạn [a_i, b_i] của con đường. Để tiết kiệm điện, xã muốn bật ít đèn nhất sao cho mọi điểm của đoạn [0, L] đều được ít nhất một đèn chiếu sáng. Hai đoạn chỉ chạm nhau ở đầu mút, chẳng hạn [0, 3] và [3, 5], được coi là nối liền nhau.
+
+Hãy in ra số đèn ít nhất cần bật, hoặc -1 nếu dù bật hết các đèn cũng không chiếu sáng được cả con đường.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và L.
+- n dòng tiếp theo, dòng thứ i chứa hai số nguyên a_i và b_i.
+
+Đầu ra:
+- In ra một số nguyên là số đèn ít nhất, hoặc -1.
+
+Giới hạn:
+- 1 ≤ n ≤ 1500.
+- 1 ≤ L ≤ 10^6.
+- 0 ≤ a_i < b_i ≤ L.
+
+Gợi ý:
+- Gọi x là điểm xa nhất đã được chiếu sáng liên tục từ 0. Trong các đèn có a_i ≤ x, bật đèn có b_i lớn nhất rồi cập nhật x; nếu không đèn nào đẩy x ra xa hơn thì không thể chiếu sáng hết.
+- Trong ví dụ, bật các đèn [0, 4], [3, 9], [5, 10]. Không thể dùng 2 đèn vì đèn duy nhất chứa điểm 0 là [0, 4], và không đèn nào có a_i ≤ 4 lại chiếu tới 10.

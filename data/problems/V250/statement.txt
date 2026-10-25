@@ -1,0 +1,25 @@
+Dọc con mương dẫn nước của làng có m thửa ruộng xếp thành một hàng, đánh số từ 1 đến m. Mỗi thửa thuộc về một trong n hộ gia đình: thửa thứ j thuộc hộ o_j. Hộ thứ i cần tổng cộng ít nhất need_i đơn vị nước (cộng trên tất cả các thửa của hộ) thì mới bắt đầu cấy được.
+
+Trạm bơm lần lượt mở k đợt nước, đánh số từ 1 đến k theo thứ tự thời gian. Đợt thứ t cho thêm w_t đơn vị nước vào MỖI thửa trong đoạn từ thửa l_t đến thửa r_t. Nước đã vào ruộng thì giữ nguyên, không mất đi.
+
+Với mỗi hộ, hãy cho biết ngay sau đợt nước thứ mấy thì hộ đó lần đầu tiên có đủ nước, hoặc báo rằng sau cả k đợt hộ đó vẫn chưa đủ.
+
+Đầu vào:
+- Dòng đầu tiên chứa ba số nguyên n, m, k.
+- Dòng thứ hai chứa m số nguyên o_1, o_2, ..., o_m.
+- Dòng thứ ba chứa n số nguyên need_1, need_2, ..., need_n.
+- k dòng tiếp theo, dòng thứ t chứa ba số nguyên l_t, r_t, w_t.
+
+Đầu ra:
+- In ra n dòng, dòng thứ i là số t nhỏ nhất sao cho sau đợt nước thứ t tổng lượng nước trên các thửa của hộ i đạt ít nhất need_i; nếu không có t như vậy thì in -1.
+
+Giới hạn:
+- 1 ≤ n, m, k ≤ 800.
+- 1 ≤ o_j ≤ n; có thể có hộ không sở hữu thửa nào.
+- 1 ≤ need_i ≤ 10^9.
+- 1 ≤ l ≤ r ≤ m, 1 ≤ w ≤ 10^4.
+- Tổng lượng nước của một hộ có thể vượt quá 2^31, hãy dùng kiểu số nguyên 64 bit.
+
+Gợi ý:
+- Ví dụ 1: các thửa 1, 3 thuộc hộ 1; thửa 2, 5 thuộc hộ 2; thửa 4 thuộc hộ 3. Sau đợt 1, hộ 1 có 4 + 4 = 8 và hộ 2 có 4 - vừa đủ 4 nên hộ 2 có đáp án 1. Sau đợt 2, hộ 1 có 4 + 6 = 10, đủ nên đáp án là 2. Hộ 3 sau cả ba đợt chỉ có 2 đơn vị, không đủ 100 nên in -1.
+- Với mỗi hộ, "đã đủ nước sau đợt t" là tính chất đơn điệu theo t nên có thể chặt nhị phân. Chặt nhị phân song song: mọi hộ cùng chặt một lúc. Mỗi vòng, xếp các hộ theo giá trị mid của mình, rồi mô phỏng lại các đợt 1..k bằng cây Fenwick (cộng trên đoạn, hỏi tại một điểm); ngay sau đợt t, kiểm tra các hộ có mid = t. Sau khoảng log k vòng mọi hộ đều có đáp án.

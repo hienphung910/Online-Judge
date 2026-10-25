@@ -1,0 +1,21 @@
+Bà nội có một cuốn lịch bóc, mỗi sáng bà xé một tờ. Cháu Tuấn nghịch ngợm viết bừa lên giấy nhiều bộ ngày, tháng, năm và hỏi bà ngày tiếp theo của mỗi bộ là ngày nào. Có những bộ Tuấn viết sai hẳn, chẳng có trên tờ lịch nào. Hãy giúp bà trả lời.
+
+Dùng lịch hiện hành: tháng 1, 3, 5, 7, 8, 10, 12 có 31 ngày; tháng 4, 6, 9, 11 có 30 ngày; tháng 2 có 29 ngày nếu là năm nhuận và 28 ngày nếu không. Năm y là năm nhuận khi y chia hết cho 400, hoặc y chia hết cho 4 nhưng không chia hết cho 100.
+
+Đầu vào:
+- Dòng đầu chứa số nguyên T là số bộ cần hỏi.
+- T dòng tiếp theo, mỗi dòng chứa ba số nguyên d, m, y là ngày, tháng, năm.
+
+Đầu ra:
+- Với mỗi bộ, nếu ngày d tháng m năm y không tồn tại thì in KHONG HOP LE.
+- Ngược lại in ba số nguyên là ngày, tháng, năm của ngày kế tiếp, cách nhau một dấu cách, không thêm số 0 ở đầu.
+
+Giới hạn:
+- 1 ≤ T ≤ 10^3.
+- 0 ≤ d, m ≤ 99; 1 ≤ y ≤ 9999.
+
+Gợi ý:
+- 28 2 2024: năm 2024 nhuận nên ngày kế tiếp là 29 2 2024.
+- 28 2 1900: năm 1900 chia hết cho 100 nhưng không chia hết cho 400 nên không nhuận, ngày kế tiếp là 1 3 1900.
+- 31 4 2023: tháng 4 chỉ có 30 ngày nên KHONG HOP LE.
+- 31 12 1999: sang năm mới, ngày kế tiếp là 1 1 2000.

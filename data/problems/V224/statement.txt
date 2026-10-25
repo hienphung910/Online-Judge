@@ -1,0 +1,21 @@
+Phòng thí nghiệm nuôi một loại vi khuẩn kỳ lạ: cứ mỗi giờ, mỗi con vi khuẩn tách thành a con. Ban đầu đĩa có 1 con, nên sau b giờ đĩa có a^b con. Thí nghiệm kéo dài cực lâu nên b là một số khổng lồ, được ghi bằng một dãy chữ số rất dài.
+
+Các con vi khuẩn được đóng vào những ống nghiệm, mỗi ống đúng m con. Người phụ trách muốn biết sau khi đóng đầy các ống thì còn thừa bao nhiêu con, tức là giá trị a^b mod m. Có q câu hỏi như vậy.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên q.
+- q dòng tiếp theo, mỗi dòng chứa ba số nguyên a, b, m cách nhau bởi dấu cách. Số b được ghi ở hệ thập phân, không có chữ số 0 thừa ở đầu.
+
+Đầu ra:
+- In ra q dòng, dòng thứ i là a^b mod m của câu hỏi thứ i (quy ước a^0 = 1).
+
+Giới hạn:
+- 1 ≤ q ≤ 5.
+- 1 ≤ a ≤ 10^9; 1 ≤ m ≤ 10^9.
+- 0 ≤ b, số b có không quá 1000 chữ số.
+
+Gợi ý:
+- Câu 1: 2^10 = 1024, chia cho 1000 dư 24.
+- Câu 2: 6^b với b có 30 chữ số, đáp án 76.
+- Câu 3: 2^1 mod 8 = 2.
+- b quá lớn để lặp hay lưu trong kiểu số nguyên. Định lý Euler mở rộng: nếu b ≥ φ(m) thì a^b ≡ a^(b mod φ(m) + φ(m)) (mod m), đúng cả khi a và m không nguyên tố cùng nhau. Tính b mod φ(m) bằng cách đọc lần lượt từng chữ số. Chú ý: nếu b < φ(m) thì phải tính thẳng a^b. Ở câu 3, φ(8) = 4 > b = 1; nếu vẫn cộng thêm φ thì được 2^5 mod 8 = 0, sai.

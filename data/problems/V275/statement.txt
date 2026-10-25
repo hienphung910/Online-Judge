@@ -1,0 +1,23 @@
+Gần Tết, công ty phân phối cần chuyển K thùng hàng từ tổng kho (điểm 1) về cửa hàng chính (điểm n). Mạng lưới vận chuyển có n điểm, đánh số từ 1 đến n, và m tuyến xe một chiều. Tuyến thứ i đi từ điểm u_i tới điểm v_i, chở được tối đa c_i thùng, và mỗi thùng đi trên tuyến này tốn d_i đồng. Hàng có thể dừng ở các điểm trung gian rồi chuyển sang tuyến khác, nhưng không được để lại hàng ở điểm trung gian.
+
+Nếu không thể chuyển đủ K thùng thì công ty sẽ chuyển nhiều thùng nhất có thể. Hãy cho biết số thùng chuyển được và tổng chi phí nhỏ nhất để chuyển đúng số thùng đó.
+
+Đầu vào:
+- Dòng đầu gồm ba số nguyên n, m, K.
+- m dòng tiếp theo, dòng thứ i gồm bốn số nguyên u_i, v_i, c_i, d_i (u_i ≠ v_i). Có thể có nhiều tuyến cùng nối hai điểm, kể cả theo hai chiều ngược nhau.
+
+Đầu ra:
+- In ra hai số nguyên trên một dòng: số thùng chuyển được (bằng K nếu chuyển đủ) và tổng chi phí nhỏ nhất.
+
+Giới hạn:
+- 2 ≤ n ≤ 200.
+- 0 ≤ m ≤ 1000.
+- 1 ≤ K ≤ 10^9.
+- 1 ≤ u_i, v_i ≤ n.
+- 1 ≤ c_i ≤ 100.
+- 0 ≤ d_i ≤ 1000.
+
+Gợi ý:
+- Ví dụ 1 (K = 3): tuyến 1 → 2 chở được 2 thùng với giá rẻ nên dùng hết. Một thùng đi 1 → 2 → 4 (tốn 2), một thùng đi 1 → 2 → 3 → 4 (tốn 3), thùng còn lại buộc phải đi 1 → 3 → 4 (tốn 4). Tổng chi phí 2 + 3 + 4 = 9.
+- Ví dụ 2 (K = 10): chỉ chuyển được tối đa 4 thùng vì hai tuyến rời điểm 1 chở tổng cộng 2 + 2 = 4 thùng. Thùng thứ tư lại đi 1 → 3 → 4, tổng chi phí 9 + 4 = 13.
+- Lặp lại: tìm đường đi rẻ nhất từ 1 tới n trên đồ thị thặng dư (cạnh ngược có chi phí âm, nên dùng Bellman - Ford hoặc SPFA) rồi đẩy luồng dọc theo đường đó, cho tới khi đủ K thùng hoặc không còn đường.

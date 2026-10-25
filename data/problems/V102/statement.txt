@@ -1,0 +1,18 @@
+Nhà nghiên cứu tìm được hai bản chép tay của cùng một văn bản cổ, nhưng mỗi bản đều bị người chép làm rơi mất hoặc chèn thêm một số chữ. Để đánh giá hai bản giống nhau đến đâu, ông muốn tìm dãy chữ dài nhất xuất hiện trong cả hai bản theo đúng thứ tự (các chữ không cần đứng liền nhau).
+
+Nói cách khác, cho hai xâu s và t, hãy tìm độ dài dãy con chung dài nhất của chúng. Một dãy con của xâu là xâu thu được bằng cách xóa đi một số ký tự (có thể không xóa ký tự nào) và giữ nguyên thứ tự các ký tự còn lại.
+
+Đầu vào:
+- Dòng đầu tiên chứa xâu s.
+- Dòng thứ hai chứa xâu t.
+
+Đầu ra:
+- In ra độ dài dãy con chung dài nhất của s và t (có thể bằng 0).
+
+Giới hạn:
+- 1 ≤ |s|, |t| ≤ 5000.
+- Hai xâu chỉ gồm chữ cái tiếng Anh in thường.
+
+Gợi ý:
+- Gọi dp[i][j] là độ dài dãy con chung dài nhất của i ký tự đầu của s và j ký tự đầu của t. Nếu s_i = t_j thì dp[i][j] = dp[i - 1][j - 1] + 1, ngược lại dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]). Chỉ cần giữ hai dòng của bảng để tiết kiệm bộ nhớ.
+- Với s = banhmi và t = bunbohue, dãy con chung dài nhất là bnh, độ dài 3.

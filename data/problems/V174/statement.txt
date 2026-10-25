@@ -1,0 +1,22 @@
+Khối mười có n lớp, đánh số từ 1 đến n. Lớp thứ i đang có a_i điểm thi đua. Trong học kỳ có q sự kiện xảy ra lần lượt: hoặc điểm của một lớp được cập nhật lại, hoặc thầy hiệu trưởng hỏi trong các lớp từ l đến r, điểm cao nhất là bao nhiêu và có bao nhiêu lớp cùng đạt điểm cao nhất đó (để chuẩn bị đủ cờ thưởng). Hãy trả lời các câu hỏi của thầy.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và q.
+- Dòng thứ hai gồm n số nguyên a_1, a_2, ..., a_n.
+- q dòng tiếp theo, mỗi dòng là một sự kiện ở một trong hai dạng sau.
+- Dạng "1 i x": gán a_i = x.
+- Dạng "2 l r": hỏi giá trị lớn nhất M trong a_l, a_(l+1), ..., a_r và số chỉ số j (l ≤ j ≤ r) có a_j = M.
+
+Đầu ra:
+- Với mỗi sự kiện dạng 2, in ra trên một dòng hai số nguyên: M rồi đến số lớp đạt M, cách nhau một dấu cách.
+
+Giới hạn:
+- 1 ≤ n, q ≤ 10^3.
+- 1 ≤ i ≤ n, 1 ≤ l ≤ r ≤ n.
+- 0 ≤ a_i ≤ 10^9, 0 ≤ x ≤ 10^9.
+- Có ít nhất một sự kiện dạng 2.
+
+Gợi ý:
+- Ở ví dụ, ban đầu a = [7, 3, 7, 5, 7]. Cả khối có điểm cao nhất 7, đạt được ở 3 lớp (1, 3, 5).
+- Đoạn [2, 4] gồm 3, 7, 5 nên điểm cao nhất là 7 và chỉ có 1 lớp.
+- Sau khi gán a_3 = 2, mảng thành [7, 3, 2, 5, 7]: cả khối còn 2 lớp đạt 7, còn đoạn [2, 4] có điểm cao nhất 5.

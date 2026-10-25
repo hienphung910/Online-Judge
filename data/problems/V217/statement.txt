@@ -1,0 +1,23 @@
+Trong giờ thể dục, n học sinh đứng thành một hàng dọc, đánh số từ 1 đến n. Thầy giáo dùng một đơn vị đo riêng và ghi được chiều cao của học sinh thứ i là a_i. Trong buổi học có q sự kiện xảy ra theo thứ tự:
+- "1 i v": học sinh ở vị trí i đổi chỗ với một bạn ở lớp bên cạnh, bạn mới có chiều cao v (chiều cao ở vị trí i trở thành v).
+- "2 l r x": thầy muốn chọn đội kéo co từ các bạn đứng ở vị trí l đến r nhưng chỉ nhận những bạn có chiều cao không vượt quá x. Thầy hỏi có bao nhiêu bạn như vậy.
+
+Hãy trả lời tất cả các câu hỏi của thầy.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và q.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n.
+- q dòng tiếp theo, mỗi dòng mô tả một sự kiện theo một trong hai dạng trên.
+
+Đầu ra:
+- Với mỗi sự kiện loại 2, in ra trên một dòng số chỉ số j thỏa mãn l ≤ j ≤ r và a_j ≤ x tại thời điểm đó.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000, 1 ≤ q ≤ 1000.
+- 1 ≤ a_i, v, x ≤ 10^6.
+- 1 ≤ i ≤ n, 1 ≤ l ≤ r ≤ n.
+- Có ít nhất một sự kiện loại 2.
+
+Gợi ý:
+- Dãy ban đầu 150 162 140 171 155 148. Câu hỏi (2, 5, 160) xét 162 140 171 155, có 2 bạn không cao quá 160. Sau khi vị trí 4 thành 158, câu hỏi (1, 6, 155) đếm được 150, 140, 155, 148 là 4 bạn; câu hỏi (3, 4, 139) cho 0.
+- Chia dãy thành các khối độ dài khoảng căn n, mỗi khối giữ thêm một bản sao đã sắp xếp. Với khối nằm trọn trong [l, r], đếm số phần tử ≤ x bằng tìm kiếm nhị phân trên bản sao; hai mẩu lẻ ở hai đầu thì duyệt trực tiếp. Khi gán lại một phần tử, chỉ cần sửa bản sao của đúng một khối.

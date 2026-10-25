@@ -1,0 +1,22 @@
+Phòng mô phỏng giao thông đang thử một đường cao tốc thẳng, được gắn trục số. Kỹ sư lần lượt nạp vào máy các quỹ đạo dự kiến của xe tự hành: xe thứ j có quỹ đạo dạng "a b", nghĩa là tại thời điểm t xe ở vị trí a·t + b trên trục số (a là vận tốc, có thể âm nếu xe chạy ngược chiều; b là vị trí lúc t = 0).
+
+Xen giữa các lần nạp, kỹ sư hỏi: tại thời điểm t, trong các xe đã nạp, xe ở vị trí nhỏ nhất (xa nhất về phía âm của trục số) đang ở vị trí nào? Thời điểm trong các câu hỏi không nhất thiết tăng dần, và có thể âm (tức là trước mốc t = 0).
+
+Đầu vào:
+- Dòng đầu gồm số nguyên q là số thao tác.
+- q dòng tiếp theo, mỗi dòng là một thao tác ở một trong hai dạng sau.
+- Dạng "+ a b": nạp thêm một xe có quỹ đạo a·t + b.
+- Dạng "? t": hỏi vị trí nhỏ nhất của các xe đã nạp tại thời điểm t.
+
+Đầu ra:
+- Với mỗi thao tác "?", theo thứ tự xuất hiện, in ra vị trí nhỏ nhất tương ứng trên một dòng.
+
+Giới hạn:
+- 1 ≤ q ≤ 1000.
+- |a| ≤ 10^9, |b| ≤ 10^9, |t| ≤ 10^9.
+- Thao tác đầu tiên là thao tác "+", và có ít nhất một thao tác "?".
+- Chú ý: đáp án có thể vượt quá phạm vi số nguyên 32 bit (nhưng luôn nằm trong phạm vi số nguyên 64 bit).
+
+Gợi ý:
+- Ở ví dụ, ban đầu chỉ có xe 2t + 1, tại t = 3 xe ở vị trí 7.
+- Nạp thêm xe -t + 10 và xe 0·t + 5 (xe đứng yên ở vị trí 5). Tại t = 3 ba xe ở 7, 7, 5 nên đáp án là 5; tại t = 10 ba xe ở 21, 0, 5 nên đáp án là 0; tại t = -4 ba xe ở -7, 14, 5 nên đáp án là -7.

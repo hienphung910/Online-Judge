@@ -1,0 +1,30 @@
+Tập đoàn Hoàng Phát có n nhân viên đánh số từ 1 đến n. Nhân viên 1 là tổng giám đốc; mỗi nhân viên i khác (2 ≤ i ≤ n) có đúng một quản lý trực tiếp là p_i, và đi theo chuỗi quản lý trực tiếp từ bất kỳ ai cũng sẽ lên tới tổng giám đốc. Nhân viên i có doanh số a_i.
+
+Ta nói u là cấp trên của v nếu u ≠ v và đi theo chuỗi quản lý trực tiếp từ v lên sẽ gặp u. Nhóm của u gồm chính u và tất cả những người mà u là cấp trên.
+
+Phòng nhân sự cần trả lời q câu hỏi thuộc hai loại:
+- 1 u v: u có phải cấp trên của v hay không?
+- 2 u: tổng doanh số của nhóm của u là bao nhiêu?
+
+Đầu vào:
+- Dòng đầu chứa số nguyên n.
+- Dòng thứ hai gồm n số nguyên a_1, a_2, ..., a_n.
+- Dòng thứ ba gồm n - 1 số nguyên p_2, p_3, ..., p_n (dòng này rỗng nếu n = 1).
+- Dòng tiếp theo chứa số nguyên q.
+- q dòng cuối, mỗi dòng là một câu hỏi có dạng "1 u v" hoặc "2 u".
+
+Đầu ra:
+- Với mỗi câu hỏi loại 1, in CO hoặc KHONG.
+- Với mỗi câu hỏi loại 2, in tổng doanh số của nhóm.
+- Mỗi câu trả lời in trên một dòng.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000; 1 ≤ q ≤ 1000.
+- 0 ≤ a_i ≤ 10^9.
+- 1 ≤ p_i ≤ n, p_i ≠ i; chuỗi quản lý không tạo thành vòng.
+- 1 ≤ u, v ≤ n.
+
+Gợi ý:
+- Ở ví dụ, tổng giám đốc 1 quản lý trực tiếp nhân viên 3 và 4; nhân viên 3 quản lý trực tiếp 2 và 5; nhân viên 5 quản lý trực tiếp 6.
+- Câu "1 3 6": từ 6 lên 5 rồi lên 3, nên 3 là cấp trên của 6. Câu "1 4 2": đi từ 2 lên 3 rồi lên 1, không gặp 4. Câu "1 5 5": một người không phải cấp trên của chính mình.
+- Nhóm của 3 gồm 3, 2, 5, 6 với tổng doanh số 30 + 20 + 50 + 60 = 160.

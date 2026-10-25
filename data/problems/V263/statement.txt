@@ -1,0 +1,27 @@
+Nhà máy có một dây chuyền gồm n máy đặt nối tiếp, đánh số từ 1 đến n. Mỗi sản phẩm mang một mã số là số nguyên. Máy thứ i được cài hai hệ số a_i, b_i: khi sản phẩm có mã x đi qua, máy đổi mã thành (a_i·x + b_i) mod 1000000007, trong đó "mod" là phép lấy số dư.
+
+Kỹ sư lần lượt thực hiện q thao tác thuộc hai loại:
+- Cài đặt lại hai hệ số của một máy.
+- Thử nghiệm: đưa một sản phẩm mã x vào máy l, cho nó đi qua lần lượt các máy l, l + 1, ..., r rồi lấy ra. Hãy cho biết mã của sản phẩm khi lấy ra. Thử nghiệm không làm thay đổi máy nào.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và q.
+- n dòng tiếp theo, dòng thứ i gồm hai số nguyên a_i và b_i.
+- q dòng tiếp theo, mỗi dòng là một thao tác ở một trong hai dạng sau.
+- Dạng "1 i a b": cài lại máy i với a_i = a, b_i = b.
+- Dạng "2 l r x": thử nghiệm sản phẩm mã x đi qua các máy từ l đến r.
+
+Đầu ra:
+- Với mỗi thao tác dạng 2, in ra mã của sản phẩm khi lấy ra trên một dòng, theo đúng thứ tự xuất hiện.
+
+Giới hạn:
+- 1 ≤ n ≤ 600, 1 ≤ q ≤ 600.
+- 0 ≤ a_i, b_i, a, b, x < 1000000007.
+- 1 ≤ i ≤ n, 1 ≤ l ≤ r ≤ n.
+- Có ít nhất một thao tác dạng 2.
+
+Gợi ý:
+- Ở ví dụ, ba máy lần lượt biến x thành 2x + 1, 3x và x + 5. Sản phẩm mã 4 đi qua máy 1, 2, 3 lần lượt có mã 9, 27, 32. Sản phẩm mã 10 chỉ qua máy 2 có mã 30.
+- Máy 2 được cài lại thành a = 0, b = 7, tức là luôn cho ra mã 7. Sản phẩm mã 4 qua máy 1, 2, 3 có mã 9, 7, 12.
+- Sản phẩm mã 1000000005 qua máy 3 có mã (1000000005 + 5) mod 1000000007 = 3.
+- Chú ý thứ tự đi qua các máy là quan trọng: qua máy x + 5 rồi máy 3x khác với qua máy 3x rồi máy x + 5.

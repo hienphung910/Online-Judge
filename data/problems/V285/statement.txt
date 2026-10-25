@@ -1,0 +1,24 @@
+Nhóm chat của lớp 12A gần đây bị tràn ngập tin nhắn quảng cáo lừa đảo. Lớp trưởng lập ra một danh sách k từ cấm và nhờ bạn viết bộ lọc: với mỗi tin nhắn gửi tới, bộ lọc phải cho biết tin nhắn đó có chứa ít nhất một từ cấm hay không.
+
+Tin nhắn T được gọi là chứa từ cấm P nếu P xuất hiện trong T như một xâu con gồm các ký tự liên tiếp. Tin nhắn đã được bỏ hết dấu cách và dấu tiếng Việt.
+
+Đầu vào:
+- Dòng đầu là số nguyên k.
+- k dòng tiếp theo, mỗi dòng là một từ cấm. Các từ cấm có thể trùng nhau.
+- Dòng tiếp theo là số nguyên m.
+- m dòng tiếp theo, mỗi dòng là một tin nhắn.
+- Mọi từ cấm và tin nhắn đều khác rỗng, chỉ gồm chữ cái tiếng Anh in thường 'a' đến 'z'.
+
+Đầu ra:
+- In ra m dòng, dòng thứ i là CO nếu tin nhắn thứ i chứa ít nhất một từ cấm, ngược lại là KHONG.
+
+Giới hạn:
+- 1 ≤ k ≤ 1000, tổng độ dài các từ cấm không vượt quá 5000.
+- 1 ≤ m ≤ 1000, tổng độ dài các tin nhắn không vượt quá 15000.
+
+Gợi ý:
+- Tin nhắn "khuyenmaigiare" chứa từ cấm "gia" nên in CO.
+- Tin nhắn "hoctapchamchi" không chứa từ cấm nào nên in KHONG.
+- Tin nhắn "chuadaoxong" chứa từ cấm "dao" nên in CO.
+- Tin nhắn "chualuon" có các chữ "lu" nhưng không có "lua" liền nhau, nên in KHONG.
+- Nên dựng automat Aho–Corasick một lần cho các từ cấm rồi cho từng tin nhắn chạy qua. Chú ý một từ cấm có thể là hậu tố của một đoạn đang khớp dở của từ cấm khác (ví dụ từ cấm "abcd" và "bc" với tin nhắn "abce").

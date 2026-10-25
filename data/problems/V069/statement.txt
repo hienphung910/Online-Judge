@@ -1,0 +1,21 @@
+Khu phố có dạng bàn cờ gồm n hàng ngang và m cột dọc, giao của hàng r và cột c là ngã tư (r, c). Robot giao hàng xuất phát ở ngã tư (1, 1) và phải đến ngã tư (n, m). Mỗi bước robot chỉ được đi sang phải (từ (r, c) đến (r, c + 1)) hoặc đi xuống (từ (r, c) đến (r + 1, c)).
+
+Hiện có k ngã tư đang sửa đường, robot không được đi qua. Hãy đếm số cách đi khác nhau của robot, chia lấy dư cho 10^9 + 7.
+
+Đầu vào:
+- Dòng đầu tiên chứa ba số nguyên n, m, k.
+- k dòng tiếp theo, mỗi dòng chứa hai số nguyên r, c là một ngã tư đang sửa. Các ngã tư này đôi một khác nhau và không trùng với (1, 1) hay (n, m).
+
+Đầu ra:
+- Một số nguyên là số cách đi chia lấy dư cho 10^9 + 7.
+
+Giới hạn:
+- 1 ≤ n, m ≤ 10^6.
+- 0 ≤ k ≤ 1000.
+- 1 ≤ r ≤ n, 1 ≤ c ≤ m.
+
+Gợi ý:
+- Ví dụ 1: lưới 3 × 3 có C(4, 2) = 6 cách đi, trong đó 4 cách đi qua ngã tư (2, 2), còn lại 2 cách.
+- Ví dụ 2: lưới 3 × 4 cấm (1, 3) và (3, 2); kiểm tra trực tiếp được 4 cách.
+- Không có ô cấm, số cách đi từ (r1, c1) đến (r2, c2) (với r1 ≤ r2, c1 ≤ c2) là C((r2 - r1) + (c2 - c1), r2 - r1). Tính trước giai thừa và nghịch đảo giai thừa đến 2·10^6.
+- Sắp xếp các ô cấm theo (r, c) và thêm (n, m) vào cuối. Gọi f[i] là số đường từ (1, 1) đến ô thứ i mà không đi qua ô cấm nào trước đó: f[i] = (số đường tới ô i) - tổng f[j] · (số đường từ ô j tới ô i) với mọi ô j đứng trước, nằm phía trên bên trái ô i. Đáp án là f của ô (n, m).

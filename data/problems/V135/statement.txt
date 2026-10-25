@@ -1,0 +1,17 @@
+Khu tập thể có n hộ gia đình đánh số từ 1 đến n và m cặp hộ là hàng xóm thân thiết của nhau. Sáng ngày 0, bác ở hộ s kể cho cả nhà nghe một tin đồn. Cứ mỗi ngày, hộ nào đã biết tin sẽ kể lại cho tất cả các hộ hàng xóm thân thiết của mình, và các hộ đó biết tin vào ngày hôm sau.
+
+Hãy cho biết mỗi hộ biết tin vào ngày thứ mấy.
+
+Đầu vào:
+- Dòng đầu gồm ba số nguyên n, m, s.
+- m dòng tiếp theo, mỗi dòng gồm hai số nguyên u, v (u ≠ v) cho biết hộ u và hộ v là hàng xóm thân thiết. Mỗi cặp xuất hiện không quá một lần.
+
+Đầu ra:
+- Một dòng gồm n số nguyên, số thứ i là ngày hộ i biết tin, hoặc -1 nếu hộ i không bao giờ biết tin.
+
+Giới hạn:
+- 1 ≤ n ≤ 2000; 0 ≤ m ≤ 2500; 1 ≤ s ≤ n.
+- 1 ≤ u, v ≤ n.
+
+Gợi ý:
+- Ở ví dụ, hộ 2 biết tin ngày 0. Ngày 1, hộ 1 và hộ 4 biết tin. Ngày 2, tin lan tới hộ 3 (qua hộ 1) và hộ 5 (qua hộ 4). Hộ 6 và hộ 7 chỉ là hàng xóm của nhau nên không bao giờ biết tin.

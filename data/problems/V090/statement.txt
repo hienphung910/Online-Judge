@@ -1,0 +1,19 @@
+Kỳ nghỉ hè bắt đầu từ ngày 1. Bạn Khoa nhận được n lời mời làm thêm. Mỗi việc chỉ cần làm trọn trong một ngày, việc thứ i phải được làm vào một ngày không muộn hơn ngày d_i và mang lại p_i nghìn đồng. Mỗi ngày Khoa làm được nhiều nhất một việc, và không bắt buộc phải nhận hết các việc.
+
+Hãy tính tổng số tiền lớn nhất Khoa kiếm được.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- n dòng tiếp theo, dòng thứ i chứa hai số nguyên d_i và p_i.
+
+Đầu ra:
+- In ra một số nguyên là tổng số tiền lớn nhất.
+
+Giới hạn:
+- 1 ≤ n ≤ 1500.
+- 1 ≤ d_i ≤ 10^5.
+- 1 ≤ p_i ≤ 10^6.
+
+Gợi ý:
+- Duyệt các việc theo hạn tăng dần và giữ các việc đã nhận trong một hàng đợi ưu tiên (đỉnh là việc ít tiền nhất). Nếu số việc đã nhận vượt quá hạn d_i hiện tại thì bỏ đi việc ít tiền nhất.
+- Trong ví dụ, ngày 1 làm việc 60, ngày 2 làm việc 50, ngày 3 làm việc 10, tổng 120. Các việc có hạn không quá 2 chỉ chiếm được 2 ngày, nên không thể nhận thêm việc 40 hay 30.

@@ -1,0 +1,21 @@
+Bài tập về nhà: "Có các loại đồng xu mệnh giá c_1, c_2, ..., c_n (mỗi loại có không giới hạn số đồng). Hãy trả đúng số tiền x bằng ít đồng xu nhất." Minh nộp ngay một chương trình tham lam: lặp lại việc lấy đồng xu có mệnh giá lớn nhất không vượt quá số tiền còn lại, cho tới khi trả xong. Lan nghi ngờ cách làm này nên viết thêm một lời giải "trâu" chắc chắn đúng (quy hoạch động tính số đồng xu ít nhất), rồi chạy cả hai chương trình với mọi số tiền x = 1, 2, ..., X để so sánh. Đây chính là kỹ thuật đối chiếu (stress test) mà các bạn thi lập trình hay dùng để tìm lỗi.
+
+Hãy làm thay Lan: tìm số tiền x nhỏ nhất trong đoạn [1, X] mà chương trình của Minh trả về số đồng xu khác với số đồng xu ít nhất thật sự.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên T là số bộ dữ liệu.
+- Mỗi bộ dữ liệu gồm hai dòng: dòng thứ nhất chứa hai số nguyên n và X; dòng thứ hai chứa n số nguyên c_1, c_2, ..., c_n là các mệnh giá theo thứ tự tăng dần. Luôn có c_1 = 1 nên số tiền nào cũng trả được.
+
+Đầu ra:
+- Với mỗi bộ dữ liệu in một dòng. Nếu tồn tại số tiền như vậy, in ba số nguyên x, g, o: x là số tiền nhỏ nhất tìm được, g là số đồng xu chương trình tham lam dùng để trả x, o là số đồng xu ít nhất có thể để trả x.
+- Nếu với mọi x từ 1 đến X hai chương trình luôn cho cùng kết quả, in -1.
+
+Giới hạn:
+- 1 ≤ T ≤ 10.
+- 1 ≤ n ≤ 50, 1 ≤ X ≤ 10^5.
+- 1 = c_1 < c_2 < ... < c_n ≤ 10^5.
+
+Gợi ý:
+- Bộ 1: với x = 6, tham lam lấy 4 rồi 1, 1 (3 đồng) nhưng chỉ cần 3 + 3 (2 đồng). Mọi x từ 1 đến 5 đều cho cùng kết quả nên in 6 3 2.
+- Bộ 2: với các mệnh giá 1, 2, 5, 10, tham lam luôn tối ưu nên in -1.
+- Bộ 3: cùng các mệnh giá như bộ 1 nhưng chỉ xét tới X = 5, chưa gặp số tiền nào sai nên in -1.

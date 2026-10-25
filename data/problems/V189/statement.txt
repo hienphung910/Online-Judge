@@ -1,0 +1,19 @@
+Hai nhạc sĩ bị nghi là đạo nhạc của nhau. Mỗi bản nhạc được mã hóa thành một xâu, mỗi chữ cái là một nốt. Ban giám khảo muốn tìm đoạn nhạc liên tiếp dài nhất xuất hiện trong cả hai bản để làm bằng chứng.
+
+Cho hai xâu A và B. Hãy tìm độ dài lớn nhất của một xâu X sao cho X vừa là xâu con (gồm các ký tự liên tiếp) của A, vừa là xâu con của B. Nếu hai xâu không có ký tự chung nào thì đáp án là 0.
+
+Đầu vào:
+- Dòng thứ nhất là xâu A.
+- Dòng thứ hai là xâu B.
+- Cả hai xâu chỉ gồm chữ cái tiếng Anh in thường 'a' đến 'z'.
+
+Đầu ra:
+- Một số nguyên là độ dài xâu con chung dài nhất.
+
+Giới hạn:
+- 1 ≤ |A|, |B| ≤ 10^4.
+
+Gợi ý:
+- Ở ví dụ 1, A = "banhmi", B = "manhbanh". Xâu "banh" xuất hiện trong cả hai xâu, không có xâu con chung nào dài 5 nên đáp án là 4.
+- Ở ví dụ 2, hai xâu không có ký tự chung nên đáp án là 0.
+- Có thể chặt nhị phân độ dài và dùng băm xâu để kiểm tra. Nên băm theo hai modulo: băm bằng tràn số 64-bit tự nhiên có thể cho kết quả sai.

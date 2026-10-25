@@ -1,0 +1,18 @@
+Trong một mê cung có n phòng đánh số từ 1 đến n và m cánh cửa một chiều; cánh cửa thứ i chỉ cho đi từ phòng u_i sang phòng v_i. Một con robot được thả vào một phòng nào đó. Mỗi giây, bạn bắt buộc phải điều khiển robot đi qua một cánh cửa một chiều xuất phát từ phòng nó đang đứng (bạn được chọn cửa nào cũng được). Nếu phòng hiện tại không có cánh cửa nào đi ra, robot dừng lại và trò chơi kết thúc.
+
+Bạn muốn robot chạy mãi mãi. Với mỗi phòng, hãy cho biết nếu thả robot vào phòng đó thì bạn có thể điều khiển để robot không bao giờ dừng hay không.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và m.
+- m dòng tiếp theo, mỗi dòng gồm hai số nguyên u_i, v_i mô tả một cánh cửa đi từ phòng u_i sang phòng v_i. Có thể có cửa với u_i = v_i (đi ra rồi lại vào đúng phòng đó), và có thể có nhiều cửa giống nhau.
+
+Đầu ra:
+- Một xâu gồm đúng n ký tự, ký tự thứ j là 1 nếu robot thả ở phòng j có thể chạy mãi mãi, ngược lại là 0.
+
+Giới hạn:
+- 1 ≤ n ≤ 2000; 0 ≤ m ≤ 2500.
+- 1 ≤ u_i, v_i ≤ n.
+
+Gợi ý:
+- Ở ví dụ, các phòng 2, 3, 4 tạo thành vòng 2 → 3 → 4 → 2 nên robot ở đó chạy mãi được. Từ phòng 1 có thể đi sang phòng 2 rồi chạy vòng, nên phòng 1 cũng là 1.
+- Từ phòng 5 chỉ đi được sang phòng 6, mà phòng 6 không có cửa ra, nên phòng 5 và 6 là 0. Phòng 7 có cửa đi vào chính nó nên là 1.

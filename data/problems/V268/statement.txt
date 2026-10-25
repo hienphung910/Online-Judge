@@ -1,0 +1,24 @@
+Ông Bảy có một cuốn album dán n con tem thành một hàng, đánh số từ 1 đến n; con tem thứ i thuộc mẫu tem mang mã a_i (nhiều con tem có thể cùng một mẫu). Một người bạn muốn hỏi ông q câu hỏi, mỗi câu hỏi chọn một đoạn liên tiếp từ con tem l đến con tem r và hỏi trong đoạn đó có bao nhiêu mẫu tem khác nhau.
+
+Để ông Bảy không thể đọc trước rồi trả lời theo thứ tự tùy ý, các câu hỏi được viết dưới dạng mật mã: câu hỏi sau chỉ giải mã được khi đã biết đáp án của câu hỏi ngay trước nó. Cụ thể, mỗi câu hỏi cho hai số u và v. Gọi last là đáp án của câu hỏi trước (với câu hỏi đầu tiên, last = 0). Khi đó:
+- l = ((u + last) mod n) + 1 và r = ((v + last) mod n) + 1, trong đó "mod" là phép lấy số dư.
+- Nếu l > r thì đổi chỗ l và r cho nhau.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và q.
+- Dòng thứ hai gồm n số nguyên a_1, a_2, ..., a_n.
+- q dòng tiếp theo, mỗi dòng gồm hai số nguyên u và v của một câu hỏi.
+
+Đầu ra:
+- Với mỗi câu hỏi theo thứ tự, in ra trên một dòng số mẫu tem khác nhau trong đoạn từ l đến r (sau khi giải mã).
+
+Giới hạn:
+- 1 ≤ n ≤ 1000, 1 ≤ q ≤ 1000.
+- 1 ≤ a_i ≤ 10^9.
+- 0 ≤ u, v < n.
+
+Gợi ý:
+- Ở ví dụ, a = [3, 1, 3, 2, 1, 3]. Câu hỏi 1 có last = 0 nên l = 1, r = 3; đoạn [3, 1, 3] có 2 mẫu tem khác nhau.
+- Câu hỏi 2 có last = 2: l = ((5 + 2) mod 6) + 1 = 2, r = ((2 + 2) mod 6) + 1 = 5; đoạn [1, 3, 2, 1] có 3 mẫu.
+- Câu hỏi 3 có last = 3: l = 6, r = 4, đổi chỗ thành l = 4, r = 6; đoạn [2, 1, 3] có 3 mẫu.
+- Câu hỏi 4 có last = 3: l = r = 1, đoạn chỉ có một con tem nên đáp án là 1.

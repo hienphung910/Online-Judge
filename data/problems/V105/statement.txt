@@ -1,0 +1,16 @@
+Cửa hàng quà lưu niệm có n chiếc hộp hình chữ nhật, hộp thứ i có chiều rộng w_i và chiều cao h_i. Hộp i đặt lọt được vào trong hộp j nếu w_i < w_j và h_i < h_j (không được xoay hộp). Chủ cửa hàng muốn làm một bộ hộp lồng nhau thật lớn: hộp thứ nhất nằm trong hộp thứ hai, hộp thứ hai nằm trong hộp thứ ba, và cứ thế. Hỏi bộ hộp lồng nhau nhiều nhất gồm bao nhiêu hộp?
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- n dòng tiếp theo, dòng thứ i chứa hai số nguyên w_i và h_i.
+
+Đầu ra:
+- In ra số hộp lớn nhất của một dãy hộp lồng được vào nhau liên tiếp.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000.
+- 1 ≤ w_i, h_i ≤ 10^9.
+
+Gợi ý:
+- Sắp xếp các hộp theo w tăng dần; với các hộp cùng w thì xếp theo h GIẢM dần. Khi đó đáp án chính là độ dài dãy con tăng chặt dài nhất của dãy h, tính trong O(n log n) bằng tìm kiếm nhị phân. Thứ tự h giảm dần trong cùng một nhóm w bảo đảm hai hộp cùng chiều rộng không bao giờ được chọn cùng lúc.
+- Ở ví dụ, bộ (2, 3) → (5, 4) → (6, 7) → (7, 8) gồm 4 hộp. Hộp (6, 4) không lồng được vào (6, 7) vì cùng chiều rộng, cũng không chứa được (5, 4) vì cùng chiều cao.

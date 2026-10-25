@@ -1,0 +1,22 @@
+Xóm Đông có n nóc nhà, nhà thứ i ở điểm (x_i, y_i) trên mặt phẳng toạ độ. Cả xóm góp tiền đào một cái giếng chung. Mỗi ngày, mỗi nhà đi một lượt thẳng từ nhà mình tới giếng để gánh nước, nên trưởng xóm muốn đặt giếng ở điểm (X, Y) sao cho tổng khoảng cách từ các nhà tới giếng là nhỏ nhất. Giếng có thể đặt ở bất kỳ điểm nào có toạ độ thực, kể cả trùng với một nóc nhà.
+
+Hãy cho biết tổng khoảng cách nhỏ nhất đó.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- n dòng tiếp theo, dòng thứ i chứa hai số nguyên x_i và y_i.
+
+Đầu ra:
+- In ra giá trị nhỏ nhất của căn((X - x_1)^2 + (Y - y_1)^2) + ... + căn((X - x_n)^2 + (Y - y_n)^2) trên mọi điểm thực (X, Y).
+- In một số thực, dùng dấu chấm làm dấu thập phân (nên in ít nhất 6 chữ số sau dấu chấm).
+- Kết quả được chấp nhận nếu sai số tuyệt đối HOẶC sai số tương đối so với đáp án không vượt quá 10^-6.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000.
+- |x_i|, |y_i| ≤ 10^4, các toạ độ là số nguyên.
+- Nhiều nhà có thể ở cùng một điểm.
+
+Gợi ý:
+- Ví dụ 1: bốn nhà ở bốn góc hình vuông cạnh 4, đặt giếng ở tâm (2, 2) thì mỗi nhà cách giếng căn(8), tổng 4·căn(8) ≈ 11.313708499.
+- Ví dụ 2: đặt giếng ngay tại nhà ở (0, 0), bốn nhà còn lại mỗi nhà cách 1, tổng bằng 4.
+- Hàm f(X, Y) là tổng các hàm lồi nên lồi theo cả hai biến. Với mỗi X cố định, gọi g(X) là giá trị nhỏ nhất của f(X, Y) khi Y thay đổi - tìm được bằng chặt tam phân theo Y. Hàm g cũng lồi, nên chặt tam phân theo X bên ngoài, mỗi lần tính g(X) lại chặt tam phân theo Y bên trong. Giếng tốt nhất luôn có -10^4 ≤ X, Y ≤ 10^4.

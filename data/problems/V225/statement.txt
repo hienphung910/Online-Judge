@@ -1,0 +1,21 @@
+Cô giáo có một túi kẹo nhưng quên mất trong túi có bao nhiêu viên. Cô nhờ các bạn trong lớp đếm giúp, nhưng mỗi bạn lại đếm theo một kiểu: bạn thứ i chia kẹo thành các nhóm, mỗi nhóm m_i viên, và báo lại rằng sau khi chia còn thừa r_i viên. Nói cách khác, số kẹo x thỏa mãn x mod m_i = r_i với mọi i.
+
+Có thể có bạn đếm nhầm, khiến các thông tin mâu thuẫn nhau. Hãy tìm số nguyên không âm x nhỏ nhất thỏa mãn mọi thông tin, hoặc cho biết không có số nào như vậy. Cô có T túi kẹo, mỗi túi được hỏi độc lập.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên T.
+- Mỗi túi kẹo được mô tả như sau: dòng đầu chứa số nguyên k là số bạn đã đếm; k dòng tiếp theo, dòng thứ i chứa hai số nguyên r_i và m_i.
+
+Đầu ra:
+- In ra T dòng, mỗi dòng là số nguyên x ≥ 0 nhỏ nhất thỏa mãn x mod m_i = r_i với mọi i của túi tương ứng, hoặc -1 nếu không tồn tại.
+
+Giới hạn:
+- 1 ≤ T ≤ 20; 1 ≤ k ≤ 10.
+- 1 ≤ m_i ≤ 10^18; 0 ≤ r_i < m_i.
+- Với mỗi túi, bội chung nhỏ nhất của m_1, m_2, ..., m_k không vượt quá 10^18.
+
+Gợi ý:
+- Túi 1: x = 53 vì 53 = 13 · 4 + 1 = 17 · 3 + 2 = 10 · 5 + 3, và không có số nhỏ hơn thỏa mãn.
+- Túi 2: chia nhóm 6 thừa 1 nghĩa là x lẻ, nhưng chia nhóm 4 thừa 2 nghĩa là x chẵn, mâu thuẫn nên in -1.
+- Túi 3: các modulo 6 và 8 không nguyên tố cùng nhau nhưng vẫn có nghiệm x = 21.
+- Gộp dần từng cặp điều kiện: x ≡ r_1 (mod m_1) và x ≡ r_2 (mod m_2) có nghiệm khi và chỉ khi r_2 - r_1 chia hết cho g = gcd(m_1, m_2); khi đó tập nghiệm là một lớp đồng dư theo modulo lcm(m_1, m_2), tìm được bằng thuật toán Euclid mở rộng. Các phép nhân trung gian có thể vượt 10^18, cần dùng __int128 hoặc nhân theo modulo cẩn thận.

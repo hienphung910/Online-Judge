@@ -1,0 +1,19 @@
+Sở giao thông đang xem bản vẽ quy hoạch, trong đó mỗi con đường là một đoạn thẳng nối hai đầu mút có toạ độ nguyên. Với mỗi cặp đường được hỏi, cần biết hai con đường có điểm chung hay không. Hai đường được coi là gặp nhau nếu chúng có ít nhất một điểm chung: cắt nhau, chạm nhau tại đầu mút, một đầu mút nằm trên đường kia, hay nằm chồng lên nhau trên cùng một đường thẳng đều tính là gặp nhau.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên q là số câu hỏi.
+- q dòng tiếp theo, mỗi dòng chứa 8 số nguyên x1 y1 x2 y2 x3 y3 x4 y4: đường thứ nhất nối (x1, y1) với (x2, y2), đường thứ hai nối (x3, y3) với (x4, y4).
+
+Đầu ra:
+- In ra q dòng, mỗi dòng là CO nếu hai đường có điểm chung, KHONG nếu không.
+
+Giới hạn:
+- 1 ≤ q ≤ 300.
+- |x|, |y| ≤ 10^6 với mọi toạ độ.
+- Một đoạn thẳng có thể suy biến thành một điểm (hai đầu mút trùng nhau).
+
+Gợi ý:
+- Câu 1: hai đường chéo của hình vuông cắt nhau tại (1, 1).
+- Câu 2: hai đường cùng nằm trên trục hoành, [0, 2] và [2, 5] chạm nhau tại (2, 0) nên vẫn là CO.
+- Câu 3: [0, 2] và [3, 5] cùng nằm trên trục hoành nhưng rời nhau.
+- Câu 4: đường thứ hai nếu kéo dài sẽ cắt đường thứ nhất, nhưng bản thân đoạn thẳng thì dừng lại trước đó.

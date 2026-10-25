@@ -1,0 +1,17 @@
+Trung tâm luyện thi vừa chấm xong bài thi thử của n thí sinh, điểm của mỗi bạn là một số nguyên từ 0 đến 100. Thứ hạng của một thí sinh được tính bằng 1 cộng với số thí sinh có điểm cao hơn hẳn bạn ấy. Như vậy những bạn bằng điểm nhau thì cùng thứ hạng.
+
+Hãy cho biết thứ hạng của từng thí sinh. Vì điểm chỉ nằm trong 101 giá trị, bạn có thể đếm số thí sinh đạt mỗi mức điểm thay vì so sánh từng cặp.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n là số thí sinh.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n là điểm của các thí sinh theo thứ tự số báo danh.
+
+Đầu ra:
+- In ra n số nguyên trên một dòng, số thứ i là thứ hạng của thí sinh thứ i.
+
+Giới hạn:
+- 1 ≤ n ≤ 3000.
+- 0 ≤ a_i ≤ 100.
+
+Gợi ý:
+- Hai bạn được 10 điểm không có ai cao hơn nên cùng hạng 1. Hai bạn được 8 điểm có 2 người cao hơn nên cùng hạng 3. Bạn được 7 điểm có 4 người cao hơn nên hạng 5, bạn được 5 điểm hạng 6.

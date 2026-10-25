@@ -1,0 +1,30 @@
+Kỳ thi lập trình của trường có N đội (đánh số 1 đến N) và M bài (đặt tên bằng M chữ cái in hoa đầu tiên A, B, C, ...). Ban tổ chức muốn chiếu bảng điểm trực tiếp, nên nhờ bạn viết chương trình xử lý E sự kiện theo đúng thứ tự xảy ra. Có ba loại sự kiện:
+- "NOP t d p v": ở phút thứ t, đội d nộp bài p và nhận kết quả v, với v là AC (đúng) hoặc WA (sai).
+- "HANG d": hỏi thứ hạng hiện tại của đội d.
+- "DAN": hỏi đội đang dẫn đầu.
+
+Cách tính điểm:
+- Một bài được coi là đã giải nếu đội có ít nhất một lần nộp AC cho bài đó. Mọi lần nộp của đội cho bài đó sau lần AC đầu tiên đều bị bỏ qua.
+- Mỗi bài đã giải cộng vào thời gian phạt của đội: t của lần AC đầu tiên, cộng 20 phút cho mỗi lần WA trước lần AC đó. Các lần WA ở bài chưa giải không bị tính phạt.
+- Đội A xếp trên đội B nếu A giải được nhiều bài hơn, hoặc cùng số bài nhưng thời gian phạt ít hơn.
+- Thứ hạng của một đội bằng 1 cộng số đội xếp trên nó (các đội bằng nhau có cùng thứ hạng).
+- Đội dẫn đầu là đội không có ai xếp trên; nếu có nhiều đội như vậy thì chọn đội có số thứ tự nhỏ nhất.
+Lúc đầu mọi đội đều chưa giải bài nào, thời gian phạt bằng 0.
+
+Đầu vào:
+- Dòng đầu chứa ba số nguyên N, M, E.
+- E dòng tiếp theo, mỗi dòng là một sự kiện.
+
+Đầu ra:
+- Với mỗi sự kiện HANG hoặc DAN in kết quả là một số nguyên trên một dòng.
+
+Giới hạn:
+- 1 ≤ N ≤ 100; 1 ≤ M ≤ 26; 1 ≤ E ≤ 10^3.
+- Trong sự kiện NOP: 0 ≤ t ≤ 300, 1 ≤ d ≤ N, p là một trong M chữ cái in hoa đầu tiên, các t không giảm theo thứ tự xuất hiện.
+- Trong sự kiện HANG: 1 ≤ d ≤ N.
+
+Gợi ý:
+- Ban đầu ba đội bằng nhau nên đội dẫn đầu là đội 1.
+- Đội 2 sai bài A ở phút 10, đúng ở phút 15: giải 1 bài, phạt 15 + 20 = 35. Đội 2 hạng 1.
+- Đội 3 đúng bài B ở phút 30: giải 1 bài, phạt 30, xếp trên đội 2. Đội 2 xuống hạng 2; đội 1 chưa giải bài nào, hạng 3.
+- Lần nộp WA của đội 3 cho bài B ở phút 40 bị bỏ qua vì đã giải bài này; đội 3 vẫn dẫn đầu.

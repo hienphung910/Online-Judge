@@ -1,0 +1,20 @@
+Trong buổi tập đồng diễn, n bạn đứng thành một hàng ngang, bạn thứ i mặc áo số a_i. Thầy thể dục muốn hàng chuyển thành đội hình mới, trong đó vị trí thứ i phải là một bạn mặc áo số b_i. Nhiều bạn có thể mặc áo cùng số, và các bạn cùng số áo được coi là như nhau.
+
+Mỗi lượt, thầy cho hai bạn đứng cạnh nhau đổi chỗ cho nhau. Hãy tính số lượt ít nhất để chuyển hàng ban đầu thành đội hình mới, hoặc cho biết không thể làm được.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n là số áo theo hàng ban đầu.
+- Dòng thứ ba chứa n số nguyên b_1, b_2, ..., b_n là số áo theo đội hình mới.
+
+Đầu ra:
+- In ra số lượt đổi chỗ ít nhất, hoặc -1 nếu không thể chuyển được.
+
+Giới hạn:
+- 1 ≤ n ≤ 2000.
+- 1 ≤ a_i, b_i ≤ 10^4 (các giá trị có thể trùng nhau).
+
+Gợi ý:
+- Ví dụ 1: 3 1 2 1 → 1 3 2 1 → 1 3 1 2 → 1 1 3 2, cần 3 lượt và không thể ít hơn.
+- Ví dụ 2: hàng ban đầu có hai áo số 2 nhưng đội hình mới cần hai áo số 1, nên không thể chuyển được.
+- Hãy gán cho mỗi bạn ở hàng ban đầu vị trí đích của bạn ấy: bạn thứ k mặc áo số x đi tới chỗ có áo số x thứ k trong đội hình mới (giữ nguyên thứ tự những bạn cùng số áo). Khi đó số lượt ít nhất bằng số cặp nghịch thế của dãy vị trí đích, đếm được bằng sắp xếp trộn trong O(n log n).

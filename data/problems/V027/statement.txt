@@ -1,0 +1,28 @@
+Cô Hạnh bán vé ở cổng một công viên nước. Bảng giá dán trên quầy có khá nhiều điều khoản, nên cô nhờ bạn viết chương trình tính tiền vé cho từng khách.
+
+Mỗi khách được mô tả bởi bốn số: tuổi a, thứ trong tuần d (1 là Thứ Hai, 2 là Thứ Ba, ..., 6 là Thứ Bảy, 7 là Chủ Nhật), giờ đến h (0 đến 23) và m = 1 nếu khách có thẻ hội viên, m = 0 nếu không.
+
+Quy tắc tính tiền, áp dụng theo đúng thứ tự:
+- Bước 1: Nếu h < 8 hoặc h ≥ 22 thì công viên đóng cửa, in "DONG CUA" và không xét tiếp.
+- Bước 2: Nếu a < 3 thì vé miễn phí, in 0 và không xét tiếp.
+- Bước 3: Nếu d = 2 (Thứ Ba là ngày hội), giá vé là 30000 cho mọi khách, bỏ qua Bước 4.
+- Bước 4: Giá gốc là 50000 vào các ngày Thứ Hai, Thứ Tư, Thứ Năm, Thứ Sáu và 70000 vào Thứ Bảy, Chủ Nhật. Nếu a ≤ 12 hoặc a ≥ 65 thì giá giảm một nửa. Sau đó, nếu h ≥ 18 thì giảm tiếp 10000.
+- Bước 5: Nếu m = 1 thì khách chỉ trả 80% số tiền tính được ở trên.
+
+Đầu vào:
+- Dòng đầu chứa số nguyên T là số khách.
+- T dòng tiếp theo, mỗi dòng chứa bốn số nguyên a, d, h, m.
+
+Đầu ra:
+- Với mỗi khách in một dòng: số tiền phải trả (luôn là số nguyên), hoặc DONG CUA.
+
+Giới hạn:
+- 1 ≤ T ≤ 10^3.
+- 0 ≤ a ≤ 120; 1 ≤ d ≤ 7; 0 ≤ h ≤ 23; m là 0 hoặc 1.
+
+Gợi ý:
+- Khách 1 (30 tuổi, Thứ Bảy, 19 giờ, không thẻ): 70000 - 10000 = 60000.
+- Khách 2 (10 tuổi, Thứ Hai, 9 giờ, có thẻ): 50000 giảm nửa còn 25000, trả 80% là 20000.
+- Khách 3 đến lúc 7 giờ nên công viên còn đóng cửa.
+- Khách 4 (70 tuổi, Thứ Ba, có thẻ): ngày hội nên giá 30000, trả 80% là 24000.
+- Khách 5 mới 2 tuổi nên được miễn phí.

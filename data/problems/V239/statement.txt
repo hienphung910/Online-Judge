@@ -1,0 +1,21 @@
+Lan và Huy có n chiếc đồng hồ đếm ngược, chiếc thứ i đang hiện số a_i. Hai bạn lần lượt đi, Lan đi trước. Đến lượt mình, người chơi chọn một chiếc đồng hồ đang hiện số x > 0, chọn một chữ số khác 0 có mặt trong cách viết thập phân của x (gọi là d), rồi chỉnh đồng hồ đó về số x - d. Ví dụ đồng hồ hiện 205 thì có thể chỉnh về 203 hoặc 200. Ai đến lượt mà mọi đồng hồ đều hiện 0 thì thua.
+
+Biết cả hai đều chơi tối ưu, hãy cho biết ai thắng trong từng ván.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên T là số ván chơi.
+- Mỗi ván gồm hai dòng: dòng thứ nhất chứa số nguyên n, dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n.
+
+Đầu ra:
+- In ra T dòng, dòng thứ t là LAN nếu Lan thắng ván thứ t, hoặc HUY nếu Huy thắng.
+
+Giới hạn:
+- 1 ≤ T ≤ 100.
+- 1 ≤ n, tổng n của tất cả các ván không vượt quá 2500.
+- 0 ≤ a_i ≤ 10^6.
+
+Gợi ý:
+- Ván 1: một đồng hồ hiện 10. Lan chỉ có thể trừ 1 để được 9, sau đó Huy trừ 9 về 0 và Lan thua.
+- Ván 2: hai đồng hồ hiện 12 và 5. Lan thắng, chẳng hạn bằng cách chỉnh 12 về 11.
+- Ván 3: hai đồng hồ hiện 11 và 3. Huy thắng.
+- Gọi g(x) là số Grundy của một đồng hồ hiện x: g(0) = 0 và g(x) là số tự nhiên nhỏ nhất không thuộc tập { g(x - d) : d là chữ số khác 0 của x }. Ví dụ g(10) = 0, g(11) = 1, g(12) = 2, g(3) = g(5) = 1. Theo định lý Sprague-Grundy, Lan thắng khi và chỉ khi XOR các g(a_i) khác 0.

@@ -1,0 +1,17 @@
+Nhà mạng có n trạm phát sóng, trạm thứ i đặt tại điểm nguyên (x_i, y_i). Để thử nghiệm đường truyền vi ba dài nhất, kỹ sư cần chọn hai trạm cách xa nhau nhất. Để tránh sai số khi khai căn, hãy in ra BÌNH PHƯƠNG khoảng cách lớn nhất giữa hai trạm, tức là giá trị lớn nhất của (x_i - x_j)^2 + (y_i - y_j)^2 trên mọi cặp i, j.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- n dòng tiếp theo, dòng thứ i chứa hai số nguyên x_i, y_i.
+
+Đầu ra:
+- In ra một số nguyên là bình phương khoảng cách lớn nhất (bằng 0 nếu n = 1 hoặc mọi trạm trùng nhau).
+
+Giới hạn:
+- 1 ≤ n ≤ 1500.
+- |x_i|, |y_i| ≤ 10^6; có thể có nhiều trạm trùng vị trí.
+- Kết quả có thể lên tới 8·10^12, hãy dùng số nguyên 64 bit.
+
+Gợi ý:
+- Ví dụ: hai trạm xa nhất là (0, 0) và (5, 3), bình phương khoảng cách là 25 + 9 = 34. Trạm (2, 1) nằm bên trong nên không bao giờ là một đầu của cặp xa nhất.
+- Hai điểm xa nhất luôn là hai đỉnh của bao lồi. Trên bao lồi, có thể dùng kỹ thuật "xoay compa" (rotating calipers): duyệt từng cạnh và dời con trỏ tới đỉnh xa cạnh đó nhất, tổng cộng chỉ mất O(h) sau khi dựng bao lồi.

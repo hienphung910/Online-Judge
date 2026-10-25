@@ -1,0 +1,18 @@
+Khu nghỉ dưỡng muốn xây hai bể bơi hình vuông, cạnh của mỗi bể là một số nguyên dương mét, sao cho tổng diện tích mặt nước của hai bể đúng bằng n mét vuông. Kiến trúc sư muốn biết có bao nhiêu phương án khác nhau.
+
+Nói cách khác, với mỗi n, hãy đếm số cặp số nguyên (a, b) thỏa mãn 1 ≤ a ≤ b và a^2 + b^2 = n.
+
+Đầu vào:
+- Dòng đầu chứa số nguyên T là số câu hỏi.
+- T dòng tiếp theo, mỗi dòng chứa một số nguyên n.
+
+Đầu ra:
+- Với mỗi câu hỏi, in ra số cặp tìm được trên một dòng.
+
+Giới hạn:
+- 1 ≤ T ≤ 20.
+- 1 ≤ n ≤ 10^12.
+
+Gợi ý:
+- Vì a ≤ b nên 2a^2 ≤ n, tức là chỉ cần thử a không vượt quá căn bậc hai của n / 2 (khoảng 7·10^5 giá trị), rồi kiểm tra n - a^2 có phải số chính phương hay không. Duyệt cả a lẫn b đến n thì quá chậm. Nhớ dùng kiểu số nguyên 64 bit.
+- Ví dụ: 25 = 3^2 + 4^2 nên có 1 cách (cặp (0, 5) không tính vì cạnh phải dương); 50 = 1^2 + 7^2 = 5^2 + 5^2 nên có 2 cách; 3 không viết được nên có 0 cách.

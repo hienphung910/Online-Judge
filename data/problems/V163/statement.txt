@@ -1,0 +1,20 @@
+Xã vùng cao có n xóm đánh số từ 1 đến n và đang thiếu nước sạch. Với mỗi xóm i, xã có thể khoan một giếng ngay tại xóm với chi phí a_i. Ngoài ra có m tuyến ống có thể lắp, tuyến thứ j nối hai xóm u_j và v_j với chi phí w_j; nước chảy được theo cả hai chiều của ống.
+
+Một xóm có nước nếu nó có giếng, hoặc đi được từ nó tới một xóm có giếng qua các tuyến ống đã lắp. Hãy chọn khoan giếng ở một số xóm và lắp một số tuyến ống sao cho mọi xóm đều có nước, với tổng chi phí nhỏ nhất.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và m.
+- Dòng thứ hai gồm n số nguyên a_1, a_2, ..., a_n.
+- m dòng tiếp theo, mỗi dòng gồm ba số nguyên u, v, w mô tả một tuyến ống.
+
+Đầu ra:
+- Một số nguyên là tổng chi phí nhỏ nhất.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000, 0 ≤ m ≤ 1000.
+- 1 ≤ a_i ≤ 10^6, 1 ≤ w ≤ 10^6.
+- 1 ≤ u, v ≤ n, u ≠ v. Có thể có nhiều tuyến ống nối cùng một cặp xóm.
+
+Gợi ý:
+- Ở ví dụ, khoan giếng ở xóm 2 (chi phí 2) rồi lắp các ống 1-2 (3), 2-3 (4), 3-4 (6), tổng 15. Nếu thay ống 3-4 bằng giếng ở xóm 4 (7) thì tổng là 16, đắt hơn.
+- Mẹo: thêm một đỉnh ảo 0 nối với xóm i bằng cạnh trọng số a_i, khi đó đáp án là cây khung nhỏ nhất của đồ thị n + 1 đỉnh.

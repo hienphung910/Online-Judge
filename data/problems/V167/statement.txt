@@ -1,0 +1,19 @@
+Chuỗi siêu thị có n kho hàng đánh số từ 1 đến n. Kho thứ i chỉ chứa một loại mặt hàng có mã t_i (nhiều kho có thể chứa cùng một loại). Ban đầu mỗi kho là một khu riêng. Ban quản lý lần lượt thực hiện q thao tác thuộc hai loại:
+- "1 u v": gộp khu đang chứa kho u và khu đang chứa kho v thành một khu (nếu hai kho đã cùng khu thì không có gì thay đổi).
+- "2 u": hỏi khu đang chứa kho u có tất cả bao nhiêu loại mặt hàng khác nhau.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và q.
+- Dòng thứ hai gồm n số nguyên t_1, t_2, ..., t_n.
+- q dòng tiếp theo, mỗi dòng là một thao tác "1 u v" hoặc "2 u".
+
+Đầu ra:
+- Với mỗi thao tác loại 2, in trên một dòng số loại mặt hàng khác nhau trong khu chứa kho u.
+
+Giới hạn:
+- 1 ≤ n ≤ 1500, 1 ≤ q ≤ 1200.
+- 1 ≤ t_i ≤ 10^4, 1 ≤ u, v ≤ n (u có thể bằng v). Có ít nhất một thao tác loại 2.
+
+Gợi ý:
+- Ở ví dụ, lúc đầu khu của kho 1 chỉ có mặt hàng 3. Sau khi gộp kho 1 với kho 3 (cũng mặt hàng 3) khu vẫn có 1 loại. Gộp tiếp kho 2, 4 thành khu có hàng {1, 2}, gộp kho 5 vào khu của kho 1 được hàng {3, 1} nên câu hỏi về kho 1 là 2. Cuối cùng gộp tất cả, khu có ba loại 1, 2, 3.
+- Mỗi khu giữ một tập các mã hàng; khi gộp hai khu, luôn đổ tập nhỏ hơn vào tập lớn hơn (small-to-large). Mỗi mã hàng chỉ bị chuyển O(log n) lần.

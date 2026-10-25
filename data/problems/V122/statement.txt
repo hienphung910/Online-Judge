@@ -1,0 +1,21 @@
+Thư viện trường chỉ có một máy in dùng chung. Trong ngày có n yêu cầu in, yêu cầu thứ i được gửi tới máy vào thời điểm r_i (giây) và cần in liên tục trong d_i giây. Máy in mỗi lúc chỉ in một yêu cầu, và đã bắt đầu in yêu cầu nào thì in cho xong mới chuyển sang yêu cầu khác.
+
+Máy được lập trình như sau: mỗi khi máy rảnh tại thời điểm t, nó xét các yêu cầu đã được gửi (r_i ≤ t) mà chưa in, và chọn yêu cầu có d_i nhỏ nhất; nếu nhiều yêu cầu cùng d_i nhỏ nhất thì chọn yêu cầu có r_i nhỏ hơn; nếu vẫn bằng nhau thì chọn yêu cầu có chỉ số i nhỏ hơn. Nếu lúc đó chưa có yêu cầu nào đang chờ, máy đứng yên cho tới khi yêu cầu kế tiếp được gửi tới. Lúc bắt đầu (thời điểm 0) máy đang rảnh.
+
+Hãy cho biết thứ tự các yêu cầu được in.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- n dòng tiếp theo, dòng thứ i chứa hai số nguyên r_i và d_i.
+
+Đầu ra:
+- In ra trên một dòng n số nguyên là chỉ số các yêu cầu theo thứ tự được in.
+
+Giới hạn:
+- 1 ≤ n ≤ 1500.
+- 0 ≤ r_i ≤ 10^6, 1 ≤ d_i ≤ 10^4.
+- Các yêu cầu không nhất thiết được cho theo thứ tự thời điểm gửi.
+
+Gợi ý:
+- Ví dụ: lúc 0 chỉ có yêu cầu 1, máy in nó tới thời điểm 5. Lúc 5 đang chờ các yêu cầu 2 (d = 3), 3 (d = 1, r = 2) và 5 (d = 1, r = 3): chọn 3 rồi tới 5, xong lúc 7 thì in yêu cầu 2 tới thời điểm 10. Yêu cầu 4 được gửi đúng lúc 10 nên được in ngay sau đó.
+- Sắp xếp các yêu cầu theo r_i, dùng một hàng đợi ưu tiên chứa các yêu cầu đã gửi, khoá so sánh là bộ ba (d_i, r_i, i). Mỗi lần máy rảnh: đẩy mọi yêu cầu có r_i ≤ t vào hàng đợi; nếu hàng đợi rỗng thì nhảy t tới r của yêu cầu kế tiếp. Độ phức tạp O(n log n).

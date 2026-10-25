@@ -1,0 +1,18 @@
+Trên sườn đồi có n thửa ruộng bậc thang nối tiếp nhau, thửa thứ i có độ cao a_i mét. Hợp tác xã muốn chọn một dải gồm các thửa liên tiếp để lắp chung một hệ thống tưới. Hệ thống chỉ hoạt động tốt nếu chênh lệch giữa thửa cao nhất và thửa thấp nhất trong dải không vượt quá D mét.
+
+Hãy tìm dải dài nhất thoả mãn điều kiện. Nếu có nhiều dải cùng dài nhất, chọn dải có thửa bắt đầu nhỏ nhất.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và D.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n.
+
+Đầu ra:
+- In ra hai số nguyên: số thửa của dải dài nhất và chỉ số thửa bắt đầu của dải đó (đánh số từ 1).
+
+Giới hạn:
+- 1 ≤ n ≤ 4000.
+- 0 ≤ D ≤ 10^5, 0 ≤ a_i ≤ 10^5.
+
+Gợi ý:
+- Ví dụ: dải [5, 3, 4] (bắt đầu từ thửa 1) và dải [6, 7, 6] (bắt đầu từ thửa 4) đều dài 3 và có chênh lệch không quá 2; không có dải nào dài 4 thoả mãn. Chọn dải bắt đầu sớm hơn nên in 3 1.
+- Dùng hai con trỏ: với mỗi đầu phải r, đầu trái l chỉ tiến lên. Giữ hai hàng đợi hai đầu (deque): một deque cho giá trị lớn nhất (giảm dần) và một deque cho giá trị nhỏ nhất (tăng dần) của cửa sổ [l, r]. Khi max - min > D thì tăng l và bỏ các chỉ số < l khỏi đầu deque. Tổng độ phức tạp O(n).

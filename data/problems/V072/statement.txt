@@ -1,0 +1,17 @@
+Bé Na có một dãy n số nguyên dương. Bé thích sắp xếp theo kiểu riêng của mình: số nào có tổng các chữ số nhỏ hơn thì đứng trước; nếu hai số có tổng chữ số bằng nhau thì số nhỏ hơn đứng trước.
+
+Hãy giúp bé Na in ra dãy sau khi sắp xếp.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- Dòng thứ hai chứa n số nguyên dương a_1, a_2, ..., a_n.
+
+Đầu ra:
+- In ra n số trên một dòng là dãy sau khi sắp xếp theo kiểu của bé Na.
+
+Giới hạn:
+- 1 ≤ n ≤ 1200.
+- 1 ≤ a_i ≤ 10^9 (các số có thể trùng nhau).
+
+Gợi ý:
+- Tổng chữ số của 1000 là 1 nên đứng đầu. Các số 23, 104, 5, 41 đều có tổng chữ số bằng 5 nên xếp tăng dần: 5 23 41 104. Tiếp theo là 7 (tổng 7) rồi 99 (tổng 18).

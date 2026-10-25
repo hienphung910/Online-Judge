@@ -1,0 +1,17 @@
+Xưởng giấy nhận làm hộp quà hình hộp chữ nhật có ba kích thước là các số nguyên dương x ≤ y ≤ z (đơn vị xăng-ti-mét). Máy cắt chỉ xử lý được tấm bìa đủ cho hộp có thể tích x · y · z không vượt quá n. Hỏi xưởng có thể làm được bao nhiêu loại hộp khác nhau?
+
+Nói cách khác, hãy đếm số bộ ba số nguyên (x, y, z) thỏa mãn 1 ≤ x ≤ y ≤ z và x · y · z ≤ n.
+
+Đầu vào:
+- Một dòng chứa số nguyên n.
+
+Đầu ra:
+- In ra số bộ ba tìm được.
+
+Giới hạn:
+- 1 ≤ n ≤ 10^10.
+
+Gợi ý:
+- Duyệt cả ba biến hay thậm chí chỉ một vòng lặp đến n đều quá chậm. Hãy để ý x^3 ≤ n và x · y^2 ≤ n: duyệt x đến căn bậc ba của n, duyệt y từ x đến căn bậc hai của n / x, còn số giá trị z hợp lệ (từ y đến n / (x · y)) thì tính trực tiếp bằng phép chia. Tổng số bước chỉ cỡ vài triệu.
+- Đáp số có thể vượt quá phạm vi kiểu int.
+- Ví dụ n = 4 có 5 bộ: (1, 1, 1), (1, 1, 2), (1, 1, 3), (1, 1, 4), (1, 2, 2).

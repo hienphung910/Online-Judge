@@ -1,0 +1,22 @@
+Ông Tư bán vé số ở đầu chợ. Ông tin rằng một tấm vé mang số x là "vé may mắn" với con số yêu thích D nếu tổng các chữ số của x chia hết cho D. Ví dụ với D = 5, các vé 5, 14, 19, 230 đều may mắn.
+
+Mỗi ngày có nhiều khách đến hỏi: trong các vé mang số từ L đến R, có bao nhiêu vé may mắn với con số D của họ? Hãy giúp ông Tư trả lời.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên T là số câu hỏi.
+- T dòng tiếp theo, mỗi dòng chứa ba số nguyên L, R, D.
+
+Đầu ra:
+- Với mỗi câu hỏi, in ra trên một dòng số lượng số nguyên x với L ≤ x ≤ R mà tổng chữ số của x chia hết cho D.
+
+Giới hạn:
+- 1 ≤ T ≤ 300.
+- 0 ≤ L ≤ R ≤ 10^18.
+- 1 ≤ D ≤ 200.
+- Số 0 có tổng chữ số bằng 0, chia hết cho mọi D.
+
+Gợi ý:
+- Câu hỏi 1: trong đoạn [1, 20] có 5, 14, 19 thỏa mãn (tổng chữ số 5, 5, 10).
+- Câu hỏi 2: trong đoạn [0, 100] có số 0 và 9 số 19, 28, 37, 46, 55, 64, 73, 82, 91, tổng cộng 10 số.
+- Câu hỏi 3: 1 + 2 + 3 = 6 chia hết cho 6.
+- Đặt dem(X) là số lượng số thỏa mãn trong [0, X], đáp án là dem(R) - dem(L - 1). Để tính dem(X), duyệt các chữ số của X từ trái sang phải: tại mỗi vị trí thử đặt một chữ số nhỏ hơn chữ số của X, khi đó các vị trí phía sau được chọn tự do.

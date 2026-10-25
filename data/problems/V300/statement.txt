@@ -1,0 +1,19 @@
+Con đường đất dẫn ra cánh đồng được chia thành n đoạn liên tiếp, đoạn thứ i có độ cao a_i (tính bằng xăng-ti-mét). Mùa gặt sắp đến, xe chở lúa chỉ đi qua được nếu chênh lệch độ cao giữa hai đoạn kề nhau không quá D. Đội thanh niên của làng sẽ đắp thêm hoặc bạt bớt đất để đoạn thứ i có độ cao mới là số nguyên b_i, sao cho |b_i - b_(i+1)| ≤ D với mọi 1 ≤ i < n. Đắp thêm hay bạt bớt 1 xăng-ti-mét ở một đoạn đều tốn một công, nên tổng số công là |a_1 - b_1| + |a_2 - b_2| + ... + |a_n - b_n|.
+
+Hãy tính tổng số công nhỏ nhất cần bỏ ra.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và D.
+- Dòng thứ hai gồm n số nguyên a_1, a_2, ..., a_n.
+
+Đầu ra:
+- In ra một số nguyên là tổng số công nhỏ nhất.
+
+Giới hạn:
+- 1 ≤ n ≤ 3000.
+- 0 ≤ D ≤ 10^6.
+- 0 ≤ a_i ≤ 10^6.
+
+Gợi ý:
+- Ví dụ có D = 2 và a = [1, 6, 2, 3, 9]. Một cách tối ưu là b = [1, 3, 2, 3, 5]: các chênh lệch kề nhau là 2, 1, 1, 2, tổng số công là 0 + 3 + 0 + 0 + 4 = 7.
+- Gọi F_i(x) là số công nhỏ nhất cho i đoạn đầu khi b_i = x. Ta có F_i(x) = |x - a_i| + min F_(i-1)(y) với |x - y| ≤ D. F_i là hàm lồi, gãy khúc: phép lấy min trong cửa sổ chỉ đẩy nửa trái sang trái D đơn vị và nửa phải sang phải D đơn vị, còn cộng thêm |x - a_i| là thêm một điểm gãy. Lưu các điểm gãy bằng hai hàng đợi ưu tiên kèm độ dời (slope trick).

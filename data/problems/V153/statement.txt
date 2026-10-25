@@ -1,0 +1,22 @@
+Thành phố có n bến xe buýt đánh số từ 1 đến n và m tuyến chạy thẳng một chiều; tuyến thứ i chạy từ bến u_i tới bến v_i mất w_i phút. Bình đi học từ bến 1 tới bến n (trường học) và luôn chọn lộ trình nhanh nhất. Có thể có nhiều lộ trình cùng nhanh nhất, nên Bình muốn biết thêm vài thông tin để mỗi ngày đổi một lộ trình cho đỡ chán.
+
+Một lộ trình là một dãy các tuyến nối tiếp nhau, đi từ bến 1 tới bến n. Hai lộ trình khác nhau nếu dãy tuyến khác nhau (hai tuyến khác nhau dù nối cùng một cặp bến vẫn được tính là khác nhau). Hãy cho biết:
+- thời gian ít nhất để đi từ bến 1 tới bến n;
+- số lộ trình có thời gian bằng thời gian ít nhất đó, lấy phần dư khi chia cho 10^9 + 7;
+- số tuyến ít nhất và số tuyến nhiều nhất của một lộ trình nhanh nhất.
+
+Đầu vào:
+- Dòng đầu tiên gồm hai số nguyên n và m.
+- m dòng tiếp theo, mỗi dòng gồm ba số nguyên u, v, w: có tuyến xe từ bến u tới bến v mất w phút.
+- Dữ liệu đảm bảo có thể đi từ bến 1 tới bến n.
+
+Đầu ra:
+- In ra bốn số nguyên trên một dòng: thời gian ít nhất, số lộ trình nhanh nhất modulo 10^9 + 7, số tuyến ít nhất và số tuyến nhiều nhất của một lộ trình nhanh nhất.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000, 0 ≤ m ≤ 1500.
+- 1 ≤ u, v ≤ n, u ≠ v, 1 ≤ w ≤ 1000.
+
+Gợi ý:
+- Ở ví dụ, cả bốn lộ trình 1 → 5, 1 → 2 → 5, 1 → 3 → 2 → 5 và 1 → 3 → 4 → 5 đều mất 5 phút. Lộ trình ngắn nhất về số tuyến dùng 1 tuyến, dài nhất dùng 3 tuyến. Đáp án là 5 4 1 3.
+- Chạy Dijkstra từ bến 1, đồng thời lưu cho mỗi bến v: cnt[v] (số lộ trình nhanh nhất tới v), mn[v] và mx[v]. Khi tìm được đường mới tốt hơn hẳn qua cạnh u → v thì gán lại cả ba giá trị theo u; khi bằng thì cộng dồn cnt và cập nhật mn, mx. Vì mọi w ≥ 1 nên khi lấy u ra khỏi hàng đợi, các giá trị của u đã chính xác.

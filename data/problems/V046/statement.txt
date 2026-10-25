@@ -1,0 +1,17 @@
+Trước đêm rằm, chú Ba treo một dây gồm n chiếc đèn lồng xếp thành hàng ngang. Mỗi chiếc có thể bật (kí hiệu 1) hoặc tắt (kí hiệu 0). Dây điện khá yếu nên hai chiếc đèn kề nhau không được cùng bật, và vì tiết kiệm nên có không quá k chiếc được bật. Chú muốn xem hết mọi kiểu bật đèn hợp lệ để chọn kiểu đẹp nhất.
+
+Đầu vào:
+- Một dòng chứa hai số nguyên n và k.
+
+Đầu ra:
+- Dòng đầu in số kiểu bật đèn hợp lệ m.
+- m dòng tiếp theo, mỗi dòng là một xâu độ dài n gồm các kí tự 0 và 1 mô tả một kiểu bật đèn (kí tự thứ i ứng với chiếc đèn thứ i): không có hai kí tự 1 đứng cạnh nhau và có không quá k kí tự 1.
+- Các xâu được in theo thứ tự từ điển tăng dần (xâu toàn 0 đứng đầu tiên).
+
+Giới hạn:
+- 1 ≤ n ≤ 15.
+- 0 ≤ k ≤ n.
+
+Gợi ý:
+- Điền lần lượt từng vị trí từ trái sang phải, thử kí tự 0 trước rồi đến 1. Chỉ được điền 1 khi vị trí ngay trước đó là 0 và số đèn đã bật còn nhỏ hơn k. Thứ tự thử như vậy tự động cho ra thứ tự từ điển.
+- Ví dụ n = 4, k = 2 có 8 kiểu: 0000, 0001, 0010, 0100, 0101, 1000, 1001, 1010. Kiểu 0110 sai vì hai đèn kề nhau cùng bật, kiểu 1011 vừa sai vì thế vừa có 3 đèn bật.

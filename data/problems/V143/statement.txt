@@ -1,0 +1,22 @@
+Công ty chuyển phát có n trạm trung chuyển đánh số từ 1 đến n và m tuyến xe tải hai chiều, mỗi tuyến nối hai trạm khác nhau. Hai trạm liên lạc được với nhau nếu có thể chở hàng từ trạm này sang trạm kia qua các tuyến xe (có thể qua các trạm khác).
+
+Một trạm được gọi là xung yếu nếu khi trạm đó bị đóng cửa (cùng với mọi tuyến xe đi qua nó), sẽ có hai trạm khác vốn liên lạc được với nhau trở thành không liên lạc được nữa.
+
+Hãy tìm tất cả các trạm xung yếu.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và m.
+- m dòng tiếp theo, mỗi dòng gồm hai số nguyên u, v (u ≠ v) là một tuyến xe nối trạm u và trạm v. Không có hai tuyến nối cùng một cặp trạm.
+- Mạng lưới có thể gồm nhiều phần rời nhau.
+
+Đầu ra:
+- Dòng đầu là số lượng trạm xung yếu k.
+- Nếu k > 0, dòng thứ hai gồm k số hiệu trạm xung yếu theo thứ tự tăng dần.
+
+Giới hạn:
+- 1 ≤ n ≤ 2000; 0 ≤ m ≤ 2500.
+- 1 ≤ u, v ≤ n.
+
+Gợi ý:
+- Ở ví dụ, nếu đóng trạm 3 thì phần {1, 2} bị tách khỏi phần {4, 5, 6}. Nếu đóng trạm 4 thì trạm 7 bị cô lập.
+- Đóng trạm 1 thì trạm 2 vẫn tới được trạm 3 trực tiếp, nên trạm 1 không xung yếu. Các trạm 4, 5, 6 nằm trên vòng 4 - 5 - 6 - 4, nhưng chỉ trạm 4 xung yếu vì nó còn giữ đường tới trạm 7. Trạm 8 đứng một mình.

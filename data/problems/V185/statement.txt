@@ -1,0 +1,18 @@
+Đội cổ vũ của trường hô một tràng dài được ghi lại thành xâu S độ dài n. Thầy phụ trách muốn chọn một tiền tố của S làm khẩu hiệu chính thức. Khẩu hiệu càng dài càng ấn tượng, nhưng cũng phải được hô nhiều lần trong tràng cổ vũ.
+
+Với mỗi k (1 ≤ k ≤ n), gọi cnt(k) là số vị trí i (1 ≤ i ≤ n - k + 1) sao cho đoạn k ký tự của S bắt đầu tại i trùng với tiền tố độ dài k của S (các lần xuất hiện được phép chồng lên nhau, kể cả chính tiền tố đó ở vị trí 1). Sức nặng của tiền tố độ dài k là k · cnt(k).
+
+Hãy tìm sức nặng lớn nhất trong tất cả các tiền tố của S.
+
+Đầu vào:
+- Một dòng duy nhất chứa xâu S gồm các chữ cái tiếng Anh in thường 'a' đến 'z'.
+
+Đầu ra:
+- Một số nguyên là sức nặng lớn nhất.
+
+Giới hạn:
+- 1 ≤ n ≤ 2·10^4.
+
+Gợi ý:
+- Ở ví dụ 1, S = "abababa". Các tiền tố "a", "ab", "aba", "abab", "ababa", "ababab", "abababa" lần lượt xuất hiện 4, 3, 3, 2, 2, 1, 1 lần, nên sức nặng là 4, 6, 9, 8, 10, 6, 7. Lớn nhất là 10.
+- Ở ví dụ 2, S = "abc", mỗi tiền tố chỉ xuất hiện 1 lần nên tiền tố dài nhất "abc" có sức nặng lớn nhất là 3.

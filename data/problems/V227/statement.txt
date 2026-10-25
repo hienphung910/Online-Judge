@@ -1,0 +1,21 @@
+Bếp ăn của một khu nghiên cứu ở Nam Cực lập thực đơn cho n ngày liên tiếp. Bếp biết nấu k món, và mỗi ngày chỉ nấu đúng một món trong k món đó. Để mọi người không quên hương vị, mỗi món trong k món phải được nấu ít nhất một ngày. Hai thực đơn khác nhau nếu có một ngày mà món của hai thực đơn khác nhau.
+
+Hỏi có bao nhiêu thực đơn hợp lệ? Kế hoạch có thể rất dài nên chỉ cần in số lượng chia lấy dư cho 10^9 + 7. Có q câu hỏi.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên q.
+- q dòng tiếp theo, mỗi dòng chứa hai số nguyên n và k.
+
+Đầu ra:
+- In ra q dòng, dòng thứ i là số thực đơn hợp lệ của câu hỏi thứ i, chia lấy dư cho 10^9 + 7.
+
+Giới hạn:
+- 1 ≤ q ≤ 10.
+- 1 ≤ n ≤ 10^18; 1 ≤ k ≤ 10^6.
+- Tổng các giá trị k trong một tệp dữ liệu không vượt quá 10^6.
+
+Gợi ý:
+- Câu 1 (n = 3, k = 2, hai món A và B): có 2^3 = 8 thực đơn, trừ đi AAA và BBB, còn 6.
+- Câu 2 (n = 2, k = 3): chỉ có 2 ngày, không thể nấu đủ 3 món, đáp án 0.
+- Câu 3 (n = 4, k = 3): đáp án 36.
+- Gọi A_i là tập thực đơn không có món i. Cần đếm các thực đơn không thuộc tập A_i nào. Theo nguyên lý bao hàm - loại trừ, nếu bắt buộc bỏ j món cố định thì còn (k - j)^n thực đơn, nên đáp án là tổng với j = 0..k của (-1)^j · C(k, j) · (k - j)^n. Chuẩn bị giai thừa và nghịch đảo giai thừa để tính C(k, j), và dùng lũy thừa nhanh vì n rất lớn.

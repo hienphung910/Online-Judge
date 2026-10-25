@@ -1,0 +1,24 @@
+Tỉnh có n xã đánh số từ 1 đến n. Do mưa lũ thất thường, các con đường hai chiều giữa các xã liên tục được thông xe rồi lại bị cấm. Ban chỉ huy ghi lại nhật ký gồm q sự kiện theo thứ tự thời gian, mỗi sự kiện thuộc một trong bốn loại:
+- 1 u v: con đường nối xã u và xã v được thông xe (u ≠ v). Dữ liệu bảo đảm ngay trước đó đường giữa u và v đang không thông.
+- 2 u v: con đường nối xã u và xã v bị cấm. Dữ liệu bảo đảm ngay trước đó đường này đang thông.
+- 3 u v: hỏi lúc này có thể đi từ xã u tới xã v qua các con đường đang thông hay không (u có thể bằng v).
+- 4: hỏi lúc này các xã được chia thành bao nhiêu vùng, biết hai xã cùng vùng khi và chỉ khi đi được từ xã này tới xã kia.
+Ban đầu không có con đường nào thông. Hãy trả lời các câu hỏi.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và q.
+- q dòng tiếp theo, mỗi dòng mô tả một sự kiện theo định dạng trên.
+
+Đầu ra:
+- Với mỗi sự kiện loại 3, in ra trên một dòng CO nếu đi được, ngược lại in KHONG.
+- Với mỗi sự kiện loại 4, in ra trên một dòng số vùng.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000.
+- 1 ≤ q ≤ 2000.
+- 1 ≤ u, v ≤ n; trong sự kiện loại 1 và 2, cặp u v có thể ghi theo thứ tự bất kỳ.
+
+Gợi ý:
+- Sau khi thông các đường 1–2, 2–3, 3–4, cả bốn xã thuộc một vùng: câu hỏi loại 4 in 1.
+- Cấm đường 2–3 (ghi là 3 2): xã 1 không còn tới được xã 4, in KHONG; số vùng là 2.
+- Thông đường 4–1: xã 1 lại tới được xã 3, in CO.

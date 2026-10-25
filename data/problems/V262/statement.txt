@@ -1,0 +1,22 @@
+Giải chạy việt dã của huyện cho phép vận động viên đăng ký thành tích dự kiến (tính bằng giây) để ban tổ chức xếp nhóm xuất phát. Danh sách đăng ký lúc đầu trống, nhiều người có thể đăng ký cùng một thành tích. Ban tổ chức lần lượt xử lý q yêu cầu thuộc bốn loại:
+- "+ x": một vận động viên đăng ký thành tích x giây.
+- "- x": một vận động viên có thành tích x giây rút tên. Đảm bảo lúc đó danh sách có ít nhất một thành tích bằng x; chỉ một thành tích x bị xoá.
+- "K k": hỏi nếu xếp các thành tích đang có trong danh sách theo thứ tự tăng dần (thành tích bằng nhau vẫn tính riêng), thành tích đứng thứ k là bao nhiêu. Đảm bảo danh sách có ít nhất k thành tích.
+- "R x": hỏi trong danh sách có bao nhiêu thành tích nhỏ hơn hẳn x, tức là bao nhiêu người chạy nhanh hơn x giây.
+
+Đầu vào:
+- Dòng đầu gồm số nguyên q.
+- q dòng tiếp theo, mỗi dòng là một yêu cầu ở một trong bốn dạng trên.
+
+Đầu ra:
+- Với mỗi yêu cầu "K" hoặc "R", theo thứ tự xuất hiện, in ra câu trả lời trên một dòng.
+
+Giới hạn:
+- 1 ≤ q ≤ 1500.
+- 1 ≤ x ≤ 10^9, k ≥ 1.
+- Có ít nhất một yêu cầu "K" hoặc "R".
+
+Gợi ý:
+- Ở ví dụ, sau ba lần đăng ký danh sách là 30, 50, 50 (đã sắp tăng dần), nên thành tích thứ 2 là 50, và chỉ có 1 thành tích nhỏ hơn hẳn 50.
+- Thêm thành tích 12 thì thành tích thứ 1 là 12.
+- Một người có thành tích 50 rút tên, danh sách còn 12, 30, 50: có 3 thành tích nhỏ hơn 60 và thành tích thứ 3 là 50.

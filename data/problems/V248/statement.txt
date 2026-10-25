@@ -1,0 +1,20 @@
+Một nhà mạng có n trạm phát sóng, trạm thứ i đặt ở điểm (x_i, y_i). Hai trạm càng gần nhau thì sóng càng dễ nhiễu, nên kỹ sư cần biết cặp trạm nào đứng sát nhau nhất để điều chỉnh tần số trước.
+
+Hãy tìm khoảng cách nhỏ nhất giữa hai trạm khác nhau. Để tránh số thực, hãy in ra bình phương của khoảng cách đó.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- n dòng tiếp theo, dòng thứ i chứa hai số nguyên x_i và y_i.
+
+Đầu ra:
+- In ra một số nguyên là giá trị nhỏ nhất của (x_i - x_j)^2 + (y_i - y_j)^2 với mọi cặp 1 ≤ i < j ≤ n.
+
+Giới hạn:
+- 2 ≤ n ≤ 1200.
+- |x_i|, |y_i| ≤ 10^9.
+- Nhiều trạm có thể ở cùng một điểm.
+- Bình phương khoảng cách có thể tới 8·10^18, vẫn vừa kiểu số nguyên 64 bit có dấu.
+
+Gợi ý:
+- Ví dụ 1: cặp gần nhất là trạm (5, 5) và trạm (6, 3), bình phương khoảng cách là 1^2 + 2^2 = 5. Cặp gần thứ nhì là (0, 0) và (2, 2) với giá trị 8.
+- Chia để trị: sắp các trạm theo x rồi chia đôi bằng một đường thẳng đứng. Gọi d là kết quả tốt nhất của hai nửa. Một cặp tốt hơn mà nằm ở hai nửa khác nhau phải gồm hai trạm cách đường chia chưa tới căn(d) theo phương ngang. Xếp các trạm trong dải đó theo y, mỗi trạm chỉ cần so với vài trạm ngay trước nó có hiệu y nhỏ hơn căn(d). Tổng thời gian O(n log n).

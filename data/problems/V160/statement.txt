@@ -1,0 +1,17 @@
+Trường có n học sinh đánh số từ 1 đến n. Lúc đầu mỗi học sinh tự lập một câu lạc bộ riêng chỉ có mình mình. Ban giám hiệu lần lượt đưa ra m quyết định, quyết định thứ i có dạng "u v": câu lạc bộ đang chứa học sinh u và câu lạc bộ đang chứa học sinh v được sáp nhập thành một câu lạc bộ (nếu u và v đã cùng câu lạc bộ thì không có gì thay đổi).
+
+Sau mỗi quyết định, hãy cho biết trường còn bao nhiêu câu lạc bộ và câu lạc bộ đông nhất có bao nhiêu thành viên.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và m.
+- m dòng tiếp theo, mỗi dòng gồm hai số nguyên u và v.
+
+Đầu ra:
+- Gồm m dòng, dòng thứ i gồm hai số nguyên: số câu lạc bộ và số thành viên của câu lạc bộ đông nhất ngay sau quyết định thứ i.
+
+Giới hạn:
+- 1 ≤ n ≤ 10^5, 1 ≤ m ≤ 1500.
+- 1 ≤ u, v ≤ n (u có thể bằng v).
+
+Gợi ý:
+- Ở ví dụ, sau hai quyết định đầu có các câu lạc bộ {1, 2}, {3, 4}, {5}, {6}. Quyết định thứ ba không làm thay đổi gì vì 1 và 2 đã cùng câu lạc bộ. Quyết định thứ tư gộp thành {1, 2, 3, 4}, còn 3 câu lạc bộ, đông nhất có 4 người. Quyết định cuối có u = v nên không thay đổi.

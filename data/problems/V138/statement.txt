@@ -1,0 +1,22 @@
+Bác thợ gốm có hai chiếc bình không chia vạch: bình thứ nhất chứa được đúng a lít, bình thứ hai chứa được đúng b lít. Ban đầu cả hai bình đều rỗng, bên cạnh có một bể nước rất lớn. Mỗi thao tác, bác được làm một trong các việc sau:
+- Đổ đầy một bình bằng nước trong bể.
+- Đổ hết nước trong một bình ra ngoài.
+- Rót nước từ bình này sang bình kia cho tới khi bình đang rót hết nước hoặc bình được rót đầy, tùy điều nào xảy ra trước.
+
+Bác cần lấy đúng c lít nước nằm trong một chiếc bình (bình nào cũng được). Hỏi bác cần ít nhất bao nhiêu thao tác?
+
+Đầu vào:
+- Dòng đầu chứa số nguyên T là số bộ dữ liệu.
+- T dòng tiếp theo, mỗi dòng gồm ba số nguyên a, b, c.
+
+Đầu ra:
+- Với mỗi bộ dữ liệu, in một dòng chứa số thao tác ít nhất, hoặc -1 nếu không thể lấy được đúng c lít.
+
+Giới hạn:
+- 1 ≤ T ≤ 10.
+- 1 ≤ a, b ≤ 1000; 0 ≤ c ≤ 1000.
+
+Gợi ý:
+- Bộ 1 (a = 3, b = 5, c = 4): đổ đầy bình 5 lít, rót sang bình 3 lít (còn 2 lít), đổ hết bình 3 lít, rót 2 lít sang bình 3 lít, đổ đầy bình 5 lít, rót sang bình 3 lít cho đầy (bình 5 lít còn 4 lít). Tổng cộng 6 thao tác.
+- Bộ 2 (a = 2, b = 4, c = 3): lượng nước trong mỗi bình luôn là số chẵn nên không thể có 3 lít.
+- Bộ 3: c = 0 nên không cần thao tác nào.

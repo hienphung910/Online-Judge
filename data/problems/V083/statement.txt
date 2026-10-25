@@ -1,0 +1,18 @@
+Hội từ thiện chuẩn bị n phần quà Tết để gửi về vùng cao, phần quà thứ i nặng w_i. Mỗi thùng carton chứa được nhiều nhất 2 phần quà và tổng khối lượng trong thùng không được vượt quá W, nếu không thùng sẽ bị rách.
+
+Hãy tính số thùng ít nhất cần dùng để đóng hết n phần quà.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và W.
+- Dòng thứ hai chứa n số nguyên w_1, w_2, ..., w_n.
+
+Đầu ra:
+- In ra một số nguyên là số thùng ít nhất.
+
+Giới hạn:
+- 1 ≤ n ≤ 2000.
+- 1 ≤ w_i ≤ W ≤ 10^9.
+
+Gợi ý:
+- Xét phần quà nặng nhất: nếu phần quà nhẹ nhất bỏ chung được thì đóng hai phần vào một thùng, còn không thì phần quà nặng nhất phải nằm một mình một thùng.
+- Trong ví dụ, W = 10: phần quà nặng 9 nằm riêng một thùng, ghép (2, 7) và (3, 5), tổng cộng 3 thùng.

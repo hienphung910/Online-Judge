@@ -1,0 +1,21 @@
+Một nghệ nhân dệt thổ cẩm mã hóa dải hoa văn dài của mình thành xâu S độ dài n. Ông gọi mỗi xâu con gồm các ký tự liên tiếp của S là một "mẫu". Ông muốn biết có bao nhiêu mẫu khác nhau được dệt đúng K lần trên dải vải.
+
+Một xâu X khác rỗng xuất hiện c lần trong S nếu có đúng c vị trí i (1 ≤ i ≤ n - |X| + 1) sao cho đoạn S[i..i+|X|-1] trùng với X, trong đó |X| là độ dài của X. Các lần xuất hiện được phép chồng lên nhau.
+
+Hãy đếm số xâu X khác rỗng, phân biệt về nội dung, xuất hiện đúng K lần trong S.
+
+Đầu vào:
+- Dòng thứ nhất là xâu S gồm các chữ cái tiếng Anh in thường 'a' đến 'z'.
+- Dòng thứ hai là số nguyên K.
+
+Đầu ra:
+- Một số nguyên là số xâu phân biệt xuất hiện đúng K lần.
+
+Giới hạn:
+- 1 ≤ K ≤ n ≤ 10^4.
+- Đáp án có thể lên tới khoảng 5·10^7.
+
+Gợi ý:
+- Ở ví dụ 1, S = "abab", K = 2: "a", "b", "ab" mỗi xâu xuất hiện 2 lần; "ba", "aba", "bab", "abab" chỉ xuất hiện 1 lần. Đáp án là 3.
+- Ở ví dụ 2, S = "aaaa", K = 1: chỉ có "aaaa" xuất hiện đúng 1 lần ("a" xuất hiện 4 lần, "aa" 3 lần, "aaa" 2 lần). Đáp án là 1.
+- Trong automat hậu tố của S, mỗi trạng thái v ứng với len(v) - len(link(v)) xâu con phân biệt có chung tập vị trí kết thúc, nên chúng có cùng số lần xuất hiện. Số lần xuất hiện của mỗi trạng thái được cộng dồn theo cây liên kết hậu tố.

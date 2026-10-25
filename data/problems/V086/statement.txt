@@ -1,0 +1,18 @@
+Trường tổ chức n buổi thi trong một ngày. Buổi thi thứ i bắt đầu ở thời điểm s_i và kết thúc ở thời điểm f_i, nghĩa là nó chiếm phòng trong khoảng [s_i, f_i). Hai buổi thi xếp được vào cùng một phòng khi và chỉ khi khoảng thời gian của chúng không giao nhau; một buổi có thể bắt đầu đúng lúc buổi trước trong phòng vừa kết thúc.
+
+Hãy tính số phòng ít nhất cần dùng để tổ chức đủ n buổi thi.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- n dòng tiếp theo, dòng thứ i chứa hai số nguyên s_i và f_i.
+
+Đầu ra:
+- In ra một số nguyên là số phòng ít nhất.
+
+Giới hạn:
+- 1 ≤ n ≤ 1500.
+- 0 ≤ s_i < f_i ≤ 10^6.
+
+Gợi ý:
+- Xét các buổi theo giờ bắt đầu tăng dần; mỗi buổi được đưa vào một phòng đã trống nếu có, nếu không thì mở phòng mới. Số phòng phải mở đúng bằng số buổi thi diễn ra cùng lúc nhiều nhất.
+- Trong ví dụ, ngay sau thời điểm 6 có ba buổi [4, 7), [5, 8), [6, 9) cùng diễn ra nên cần ít nhất 3 phòng, và 3 phòng là đủ.

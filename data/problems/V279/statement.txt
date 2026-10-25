@@ -1,0 +1,18 @@
+Đoàn múa có n vũ công, vũ công thứ i luyện tập theo nhịp a_i (mỗi a_i phách lặp lại động tác một lần). Biên đạo muốn chọn ra hai vũ công khác nhau để múa đôi. Hai vũ công thứ i và thứ j được coi là "không chung nhịp" nếu ước chung lớn nhất của a_i và a_j bằng 1; những cặp như vậy tạo ra điệu múa đẹp nhất vì hai người hiếm khi trùng động tác.
+
+Hãy đếm số cặp chỉ số (i, j) với 1 ≤ i < j ≤ n sao cho gcd(a_i, a_j) = 1. Lưu ý hai vũ công khác nhau có thể có cùng nhịp, và gcd(1, 1) = 1.
+
+Đầu vào:
+- Dòng đầu chứa số nguyên n.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n.
+
+Đầu ra:
+- Một số nguyên duy nhất là số cặp tìm được.
+
+Giới hạn:
+- 2 ≤ n ≤ 3000.
+- 1 ≤ a_i ≤ 10^6.
+
+Gợi ý:
+- Mỗi số 1 tạo cặp hợp lệ với mọi vũ công khác, kể cả với số 1 còn lại: có 5 + 4 = 9 cặp chứa ít nhất một số 1. Trong các số 2, 3, 4, 6 chỉ có (2, 3) và (3, 4) là hợp lệ, tổng cộng 11 cặp.
+- Gọi c_d là số phần tử chia hết cho d. Theo công thức nghịch đảo Möbius, số cặp nguyên tố cùng nhau bằng tổng của μ(d) · c_d · (c_d - 1) / 2 trên mọi d ≥ 1, trong đó μ là hàm Möbius. Tính μ bằng sàng, tính c_d bằng cách duyệt các bội của d.

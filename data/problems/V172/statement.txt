@@ -1,0 +1,22 @@
+Dọc con đèo có n trạm đo nhiệt độ, đánh số từ 1 đến n theo thứ tự từ chân đèo lên đỉnh. Trạm thứ i đang báo nhiệt độ a_i (đơn vị phần nghìn độ, có thể âm). Trung tâm khí tượng nhận lần lượt q thông báo: hoặc một trạm gửi số đo mới, hoặc tài xế hỏi nhiệt độ thấp nhất trên một quãng đèo để chuẩn bị xích chống trượt. Hãy trả lời các câu hỏi đó.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và q.
+- Dòng thứ hai gồm n số nguyên a_1, a_2, ..., a_n.
+- q dòng tiếp theo, mỗi dòng là một thông báo ở một trong hai dạng sau.
+- Dạng "1 i x": trạm i gửi số đo mới, gán a_i = x.
+- Dạng "2 l r": hỏi giá trị nhỏ nhất trong a_l, a_(l+1), ..., a_r.
+
+Đầu ra:
+- Với mỗi thông báo dạng 2, in ra giá trị nhỏ nhất tương ứng trên một dòng, theo đúng thứ tự xuất hiện.
+
+Giới hạn:
+- 1 ≤ n, q ≤ 10^3.
+- 1 ≤ i ≤ n, 1 ≤ l ≤ r ≤ n.
+- |a_i| ≤ 10^9, |x| ≤ 10^9.
+- Có ít nhất một thông báo dạng 2.
+
+Gợi ý:
+- Ở ví dụ, ban đầu a = [5, -2, 7, 0, 3, 8]. Quãng [3, 6] gồm 7, 0, 3, 8 nên nhỏ nhất là 0.
+- Sau khi gán a_4 = 9, quãng [3, 6] gồm 7, 9, 3, 8 nên nhỏ nhất là 3; cả con đèo nhỏ nhất là -2.
+- Sau khi gán a_2 = 10, quãng [1, 2] gồm 5 và 10 nên nhỏ nhất là 5.

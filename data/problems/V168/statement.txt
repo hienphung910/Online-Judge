@@ -1,0 +1,20 @@
+Một dòng họ lớn có n người đánh số từ 1 đến n, người 1 là cụ tổ. Mỗi người i (i ≥ 2) có đúng một người cha là p_i, nên gia phả tạo thành một cây có gốc là người 1. Chi họ của người u gồm u và toàn bộ con cháu của u.
+
+Trong ngày hội làng, người thứ i cầm một lá cờ màu c_i. Với mỗi người u, trưởng họ muốn biết trong chi họ của u có bao nhiêu màu cờ khác nhau.
+
+Đầu vào:
+- Dòng đầu gồm số nguyên n.
+- Dòng thứ hai gồm n số nguyên c_1, c_2, ..., c_n.
+- Dòng thứ ba gồm n - 1 số nguyên p_2, p_3, ..., p_n (dòng này để trống khi n = 1).
+
+Đầu ra:
+- Một dòng gồm n số nguyên, số thứ u là số màu cờ khác nhau trong chi họ của người u.
+
+Giới hạn:
+- 1 ≤ n ≤ 2000.
+- 1 ≤ c_i ≤ 10^5.
+- 1 ≤ p_i ≤ n, p_i ≠ i, và đảm bảo các quan hệ cha con tạo thành một cây gốc 1 (p_i không nhất thiết nhỏ hơn i). Cây có thể suy biến thành một chuỗi dài n.
+
+Gợi ý:
+- Ở ví dụ, người 1 có hai con là 2 và 3; người 2 có hai con là 4 và 5; người 3 có con là 6. Chi họ của người 1 là cả dòng họ với các màu {1, 2, 3} nên có 3 màu; chi họ của người 2 gồm 2, 4, 5 với các màu {3, 1}; chi họ của người 3 gồm 3, 6 với các màu {2, 3}; mỗi người 4, 5, 6 có 1 màu.
+- Kỹ thuật DSU trên cây (small-to-large): mỗi đỉnh giữ tập màu của chi họ mình, khi gộp vào cha thì luôn đổ tập nhỏ hơn vào tập lớn hơn.

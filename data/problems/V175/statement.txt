@@ -1,0 +1,23 @@
+Một con kênh được chia thành n đoạn, đánh số từ 1 đến n. Mực nước ở đoạn thứ i đang là a_i milimét so với mốc chuẩn (có thể âm). Trong mùa mưa có q sự kiện xảy ra lần lượt: hoặc trạm bơm làm mực nước của mọi đoạn từ l đến r cùng tăng (hoặc cùng giảm) một lượng x, hoặc một thuyền trưởng hỏi mực nước thấp nhất trên quãng kênh từ l đến r để biết thuyền có đi qua được không. Hãy trả lời các câu hỏi của thuyền trưởng.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và q.
+- Dòng thứ hai gồm n số nguyên a_1, a_2, ..., a_n.
+- q dòng tiếp theo, mỗi dòng là một sự kiện ở một trong hai dạng sau.
+- Dạng "1 l r x": cộng x vào a_l, a_(l+1), ..., a_r (x có thể âm).
+- Dạng "2 l r": hỏi giá trị nhỏ nhất trong a_l, a_(l+1), ..., a_r.
+
+Đầu ra:
+- Với mỗi sự kiện dạng 2, in ra giá trị nhỏ nhất tương ứng trên một dòng, theo đúng thứ tự xuất hiện.
+
+Giới hạn:
+- 1 ≤ n, q ≤ 10^3.
+- 1 ≤ l ≤ r ≤ n.
+- |a_i| ≤ 10^9, |x| ≤ 10^9.
+- Có ít nhất một sự kiện dạng 2.
+- Mực nước có thể vượt quá phạm vi kiểu int, hãy dùng số nguyên 64-bit (long long / long).
+
+Gợi ý:
+- Ở ví dụ, ban đầu a = [4, 9, 2, 6, 5]. Quãng [1, 5] có mực nước thấp nhất là 2.
+- Cộng 5 vào đoạn [2, 3] được [4, 14, 7, 6, 5]; quãng [2, 4] thấp nhất là 6.
+- Cộng -3 vào đoạn [1, 1] được [1, 14, 7, 6, 5]; quãng [1, 3] thấp nhất là 1, quãng [2, 5] thấp nhất là 5.

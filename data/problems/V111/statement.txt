@@ -1,0 +1,20 @@
+Gần Tết, quầy vé ở ga chỉ còn một cửa bán. Có n người đang xếp hàng, người đứng thứ i (tính từ đầu hàng) cần mua t_i vé cho cả gia đình.
+
+Để công bằng, mỗi lượt đến quầy, một người chỉ được mua đúng 1 vé và việc này mất đúng 1 phút. Mua xong, nếu người đó vẫn còn thiếu vé thì quay lại đứng ở cuối hàng; nếu đã đủ vé thì ra về. Phút thứ 1 bắt đầu với người đứng đầu hàng, và quầy bán liên tục cho tới khi không còn ai.
+
+Với mỗi người, hãy cho biết người đó mua xong vé cuối cùng vào cuối phút thứ mấy.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- Dòng thứ hai chứa n số nguyên t_1, t_2, ..., t_n.
+
+Đầu ra:
+- In ra trên một dòng n số nguyên, số thứ i là phút mà người đứng thứ i ban đầu mua xong vé cuối cùng.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000.
+- 1 ≤ t_i ≤ 1000.
+
+Gợi ý:
+- Mô phỏng bằng một hàng đợi (queue) chứa chỉ số người: lấy người ở đầu ra, bán 1 vé, nếu còn thiếu thì đẩy lại vào cuối.
+- Ví dụ: phút 1 người 1 mua (còn thiếu 1 vé, về cuối hàng); phút 2 người 2 mua xong; phút 3 người 3 mua (còn thiếu 2); phút 4 người 1 mua xong; phút 5 và 6 chỉ còn người 3, người 3 xong ở phút 6.

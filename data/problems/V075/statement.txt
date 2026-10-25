@@ -1,0 +1,21 @@
+An đang học thuật toán sắp xếp nhanh (quick sort) và cài đặt phiên bản đơn giản sau cho một danh sách các số đôi một khác nhau:
+- Nếu danh sách có không quá 1 phần tử thì dừng.
+- Ngược lại, lấy phần tử đầu tiên làm chốt. Duyệt lần lượt từng phần tử còn lại theo đúng thứ tự trong danh sách, so sánh nó với chốt (mỗi lần như vậy tính là một phép so sánh): nhỏ hơn chốt thì nối vào cuối danh sách TRÁI, lớn hơn chốt thì nối vào cuối danh sách PHẢI.
+- Sắp xếp danh sách TRÁI, sắp xếp danh sách PHẢI theo đúng cách trên, rồi ghép TRÁI, chốt, PHẢI lại.
+
+Thầy giáo nói rằng số phép so sánh phụ thuộc rất nhiều vào thứ tự ban đầu. Cho danh sách ban đầu là một hoán vị, hãy đếm tổng số phép so sánh mà thuật toán thực hiện.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- Dòng thứ hai chứa n số nguyên p_1, p_2, ..., p_n là danh sách ban đầu.
+
+Đầu ra:
+- In ra một số nguyên là tổng số phép so sánh.
+
+Giới hạn:
+- 1 ≤ n ≤ 4000.
+- p_1, p_2, ..., p_n là một hoán vị của 1, 2, ..., n (mỗi số xuất hiện đúng một lần).
+
+Gợi ý:
+- Với danh sách 3 1 4 5 2: chốt 3 được so sánh với 4 phần tử, tạo TRÁI = 1 2 và PHẢI = 4 5. Danh sách 1 2 tốn 1 phép so sánh (chốt 1, PHẢI = 2), danh sách 4 5 cũng tốn 1 phép so sánh. Tổng cộng 4 + 1 + 1 = 6.
+- Khi danh sách ban đầu đã được sắp xếp, mỗi lần chia chỉ bớt đi đúng một phần tử nên số phép so sánh là lớn nhất.

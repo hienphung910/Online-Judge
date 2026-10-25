@@ -1,0 +1,27 @@
+Khoa Công nghệ thông tin có n học phần đánh số từ 1 đến n và m điều kiện tiên quyết, điều kiện thứ j có dạng "phải học xong học phần u_j rồi mới được học học phần v_j". Mỗi sinh viên phải lập một kế hoạch học lần lượt từng học phần, mỗi học phần đúng một lần, sao cho mọi điều kiện tiên quyết đều được tôn trọng. Nếu các điều kiện mâu thuẫn vòng tròn thì không thể lập kế hoạch nào.
+
+Phòng đào tạo nhận được rất nhiều kế hoạch và nhờ bạn viết chương trình chấm: với mỗi kế hoạch, cho biết nó đúng hay sai.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên T là số bộ dữ liệu.
+- Mỗi bộ dữ liệu bắt đầu bằng dòng chứa hai số nguyên n và m. Tiếp theo là m dòng, mỗi dòng chứa hai số nguyên u và v: phải học u trước v.
+- Dòng cuối của bộ dữ liệu là kế hoạch của sinh viên, có một trong hai dạng:
+  + chỉ gồm số 0: sinh viên khẳng định không thể lập kế hoạch nào;
+  + số 1, tiếp theo là n số nguyên p_1, p_2, ..., p_n: học lần lượt các học phần p_1, p_2, ..., p_n. Các số này có thể sai: nằm ngoài [1, n] hoặc trùng nhau.
+
+Đầu ra:
+- In ra T dòng, dòng thứ k là DUNG nếu kế hoạch của bộ thứ k đúng, ngược lại là SAI.
+- Kế hoạch dạng 0 đúng khi và chỉ khi thật sự không tồn tại kế hoạch hợp lệ nào.
+- Kế hoạch dạng 1 đúng khi và chỉ khi p_1, ..., p_n là một hoán vị của 1, 2, ..., n và với mọi điều kiện (u, v), học phần u đứng trước học phần v trong dãy p.
+
+Giới hạn:
+- 1 ≤ T ≤ 50.
+- n ≥ 1, m ≥ 0; tổng n của tất cả các bộ không vượt quá 1000, tổng m không vượt quá 2000.
+- 1 ≤ u, v ≤ n, u ≠ v. Một điều kiện có thể được cho nhiều lần.
+- Ở dạng thứ hai, |p_i| ≤ 10^9.
+
+Gợi ý:
+- Bộ 1: thứ tự 3, 1, 2, 4 tôn trọng cả ba điều kiện (1 trước 2, 3 trước 1, 2 trước 4) nên DUNG.
+- Bộ 2: cùng các điều kiện nhưng học 2 trước 1 nên SAI.
+- Bộ 3: các điều kiện 1 trước 2, 2 trước 3, 3 trước 1 tạo thành vòng tròn, không thể lập kế hoạch, nên khẳng định 0 là DUNG.
+- Bộ 4: không có điều kiện nào nhưng học phần 2 xuất hiện hai lần còn học phần 1 không xuất hiện nên SAI.

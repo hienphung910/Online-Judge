@@ -1,0 +1,18 @@
+Đài khí tượng của một thị trấn vùng núi đã có bản dự báo nhiệt độ cho n ngày tới, ngày thứ i có nhiệt độ t_i độ C. Bà con muốn biết: kể từ mỗi ngày, phải chờ thêm bao nhiêu ngày nữa mới có một ngày ấm hơn hẳn ngày đó?
+
+Cụ thể, với mỗi ngày i, gọi j là ngày nhỏ nhất sao cho j > i và t_j > t_i (lớn hơn hẳn, bằng nhau không tính). Số ngày phải chờ là j - i. Nếu không có ngày j nào như vậy thì số ngày phải chờ là 0.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- Dòng thứ hai chứa n số nguyên t_1, t_2, ..., t_n.
+
+Đầu ra:
+- In ra trên một dòng n số nguyên, số thứ i là số ngày phải chờ của ngày i.
+
+Giới hạn:
+- 1 ≤ n ≤ 3000.
+- -50 ≤ t_i ≤ 50.
+
+Gợi ý:
+- Ví dụ: ngày 3 có nhiệt độ 22, ngày 4 cũng 22 (không ấm hơn hẳn), ngày 5 có 25 nên phải chờ 2 ngày. Ngày 8 là ngày cuối nên in 0.
+- Duyệt các ngày từ trái sang phải, giữ một ngăn xếp các ngày "chưa tìm được ngày ấm hơn"; nhiệt độ trong ngăn xếp không tăng từ đáy lên đỉnh. Khi gặp ngày i, lấy ra mọi ngày ở đỉnh có nhiệt độ nhỏ hơn t_i - ngày i chính là câu trả lời của chúng. Mỗi ngày vào và ra ngăn xếp nhiều nhất một lần nên tổng độ phức tạp là O(n).

@@ -1,0 +1,23 @@
+Phòng cấp cứu của bệnh viện huyện có một bác sĩ trực. Bệnh nhân đến được y tá đánh giá mức độ nguy kịch p (p càng lớn càng nguy kịch) rồi ngồi vào phòng chờ. Mỗi khi bác sĩ rảnh, bác sĩ gọi vào khám người có p lớn nhất trong phòng chờ; nếu có nhiều người cùng p lớn nhất thì gọi người đến sớm nhất trong số đó. Người đã được gọi rời khỏi phòng chờ.
+
+Có Q sự kiện xảy ra theo thứ tự thời gian, mỗi sự kiện thuộc một trong hai loại:
+- "1 ten p": một bệnh nhân tên ten, mức độ nguy kịch p, vừa đến phòng chờ.
+- "2": bác sĩ rảnh và gọi bệnh nhân tiếp theo.
+
+Với mỗi sự kiện loại 2, hãy cho biết tên người được gọi. Nếu lúc đó phòng chờ không có ai thì in ra TRONG.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên Q.
+- Q dòng tiếp theo, mỗi dòng mô tả một sự kiện theo đúng một trong hai dạng trên.
+
+Đầu ra:
+- Với mỗi sự kiện loại 2 (theo thứ tự xuất hiện), in ra một dòng chứa tên người được gọi hoặc TRONG.
+
+Giới hạn:
+- 1 ≤ Q ≤ 1500, có ít nhất một sự kiện loại 2.
+- Tên gồm từ 1 đến 8 chữ cái tiếng Anh in thường; tên có thể trùng nhau.
+- 1 ≤ p ≤ 100.
+
+Gợi ý:
+- Dùng hàng đợi ưu tiên (heap) lưu cặp (p, thứ tự đến): ưu tiên p lớn hơn, nếu p bằng nhau thì ưu tiên thứ tự đến nhỏ hơn. Mỗi thao tác thêm hoặc lấy ra mất O(log Q).
+- Ví dụ: lần gọi đầu, binh và chi cùng có p = 5 nhưng binh đến trước nên binh được gọi. Lần gọi cuối cùng phòng chờ đã trống.

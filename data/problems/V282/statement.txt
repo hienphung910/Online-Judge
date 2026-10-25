@@ -1,0 +1,22 @@
+Một cỗ máy tính có màn hình chỉ hiển thị được các số từ 0 đến m - 1. Lúc khởi động, màn hình hiện số 1 mod m. Cỗ máy có đúng một nút bấm: mỗi lần bấm, số đang hiện được nhân với a rồi màn hình chỉ giữ lại phần dư khi chia cho m. Như vậy sau x lần bấm, màn hình hiện a^x mod m (quy ước a^0 = 1, kể cả khi a = 0).
+
+Khác với những cỗ máy thông thường, m ở đây không nhất thiết là số nguyên tố, và a có thể có ước chung với m. Hãy cho biết phải bấm nút ít nhất bao nhiêu lần để màn hình hiện số b, hoặc cho biết điều đó không bao giờ xảy ra.
+
+Đầu vào:
+- Dòng đầu chứa số nguyên T, số bộ dữ liệu.
+- T dòng tiếp theo, mỗi dòng chứa ba số nguyên a, b, m.
+
+Đầu ra:
+- Với mỗi bộ dữ liệu, in ra trên một dòng số nguyên x ≥ 0 nhỏ nhất thỏa mãn a^x ≡ b (mod m), hoặc -1 nếu không tồn tại.
+
+Giới hạn:
+- 1 ≤ T ≤ 100.
+- 2 ≤ m ≤ 10^9.
+- 0 ≤ a, b < m.
+- Tích của hai số nhỏ hơn m có thể vượt quá 2^31, hãy dùng số nguyên 64 bit khi nhân.
+
+Gợi ý:
+- 2^3 = 8 ≡ 0 (mod 8) nên bộ 1 có đáp án 3; 2^2 = 4 (mod 12) nên bộ 2 có đáp án 2.
+- Với a = 6, m = 12: các lũy thừa cho dãy 1, 6, 0, 0, ... nên không bao giờ được 3.
+- Các lũy thừa của 5 theo modulo 9 là 1, 5, 7, 8, 4, 2, ... nên bộ 4 có đáp án 5. Bộ 5: 0^1 = 0. Bộ 6: b = 1 nên không cần bấm lần nào.
+- Khi g = gcd(a, m) > 1: nếu b không chia hết cho g (và b ≠ a^x với các x nhỏ đã thử) thì vô nghiệm; ngược lại chia cả phương trình cho g và lặp lại cho tới khi a nguyên tố cùng nhau với modulo, rồi dùng baby-step giant-step. Đừng quên kiểm tra các nghiệm nhỏ xuất hiện trong quá trình chia.

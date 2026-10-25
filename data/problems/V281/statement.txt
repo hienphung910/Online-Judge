@@ -1,0 +1,20 @@
+Một khu vườn được trồng cây tại mọi điểm nguyên (x, y) trên mặt phẳng với x ≥ 1 và y ≥ 1. Người gác vườn đứng ở gốc tọa độ (0, 0) và nhìn về phía các cây. Coi mỗi cây là một điểm; cây (x, y) bị một cây khác che nếu cây đó nằm trên đoạn thẳng nối (0, 0) với (x, y), khác (x, y). Ví dụ cây (4, 6) bị đúng một cây che, đó là cây (2, 3); còn cây (2, 3) không bị cây nào che.
+
+Người gác vườn có q câu hỏi. Câu hỏi thứ j cho ba số a_j, b_j, k_j: trong các cây (x, y) với 1 ≤ x ≤ a_j và 1 ≤ y ≤ b_j, có bao nhiêu cây bị đúng k_j - 1 cây khác che?
+
+Đầu vào:
+- Dòng đầu chứa số nguyên q.
+- q dòng tiếp theo, dòng thứ j chứa ba số nguyên a_j, b_j, k_j.
+
+Đầu ra:
+- In ra q dòng, dòng thứ j là đáp án của câu hỏi thứ j.
+
+Giới hạn:
+- 1 ≤ q ≤ 800.
+- 1 ≤ a_j, b_j, k_j ≤ 10^6.
+- Đáp án có thể vượt quá 2^31, hãy dùng số nguyên 64 bit.
+
+Gợi ý:
+- Các cây che cây (x, y) chính là các điểm (x / g · t, y / g · t) với 1 ≤ t < g, trong đó g = gcd(x, y). Vì vậy cây (x, y) bị đúng k - 1 cây che khi và chỉ khi gcd(x, y) = k.
+- Câu hỏi 1: với x, y từ 1 đến 3, chỉ có (2, 2) và (3, 3) bị che, còn lại 7 cây. Câu hỏi 2: các cây có gcd bằng 2 là (2, 2), (2, 4), (2, 6), (4, 2), (4, 6). Câu hỏi 3: không có cây nào vì k quá lớn.
+- Đặt x = k · x', y = k · y' thì cần đếm số cặp nguyên tố cùng nhau với x' ≤ A = ⌊a / k⌋, y' ≤ B = ⌊b / k⌋, bằng tổng của μ(d) · ⌊A / d⌋ · ⌊B / d⌋ với d từ 1 đến min(A, B). Duyệt từng d cho mỗi câu hỏi là quá chậm; hãy gom các d có cùng giá trị ⌊A / d⌋ và ⌊B / d⌋ (chỉ có O(√A + √B) nhóm) và dùng tổng tiền tố của μ.

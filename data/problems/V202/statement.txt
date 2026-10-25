@@ -1,0 +1,20 @@
+Bác Ba nuôi nấm trong nhà kính. Bác ghi lại số túi nấm thu hoạch được mỗi ngày: ngày 0 thu được f(0) túi, ngày 1 thu được f(1) túi. Từ ngày 2 trở đi, nhờ bào tử từ hai ngày trước lan sang, số túi nấm của ngày n luôn bằng f(n) = a·f(n - 1) + b·f(n - 2) + c.
+
+Bác Ba muốn biết trước sản lượng ở một số ngày rất xa trong tương lai. Vì các con số rất lớn, hãy trả lời mỗi câu hỏi bằng phần dư khi chia f(n) cho 10^9 + 7.
+
+Đầu vào:
+- Dòng đầu tiên chứa năm số nguyên a, b, c, f(0), f(1).
+- Dòng thứ hai chứa số nguyên T là số câu hỏi.
+- T dòng tiếp theo, mỗi dòng chứa một số nguyên n.
+
+Đầu ra:
+- Với mỗi câu hỏi, in ra trên một dòng giá trị f(n) mod (10^9 + 7).
+
+Giới hạn:
+- 0 ≤ a, b, c, f(0), f(1) ≤ 10^9.
+- 1 ≤ T ≤ 500.
+- 0 ≤ n ≤ 10^18.
+
+Gợi ý:
+- Với a = b = c = 1, f(0) = 0, f(1) = 1, dãy bắt đầu bằng 0, 1, 2, 4, 7, 12, 20, 33, 54, 88, 143, nên f(5) = 12 và f(10) = 143.
+- Vector (f(i), f(i - 1), 1) nhân với một ma trận 3 dòng 3 cột cố định sẽ cho (f(i + 1), f(i), 1). Lũy thừa nhanh ma trận đó để nhảy thẳng tới ngày n.

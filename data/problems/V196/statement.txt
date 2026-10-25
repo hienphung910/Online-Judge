@@ -1,0 +1,20 @@
+Đồng cỏ của trang trại được rào bằng một hàng rào hình đa giác đơn (không tự cắt, không tự chạm) đi qua n cọc có toạ độ nguyên theo đúng thứ tự (x_1, y_1), (x_2, y_2), ..., (x_n, y_n), cọc cuối nối về cọc đầu. Đồng cỏ có thể lồi lõm tuỳ ý, thứ tự cọc có thể theo hoặc ngược chiều kim đồng hồ.
+
+Camera ghi lại vị trí của q con bò. Với mỗi con bò, hãy cho biết nó đang ở trong đồng cỏ, đứng ngay trên hàng rào, hay đã ra ngoài.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và q.
+- n dòng tiếp theo, mỗi dòng chứa hai số nguyên là toạ độ một cọc rào, theo thứ tự trên hàng rào. Các cọc đôi một khác nhau.
+- q dòng tiếp theo, mỗi dòng chứa hai số nguyên là vị trí một con bò.
+
+Đầu ra:
+- In ra q dòng, dòng thứ i là TRONG nếu con bò thứ i nằm hẳn bên trong đồng cỏ, BIEN nếu nó nằm trên hàng rào (trên một cạnh hoặc trùng một cọc), NGOAI nếu nó nằm hẳn bên ngoài.
+
+Giới hạn:
+- 3 ≤ n ≤ 1000, 1 ≤ q ≤ 1000.
+- Mọi toạ độ (đỉnh đa giác và vị trí con bò) đều là số nguyên có trị tuyệt đối không vượt quá 10^4.
+
+Gợi ý:
+- Đồng cỏ có hình chữ U: phần chân rộng từ x = 0 đến x = 6, hai nhánh cao tới y = 4 với chỗ lõm ở giữa (2 < x < 4, 2 < y ≤ 4).
+- (1, 1) nằm ở chân chữ U: TRONG. (3, 3) nằm trong chỗ lõm nên NGOAI dù bị hai nhánh vây hai bên. (3, 2) nằm trên cạnh đáy chỗ lõm: BIEN. (6, 4) trùng một cọc: BIEN. (5, 3) nằm trong nhánh phải: TRONG. (7, 2) nằm ngoài.
+- Cách quen thuộc: bắn một tia từ con bò sang phải và đếm số cạnh tia cắt qua; lẻ là bên trong, chẵn là bên ngoài. Cần cẩn thận khi tia đi qua đúng một cọc.

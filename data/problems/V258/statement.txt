@@ -1,0 +1,26 @@
+Một nông trại trồng n cây giống đánh số từ 1 đến n, nối với nhau bởi n - 1 đường ống tưới tạo thành một cây có gốc là cây giống số 1: với mỗi i ≥ 2, cây giống i được nối trực tiếp với cây giống p_i (p_i < i), và ta gọi p_i là cha của i. Mỗi cây giống có một chỉ số sức khỏe a_i (có thể âm).
+
+Người quản lý thực hiện q thao tác theo thứ tự:
+- 1 u v x: đi dọc đường ống từ cây u tới cây v và bón phân cho mọi cây trên đường đi (tính cả u và v); chỉ số sức khỏe của mỗi cây đó tăng thêm x (x có thể âm).
+- 2 u: hỏi tổng chỉ số sức khỏe của tất cả các cây thuộc nhánh gốc u, gồm u và mọi cây nhận u làm tổ tiên.
+- 3 u v: hỏi chỉ số sức khỏe lớn nhất trong các cây nằm trên đường đi từ u tới v (tính cả u và v).
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và q.
+- Dòng thứ hai gồm n số nguyên a_1, a_2, ..., a_n.
+- Dòng thứ ba gồm n - 1 số nguyên p_2, p_3, ..., p_n.
+- q dòng tiếp theo, mỗi dòng mô tả một thao tác theo định dạng trên.
+
+Đầu ra:
+- Với mỗi thao tác loại 2 hoặc 3, in ra trên một dòng câu trả lời.
+
+Giới hạn:
+- 2 ≤ n ≤ 1000.
+- 1 ≤ q ≤ 800.
+- |a_i| ≤ 10^4; |x| ≤ 10^4.
+- 1 ≤ p_i < i; 1 ≤ u, v ≤ n (u có thể bằng v).
+
+Gợi ý:
+- Đường đi từ cây 4 tới cây 3 là 4 → 2 → 1 → 3 với các chỉ số 0, -1, 2, 3; lớn nhất là 3.
+- Bón x = 2 trên đường 4 → 2 → 5, chỉ số mới là 2, 1, 3, 2, 6. Nhánh gốc 2 gồm các cây 2, 4, 5 có tổng 1 + 2 + 6 = 9.
+- Bón x = -5 trên đường 3 → 1, chỉ số mới là -3, 1, -2, 2, 6. Trên đường 3 → 1 lớn nhất là -2; cả vườn có tổng 4.

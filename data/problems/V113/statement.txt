@@ -1,0 +1,21 @@
+Cánh đồng dưa hấu của hợp tác xã được chia thành bảng n hàng, m cột ô vuông. Ô ở hàng i, cột j (đánh số từ 1) có a_(i,j) quả dưa đã chín.
+
+Thương lái đến hỏi mua q lần. Lần thứ k họ muốn thu hoạch toàn bộ một vùng hình chữ nhật có góc trên trái là ô (x1, y1) và góc dưới phải là ô (x2, y2). Với mỗi lần hỏi, hãy cho biết vùng đó có tổng cộng bao nhiêu quả dưa chín (các lần hỏi độc lập với nhau, dưa không bị hái thật).
+
+Đầu vào:
+- Dòng đầu tiên chứa ba số nguyên n, m, q.
+- n dòng tiếp theo, dòng thứ i chứa m số nguyên a_(i,1), a_(i,2), ..., a_(i,m).
+- q dòng tiếp theo, mỗi dòng chứa bốn số nguyên x1, y1, x2, y2.
+
+Đầu ra:
+- In ra q dòng, dòng thứ k là tổng số quả dưa trong vùng của lần hỏi thứ k.
+
+Giới hạn:
+- 1 ≤ n ≤ 50, 1 ≤ m ≤ 50, 1 ≤ q ≤ 1000.
+- 0 ≤ a_(i,j) ≤ 1000.
+- 1 ≤ x1 ≤ x2 ≤ n, 1 ≤ y1 ≤ y2 ≤ m.
+
+Gợi ý:
+- Gọi S(i, j) là tổng các ô trong hình chữ nhật từ (1, 1) đến (i, j). Ta có S(i, j) = a_(i,j) + S(i-1, j) + S(i, j-1) - S(i-1, j-1).
+- Tổng vùng (x1, y1) - (x2, y2) bằng S(x2, y2) - S(x1-1, y2) - S(x2, y1-1) + S(x1-1, y1-1).
+- Ví dụ: lần hỏi thứ hai gồm các ô 6, 7, 1, 2 nên tổng là 16.

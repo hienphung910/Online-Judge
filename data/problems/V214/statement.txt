@@ -1,0 +1,24 @@
+Bác Tư có một luống rau dài gồm n khóm, đánh số từ 1 đến n. Chỉ số độ ẩm ban đầu của khóm thứ i là a_i (có thể âm nếu đất quá khô). Bác lần lượt thực hiện q thao tác, mỗi thao tác thuộc một trong hai loại:
+- "1 l r x": bác tưới cho tất cả các khóm từ l đến r, mỗi khóm có độ ẩm tăng thêm x (x âm nghĩa là nắng làm khô đi |x|).
+- "2 l r": bác muốn biết tổng độ ẩm của các khóm từ l đến r.
+
+Hãy trả lời các câu hỏi của bác Tư.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và q.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n.
+- q dòng tiếp theo, mỗi dòng mô tả một thao tác theo một trong hai dạng trên.
+
+Đầu ra:
+- Với mỗi thao tác loại 2, in ra trên một dòng tổng độ ẩm a_l + a_(l+1) + ... + a_r tại thời điểm đó.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000, 1 ≤ q ≤ 1000.
+- |a_i| ≤ 10^6, |x| ≤ 10^6.
+- 1 ≤ l ≤ r ≤ n.
+- Có ít nhất một thao tác loại 2.
+
+Gợi ý:
+- Dãy ban đầu 2 -1 0 5 3 6. Tưới đoạn [2, 5] thêm 4 được 2 3 4 9 7 6, tổng đoạn [1, 3] là 9. Sau đó nắng làm đoạn [3, 6] giảm 10, dãy thành 2 3 -6 -1 -3 -4; tổng đoạn [2, 6] là -11 và tổng cả dãy là -9.
+- Kết quả có thể vượt quá 2^31, hãy dùng số nguyên 64 bit.
+- Chia dãy thành các khối độ dài khoảng căn n. Với mỗi khối lưu tổng thật và một giá trị "cộng chờ" áp dụng cho cả khối: thao tác phủ trọn khối chỉ sửa giá trị chờ, mẩu lẻ hai đầu thì sửa từng phần tử. Mỗi thao tác tốn khoảng O(căn n).

@@ -1,0 +1,23 @@
+Chợ phiên vùng cao có n sạp hàng dọc theo con dốc, đánh số từ 1 đến n. Sạp thứ i đang bán loại hàng có mã a_i. Một loại hàng được gọi là "độc nhất" trong một đoạn dốc nếu trong đoạn đó có đúng một sạp bán loại hàng ấy. Trong ngày có q sự kiện xảy ra theo thứ tự:
+- "1 p v": sạp thứ p chuyển sang bán loại hàng có mã v.
+- "2 l r": một nhà sưu tầm đi từ sạp l đến sạp r và hỏi có bao nhiêu loại hàng độc nhất trong đoạn này.
+
+Hãy trả lời mọi câu hỏi của nhà sưu tầm.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và q.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n.
+- q dòng tiếp theo, mỗi dòng mô tả một sự kiện theo một trong hai dạng trên.
+
+Đầu ra:
+- Với mỗi sự kiện loại 2, in ra trên một dòng số giá trị x xuất hiện đúng một lần trong a_l, a_(l+1), ..., a_r tại thời điểm đó.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000, 1 ≤ q ≤ 1000.
+- 1 ≤ a_i, v ≤ 10^9.
+- 1 ≤ p ≤ n, 1 ≤ l ≤ r ≤ n.
+- Có ít nhất một sự kiện loại 2.
+
+Gợi ý:
+- Dãy ban đầu 5 8 5 2 8 9. Đoạn [1, 6] có 2 và 9 xuất hiện đúng một lần nên đáp án là 2. Đoạn [2, 4] là 8 5 2 có 3 loại độc nhất. Sau khi sạp 3 chuyển sang bán mã 9, dãy là 5 8 9 2 8 9: đoạn [1, 6] còn 5 và 2 là độc nhất (đáp án 2), đoạn [3, 5] là 9 2 8 có đáp án 3.
+- Thuật toán Mo có cập nhật: coi mỗi câu hỏi là bộ ba (l, r, t) với t là số sự kiện loại 1 đã xảy ra trước nó. Chia trục chỉ số thành các khối độ dài khoảng n^(2/3), sắp xếp câu hỏi theo (khối của l, khối của r, t), rồi di chuyển cả ba con trỏ l, r, t. Áp dụng hoặc hoàn tác một lần sửa ở vị trí p chỉ ảnh hưởng tới đáp án hiện tại khi p nằm trong đoạn đang xét.

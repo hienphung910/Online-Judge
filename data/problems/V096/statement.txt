@@ -1,0 +1,19 @@
+Sau kỳ thi, phòng đào tạo có bảng điểm của n thí sinh, điểm của thí sinh thứ i là a_i (đã quy ra số nguyên). Các thầy cô liên tục hỏi: "Có bao nhiêu thí sinh có điểm nằm trong đoạn từ l đến r?". Hãy trả lời nhanh q câu hỏi như vậy.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và q.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n.
+- q dòng tiếp theo, mỗi dòng chứa hai số nguyên l và r mô tả một câu hỏi.
+
+Đầu ra:
+- Với mỗi câu hỏi, in ra trên một dòng số lượng chỉ số i thỏa mãn l ≤ a_i ≤ r.
+
+Giới hạn:
+- 1 ≤ n ≤ 1000.
+- 1 ≤ q ≤ 1000.
+- 0 ≤ a_i ≤ 10^6.
+- 0 ≤ l ≤ r ≤ 10^6.
+
+Gợi ý:
+- Sắp xếp bảng điểm một lần. Khi đó số thí sinh có điểm trong [l, r] bằng (vị trí đầu tiên có điểm > r) trừ (vị trí đầu tiên có điểm ≥ l), cả hai tìm được bằng tìm kiếm nhị phân (upper_bound và lower_bound).
+- Với bảng điểm 7 2 9 2 5 10: đoạn [2, 5] có ba điểm 2, 2, 5; đoạn [6, 8] chỉ có điểm 7; đoạn [11, 20] không có ai.

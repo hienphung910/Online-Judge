@@ -1,0 +1,27 @@
+Công ty của chị Hà đang làm ứng dụng chỉ đường. Bản đồ gồm n nút giao thông đánh số từ 1 đến n và m con đường hai chiều, con đường thứ j nối hai nút u_j, v_j và có độ dài w_j. Với mỗi yêu cầu "đi từ nút s tới nút t", ứng dụng phải trả về độ dài ngắn nhất D cùng một đường đi có độ dài đúng bằng D. Vì có thể có nhiều đường đi ngắn nhất, chị Hà không thể so kết quả với một đáp án cố định, nên chị nhờ bạn viết chương trình chấm.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên T là số bộ dữ liệu.
+- Mỗi bộ dữ liệu bắt đầu bằng dòng chứa bốn số nguyên n, m, s, t. Tiếp theo là m dòng, mỗi dòng chứa ba số nguyên u, v, w mô tả một con đường.
+- Dòng cuối của bộ dữ liệu là câu trả lời của ứng dụng, có một trong hai dạng:
+  + chỉ gồm số 0: ứng dụng khẳng định không có đường đi từ s tới t;
+  + số 1, tiếp theo là hai số nguyên D, k, rồi k số nguyên v_1, v_2, ..., v_k: ứng dụng khẳng định độ dài ngắn nhất là D và đường đi lần lượt qua các nút v_1, v_2, ..., v_k. Các số này có thể sai bất kỳ.
+
+Đầu ra:
+- In ra T dòng, dòng thứ i là DUNG nếu câu trả lời của bộ thứ i đúng, ngược lại là SAI.
+- Câu trả lời dạng 0 đúng khi và chỉ khi thật sự không có đường đi từ s tới t.
+- Câu trả lời dạng 1 đúng khi và chỉ khi thỏa mãn tất cả các điều sau: có đường đi từ s tới t và độ dài ngắn nhất đúng bằng D; v_1 = s và v_k = t; mọi v_i nằm trong [1, n]; với mọi i < k, hai nút v_i và v_(i+1) được nối trực tiếp bởi một con đường; tổng độ dài các con đường đó đúng bằng D.
+- Khi s = t, độ dài ngắn nhất là 0 và đường đi chỉ gồm một nút (k = 1, v_1 = s).
+
+Giới hạn:
+- 1 ≤ T ≤ 50.
+- n ≥ 1, m ≥ 0; tổng n của tất cả các bộ không vượt quá 1000, tổng m không vượt quá 1000.
+- 1 ≤ s, t ≤ n; 1 ≤ u, v ≤ n, u ≠ v; 1 ≤ w ≤ 10^9; không có hai con đường nối cùng một cặp nút.
+- Ở dạng thứ hai: |D| ≤ 10^18, k ≥ 1, tổng k của tất cả các bộ không vượt quá 3000, |v_i| ≤ 10^9.
+- Độ dài đường đi có thể vượt quá 2^31, hãy dùng kiểu số nguyên 64 bit.
+
+Gợi ý:
+- Bộ 1: độ dài ngắn nhất từ 1 tới 4 là 5, đường 1 - 2 - 4 có độ dài 2 + 3 = 5 nên DUNG. Đường 1 - 3 - 4 (1 + 4 = 5) cũng là một đáp án đúng.
+- Bộ 2: đường 1 - 4 có độ dài 7, không phải ngắn nhất (D phải bằng 5) nên SAI.
+- Bộ 3: D = 5 đúng là độ dài ngắn nhất, nhưng đường 1 - 2 - 3 - 4 có tổng 2 + 2 + 4 = 8 ≠ 5 nên SAI.
+- Bộ 4: không có con đường nào tới nút 3 nên khẳng định 0 là DUNG.

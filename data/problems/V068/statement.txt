@@ -1,0 +1,18 @@
+Ngân hàng đề thi có n câu hỏi khác nhau, mỗi đề thi gồm k câu được chọn ra (không quan tâm thứ tự), nên có C(n, k) đề thi khác nhau. Ngân hàng lớn đến mức n có thể tới 10^18. Hội đồng chỉ cần biết số đề thi chia lấy dư cho một số nguyên tố p cho trước, với q cặp (n, k) khác nhau.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên p và q, trong đó p là số nguyên tố.
+- q dòng tiếp theo, mỗi dòng chứa hai số nguyên n và k.
+
+Đầu ra:
+- Với mỗi cặp, in ra một dòng chứa C(n, k) mod p. Quy ước C(n, 0) = 1 và C(n, k) = 0 khi k > n.
+
+Giới hạn:
+- 2 ≤ p ≤ 10^6, p là số nguyên tố.
+- 1 ≤ q ≤ 500.
+- 0 ≤ n, k ≤ 10^18.
+
+Gợi ý:
+- Với p = 7: C(10, 3) = 120 chia 7 dư 1. C(8, 4) = 70 chia hết cho 7. C(5, 9) = 0. C(10^18, 1) = 10^18 chia 7 dư 1. C(6, 2) = 15 chia 7 dư 1.
+- n quá lớn nên không thể tính giai thừa tới n. Định lý Lucas: viết n và k trong hệ cơ số p, n = (n_t ... n_1 n_0) và k = (k_t ... k_1 k_0), khi đó C(n, k) ≡ C(n_t, k_t) · ... · C(n_1, k_1) · C(n_0, k_0) (mod p), với C(a, b) = 0 nếu b > a.
+- Mỗi C(a, b) với a < p tính bằng a! · (b!)^(p - 2) · ((a - b)!)^(p - 2) mod p, sau khi đã tính trước giai thừa đến p - 1.

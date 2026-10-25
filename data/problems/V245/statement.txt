@@ -1,0 +1,25 @@
+Bãi tắm được mô tả trên mặt phẳng toạ độ: đường mép nước là trục Ox, phía y > 0 là bãi cát, phía y < 0 là biển. Chòi cứu hộ ở điểm (0, a) trên bãi cát. Một người đang vẫy tay kêu cứu ở điểm (d, -b) dưới biển.
+
+Anh nhân viên cứu hộ chạy trên cát với tốc độ v1 và bơi dưới nước với tốc độ v2 (đơn vị độ dài mỗi giây). Anh sẽ chạy thẳng từ chòi tới một điểm (x, 0) trên mép nước, rồi bơi thẳng từ đó tới người gặp nạn. Điểm xuống nước có thể là bất kỳ số thực x nào. Hãy giúp anh tính thời gian ngắn nhất để tới được chỗ người gặp nạn.
+
+Có Q tình huống độc lập, hãy trả lời tất cả.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên Q.
+- Q dòng tiếp theo, mỗi dòng chứa năm số nguyên a, b, d, v1, v2 mô tả một tình huống.
+
+Đầu ra:
+- Với mỗi tình huống, in trên một dòng thời gian ngắn nhất (tính bằng giây) là một số thực, dùng dấu chấm làm dấu thập phân (nên in ít nhất 6 chữ số sau dấu chấm).
+- Mỗi số được chấp nhận nếu sai số tuyệt đối HOẶC sai số tương đối so với đáp án không vượt quá 10^-6.
+
+Giới hạn:
+- 1 ≤ Q ≤ 800.
+- 1 ≤ a, b ≤ 10^4, 0 ≤ d ≤ 10^4.
+- 1 ≤ v1, v2 ≤ 100.
+- Tất cả dữ liệu vào đều là số nguyên.
+
+Gợi ý:
+- Tình huống 1: chạy và bơi nhanh như nhau nên đi theo đường thẳng từ (0, 3) tới (7, -4) là tốt nhất, dài căn(7^2 + 7^2) ≈ 9.899494937.
+- Tình huống 2: người gặp nạn ở ngay phía dưới chòi (d = 0), chạy 6 đơn vị mất 2 giây và bơi 2 đơn vị mất 2 giây, tổng 4 giây.
+- Tình huống 3: chạy nhanh gấp 5 lần bơi nên anh nên chạy gần hết quãng dọc bờ rồi mới xuống nước.
+- Thời gian f(x) = căn(x^2 + a^2) / v1 + căn((d - x)^2 + b^2) / v2 là tổng của hai hàm lồi nên cũng lồi, và điểm tốt nhất luôn nằm trong đoạn [0, d]. Hãy chặt tam phân trên đoạn này.

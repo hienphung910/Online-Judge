@@ -1,0 +1,20 @@
+Tỉnh có n thành phố đánh số từ 1 đến n và m con đường hai chiều. Con đường thứ i nối hai thành phố u_i, v_i và có tải trọng giới hạn c_i tấn: xe chở hàng nặng hơn c_i tấn không được đi qua.
+
+Công ty vận tải nhận q đơn hàng, đơn thứ j cần chở hàng từ thành phố s_j đến thành phố t_j bằng một chiếc xe tải, được chọn lộ trình tùy ý (có thể đi qua nhiều con đường, nhiều thành phố). Với mỗi đơn, hãy cho biết khối lượng hàng lớn nhất có thể chở, tức là giá trị lớn nhất của tải trọng nhỏ nhất trên lộ trình, xét trên mọi lộ trình từ s_j đến t_j. Nếu không có lộ trình nào thì in -1.
+
+Đầu vào:
+- Dòng đầu gồm ba số nguyên n, m, q.
+- m dòng tiếp theo, mỗi dòng gồm ba số nguyên u, v, c mô tả một con đường.
+- q dòng tiếp theo, mỗi dòng gồm hai số nguyên s, t.
+
+Đầu ra:
+- Gồm q dòng, mỗi dòng là đáp án của một đơn hàng.
+
+Giới hạn:
+- 2 ≤ n ≤ 1000, 0 ≤ m ≤ 1000, 1 ≤ q ≤ 800.
+- 1 ≤ u, v ≤ n, u ≠ v, 1 ≤ c ≤ 10^5. Có thể có nhiều con đường nối cùng một cặp thành phố.
+- 1 ≤ s, t ≤ n, s ≠ t.
+
+Gợi ý:
+- Ở ví dụ, từ 1 đến 4 có lộ trình 1-2-3-4 với các tải trọng 4, 7, 5 nên chở được 4 tấn; không lộ trình nào tốt hơn. Từ 4 đến 2 đi 4-3-2 chở được min(5, 7) = 5 tấn. Thành phố 5 không có đường nào nên đơn 1 → 5 có đáp án -1. Từ 3 đến 1 đi vòng 3-2-1 được 4 tấn, tốt hơn đi thẳng (3 tấn).
+- Lộ trình tốt nhất giữa hai thành phố luôn nằm trên cây khung lớn nhất (dựng bằng Kruskal, xét cạnh theo tải trọng giảm dần). Khi đó mỗi đơn hàng là bài toán tìm cạnh nhỏ nhất trên đường đi giữa hai đỉnh của cây, giải bằng nhảy nhị phân (binary lifting) kèm giá trị nhỏ nhất.

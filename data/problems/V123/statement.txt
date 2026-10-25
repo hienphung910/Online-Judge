@@ -1,0 +1,17 @@
+Lớp 10A bầu lớp trưởng bằng phiếu kín. Mỗi lá phiếu ghi đúng một cái tên (viết thường, không dấu). Thầy chủ nhiệm cần biết lớp đã bầu cho bao nhiêu người khác nhau và ai được nhiều phiếu nhất.
+
+Đầu vào:
+- Dòng đầu gồm số nguyên n là số lá phiếu.
+- Dòng thứ hai gồm n cái tên, cách nhau bởi dấu cách. Mỗi tên chỉ gồm chữ cái tiếng Anh in thường.
+
+Đầu ra:
+- Dòng thứ nhất in số tên khác nhau xuất hiện trên các lá phiếu.
+- Dòng thứ hai in tên được nhiều phiếu nhất và số phiếu của tên đó, cách nhau bởi dấu cách. Nếu có nhiều tên cùng nhiều phiếu nhất, in tên nhỏ nhất theo thứ tự từ điển.
+
+Giới hạn:
+- 1 ≤ n ≤ 3000.
+- Mỗi tên dài từ 1 đến 8 chữ cái.
+
+Gợi ý:
+- Ở ví dụ 1, có 4 tên khác nhau: an, binh, chi, dung. Tên an và chi cùng được 2 phiếu, nhiều nhất; an đứng trước chi theo thứ tự từ điển nên in "an 2".
+- Ở ví dụ 2, chỉ có tên "minh" với 3 phiếu.

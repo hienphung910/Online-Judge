@@ -1,0 +1,19 @@
+Bàn phím điện thoại của Lan lưu lại n từ mà cô đã từng gõ (một từ có thể được lưu nhiều lần). Mỗi khi Lan gõ vài chữ cái đầu, bàn phím cần biết có bao nhiêu từ đã lưu bắt đầu bằng đúng những chữ cái đó để quyết định có hiện gợi ý hay không.
+
+Cho n từ đã lưu và q truy vấn, mỗi truy vấn là một xâu P. Với mỗi truy vấn, hãy đếm số từ đã lưu nhận P làm tiền tố (một từ cũng được coi là tiền tố của chính nó). Các từ trùng nhau được đếm riêng từng lần.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và q.
+- n dòng tiếp theo, mỗi dòng là một từ đã lưu.
+- q dòng tiếp theo, mỗi dòng là một xâu truy vấn P.
+- Mọi xâu khác rỗng và chỉ gồm chữ cái tiếng Anh in thường 'a' đến 'z'.
+
+Đầu ra:
+- Gồm q dòng, dòng thứ j là đáp án của truy vấn thứ j.
+
+Giới hạn:
+- 1 ≤ n ≤ 2·10^3, 1 ≤ q ≤ 2·10^3.
+- Tổng độ dài của tất cả n từ và q xâu truy vấn không vượt quá 15000.
+
+Gợi ý:
+- Ở ví dụ, các từ bắt đầu bằng "a" là "an", "anh", "anh" nên đáp án là 3. Tiền tố "anh" có 2 từ, "b" có 1 từ ("ban"), còn "c" và "emm" không có từ nào.

@@ -1,0 +1,25 @@
+Hàng ghế đầu của một rạp chiếu phim có n ghế, đánh số từ 1 đến n từ trái sang phải. Trạng thái các ghế được cho bởi một xâu s độ dài n: kí tự thứ i là 1 nếu ghế i đang trống và là 0 nếu ghế i đã có người ngồi. Có q sự kiện xảy ra lần lượt:
+- Hoặc trạng thái một ghế bị đảo ngược: ghế trống có người tới ngồi, hoặc người đang ngồi ở ghế đó rời đi.
+- Hoặc một nhóm khách hỏi: nếu đếm các ghế trống từ trái sang phải, ghế trống thứ k nằm ở vị trí nào? Câu hỏi không làm thay đổi trạng thái ghế.
+
+Hãy trả lời các câu hỏi đó.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và q.
+- Dòng thứ hai là xâu s gồm đúng n kí tự 0 hoặc 1.
+- q dòng tiếp theo, mỗi dòng là một sự kiện ở một trong hai dạng sau.
+- Dạng "1 i": đảo trạng thái ghế i.
+- Dạng "2 k": hỏi vị trí của ghế trống thứ k tính từ trái sang.
+
+Đầu ra:
+- Với mỗi sự kiện dạng 2, in ra trên một dòng chỉ số của ghế trống thứ k; nếu số ghế trống hiện tại ít hơn k thì in -1.
+
+Giới hạn:
+- 1 ≤ n ≤ 10^4, 1 ≤ q ≤ 2·10^3.
+- 1 ≤ i ≤ n, 1 ≤ k ≤ n.
+- Có ít nhất một sự kiện dạng 2.
+
+Gợi ý:
+- Ở ví dụ, s = 10110 nên các ghế trống là 1, 3, 4. Ghế trống thứ 2 là ghế 3.
+- Đảo ghế 3 (có người tới ngồi), các ghế trống còn 1, 4: ghế trống thứ 2 là ghế 4, ghế trống thứ 3 không tồn tại nên in -1.
+- Đảo ghế 5 (người ngồi ở ghế 5 rời đi), các ghế trống là 1, 4, 5: ghế trống thứ 3 là ghế 5.

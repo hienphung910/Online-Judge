@@ -1,0 +1,20 @@
+Cô Lan bán hàng ở chợ và ghi sổ thu chi suốt n ngày. Ngày thứ i cô ghi một số nguyên a_i (đơn vị nghìn đồng): số dương nghĩa là hôm đó lãi, số âm nghĩa là hôm đó lỗ.
+
+Cuối mùa, cô có q câu hỏi, câu hỏi thứ j gồm hai số l và r: tính từ ngày l đến hết ngày r, cô lãi (hoặc lỗ) tổng cộng bao nhiêu?
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và q.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n.
+- q dòng tiếp theo, mỗi dòng chứa hai số nguyên l và r.
+
+Đầu ra:
+- In ra q dòng, dòng thứ j là tổng a_l + a_(l+1) + ... + a_r của câu hỏi thứ j (có thể là số âm).
+
+Giới hạn:
+- 1 ≤ n ≤ 2000, 1 ≤ q ≤ 1000.
+- -10^4 ≤ a_i ≤ 10^4.
+- 1 ≤ l ≤ r ≤ n.
+
+Gợi ý:
+- Câu hỏi thứ hai của ví dụ: (-2) + 5 + (-1) = 2.
+- Gọi S_i = a_1 + a_2 + ... + a_i (mảng cộng dồn, S_0 = 0). Khi đó tổng từ l đến r bằng S_r - S_(l-1), mỗi câu hỏi trả lời trong O(1).

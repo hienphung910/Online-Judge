@@ -1,0 +1,21 @@
+Một huyện miền núi có n làng đánh số từ 1 đến n, nối với nhau bởi m con đường hai chiều; đi hết con đường thứ i giữa làng u_i và làng v_i mất w_i phút. Cán bộ văn hóa xã muốn làm một cuốn sổ tay ghi sẵn thời gian đi nhanh nhất giữa mọi cặp làng, để khi có ai hỏi thì tra ngay mà không phải tính lại.
+
+Hãy trả lời q câu hỏi, mỗi câu hỏi gồm hai làng a và b: thời gian ít nhất để đi từ làng a tới làng b là bao nhiêu phút.
+
+Đầu vào:
+- Dòng đầu tiên gồm ba số nguyên n, m, q.
+- m dòng tiếp theo, mỗi dòng gồm ba số nguyên u, v, w: có đường hai chiều giữa làng u và làng v, đi mất w phút. Hai làng có thể được nối bởi nhiều con đường; có thể có đường đi từ một làng quay về chính nó.
+- q dòng tiếp theo, mỗi dòng gồm hai số nguyên a, b.
+
+Đầu ra:
+- In ra q dòng, dòng thứ i là thời gian ít nhất đi từ a tới b của câu hỏi thứ i, hoặc -1 nếu không thể đi từ a tới b. Nếu a = b thì đáp án là 0.
+
+Giới hạn:
+- 1 ≤ n ≤ 100, 0 ≤ m ≤ 600, 1 ≤ q ≤ 600.
+- 1 ≤ u, v ≤ n, 1 ≤ w ≤ 10^4.
+- 1 ≤ a, b ≤ n.
+
+Gợi ý:
+- Ở ví dụ, từ làng 1 tới làng 3 nên đi con đường 1 - 2 mất 3 phút (không dùng con đường 1 - 2 mất 5 phút) rồi đi tiếp 2 - 3 mất 2 phút, tổng 5 phút, nhanh hơn đi thẳng 1 - 3 (9 phút).
+- Làng 4 không có con đường nào nên không đi được tới làng 2, in -1.
+- Vì n nhỏ, có thể tính trước khoảng cách giữa mọi cặp làng bằng thuật toán Floyd - Warshall trong O(n^3): với mỗi làng trung gian k, thử cải thiện d[i][j] bằng d[i][k] + d[k][j].

@@ -1,0 +1,18 @@
+Lớp học đi dã ngoại và phải qua sông bằng những chiếc thuyền nhỏ. Mỗi thuyền chở đúng hai bạn và chỉ an toàn khi tổng cân nặng của hai bạn không vượt quá X kg. Có n bạn, bạn thứ i nặng a_i kg. Cô giáo muốn biết có bao nhiêu cách chọn ra một cặp hai bạn có thể ngồi chung một thuyền.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên n và X.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n.
+
+Đầu ra:
+- In ra số cặp chỉ số (i, j) với i < j thỏa mãn a_i + a_j ≤ X.
+
+Giới hạn:
+- 1 ≤ n ≤ 2000.
+- 1 ≤ a_i ≤ 10^9.
+- 1 ≤ X ≤ 2·10^9.
+- Tổng hai cân nặng có thể vượt quá 2^31 - 1, nên dùng số nguyên 64 bit; đáp án cũng có thể lớn, hãy in bằng số nguyên 64 bit.
+
+Gợi ý:
+- Sắp xếp mảng tăng dần rồi dùng hai con trỏ: i ở đầu, j ở cuối. Nếu a_i + a_j ≤ X thì a_i ghép được với mọi phần tử từ vị trí i + 1 đến j, cộng j - i vào đáp án rồi tăng i; ngược lại giảm j.
+- Với X = 7 và cân nặng 5 1 4 2 6, các cặp hợp lệ là (1, 2), (1, 4), (1, 5), (1, 6), (2, 4), (2, 5) (ghi theo cân nặng), nên đáp án là 6.

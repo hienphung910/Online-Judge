@@ -1,0 +1,18 @@
+Trên sườn núi có n trạm nghỉ xếp theo thứ tự từ chân núi lên, trạm thứ i ở độ cao a_i. Một hành trình leo núi là một dãy trạm i_1 < i_2 < ... < i_k mà độ cao tăng chặt: a_(i_1) < a_(i_2) < ... < a_(i_k). Ban quản lý muốn biết hành trình dài nhất gồm bao nhiêu trạm, và có bao nhiêu hành trình đạt độ dài lớn nhất đó.
+
+Hai hành trình được coi là khác nhau nếu dãy chỉ số của chúng khác nhau (kể cả khi dãy độ cao giống nhau). Vì số hành trình có thể rất lớn, hãy in phần dư khi chia cho 10^9 + 7.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n.
+
+Đầu ra:
+- In ra hai số nguyên cách nhau một dấu cách: độ dài L của dãy con tăng chặt dài nhất, và số dãy con tăng chặt có độ dài L lấy phần dư khi chia cho 10^9 + 7.
+
+Giới hạn:
+- 1 ≤ n ≤ 2000.
+- -10^9 ≤ a_i ≤ 10^9.
+
+Gợi ý:
+- Với mỗi i, tính len[i] là độ dài dãy tăng dài nhất kết thúc tại i và cnt[i] là số dãy như vậy. Duyệt mọi j < i có a_j < a_i: nếu len[j] + 1 lớn hơn len[i] thì gán len[i] = len[j] + 1 và cnt[i] = cnt[j]; nếu bằng thì cộng thêm cnt[j] vào cnt[i]. Đáp án là tổng cnt[i] của các i có len[i] lớn nhất.
+- Với dãy 1 3 2 4 3 5, độ dài lớn nhất là 4 và có 3 hành trình: 1 3 4 5, 1 2 4 5, 1 2 3 5.

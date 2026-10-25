@@ -1,0 +1,20 @@
+Phố Ước Số có rất nhiều ngôi nhà, đánh số 1, 2, 3, ... Theo phong tục, trước cửa ngôi nhà số i người ta thắp đúng σ(i) ngọn đèn, trong đó σ(i) là tổng tất cả các ước dương của i. Ví dụ σ(6) = 1 + 2 + 3 + 6 = 12, nên nhà số 6 thắp 12 ngọn đèn.
+
+Ban quản lý điện lực nhận được q yêu cầu thống kê. Yêu cầu thứ j hỏi: tổng số ngọn đèn của các ngôi nhà có số từ l_j đến r_j (tính cả hai đầu) là bao nhiêu?
+
+Đầu vào:
+- Dòng đầu chứa số nguyên q.
+- q dòng tiếp theo, dòng thứ j chứa hai số nguyên l_j và r_j.
+
+Đầu ra:
+- In ra q dòng, dòng thứ j là σ(l_j) + σ(l_j + 1) + ... + σ(r_j).
+
+Giới hạn:
+- 1 ≤ q ≤ 500.
+- 1 ≤ l_j ≤ r_j ≤ 10^6.
+- Đáp án có thể vượt quá 2^31, hãy dùng số nguyên 64 bit.
+
+Gợi ý:
+- σ(1), σ(2), ..., σ(6) lần lượt là 1, 3, 4, 7, 6, 12 nên yêu cầu thứ nhất có đáp án 33; yêu cầu thứ hai chỉ gồm σ(4) = 7.
+- σ(10) + σ(11) + σ(12) = 18 + 12 + 28 = 58.
+- σ là hàm nhân tính: nếu gcd(a, b) = 1 thì σ(a · b) = σ(a) · σ(b), và σ(p^k) = 1 + p + ... + p^k với p nguyên tố. Dùng sàng tuyến tính để tính σ(i) cho mọi i ≤ 10^6 rồi lập mảng tổng tiền tố.

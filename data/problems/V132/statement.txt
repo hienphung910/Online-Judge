@@ -1,0 +1,16 @@
+Trang trại có một hàng rào rất dài gồm n cọc gỗ đứng thẳng hàng, đánh số 1, 2, ..., n từ trái sang phải. Mùa mưa, mối lần lượt ăn hỏng m cọc, cọc bị hỏng ở lần thứ j là cọc số p_j (các p_j đôi một khác nhau). Sau mỗi lần có cọc hỏng, bác chủ trại muốn biết đoạn hàng rào còn nguyên vẹn dài nhất gồm bao nhiêu cọc lành liên tiếp.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và m.
+- Dòng thứ hai gồm m số nguyên p_1, p_2, ..., p_m.
+
+Đầu ra:
+- In ra m số nguyên trên một dòng, số thứ j là số cọc lành liên tiếp nhiều nhất ngay sau khi cọc p_j bị hỏng (bằng 0 nếu không còn cọc lành nào).
+
+Giới hạn:
+- 1 ≤ n ≤ 10^9.
+- 1 ≤ m ≤ min(n, 1200).
+- 1 ≤ p_j ≤ n, các p_j đôi một khác nhau.
+
+Gợi ý:
+- Ở ví dụ 1, hàng rào có 10 cọc. Hỏng cọc 4: còn các đoạn 1..3 và 5..10, dài nhất 6 cọc. Hỏng cọc 8: còn 1..3, 5..7, 9..10, dài nhất 3. Hỏng cọc 2: còn 1, 3, 5..7, 9..10, dài nhất 3. Hỏng cọc 6: dài nhất còn 2 (đoạn 9..10). Hỏng cọc 10: mọi đoạn còn lại chỉ dài 1.

@@ -1,0 +1,17 @@
+Quán cơm của cô Hoa ghi lại mã món ăn của n lượt gọi món trong ngày. Cuối ngày cô muốn sắp lại danh sách này để thấy ngay món nào bán chạy: món được gọi nhiều lần hơn thì đứng trước; hai món được gọi cùng số lần thì món có mã nhỏ hơn đứng trước. Các lượt gọi của cùng một món đứng liền nhau.
+
+Hãy in ra danh sách n mã món sau khi sắp xếp.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n là số lượt gọi món.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n là mã món của từng lượt gọi.
+
+Đầu ra:
+- In ra n số nguyên trên một dòng là danh sách mã món sau khi sắp xếp.
+
+Giới hạn:
+- 1 ≤ n ≤ 2000.
+- 1 ≤ a_i ≤ 10^5.
+
+Gợi ý:
+- Món 4 được gọi 3 lần nên đứng đầu. Món 2 và món 6 cùng được gọi 2 lần, món 2 có mã nhỏ hơn nên đứng trước. Món 9 chỉ được gọi 1 lần nên đứng cuối.

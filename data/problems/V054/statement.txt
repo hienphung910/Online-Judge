@@ -1,0 +1,19 @@
+Mùa cưới sắp đến, xưởng mộc của ông Bảy nhận n đơn hàng tủ, đơn thứ i cần t_i phút để làm. Xưởng có k người thợ làm việc song song, mỗi đơn hàng phải giao trọn cho đúng một thợ, và mỗi thợ làm lần lượt các đơn của mình. Thời điểm xưởng xong việc là lúc người thợ bận nhất làm xong, tức là tổng thời gian lớn nhất trong các thợ.
+
+Hãy chia đơn hàng sao cho thời điểm xong việc sớm nhất có thể.
+
+Đầu vào:
+- Dòng đầu chứa hai số nguyên n và k.
+- Dòng thứ hai chứa n số nguyên t_1, t_2, ..., t_n.
+
+Đầu ra:
+- In ra thời điểm xong việc sớm nhất (tính bằng phút).
+
+Giới hạn:
+- 1 ≤ k ≤ n ≤ 16.
+- 1 ≤ t_i ≤ 10^9.
+
+Gợi ý:
+- Có tới k^n cách chia nên không thể thử hết. Hãy quay lui giao từng đơn (đơn lâu xếp trước) cho từng thợ, kèm các nhát cắt nhánh: lấy kết quả của cách chia tham lam (giao mỗi đơn cho thợ đang rảnh nhất) làm kết quả ban đầu; bỏ qua thợ nào mà sau khi nhận đơn sẽ có tổng thời gian không nhỏ hơn kết quả tốt nhất hiện có; hai thợ đang có tổng thời gian bằng nhau thì chỉ cần thử một người; và dừng hẳn khi đạt cận dưới max(t lớn nhất, tổng t chia k làm tròn lên).
+- Tổng thời gian có thể vượt quá phạm vi kiểu int.
+- Ví dụ n = 5, k = 2, thời gian 3, 3, 2, 2, 2: chia thành {3, 3} và {2, 2, 2} thì cả hai thợ đều xong lúc 6. Cách tham lam cho {3, 2, 2} và {3, 2} nên phải đến 7 mới xong.

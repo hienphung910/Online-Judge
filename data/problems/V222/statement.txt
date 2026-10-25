@@ -1,0 +1,20 @@
+Thầy giáo viết lên bảng q số nguyên và yêu cầu cả lớp phân tích từng số ra thừa số nguyên tố. Để dễ chấm, thầy quy định cách viết như sau: nếu n = p_1^e_1 · p_2^e_2 · ... · p_k^e_k với các số nguyên tố p_1 < p_2 < ... < p_k và các số mũ e_j ≥ 1, thì viết
+
+p_1^e_1 * p_2^e_2 * ... * p_k^e_k
+
+trong đó các thừa số cách nhau bởi dấu "*" có một dấu cách mỗi bên, và thừa số nào có số mũ bằng 1 thì chỉ viết p_j (không viết "^1"). Hãy viết đáp án mẫu cho thầy.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên q.
+- q dòng tiếp theo, mỗi dòng chứa một số nguyên n_i.
+
+Đầu ra:
+- In ra q dòng, dòng thứ i là cách viết phân tích của n_i theo đúng quy định trên.
+
+Giới hạn:
+- 1 ≤ q ≤ 100.
+- 2 ≤ n_i ≤ 10^12.
+
+Gợi ý:
+- 360 = 2^3 · 3^2 · 5 nên viết "2^3 * 3^2 * 5". Số 13 là số nguyên tố nên chỉ viết "13". 1024 = 2^10. 10^12 = 2^12 · 5^12.
+- Thử chia n cho d = 2, 3, 4, ... khi d · d ≤ n: mỗi khi n chia hết cho d thì chia đến khi hết và ghi lại số mũ (lúc này d chắc chắn là số nguyên tố vì các ước nhỏ hơn đã bị chia hết). Sau vòng lặp, nếu phần còn lại lớn hơn 1 thì nó là một thừa số nguyên tố cuối cùng.
