@@ -1,5 +1,5 @@
 @echo off
-REM Build va chay PTIT Online Judge - giao dien console (Command Prompt)
+REM Build va chay CodeHub - giao dien console (Command Prompt)
 REM   run.bat            -> menu tuong tac (can dang nhap, can MySQL)
 REM   run.bat --demo     -> tu dong cham loat bai nop mau (khong can MySQL)
 REM   run.bat --selftest -> cham va doi chieu verdict ky vong (khong can MySQL)

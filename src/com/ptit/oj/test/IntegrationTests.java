@@ -86,7 +86,7 @@ public final class IntegrationTests {
             copyDirectory(sourceDataDir.resolve("problems"), dataDir.resolve("problems"));
 
             System.out.println("==================================================");
-            System.out.println("  KIEM THU TICH HOP - PTIT Online Judge (MySQL)");
+            System.out.println("  KIEM THU TICH HOP - CodeHub (MySQL)");
             System.out.println("  CSDL kiem thu : " + database.getSafeUrl());
             System.out.println("  De bai tam    : " + dataDir);
             System.out.println("==================================================");

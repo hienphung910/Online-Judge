@@ -91,7 +91,7 @@ public class ConsoleApp {
 
     private void printBanner() {
         System.out.println("==================================================");
-        System.out.println("   PTIT ONLINE JUDGE - Trình chấm bài tự động");
+        System.out.println("   CODEHUB - Trình chấm bài tự động");
         System.out.println("   Bài tập lớn môn Lập trình hướng đối tượng");
         System.out.println("==================================================");
     }

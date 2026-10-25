@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Build va chay PTIT Online Judge - giao dien console (Linux / macOS).
+# Build va chay CodeHub - giao dien console (Linux / macOS).
 #   ./run.sh              -> menu tuong tac (can dang nhap, can MySQL)
 #   ./run.sh --demo       -> tu dong cham loat bai nop mau (khong can MySQL)
 #   ./run.sh --selftest   -> cham va doi chieu voi verdict ky vong (khong can MySQL)

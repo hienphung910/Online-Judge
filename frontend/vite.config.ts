@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
-// Cau hinh Vite cho giao dien PTIT Online Judge (theme "CodeForge").
+// Cau hinh Vite cho giao dien CodeHub.
 // - npm run dev   : chay dev server, moi request /api duoc chuyen sang may chu
 //                   Java o cong 8080 (nho vay khong can bat CORS).
 // - npm run build : xuat file tinh vao frontend/dist, chinh la thu muc ma

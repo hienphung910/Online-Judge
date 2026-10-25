@@ -1,5 +1,5 @@
 -- =====================================================================
---  PTIT Online Judge - DU LIEU MAU DE THUC HANH SQL
+--  CodeHub - DU LIEU MAU DE THUC HANH SQL
 -- =====================================================================
 --  File nay do cong cu sinh tu dong - KHONG sua tay.
 --

@@ -24,7 +24,7 @@
   <version>2.0.0</version>
   <packaging>jar</packaging>
 
-  <name>PTIT Online Judge</name>
+  <name>CodeHub</name>
   <description>Trình chấm bài tự động - bài tập lớn môn Lập trình hướng đối tượng</description>
 
   <properties>

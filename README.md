@@ -1,4 +1,4 @@
-# PTIT Online Judge
+# CodeHub
 
 Hệ thống chấm bài lập trình tự động: backend Java thuần, giao diện web React, chấm được 6 ngôn ngữ và trả kết quả theo thời gian thực.
 
@@ -9,7 +9,7 @@ Hệ thống chấm bài lập trình tự động: backend Java thuần, giao d
 
 ## Giới thiệu
 
-PTIT Online Judge là nền tảng luyện lập trình theo kiểu Codeforces. Người dùng nộp mã nguồn; hệ thống biên dịch, chạy trên bộ test với giới hạn thời gian và bộ nhớ, so sánh output với đáp án rồi trả verdict AC / WA / TLE / MLE / RE / CE cho từng test ngay khi chấm xong. Hệ thống có sẵn lộ trình học 10 chủ đề với 300 bài tập cho người mới bắt đầu.
+CodeHub là nền tảng luyện lập trình theo kiểu Codeforces. Người dùng nộp mã nguồn; hệ thống biên dịch, chạy trên bộ test với giới hạn thời gian và bộ nhớ, so sánh output với đáp án rồi trả verdict AC / WA / TLE / MLE / RE / CE cho từng test ngay khi chấm xong. Hệ thống có sẵn lộ trình học 10 chủ đề với 300 bài tập cho người mới bắt đầu.
 
 Backend chỉ dùng API chuẩn của JDK. Máy chủ HTTP, bộ đọc/ghi JSON, băm mật khẩu và quản lý phiên đều do nhóm tự viết. Thư viện ngoài duy nhất là MySQL Connector/J; dữ liệu được truy cập bằng JDBC, không qua framework hay ORM.
 

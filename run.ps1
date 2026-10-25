@@ -1,4 +1,4 @@
-# Build va chay PTIT Online Judge - giao dien console (Windows PowerShell)
+# Build va chay CodeHub - giao dien console (Windows PowerShell)
 #   .\run.ps1             -> menu tuong tac (can dang nhap, can MySQL)
 #   .\run.ps1 --demo      -> tu dong cham loat bai nop mau (khong can MySQL)
 #   .\run.ps1 --selftest  -> cham va doi chieu voi verdict ky vong (khong can MySQL)

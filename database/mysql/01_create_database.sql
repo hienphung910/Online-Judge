@@ -1,5 +1,5 @@
 -- =====================================================================
---  PTIT Online Judge - tao co so du lieu va tai khoan ung dung
+--  CodeHub - tao co so du lieu va tai khoan ung dung
 -- =====================================================================
 --  Chay MOT LAN bang tai khoan quan tri MySQL (root), vi day la cac lenh
 --  cap he thong. Sau buoc nay, UNG DUNG chay bang tai khoan 'oj_app'

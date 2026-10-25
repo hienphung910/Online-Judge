@@ -177,7 +177,7 @@ export default function Problems({
             )}
           </div>
           <div style={{ fontSize: 12, color: "#757575", background: "#fff", border: "1px solid #E0E0E0", borderRadius: 6, padding: "6px 14px", flexShrink: 0 }}>
-            CodeForge — Luyện tập lập trình
+            CodeHub — Luyện tập lập trình
           </div>
         </div>
 

@@ -124,7 +124,7 @@ function AppShell() {
           <div style={{ width: 60, height: 60, borderRadius: 12, background: "var(--color-red)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 28 }}>
             <svg width="28" height="28" viewBox="0 0 16 16" fill="none"><path d="M3 4h10M3 8h7M3 12h5" stroke="#fff" strokeWidth="2" strokeLinecap="round" /></svg>
           </div>
-          <h1 style={{ fontSize: 32, fontWeight: 800, color: "#212121", margin: "0 0 12px", lineHeight: 1.25 }}>CodeForge</h1>
+          <h1 style={{ fontSize: 32, fontWeight: 800, color: "#212121", margin: "0 0 12px", lineHeight: 1.25 }}>CodeHub</h1>
           <p style={{ fontSize: 15, color: "#757575", margin: 0, lineHeight: 1.6 }}>
             Luyện tập và thi lập trình trực tuyến — chấm bài tự động, nhanh và chính xác.
           </p>
@@ -220,7 +220,7 @@ function AppShell() {
           <div style={{ width: 30, height: 30, borderRadius: "50%", background: "rgba(255,255,255,0.15)", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 4h10M3 8h7M3 12h5" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" /></svg>
           </div>
-          <span style={{ fontSize: 18, fontWeight: 800, color: "#fff", letterSpacing: "-0.01em" }}>CodeForge</span>
+          <span style={{ fontSize: 18, fontWeight: 800, color: "#fff", letterSpacing: "-0.01em" }}>CodeHub</span>
         </div>
 
         {/* Nav tabs */}

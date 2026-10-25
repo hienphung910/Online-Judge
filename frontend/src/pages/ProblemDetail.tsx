@@ -87,7 +87,7 @@ export default function ProblemDetail({
             ← Lớp học
           </button>
           <span style={{ fontSize: 13, fontWeight: 600, color: "#212121" }}>
-            Làm bài lớp: CodeForge · {problem.id}
+            Làm bài lớp: CodeHub · {problem.id}
           </span>
           {topicName && <span style={{ fontSize: 12, color: "#757575" }}>{topicName}</span>}
           {diff && (

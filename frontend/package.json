@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Giao dien web cho trinh cham bai PTIT Online Judge (thiet ke CodeForge tu Figma Make)",
+  "description": "Giao dien web cho trinh cham bai CodeHub (thiet ke tu Figma Make)",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

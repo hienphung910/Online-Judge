@@ -1,5 +1,5 @@
 -- =====================================================================
---  PTIT Online Judge - luoc do bang cho MySQL 8
+--  CodeHub - luoc do bang cho MySQL 8
 -- =====================================================================
 --  Day la BAN THAM CHIEU, giong het nhung gi lop
 --  com.ptit.oj.database.MySqlSchemaInitializer tu chay luc khoi dong.
