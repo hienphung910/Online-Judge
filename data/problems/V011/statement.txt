@@ -1,0 +1,19 @@
+Huyện miền núi có n bản làng đánh số từ 1 đến n. Đoàn kỹ sư khảo sát được m tuyến cáp có thể kéo, tuyến thứ i nối hai bản u_i và v_i (dùng được theo cả hai chiều) với chi phí w_i. Cần chọn ra một số tuyến cáp sao cho mọi bản làng đều liên lạc được với nhau (trực tiếp hoặc qua bản khác) và tổng chi phí là nhỏ nhất.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và m.
+- m dòng tiếp theo, mỗi dòng gồm ba số nguyên u, v, w mô tả một tuyến cáp vô hướng nối bản u với bản v có chi phí w.
+- Có thể có nhiều tuyến nối cùng một cặp bản và có thể có tuyến nối một bản với chính nó.
+
+Đầu ra:
+- Một số nguyên là tổng chi phí nhỏ nhất để nối tất cả các bản (tổng trọng số cây khung nhỏ nhất), hoặc -1 nếu dù kéo hết các tuyến vẫn có bản không liên lạc được.
+- Nếu n = 1 thì không cần kéo tuyến nào, in 0.
+
+Giới hạn:
+- 1 ≤ n ≤ 3·10^4, 0 ≤ m ≤ 3·10^4.
+- 1 ≤ u, v ≤ n, 1 ≤ w ≤ 10^9.
+- Tổng chi phí có thể lên tới khoảng 3·10^13, hãy dùng số nguyên 64-bit (long long / long).
+
+Gợi ý:
+- Ở ví dụ 1, chọn ba tuyến 2-3 (chi phí 1), 1-4 (chi phí 2) và 1-2 (chi phí 3), tổng chi phí 6.
+- Ở ví dụ 2, bản 3 không có tuyến cáp nào nên đáp án là -1.

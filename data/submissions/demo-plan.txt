@@ -33,3 +33,32 @@ P001 | tuanpv  | P001/sum_ac.js    | AC
 P001 | hiennm  | P001/sum_ac.go    | AC
 P001 | hiennm  | P001/sum_ac.rs    | AC
 P002 | lananh  | P002/prime_wa.js  | WA
+
+# --- Lớp Lộ trình VNOI: lời giải mẫu C++ cho 26 bài V001..V026.
+# --- Máy chưa cài g++ thì các dòng này tự động BỎ QUA.
+V001 | hiennm  | V001/ref.cpp   | AC
+V002 | hiennm  | V002/ref.cpp   | AC
+V003 | hiennm  | V003/ref.cpp   | AC
+V004 | hiennm  | V004/ref.cpp   | AC
+V005 | hiennm  | V005/ref.cpp   | AC
+V006 | hiennm  | V006/ref.cpp   | AC
+V007 | hiennm  | V007/ref.cpp   | AC
+V008 | hiennm  | V008/ref.cpp   | AC
+V009 | hiennm  | V009/ref.cpp   | AC
+V010 | hiennm  | V010/ref.cpp   | AC
+V011 | hiennm  | V011/ref.cpp   | AC
+V012 | hiennm  | V012/ref.cpp   | AC
+V013 | hiennm  | V013/ref.cpp   | AC
+V014 | hiennm  | V014/ref.cpp   | AC
+V015 | hiennm  | V015/ref.cpp   | AC
+V016 | hiennm  | V016/ref.cpp   | AC
+V017 | hiennm  | V017/ref.cpp   | AC
+V018 | hiennm  | V018/ref.cpp   | AC
+V019 | hiennm  | V019/ref.cpp   | AC
+V020 | hiennm  | V020/ref.cpp   | AC
+V021 | hiennm  | V021/ref.cpp   | AC
+V022 | hiennm  | V022/ref.cpp   | AC
+V023 | hiennm  | V023/ref.cpp   | AC
+V024 | hiennm  | V024/ref.cpp   | AC
+V025 | hiennm  | V025/ref.cpp   | AC
+V026 | hiennm  | V026/ref.cpp   | AC

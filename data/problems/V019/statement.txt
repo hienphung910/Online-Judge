@@ -1,0 +1,22 @@
+Tí và Tèo chơi bốc sỏi. Có n đống sỏi và một tập các "số được bốc" s_1, s_2, ..., s_k. Đến lượt mình, người chơi chọn một đống còn ít nhất s_j viên rồi bốc ra khỏi đống đó đúng s_j viên (với s_j là một số trong tập). Hai bạn lần lượt đi, Tí đi trước. Ai đến lượt mà không còn nước đi nào thì thua. Biết cả hai đều chơi tối ưu, hãy cho biết ai thắng trong từng ván.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên T là số ván chơi.
+- Mỗi ván gồm ba dòng:
+  + dòng thứ nhất chứa hai số nguyên n và k;
+  + dòng thứ hai chứa k số nguyên phân biệt s_1, s_2, ..., s_k;
+  + dòng thứ ba chứa n số nguyên a_1, a_2, ..., a_n là số viên sỏi của từng đống.
+
+Đầu ra:
+- In ra T dòng, dòng thứ t là TI nếu Tí thắng ván thứ t, hoặc TEO nếu Tèo thắng.
+
+Giới hạn:
+- 1 ≤ T ≤ 100.
+- 1 ≤ k ≤ 10, 1 ≤ s_j ≤ 100, các s_j đôi một khác nhau.
+- 1 ≤ n, tổng n của tất cả các ván không vượt quá 3·10^4.
+- 0 ≤ a_i ≤ 10^5.
+
+Gợi ý:
+- Ván 1: một đống 3 viên, được bốc 1 hoặc 2 viên. Tí bốc bao nhiêu thì Tèo cũng bốc nốt phần còn lại, nên Tèo thắng.
+- Ván 2: hai đống 2 và 5 viên, được bốc 1 hoặc 3 viên. Tí thắng.
+- Hãy tính số Grundy g(x) của một đống x viên: g(x) là số tự nhiên nhỏ nhất không nằm trong tập { g(x - s_j) : s_j ≤ x }. Theo định lý Sprague-Grundy, người đi trước thắng khi và chỉ khi XOR các g(a_i) khác 0.

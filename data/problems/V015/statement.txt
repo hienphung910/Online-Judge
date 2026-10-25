@@ -1,0 +1,17 @@
+Tí muốn đi phượt qua n thành phố, đánh số từ 1 đến n. Tí xuất phát ở thành phố 1, phải ghé thăm mỗi thành phố còn lại đúng một lần rồi quay về thành phố 1. Giá vé đi thẳng từ thành phố i đến thành phố j là c[i][j]; giá vé chiều đi và chiều về có thể khác nhau. Hãy giúp Tí tính tổng tiền vé nhỏ nhất.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- n dòng tiếp theo, dòng thứ i chứa n số nguyên c[i][1], c[i][2], ..., c[i][n].
+
+Đầu ra:
+- In ra một số nguyên là tổng tiền vé nhỏ nhất của một hành trình xuất phát từ thành phố 1, đi qua mỗi thành phố khác đúng một lần và quay về thành phố 1.
+- Nếu n = 1 thì Tí không cần đi đâu cả, in ra 0.
+
+Giới hạn:
+- 1 ≤ n ≤ 15.
+- 0 ≤ c[i][j] ≤ 10^6, c[i][i] = 0.
+- Ma trận không nhất thiết đối xứng: c[i][j] có thể khác c[j][i].
+
+Gợi ý:
+- Với ví dụ, hành trình 1 → 2 → 4 → 3 → 1 tốn 10 + 10 + 9 + 6 = 35, và không có hành trình nào rẻ hơn.

@@ -1,0 +1,17 @@
+Hội chợ phát ra n tấm vé, tấm thứ i in một con số nguyên a_i (có thể âm). Hai tấm vé khác nhau được gọi là "cặp may mắn" nếu tổng hai con số trên chúng đúng bằng K. Hãy đếm xem có bao nhiêu cặp may mắn.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và K.
+- Dòng thứ hai gồm n số nguyên a_1, a_2, ..., a_n.
+
+Đầu ra:
+- Một số nguyên duy nhất là số cặp chỉ số (i, j) với 1 ≤ i < j ≤ n và a_i + a_j = K.
+- Hai cặp được coi là khác nhau nếu khác chỉ số, kể cả khi các con số trên vé giống nhau.
+
+Giới hạn:
+- 1 ≤ n ≤ 7·10^4.
+- |a_i| ≤ 10^9, |K| ≤ 10^9.
+- Cả tổng a_i + a_j lẫn đáp án (có thể tới khoảng 2,45·10^9) đều có thể vượt quá kiểu int 32-bit, nên hãy dùng số nguyên 64-bit (long long / long).
+
+Gợi ý:
+- Ở ví dụ 1, K = 6. Cặp vé số 1 và 5 (chỉ số 1 và 2) có tổng 6. Ba tấm vé số 3 (chỉ số 3, 4, 5) tạo được 3 cặp: (3, 4), (3, 5), (4, 5). Vé số 4 không có vé số 2 nào để ghép. Tổng cộng 4 cặp.

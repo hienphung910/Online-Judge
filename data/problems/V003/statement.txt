@@ -1,0 +1,18 @@
+Trường tổ chức giải kéo co. Thầy thể dục liên tục hỏi: "Lớp có n bạn, cần chọn ra k bạn vào đội thì có bao nhiêu cách chọn?". Vì con số rất lớn, thầy chỉ cần biết phần dư khi chia cho 10^9 + 7.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên q là số câu hỏi.
+- q dòng tiếp theo, mỗi dòng chứa hai số nguyên n và k.
+
+Đầu ra:
+- Với mỗi câu hỏi, in ra một dòng chứa C(n, k) mod (10^9 + 7), trong đó C(n, k) là số cách chọn k phần tử từ n phần tử (không quan tâm thứ tự).
+- Quy ước C(n, 0) = 1 (kể cả n = 0), và C(n, k) = 0 khi k > n.
+
+Giới hạn:
+- 1 ≤ q ≤ 10^4.
+- 0 ≤ n, k ≤ 10^6.
+
+Gợi ý:
+- C(n, k) = n! / (k! × (n - k)!). Hãy tính trước n! mod p cho mọi n ≤ 10^6, rồi thay phép chia bằng phép nhân với nghịch đảo modulo (theo định lý Fermat nhỏ, nghịch đảo của x là x^(p - 2) mod p, tính bằng lũy thừa nhanh).
+- C(5, 2) = 10, C(10, 0) = 1, C(3, 5) = 0, C(0, 0) = 1.
+- C(40, 20) = 137846528820, chia cho 10^9 + 7 dư 846527861.

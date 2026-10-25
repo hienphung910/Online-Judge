@@ -1,0 +1,20 @@
+Nhà hàng có n món ăn đánh số từ 1 đến n, đầu bếp phải quyết định mỗi món có mặt trong thực đơn hôm nay hay không. Mỗi thực khách đưa ra đúng một yêu cầu gồm hai mong muốn, chẳng hạn "có món 3 hoặc không có món 5", và sẽ hài lòng nếu ít nhất một trong hai mong muốn được đáp ứng. Hỏi có cách chọn thực đơn làm hài lòng tất cả thực khách hay không?
+
+Đầu vào:
+- Dòng đầu là số nguyên T, số bộ dữ liệu.
+- Mỗi bộ dữ liệu bắt đầu bằng dòng gồm hai số nguyên n và m (số món và số yêu cầu).
+- m dòng tiếp theo, mỗi dòng gồm hai số nguyên x, y khác 0 mô tả một yêu cầu. Số v > 0 nghĩa là "có món v", số v < 0 nghĩa là "không có món |v|". Yêu cầu được đáp ứng khi mong muốn x hoặc mong muốn y (hoặc cả hai) đúng.
+- x và y có thể nói về cùng một món, kể cả trùng nhau.
+
+Đầu ra:
+- Với mỗi bộ dữ liệu, in ra trên một dòng CO nếu tồn tại thực đơn làm hài lòng tất cả thực khách, ngược lại in KHONG.
+
+Giới hạn:
+- 1 ≤ T ≤ 50.
+- 1 ≤ n, 0 ≤ m; tổng n trong mọi bộ dữ liệu không vượt quá 10000, tổng m không vượt quá 20000.
+- 1 ≤ |x|, |y| ≤ n.
+
+Gợi ý:
+- Bộ thứ nhất: chọn cả món 1 và món 2 thì cả ba yêu cầu (1 hoặc 2), (không 1 hoặc 2), (1 hoặc không 2) đều thỏa, in CO.
+- Bộ thứ hai có đủ bốn yêu cầu (1 hoặc 2), (1 hoặc không 2), (không 1 hoặc 2), (không 1 hoặc không 2); dù chọn thế nào cũng có một yêu cầu bị vi phạm, in KHONG.
+- Bộ thứ ba: yêu cầu "1 1" buộc phải có món 1, kéo theo phải có món 2 và khi đó không được có món 3; thực đơn {1, 2} thỏa mãn, in CO.

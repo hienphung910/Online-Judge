@@ -12,17 +12,21 @@ public class Topic extends Entity {
 
     private final String name;
     private final String description;
+    /** Lop hoc chua chu de nay, vi du "Nhập môn" hay "Lộ trình VNOI"; "" neu khong chia lop. */
+    private final String group;
     private final int order;
 
-    public Topic(String id, String name, String description, int order) {
+    public Topic(String id, String name, String description, String group, int order) {
         super(id);
         this.name = name;
         this.description = description == null ? "" : description;
+        this.group = group == null ? "" : group;
         this.order = order;
     }
 
     public String getName() { return name; }
     public String getDescription() { return description; }
+    public String getGroup() { return group; }
     /** Vi tri trong lo trinh, tinh tu 1. */
     public int getOrder() { return order; }
 

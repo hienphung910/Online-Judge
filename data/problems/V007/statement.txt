@@ -1,0 +1,18 @@
+Dãy phố có n ngôi nhà đứng sát nhau, mỗi nhà rộng đúng 1 mét, nhà thứ i cao h_i mét. Một công ty muốn dán lên mặt tiền dãy phố một tấm biển quảng cáo hình chữ nhật, cạnh đáy nằm trên mặt đất và tấm biển phải nằm gọn trong phần tường của các ngôi nhà. Hỏi tấm biển có diện tích lớn nhất là bao nhiêu?
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- Dòng thứ hai chứa n số nguyên h_1, h_2, ..., h_n.
+
+Đầu ra:
+- In ra một số nguyên là diện tích lớn nhất. Nói cách khác, in ra giá trị lớn nhất của (r - l + 1) × min(h_l, h_(l+1), ..., h_r) trên mọi đoạn 1 ≤ l ≤ r ≤ n.
+- Nếu mọi ngôi nhà đều cao 0 thì in ra 0.
+
+Giới hạn:
+- 1 ≤ n ≤ 10^5.
+- 0 ≤ h_i ≤ 10^9.
+- Đáp án có thể lên tới 10^14, hãy dùng số nguyên 64 bit.
+
+Gợi ý:
+- Với mỗi nhà i, tấm biển cao đúng h_i sẽ kéo dài sang trái và sang phải cho tới khi gặp nhà thấp hơn. Dùng ngăn xếp đơn điệu để tìm nhà thấp hơn gần nhất ở hai bên trong O(n).
+- Với dãy 2 1 4 5 1 3 3, tấm biển tốt nhất phủ nhà thứ 3 và thứ 4, cao 4 mét, rộng 2 mét, diện tích 8.

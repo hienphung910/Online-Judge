@@ -1,0 +1,21 @@
+Có n người bạn sống dọc một bờ sông thẳng, xem như một trục số. Người thứ i ở toạ độ x_i và đi được v_i mét mỗi giây. Cả nhóm muốn chọn một điểm hẹn p (p là số thực bất kỳ) rồi cùng xuất phát một lúc. Hãy chọn p để người đến cuối cùng tới nơi sớm nhất có thể.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- n dòng tiếp theo, dòng thứ i chứa hai số nguyên x_i và v_i.
+
+Đầu ra:
+- Với điểm hẹn p, thời gian để cả nhóm có mặt là max(|x_i - p| / v_i) với i từ 1 đến n. In ra giá trị nhỏ nhất của thời gian đó khi p chạy trên mọi số thực.
+- In một số thực, dùng dấu chấm làm dấu thập phân (nên in ít nhất 6 chữ số sau dấu chấm).
+- Kết quả được chấp nhận nếu sai số tuyệt đối HOẶC sai số tương đối so với đáp án không vượt quá 10^-6.
+
+Giới hạn:
+- 1 ≤ n ≤ 5·10^4.
+- |x_i| ≤ 10^9.
+- 1 ≤ v_i ≤ 10^9.
+- Nhiều người có thể ở cùng một toạ độ.
+
+Gợi ý:
+- Ví dụ 1: chọn p = 2.5 thì người ở 0 (tốc độ 1) mất 2.5 giây, người ở 10 (tốc độ 3) mất 2.5 giây, người ở 3 (tốc độ 2) mất 0.25 giây. Không có điểm nào tốt hơn nên đáp án là 2.5.
+- Ví dụ 2: chọn p = 1/3, cả hai người cùng mất 1/3 giây.
+- Hàm f(p) = max(|x_i - p| / v_i) là hàm lồi theo p, nên có thể chặt tam phân theo p. Cách khác: chặt nhị phân theo thời gian T - sau T giây người i có thể ở bất kỳ đâu trong đoạn [x_i - v_i * T, x_i + v_i * T], cả nhóm gặp được nhau khi tất cả các đoạn này có điểm chung.

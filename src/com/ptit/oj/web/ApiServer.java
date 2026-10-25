@@ -348,6 +348,7 @@ public class ApiServer {
                     .put("id", t.getId())
                     .put("name", t.getName())
                     .put("description", t.getDescription())
+                    .put("group", t.getGroup())
                     .put("order", t.getOrder())
                     .put("problemCount", counts.getOrDefault(t.getId(), 0))
                     .build());

@@ -1,0 +1,18 @@
+Nhà văn hóa phường chỉ có một hội trường. Có n câu lạc bộ xin thuê, câu lạc bộ thứ i muốn dùng hội trường từ thời điểm l_i đến thời điểm r_i. Ban quản lý muốn nhận được càng nhiều câu lạc bộ càng tốt, miễn là không có hai câu lạc bộ nào dùng hội trường cùng lúc.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- n dòng tiếp theo, dòng thứ i chứa hai số nguyên l_i và r_i.
+
+Đầu ra:
+- In ra một số nguyên là số câu lạc bộ nhiều nhất có thể nhận.
+- Hai khoảng [l_i, r_i] và [l_j, r_j] được nhận cùng nhau nếu r_i ≤ l_j hoặc r_j ≤ l_i. Nói cách khác, một câu lạc bộ có thể vào ngay đúng lúc câu lạc bộ trước vừa kết thúc.
+
+Giới hạn:
+- 1 ≤ n ≤ 10^5.
+- 0 ≤ l_i < r_i ≤ 10^9.
+- Có thể có nhiều khoảng giống hệt nhau.
+
+Gợi ý:
+- Mẹo tham lam: luôn nhận câu lạc bộ kết thúc sớm nhất trong số những câu lạc bộ còn nhận được, vì nó để lại nhiều thời gian trống nhất cho phần sau.
+- Trong ví dụ, có thể nhận 3 câu lạc bộ [1, 3], [3, 6], [6, 8]. Không có cách nào nhận được 4 câu lạc bộ.

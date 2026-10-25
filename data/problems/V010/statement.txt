@@ -1,0 +1,19 @@
+Thành phố có n ngã tư đánh số từ 1 đến n và m con đường một chiều; đi hết con đường thứ i từ ngã tư u_i tới ngã tư v_i tốn w_i phút. Kho hàng đặt ở ngã tư số 1. Người shipper muốn biết thời gian ngắn nhất để đi từ kho tới từng ngã tư trong thành phố.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và m.
+- m dòng tiếp theo, mỗi dòng gồm ba số nguyên u, v, w: có đường một chiều từ u tới v mất w phút.
+- Có thể có nhiều con đường nối cùng một cặp ngã tư và có thể có đường đi từ một ngã tư quay về chính nó.
+
+Đầu ra:
+- Một dòng gồm n số nguyên cách nhau bởi dấu cách; số thứ i là thời gian ngắn nhất đi từ ngã tư 1 tới ngã tư i, hoặc -1 nếu không có đường đi.
+- Số đầu tiên luôn là 0.
+
+Giới hạn:
+- 1 ≤ n ≤ 3·10^4, 0 ≤ m ≤ 3·10^4.
+- 1 ≤ u, v ≤ n, 1 ≤ w ≤ 10^9.
+- Thời gian có thể lên tới khoảng 3·10^13, hãy dùng số nguyên 64-bit (long long / long).
+
+Gợi ý:
+- Ở ví dụ, tới ngã tư 2 nên đi 1 → 3 → 2 mất 1 + 2 = 3 phút, nhanh hơn đi thẳng 1 → 2 (4 phút).
+- Tới ngã tư 4 nhanh nhất là 1 → 3 → 2 → 4 mất 3 + 5 = 8 phút. Không có đường nào tới ngã tư 5 nên in -1.

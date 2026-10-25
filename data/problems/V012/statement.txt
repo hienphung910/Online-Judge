@@ -1,0 +1,22 @@
+Lớp trưởng ghi sổ quỹ gồm n ô, ô thứ i ghi số tiền a_i (số âm nghĩa là khoản chi). Trong năm học có q sự kiện xảy ra lần lượt: hoặc lớp trưởng sửa lại số tiền ở một ô, hoặc cô giáo hỏi tổng số tiền ghi trong một đoạn ô liên tiếp. Hãy giúp lớp trưởng trả lời các câu hỏi của cô.
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và q.
+- Dòng thứ hai gồm n số nguyên a_1, a_2, ..., a_n.
+- q dòng tiếp theo, mỗi dòng là một sự kiện ở một trong hai dạng sau.
+- Dạng "1 i x": gán a_i = x.
+- Dạng "2 l r": hỏi tổng a_l + a_(l+1) + ... + a_r.
+
+Đầu ra:
+- Với mỗi sự kiện dạng 2, in ra tổng tương ứng trên một dòng, theo đúng thứ tự xuất hiện.
+
+Giới hạn:
+- 1 ≤ n, q ≤ 10^5.
+- 1 ≤ i ≤ n, 1 ≤ l ≤ r ≤ n.
+- |a_i| ≤ 10^9, |x| ≤ 10^9.
+- Có ít nhất một sự kiện dạng 2.
+- Tổng có thể lên tới 10^14 về giá trị tuyệt đối, hãy dùng số nguyên 64-bit (long long / long).
+
+Gợi ý:
+- Ở ví dụ, ban đầu a = [1, 2, 3, 4, 5]. Câu hỏi đầu tiên: 1 + 2 + 3 = 6.
+- Sau khi gán a_2 = -10, mảng thành [1, -10, 3, 4, 5]; tổng cả mảng là 3, còn đoạn chỉ gồm ô 2 có tổng -10.

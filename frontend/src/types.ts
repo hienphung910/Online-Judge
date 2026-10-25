@@ -73,6 +73,8 @@ export interface Topic {
   id: string;
   name: string;
   description: string;
+  /** Ten lop hoc (cot thu 4 trong topics.txt), "" neu khong chia lop. */
+  group: string;
   order: number;
   problemCount: number;
 }

@@ -25,6 +25,8 @@ export default function Problems({
   const [search, setSearch] = useState("");
   /** "" = tat ca, ma chu de, hoac OTHER_TOPIC. */
   const [topicFilter, setTopicFilter] = useState("");
+  /** Lop dang xem; "" = lop dau tien. */
+  const [groupPick, setGroupPick] = useState("");
   /** 0 = moi do kho. */
   const [diffFilter, setDiffFilter] = useState(0);
   const [hov, setHov] = useState<string | null>(null);
@@ -52,7 +54,17 @@ export default function Problems({
 
   const known = useMemo(() => new Set(topics.map((t) => t.id)), [topics]);
   const topicName = useMemo(() => new Map(topics.map((t) => [t.id, t.name])), [topics]);
-  const ordered = useMemo(() => orderByPath(problems, topics), [problems, topics]);
+  // Moi lop (cot thu 4 trong topics.txt) co lo trinh rieng, lop xuat hien truoc dung truoc.
+  const groups = useMemo(() => [...new Set(topics.map((t) => t.group))], [topics]);
+  const firstGroup = groups[0] ?? "";
+  const group = groups.includes(groupPick) ? groupPick : firstGroup;
+  const groupTopics = useMemo(() => topics.filter((t) => t.group === group), [topics, group]);
+  // Chi lay bai cua lop dang xem; bai chua phan loai ("Bai khac") xep vao lop dau tien.
+  const ordered = useMemo(() => {
+    const inGroup = new Set(groupTopics.map((t) => t.id));
+    const mine = problems.filter((p) => (known.has(p.topic) ? inGroup.has(p.topic) : group === firstGroup));
+    return orderByPath(mine, groupTopics);
+  }, [problems, known, groupTopics, group, firstGroup]);
 
   const progress = useMemo(() => {
     const map = new Map<string, Progress>();
@@ -80,7 +92,7 @@ export default function Problems({
   // Bai dau tien chua giai theo dung thu tu lo trinh -> goi y "hoc tiep".
   const nextToLearn = ordered.find((p) => statusByProblem.get(p.id) !== "solved") ?? null;
   const hasOther = progress.has(OTHER_TOPIC);
-  const currentTopic = topics.find((t) => t.id === topicFilter);
+  const currentTopic = groupTopics.find((t) => t.id === topicFilter);
   const nameOf = (p: Problem) => topicName.get(p.topic) ?? "Bài khác";
 
   const selected = selectedId ? problems.find((p) => p.id === selectedId) ?? null : null;
@@ -111,6 +123,19 @@ export default function Problems({
       }}>
         <div style={{ padding: "16px 16px 12px", borderBottom: "1px solid #F0F0F0" }}>
           <div style={{ fontSize: 14, fontWeight: 700, color: "#212121" }}>Lộ trình học</div>
+          {groups.length > 1 && (
+            <div style={{ display: "flex", gap: 4, marginTop: 10, padding: 3, background: "#F5F5F5", borderRadius: 8 }}>
+              {groups.map((g) => (
+                <button key={g} onClick={() => { setGroupPick(g); setTopicFilter(""); }} style={{
+                  flex: 1, height: 28, border: "none", borderRadius: 6, cursor: "pointer", fontSize: 12,
+                  fontWeight: g === group ? 700 : 500,
+                  background: g === group ? "#fff" : "transparent",
+                  color: g === group ? "var(--color-red)" : "#616161",
+                  boxShadow: g === group ? "0 1px 2px rgba(0,0,0,0.1)" : "none",
+                }}>{g}</button>
+              ))}
+            </div>
+          )}
           <div style={{ fontSize: 12, color: "#757575", marginTop: 2 }}>
             Đã giải <b style={{ color: "var(--color-green)" }}>{solvedAll}</b>/{ordered.length} bài
           </div>
@@ -142,15 +167,15 @@ export default function Problems({
             active={topicFilter === ""}
             onClick={() => setTopicFilter("")}
           />
-          {topics.map((t, i) => (
+          {groupTopics.map((t, i) => (
             <StepRow
               key={t.id}
-              step={t.order}
+              step={i + 1}
               label={t.name}
               progress={progress.get(t.id) ?? { total: 0, solved: 0 }}
               active={topicFilter === t.id}
               first={i === 0}
-              last={i === topics.length - 1}
+              last={i === groupTopics.length - 1}
               onClick={() => setTopicFilter(t.id)}
             />
           ))}
@@ -170,7 +195,8 @@ export default function Problems({
         <div style={{ padding: "12px 24px 8px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, flexShrink: 0 }}>
           <div style={{ minWidth: 0 }}>
             <div style={{ fontSize: 14, fontWeight: 600, color: "#212121" }}>
-              {currentTopic ? `Chặng ${currentTopic.order}: ${currentTopic.name}` : topicFilter === OTHER_TOPIC ? "Bài khác" : "Lớp học của tôi"}
+              {currentTopic ? `Chặng ${groupTopics.indexOf(currentTopic) + 1}: ${currentTopic.name}`
+                : topicFilter === OTHER_TOPIC ? "Bài khác" : group ? `Lớp ${group}` : "Lớp học của tôi"}
             </div>
             {currentTopic?.description && (
               <div style={{ fontSize: 12, color: "#757575", marginTop: 2 }}>{currentTopic.description}</div>

@@ -1,0 +1,15 @@
+Nhà vua mở tiệc và mời n nữ hoàng đến ngồi trên một sàn nhảy hình bàn cờ n × n. Các nữ hoàng rất hay ganh tị: hai người ngồi cùng hàng, cùng cột hoặc cùng một đường chéo sẽ cãi nhau ngay. Hỏi có bao nhiêu cách xếp chỗ để cả n nữ hoàng cùng ngồi mà không ai cãi nhau?
+
+Đầu vào:
+- Một dòng chứa số nguyên n.
+
+Đầu ra:
+- In ra một số nguyên là số cách đặt n quân hậu lên bàn cờ n × n sao cho không có hai quân nào cùng hàng, cùng cột hoặc cùng đường chéo (cả hai hướng chéo).
+- Hai cách được coi là khác nhau nếu có ít nhất một ô có hậu ở cách này nhưng không có ở cách kia (cách xoay hay lật bàn cờ vẫn tính là khác nhau).
+
+Giới hạn:
+- 1 ≤ n ≤ 12.
+
+Gợi ý:
+- Mỗi hàng có đúng một quân hậu. Hãy đặt lần lượt từng hàng, thử từng cột còn an toàn, rồi quay lui khi đi vào ngõ cụt.
+- Với n = 4 có đúng 2 cách: hậu ở các cột (2, 4, 1, 3) hoặc (3, 1, 4, 2) theo thứ tự hàng 1 đến hàng 4.

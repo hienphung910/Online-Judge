@@ -1,0 +1,18 @@
+Pháp sư tìm thấy một cuộn giấy cổ ghi xâu T. Ông tin rằng mỗi lần câu thần chú P xuất hiện trong cuộn giấy là một lần phép thuật được kích hoạt, kể cả khi các lần xuất hiện chồng lên nhau. Hãy đếm giúp ông số lần P xuất hiện trong T.
+
+Đầu vào:
+- Dòng thứ nhất là xâu T.
+- Dòng thứ hai là xâu P.
+- Cả hai xâu chỉ gồm chữ cái tiếng Anh in thường 'a' đến 'z', không chứa dấu cách.
+
+Đầu ra:
+- Một số nguyên là số vị trí i (1 ≤ i ≤ |T| - |P| + 1) sao cho xâu con của T bắt đầu tại vị trí i và dài |P| ký tự trùng với P.
+- Nếu P dài hơn T thì đáp án là 0.
+
+Giới hạn:
+- 1 ≤ |T| ≤ 2·10^5, 1 ≤ |P| ≤ 2·10^5.
+- Cách so sánh trực tiếp tại từng vị trí có thể tốn tới |T|·|P| phép so sánh, quá chậm với giới hạn này.
+
+Gợi ý:
+- Ở ví dụ 1, "aba" xuất hiện trong "abababa" tại các vị trí 1, 3 và 5 (các lần xuất hiện chồng lên nhau), nên đáp án là 3.
+- Ở ví dụ 2, P dài hơn T nên đáp án là 0.

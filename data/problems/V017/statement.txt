@@ -1,0 +1,19 @@
+Cám có một danh sách k "số bùa" a_1, a_2, ..., a_k. Cám cho rằng một số nguyên dương là may mắn nếu nó chia hết cho ít nhất một số bùa. Hãy đếm xem trong các số từ 1 đến N có bao nhiêu số may mắn.
+
+Đầu vào:
+- Dòng đầu tiên chứa hai số nguyên N và k.
+- Dòng thứ hai chứa k số nguyên a_1, a_2, ..., a_k. Các số này có thể trùng nhau, và số này có thể chia hết cho số kia.
+
+Đầu ra:
+- In ra một số nguyên là số lượng số nguyên x thoả mãn 1 ≤ x ≤ N và x chia hết cho ít nhất một trong các số a_1, a_2, ..., a_k.
+
+Giới hạn:
+- 1 ≤ N ≤ 10^18.
+- 1 ≤ k ≤ 15.
+- 1 ≤ a_i ≤ 10^9.
+- Bội chung nhỏ nhất của vài số a_i có thể vượt xa 10^18, cẩn thận tràn số khi tính (có thể dùng __int128, hoặc dừng ngay khi bội chung đã vượt N).
+
+Gợi ý:
+- Với N = 20 và hai số bùa 2, 3: có 10 số chia hết cho 2, 6 số chia hết cho 3, nhưng 3 số chia hết cho cả hai (6, 12, 18) bị đếm hai lần. Kết quả là 10 + 6 - 3 = 13.
+- Với N = 30 và các số bùa 4, 6, 4: kết quả là 10.
+- Đây là nguyên lý bao hàm - loại trừ: duyệt mọi tập con các số bùa, cộng hoặc trừ N chia nguyên cho bội chung nhỏ nhất của tập con đó.

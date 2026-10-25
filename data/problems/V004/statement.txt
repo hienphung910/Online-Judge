@@ -1,0 +1,17 @@
+Cô giáo muốn lớp xếp hàng theo chiều cao không giảm từ đầu đến cuối, nhưng các bạn lại đứng lộn xộn. Để đo mức độ lộn xộn, cô đếm số cặp bạn mà bạn đứng trước cao hơn hẳn bạn đứng sau.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n là số bạn trong hàng.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n là chiều cao của các bạn theo thứ tự từ đầu hàng.
+
+Đầu ra:
+- In ra một số nguyên là số cặp chỉ số (i, j) với i < j và a_i > a_j (lớn hơn hẳn; hai bạn cao bằng nhau không tính).
+
+Giới hạn:
+- 1 ≤ n ≤ 10^5.
+- -10^9 ≤ a_i ≤ 10^9 (có thể có các giá trị bằng nhau).
+- Đáp án có thể lên tới khoảng 5·10^9, vượt quá kiểu int 32 bit, hãy dùng số nguyên 64 bit.
+
+Gợi ý:
+- Duyệt mọi cặp mất O(n^2), quá chậm với n = 10^5. Hãy sửa thuật toán sắp xếp trộn (merge sort): khi trộn hai nửa, mỗi lần lấy một phần tử từ nửa phải trước, nó tạo cặp với mọi phần tử còn lại ở nửa trái.
+- Với hàng 3 1 4 1 5 có 3 cặp: (3, 1), (3, 1) với số 1 ở vị trí thứ tư, và (4, 1). Hai số 1 bằng nhau nên không tính.

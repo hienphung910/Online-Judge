@@ -1,13 +1,44 @@
 # Lo trinh hoc: moi dong la mot chu de, THU TU DONG = THU TU HOC.
-# Cu phap:  ma-chu-de | Ten hien thi | Mo ta ngan
+# Cu phap:  ma-chu-de | Ten hien thi | Mo ta ngan | Ten lop
 # Bai tap gan vao chu de bang dong "topic=ma-chu-de" trong problem.properties.
-nhap-xuat | Làm quen: Nhập và xuất | Đọc dữ liệu từ bàn phím và in kết quả ra màn hình.
-phep-tinh | Phép tính và công thức | Cộng, trừ, nhân, chia, chia lấy dư và các bài toán đời thường.
-re-nhanh | Rẽ nhánh if / else | Dạy chương trình biết lựa chọn: nếu... thì..., ngược lại...
-vong-lap | Vòng lặp | Lặp lại một việc nhiều lần với for và while.
-ve-hinh | Vẽ hình bằng ký tự | Dùng vòng lặp lồng nhau để vẽ tam giác, hình vuông, bậc thang.
-chu-so | Chữ số và số học vui | Tách chữ số, ước số, số nguyên tố, ước chung và bội chung.
-mang | Mảng (danh sách) | Lưu nhiều giá trị và xử lý cả một dãy số.
-xau | Xâu ký tự | Làm việc với chữ cái, từ và câu.
-sap-xep | Sắp xếp và tìm kiếm | Xếp thứ tự, tìm phần tử, đếm và thống kê.
-thu-thach | Thử thách tổng hợp | Bảng hai chiều, mô phỏng và các câu đố lập trình.
+# Cot "Ten lop" chia lo trinh thanh nhieu lop; lop nao xuat hien truoc thi dung truoc.
+
+# ===== Lop Nhap mon: cho nguoi moi bat dau =====
+nhap-xuat | Làm quen: Nhập và xuất | Đọc dữ liệu từ bàn phím và in kết quả ra màn hình. | Nhập môn
+phep-tinh | Phép tính và công thức | Cộng, trừ, nhân, chia, chia lấy dư và các bài toán đời thường. | Nhập môn
+re-nhanh | Rẽ nhánh if / else | Dạy chương trình biết lựa chọn: nếu... thì..., ngược lại... | Nhập môn
+vong-lap | Vòng lặp | Lặp lại một việc nhiều lần với for và while. | Nhập môn
+ve-hinh | Vẽ hình bằng ký tự | Dùng vòng lặp lồng nhau để vẽ tam giác, hình vuông, bậc thang. | Nhập môn
+chu-so | Chữ số và số học vui | Tách chữ số, ước số, số nguyên tố, ước chung và bội chung. | Nhập môn
+mang | Mảng (danh sách) | Lưu nhiều giá trị và xử lý cả một dãy số. | Nhập môn
+xau | Xâu ký tự | Làm việc với chữ cái, từ và câu. | Nhập môn
+sap-xep | Sắp xếp và tìm kiếm | Xếp thứ tự, tìm phần tử, đếm và thống kê. | Nhập môn
+thu-thach | Thử thách tổng hợp | Bảng hai chiều, mô phỏng và các câu đố lập trình. | Nhập môn
+
+# ===== Lop Lo trinh VNOI: theo thu tu chang cua https://wiki.vnoi.info/roadmap/general-roadmap =====
+vnoi-khai-niem | Khái niệm cơ bản | Xét từng trường hợp và cài đặt đúng từng chi tiết của đề. | Lộ trình VNOI
+vnoi-thuat-toan-1 | Thuật toán cơ bản (Phần 1) | Độ phức tạp, duyệt trâu, đệ quy, quay lui và nhánh cận. | Lộ trình VNOI
+vnoi-so-hoc | Lý thuyết số cơ bản | Modulo, ước chung lớn nhất, sàng nguyên tố, lũy thừa nhanh và tổ hợp. | Lộ trình VNOI
+vnoi-sap-xep | Sắp xếp | Các thuật toán sắp xếp nhanh và ứng dụng như đếm nghịch thế. | Lộ trình VNOI
+vnoi-tham-lam | Thuật toán tham lam | Chọn phương án tốt nhất ở từng bước và chứng minh vì sao nó đúng. | Lộ trình VNOI
+vnoi-thuat-toan-2 | Thuật toán cơ bản (Phần 2) | Hai con trỏ, tìm kiếm nhị phân, nhập môn quy hoạch động và thao tác bit. | Lộ trình VNOI
+vnoi-ctdl-1 | Cấu trúc dữ liệu cơ bản (Phần 1) | Ngăn xếp, hàng đợi, mảng cộng dồn, hàng đợi ưu tiên và bảng thưa. | Lộ trình VNOI
+vnoi-ctdl-2 | Cấu trúc dữ liệu cơ bản (Phần 2) | Bảng băm, set / map và rời rạc hóa. | Lộ trình VNOI
+vnoi-do-thi-1 | Lý thuyết đồ thị cơ bản | Biểu diễn đồ thị, BFS, DFS, sắp xếp tô-pô và thành phần liên thông. | Lộ trình VNOI
+vnoi-duong-di | Đường đi ngắn nhất | Dijkstra, Bellman-Ford, Floyd-Warshall và đường đi trên DAG. | Lộ trình VNOI
+vnoi-do-thi-2 | Lý thuyết đồ thị trung cấp | Disjoint Set Union, cây khung nhỏ nhất và tổ tiên chung gần nhất. | Lộ trình VNOI
+vnoi-cay-1 | Cấu trúc dữ liệu dạng cây (Phần 1) | Cây Fenwick và cây phân đoạn cho truy vấn trên đoạn. | Lộ trình VNOI
+vnoi-xau-1 | Xử lý xâu cơ bản | Hash xâu, KMP, Z-function, Manacher và trie. | Lộ trình VNOI
+vnoi-hinh-hoc | Hình học tính toán | Vector, tích chéo, đa giác, đường quét và bao lồi. | Lộ trình VNOI
+vnoi-qhd-nang-cao | Quy hoạch động nâng cao | QHĐ bitmask, QHĐ chữ số, QHĐ trên cây và nhân ma trận. | Lộ trình VNOI
+vnoi-chia-can | Chia căn (Sqrt Decomposition) | Chia mảng thành các khối cỡ căn n và thuật toán Mo. | Lộ trình VNOI
+vnoi-toan-2 | Toán học trung cấp | Phân tích thừa số, phi hàm Euler, định lý thặng dư Trung Hoa và bao hàm - loại trừ. | Lộ trình VNOI
+vnoi-ky-nang | Kỹ năng thi cử | Sinh test, viết trình chấm và chiến lược làm bài trong phòng thi. | Lộ trình VNOI
+vnoi-tro-choi | Lý thuyết trò chơi | Trò chơi Nim, số Grundy và tìm nước đi tối ưu. | Lộ trình VNOI
+vnoi-tim-kiem | Tìm kiếm nâng cao | Tìm kiếm tam phân, chia để trị và chặt nhị phân song song. | Lộ trình VNOI
+vnoi-do-thi-3 | Lý thuyết đồ thị nâng cao | 2-SAT, phân rã nặng nhẹ và phân tách trọng tâm. | Lộ trình VNOI
+vnoi-cay-2 | Cấu trúc dữ liệu cây nâng cao | Cây phân đoạn bền vững, Fenwick hai chiều, cây Li Chao và wavelet. | Lộ trình VNOI
+vnoi-luong | Luồng (Flow) | Luồng cực đại, lát cắt hẹp nhất, luồng chi phí cực tiểu và cặp ghép. | Lộ trình VNOI
+vnoi-toan-3 | Toán học nâng cao | Logarit rời rạc, FFT, hàm Mobius và hàm nhân tính. | Lộ trình VNOI
+vnoi-xau-2 | Xử lý xâu nâng cao | Aho-Corasick, mảng hậu tố, automaton hậu tố và cây palindrome. | Lộ trình VNOI
+vnoi-ky-thuat-qhd | Kỹ thuật Quy hoạch động nâng cao | QHĐ SOS, cái túi nâng cao và các kỹ thuật tối ưu QHĐ. | Lộ trình VNOI

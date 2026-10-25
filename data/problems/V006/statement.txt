@@ -1,0 +1,16 @@
+Con đường lên đồi có n cột mốc, cột thứ i có độ cao a_i. Bạn Tí muốn chọn ra một số cột mốc (giữ nguyên thứ tự trên đường) để làm bậc thang, sao cho mỗi bậc sau phải cao hơn hẳn bậc trước. Hỏi cầu thang dài nhất có bao nhiêu bậc?
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên n.
+- Dòng thứ hai chứa n số nguyên a_1, a_2, ..., a_n.
+
+Đầu ra:
+- In ra một số nguyên là độ dài lớn nhất của dãy chỉ số i_1 < i_2 < ... < i_m thỏa mãn a_(i_1) < a_(i_2) < ... < a_(i_m) (tăng chặt: hai bậc cao bằng nhau không được tính).
+
+Giới hạn:
+- 1 ≤ n ≤ 5·10^4.
+- -10^9 ≤ a_i ≤ 10^9.
+
+Gợi ý:
+- Quy hoạch động O(n^2) quá chậm với n = 5·10^4. Hãy giữ một mảng d, trong đó d[len] là độ cao cuối nhỏ nhất của một cầu thang có len bậc; với mỗi a_i, dùng tìm kiếm nhị phân (lower_bound) để tìm chỗ thay vào.
+- Với dãy 3 1 4 1 5 9 2 6, một cầu thang dài nhất là 1 4 5 9 gồm 4 bậc.

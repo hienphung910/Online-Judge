@@ -1,0 +1,18 @@
+Bác bảo vệ có n chiếc chìa khóa, chiếc thứ i được mô tả bằng số nguyên a_i: mỗi bit 1 trong a_i là một răng khóa. Một ổ khóa mô tả bằng số x mở được bằng chìa a_i khi mọi răng của chìa đều nằm trong x, tức là (a_i AND x) = a_i. Bác cần trả lời q câu hỏi: với mỗi ổ khóa x, có bao nhiêu chìa mở được nó?
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên n và q.
+- Dòng thứ hai gồm n số nguyên a_1, a_2, ..., a_n.
+- Dòng thứ ba gồm q số nguyên x_1, x_2, ..., x_q là các câu hỏi.
+
+Đầu ra:
+- In ra q dòng, dòng thứ j là số chỉ số i (1 ≤ i ≤ n) thỏa mãn (a_i AND x_j) = a_i. AND là phép AND theo bit.
+- Các chìa có cùng giá trị vẫn được đếm riêng.
+
+Giới hạn:
+- 1 ≤ n, q ≤ 50000.
+- 0 ≤ a_i, x_j < 2^20 = 1048576.
+
+Gợi ý:
+- Với a = [1, 2, 3, 4, 0] và x = 3: các chìa 1, 2, 3 và 0 đều là tập con bit của 3 (nhị phân 011), còn 4 (nhị phân 100) thì không, nên đáp án là 4.
+- Với x = 0 chỉ có chìa 0 mở được, đáp án là 1. Với x = 7 cả 5 chìa đều mở được.

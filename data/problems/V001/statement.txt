@@ -1,0 +1,25 @@
+Bác Ba có một xưởng ghép khung tam giác từ ba thanh gỗ. Mỗi đơn hàng ghi độ dài ba thanh, bác cần biết ba thanh đó ghép được loại tam giác nào để dán nhãn cho đúng.
+
+Đầu vào:
+- Dòng đầu tiên chứa số nguyên T là số đơn hàng.
+- T dòng tiếp theo, mỗi dòng chứa ba số nguyên a, b, c là độ dài ba thanh gỗ. Ba số được cho theo thứ tự bất kỳ, không nhất thiết đã sắp xếp.
+
+Đầu ra:
+- Với mỗi đơn hàng, in ra một dòng là nhãn của nó. Xét lần lượt các điều kiện sau và dùng nhãn của điều kiện ĐẦU TIÊN thỏa mãn:
+- "KHONG HOP LE" nếu thanh dài nhất lớn hơn hoặc bằng tổng hai thanh còn lại (không ghép được tam giác thật sự).
+- "DEU" nếu cả ba thanh dài bằng nhau.
+- "VUONG" nếu đó là tam giác vuông, tức bình phương thanh dài nhất bằng tổng bình phương hai thanh còn lại.
+- "CAN" nếu có đúng hai thanh dài bằng nhau.
+- "THUONG" trong các trường hợp còn lại.
+- In nhãn bằng chữ in hoa, không dấu, đúng như trên.
+
+Giới hạn:
+- 1 ≤ T ≤ 10^4.
+- 1 ≤ a, b, c ≤ 10^9.
+- Bình phương độ dài có thể lên tới 10^18, hãy dùng số nguyên 64 bit (long long trong C++, long trong Java).
+- Với độ dài là số nguyên thì không có tam giác nào vừa vuông vừa cân.
+
+Gợi ý:
+- Bộ 3 4 5 có 3^2 + 4^2 = 5^2 nên là VUONG; bộ 10 6 8 cũng vậy dù thứ tự bị xáo trộn.
+- Bộ 1 2 3 có 3 ≥ 1 + 2 nên KHONG HOP LE (ba thanh nằm thẳng hàng).
+- Bộ 7 7 7 là DEU, bộ 5 8 5 là CAN, bộ 4 5 6 là THUONG.

@@ -1,0 +1,18 @@
+Một chú chuột nhắt đang đứng ở ô S trong căn bếp dạng lưới R hàng, C cột và ngửi thấy mùi pho mát ở ô T. Mỗi bước chú chỉ được chạy sang một ô kề cạnh (lên, xuống, trái, phải), không được chui vào ô có chướng ngại vật. Hỏi chú cần ít nhất bao nhiêu bước để tới được miếng pho mát?
+
+Đầu vào:
+- Dòng đầu gồm hai số nguyên R và C.
+- R dòng tiếp theo, mỗi dòng là một xâu gồm đúng C ký tự mô tả một hàng của lưới.
+- Ký tự '.' là ô trống, '#' là chướng ngại vật, 'S' là vị trí chú chuột, 'T' là vị trí miếng pho mát.
+- Lưới có đúng một ký tự 'S' và đúng một ký tự 'T'. Ô S và ô T đều đi qua được.
+
+Đầu ra:
+- Một số nguyên là số bước ít nhất để đi từ S tới T, hoặc -1 nếu không thể tới được.
+
+Giới hạn:
+- 1 ≤ R, C ≤ 400 và R·C ≥ 2.
+- Không được đi ra ngoài lưới.
+
+Gợi ý:
+- Ở ví dụ 1, chú chuột đi sang phải 2 ô, xuống 1 ô, sang phải 2 ô rồi xuống 2 ô: tổng cộng 7 bước. Không có đường nào ngắn hơn.
+- Ở ví dụ 2, ô S bị chướng ngại vật chặn kín cả bên phải lẫn bên dưới nên đáp án là -1.
