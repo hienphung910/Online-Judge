@@ -8,6 +8,7 @@ import Contests from "./pages/Contests";
 import Leaderboard from "./pages/Leaderboard";
 import AdminPanel from "./pages/admin/AdminPanel";
 import StreakBadge, { StreakToast } from "./components/StreakBadge";
+import Logo from "./components/Logo";
 import { useStreak } from "./streak";
 
 
@@ -121,8 +122,8 @@ function AppShell() {
       <div style={{ height: "100%", display: "flex", background: "var(--color-page-bg)" }}>
         {/* Left panel */}
         <div style={{ flex: "0 0 42%", background: "linear-gradient(160deg, #E3F2FD 0%, #EEF1F5 100%)", display: "flex", flexDirection: "column", justifyContent: "center", padding: "0 60px" }}>
-          <div style={{ width: 60, height: 60, borderRadius: 12, background: "var(--color-red)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 28 }}>
-            <svg width="28" height="28" viewBox="0 0 16 16" fill="none"><path d="M3 4h10M3 8h7M3 12h5" stroke="#fff" strokeWidth="2" strokeLinecap="round" /></svg>
+          <div style={{ marginBottom: 28 }}>
+            <Logo size={56} />
           </div>
           <h1 style={{ fontSize: 32, fontWeight: 800, color: "#212121", margin: "0 0 12px", lineHeight: 1.25 }}>CodeHub</h1>
           <p style={{ fontSize: 15, color: "#757575", margin: 0, lineHeight: 1.6 }}>
@@ -217,8 +218,9 @@ function AppShell() {
           onClick={() => window.location.reload()}
           style={{ display: "flex", alignItems: "center", gap: 8, marginRight: 28, cursor: "pointer", userSelect: "none" }}
         >
-          <div style={{ width: 30, height: 30, borderRadius: "50%", background: "rgba(255,255,255,0.15)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 4h10M3 8h7M3 12h5" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" /></svg>
+          {/* Nen trang de o do giua khong bi chim vao header do */}
+          <div style={{ width: 30, height: 30, borderRadius: 8, background: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <Logo size={18} />
           </div>
           <span style={{ fontSize: 18, fontWeight: 800, color: "#fff", letterSpacing: "-0.01em" }}>CodeHub</span>
         </div>
