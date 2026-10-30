@@ -3,7 +3,6 @@ import { api } from "../api";
 import { useAuth } from "../auth";
 import type { Submission } from "../types";
 import CodeEditor from "../components/CodeEditor";
-import TestSummary from "../components/TestSummary";
 
 /** "Bài nộp" page — shows the current user's submission history (DLab "Bài nộp" style) */
 export default function Contests({ problems }: { problems: import("../types").Problem[] }) {
@@ -125,7 +124,6 @@ export default function Contests({ problems }: { problems: import("../types").Pr
               {detail.message && (
                 <pre style={{ margin: 0, padding: "10px 14px", background: "#FAFAFA", border: "1px solid #E0E0E0", borderRadius: 6, fontFamily: "var(--font-mono)", fontSize: 11.5, color: "#616161", whiteSpace: "pre-wrap", maxHeight: 160, overflow: "auto" }}>{detail.message}</pre>
               )}
-              {detail.tests && detail.tests.length > 0 && <TestSummary tests={detail.tests} />}
               {detail.sourceCode && (
                 <div>
                   <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, color: "#9E9E9E", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 4 }}>Mã nguồn</div>

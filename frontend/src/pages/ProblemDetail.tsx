@@ -2,7 +2,6 @@ import { useMemo, useState } from "react";
 import { api } from "../api";
 import { useAuth } from "../auth";
 import CodeEditor from "../components/CodeEditor";
-import TestSummary from "../components/TestSummary";
 import { DIFFICULTY_META } from "../learningPath";
 import type { JudgeFinishedEvent, LanguageInfo, LiveTestEvent, Problem, Submission } from "../types";
 
@@ -227,7 +226,7 @@ export default function ProblemDetail({
             {/* Progress bar */}
             <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 12, fontFamily: "var(--font-mono)", color: "#757575" }}>
               <span style={{ color: live.compiled === "ok" ? "var(--color-green)" : live.compiled === "failed" ? "#C62828" : "#9E9E9E" }}>
-                {live.compiled === "waiting" ? "đang biên dịch..." : live.compiled === "ok" ? "✓ biên dịch OK" : "✕ biên dịch thất bại"}
+                {live.compiled === "waiting" ? "đang biên dịch..." : live.compiled === "ok" ? "✓ biên dịch thành công" : "✕ biên dịch thất bại"}
               </span>
               {live.compiled === "ok" && <span>test {shownTests.length}/{totalTests || "?"}</span>}
               <div style={{ flex: 1 }} />
@@ -248,8 +247,6 @@ export default function ProblemDetail({
               {live.compiled === "ok" && <span style={{ fontSize: 13, fontFamily: "var(--font-mono)" }}>Đúng {passedTests}/{totalTests || "?"} test</span>}
               {result && <span style={{ fontSize: 13, fontFamily: "var(--font-mono)", color: "var(--color-green)", fontWeight: 700 }}>{(result.score ?? 0).toFixed(1)}/{result.maxPoints.toFixed(0)} điểm</span>}
             </div>
-
-            <TestSummary tests={shownTests} size={13} />
 
             {result?.verdict === "AC" && nextProblem && (
               <div style={{

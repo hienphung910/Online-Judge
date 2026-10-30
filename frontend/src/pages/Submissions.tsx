@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { api } from "../api";
 import CodeEditor from "../components/CodeEditor";
-import TestSummary from "../components/TestSummary";
 import type { Submission, VerdictCode } from "../types";
 
 const REFRESH_MS = 3000;
@@ -176,7 +175,6 @@ export default function Submissions({ reloadKey }: { reloadKey: number }) {
                   whiteSpace: "pre-wrap", maxHeight: 160, overflow: "auto",
                 }}>{detail.message}</pre>
               )}
-              {detail.tests && detail.tests.length > 0 && <TestSummary tests={detail.tests} />}
               {detail.sourceCode && (
                 <div>
                   <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, color: "#9E9E9E", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 4 }}>Mã nguồn</div>
